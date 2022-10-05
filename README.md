@@ -24,7 +24,7 @@ import 'package:iban_to_bic/iban_to_bic.dart';
 Simple example: 
 
 ```dart
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:iban_to_bic/iban_to_bic.dart';
 
 Future<void> main() async {
