@@ -1,56 +1,56 @@
 part of iban_to_bic;
 
-const Map<String, Iban> _atBankCodes = <String, Iban>{
-  '36273': Iban(
-    bic: 'RZTIAT22273',
+const Map<String, Bic> _atBankCodes = <String, Bic>{
+  '36273': Bic(
+    value: 'RZTIAT22273',
     bankName: 'Raiffeisenbank Matrei am Brenner und Umgebung eGen',
     bankShortName: 'Raiffeisenbank Matrei am Brenner und Umgebung eGen',
     bankAddress: 'Raiffeisenplatz 43a',
     bankPostcode: '6143',
     bankLocation: 'Matrei am Brenner',
   ),
-  '34630': Iban(
-    bic: 'RZOOAT2L630',
+  '34630': Bic(
+    value: 'RZOOAT2L630',
     bankName: 'Raiffeisenbank Region Schwanenstadt eGen',
     bankShortName: 'Raiffeisenbank Region Schwanenstadt eGen',
     bankAddress: 'Stadtpl. 25-26',
     bankPostcode: '4690',
     bankLocation: 'Schwanenstadt',
   ),
-  '36274': Iban(
-    bic: 'RZTIAT22274',
+  '36274': Bic(
+    value: 'RZTIAT22274',
     bankName: 'Raiffeisenbank Mayrhofen und Umgebung eGen',
     bankShortName: 'Raiffeisenbank Mayrhofen und Umgebung eGen',
     bankAddress: 'Hauptstraße 401',
     bankPostcode: '6290',
     bankLocation: 'Mayrhofen',
   ),
-  '34322': Iban(
-    bic: 'RZOOAT2L322',
+  '34322': Bic(
+    value: 'RZOOAT2L322',
     bankName: 'Raiffeisenbank Mondseeland eGen',
     bankShortName: 'Raiffeisenbank Mondseeland eGen',
     bankAddress: 'Rainerstr. 11',
     bankPostcode: '5310',
     bankLocation: 'Mondsee',
   ),
-  '36283': Iban(
-    bic: 'RZTIAT22283',
+  '36283': Bic(
+    value: 'RZTIAT22283',
     bankName: 'Raiffeisenbank Nauders eGen',
     bankShortName: 'Raiffeisenbank Nauders eGen',
     bankAddress: 'Dr.-Tschiggfrey-Straße 66',
     bankPostcode: '6543',
     bankLocation: 'Nauders',
   ),
-  '34522': Iban(
-    bic: 'RZOOAT2L522',
+  '34522': Bic(
+    value: 'RZOOAT2L522',
     bankName: 'Raiffeisenbank St.Florian am Inn eGen',
     bankShortName: 'Raiffeisenbank St.Florian am Inn eGen',
     bankAddress: 'St. Florian 50',
     bankPostcode: '4782',
     bankLocation: 'St. Florian am Inn',
   ),
-  '36285': Iban(
-    bic: 'RZTIAT22285',
+  '36285': Bic(
+    value: 'RZTIAT22285',
     bankName: 'Raiffeisenbank Neustift-Mieders-Schönberg im Stubaital eGen',
     bankShortName:
         'Raiffeisenbank Neustift-Mieders-Schönberg im Stubaital eGen',
@@ -58,48 +58,48 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6167',
     bankLocation: 'Neustift im Stubaital',
   ),
-  '34523': Iban(
-    bic: 'RZOOAT2L523',
+  '34523': Bic(
+    value: 'RZOOAT2L523',
     bankName: 'Raiffeisenbank Attergau eGen',
     bankShortName: 'Raiffeisenbank Attergau eGen',
     bankAddress: 'Attergaustraße 38a',
     bankPostcode: '4880',
     bankLocation: 'St. Georgen im Attergau',
   ),
-  '32985': Iban(
-    bic: 'RLNWATWWZDF',
+  '32985': Bic(
+    value: 'RLNWATWWZDF',
     bankName: 'Raiffeisenbank Weinviertel Nordost eGen',
     bankShortName: 'Raiffeisenbank Weinviertel Nordost eGen',
     bankAddress: 'Hauptstr. 39',
     bankPostcode: '2225',
     bankLocation: 'Zistersdorf',
   ),
-  '35001': Iban(
-    bic: 'RVSAAT2S001',
+  '35001': Bic(
+    value: 'RVSAAT2S001',
     bankName: 'Raiffeisenbank Lammertal eGen',
     bankShortName: 'Raiffeisenbank Lammertal eGen',
     bankAddress: 'Markt 49',
     bankPostcode: '5441',
     bankLocation: 'Abtenau',
   ),
-  '36368': Iban(
-    bic: 'RZTIAT22368',
+  '36368': Bic(
+    value: 'RZTIAT22368',
     bankName: 'Raiffeisenbank Sillian eGen',
     bankShortName: 'Raiffeisenbank Sillian eGen',
     bankAddress: 'Marktplatz 10',
     bankPostcode: '9920',
     bankLocation: 'Sillian',
   ),
-  '35066': Iban(
-    bic: 'RVSAAT2S066',
+  '35066': Bic(
+    value: 'RVSAAT2S066',
     bankName: 'Raiffeisenbank Unken eGen',
     bankShortName: 'Raiffeisenbank Unken eGen',
     bankAddress: 'Unken',
     bankPostcode: '5091',
     bankLocation: 'Unken',
   ),
-  '35017': Iban(
-    bic: 'RVSAAT2S017',
+  '35017': Bic(
+    value: 'RVSAAT2S017',
     bankName:
         'Raiffeisenbank Golling-Scheffau-Kellau registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -108,328 +108,328 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '5440',
     bankLocation: 'Golling an der Salzach',
   ),
-  '35029': Iban(
-    bic: 'RVSAAT2S029',
+  '35029': Bic(
+    value: 'RVSAAT2S029',
     bankName: 'Raiffeisenbank Kuchl-St. Koloman eGen',
     bankShortName: 'Raiffeisenbank Kuchl-St. Koloman eGen',
     bankAddress: 'Markt 222',
     bankPostcode: '5431',
     bankLocation: 'Kuchl',
   ),
-  '35053': Iban(
-    bic: 'RVSAAT2S053',
+  '35053': Bic(
+    value: 'RVSAAT2S053',
     bankName: 'Raiffeisenbank Pinzgau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pinzgau Mitte eGen',
     bankAddress: 'Lofererstr.5',
     bankPostcode: '5760',
     bankLocation: 'Saalfelden am Stein. Meer',
   ),
-  '19530': Iban(
-    bic: 'SPAEAT2SXXX',
+  '19530': Bic(
+    value: 'SPAEAT2SXXX',
     bankName: 'Bankhaus Carl Spängler & Co. Aktiengesellschaft',
     bankShortName: 'Bankhaus Carl Spängler & Co. Aktiengesellschaft',
     bankAddress: 'Schwarzstraße 1',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '15030': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15030': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15031': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15031': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15040': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15040': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15041': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15041': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15042': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15042': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15060': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15060': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15061': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15061': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15062': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15062': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15080': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15080': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15081': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15081': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15092': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15092': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15093': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15093': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15094': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15094': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '34633': Iban(
-    bic: 'RZOOAT2L633',
+  '34633': Bic(
+    value: 'RZOOAT2L633',
     bankName: 'Raiffeisenbank Steinbach-Grünburg eGen',
     bankShortName: 'Raiffeisenbank Steinbach-Grünburg eGen',
     bankAddress: 'Hauptstraße 35',
     bankPostcode: '4594',
     bankLocation: 'Grünburg',
   ),
-  '32990': Iban(
-    bic: 'RLNWATWWZWE',
+  '32990': Bic(
+    value: 'RLNWATWWZWE',
     bankName: 'Raiffeisenbank Region Waldviertel Mitte eGen',
     bankShortName: 'Raiffeisenbank Region Waldviertel Mitte eGen',
     bankAddress: 'Landstraße 23, Postfach 10',
     bankPostcode: '3910',
     bankLocation: 'Zwettl',
   ),
-  '35030': Iban(
-    bic: 'RVSAAT2S030',
+  '35030': Bic(
+    value: 'RVSAAT2S030',
     bankName: 'Raiffeisenbank Flachgau Nord eGen',
     bankShortName: 'Raiffeisenbank Flachgau Nord eGen',
     bankAddress: 'Hauptstr.3',
     bankPostcode: '5112',
     bankLocation: 'Lamprechtshausen',
   ),
-  '35007': Iban(
-    bic: 'RVSAAT2S007',
+  '35007': Bic(
+    value: 'RVSAAT2S007',
     bankName: 'Raiffeisenbank Anthering - Elixhausen eGen',
     bankShortName: 'Raiffeisenbank Anthering - Elixhausen eGen',
     bankAddress: 'Salzburger Straße 6',
     bankPostcode: '5102',
     bankLocation: 'Anthering',
   ),
-  '35016': Iban(
-    bic: 'RVSAAT2S016',
+  '35016': Bic(
+    value: 'RVSAAT2S016',
     bankName: 'Raiffeisenbank Faistenau-Hintersee eGen',
     bankShortName: 'Raiffeisenbank Faistenau-Hintersee eGen',
     bankAddress: 'Am Lindenplatz 2',
     bankPostcode: '5324',
     bankLocation: 'Faistenau',
   ),
-  '20334': Iban(
-    bic: 'SMWRAT21XXX',
+  '20334': Bic(
+    value: 'SMWRAT21XXX',
     bankName: 'Sparkasse Mühlviertel-West Bank Aktiengesellschaft',
     bankShortName: 'Sparkasse Mühlviertel-West Bank Aktiengesellschaft',
     bankAddress: 'Stadtplatz 24',
     bankPostcode: '4150',
     bankLocation: 'Rohrbach-Berg',
   ),
-  '19100': Iban(
-    bic: 'DEUTATWWXXX',
+  '19100': Bic(
+    value: 'DEUTATWWXXX',
     bankName: 'Deutsche Bank Aktiengesellschaft Filiale Wien',
     bankShortName: 'Deutsche Bank Aktiengesellschaft Filiale Wien',
     bankAddress: 'Fleischmarkt 1',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '15095': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15095': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15110': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15110': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15120': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15120': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15121': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15121': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15122': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15122': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15123': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15123': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15130': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15130': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15135': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15135': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15131': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15131': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15132': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15132': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15133': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15133': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15022': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15022': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '34530': Iban(
-    bic: 'RZOOAT2L530',
+  '34530': Bic(
+    value: 'RZOOAT2L530',
     bankName: 'Raiffeisenbank St. Marien eGen',
     bankShortName: 'Raiffeisenbank St. Marien eGen',
     bankAddress: 'Nr. 19',
     bankPostcode: '4502',
     bankLocation: 'St. Marien bei Neuhofen',
   ),
-  '36291': Iban(
-    bic: 'RZTIAT22291',
+  '36291': Bic(
+    value: 'RZTIAT22291',
     bankName: 'Raiffeisenbank Vorderes Ötztal eGen',
     bankShortName: 'Raiffeisenbank Vorderes Ötztal eGen',
     bankAddress: 'Hauptstr. 64',
     bankPostcode: '6433',
     bankLocation: 'Oetz',
   ),
-  '36353': Iban(
-    bic: 'RZTIAT22353',
+  '36353': Bic(
+    value: 'RZTIAT22353',
     bankName: 'Raiffeisenbank Pitztal eGen',
     bankShortName: 'Raiffeisenbank Pitztal eGen',
     bankAddress: 'Unterdorf 18',
     bankPostcode: '6473',
     bankLocation: 'Wenns',
   ),
-  '35047': Iban(
-    bic: 'RVSAAT2S047',
+  '35047': Bic(
+    value: 'RVSAAT2S047',
     bankName: 'Raiffeisenbank Salzburger Seenland eGen',
     bankShortName: 'Raiffeisenbank Salzburger Seenland eGen',
     bankAddress: 'Hauptstraße 52',
     bankPostcode: '5201',
     bankLocation: 'Seekirchen am Wallersee',
   ),
-  '35060': Iban(
-    bic: 'RVSAAT2S060',
+  '35060': Bic(
+    value: 'RVSAAT2S060',
     bankName: 'Raiffeisenbank St. Martin-Lofer-Weißbach eGen',
     bankShortName: 'Raiffeisenbank St. Martin-Lofer-Weißbach eGen',
     bankAddress: 'St. Martin Nr.7',
     bankPostcode: '5092',
     bankLocation: 'St. Martin bei Lofer',
   ),
-  '35064': Iban(
-    bic: 'RVSAAT2S064',
+  '35064': Bic(
+    value: 'RVSAAT2S064',
     bankName:
         'Raiffeisenbank Taxenbach registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -438,152 +438,152 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '5660',
     bankLocation: 'Taxenbach',
   ),
-  '35065': Iban(
-    bic: 'RVSAAT2S065',
+  '35065': Bic(
+    value: 'RVSAAT2S065',
     bankName: 'Raiffeisenbank Fuschlsee West eGen',
     bankShortName: 'Raiffeisenbank Fuschlsee West eGen',
     bankAddress: 'Wolfgangseestr. 26',
     bankPostcode: '5322',
     bankLocation: 'Hof bei Salzburg',
   ),
-  '19650': Iban(
-    bic: 'ESBKATWWXXX',
+  '19650': Bic(
+    value: 'ESBKATWWXXX',
     bankName: 'DenizBank AG',
     bankShortName: 'DenizBank AG',
     bankAddress: 'Thomas-Klestil-Platz 1',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '19150': Iban(
-    bic: 'KTBKATWWXXX',
+  '19150': Bic(
+    value: 'KTBKATWWXXX',
     bankName: 'Kathrein Privatbank Aktiengesellschaft',
     bankShortName: 'Kathrein Privatbank Aktiengesellschaft',
     bankAddress: 'Wipplingerstraße 25',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '58000': Iban(
-    bic: 'HYPVAT2BXXX',
+  '58000': Bic(
+    value: 'HYPVAT2BXXX',
     bankName: 'Hypo Vorarlberg Bank AG',
     bankShortName: 'Hypo Vorarlberg Bank AG',
     bankAddress: 'Hypo-Passage 1',
     bankPostcode: '6900',
     bankLocation: 'Bregenz',
   ),
-  '12000': Iban(
-    bic: 'BKAUATWWXXX',
+  '12000': Bic(
+    value: 'BKAUATWWXXX',
     bankName: 'UniCredit Bank Austria AG',
     bankShortName: 'UniCredit Bank Austria AG',
     bankAddress: 'Rothschildplatz 1',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '15150': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15150': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15134': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15134': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15023': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15023': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15024': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15024': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15151': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15151': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15025': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15025': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15013': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15013': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '17400': Iban(
-    bic: 'BFKKAT2KXXX',
+  '17400': Bic(
+    value: 'BFKKAT2KXXX',
     bankName: 'BKS Bank AG',
     bankShortName: 'BKS Bank AG',
     bankAddress: 'St. Veiter Ring 43',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
   ),
-  '17100': Iban(
-    bic: 'BFKKAT2KXXX',
+  '17100': Bic(
+    value: 'BFKKAT2KXXX',
     bankName: 'BKS Bank AG',
     bankShortName: 'BKS Bank AG',
     bankAddress: 'St. Veiter Ring 43',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
   ),
-  '17200': Iban(
-    bic: 'BFKKAT2KXXX',
+  '17200': Bic(
+    value: 'BFKKAT2KXXX',
     bankName: 'BKS Bank AG',
     bankShortName: 'BKS Bank AG',
     bankAddress: 'St. Veiter Ring 43',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
   ),
-  '17300': Iban(
-    bic: 'BFKKAT2KXXX',
+  '17300': Bic(
+    value: 'BFKKAT2KXXX',
     bankName: 'BKS Bank AG',
     bankShortName: 'BKS Bank AG',
     bankAddress: 'St. Veiter Ring 43',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
   ),
-  '17500': Iban(
-    bic: 'BFKKAT2KXXX',
+  '17500': Bic(
+    value: 'BFKKAT2KXXX',
     bankName: 'BKS Bank AG',
     bankShortName: 'BKS Bank AG',
     bankAddress: 'St. Veiter Ring 43',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
   ),
-  '34080': Iban(
-    bic: 'RZOOAT2L080',
+  '34080': Bic(
+    value: 'RZOOAT2L080',
     bankName: 'Raiffeisenbank Ennstal eGen',
     bankShortName: 'Raiffeisenbank Ennstal eGen',
     bankAddress: 'Kirchenplatz 11',
     bankPostcode: '4452',
     bankLocation: 'Ternberg',
   ),
-  '32660': Iban(
-    bic: 'RLNWATW1660',
+  '32660': Bic(
+    value: 'RLNWATW1660',
     bankName:
         'Raiffeisenkasse Pottschach registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -592,40 +592,40 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '2630',
     bankLocation: 'Ternitz',
   ),
-  '34770': Iban(
-    bic: 'RZOOAT2L770',
+  '34770': Bic(
+    value: 'RZOOAT2L770',
     bankName: 'Raiffeisenbank Wels Süd eGen',
     bankShortName: 'Raiffeisenbank Wels Süd eGen',
     bankAddress: 'P.-B.-Rodlbergerstraße 25',
     bankPostcode: '4600',
     bankLocation: 'Thalheim bei Wels',
   ),
-  '34300': Iban(
-    bic: 'RZOOAT2L300',
+  '34300': Bic(
+    value: 'RZOOAT2L300',
     bankName: 'Raiffeisenbank Region Neufelden eGen',
     bankShortName: 'Raiffeisenbank Region Neufelden eGen',
     bankAddress: 'Markt 17',
     bankPostcode: '4113',
     bankLocation: 'St. Martin im Mühlkreis',
   ),
-  '39257': Iban(
-    bic: 'RZKTAT2K257',
+  '39257': Bic(
+    value: 'RZKTAT2K257',
     bankName: 'Raiffeisenbank Arnoldstein-Fürnitz eG',
     bankShortName: 'Raiffeisenbank Arnoldstein-Fürnitz eG',
     bankAddress: 'Gemeindeplatz 2',
     bankPostcode: '9601',
     bankLocation: 'Arnoldstein',
   ),
-  '34540': Iban(
-    bic: 'RZOOAT2L540',
+  '34540': Bic(
+    value: 'RZOOAT2L540',
     bankName: 'Raiffeisenbank St. Roman eGen',
     bankShortName: 'Raiffeisenbank St. Roman eGen',
     bankAddress: 'Altendorf 29',
     bankPostcode: '4793',
     bankLocation: 'St. Roman bei Schärding',
   ),
-  '39267': Iban(
-    bic: 'RZKTAT2K267',
+  '39267': Bic(
+    value: 'RZKTAT2K267',
     bankName:
         'Raiffeisen-Bezirksbank Spittal/Drau, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -634,144 +634,144 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9800',
     bankLocation: 'Spittal an der Drau',
   ),
-  '31500': Iban(
-    bic: 'NTBAATWWXXX',
+  '31500': Bic(
+    value: 'NTBAATWWXXX',
     bankName: 'NOTARTREUHANDBANK AG',
     bankShortName: 'NOTARTREUHANDBANK AG',
     bankAddress: 'Landesgerichtsstraße 20',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '54000': Iban(
-    bic: 'OBLAAT2LXXX',
+  '54000': Bic(
+    value: 'OBLAAT2LXXX',
     bankName: 'Oberösterreichische Landesbank Aktiengesellschaft',
     bankShortName: 'Oberösterreichische Landesbank Aktiengesellschaft',
     bankAddress: 'Landstr. 38',
     bankPostcode: '4010',
     bankLocation: 'Linz',
   ),
-  '75100': Iban(
-    bic: 'SBOSATWWXXX',
+  '75100': Bic(
+    value: 'SBOSATWWXXX',
     bankName: 'State Street Bank International GmbH Filiale Wien',
     bankShortName: 'State Street Bank International GmbH Filiale Wien',
     bankAddress: 'Graben 19',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '16310': Iban(
-    bic: 'BTVAAT22XXX',
+  '16310': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16320': Iban(
-    bic: 'BTVAAT22XXX',
+  '16320': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16460': Iban(
-    bic: 'BTVAAT22XXX',
+  '16460': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16330': Iban(
-    bic: 'BTVAAT22XXX',
+  '16330': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16340': Iban(
-    bic: 'BTVAAT22XXX',
+  '16340': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16350': Iban(
-    bic: 'BTVAAT22XXX',
+  '16350': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16360': Iban(
-    bic: 'BTVAAT22XXX',
+  '16360': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16370': Iban(
-    bic: 'BTVAAT22XXX',
+  '16370': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16380': Iban(
-    bic: 'BTVAAT22XXX',
+  '16380': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16390': Iban(
-    bic: 'BTVAAT22XXX',
+  '16390': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16400': Iban(
-    bic: 'BTVAAT22XXX',
+  '16400': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16410': Iban(
-    bic: 'BTVAAT22XXX',
+  '16410': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '34669': Iban(
-    bic: 'RZOOAT2L669',
+  '34669': Bic(
+    value: 'RZOOAT2L669',
     bankName: 'Raiffeisenbank Timelkam-Lenzing-Puchkirchen eGen',
     bankShortName: 'Raiffeisenbank Timelkam-Lenzing-Puchkirchen eGen',
     bankAddress: 'Pollheimerstr. 1',
     bankPostcode: '4850',
     bankLocation: 'Timelkam',
   ),
-  '34356': Iban(
-    bic: 'RZOOAT2L356',
+  '34356': Bic(
+    value: 'RZOOAT2L356',
     bankName: 'Raiffeisenbank Neukirchen an der Vöckla eGen',
     bankShortName: 'Raiffeisenbank Neukirchen an der Vöckla eGen',
     bankAddress: 'Hauptstraße 22',
     bankPostcode: '4872',
     bankLocation: 'Neukirchen an der Vöckla',
   ),
-  '39271': Iban(
-    bic: 'RZKTAT2K271',
+  '39271': Bic(
+    value: 'RZKTAT2K271',
     bankName:
         'Raiffeisenbank Brückl-Eberstein-Klein St. Paul-Waisenberg, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -780,160 +780,160 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9371',
     bankLocation: 'Brückl',
   ),
-  '34560': Iban(
-    bic: 'RZOOAT2L560',
+  '34560': Bic(
+    value: 'RZOOAT2L560',
     bankName: 'Raiffeisenbank Region Sierning-Enns eGen',
     bankShortName: 'Raiffeisenbank Region Sierning-Enns eGen',
     bankAddress: 'Neustr. 5',
     bankPostcode: '4522',
     bankLocation: 'Sierning',
   ),
-  '34060': Iban(
-    bic: 'RZOOAT2L060',
+  '34060': Bic(
+    value: 'RZOOAT2L060',
     bankName: 'Raiffeisenbank Region Braunau eGen',
     bankShortName: 'Raiffeisenbank Region Braunau eGen',
     bankAddress: 'Salzburger Straße 4',
     bankPostcode: '5280',
     bankLocation: 'Braunau am Inn',
   ),
-  '34736': Iban(
-    bic: 'RZOOAT2L736',
+  '34736': Bic(
+    value: 'RZOOAT2L736',
     bankName: 'Raiffeisenbank Region Grieskirchen eGen',
     bankShortName: 'Raiffeisenbank Region Grieskirchen eGen',
     bankAddress: 'Roßmarkt 11',
     bankPostcode: '4710',
     bankLocation: 'Grieskirchen',
   ),
-  '33067': Iban(
-    bic: 'RLBBAT2E125',
+  '33067': Bic(
+    value: 'RLBBAT2E125',
     bankName: 'Raiffeisenbezirksbank Oberwart eGen',
     bankShortName: 'Raiffeisenbezirksbank Oberwart eGen',
     bankAddress: 'Wiener Straße 5',
     bankPostcode: '7400',
     bankLocation: 'Oberwart',
   ),
-  '33118': Iban(
-    bic: 'RLBBAT2E002',
+  '33118': Bic(
+    value: 'RLBBAT2E002',
     bankName: 'Raiffeisenbank Seewinkel-Hansag eGen',
     bankShortName: 'Raiffeisenbank Seewinkel-Hansag eGen',
     bankAddress: 'Höchtlgasse 6',
     bankPostcode: '7163',
     bankLocation: 'Andau',
   ),
-  '33063': Iban(
-    bic: 'RLBBAT2E038',
+  '33063': Bic(
+    value: 'RLBBAT2E038',
     bankName: 'Raiffeisenbank Dreiländereck Bgld-Nord eGen',
     bankShortName: 'Raiffeisenbank Dreiländereck Bgld-Nord eGen',
     bankAddress: 'Untere Hauptstraße 36',
     bankPostcode: '2425',
     bankLocation: 'Nickelsdorf an der Leitha',
   ),
-  '33114': Iban(
-    bic: 'RLBBAT2E038',
+  '33114': Bic(
+    value: 'RLBBAT2E038',
     bankName: 'Raiffeisenbank Dreiländereck Bgld-Nord eGen',
     bankShortName: 'Raiffeisenbank Dreiländereck Bgld-Nord eGen',
     bankAddress: 'Untere Hauptstraße 36',
     bankPostcode: '2425',
     bankLocation: 'Nickelsdorf an der Leitha',
   ),
-  '32789': Iban(
-    bic: 'RLNWATWWAMS',
+  '32789': Bic(
+    value: 'RLNWATWWAMS',
     bankName: 'Raiffeisenbank Region Amstetten eGen',
     bankShortName: 'Raiffeisenbank Region Amstetten eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '3300',
     bankLocation: 'Amstetten',
   ),
-  '33028': Iban(
-    bic: 'RLBBAT2E090',
+  '33028': Bic(
+    value: 'RLBBAT2E090',
     bankName: 'Raiffeisenbank Heideboden eGen',
     bankShortName: 'Raiffeisenbank Heideboden eGen',
     bankAddress: 'Wiener Straße 3',
     bankPostcode: '7161',
     bankLocation: 'St. Andrä bei Frauenkirchen',
   ),
-  '32118': Iban(
-    bic: 'RLNWATWWBAD',
+  '32118': Bic(
+    value: 'RLNWATWWBAD',
     bankName: 'Raiffeisenbank Region Baden eGen',
     bankShortName: 'Raiffeisenbank Region Baden eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '2500',
     bankLocation: 'Baden bei Wien',
   ),
-  '44480': Iban(
-    bic: 'VBOEATWWSAL',
+  '44480': Bic(
+    value: 'VBOEATWWSAL',
     bankName: 'Volksbank Salzburg eG',
     bankShortName: 'Volksbank Salzburg eG',
     bankAddress: 'St. Julien-Str. 12',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '35009': Iban(
-    bic: 'RVSAAT2S047',
+  '35009': Bic(
+    value: 'RVSAAT2S047',
     bankName: 'Raiffeisenbank Salzburger Seenland eGen',
     bankShortName: 'Raiffeisenbank Salzburger Seenland eGen',
     bankAddress: 'Hauptstraße 52',
     bankPostcode: '5201',
     bankLocation: 'Seekirchen am Wallersee',
   ),
-  '35050': Iban(
-    bic: 'RVSAAT2S063',
+  '35050': Bic(
+    value: 'RVSAAT2S063',
     bankName: 'Raiffeisenbank Lungau eGen',
     bankShortName: 'Raiffeisenbank Lungau eGen',
     bankAddress: 'Kirchengasse 9',
     bankPostcode: '5580',
     bankLocation: 'Tamsweg',
   ),
-  '20815': Iban(
-    bic: 'STSPAT2GXXX',
+  '20815': Bic(
+    value: 'STSPAT2GXXX',
     bankName: 'Steiermärkische Bank und Sparkassen Aktiengesellschaft',
     bankShortName: 'Steiermärkische Bank und Sparkassen Aktiengesellschaft',
     bankAddress: 'Sparkassenplatz 4',
     bankPostcode: '8010',
     bankLocation: 'Graz',
   ),
-  '20228': Iban(
-    bic: 'SPKDAT21XXX',
+  '20228': Bic(
+    value: 'SPKDAT21XXX',
     bankName: 'KREMSER BANK UND SPARKASSEN AKTIENGESELLSCHAFT',
     bankShortName: 'KREMSER BANK UND SPARKASSEN AKTIENGESELLSCHAFT',
     bankAddress: 'Ringstraße 5-7',
     bankPostcode: '3500',
     bankLocation: 'Krems an der Donau',
   ),
-  '20505': Iban(
-    bic: 'SPKIAT2KXXX',
+  '20505': Bic(
+    value: 'SPKIAT2KXXX',
     bankName: 'Sparkasse der Stadt Kitzbühel',
     bankShortName: 'Sparkasse der Stadt Kitzbühel',
     bankAddress: 'Bahnhofstraße 6',
     bankPostcode: '6370',
     bankLocation: 'Kitzbühel',
   ),
-  '20506': Iban(
-    bic: 'SPKUAT22XXX',
+  '20506': Bic(
+    value: 'SPKUAT22XXX',
     bankName: 'Sparkasse Kufstein Tiroler Sparkasse von 1877',
     bankShortName: 'Sparkasse Kufstein Tiroler Sparkasse von 1877',
     bankAddress: 'Oberer Stadtplatz 1',
     bankPostcode: '6330',
     bankLocation: 'Kufstein',
   ),
-  '11000': Iban(
-    bic: 'BKAUATWWXXX',
+  '11000': Bic(
+    value: 'BKAUATWWXXX',
     bankName: 'UniCredit Bank Austria AG',
     bankShortName: 'UniCredit Bank Austria AG',
     bankAddress: 'Rothschildplatz 1',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '33135': Iban(
-    bic: 'RLBBAT2EXXX',
+  '33135': Bic(
+    value: 'RLBBAT2EXXX',
     bankName: 'Raiffeisenlandesbank Burgenland und Revisionsverband eGen',
     bankShortName: 'Raiffeisenlandesbank Burgenland und Revisionsverband eGen',
     bankAddress: 'Friedrich Wilhelm Raiffeisen-Straße 1',
     bankPostcode: '7000',
     bankLocation: 'Eisenstadt',
   ),
-  '60000': Iban(
-    bic: 'BAWAATWWXXX',
+  '60000': Bic(
+    value: 'BAWAATWWXXX',
     bankName:
         'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankShortName:
@@ -942,8 +942,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '14900': Iban(
-    bic: 'BAWAATWWXXX',
+  '14900': Bic(
+    value: 'BAWAATWWXXX',
     bankName:
         'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankShortName:
@@ -952,56 +952,56 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '42750': Iban(
-    bic: 'VBOEATWWXXX',
+  '42750': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '43210': Iban(
-    bic: 'VBOEATWWOOE',
+  '43210': Bic(
+    value: 'VBOEATWWOOE',
     bankName: 'Volksbank Oberösterreich AG',
     bankShortName: 'Volksbank Oberösterreich AG',
     bankAddress: 'Pfarrgasse 5',
     bankPostcode: '4600',
     bankLocation: 'Wels',
   ),
-  '33035': Iban(
-    bic: 'RLBBAT2EXXX',
+  '33035': Bic(
+    value: 'RLBBAT2EXXX',
     bankName: 'Raiffeisenlandesbank Burgenland und Revisionsverband eGen',
     bankShortName: 'Raiffeisenlandesbank Burgenland und Revisionsverband eGen',
     bankAddress: 'Friedrich Wilhelm Raiffeisen-Straße 1',
     bankPostcode: '7000',
     bankLocation: 'Eisenstadt',
   ),
-  '36218': Iban(
-    bic: 'RZTIAT22218',
+  '36218': Bic(
+    value: 'RZTIAT22218',
     bankName: 'Raiffeisen Regionalbank Achensee eGen',
     bankShortName: 'Raiffeisen Regionalbank Achensee eGen',
     bankAddress: 'Dorfstraße 38',
     bankPostcode: '6212',
     bankLocation: 'Maurach',
   ),
-  '36245': Iban(
-    bic: 'RZTIAT22245',
+  '36245': Bic(
+    value: 'RZTIAT22245',
     bankName: 'Raiffeisenbank Wilder Kaiser - Brixental West eGen',
     bankShortName: 'Raiffeisenbank Wilder Kaiser - Brixental West eGen',
     bankAddress: 'Brixentalerstraße 15',
     bankPostcode: '6361',
     bankLocation: 'Hopfgarten',
   ),
-  '34100': Iban(
-    bic: 'RZOOAT2L100',
+  '34100': Bic(
+    value: 'RZOOAT2L100',
     bankName: 'Raiffeisenbank Feldkirchen-Goldwörth eGen',
     bankShortName: 'Raiffeisenbank Feldkirchen-Goldwörth eGen',
     bankAddress: 'Hauptstr. 2',
     bankPostcode: '4101',
     bankLocation: 'Feldkirchen an der Donau',
   ),
-  '36332': Iban(
-    bic: 'RZTIAT22332',
+  '36332': Bic(
+    value: 'RZTIAT22332',
     bankName:
         'Raiffeisenkasse Stumm, Stummerberg und Umgebung registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -1010,272 +1010,272 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6275',
     bankLocation: 'Stumm',
   ),
-  '36333': Iban(
-    bic: 'RZTIAT22333',
+  '36333': Bic(
+    value: 'RZTIAT22333',
     bankName: 'Raiffeisenbank Tannheimertal eGen',
     bankShortName: 'Raiffeisenbank Tannheimertal eGen',
     bankAddress: 'Höf 35',
     bankPostcode: '6675',
     bankLocation: 'Tannheim',
   ),
-  '38372': Iban(
-    bic: 'RZSTAT2G103',
+  '38372': Bic(
+    value: 'RZSTAT2G103',
     bankName: 'Raiffeisenbank Region Gleisdorf-Pischelsdorf eGen',
     bankShortName: 'Raiffeisenbank Region Gleisdorf-Pischelsdorf eGen',
     bankAddress: 'Florianiplatz 18-19',
     bankPostcode: '8200',
     bankLocation: 'Gleisdorf',
   ),
-  '38010': Iban(
-    bic: 'RZSTAT2G187',
+  '38010': Bic(
+    value: 'RZSTAT2G187',
     bankName: 'Raiffeisenbank Weiz-Anger eGen',
     bankShortName: 'Raiffeisenbank Weiz-Anger eGen',
     bankAddress: 'Kapruner Generator Straße 10',
     bankPostcode: '8160',
     bankLocation: 'Weiz',
   ),
-  '36000': Iban(
-    bic: 'RZTIAT22XXX',
+  '36000': Bic(
+    value: 'RZTIAT22XXX',
     bankName: 'Raiffeisen-Landesbank Tirol AG',
     bankShortName: 'Raiffeisen-Landesbank Tirol AG',
     bankAddress: 'Steinbockallee 29',
     bankPostcode: '6063',
     bankLocation: 'Rum',
   ),
-  '38001': Iban(
-    bic: 'RZSTAT2G001',
+  '38001': Bic(
+    value: 'RZSTAT2G001',
     bankName: 'Raiffeisenbank Admont eGen',
     bankShortName: 'Raiffeisenbank Admont eGen',
     bankAddress: 'Hauptstraße 33',
     bankPostcode: '8911',
     bankLocation: 'Admont',
   ),
-  '38186': Iban(
-    bic: 'RZSTAT2G186',
+  '38186': Bic(
+    value: 'RZSTAT2G186',
     bankName: 'Raiffeisenbank Mürztal eGen',
     bankShortName: 'Raiffeisenbank Mürztal eGen',
     bankAddress: 'Grazer Straße 19',
     bankPostcode: '8680',
     bankLocation: 'Mürzzuschlag',
   ),
-  '38023': Iban(
-    bic: 'RZSTAT2G023',
+  '38023': Bic(
+    value: 'RZSTAT2G023',
     bankName: 'Raiffeisenbank Oststeiermark Nord eGen',
     bankShortName: 'Raiffeisenbank Oststeiermark Nord eGen',
     bankAddress: 'Raiffeisenplatz 200',
     bankPostcode: '8225',
     bankLocation: 'Pöllau bei Hartberg',
   ),
-  '33014': Iban(
-    bic: 'RLBBAT2E014',
+  '33014': Bic(
+    value: 'RLBBAT2E014',
     bankName: 'Raiffeisenbank Draßmarkt-Kobersdorf-St. Martin eGen',
     bankShortName: 'Raiffeisenbank Draßmarkt-Kobersdorf-St. Martin eGen',
     bankAddress: 'Hauptstraße 29',
     bankPostcode: '7372',
     bankLocation: 'Draßmarkt',
   ),
-  '33027': Iban(
-    bic: 'RLBBAT2E027',
+  '33027': Bic(
+    value: 'RLBBAT2E027',
     bankName: 'Raiffeisen Regionalbank Güssing-Jennersdorf eGen',
     bankShortName: 'Raiffeisen Regionalbank Güssing-Jennersdorf eGen',
     bankAddress: 'Hauptstraße 3',
     bankPostcode: '7540',
     bankLocation: 'Güssing',
   ),
-  '32025': Iban(
-    bic: 'RLNWATWWAMS',
+  '32025': Bic(
+    value: 'RLNWATWWAMS',
     bankName: 'Raiffeisenbank Region Amstetten eGen',
     bankShortName: 'Raiffeisenbank Region Amstetten eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '3300',
     bankLocation: 'Amstetten',
   ),
-  '33072': Iban(
-    bic: 'RLBBAT2E072',
+  '33072': Bic(
+    value: 'RLBBAT2E072',
     bankName: 'Raiffeisenbank Region Parndorf eGen',
     bankShortName: 'Raiffeisenbank Region Parndorf eGen',
     bankAddress: 'Hauptstraße 63',
     bankPostcode: '7111',
     bankLocation: 'Parndorf',
   ),
-  '36248': Iban(
-    bic: 'RZTIAT22248',
+  '36248': Bic(
+    value: 'RZTIAT22248',
     bankName: 'Raiffeisenbank Arlberg Silvretta eGen',
     bankShortName: 'Raiffeisenbank Arlberg Silvretta eGen',
     bankAddress: 'Dorfstraße 24',
     bankPostcode: '6580',
     bankLocation: 'St. Anton am Arlberg',
   ),
-  '19510': Iban(
-    bic: 'PIAGAT2SXXX',
+  '19510': Bic(
+    value: 'PIAGAT2SXXX',
     bankName: 'Zürcher Kantonalbank Österreich AG',
     bankShortName: 'Zürcher Kantonalbank Österreich AG',
     bankAddress: 'Getreidegasse 10',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '18170': Iban(
-    bic: 'OKOMATWWXXX',
+  '18170': Bic(
+    value: 'OKOMATWWXXX',
     bankName: 'KA Finanz AG',
     bankShortName: 'KA Finanz AG',
     bankAddress: 'Taborstraße 1-3',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '20833': Iban(
-    bic: 'SPPLAT21XXX',
+  '20833': Bic(
+    value: 'SPPLAT21XXX',
     bankName: 'Sparkasse Pöllau AG',
     bankShortName: 'Sparkasse Pöllau AG',
     bankAddress: 'Hauptplatz 2',
     bankPostcode: '8225',
     bankLocation: 'Pöllau',
   ),
-  '38460': Iban(
-    bic: 'RZSTAT2G460',
+  '38460': Bic(
+    value: 'RZSTAT2G460',
     bankName: 'Raiffeisenbank Leoben-Bruck eGen',
     bankShortName: 'Raiffeisenbank Leoben-Bruck eGen',
     bankAddress: 'Grazerstraße 63',
     bankPostcode: '8605',
     bankLocation: 'Kapfenberg',
   ),
-  '38043': Iban(
-    bic: 'RZSTAT2G043',
+  '38043': Bic(
+    value: 'RZSTAT2G043',
     bankName: 'Raiffeisenbank Schilcherland eGen',
     bankShortName: 'Raiffeisenbank Schilcherland eGen',
     bankAddress: 'Raiffeisenstraße 1',
     bankPostcode: '8530',
     bankLocation: 'Deutschlandsberg',
   ),
-  '38111': Iban(
-    bic: 'RZSTAT2G111',
+  '38111': Bic(
+    value: 'RZSTAT2G111',
     bankName: 'Raiffeisenbank Gratkorn eGen',
     bankShortName: 'Raiffeisenbank Gratkorn eGen',
     bankAddress: 'Grazer Straße 5',
     bankPostcode: '8101',
     bankLocation: 'Gratkorn',
   ),
-  '38113': Iban(
-    bic: 'RZSTAT2G113',
+  '38113': Bic(
+    value: 'RZSTAT2G113',
     bankName: 'Raiffeisenbank Schladming-Gröbming eGen',
     bankShortName: 'Raiffeisenbank Schladming-Gröbming eGen',
     bankAddress: 'Hauptstraße 279',
     bankPostcode: '8962',
     bankLocation: 'Gröbming',
   ),
-  '33078': Iban(
-    bic: 'RLBBAT2E078',
+  '33078': Bic(
+    value: 'RLBBAT2E078',
     bankName: 'Raiffeisenbank Purbach eGen',
     bankShortName: 'Raiffeisenbank Purbach eGen',
     bankAddress: 'Hauptgasse 19',
     bankPostcode: '7083',
     bankLocation: 'Purbach am Neusiedlersee',
   ),
-  '34111': Iban(
-    bic: 'RZOOAT2L111',
+  '34111': Bic(
+    value: 'RZOOAT2L111',
     bankName: 'Raiffeisenbank Region Gallneukirchen eGen',
     bankShortName: 'Raiffeisenbank Region Gallneukirchen eGen',
     bankAddress: 'Reichenauerstr. 6-8',
     bankPostcode: '4210',
     bankLocation: 'Gallneukirchen',
   ),
-  '32322': Iban(
-    bic: 'RLNWATW1322',
+  '32322': Bic(
+    value: 'RLNWATW1322',
     bankName: 'Raiffeisenbank Hollabrunn eGen',
     bankShortName: 'Raiffeisenbank Hollabrunn eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '2020',
     bankLocation: 'Hollabrunn',
   ),
-  '34113': Iban(
-    bic: 'RZOOAT2L113',
+  '34113': Bic(
+    value: 'RZOOAT2L113',
     bankName: 'Raiffeisenbank Gampern eGen',
     bankShortName: 'Raiffeisenbank Gampern eGen',
     bankAddress: 'Hauptstraße 16',
     bankPostcode: '4851',
     bankLocation: 'Gampern',
   ),
-  '38056': Iban(
-    bic: 'RZSTAT2G056',
+  '38056': Bic(
+    value: 'RZSTAT2G056',
     bankName: 'Raiffeisenbank Süd-Weststeiermark eGen',
     bankShortName: 'Raiffeisenbank Süd-Weststeiermark eGen',
     bankAddress: 'Oberer Markt 9',
     bankPostcode: '8551',
     bankLocation: 'Wies (Stmk.)',
   ),
-  '38071': Iban(
-    bic: 'RZSTAT2G071',
+  '38071': Bic(
+    value: 'RZSTAT2G071',
     bankName: 'Raiffeisenbank Region Fehring eGen',
     bankShortName: 'Raiffeisenbank Region Fehring eGen',
     bankAddress: 'Fehring',
     bankPostcode: '8350',
     bankLocation: 'Fehring',
   ),
-  '38128': Iban(
-    bic: 'RZSTAT2G128',
+  '38128': Bic(
+    value: 'RZSTAT2G128',
     bankName: 'Raiffeisenbank Halbenrain-Tieschen eGen',
     bankShortName: 'Raiffeisenbank Halbenrain-Tieschen eGen',
     bankAddress: 'Halbenrain 125',
     bankPostcode: '8492',
     bankLocation: 'Halbenrain',
   ),
-  '38129': Iban(
-    bic: 'RZSTAT2G129',
+  '38129': Bic(
+    value: 'RZSTAT2G129',
     bankName: 'Raiffeisenbank Mariazellerland eGen',
     bankShortName: 'Raiffeisenbank Mariazellerland eGen',
     bankAddress: 'Hauptplatz 1',
     bankPostcode: '8630',
     bankLocation: 'Mariazell',
   ),
-  '34114': Iban(
-    bic: 'RZOOAT2L114',
+  '34114': Bic(
+    value: 'RZOOAT2L114',
     bankName: 'Raiffeisenbank Steyr eGen',
     bankShortName: 'Raiffeisenbank Steyr eGen',
     bankAddress: 'Bergerweg 1',
     bankPostcode: '4400',
     bankLocation: 'Steyr',
   ),
-  '45710': Iban(
-    bic: 'VBOEATWWVBG',
+  '45710': Bic(
+    value: 'VBOEATWWVBG',
     bankName: 'VOLKSBANK VORARLBERG e. Gen.',
     bankShortName: 'VOLKSBANK VORARLBERG e. Gen.',
     bankAddress: 'Ringstraße 27',
     bankPostcode: '6830',
     bankLocation: 'Rankweil',
   ),
-  '18130': Iban(
-    bic: 'BWFBATW1XXX',
+  '18130': Bic(
+    value: 'BWFBATW1XXX',
     bankName: 'Österreichische Ärzte- und Apothekerbank AG',
     bankShortName: 'Österreichische Ärzte- und Apothekerbank AG',
     bankAddress: 'Spitalgasse 31',
     bankPostcode: '1090',
     bankLocation: 'Wien',
   ),
-  '38367': Iban(
-    bic: 'RZSTAT2G367',
+  '38367': Bic(
+    value: 'RZSTAT2G367',
     bankName: 'Raiffeisenbank Graz-St. Peter eGen',
     bankShortName: 'Raiffeisenbank Graz-St. Peter eGen',
     bankAddress: 'St. Peter Hauptstr. 55',
     bankPostcode: '8042',
     bankLocation: 'Graz-St. Peter',
   ),
-  '43600': Iban(
-    bic: 'VBOEATWWXXX',
+  '43600': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '100': Iban(
-    bic: 'NABAATWWXXX',
+  '100': Bic(
+    value: 'NABAATWWXXX',
     bankName: 'Oesterreichische Nationalbank',
     bankShortName: 'Oesterreichische Nationalbank',
     bankAddress: 'Otto-Wagner-Platz 3',
     bankPostcode: '1090',
     bankLocation: 'Wien',
   ),
-  '18190': Iban(
-    bic: 'BAWAATWWXXX',
+  '18190': Bic(
+    value: 'BAWAATWWXXX',
     bankName:
         'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankShortName:
@@ -1284,120 +1284,120 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '32679': Iban(
-    bic: 'RLNWATW1477',
+  '32679': Bic(
+    value: 'RLNWATW1477',
     bankName: 'Raiffeisenbank Region Schallaburg eGen',
     bankShortName: 'Raiffeisenbank Region Schallaburg eGen',
     bankAddress: 'Linzer Straße 6',
     bankPostcode: '3382',
     bankLocation: 'Loosdorf/ Bez. Melk',
   ),
-  '32455': Iban(
-    bic: 'RLNWATW1477',
+  '32455': Bic(
+    value: 'RLNWATW1477',
     bankName: 'Raiffeisenbank Region Schallaburg eGen',
     bankShortName: 'Raiffeisenbank Region Schallaburg eGen',
     bankAddress: 'Linzer Straße 6',
     bankPostcode: '3382',
     bankLocation: 'Loosdorf/ Bez. Melk',
   ),
-  '44770': Iban(
-    bic: 'VBOEATWWGRA',
+  '44770': Bic(
+    value: 'VBOEATWWGRA',
     bankName: 'Volksbank Steiermark AG',
     bankShortName: 'Volksbank Steiermark AG',
     bankAddress: 'Schmiedgasse 31',
     bankPostcode: '8010',
     bankLocation: 'Graz',
   ),
-  '42320': Iban(
-    bic: 'VBOEATWWGRA',
+  '42320': Bic(
+    value: 'VBOEATWWGRA',
     bankName: 'Volksbank Steiermark AG',
     bankShortName: 'Volksbank Steiermark AG',
     bankAddress: 'Schmiedgasse 31',
     bankPostcode: '8010',
     bankLocation: 'Graz',
   ),
-  '44810': Iban(
-    bic: 'VBOEATWWGRA',
+  '44810': Bic(
+    value: 'VBOEATWWGRA',
     bankName: 'Volksbank Steiermark AG',
     bankShortName: 'Volksbank Steiermark AG',
     bankAddress: 'Schmiedgasse 31',
     bankPostcode: '8010',
     bankLocation: 'Graz',
   ),
-  '36374': Iban(
-    bic: 'RZTIAT22368',
+  '36374': Bic(
+    value: 'RZTIAT22368',
     bankName: 'Raiffeisenbank Sillian eGen',
     bankShortName: 'Raiffeisenbank Sillian eGen',
     bankAddress: 'Marktplatz 10',
     bankPostcode: '9920',
     bankLocation: 'Sillian',
   ),
-  '36387': Iban(
-    bic: 'RZTIAT22368',
+  '36387': Bic(
+    value: 'RZTIAT22368',
     bankName: 'Raiffeisenbank Sillian eGen',
     bankShortName: 'Raiffeisenbank Sillian eGen',
     bankAddress: 'Marktplatz 10',
     bankPostcode: '9920',
     bankLocation: 'Sillian',
   ),
-  '35109': Iban(
-    bic: 'RVSAAT2S047',
+  '35109': Bic(
+    value: 'RVSAAT2S047',
     bankName: 'Raiffeisenbank Salzburger Seenland eGen',
     bankShortName: 'Raiffeisenbank Salzburger Seenland eGen',
     bankAddress: 'Hauptstraße 52',
     bankPostcode: '5201',
     bankLocation: 'Seekirchen am Wallersee',
   ),
-  '34430': Iban(
-    bic: 'RZOOAT2L129',
+  '34430': Bic(
+    value: 'RZOOAT2L129',
     bankName: 'Raiffeisenbank Gunskirchen eGen',
     bankShortName: 'Raiffeisenbank Gunskirchen eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '4623',
     bankLocation: 'Gunskirchen',
   ),
-  '34233': Iban(
-    bic: 'RZOOAT2L380',
+  '34233': Bic(
+    value: 'RZOOAT2L380',
     bankName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankShortName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankAddress: 'Garnisonstraße 1',
     bankPostcode: '4560',
     bankLocation: 'Kirchdorf an der Krems',
   ),
-  '34427': Iban(
-    bic: 'RZOOAT2L380',
+  '34427': Bic(
+    value: 'RZOOAT2L380',
     bankName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankShortName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankAddress: 'Garnisonstraße 1',
     bankPostcode: '4560',
     bankLocation: 'Kirchdorf an der Krems',
   ),
-  '35130': Iban(
-    bic: 'RVSAAT2S030',
+  '35130': Bic(
+    value: 'RVSAAT2S030',
     bankName: 'Raiffeisenbank Flachgau Nord eGen',
     bankShortName: 'Raiffeisenbank Flachgau Nord eGen',
     bankAddress: 'Hauptstr.3',
     bankPostcode: '5112',
     bankLocation: 'Lamprechtshausen',
   ),
-  '35147': Iban(
-    bic: 'RVSAAT2S047',
+  '35147': Bic(
+    value: 'RVSAAT2S047',
     bankName: 'Raiffeisenbank Salzburger Seenland eGen',
     bankShortName: 'Raiffeisenbank Salzburger Seenland eGen',
     bankAddress: 'Hauptstraße 52',
     bankPostcode: '5201',
     bankLocation: 'Seekirchen am Wallersee',
   ),
-  '35160': Iban(
-    bic: 'RVSAAT2S060',
+  '35160': Bic(
+    value: 'RVSAAT2S060',
     bankName: 'Raiffeisenbank St. Martin-Lofer-Weißbach eGen',
     bankShortName: 'Raiffeisenbank St. Martin-Lofer-Weißbach eGen',
     bankAddress: 'St. Martin Nr.7',
     bankPostcode: '5092',
     bankLocation: 'St. Martin bei Lofer',
   ),
-  '35164': Iban(
-    bic: 'RVSAAT2S064',
+  '35164': Bic(
+    value: 'RVSAAT2S064',
     bankName:
         'Raiffeisenbank Taxenbach registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -1406,328 +1406,328 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '5660',
     bankLocation: 'Taxenbach',
   ),
-  '20315': Iban(
-    bic: 'ASPKAT2LXXX',
+  '20315': Bic(
+    value: 'ASPKAT2LXXX',
     bankName: 'Allgemeine Sparkasse Oberösterreich Bankaktiengesellschaft',
     bankShortName: 'Allgemeine Sparkasse Oberösterreich Bankaktiengesellschaft',
     bankAddress: 'Promenade 11-13',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '20256': Iban(
-    bic: 'SPSPAT21XXX',
+  '20256': Bic(
+    value: 'SPSPAT21XXX',
     bankName: 'SPARKASSE NIEDERÖSTERREICH MITTE WEST AKTIENGESELLSCHAFT',
     bankShortName: 'SPARKASSE NIEDERÖSTERREICH MITTE WEST AKTIENGESELLSCHAFT',
     bankAddress: 'Domgasse 5',
     bankPostcode: '3100',
     bankLocation: 'St.Pölten',
   ),
-  '20263': Iban(
-    bic: 'SPZWAT21XXX',
+  '20263': Bic(
+    value: 'SPZWAT21XXX',
     bankName: 'Waldviertler Sparkasse Bank AG',
     bankShortName: 'Waldviertler Sparkasse Bank AG',
     bankAddress: 'Sparkassenplatz 3',
     bankPostcode: '3910',
     bankLocation: 'Zwettl',
   ),
-  '40000': Iban(
-    bic: 'VBOEATWWXXX',
+  '40000': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '18160': Iban(
-    bic: 'VBOEATWWXXX',
+  '18160': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '40074': Iban(
-    bic: 'IMMIAT21XXX',
+  '40074': Bic(
+    value: 'IMMIAT21XXX',
     bankName: 'immigon portfolioabbau ag i.A.',
     bankShortName: 'immigon portfolioabbau ag i.A.',
     bankAddress: 'Stallburggasse 4',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '37410': Iban(
-    bic: 'RVVGAT2B468',
+  '37410': Bic(
+    value: 'RVVGAT2B468',
     bankName: 'Raiffeisenbank Bludenz-Montafon eGen',
     bankShortName: 'Raiffeisenbank Bludenz-Montafon eGen',
     bankAddress: 'Werdenbergerstraße 9',
     bankPostcode: '6700',
     bankLocation: 'Bludenz',
   ),
-  '19490': Iban(
-    bic: 'MHCBATWWXXX',
+  '19490': Bic(
+    value: 'MHCBATWWXXX',
     bankName: 'Mizuho Bank Europe N.V. Vienna Branch',
     bankShortName: 'Mizuho Bank Europe N.V. Vienna Branch',
     bankAddress: 'DC Tower Donau-City-Straße 7',
     bankPostcode: '1220',
     bankLocation: 'Wien',
   ),
-  '35014': Iban(
-    bic: 'RVSAAT2S007',
+  '35014': Bic(
+    value: 'RVSAAT2S007',
     bankName: 'Raiffeisenbank Anthering - Elixhausen eGen',
     bankShortName: 'Raiffeisenbank Anthering - Elixhausen eGen',
     bankAddress: 'Salzburger Straße 6',
     bankPostcode: '5102',
     bankLocation: 'Anthering',
   ),
-  '49220': Iban(
-    bic: 'VBOEATWWXXX',
+  '49220': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '44020': Iban(
-    bic: 'VBOEATWWSAL',
+  '44020': Bic(
+    value: 'VBOEATWWSAL',
     bankName: 'Volksbank Salzburg eG',
     bankShortName: 'Volksbank Salzburg eG',
     bankAddress: 'St. Julien-Str. 12',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '44300': Iban(
-    bic: 'VBOEATWWSAL',
+  '44300': Bic(
+    value: 'VBOEATWWSAL',
     bankName: 'Volksbank Salzburg eG',
     bankShortName: 'Volksbank Salzburg eG',
     bankAddress: 'St. Julien-Str. 12',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '43530': Iban(
-    bic: 'VBOEATWWNOM',
+  '43530': Bic(
+    value: 'VBOEATWWNOM',
     bankName: 'Volksbank Niederösterreich AG',
     bankShortName: 'Volksbank Niederösterreich AG',
     bankAddress: 'Brunngasse 10',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '44820': Iban(
-    bic: 'VBOEATWWNOM',
+  '44820': Bic(
+    value: 'VBOEATWWNOM',
     bankName: 'Volksbank Niederösterreich AG',
     bankShortName: 'Volksbank Niederösterreich AG',
     bankAddress: 'Brunngasse 10',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '42630': Iban(
-    bic: 'VBOEATWWOOE',
+  '42630': Bic(
+    value: 'VBOEATWWOOE',
     bankName: 'Volksbank Oberösterreich AG',
     bankShortName: 'Volksbank Oberösterreich AG',
     bankAddress: 'Pfarrgasse 5',
     bankPostcode: '4600',
     bankLocation: 'Wels',
   ),
-  '42550': Iban(
-    bic: 'VBOEATWWOOE',
+  '42550': Bic(
+    value: 'VBOEATWWOOE',
     bankName: 'Volksbank Oberösterreich AG',
     bankShortName: 'Volksbank Oberösterreich AG',
     bankAddress: 'Pfarrgasse 5',
     bankPostcode: '4600',
     bankLocation: 'Wels',
   ),
-  '36265': Iban(
-    bic: 'RZTIAT22322',
+  '36265': Bic(
+    value: 'RZTIAT22322',
     bankName: 'Raiffeisen Regionalbank Schwaz eGen',
     bankShortName: 'Raiffeisen Regionalbank Schwaz eGen',
     bankAddress: 'Innsbrucker Straße 11',
     bankPostcode: '6130',
     bankLocation: 'Schwaz',
   ),
-  '36236': Iban(
-    bic: 'RZTIAT22358',
+  '36236': Bic(
+    value: 'RZTIAT22358',
     bankName: 'Raiffeisen Bezirksbank Kufstein eGen',
     bankShortName: 'Raiffeisen Bezirksbank Kufstein eGen',
     bankAddress: 'Oberer Stadtplatz 1a',
     bankPostcode: '6330',
     bankLocation: 'Kufstein',
   ),
-  '36216': Iban(
-    bic: 'RZTIAT22358',
+  '36216': Bic(
+    value: 'RZTIAT22358',
     bankName: 'Raiffeisen Bezirksbank Kufstein eGen',
     bankShortName: 'Raiffeisen Bezirksbank Kufstein eGen',
     bankAddress: 'Oberer Stadtplatz 1a',
     bankPostcode: '6330',
     bankLocation: 'Kufstein',
   ),
-  '34234': Iban(
-    bic: 'RZOOAT2L680',
+  '34234': Bic(
+    value: 'RZOOAT2L680',
     bankName: 'Raiffeisenbank Wels eGen',
     bankShortName: 'Raiffeisenbank Wels eGen',
     bankAddress: 'Kaiser-Josef-Pl. 58',
     bankPostcode: '4601',
     bankLocation: 'Wels',
   ),
-  '47150': Iban(
-    bic: 'VBOEATWWNOM',
+  '47150': Bic(
+    value: 'VBOEATWWNOM',
     bankName: 'Volksbank Niederösterreich AG',
     bankShortName: 'Volksbank Niederösterreich AG',
     bankAddress: 'Brunngasse 10',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '41210': Iban(
-    bic: 'VBOEATWWNOM',
+  '41210': Bic(
+    value: 'VBOEATWWNOM',
     bankName: 'Volksbank Niederösterreich AG',
     bankShortName: 'Volksbank Niederösterreich AG',
     bankAddress: 'Brunngasse 10',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '32778': Iban(
-    bic: 'RLNWATWWAMS',
+  '32778': Bic(
+    value: 'RLNWATWWAMS',
     bankName: 'Raiffeisenbank Region Amstetten eGen',
     bankShortName: 'Raiffeisenbank Region Amstetten eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '3300',
     bankLocation: 'Amstetten',
   ),
-  '52300': Iban(
-    bic: 'HSEEAT2KXXX',
+  '52300': Bic(
+    value: 'HSEEAT2KXXX',
     bankName: 'Addiko Bank AG',
     bankShortName: 'Addiko Bank AG',
     bankAddress: 'Canetti Tower, Canettistraße 5/OG 12',
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '38075': Iban(
-    bic: 'RZSTAT2G075',
+  '38075': Bic(
+    value: 'RZSTAT2G075',
     bankName: 'Raiffeisenbank Mittlere Südoststeiermark eGen',
     bankShortName: 'Raiffeisenbank Mittlere Südoststeiermark eGen',
     bankAddress: 'Paldau 40',
     bankPostcode: '8341',
     bankLocation: 'Paldau',
   ),
-  '38077': Iban(
-    bic: 'RZSTAT2G077',
+  '38077': Bic(
+    value: 'RZSTAT2G077',
     bankName: 'Raiffeisenbank Region Fürstenfeld eGen',
     bankShortName: 'Raiffeisenbank Region Fürstenfeld eGen',
     bankAddress: 'Kommendegasse 1',
     bankPostcode: '8280',
     bankLocation: 'Fürstenfeld',
   ),
-  '33033': Iban(
-    bic: 'RLBBAT2E033',
+  '33033': Bic(
+    value: 'RLBBAT2E033',
     bankName: 'Raiffeisenbank Neusiedlersee-Seewinkel eGen',
     bankShortName: 'Raiffeisenbank Neusiedlersee-Seewinkel eGen',
     bankAddress: 'Hauptplatz 4',
     bankPostcode: '7142',
     bankLocation: 'Illmitz',
   ),
-  '33090': Iban(
-    bic: 'RLBBAT2E090',
+  '33090': Bic(
+    value: 'RLBBAT2E090',
     bankName: 'Raiffeisenbank Heideboden eGen',
     bankShortName: 'Raiffeisenbank Heideboden eGen',
     bankAddress: 'Wiener Straße 3',
     bankPostcode: '7161',
     bankLocation: 'St. Andrä bei Frauenkirchen',
   ),
-  '32195': Iban(
-    bic: 'RLNWATWWASP',
+  '32195': Bic(
+    value: 'RLNWATWWASP',
     bankName: 'Raiffeisenbank Region Wiener Alpen eGen',
     bankShortName: 'Raiffeisenbank Region Wiener Alpen eGen',
     bankAddress: 'Bahnstraße 3',
     bankPostcode: '2870',
     bankLocation: 'Aspang',
   ),
-  '36310': Iban(
-    bic: 'RZTIAT22310',
+  '36310': Bic(
+    value: 'RZTIAT22310',
     bankName: 'Raiffeisenkasse Rum-Innsbruck/Arzl eGen',
     bankShortName: 'Raiffeisenkasse Rum-Innsbruck/Arzl eGen',
     bankAddress: 'Dörferstr. 10a',
     bankPostcode: '6063',
     bankLocation: 'Rum',
   ),
-  '34455': Iban(
-    bic: 'RZOOAT2L455',
+  '34455': Bic(
+    value: 'RZOOAT2L455',
     bankName: 'Raiffeisenbank Region Schärding eGen',
     bankShortName: 'Raiffeisenbank Region Schärding eGen',
     bankAddress: 'Oberer Stadtplatz 42',
     bankPostcode: '4780',
     bankLocation: 'Schärding',
   ),
-  '32589': Iban(
-    bic: 'RLNWATW1589',
+  '32589': Bic(
+    value: 'RLNWATW1589',
     bankName: 'Raiffeisenbank Gross Gerungs eGen',
     bankShortName: 'Raiffeisenbank Gross Gerungs eGen',
     bankAddress: 'Hauptplatz 47',
     bankPostcode: '3920',
     bankLocation: 'Groß Gerungs',
   ),
-  '32367': Iban(
-    bic: 'RLNWATWW367',
+  '32367': Bic(
+    value: 'RLNWATWW367',
     bankName: 'Raiffeisenbank Klosterneuburg eGen',
     bankShortName: 'Raiffeisenbank Klosterneuburg eGen',
     bankAddress: 'Rathauspl. 7',
     bankPostcode: '3400',
     bankLocation: 'Klosterneuburg',
   ),
-  '34030': Iban(
-    bic: 'RZOOAT2L030',
+  '34030': Bic(
+    value: 'RZOOAT2L030',
     bankName: 'Raiffeisenbank Region Altheim eGen',
     bankShortName: 'Raiffeisenbank Region Altheim eGen',
     bankAddress: 'Braunauer Straße 22',
     bankPostcode: '4950',
     bankLocation: 'Altheim',
   ),
-  '34118': Iban(
-    bic: 'RZOOAT2L118',
+  '34118': Bic(
+    value: 'RZOOAT2L118',
     bankName: 'Raiffeisenbank Geretsberg eGen',
     bankShortName: 'Raiffeisenbank Geretsberg eGen',
     bankAddress: 'Geretsberg 3',
     bankPostcode: '5132',
     bankLocation: 'Geretsberg',
   ),
-  '76040': Iban(
-    bic: 'VIAUATW1XXX',
+  '76040': Bic(
+    value: 'VIAUATW1XXX',
     bankName: 'card complete Service Bank AG',
     bankShortName: 'card complete Service Bank AG',
     bankAddress: 'Lassallestraße 3',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '38094': Iban(
-    bic: 'RZSTAT2G094',
+  '38094': Bic(
+    value: 'RZSTAT2G094',
     bankName: 'Raiffeisenbank Gamlitz eGen',
     bankShortName: 'Raiffeisenbank Gamlitz eGen',
     bankAddress: 'Obere Hauptstraße 210',
     bankPostcode: '8462',
     bankLocation: 'Gamlitz',
   ),
-  '38151': Iban(
-    bic: 'RZSTAT2G151',
+  '38151': Bic(
+    value: 'RZSTAT2G151',
     bankName: 'Raiffeisenbank Ilz-Großsteinbach-Riegersburg eGen',
     bankShortName: 'Raiffeisenbank Ilz-Großsteinbach-Riegersburg eGen',
     bankAddress: 'Ilz 39',
     bankPostcode: '8262',
     bankLocation: 'Ilz',
   ),
-  '33038': Iban(
-    bic: 'RLBBAT2E038',
+  '33038': Bic(
+    value: 'RLBBAT2E038',
     bankName: 'Raiffeisenbank Dreiländereck Bgld-Nord eGen',
     bankShortName: 'Raiffeisenbank Dreiländereck Bgld-Nord eGen',
     bankAddress: 'Untere Hauptstraße 36',
     bankPostcode: '2425',
     bankLocation: 'Nickelsdorf an der Leitha',
   ),
-  '36203': Iban(
-    bic: 'RZTIAT22203',
+  '36203': Bic(
+    value: 'RZTIAT22203',
     bankName: 'Raiffeisenbank Alpbachtal eGen',
     bankShortName: 'Raiffeisenbank Alpbachtal eGen',
     bankAddress: 'Alpbach 177',
     bankPostcode: '6236',
     bankLocation: 'Alpbach',
   ),
-  '36314': Iban(
-    bic: 'RZTIAT22314',
+  '36314': Bic(
+    value: 'RZTIAT22314',
     bankName:
         'Raiffeisenbank Seefeld-Leutasch-Reith-Scharnitz registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -1736,64 +1736,64 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6100',
     bankLocation: 'Seefeld',
   ),
-  '36315': Iban(
-    bic: 'RZTIAT22315',
+  '36315': Bic(
+    value: 'RZTIAT22315',
     bankName: 'Raiffeisenbank Serfaus-Fiss-Ried eGen',
     bankShortName: 'Raiffeisenbank Serfaus-Fiss-Ried eGen',
     bankAddress: 'Dorfbahnstraße 41-43',
     bankPostcode: '6534',
     bankLocation: 'Serfaus',
   ),
-  '32395': Iban(
-    bic: 'RLNWATWWKOR',
+  '32395': Bic(
+    value: 'RLNWATWWKOR',
     bankName: 'Raiffeisenbank Korneuburg eGen',
     bankShortName: 'Raiffeisenbank Korneuburg eGen',
     bankAddress: 'Stockerauer Straße 94',
     bankPostcode: '2100',
     bankLocation: 'Korneuburg',
   ),
-  '34135': Iban(
-    bic: 'RZOOAT2L135',
+  '34135': Bic(
+    value: 'RZOOAT2L135',
     bankName: 'Raiffeisenbank Gramastetten eGen',
     bankShortName: 'Raiffeisenbank Gramastetten eGen',
     bankAddress: 'Marktstr. 41',
     bankPostcode: '4201',
     bankLocation: 'Gramastetten',
   ),
-  '76000': Iban(
-    bic: 'PORCAT21XXX',
+  '76000': Bic(
+    value: 'PORCAT21XXX',
     bankName: 'Porsche Bank Aktiengesellschaft',
     bankShortName: 'Porsche Bank Aktiengesellschaft',
     bankAddress: 'Vogelweiderstraße 75',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '33000': Iban(
-    bic: 'RLBBAT2EXXX',
+  '33000': Bic(
+    value: 'RLBBAT2EXXX',
     bankName: 'Raiffeisenlandesbank Burgenland und Revisionsverband eGen',
     bankShortName: 'Raiffeisenlandesbank Burgenland und Revisionsverband eGen',
     bankAddress: 'Friedrich Wilhelm Raiffeisen-Straße 1',
     bankPostcode: '7000',
     bankLocation: 'Eisenstadt',
   ),
-  '20245': Iban(
-    bic: 'SPPOAT21XXX',
+  '20245': Bic(
+    value: 'SPPOAT21XXX',
     bankName: 'Sparkasse Pottenstein N.Ö.',
     bankShortName: 'Sparkasse Pottenstein N.Ö.',
     bankAddress: 'Hauptplatz 5',
     bankPostcode: '2563',
     bankLocation: 'Pottenstein a.d. Triesting',
   ),
-  '20218': Iban(
-    bic: 'SPHAAT21XXX',
+  '20218': Bic(
+    value: 'SPHAAT21XXX',
     bankName: 'Sparkasse Haugsdorf',
     bankShortName: 'Sparkasse Haugsdorf',
     bankAddress: 'Hauptplatz 1',
     bankPostcode: '2054',
     bankLocation: 'Haugsdorf',
   ),
-  '38102': Iban(
-    bic: 'RZSTAT2G102',
+  '38102': Bic(
+    value: 'RZSTAT2G102',
     bankName: 'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
     bankShortName:
         'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
@@ -1801,112 +1801,112 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '8443',
     bankLocation: 'Gleinstätten',
   ),
-  '33002': Iban(
-    bic: 'RLBBAT2E002',
+  '33002': Bic(
+    value: 'RLBBAT2E002',
     bankName: 'Raiffeisenbank Seewinkel-Hansag eGen',
     bankShortName: 'Raiffeisenbank Seewinkel-Hansag eGen',
     bankAddress: 'Höchtlgasse 6',
     bankPostcode: '7163',
     bankLocation: 'Andau',
   ),
-  '38103': Iban(
-    bic: 'RZSTAT2G103',
+  '38103': Bic(
+    value: 'RZSTAT2G103',
     bankName: 'Raiffeisenbank Region Gleisdorf-Pischelsdorf eGen',
     bankShortName: 'Raiffeisenbank Region Gleisdorf-Pischelsdorf eGen',
     bankAddress: 'Florianiplatz 18-19',
     bankPostcode: '8200',
     bankLocation: 'Gleisdorf',
   ),
-  '38170': Iban(
-    bic: 'RZSTAT2G170',
+  '38170': Bic(
+    value: 'RZSTAT2G170',
     bankName: 'Raiffeisenbank Heiligenkreuz-Kirchbach -St. Georgen eGen',
     bankShortName: 'Raiffeisenbank Heiligenkreuz-Kirchbach -St. Georgen eGen',
     bankAddress: 'Kirchbach 12',
     bankPostcode: '8082',
     bankLocation: 'Kirchbach-Zerlach',
   ),
-  '38187': Iban(
-    bic: 'RZSTAT2G187',
+  '38187': Bic(
+    value: 'RZSTAT2G187',
     bankName: 'Raiffeisenbank Weiz-Anger eGen',
     bankShortName: 'Raiffeisenbank Weiz-Anger eGen',
     bankAddress: 'Kapruner Generator Straße 10',
     bankPostcode: '8160',
     bankLocation: 'Weiz',
   ),
-  '32045': Iban(
-    bic: 'RLNWATWWBAD',
+  '32045': Bic(
+    value: 'RLNWATWWBAD',
     bankName: 'Raiffeisenbank Region Baden eGen',
     bankShortName: 'Raiffeisenbank Region Baden eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '2500',
     bankLocation: 'Baden bei Wien',
   ),
-  '32059': Iban(
-    bic: 'RLNWATW1059',
+  '32059': Bic(
+    value: 'RLNWATW1059',
     bankName: 'Raiffeisenkasse Blindenmarkt eGen',
     bankShortName: 'Raiffeisenkasse Blindenmarkt eGen',
     bankAddress: 'Hauptstraße 40',
     bankPostcode: '3372',
     bankLocation: 'Blindenmarkt',
   ),
-  '34016': Iban(
-    bic: 'RZOOAT2L016',
+  '34016': Bic(
+    value: 'RZOOAT2L016',
     bankName: 'Raiffeisenbank Aspach-Wildenau eGen',
     bankShortName: 'Raiffeisenbank Aspach-Wildenau eGen',
     bankAddress: 'Marktplatz 3',
     bankPostcode: '5252',
     bankLocation: 'Aspach im Innkreis',
   ),
-  '36219': Iban(
-    bic: 'RZTIAT22219',
+  '36219': Bic(
+    value: 'RZTIAT22219',
     bankName: 'Raiffeisenbank Ehrwald-Lermoos-Biberwier eGen',
     bankShortName: 'Raiffeisenbank Ehrwald-Lermoos-Biberwier eGen',
     bankAddress: 'Kirchplatz 31',
     bankPostcode: '6632',
     bankLocation: 'Ehrwald',
   ),
-  '36316': Iban(
-    bic: 'RZTIAT22316',
+  '36316': Bic(
+    value: 'RZTIAT22316',
     bankName: 'Raiffeisenbank Silz-Haiming und Umgebung eGen',
     bankShortName: 'Raiffeisenbank Silz-Haiming und Umgebung eGen',
     bankAddress: 'Tiroler Straße 78',
     bankPostcode: '6424',
     bankLocation: 'Silz',
   ),
-  '36324': Iban(
-    bic: 'RZTIAT22324',
+  '36324': Bic(
+    value: 'RZTIAT22324',
     bankName: 'Raiffeisenbank Sölden eGen',
     bankShortName: 'Raiffeisenbank Sölden eGen',
     bankAddress: 'Dorfstraße 88',
     bankPostcode: '6450',
     bankLocation: 'Sölden',
   ),
-  '34127': Iban(
-    bic: 'RZOOAT2L127',
+  '34127': Bic(
+    value: 'RZOOAT2L127',
     bankName: 'Raiffeisenbank Almtal eGen',
     bankShortName: 'Raiffeisenbank Almtal eGen',
     bankAddress: 'Im Dorf 15',
     bankPostcode: '4645',
     bankLocation: 'Grünau im Almtal',
   ),
-  '34129': Iban(
-    bic: 'RZOOAT2L129',
+  '34129': Bic(
+    value: 'RZOOAT2L129',
     bankName: 'Raiffeisenbank Gunskirchen eGen',
     bankShortName: 'Raiffeisenbank Gunskirchen eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '4623',
     bankLocation: 'Gunskirchen',
   ),
-  '34250': Iban(
-    bic: 'RZOOAT2L250',
+  '34250': Bic(
+    value: 'RZOOAT2L250',
     bankName: 'Raiffeisenbank Region Hausruck eGen',
     bankShortName: 'Raiffeisenbank Region Hausruck eGen',
     bankAddress: 'Marktplatz 6',
     bankPostcode: '4680',
     bankLocation: 'Haag am Hausruck',
   ),
-  '39000': Iban(
-    bic: 'RZKTAT2KXXX',
+  '39000': Bic(
+    value: 'RZKTAT2KXXX',
     bankName:
         'Raiffeisenlandesbank Kärnten - Rechenzentrum und Revisionsverband, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -1915,80 +1915,80 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
   ),
-  '39100': Iban(
-    bic: 'VSGKAT2KXXX',
+  '39100': Bic(
+    value: 'VSGKAT2KXXX',
     bankName: 'Posojilnica Bank eGen',
     bankShortName: 'Posojilnica Bank eGen',
     bankAddress: 'Paulitschg. 5-7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '20205': Iban(
-    bic: 'SPBDAT21XXX',
+  '20205': Bic(
+    value: 'SPBDAT21XXX',
     bankName: 'Sparkasse Baden',
     bankShortName: 'Sparkasse Baden',
     bankAddress: 'Hauptplatz 15',
     bankPostcode: '2500',
     bankLocation: 'Baden bei Wien',
   ),
-  '20230': Iban(
-    bic: 'SPLSAT21XXX',
+  '20230': Bic(
+    value: 'SPLSAT21XXX',
     bankName: 'Sparkasse Langenlois',
     bankShortName: 'Sparkasse Langenlois',
     bankAddress: 'Kornplatz 2a',
     bankPostcode: '3550',
     bankLocation: 'Langenlois',
   ),
-  '38206': Iban(
-    bic: 'RZSTAT2G206',
+  '38206': Bic(
+    value: 'RZSTAT2G206',
     bankName: 'Raiffeisenbank Leibnitz eGen',
     bankShortName: 'Raiffeisenbank Leibnitz eGen',
     bankAddress: 'Bahnhofstraße 2',
     bankPostcode: '8430',
     bankLocation: 'Leibnitz',
   ),
-  '38210': Iban(
-    bic: 'RZSTAT2G210',
+  '38210': Bic(
+    value: 'RZSTAT2G210',
     bankName: 'Raiffeisenbank Lieboch-Stainz eGen',
     bankShortName: 'Raiffeisenbank Lieboch-Stainz eGen',
     bankAddress: 'Grazer Straße 7',
     bankPostcode: '8510',
     bankLocation: 'Stainz',
   ),
-  '38215': Iban(
-    bic: 'RZSTAT2G215',
+  '38215': Bic(
+    value: 'RZSTAT2G215',
     bankName: 'Raiffeisenbank Liezen-Rottenmann-Trieben eGen',
     bankShortName: 'Raiffeisenbank Liezen-Rottenmann-Trieben eGen',
     bankAddress: 'Hauptplatz 11',
     bankPostcode: '8940',
     bankLocation: 'Liezen',
   ),
-  '33106': Iban(
-    bic: 'RLBBAT2E106',
+  '33106': Bic(
+    value: 'RLBBAT2E106',
     bankName: 'Raiffeisenbank Weiden am See eGen',
     bankShortName: 'Raiffeisenbank Weiden am See eGen',
     bankAddress: 'Schulzeile 1',
     bankPostcode: '7121',
     bankLocation: 'Weiden am See',
   ),
-  '38377': Iban(
-    bic: 'RZSTAT2G377',
+  '38377': Bic(
+    value: 'RZSTAT2G377',
     bankName: 'Raiffeisenbank Region Graz Nord eGen',
     bankShortName: 'Raiffeisenbank Region Graz Nord eGen',
     bankAddress: 'Grazer Straße 62',
     bankPostcode: '8045',
     bankLocation: 'Graz',
   ),
-  '36223': Iban(
-    bic: 'RZTIAT22223',
+  '36223': Bic(
+    value: 'RZTIAT22223',
     bankName: 'Raiffeisenbank Erl eGen',
     bankShortName: 'Raiffeisenbank Erl eGen',
     bankAddress: 'Dorf 44',
     bankPostcode: '6343',
     bankLocation: 'Erl',
   ),
-  '36320': Iban(
-    bic: 'RZTIAT22320',
+  '36320': Bic(
+    value: 'RZTIAT22320',
     bankName:
         'Raiffeisenkasse Schlitters, Bruck und Straß registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -1997,176 +1997,176 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6262',
     bankLocation: 'Schlitters',
   ),
-  '36322': Iban(
-    bic: 'RZTIAT22322',
+  '36322': Bic(
+    value: 'RZTIAT22322',
     bankName: 'Raiffeisen Regionalbank Schwaz eGen',
     bankShortName: 'Raiffeisen Regionalbank Schwaz eGen',
     bankAddress: 'Innsbrucker Straße 11',
     bankPostcode: '6130',
     bankLocation: 'Schwaz',
   ),
-  '34460': Iban(
-    bic: 'RZOOAT2L460',
+  '34460': Bic(
+    value: 'RZOOAT2L460',
     bankName: 'Raiffeisenbank Aist eGen',
     bankShortName: 'Raiffeisenbank Aist eGen',
     bankAddress: 'Stadtplatz 17',
     bankPostcode: '4230',
     bankLocation: 'Pregarten',
   ),
-  '34155': Iban(
-    bic: 'RZOOAT2L155',
+  '34155': Bic(
+    value: 'RZOOAT2L155',
     bankName: 'Raiffeisenbank Handenberg - St. Georgen a. F. eGen',
     bankShortName: 'Raiffeisenbank Handenberg - St. Georgen a. F. eGen',
     bankAddress: 'Baumgartnerstraße 1',
     bankPostcode: '5144',
     bankLocation: 'Handenberg',
   ),
-  '74200': Iban(
-    bic: 'SFIVATW1XXX',
+  '74200': Bic(
+    value: 'SFIVATW1XXX',
     bankName: 'SPAR-FINANZ BANK AG',
     bankShortName: 'SPAR-FINANZ BANK AG',
     bankAddress: 'Europastraße 3',
     bankPostcode: '5015',
     bankLocation: 'Salzburg',
   ),
-  '35000': Iban(
-    bic: 'RVSAAT2SXXX',
+  '35000': Bic(
+    value: 'RVSAAT2SXXX',
     bankName: 'Raiffeisenverband Salzburg eGen',
     bankShortName: 'Raiffeisenverband Salzburg eGen',
     bankAddress: 'Schwarzstr. 13-15',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '38227': Iban(
-    bic: 'RZSTAT2G227',
+  '38227': Bic(
+    value: 'RZSTAT2G227',
     bankName: 'Raiffeisenbank Liesingtal-St. Stefan eGen',
     bankShortName: 'Raiffeisenbank Liesingtal-St. Stefan eGen',
     bankAddress: 'Hauptstraße 18',
     bankPostcode: '8774',
     bankLocation: 'Mautern (Stmk.)',
   ),
-  '38402': Iban(
-    bic: 'RZSTAT2G402',
+  '38402': Bic(
+    value: 'RZSTAT2G402',
     bankName: 'Raiffeisenbank Murau eGen',
     bankShortName: 'Raiffeisenbank Murau eGen',
     bankAddress: 'Bundesstraße 5',
     bankPostcode: '8850',
     bankLocation: 'Murau',
   ),
-  '32073': Iban(
-    bic: 'RLNWATWWBRL',
+  '32073': Bic(
+    value: 'RLNWATWWBRL',
     bankName: 'Raiffeisenbank Bruck-Carnuntum eGen',
     bankShortName: 'Raiffeisenbank Bruck-Carnuntum eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '2460',
     bankLocation: 'Bruck an der Leitha',
   ),
-  '38403': Iban(
-    bic: 'RZSTAT2G403',
+  '38403': Bic(
+    value: 'RZSTAT2G403',
     bankName: 'Raiffeisenbank Region Hartberg eGen',
     bankShortName: 'Raiffeisenbank Region Hartberg eGen',
     bankAddress: 'Wiesengasse 2',
     bankPostcode: '8230',
     bankLocation: 'Hartberg',
   ),
-  '32092': Iban(
-    bic: 'RLNWATWWGAE',
+  '32092': Bic(
+    value: 'RLNWATWWGAE',
     bankName: 'Raiffeisen-Regionalbank Gänserndorf eGen',
     bankShortName: 'Raiffeisen-Regionalbank Gänserndorf eGen',
     bankAddress: 'Bahnstraße 8',
     bankPostcode: '2230',
     bankLocation: 'Gänserndorf',
   ),
-  '36229': Iban(
-    bic: 'RZTIAT22229',
+  '36229': Bic(
+    value: 'RZTIAT22229',
     bankName: 'Raiffeisen Regionalbank Fügen-Kaltenbach-Zell eGen',
     bankShortName: 'Raiffeisen Regionalbank Fügen-Kaltenbach-Zell eGen',
     bankAddress: 'Franziskusweg 10',
     bankPostcode: '6263',
     bankLocation: 'Fügen',
   ),
-  '32397': Iban(
-    bic: 'RLNWATWWKRE',
+  '32397': Bic(
+    value: 'RLNWATWWKRE',
     bankName: 'Raiffeisenbank Krems eGen',
     bankShortName: 'Raiffeisenbank Krems eGen',
     bankAddress: 'Dreifaltigkeitsplatz 8',
     bankPostcode: '3500',
     bankLocation: 'Krems an der Donau',
   ),
-  '36339': Iban(
-    bic: 'RZTIAT22339',
+  '36339': Bic(
+    value: 'RZTIAT22339',
     bankName: 'Raiffeisenbank Langkampfen-Thiersee eGen',
     bankShortName: 'Raiffeisenbank Langkampfen-Thiersee eGen',
     bankAddress: 'Vorderthiersee 40',
     bankPostcode: '6335',
     bankLocation: 'Thiersee',
   ),
-  '32413': Iban(
-    bic: 'RLNWATWWLAA',
+  '32413': Bic(
+    value: 'RLNWATWWLAA',
     bankName: 'Raiffeisenbank Laa/Thaya eGen',
     bankShortName: 'Raiffeisenbank Laa/Thaya eGen',
     bankAddress: 'Stadtplatz 56',
     bankPostcode: '2136',
     bankLocation: 'Laa a.d. Thaya',
   ),
-  '20402': Iban(
-    bic: 'SPMIAT21XXX',
+  '20402': Bic(
+    value: 'SPMIAT21XXX',
     bankName: 'Sparkasse Mittersill Bank AG',
     bankShortName: 'Sparkasse Mittersill Bank AG',
     bankAddress: 'Stadtplatz 4',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '20331': Iban(
-    bic: 'SPPRAT21XXX',
+  '20331': Bic(
+    value: 'SPPRAT21XXX',
     bankName: 'Sparkasse Pregarten - Unterweißenbach AG',
     bankShortName: 'Sparkasse Pregarten - Unterweißenbach AG',
     bankAddress: 'Stadtplatz 19',
     bankPostcode: '4230',
     bankLocation: 'Pregarten',
   ),
-  '38249': Iban(
-    bic: 'RZSTAT2G249',
+  '38249': Bic(
+    value: 'RZSTAT2G249',
     bankName: 'Raiffeisenbank Steirisches Salzkammergut-Öblarn eGen',
     bankShortName: 'Raiffeisenbank Steirisches Salzkammergut-Öblarn eGen',
     bankAddress: 'Bad Mitterndorf 13',
     bankPostcode: '8983',
     bankLocation: 'Bad Mitterndorf',
   ),
-  '38252': Iban(
-    bic: 'RZSTAT2G252',
+  '38252': Bic(
+    value: 'RZSTAT2G252',
     bankName: 'Raiffeisenbank Nestelbach-Eggersdorf eGen',
     bankShortName: 'Raiffeisenbank Nestelbach-Eggersdorf eGen',
     bankAddress: 'Schemerlhöhe 71',
     bankPostcode: '8302',
     bankLocation: 'Nestelbach bei Graz',
   ),
-  '32099': Iban(
-    bic: 'RLNWATW1099',
+  '32099': Bic(
+    value: 'RLNWATW1099',
     bankName: 'Raiffeisenkasse Dobersberg-Waldkirchen eGen',
     bankShortName: 'Raiffeisenkasse Dobersberg-Waldkirchen eGen',
     bankAddress: 'Hauptplatz 20',
     bankPostcode: '3843',
     bankLocation: 'Dobersberg',
   ),
-  '38420': Iban(
-    bic: 'RZSTAT2G420',
+  '38420': Bic(
+    value: 'RZSTAT2G420',
     bankName: 'Raiffeisenbank Straß-Spielfeld eGen',
     bankShortName: 'Raiffeisenbank Straß-Spielfeld eGen',
     bankAddress: 'Hauptstraße 59',
     bankPostcode: '8472',
     bankLocation: 'Straß',
   ),
-  '36386': Iban(
-    bic: 'RZTIAT22386',
+  '36386': Bic(
+    value: 'RZTIAT22386',
     bankName: 'Raiffeisenkasse Villgratental eGen',
     bankShortName: 'Raiffeisenkasse Villgratental eGen',
     bankAddress: 'Nr. 79',
     bankPostcode: '9932',
     bankLocation: 'Innervillgraten',
   ),
-  '36347': Iban(
-    bic: 'RZTIAT22347',
+  '36347': Bic(
+    value: 'RZTIAT22347',
     bankName:
         'Raiffeisenkasse Volders und Umgebung registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -2175,48 +2175,48 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6111',
     bankLocation: 'Volders',
   ),
-  '37000': Iban(
-    bic: 'RVVGAT2BXXX',
+  '37000': Bic(
+    value: 'RVVGAT2BXXX',
     bankName: 'Raiffeisen Landesbank Vorarlberg mit Revisionsverband eGen',
     bankShortName: 'Raiffeisen Landesbank Vorarlberg mit Revisionsverband eGen',
     bankAddress: 'Rheinstraße 11',
     bankPostcode: '6900',
     bankLocation: 'Bregenz',
   ),
-  '34680': Iban(
-    bic: 'RZOOAT2L680',
+  '34680': Bic(
+    value: 'RZOOAT2L680',
     bankName: 'Raiffeisenbank Wels eGen',
     bankShortName: 'Raiffeisenbank Wels eGen',
     bankAddress: 'Kaiser-Josef-Pl. 58',
     bankPostcode: '4601',
     bankLocation: 'Wels',
   ),
-  '20507': Iban(
-    bic: 'LISPAT21XXX',
+  '20507': Bic(
+    value: 'LISPAT21XXX',
     bankName: 'Lienzer Sparkasse AG',
     bankShortName: 'Lienzer Sparkasse AG',
     bankAddress: 'Johannesplatz 6',
     bankPostcode: '9900',
     bankLocation: 'Lienz',
   ),
-  '33065': Iban(
-    bic: 'RLBBAT2E065',
+  '33065': Bic(
+    value: 'RLBBAT2E065',
     bankName: 'Raiffeisenbank Burgenland Mitte eGen',
     bankShortName: 'Raiffeisenbank Burgenland Mitte eGen',
     bankAddress: 'Hauptstraße 34',
     bankPostcode: '7350',
     bankLocation: 'Oberpullendorf',
   ),
-  '38282': Iban(
-    bic: 'RZSTAT2G282',
+  '38282': Bic(
+    value: 'RZSTAT2G282',
     bankName: 'Raiffeisenbank Passail eGen',
     bankShortName: 'Raiffeisenbank Passail eGen',
     bankAddress: 'Markt 15',
     bankPostcode: '8162',
     bankLocation: 'Passail',
   ),
-  '36207': Iban(
-    bic: 'RZTIAT22207',
+  '36207': Bic(
+    value: 'RZTIAT22207',
     bankName:
         'Raiffeisenbank Arzl im Pitztal und Imsterberg registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -2225,8 +2225,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6471',
     bankLocation: 'Arzl im Pitztal',
   ),
-  '33116': Iban(
-    bic: 'RLBBAT2E116',
+  '33116': Bic(
+    value: 'RLBBAT2E116',
     bankName: 'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
     bankShortName:
         'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
@@ -2234,40 +2234,40 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '7132',
     bankLocation: 'Frauenkirchen',
   ),
-  '38433': Iban(
-    bic: 'RZSTAT2G433',
+  '38433': Bic(
+    value: 'RZSTAT2G433',
     bankName: 'Raiffeisenbank Stallhofen eGen',
     bankShortName: 'Raiffeisenbank Stallhofen eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '8152',
     bankLocation: 'Stallhofen',
   ),
-  '38436': Iban(
-    bic: 'RZSTAT2G436',
+  '38436': Bic(
+    value: 'RZSTAT2G436',
     bankName: 'Raiffeisenbank Straden eGen',
     bankShortName: 'Raiffeisenbank Straden eGen',
     bankAddress: 'Raiffeisengasse 75',
     bankPostcode: '8345',
     bankLocation: 'Straden',
   ),
-  '34410': Iban(
-    bic: 'RZOOAT2L410',
+  '34410': Bic(
+    value: 'RZOOAT2L410',
     bankName: 'Raiffeisenbank Region Rohrbach eGen',
     bankShortName: 'Raiffeisenbank Region Rohrbach eGen',
     bankAddress: 'Stadtplatz 30',
     bankPostcode: '4150',
     bankLocation: 'Rohrbach-Berg(OÖ)',
   ),
-  '36349': Iban(
-    bic: 'RZTIAT22349',
+  '36349': Bic(
+    value: 'RZTIAT22349',
     bankName: 'RaiffeisenBank St. Ulrich - Waidring eGen',
     bankShortName: 'RaiffeisenBank St. Ulrich - Waidring eGen',
     bankAddress: 'Dorfstraße 5 a',
     bankPostcode: '6384',
     bankLocation: 'Waidring',
   ),
-  '36351': Iban(
-    bic: 'RZTIAT22351',
+  '36351': Bic(
+    value: 'RZTIAT22351',
     bankName:
         'Raiffeisenbank Wattens und Umgebung, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -2276,216 +2276,216 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6112',
     bankLocation: 'Wattens',
   ),
-  '34000': Iban(
-    bic: 'RZOOAT2LXXX',
+  '34000': Bic(
+    value: 'RZOOAT2LXXX',
     bankName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankShortName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankAddress: 'Europaplatz 1a',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '19970': Iban(
-    bic: 'BRASATWWXXX',
+  '19970': Bic(
+    value: 'BRASATWWXXX',
     bankName: 'Banco do Brasil Aktiengesellschaft',
     bankShortName: 'Banco do Brasil Aktiengesellschaft',
     bankAddress: 'Galaxy Tower, Praterstraße 31/4. OG',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '18600': Iban(
-    bic: 'VKBLAT2LXXX',
+  '18600': Bic(
+    value: 'VKBLAT2LXXX',
     bankName: 'Volkskreditbank AG',
     bankShortName: 'Volkskreditbank AG',
     bankAddress: 'Rudigierstr. 5-7',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '20267': Iban(
-    bic: 'WINSATWNXXX',
+  '20267': Bic(
+    value: 'WINSATWNXXX',
     bankName: 'Wiener Neustädter Sparkasse',
     bankShortName: 'Wiener Neustädter Sparkasse',
     bankAddress: 'Neunkirchnerstraße 4',
     bankPostcode: '2700',
     bankLocation: 'Wiener Neustadt',
   ),
-  '20603': Iban(
-    bic: 'SPEGAT21XXX',
+  '20603': Bic(
+    value: 'SPEGAT21XXX',
     bankName: 'Sparkasse der Gemeinde Egg',
     bankShortName: 'Sparkasse der Gemeinde Egg',
     bankAddress: 'Nr. 873',
     bankPostcode: '6863',
     bankLocation: 'Egg (Vbg.)',
   ),
-  '20607': Iban(
-    bic: 'SSBLAT21XXX',
+  '20607': Bic(
+    value: 'SSBLAT21XXX',
     bankName: 'Sparkasse Bludenz Bank AG',
     bankShortName: 'Sparkasse Bludenz Bank AG',
     bankAddress: 'Sparkassenplatz 1',
     bankPostcode: '6700',
     bankLocation: 'Bludenz',
   ),
-  '36342': Iban(
-    bic: 'RZTIAT22342',
+  '36342': Bic(
+    value: 'RZTIAT22342',
     bankName: 'Raiffeisenbank Tux eGen',
     bankShortName: 'Raiffeisenbank Tux eGen',
     bankAddress: 'Lanersbach 464',
     bankPostcode: '6293',
     bankLocation: 'Tux',
   ),
-  '36378': Iban(
-    bic: 'RZTIAT22378',
+  '36378': Bic(
+    value: 'RZTIAT22378',
     bankName: 'Raiffeisen Regionalbank Matrei i.O. eGen',
     bankShortName: 'Raiffeisen Regionalbank Matrei i.O. eGen',
     bankAddress: 'Rauterplatz 4',
     bankPostcode: '9971',
     bankLocation: 'Matrei in Osttirol',
   ),
-  '34126': Iban(
-    bic: 'RZOOAT2L080',
+  '34126': Bic(
+    value: 'RZOOAT2L080',
     bankName: 'Raiffeisenbank Ennstal eGen',
     bankShortName: 'Raiffeisenbank Ennstal eGen',
     bankAddress: 'Kirchenplatz 11',
     bankPostcode: '4452',
     bankLocation: 'Ternberg',
   ),
-  '46660': Iban(
-    bic: 'VBOEATWWXXX',
+  '46660': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '49460': Iban(
-    bic: 'VBOEATWWXXX',
+  '49460': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '44220': Iban(
-    bic: 'BWFBATW1XXX',
+  '44220': Bic(
+    value: 'BWFBATW1XXX',
     bankName: 'Österreichische Ärzte- und Apothekerbank AG',
     bankShortName: 'Österreichische Ärzte- und Apothekerbank AG',
     bankAddress: 'Spitalgasse 31',
     bankPostcode: '1090',
     bankLocation: 'Wien',
   ),
-  '38335': Iban(
-    bic: 'RZSTAT2G170',
+  '38335': Bic(
+    value: 'RZSTAT2G170',
     bankName: 'Raiffeisenbank Heiligenkreuz-Kirchbach -St. Georgen eGen',
     bankShortName: 'Raiffeisenbank Heiligenkreuz-Kirchbach -St. Georgen eGen',
     bankAddress: 'Kirchbach 12',
     bankPostcode: '8082',
     bankLocation: 'Kirchbach-Zerlach',
   ),
-  '15006': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15006': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15005': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15005': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15008': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15008': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15009': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15009': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15010': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15010': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15011': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15011': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15021': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15021': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '43920': Iban(
-    bic: 'VBOEATWWNOM',
+  '43920': Bic(
+    value: 'VBOEATWWNOM',
     bankName: 'Volksbank Niederösterreich AG',
     bankShortName: 'Volksbank Niederösterreich AG',
     bankAddress: 'Brunngasse 10',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '32447': Iban(
-    bic: 'RLNWATWWLFD',
+  '32447': Bic(
+    value: 'RLNWATWWLFD',
     bankName: 'Raiffeisenbank Traisen-Gölsental eGen',
     bankShortName: 'Raiffeisenbank Traisen-Gölsental eGen',
     bankAddress: 'Babenbergerstraße 5',
     bankPostcode: '3180',
     bankLocation: 'Lilienfeld',
   ),
-  '40630': Iban(
-    bic: 'VBOEATWWNOM',
+  '40630': Bic(
+    value: 'VBOEATWWNOM',
     bankName: 'Volksbank Niederösterreich AG',
     bankShortName: 'Volksbank Niederösterreich AG',
     bankAddress: 'Brunngasse 10',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '41050': Iban(
-    bic: 'VBOEATWWNOM',
+  '41050': Bic(
+    value: 'VBOEATWWNOM',
     bankName: 'Volksbank Niederösterreich AG',
     bankShortName: 'Volksbank Niederösterreich AG',
     bankAddress: 'Brunngasse 10',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '43610': Iban(
-    bic: 'VBOEATWWXXX',
+  '43610': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '44570': Iban(
-    bic: 'VBOEATWWXXX',
+  '44570': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '39483': Iban(
-    bic: 'RZKTAT2K496',
+  '39483': Bic(
+    value: 'RZKTAT2K496',
     bankName:
         'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -2494,8 +2494,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9500',
     bankLocation: 'Villach',
   ),
-  '19540': Iban(
-    bic: 'BKCHATWWXXX',
+  '19540': Bic(
+    value: 'BKCHATWWXXX',
     bankName:
         'Bank of China (Central and Eastern Europe) Limited Vienna Branch',
     bankShortName:
@@ -2504,160 +2504,160 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '32127': Iban(
-    bic: 'RLNWATW1127',
+  '32127': Bic(
+    value: 'RLNWATW1127',
     bankName: 'Raiffeisenbank Thayatal-Mitte eGen',
     bankShortName: 'Raiffeisenbank Thayatal-Mitte eGen',
     bankAddress: 'Hauptplatz 11',
     bankPostcode: '3820',
     bankLocation: 'Raabs an der Thaya',
   ),
-  '32715': Iban(
-    bic: 'RLNWATW1715',
+  '32715': Bic(
+    value: 'RLNWATW1715',
     bankName: 'Raiffeisenkasse Retz-Pulkautal eGen',
     bankShortName: 'Raiffeisenkasse Retz-Pulkautal eGen',
     bankAddress: 'Hauptplatz 33',
     bankPostcode: '2070',
     bankLocation: 'Retz',
   ),
-  '37401': Iban(
-    bic: 'RVVGAT2B401',
+  '37401': Bic(
+    value: 'RVVGAT2B401',
     bankName: 'Raiffeisenbank Alberschwende eGen',
     bankShortName: 'Raiffeisenbank Alberschwende eGen',
     bankAddress: 'Hof 18',
     bankPostcode: '6861',
     bankLocation: 'Alberschwende',
   ),
-  '37405': Iban(
-    bic: 'RVVGAT2B405',
+  '37405': Bic(
+    value: 'RVVGAT2B405',
     bankName: 'Raiffeisenbank Au eGen',
     bankShortName: 'Raiffeisenbank Au eGen',
     bankAddress: 'Lisse 94',
     bankPostcode: '6883',
     bankLocation: 'Au (Bregenzerwald)',
   ),
-  '37406': Iban(
-    bic: 'RVVGAT2B406',
+  '37406': Bic(
+    value: 'RVVGAT2B406',
     bankName: 'Raiffeisenbank Bezau-Mellau-Bizau eGen',
     bankShortName: 'Raiffeisenbank Bezau-Mellau-Bizau eGen',
     bankAddress: 'Nr. 398',
     bankPostcode: '6870',
     bankLocation: 'Bezau',
   ),
-  '37420': Iban(
-    bic: 'RVVGAT2B420',
+  '37420': Bic(
+    value: 'RVVGAT2B420',
     bankName: 'Raiffeisenbank Im Rheintal eGen',
     bankShortName: 'Raiffeisenbank Im Rheintal eGen',
     bankAddress: 'Rathausplatz 8',
     bankPostcode: '6850',
     bankLocation: 'Dornbirn',
   ),
-  '37422': Iban(
-    bic: 'RVVGAT2B422',
+  '37422': Bic(
+    value: 'RVVGAT2B422',
     bankName: 'Raiffeisenbank Montfort eGen',
     bankShortName: 'Raiffeisenbank Montfort eGen',
     bankAddress: 'Bahnhofstraße 2',
     bankPostcode: '6830',
     bankLocation: 'Rankweil',
   ),
-  '37423': Iban(
-    bic: 'RVVGAT2B423',
+  '37423': Bic(
+    value: 'RVVGAT2B423',
     bankName: 'Raiffeisenbank Mittelbregenzerwald eGen',
     bankShortName: 'Raiffeisenbank Mittelbregenzerwald eGen',
     bankAddress: 'Loco 12',
     bankPostcode: '6863',
     bankLocation: 'Egg (Vbg.)',
   ),
-  '19810': Iban(
-    bic: 'SANTATWWXXX',
+  '19810': Bic(
+    value: 'SANTATWWXXX',
     bankName: 'Santander Consumer Bank GmbH',
     bankShortName: 'Santander Consumer Bank GmbH',
     bankAddress: 'Wagramer Straße 19',
     bankPostcode: '1220',
     bankLocation: 'Wien',
   ),
-  '34608': Iban(
-    bic: 'RZOOAT2L608',
+  '34608': Bic(
+    value: 'RZOOAT2L608',
     bankName: 'Raiffeisenbank Attersee-Nord eGen',
     bankShortName: 'Raiffeisenbank Attersee-Nord eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '4863',
     bankLocation: 'Seewalchen am Attersee',
   ),
-  '34545': Iban(
-    bic: 'RZOOAT2L545',
+  '34545': Bic(
+    value: 'RZOOAT2L545',
     bankName: 'Raiffeisenbank Inneres Salzkammergut eGen',
     bankShortName: 'Raiffeisenbank Inneres Salzkammergut eGen',
     bankAddress: 'Kreuzplatz 20',
     bankPostcode: '4820',
     bankLocation: 'Bad Ischl',
   ),
-  '18150': Iban(
-    bic: 'SGABATWWXXX',
+  '18150': Bic(
+    value: 'SGABATWWXXX',
     bankName: 'Société Générale Zweigniederlassung Wien',
     bankShortName: 'Société Générale Zweigniederlassung Wien',
     bankAddress: 'Prinz-Eugen-Straße 8-10/5/Top 11',
     bankPostcode: '1040',
     bankLocation: 'Wien',
   ),
-  '16420': Iban(
-    bic: 'BTVAAT22XXX',
+  '16420': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16430': Iban(
-    bic: 'BTVAAT22XXX',
+  '16430': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16440': Iban(
-    bic: 'BTVAAT22XXX',
+  '16440': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16450': Iban(
-    bic: 'BTVAAT22XXX',
+  '16450': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '16300': Iban(
-    bic: 'BTVAAT22XXX',
+  '16300': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '34390': Iban(
-    bic: 'RZOOAT2L390',
+  '34390': Bic(
+    value: 'RZOOAT2L390',
     bankName: 'Raiffeisenbank Ohlsdorf eGen',
     bankShortName: 'Raiffeisenbank Ohlsdorf eGen',
     bankAddress: 'Hauptstraße 22',
     bankPostcode: '4694',
     bankLocation: 'Ohlsdorf',
   ),
-  '37435': Iban(
-    bic: 'RVVGAT2B435',
+  '37435': Bic(
+    value: 'RVVGAT2B435',
     bankName: 'Raiffeisenbank Vorderbregenzerwald eGen',
     bankShortName: 'Raiffeisenbank Vorderbregenzerwald eGen',
     bankAddress: 'Platz 186',
     bankPostcode: '6952',
     bankLocation: 'Hittisau',
   ),
-  '37438': Iban(
-    bic: 'RANMAT21XXX',
+  '37438': Bic(
+    value: 'RANMAT21XXX',
     bankName:
         'Raiffeisenbank Hohenems registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -2666,88 +2666,88 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6845',
     bankLocation: 'Hohenems',
   ),
-  '34363': Iban(
-    bic: 'RZOOAT2L363',
+  '34363': Bic(
+    value: 'RZOOAT2L363',
     bankName: 'Raiffeisenbank Attersee-Süd eGen',
     bankShortName: 'Raiffeisenbank Attersee-Süd eGen',
     bankAddress: 'Dorfstraße 50',
     bankPostcode: '4865',
     bankLocation: 'Nussdorf am Attersee',
   ),
-  '20216': Iban(
-    bic: 'SPHBAT21XXX',
+  '20216': Bic(
+    value: 'SPHBAT21XXX',
     bankName: 'Sparkasse Hainburg-Bruck-Neusiedl Aktiengesellschaft',
     bankShortName: 'Sparkasse Hainburg-Bruck-Neusiedl Aktiengesellschaft',
     bankAddress: 'Hauptpl. 1',
     bankPostcode: '2410',
     bankLocation: 'Hainburg an der Donau',
   ),
-  '20503': Iban(
-    bic: 'SPIHAT22XXX',
+  '20503': Bic(
+    value: 'SPIHAT22XXX',
     bankName: 'Tiroler Sparkasse Bankaktiengesellschaft Innsbruck',
     bankShortName: 'Tiroler Sparkasse Bankaktiengesellschaft Innsbruck',
     bankAddress: 'Sparkassenplatz 1',
     bankPostcode: '6010',
     bankLocation: 'Innsbruck',
   ),
-  '19190': Iban(
-    bic: 'BSSWATWWXXX',
+  '19190': Bic(
+    value: 'BSSWATWWXXX',
     bankName: 'Schelhammer Capital Bank AG',
     bankShortName: 'Schelhammer Capital Bank AG',
     bankAddress: 'Goldschmiedg. 3',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '20320': Iban(
-    bic: 'ASPKAT2LXXX',
+  '20320': Bic(
+    value: 'ASPKAT2LXXX',
     bankName: 'Allgemeine Sparkasse Oberösterreich Bankaktiengesellschaft',
     bankShortName: 'Allgemeine Sparkasse Oberösterreich Bankaktiengesellschaft',
     bankAddress: 'Promenade 11-13',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '20706': Iban(
-    bic: 'KSPKAT2KXXX',
+  '20706': Bic(
+    value: 'KSPKAT2KXXX',
     bankName: 'Kärntner Sparkasse Aktiengesellschaft',
     bankShortName: 'Kärntner Sparkasse Aktiengesellschaft',
     bankAddress: 'Neuer Platz  14',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
   ),
-  '20508': Iban(
-    bic: 'SPRTAT21XXX',
+  '20508': Bic(
+    value: 'SPRTAT21XXX',
     bankName: 'Sparkasse Rattenberg Bank AG',
     bankShortName: 'Sparkasse Rattenberg Bank AG',
     bankAddress: 'Sparkassenplatz 69',
     bankPostcode: '6240',
     bankLocation: 'Rattenberg',
   ),
-  '19880': Iban(
-    bic: 'WUIBATWWXXX',
+  '19880': Bic(
+    value: 'WUIBATWWXXX',
     bankName: 'Western Union International Bank GmbH',
     bankShortName: 'Western Union International Bank GmbH',
     bankAddress: 'The Icon Vienna (Turm 24) Wiedner Gürtel 13',
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '57000': Iban(
-    bic: 'HYPTAT22XXX',
+  '57000': Bic(
+    value: 'HYPTAT22XXX',
     bankName: 'HYPO TIROL BANK AG',
     bankShortName: 'HYPO TIROL BANK AG',
     bankAddress: 'Meraner Straße 8',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '19340': Iban(
-    bic: 'EUAAATWWXXX',
+  '19340': Bic(
+    value: 'EUAAATWWXXX',
     bankName: 'European American Investment Bank Aktiengesellschaft',
     bankShortName: 'European American Investment Bank Aktiengesellschaft',
     bankAddress: 'Schottenring 18',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '36352': Iban(
-    bic: 'RZTIAT22352',
+  '36352': Bic(
+    value: 'RZTIAT22352',
     bankName:
         'Raiffeisenkasse Weerberg registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -2756,648 +2756,648 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6133',
     bankLocation: 'Weerberg',
   ),
-  '34180': Iban(
-    bic: 'RZOOAT2L180',
+  '34180': Bic(
+    value: 'RZOOAT2L180',
     bankName: 'Raiffeisenbank Region Eferding eGen',
     bankShortName: 'Raiffeisenbank Region Eferding eGen',
     bankAddress: 'Schiferplatz 24',
     bankPostcode: '4070',
     bankLocation: 'Eferding',
   ),
-  '34732': Iban(
-    bic: 'RZOOAT2L732',
+  '34732': Bic(
+    value: 'RZOOAT2L732',
     bankName: 'Raiffeisenbank Walding-Ottensheim eGen',
     bankShortName: 'Raiffeisenbank Walding-Ottensheim eGen',
     bankAddress: 'Raiffeisenpl. 2',
     bankPostcode: '4111',
     bankLocation: 'Walding',
   ),
-  '34738': Iban(
-    bic: 'RZOOAT2L738',
+  '34738': Bic(
+    value: 'RZOOAT2L738',
     bankName: 'Raiffeisenbank Wartberg an der Krems eGen',
     bankShortName: 'Raiffeisenbank Wartberg an der Krems eGen',
     bankAddress: 'Hauptstr. 23',
     bankPostcode: '4552',
     bankLocation: 'Wartberg an der Krems',
   ),
-  '32585': Iban(
-    bic: 'RLNWATWWOBG',
+  '32585': Bic(
+    value: 'RLNWATWWOBG',
     bankName: 'Raiffeisenbank Region St. Pölten eGen',
     bankShortName: 'Raiffeisenbank Region St. Pölten eGen',
     bankAddress: 'Kremser Landstraße 18',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '37431': Iban(
-    bic: 'RVVGAT2B431',
+  '37431': Bic(
+    value: 'RVVGAT2B431',
     bankName: 'Raiffeisenbank Bodensee-Leiblachtal eGen',
     bankShortName: 'Raiffeisenbank Bodensee-Leiblachtal eGen',
     bankAddress: 'Seestraße 1',
     bankPostcode: '6971',
     bankLocation: 'Hard (Vbg.)',
   ),
-  '37449': Iban(
-    bic: 'RVVGAT2B449',
+  '37449': Bic(
+    value: 'RVVGAT2B449',
     bankName: 'Raiffeisenbank Lech am Arlberg eGen',
     bankShortName: 'Raiffeisenbank Lech am Arlberg eGen',
     bankAddress: 'Haus Nr. 90',
     bankPostcode: '6764',
     bankLocation: 'Lech',
   ),
-  '37458': Iban(
-    bic: 'RVVGAT2B458',
+  '37458': Bic(
+    value: 'RVVGAT2B458',
     bankName: 'RAIFFEISENBANK im Walgau eGen',
     bankShortName: 'RAIFFEISENBANK im Walgau eGen',
     bankAddress: 'Bahnhofstraße 2',
     bankPostcode: '6710',
     bankLocation: 'Nenzing',
   ),
-  '37468': Iban(
-    bic: 'RVVGAT2B468',
+  '37468': Bic(
+    value: 'RVVGAT2B468',
     bankName: 'Raiffeisenbank Bludenz-Montafon eGen',
     bankShortName: 'Raiffeisenbank Bludenz-Montafon eGen',
     bankAddress: 'Werdenbergerstraße 9',
     bankPostcode: '6700',
     bankLocation: 'Bludenz',
   ),
-  '20272': Iban(
-    bic: 'SPZWAT21XXX',
+  '20272': Bic(
+    value: 'SPZWAT21XXX',
     bankName: 'Waldviertler Sparkasse Bank AG',
     bankShortName: 'Waldviertler Sparkasse Bank AG',
     bankAddress: 'Sparkassenplatz 3',
     bankPostcode: '3910',
     bankLocation: 'Zwettl',
   ),
-  '34383': Iban(
-    bic: 'RZOOAT2L383',
+  '34383': Bic(
+    value: 'RZOOAT2L383',
     bankName: 'Raiffeisenbank Mittleres Rodltal eGen',
     bankShortName: 'Raiffeisenbank Mittleres Rodltal eGen',
     bankAddress: 'Marktpl. 44',
     bankPostcode: '4181',
     bankLocation: 'Oberneukirchen/ OÖ',
   ),
-  '34277': Iban(
-    bic: 'RZOOAT2L277',
+  '34277': Bic(
+    value: 'RZOOAT2L277',
     bankName: 'Raiffeisenbank Region Bad Leonfelden eGen',
     bankShortName: 'Raiffeisenbank Region Bad Leonfelden eGen',
     bankAddress: 'Hauptpl. 2',
     bankPostcode: '4190',
     bankLocation: 'Bad Leonfelden',
   ),
-  '34710': Iban(
-    bic: 'RZOOAT2L710',
+  '34710': Bic(
+    value: 'RZOOAT2L710',
     bankName: 'Raiffeisenbank Region Vöcklabruck eGen',
     bankShortName: 'Raiffeisenbank Region Vöcklabruck eGen',
     bankAddress: 'Salzburger Straße 1',
     bankPostcode: '4840',
     bankLocation: 'Vöcklabruck',
   ),
-  '34303': Iban(
-    bic: 'RZOOAT2L303',
+  '34303': Bic(
+    value: 'RZOOAT2L303',
     bankName: 'Raiffeisenbank Mattigtal eGen',
     bankShortName: 'Raiffeisenbank Mattigtal eGen',
     bankAddress: 'Hauptstr. 61',
     bankPostcode: '5231',
     bankLocation: 'Schalchen',
   ),
-  '19690': Iban(
-    bic: 'TVBAATWWXXX',
+  '19690': Bic(
+    value: 'TVBAATWWXXX',
     bankName: 'VakifBank International AG',
     bankShortName: 'VakifBank International AG',
     bankAddress: 'Prinz-Eugen-Straße 8-10, Top 17 + Top 18',
     bankPostcode: '1040',
     bankLocation: 'Wien',
   ),
-  '19400': Iban(
-    bic: '',
+  '19400': Bic(
+    value: '',
     bankName: 'MUFG Bank (Europe) N.V. Vienna Branch',
     bankShortName: 'MUFG Bank (Europe) N.V. Vienna Branch',
     bankAddress: 'Schwarzenbergplatz 5/3.2',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '20246': Iban(
-    bic: 'SPPDAT21XXX',
+  '20246': Bic(
+    value: 'SPPDAT21XXX',
     bankName: 'Sparkasse Poysdorf AG',
     bankShortName: 'Sparkasse Poysdorf AG',
     bankAddress: 'Dreifaltigkeitsplatz 2',
     bankPostcode: '2170',
     bankLocation: 'Poysdorf',
   ),
-  '74000': Iban(
-    bic: 'SABRATWWXXX',
+  '74000': Bic(
+    value: 'SABRATWWXXX',
     bankName: 'Sberbank Europe AG in Abwicklung',
     bankShortName: 'Sberbank Europe AG in Abwicklung',
     bankAddress: 'Schwarzenbergplatz 3',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '38000': Iban(
-    bic: 'RZSTAT2GXXX',
+  '38000': Bic(
+    value: 'RZSTAT2GXXX',
     bankName: 'Raiffeisen-Landesbank Steiermark AG',
     bankShortName: 'Raiffeisen-Landesbank Steiermark AG',
     bankAddress: 'Kaiserfeldgasse 5',
     bankPostcode: '8010',
     bankLocation: 'Graz',
   ),
-  '38261': Iban(
-    bic: 'RZSTAT2G368',
+  '38261': Bic(
+    value: 'RZSTAT2G368',
     bankName: 'Raiffeisenbank Zirbenland eGen',
     bankShortName: 'Raiffeisenbank Zirbenland eGen',
     bankAddress: 'Hauptplatz 12',
     bankPostcode: '8750',
     bankLocation: 'Judenburg',
   ),
-  '35068': Iban(
-    bic: 'RVSAAT2S039',
+  '35068': Bic(
+    value: 'RVSAAT2S039',
     bankName: 'Raiffeisenbank Oberpinzgau eGen',
     bankShortName: 'Raiffeisenbank Oberpinzgau eGen',
     bankAddress: 'Kirchgasse 12',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '34321': Iban(
-    bic: 'RZOOAT2L380',
+  '34321': Bic(
+    value: 'RZOOAT2L380',
     bankName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankShortName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankAddress: 'Garnisonstraße 1',
     bankPostcode: '4560',
     bankLocation: 'Kirchdorf an der Krems',
   ),
-  '38452': Iban(
-    bic: 'RZSTAT2G402',
+  '38452': Bic(
+    value: 'RZSTAT2G402',
     bankName: 'Raiffeisenbank Murau eGen',
     bankShortName: 'Raiffeisenbank Murau eGen',
     bankAddress: 'Bundesstraße 5',
     bankPostcode: '8850',
     bankLocation: 'Murau',
   ),
-  '38138': Iban(
-    bic: 'RZSTAT2G138',
+  '38138': Bic(
+    value: 'RZSTAT2G138',
     bankName: 'Raiffeisenbank Gratwein-Hitzendorf eGen',
     bankShortName: 'Raiffeisenbank Gratwein-Hitzendorf eGen',
     bankAddress: 'Bahnhofstrasse 22',
     bankPostcode: '8112',
     bankLocation: 'Gratwein-Straßengel',
   ),
-  '38346': Iban(
-    bic: 'RZSTAT2G346',
+  '38346': Bic(
+    value: 'RZSTAT2G346',
     bankName: 'Raiffeisenbank Aichfeld eGen',
     bankShortName: 'Raiffeisenbank Aichfeld eGen',
     bankAddress: 'Kärntner Straße 2',
     bankPostcode: '8720',
     bankLocation: 'Knittelfeld',
   ),
-  '38347': Iban(
-    bic: 'RZSTAT2G347',
+  '38347': Bic(
+    value: 'RZSTAT2G347',
     bankName: 'Raiffeisenbank Turnau-St. Lorenzen eGen',
     bankShortName: 'Raiffeisenbank Turnau-St. Lorenzen eGen',
     bankAddress: 'Hauptstraße 21',
     bankPostcode: '8641',
     bankLocation: 'St. Marein im Mürztal',
   ),
-  '32145': Iban(
-    bic: 'RLNWATW1145',
+  '32145': Bic(
+    value: 'RLNWATW1145',
     bankName: 'Raiffeisenkasse Ernstbrunn eGen',
     bankShortName: 'Raiffeisenkasse Ernstbrunn eGen',
     bankAddress: 'Hauptpl. 11',
     bankPostcode: '2115',
     bankLocation: 'Ernstbrunn',
   ),
-  '34081': Iban(
-    bic: 'RZOOAT2L081',
+  '34081': Bic(
+    value: 'RZOOAT2L081',
     bankName: 'Raiffeisenbank Eberschwang-Pramet eGen',
     bankShortName: 'Raiffeisenbank Eberschwang-Pramet eGen',
     bankAddress: 'Eberschwang 116',
     bankPostcode: '4906',
     bankLocation: 'Eberschwang',
   ),
-  '32275': Iban(
-    bic: 'RLNWATW1275',
+  '32275': Bic(
+    value: 'RLNWATW1275',
     bankName: 'Raiffeisenbank Seefeld-Hadres eGen',
     bankShortName: 'Raiffeisenbank Seefeld-Hadres eGen',
     bankAddress: 'Hauptplatz 103',
     bankPostcode: '2061',
     bankLocation: 'Hadres',
   ),
-  '34083': Iban(
-    bic: 'RZOOAT2L083',
+  '34083': Bic(
+    value: 'RZOOAT2L083',
     bankName: 'Raiffeisenbank Edt-Lambach eGen',
     bankShortName: 'Raiffeisenbank Edt-Lambach eGen',
     bankAddress: 'Marktplatz 14',
     bankPostcode: '4650',
     bankLocation: 'Lambach',
   ),
-  '32278': Iban(
-    bic: 'RLNWATWW278',
+  '32278': Bic(
+    value: 'RLNWATWW278',
     bankName: 'Raiffeisenkasse Haidershofen eGen',
     bankShortName: 'Raiffeisenkasse Haidershofen eGen',
     bankAddress: 'Haidershofen 100',
     bankPostcode: '4431',
     bankLocation: 'Haidershofen',
   ),
-  '36232': Iban(
-    bic: 'RZTIAT22232',
+  '36232': Bic(
+    value: 'RZTIAT22232',
     bankName: 'RaiffeisenBank Going eGen',
     bankShortName: 'RaiffeisenBank Going eGen',
     bankAddress: 'Dorfstraße 25',
     bankPostcode: '6353',
     bankLocation: 'Going am W.K.',
   ),
-  '34370': Iban(
-    bic: 'RZOOAT2L370',
+  '34370': Bic(
+    value: 'RZOOAT2L370',
     bankName: 'Raiffeisenbank Oberes Innviertel eGen',
     bankShortName: 'Raiffeisenbank Oberes Innviertel eGen',
     bankAddress: 'Siedlungsstraße 1',
     bankPostcode: '5142',
     bankLocation: 'Eggelsberg',
   ),
-  '17000': Iban(
-    bic: 'BFKKAT2KXXX',
+  '17000': Bic(
+    value: 'BFKKAT2KXXX',
     bankName: 'BKS Bank AG',
     bankShortName: 'BKS Bank AG',
     bankAddress: 'St. Veiter Ring 43',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
   ),
-  '16000': Iban(
-    bic: 'BTVAAT22XXX',
+  '16000': Bic(
+    value: 'BTVAAT22XXX',
     bankName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankShortName: 'Bank für Tirol und Vorarlberg Aktiengesellschaft',
     bankAddress: 'Stadtforum 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '40730': Iban(
-    bic: 'OVLIAT21XXX',
+  '40730': Bic(
+    value: 'OVLIAT21XXX',
     bankName: 'DolomitenBank Osttirol-Westkärnten eG',
     bankShortName: 'DolomitenBank Osttirol-Westkärnten eG',
     bankAddress: 'Südtiroler Platz 9',
     bankPostcode: '9900',
     bankLocation: 'Lienz',
   ),
-  '36791': Iban(
-    bic: 'ALPEAT22XXX',
+  '36791': Bic(
+    value: 'ALPEAT22XXX',
     bankName: 'Alpen Privatbank Aktiengesellschaft',
     bankShortName: 'Alpen Privatbank Aktiengesellschaft',
     bankAddress: 'Walserstraße 61',
     bankPostcode: '6991',
     bankLocation: 'Riezlern',
   ),
-  '32501': Iban(
-    bic: 'RLNWATWWMIB',
+  '32501': Bic(
+    value: 'RLNWATWWMIB',
     bankName: 'Raiffeisenbank im Weinviertel eGen',
     bankShortName: 'Raiffeisenbank im Weinviertel eGen',
     bankAddress: 'Hauptpl. 37',
     bankPostcode: '2130',
     bankLocation: 'Mistelbach',
   ),
-  '20257': Iban(
-    bic: 'SPSBAT21XXX',
+  '20257': Bic(
+    value: 'SPSBAT21XXX',
     bankName: 'Sparkasse Scheibbs AG',
     bankShortName: 'Sparkasse Scheibbs AG',
     bankAddress: 'Hauptstraße 9',
     bankPostcode: '3270',
     bankLocation: 'Scheibbs',
   ),
-  '32667': Iban(
-    bic: 'RLNWATWWPRB',
+  '32667': Bic(
+    value: 'RLNWATWWPRB',
     bankName: 'Raiffeisenbank Wienerwald eGen',
     bankShortName: 'Raiffeisenbank Wienerwald eGen',
     bankAddress: 'Hauptstr. 62',
     bankPostcode: '3021',
     bankLocation: 'Pressbaum',
   ),
-  '33125': Iban(
-    bic: 'RLBBAT2E125',
+  '33125': Bic(
+    value: 'RLBBAT2E125',
     bankName: 'Raiffeisenbezirksbank Oberwart eGen',
     bankShortName: 'Raiffeisenbezirksbank Oberwart eGen',
     bankAddress: 'Wiener Straße 5',
     bankPostcode: '7400',
     bankLocation: 'Oberwart',
   ),
-  '32286': Iban(
-    bic: 'RLNWATW1286',
+  '32286': Bic(
+    value: 'RLNWATW1286',
     bankName: 'Raiffeisenkasse Heiligeneich eGen',
     bankShortName: 'Raiffeisenkasse Heiligeneich eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '3452',
     bankLocation: 'Heiligeneich',
   ),
-  '10000': Iban(
-    bic: 'OEKOATWWXXX',
+  '10000': Bic(
+    value: 'OEKOATWWXXX',
     bankName: 'Oesterreichische Kontrollbank Aktiengesellschaft',
     bankShortName: 'Oesterreichische Kontrollbank Aktiengesellschaft',
     bankAddress: 'Am Hof 4',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '20314': Iban(
-    bic: 'SKBIAT21XXX',
+  '20314': Bic(
+    value: 'SKBIAT21XXX',
     bankName: 'Sparkasse Salzkammergut AG',
     bankShortName: 'Sparkasse Salzkammergut AG',
     bankAddress: 'Sparkassenplatz 1',
     bankPostcode: '4820',
     bankLocation: 'Bad Ischl',
   ),
-  '20702': Iban(
-    bic: 'SPFNAT21XXX',
+  '20702': Bic(
+    value: 'SPFNAT21XXX',
     bankName: 'Sparkasse Feldkirchen/Kärnten',
     bankShortName: 'Sparkasse Feldkirchen/Kärnten',
     bankAddress: 'Sparkassenstraße 1 a',
     bankPostcode: '9560',
     bankLocation: 'Feldkirchen (Ktn.)',
   ),
-  '34200': Iban(
-    bic: 'RZOOAT2L200',
+  '34200': Bic(
+    value: 'RZOOAT2L200',
     bankName: 'Raiffeisenbank Innkreis Mitte eGen',
     bankShortName: 'Raiffeisenbank Innkreis Mitte eGen',
     bankAddress: 'Nr. 7',
     bankPostcode: '4974',
     bankLocation: 'Ort im Innkreis',
   ),
-  '36263': Iban(
-    bic: 'RZTIAT22263',
+  '36263': Bic(
+    value: 'RZTIAT22263',
     bankName: 'Raiffeisenbank Kitzbühel - St. Johann eGen',
     bankShortName: 'Raiffeisenbank Kitzbühel - St. Johann eGen',
     bankAddress: 'Achenweg 16',
     bankPostcode: '6370',
     bankLocation: 'Kitzbühel',
   ),
-  '36336': Iban(
-    bic: 'RZTIAT22336',
+  '36336': Bic(
+    value: 'RZTIAT22336',
     bankName: 'Raiffeisenbank Tirol Mitte West eGen',
     bankShortName: 'Raiffeisenbank Tirol Mitte West eGen',
     bankAddress: 'Untermarktstr. 3',
     bankPostcode: '6410',
     bankLocation: 'Telfs',
   ),
-  '38487': Iban(
-    bic: 'RZSTAT2G487',
+  '38487': Bic(
+    value: 'RZSTAT2G487',
     bankName: 'Raiffeisenbank Lipizzanerheimat eGen',
     bankShortName: 'Raiffeisenbank Lipizzanerheimat eGen',
     bankAddress: 'Voitsberg',
     bankPostcode: '8570',
     bankLocation: 'Voitsberg',
   ),
-  '32002': Iban(
-    bic: 'RLNWATW1002',
+  '32002': Bic(
+    value: 'RLNWATW1002',
     bankName: 'Raiffeisenbank Wagram-Schmidatal eGen',
     bankShortName: 'Raiffeisenbank Wagram-Schmidatal eGen',
     bankAddress: 'Bahnhofstraße 25',
     bankPostcode: '3462',
     bankLocation: 'Absdorf',
   ),
-  '36215': Iban(
-    bic: 'RZTIAT22215',
+  '36215': Bic(
+    value: 'RZTIAT22215',
     bankName: 'Raiffeisenbank Brixen im Thale eGen',
     bankShortName: 'Raiffeisenbank Brixen im Thale eGen',
     bankAddress: 'Dorfstraße 92',
     bankPostcode: '6364',
     bankLocation: 'Brixen im Thale',
   ),
-  '36240': Iban(
-    bic: 'RZTIAT22240',
+  '36240': Bic(
+    value: 'RZTIAT22240',
     bankName: 'Raiffeisenkasse Hart eGen',
     bankShortName: 'Raiffeisenkasse Hart eGen',
     bankAddress: 'Harterstraße 2',
     bankPostcode: '6265',
     bankLocation: 'Hart im Zillertal',
   ),
-  '45010': Iban(
-    bic: 'VBOEATWWSAL',
+  '45010': Bic(
+    value: 'VBOEATWWSAL',
     bankName: 'Volksbank Salzburg eG',
     bankShortName: 'Volksbank Salzburg eG',
     bankAddress: 'St. Julien-Str. 12',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '19120': Iban(
-    bic: 'SPBAATWWXXX',
+  '19120': Bic(
+    value: 'SPBAATWWXXX',
     bankName: 'bank99 AG',
     bankShortName: 'bank99 AG',
     bankAddress: 'Praterstraße 31',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '20333': Iban(
-    bic: 'SPRHAT21XXX',
+  '20333': Bic(
+    value: 'SPRHAT21XXX',
     bankName: 'Sparkasse Ried im Innkreis-Haag am Hausruck',
     bankShortName: 'Sparkasse Ried im Innkreis-Haag am Hausruck',
     bankAddress: 'Marktplatz 2',
     bankPostcode: '4910',
     bankLocation: 'Ried im Innkreis',
   ),
-  '39500': Iban(
-    bic: 'RZKTAT2K500',
+  '39500': Bic(
+    value: 'RZKTAT2K500',
     bankName: 'Raiffeisenbank St. Paul im Lavanttal eGen',
     bankShortName: 'Raiffeisenbank St. Paul im Lavanttal eGen',
     bankAddress: 'Hauptstr. 26',
     bankPostcode: '9470',
     bankLocation: 'St. Paul im Lavanttal',
   ),
-  '38368': Iban(
-    bic: 'RZSTAT2G368',
+  '38368': Bic(
+    value: 'RZSTAT2G368',
     bankName: 'Raiffeisenbank Zirbenland eGen',
     bankShortName: 'Raiffeisenbank Zirbenland eGen',
     bankAddress: 'Hauptplatz 12',
     bankPostcode: '8750',
     bankLocation: 'Judenburg',
   ),
-  '36362': Iban(
-    bic: 'RZTIAT22362',
+  '36362': Bic(
+    value: 'RZTIAT22362',
     bankName: 'Raiffeisen Regionalbank Hall in Tirol eGen',
     bankShortName: 'Raiffeisen Regionalbank Hall in Tirol eGen',
     bankAddress: 'Zollstraße 1',
     bankPostcode: '6060',
     bankLocation: 'Hall in Tirol',
   ),
-  '36241': Iban(
-    bic: 'RZTIAT22241',
+  '36241': Bic(
+    value: 'RZTIAT22241',
     bankName: 'Raiffeisenbank Hippach und Umgebung eGen',
     bankShortName: 'Raiffeisenbank Hippach und Umgebung eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '6284',
     bankLocation: 'Ramsau im Zillertal',
   ),
-  '20602': Iban(
-    bic: 'DOSPAT2DXXX',
+  '20602': Bic(
+    value: 'DOSPAT2DXXX',
     bankName: 'Dornbirner Sparkasse Bank AG',
     bankShortName: 'Dornbirner Sparkasse Bank AG',
     bankAddress: 'Sparkassenplatz 1',
     bankPostcode: '6850',
     bankLocation: 'Dornbirn',
   ),
-  '20604': Iban(
-    bic: 'SPFKAT2BXXX',
+  '20604': Bic(
+    value: 'SPFKAT2BXXX',
     bankName: 'Sparkasse der Stadt Feldkirch',
     bankShortName: 'Sparkasse der Stadt Feldkirch',
     bankAddress: 'Sparkassenplatz 1',
     bankPostcode: '6800',
     bankLocation: 'Feldkirch',
   ),
-  '38133': Iban(
-    bic: 'RZSTAT2G133',
+  '38133': Bic(
+    value: 'RZSTAT2G133',
     bankName: 'Raiffeisenbank Hausmannstätten eGen',
     bankShortName: 'Raiffeisenbank Hausmannstätten eGen',
     bankAddress: 'Hausmannstätten',
     bankPostcode: '8071',
     bankLocation: 'Hausmannstätten',
   ),
-  '33010': Iban(
-    bic: 'RLBBAT2E010',
+  '33010': Bic(
+    value: 'RLBBAT2E010',
     bankName: 'Raiffeisenbank Region Deutschkreutz-Horitschon eGen',
     bankShortName: 'Raiffeisenbank Region Deutschkreutz-Horitschon eGen',
     bankAddress: 'Hauptstraße 49',
     bankPostcode: '7301',
     bankLocation: 'Deutschkreutz',
   ),
-  '33012': Iban(
-    bic: 'RLBBAT2E012',
+  '33012': Bic(
+    value: 'RLBBAT2E012',
     bankName: 'Raiffeisenbank Neusiedlersee-Hügelland eGen',
     bankShortName: 'Raiffeisenbank Neusiedlersee-Hügelland eGen',
     bankAddress: 'Hauptstraße 39',
     bankPostcode: '7082',
     bankLocation: 'Donnerskirchen',
   ),
-  '38370': Iban(
-    bic: 'RZSTAT2G370',
+  '38370': Bic(
+    value: 'RZSTAT2G370',
     bankName: 'Raiffeisenbank Mureck eGen',
     bankShortName: 'Raiffeisenbank Mureck eGen',
     bankAddress: 'Hauptplatz 8',
     bankPostcode: '8480',
     bankLocation: 'Mureck',
   ),
-  '38497': Iban(
-    bic: 'RZSTAT2G497',
+  '38497': Bic(
+    value: 'RZSTAT2G497',
     bankName: 'Raiffeisenbank Region Feldbach eGen',
     bankShortName: 'Raiffeisenbank Region Feldbach eGen',
     bankAddress: 'Feldbach',
     bankPostcode: '8330',
     bankLocation: 'Feldbach',
   ),
-  '38499': Iban(
-    bic: 'RZSTAT2G499',
+  '38499': Bic(
+    value: 'RZSTAT2G499',
     bankName: 'Raiffeisenbank Wildon-Preding eGen',
     bankShortName: 'Raiffeisenbank Wildon-Preding eGen',
     bankAddress: 'Leibnitzerstraße 1',
     bankPostcode: '8410',
     bankLocation: 'Wildon',
   ),
-  '42600': Iban(
-    bic: 'VBOEATWWKLA',
+  '42600': Bic(
+    value: 'VBOEATWWKLA',
     bankName: 'Volksbank Kärnten eG',
     bankShortName: 'Volksbank Kärnten eG',
     bankAddress: 'Pernhartgasse 7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '42820': Iban(
-    bic: 'VBOEATWWKLA',
+  '42820': Bic(
+    value: 'VBOEATWWKLA',
     bankName: 'Volksbank Kärnten eG',
     bankShortName: 'Volksbank Kärnten eG',
     bankAddress: 'Pernhartgasse 7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '46900': Iban(
-    bic: 'VBOEATWWKLA',
+  '46900': Bic(
+    value: 'VBOEATWWKLA',
     bankName: 'Volksbank Kärnten eG',
     bankShortName: 'Volksbank Kärnten eG',
     bankAddress: 'Pernhartgasse 7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '38312': Iban(
-    bic: 'RZSTAT2G312',
+  '38312': Bic(
+    value: 'RZSTAT2G312',
     bankName: 'Raiffeisenbank Bad Radkersburg-Klöch eGen',
     bankShortName: 'Raiffeisenbank Bad Radkersburg-Klöch eGen',
     bankAddress: 'Halbenrainer Straße 2',
     bankPostcode: '8490',
     bankLocation: 'Bad Radkersburg',
   ),
-  '32123': Iban(
-    bic: 'RLNWATWW123',
+  '32123': Bic(
+    value: 'RLNWATWW123',
     bankName: 'Raiffeisenbank Eggenburg eGen',
     bankShortName: 'Raiffeisenbank Eggenburg eGen',
     bankAddress: 'Hauptplatz 24-26',
     bankPostcode: '3730',
     bankLocation: 'Eggenburg',
   ),
-  '38439': Iban(
-    bic: 'RZSTAT2G439',
+  '38439': Bic(
+    value: 'RZSTAT2G439',
     bankName: 'Raiffeisenbank Graz-Straßgang eGen',
     bankShortName: 'Raiffeisenbank Graz-Straßgang eGen',
     bankAddress: 'Kärntner Straße 394',
     bankPostcode: '8054',
     bankLocation: 'Graz',
   ),
-  '34068': Iban(
-    bic: 'RZOOAT2L068',
+  '34068': Bic(
+    value: 'RZOOAT2L068',
     bankName: 'Raiffeisenbank Grein eGen',
     bankShortName: 'Raiffeisenbank Grein eGen',
     bankAddress: 'Hauptstr. 25',
     bankPostcode: '4360',
     bankLocation: 'Grein',
   ),
-  '32250': Iban(
-    bic: 'RLNWATWWGTD',
+  '32250': Bic(
+    value: 'RLNWATWWGTD',
     bankName: 'Raiffeisen Regionalbank Mödling eGen',
     bankShortName: 'Raiffeisen Regionalbank Mödling eGen',
     bankAddress: 'Hauptstraße 27-29',
     bankPostcode: '2340',
     bankLocation: 'Mödling',
   ),
-  '34165': Iban(
-    bic: 'RZOOAT2L165',
+  '34165': Bic(
+    value: 'RZOOAT2L165',
     bankName: 'Raiffeisenbank Hinterstoder und Vorderstoder eGen',
     bankShortName: 'Raiffeisenbank Hinterstoder und Vorderstoder eGen',
     bankAddress: 'Nr. 19',
     bankPostcode: '4573',
     bankLocation: 'Hinterstoder',
   ),
-  '15000': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15000': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '19200': Iban(
-    bic: 'SCHOATWWXXX',
+  '19200': Bic(
+    value: 'SCHOATWWXXX',
     bankName: 'Schoellerbank Aktiengesellschaft',
     bankShortName: 'Schoellerbank Aktiengesellschaft',
     bankAddress: 'Renngasse 3',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '19930': Iban(
-    bic: 'CENBATWWXXX',
+  '19930': Bic(
+    value: 'CENBATWWXXX',
     bankName: 'Raiffeisen Centrobank AG',
     bankShortName: 'Raiffeisen Centrobank AG',
     bankAddress: 'Am Stadtpark 9',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '42110': Iban(
-    bic: 'MVOGAT22XXX',
+  '42110': Bic(
+    value: 'MVOGAT22XXX',
     bankName: 'Marchfelder Bank eG',
     bankShortName: 'Marchfelder Bank eG',
     bankAddress: 'Marchfelder-Platz 1-2',
     bankPostcode: '2230',
     bankLocation: 'Gänserndorf',
   ),
-  '31303': Iban(
-    bic: 'RBSKATW1XXX',
+  '31303': Bic(
+    value: 'RBSKATW1XXX',
     bankName: 'Raiffeisen Bausparkasse Gesellschaft m.b.H.',
     bankShortName: 'Raiffeisen Bausparkasse Gesellschaft m.b.H.',
     bankAddress: 'Mooslackengasse 12',
     bankPostcode: '1190',
     bankLocation: 'Wien',
   ),
-  '73700': Iban(
-    bic: '',
+  '73700': Bic(
+    value: '',
     bankName: 'Österreichische Hotel- und Tourismusbank Gesellschaft m.b.H.',
     bankShortName:
         'Österreichische Hotel- und Tourismusbank Gesellschaft m.b.H.',
@@ -3405,160 +3405,160 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '20241': Iban(
-    bic: 'SPNGAT21XXX',
+  '20241': Bic(
+    value: 'SPNGAT21XXX',
     bankName: 'Sparkasse Neunkirchen',
     bankShortName: 'Sparkasse Neunkirchen',
     bankAddress: 'Hauptplatz 2',
     bankPostcode: '2620',
     bankLocation: 'Neunkirchen/ NÖ',
   ),
-  '38311': Iban(
-    bic: 'RZSTAT2G023',
+  '38311': Bic(
+    value: 'RZSTAT2G023',
     bankName: 'Raiffeisenbank Oststeiermark Nord eGen',
     bankShortName: 'Raiffeisenbank Oststeiermark Nord eGen',
     bankAddress: 'Raiffeisenplatz 200',
     bankPostcode: '8225',
     bankLocation: 'Pöllau bei Hartberg',
   ),
-  '15004': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15004': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15007': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15007': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15012': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15012': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15096': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15096': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15097': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15097': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '45850': Iban(
-    bic: 'VBOEATWWINN',
+  '45850': Bic(
+    value: 'VBOEATWWINN',
     bankName: 'Volksbank Tirol AG',
     bankShortName: 'Volksbank Tirol AG',
     bankAddress: 'Meinhardstraße 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '20219': Iban(
-    bic: 'SPHEAT21XXX',
+  '20219': Bic(
+    value: 'SPHEAT21XXX',
     bankName: 'Sparkasse Herzogenburg-Neulengbach Bank Aktiengesellschaft',
     bankShortName: 'Sparkasse Herzogenburg-Neulengbach Bank Aktiengesellschaft',
     bankAddress: 'Rathausplatz 9-10',
     bankPostcode: '3130',
     bankLocation: 'Herzogenburg',
   ),
-  '38503': Iban(
-    bic: 'RZSTAT2G056',
+  '38503': Bic(
+    value: 'RZSTAT2G056',
     bankName: 'Raiffeisenbank Süd-Weststeiermark eGen',
     bankShortName: 'Raiffeisenbank Süd-Weststeiermark eGen',
     bankAddress: 'Oberer Markt 9',
     bankPostcode: '8551',
     bankLocation: 'Wies (Stmk.)',
   ),
-  '43000': Iban(
-    bic: 'VBOEATWWXXX',
+  '43000': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '52000': Iban(
-    bic: 'HAABAT2KXXX',
+  '52000': Bic(
+    value: 'HAABAT2KXXX',
     bankName: 'Austrian Anadi Bank AG',
     bankShortName: 'Austrian Anadi Bank AG',
     bankAddress: 'Domgasse 5',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
   ),
-  '32291': Iban(
-    bic: 'RLNWATW1002',
+  '32291': Bic(
+    value: 'RLNWATW1002',
     bankName: 'Raiffeisenbank Wagram-Schmidatal eGen',
     bankShortName: 'Raiffeisenbank Wagram-Schmidatal eGen',
     bankAddress: 'Bahnhofstraße 25',
     bankPostcode: '3462',
     bankLocation: 'Absdorf',
   ),
-  '38076': Iban(
-    bic: 'RZSTAT2G346',
+  '38076': Bic(
+    value: 'RZSTAT2G346',
     bankName: 'Raiffeisenbank Aichfeld eGen',
     bankShortName: 'Raiffeisenbank Aichfeld eGen',
     bankAddress: 'Kärntner Straße 2',
     bankPostcode: '8720',
     bankLocation: 'Knittelfeld',
   ),
-  '33046': Iban(
-    bic: 'RLBBAT2E065',
+  '33046': Bic(
+    value: 'RLBBAT2E065',
     bankName: 'Raiffeisenbank Burgenland Mitte eGen',
     bankShortName: 'Raiffeisenbank Burgenland Mitte eGen',
     bankAddress: 'Hauptstraße 34',
     bankPostcode: '7350',
     bankLocation: 'Oberpullendorf',
   ),
-  '38333': Iban(
-    bic: 'RZSTAT2G138',
+  '38333': Bic(
+    value: 'RZSTAT2G138',
     bankName: 'Raiffeisenbank Gratwein-Hitzendorf eGen',
     bankShortName: 'Raiffeisenbank Gratwein-Hitzendorf eGen',
     bankAddress: 'Bahnhofstrasse 22',
     bankPostcode: '8112',
     bankLocation: 'Gratwein-Straßengel',
   ),
-  '38055': Iban(
-    bic: 'RZSTAT2G252',
+  '38055': Bic(
+    value: 'RZSTAT2G252',
     bankName: 'Raiffeisenbank Nestelbach-Eggersdorf eGen',
     bankShortName: 'Raiffeisenbank Nestelbach-Eggersdorf eGen',
     bankAddress: 'Schemerlhöhe 71',
     bankPostcode: '8302',
     bankLocation: 'Nestelbach bei Graz',
   ),
-  '34157': Iban(
-    bic: 'RZOOAT2L560',
+  '34157': Bic(
+    value: 'RZOOAT2L560',
     bankName: 'Raiffeisenbank Region Sierning-Enns eGen',
     bankShortName: 'Raiffeisenbank Region Sierning-Enns eGen',
     bankAddress: 'Neustr. 5',
     bankPostcode: '4522',
     bankLocation: 'Sierning',
   ),
-  '34606': Iban(
-    bic: 'RZOOAT2L380',
+  '34606': Bic(
+    value: 'RZOOAT2L380',
     bankName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankShortName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankAddress: 'Garnisonstraße 1',
     bankPostcode: '4560',
     bankLocation: 'Kirchdorf an der Krems',
   ),
-  '39505': Iban(
-    bic: 'RZKTAT2K475',
+  '39505': Bic(
+    value: 'RZKTAT2K475',
     bankName:
         'Raiffeisen-Bezirksbank St. Veit a.d. Glan-Feldkirchen, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -3567,320 +3567,320 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9300',
     bankLocation: 'St. Veit an der Glan',
   ),
-  '39465': Iban(
-    bic: 'RZKTAT2K481',
+  '39465': Bic(
+    value: 'RZKTAT2K481',
     bankName: 'Raiffeisenbank Mittleres Lavanttal eGen',
     bankShortName: 'Raiffeisenbank Mittleres Lavanttal eGen',
     bankAddress: 'St. Andrä',
     bankPostcode: '9433',
     bankLocation: 'St. Andrä im Lavanttal',
   ),
-  '43380': Iban(
-    bic: 'OVLIAT21XXX',
+  '43380': Bic(
+    value: 'OVLIAT21XXX',
     bankName: 'DolomitenBank Osttirol-Westkärnten eG',
     bankShortName: 'DolomitenBank Osttirol-Westkärnten eG',
     bankAddress: 'Südtiroler Platz 9',
     bankPostcode: '9900',
     bankLocation: 'Lienz',
   ),
-  '18100': Iban(
-    bic: 'GEBAATWWXXX',
+  '18100': Bic(
+    value: 'GEBAATWWXXX',
     bankName: 'BNP Paribas SA Niederlassung Österreich',
     bankShortName: 'BNP Paribas SA Niederlassung Österreich',
     bankAddress: 'Vordere Zollamtsstraße 13',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '30000': Iban(
-    bic: 'RZBAATWWXXX',
+  '30000': Bic(
+    value: 'RZBAATWWXXX',
     bankName: 'Raiffeisen Bank International AG',
     bankShortName: 'Raiffeisen Bank International AG',
     bankAddress: 'Am Stadtpark 9',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '40850': Iban(
-    bic: 'VBOEATWWNOM',
+  '40850': Bic(
+    value: 'VBOEATWWNOM',
     bankName: 'Volksbank Niederösterreich AG',
     bankShortName: 'Volksbank Niederösterreich AG',
     bankAddress: 'Brunngasse 10',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '34380': Iban(
-    bic: 'RZOOAT2L380',
+  '34380': Bic(
+    value: 'RZOOAT2L380',
     bankName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankShortName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankAddress: 'Garnisonstraße 1',
     bankPostcode: '4560',
     bankLocation: 'Kirchdorf an der Krems',
   ),
-  '34318': Iban(
-    bic: 'RZOOAT2L380',
+  '34318': Bic(
+    value: 'RZOOAT2L380',
     bankName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankShortName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankAddress: 'Garnisonstraße 1',
     bankPostcode: '4560',
     bankLocation: 'Kirchdorf an der Krems',
   ),
-  '19940': Iban(
-    bic: '',
+  '19940': Bic(
+    value: '',
     bankName: 'VTB Bank (Europe) SE, Zweigniederlassung Wien',
     bankShortName: 'VTB Bank (Europe) SE, Zweigniederlassung Wien',
     bankAddress: 'Wipplingerstraße 35/Top 11',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '42740': Iban(
-    bic: 'VBOEATWWSAL',
+  '42740': Bic(
+    value: 'VBOEATWWSAL',
     bankName: 'Volksbank Salzburg eG',
     bankShortName: 'Volksbank Salzburg eG',
     bankAddress: 'St. Julien-Str. 12',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '37424': Iban(
-    bic: 'RVVGAT2B458',
+  '37424': Bic(
+    value: 'RVVGAT2B458',
     bankName: 'RAIFFEISENBANK im Walgau eGen',
     bankShortName: 'RAIFFEISENBANK im Walgau eGen',
     bankAddress: 'Bahnhofstraße 2',
     bankPostcode: '6710',
     bankLocation: 'Nenzing',
   ),
-  '32374': Iban(
-    bic: 'RLNWATWWASP',
+  '32374': Bic(
+    value: 'RLNWATWWASP',
     bankName: 'Raiffeisenbank Region Wiener Alpen eGen',
     bankShortName: 'Raiffeisenbank Region Wiener Alpen eGen',
     bankAddress: 'Bahnstraße 3',
     bankPostcode: '2870',
     bankLocation: 'Aspang',
   ),
-  '43770': Iban(
-    bic: 'VBOEATWWINN',
+  '43770': Bic(
+    value: 'VBOEATWWINN',
     bankName: 'Volksbank Tirol AG',
     bankShortName: 'Volksbank Tirol AG',
     bankAddress: 'Meinhardstraße 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '44430': Iban(
-    bic: 'VBOEATWWXXX',
+  '44430': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '43690': Iban(
-    bic: 'VBOEATWWXXX',
+  '43690': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '32633': Iban(
-    bic: 'RLNWATWWGTD',
+  '32633': Bic(
+    value: 'RLNWATWWGTD',
     bankName: 'Raiffeisen Regionalbank Mödling eGen',
     bankShortName: 'Raiffeisen Regionalbank Mödling eGen',
     bankAddress: 'Hauptstraße 27-29',
     bankPostcode: '2340',
     bankLocation: 'Mödling',
   ),
-  '32198': Iban(
-    bic: 'RLNWATW1322',
+  '32198': Bic(
+    value: 'RLNWATW1322',
     bankName: 'Raiffeisenbank Hollabrunn eGen',
     bankShortName: 'Raiffeisenbank Hollabrunn eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '2020',
     bankLocation: 'Hollabrunn',
   ),
-  '36305': Iban(
-    bic: 'RBRTAT22XXX',
+  '36305': Bic(
+    value: 'RBRTAT22XXX',
     bankName: 'Raiffeisenbank Oberland-Reutte eGen',
     bankShortName: 'Raiffeisenbank Oberland-Reutte eGen',
     bankAddress: 'Untermarkt 3',
     bankPostcode: '6600',
     bankLocation: 'Reutte',
   ),
-  '32731': Iban(
-    bic: 'RLNWATW1438',
+  '32731': Bic(
+    value: 'RLNWATW1438',
     bankName: 'Raiffeisenbank Kreuzenstein eGen',
     bankShortName: 'Raiffeisenbank Kreuzenstein eGen',
     bankAddress: 'Stockerauerstr. 8-10',
     bankPostcode: '2100',
     bankLocation: 'Leobendorf',
   ),
-  '32368': Iban(
-    bic: 'RLNWATW1477',
+  '32368': Bic(
+    value: 'RLNWATW1477',
     bankName: 'Raiffeisenbank Region Schallaburg eGen',
     bankShortName: 'Raiffeisenbank Region Schallaburg eGen',
     bankAddress: 'Linzer Straße 6',
     bankPostcode: '3382',
     bankLocation: 'Loosdorf/ Bez. Melk',
   ),
-  '32944': Iban(
-    bic: 'RLNWATWWLFD',
+  '32944': Bic(
+    value: 'RLNWATWWLFD',
     bankName: 'Raiffeisenbank Traisen-Gölsental eGen',
     bankShortName: 'Raiffeisenbank Traisen-Gölsental eGen',
     bankAddress: 'Babenbergerstraße 5',
     bankPostcode: '3180',
     bankLocation: 'Lilienfeld',
   ),
-  '37453': Iban(
-    bic: 'RVVGAT2B420',
+  '37453': Bic(
+    value: 'RVVGAT2B420',
     bankName: 'Raiffeisenbank Im Rheintal eGen',
     bankShortName: 'Raiffeisenbank Im Rheintal eGen',
     bankAddress: 'Rathausplatz 8',
     bankPostcode: '6850',
     bankLocation: 'Dornbirn',
   ),
-  '35112': Iban(
-    bic: 'RVSAAT2S012',
+  '35112': Bic(
+    value: 'RVSAAT2S012',
     bankName: 'Raiffeisenbank Hohe Tauern eGen',
     bankShortName: 'Raiffeisenbank Hohe Tauern eGen',
     bankAddress: 'Wilhelm-Fazokas-Straße 2c',
     bankPostcode: '5710',
     bankLocation: 'Kaprun',
   ),
-  '35212': Iban(
-    bic: 'RVSAAT2S012',
+  '35212': Bic(
+    value: 'RVSAAT2S012',
     bankName: 'Raiffeisenbank Hohe Tauern eGen',
     bankShortName: 'Raiffeisenbank Hohe Tauern eGen',
     bankAddress: 'Wilhelm-Fazokas-Straße 2c',
     bankPostcode: '5710',
     bankLocation: 'Kaprun',
   ),
-  '35312': Iban(
-    bic: 'RVSAAT2S012',
+  '35312': Bic(
+    value: 'RVSAAT2S012',
     bankName: 'Raiffeisenbank Hohe Tauern eGen',
     bankShortName: 'Raiffeisenbank Hohe Tauern eGen',
     bankAddress: 'Wilhelm-Fazokas-Straße 2c',
     bankPostcode: '5710',
     bankLocation: 'Kaprun',
   ),
-  '35115': Iban(
-    bic: 'RVSAAT2S015',
+  '35115': Bic(
+    value: 'RVSAAT2S015',
     bankName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankShortName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankAddress: 'Dorf 1',
     bankPostcode: '5301',
     bankLocation: 'Eugendorf',
   ),
-  '35215': Iban(
-    bic: 'RVSAAT2S015',
+  '35215': Bic(
+    value: 'RVSAAT2S015',
     bankName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankShortName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankAddress: 'Dorf 1',
     bankPostcode: '5301',
     bankLocation: 'Eugendorf',
   ),
-  '35119': Iban(
-    bic: 'RVSAAT2S019',
+  '35119': Bic(
+    value: 'RVSAAT2S019',
     bankName: 'Raiffeisenbank Großarl-Hüttschlag eGen',
     bankShortName: 'Raiffeisenbank Großarl-Hüttschlag eGen',
     bankAddress: 'Marktstraße 8',
     bankPostcode: '5611',
     bankLocation: 'Großarl',
   ),
-  '35121': Iban(
-    bic: 'RVSAAT2S021',
+  '35121': Bic(
+    value: 'RVSAAT2S021',
     bankName: 'Raiffeisenbank Wallersee eGen',
     bankShortName: 'Raiffeisenbank Wallersee eGen',
     bankAddress: 'Hauptstraße 39',
     bankPostcode: '5202',
     bankLocation: 'Neumarkt am Wallersee',
   ),
-  '35221': Iban(
-    bic: 'RVSAAT2S021',
+  '35221': Bic(
+    value: 'RVSAAT2S021',
     bankName: 'Raiffeisenbank Wallersee eGen',
     bankShortName: 'Raiffeisenbank Wallersee eGen',
     bankAddress: 'Hauptstraße 39',
     bankPostcode: '5202',
     bankLocation: 'Neumarkt am Wallersee',
   ),
-  '35122': Iban(
-    bic: 'RVSAAT2S022',
+  '35122': Bic(
+    value: 'RVSAAT2S022',
     bankName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankShortName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankAddress: 'Justin-Robert-Platz 1',
     bankPostcode: '5400',
     bankLocation: 'Hallein',
   ),
-  '35322': Iban(
-    bic: 'RVSAAT2S022',
+  '35322': Bic(
+    value: 'RVSAAT2S022',
     bankName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankShortName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankAddress: 'Justin-Robert-Platz 1',
     bankPostcode: '5400',
     bankLocation: 'Hallein',
   ),
-  '35422': Iban(
-    bic: 'RVSAAT2S022',
+  '35422': Bic(
+    value: 'RVSAAT2S022',
     bankName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankShortName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankAddress: 'Justin-Robert-Platz 1',
     bankPostcode: '5400',
     bankLocation: 'Hallein',
   ),
-  '35522': Iban(
-    bic: 'RVSAAT2S022',
+  '35522': Bic(
+    value: 'RVSAAT2S022',
     bankName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankShortName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankAddress: 'Justin-Robert-Platz 1',
     bankPostcode: '5400',
     bankLocation: 'Hallein',
   ),
-  '35152': Iban(
-    bic: 'RVSAAT2S052',
+  '35152': Bic(
+    value: 'RVSAAT2S052',
     bankName: 'Raiffeisenbank Saalbach-Hinterglemm-Viehhofen eGen',
     bankShortName: 'Raiffeisenbank Saalbach-Hinterglemm-Viehhofen eGen',
     bankAddress: 'Dorfplatz 311',
     bankPostcode: '5753',
     bankLocation: 'Saalbach-Hinterglemm',
   ),
-  '35352': Iban(
-    bic: 'RVSAAT2S052',
+  '35352': Bic(
+    value: 'RVSAAT2S052',
     bankName: 'Raiffeisenbank Saalbach-Hinterglemm-Viehhofen eGen',
     bankShortName: 'Raiffeisenbank Saalbach-Hinterglemm-Viehhofen eGen',
     bankAddress: 'Dorfplatz 311',
     bankPostcode: '5753',
     bankLocation: 'Saalbach-Hinterglemm',
   ),
-  '35452': Iban(
-    bic: 'RVSAAT2S052',
+  '35452': Bic(
+    value: 'RVSAAT2S052',
     bankName: 'Raiffeisenbank Saalbach-Hinterglemm-Viehhofen eGen',
     bankShortName: 'Raiffeisenbank Saalbach-Hinterglemm-Viehhofen eGen',
     bankAddress: 'Dorfplatz 311',
     bankPostcode: '5753',
     bankLocation: 'Saalbach-Hinterglemm',
   ),
-  '35156': Iban(
-    bic: 'RVSAAT2S056',
+  '35156': Bic(
+    value: 'RVSAAT2S056',
     bankName: 'Raiffeisenbank St.Gilgen-Fuschl-Strobl eGen',
     bankShortName: 'Raiffeisenbank St.Gilgen-Fuschl-Strobl eGen',
     bankAddress: 'Mozartplatz 4',
     bankPostcode: '5340',
     bankLocation: 'St. Gilgen',
   ),
-  '35256': Iban(
-    bic: 'RVSAAT2S056',
+  '35256': Bic(
+    value: 'RVSAAT2S056',
     bankName: 'Raiffeisenbank St.Gilgen-Fuschl-Strobl eGen',
     bankShortName: 'Raiffeisenbank St.Gilgen-Fuschl-Strobl eGen',
     bankAddress: 'Mozartplatz 4',
     bankPostcode: '5340',
     bankLocation: 'St. Gilgen',
   ),
-  '35169': Iban(
-    bic: 'RVSAAT2S069',
+  '35169': Bic(
+    value: 'RVSAAT2S069',
     bankName: 'Raiffeisenbank St. Johann-Wagrain-Kleinarl eGen',
     bankShortName: 'Raiffeisenbank St. Johann-Wagrain-Kleinarl eGen',
     bankAddress: 'Ing. Ludwig Pech-Straße 1',
     bankPostcode: '5600',
     bankLocation: 'St. Johann im Pongau',
   ),
-  '35127': Iban(
-    bic: 'RVSAAT2S027',
+  '35127': Bic(
+    value: 'RVSAAT2S027',
     bankName:
         'Raiffeisenbank Hüttau-St. Martin-Niedernfritz registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -3889,8 +3889,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '5511',
     bankLocation: 'Hüttau',
   ),
-  '35149': Iban(
-    bic: 'RVSAAT2S049',
+  '35149': Bic(
+    value: 'RVSAAT2S049',
     bankName:
         'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -3899,8 +3899,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '5550',
     bankLocation: 'Radstadt',
   ),
-  '35249': Iban(
-    bic: 'RVSAAT2S049',
+  '35249': Bic(
+    value: 'RVSAAT2S049',
     bankName:
         'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -3909,24 +3909,24 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '5550',
     bankLocation: 'Radstadt',
   ),
-  '35163': Iban(
-    bic: 'RVSAAT2S063',
+  '35163': Bic(
+    value: 'RVSAAT2S063',
     bankName: 'Raiffeisenbank Lungau eGen',
     bankShortName: 'Raiffeisenbank Lungau eGen',
     bankAddress: 'Kirchengasse 9',
     bankPostcode: '5580',
     bankLocation: 'Tamsweg',
   ),
-  '35263': Iban(
-    bic: 'RVSAAT2S063',
+  '35263': Bic(
+    value: 'RVSAAT2S063',
     bankName: 'Raiffeisenbank Lungau eGen',
     bankShortName: 'Raiffeisenbank Lungau eGen',
     bankAddress: 'Kirchengasse 9',
     bankPostcode: '5580',
     bankLocation: 'Tamsweg',
   ),
-  '35371': Iban(
-    bic: 'RVSAAT2S071',
+  '35371': Bic(
+    value: 'RVSAAT2S071',
     bankName:
         'Raiffeisenbank Wals-Himmelreich registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -3935,160 +3935,160 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '5071',
     bankLocation: 'Wals bei Salzburg',
   ),
-  '35118': Iban(
-    bic: 'RVSAAT2S018',
+  '35118': Bic(
+    value: 'RVSAAT2S018',
     bankName: 'Raiffeisenbank Untersberg eGen',
     bankShortName: 'Raiffeisenbank Untersberg eGen',
     bankAddress: 'Hauptstraße 28',
     bankPostcode: '5082',
     bankLocation: 'Grödig',
   ),
-  '35104': Iban(
-    bic: 'RVSAAT2S004',
+  '35104': Bic(
+    value: 'RVSAAT2S004',
     bankName: 'Raiffeisenbank Altenmarkt-Flachau-Eben eGen',
     bankShortName: 'Raiffeisenbank Altenmarkt-Flachau-Eben eGen',
     bankAddress: 'Marktplatz 5',
     bankPostcode: '5541',
     bankLocation: 'Altenmarkt im Pongau',
   ),
-  '35204': Iban(
-    bic: 'RVSAAT2S004',
+  '35204': Bic(
+    value: 'RVSAAT2S004',
     bankName: 'Raiffeisenbank Altenmarkt-Flachau-Eben eGen',
     bankShortName: 'Raiffeisenbank Altenmarkt-Flachau-Eben eGen',
     bankAddress: 'Marktplatz 5',
     bankPostcode: '5541',
     bankLocation: 'Altenmarkt im Pongau',
   ),
-  '35404': Iban(
-    bic: 'RVSAAT2S004',
+  '35404': Bic(
+    value: 'RVSAAT2S004',
     bankName: 'Raiffeisenbank Altenmarkt-Flachau-Eben eGen',
     bankShortName: 'Raiffeisenbank Altenmarkt-Flachau-Eben eGen',
     bankAddress: 'Marktplatz 5',
     bankPostcode: '5541',
     bankLocation: 'Altenmarkt im Pongau',
   ),
-  '35126': Iban(
-    bic: 'RVSAAT2S026',
+  '35126': Bic(
+    value: 'RVSAAT2S026',
     bankName: 'Raiffeisenbank Gastein eGen',
     bankShortName: 'Raiffeisenbank Gastein eGen',
     bankAddress: 'Kaiser Franz-Platz 4',
     bankPostcode: '5630',
     bankLocation: 'Bad Hofgastein',
   ),
-  '35226': Iban(
-    bic: 'RVSAAT2S026',
+  '35226': Bic(
+    value: 'RVSAAT2S026',
     bankName: 'Raiffeisenbank Gastein eGen',
     bankShortName: 'Raiffeisenbank Gastein eGen',
     bankAddress: 'Kaiser Franz-Platz 4',
     bankPostcode: '5630',
     bankLocation: 'Bad Hofgastein',
   ),
-  '35155': Iban(
-    bic: 'RVSAAT2S055',
+  '35155': Bic(
+    value: 'RVSAAT2S055',
     bankName: 'Raiffeisenbank Pongau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pongau Mitte eGen',
     bankAddress: 'Salzburgerstraße 39b',
     bankPostcode: '5620',
     bankLocation: 'Schwarzach',
   ),
-  '35255': Iban(
-    bic: 'RVSAAT2S055',
+  '35255': Bic(
+    value: 'RVSAAT2S055',
     bankName: 'Raiffeisenbank Pongau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pongau Mitte eGen',
     bankAddress: 'Salzburgerstraße 39b',
     bankPostcode: '5620',
     bankLocation: 'Schwarzach',
   ),
-  '35154': Iban(
-    bic: 'RVSAAT2S034',
+  '35154': Bic(
+    value: 'RVSAAT2S034',
     bankName: 'Raiffeisenbank Salzburg Liefering-Maxglan-Siezenheim eGen',
     bankShortName: 'Raiffeisenbank Salzburg Liefering-Maxglan-Siezenheim eGen',
     bankAddress: 'Innsbrucker Bundesstraße 34',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '35139': Iban(
-    bic: 'RVSAAT2S039',
+  '35139': Bic(
+    value: 'RVSAAT2S039',
     bankName: 'Raiffeisenbank Oberpinzgau eGen',
     bankShortName: 'Raiffeisenbank Oberpinzgau eGen',
     bankAddress: 'Kirchgasse 12',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '35239': Iban(
-    bic: 'RVSAAT2S039',
+  '35239': Bic(
+    value: 'RVSAAT2S039',
     bankName: 'Raiffeisenbank Oberpinzgau eGen',
     bankShortName: 'Raiffeisenbank Oberpinzgau eGen',
     bankAddress: 'Kirchgasse 12',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '35339': Iban(
-    bic: 'RVSAAT2S039',
+  '35339': Bic(
+    value: 'RVSAAT2S039',
     bankName: 'Raiffeisenbank Oberpinzgau eGen',
     bankShortName: 'Raiffeisenbank Oberpinzgau eGen',
     bankAddress: 'Kirchgasse 12',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '35101': Iban(
-    bic: 'RVSAAT2S001',
+  '35101': Bic(
+    value: 'RVSAAT2S001',
     bankName: 'Raiffeisenbank Lammertal eGen',
     bankShortName: 'Raiffeisenbank Lammertal eGen',
     bankAddress: 'Markt 49',
     bankPostcode: '5441',
     bankLocation: 'Abtenau',
   ),
-  '36357': Iban(
-    bic: 'RZTIAT22357',
+  '36357': Bic(
+    value: 'RZTIAT22357',
     bankName: 'Raiffeisenbank Wildschönau eGen',
     bankShortName: 'Raiffeisenbank Wildschönau eGen',
     bankAddress: 'Kirchen, Oberau 314',
     bankPostcode: '6311',
     bankLocation: 'Wildschönau',
   ),
-  '36329': Iban(
-    bic: 'RZTIAT22329',
+  '36329': Bic(
+    value: 'RZTIAT22329',
     bankName: 'Raiffeisenbank Wipptal - Stubaital Mitte eGen',
     bankShortName: 'Raiffeisenbank Wipptal - Stubaital Mitte eGen',
     bankAddress: 'Brennerstraße 52',
     bankPostcode: '6150',
     bankLocation: 'Steinach a.Br.',
   ),
-  '36358': Iban(
-    bic: 'RZTIAT22358',
+  '36358': Bic(
+    value: 'RZTIAT22358',
     bankName: 'Raiffeisen Bezirksbank Kufstein eGen',
     bankShortName: 'Raiffeisen Bezirksbank Kufstein eGen',
     bankAddress: 'Oberer Stadtplatz 1a',
     bankPostcode: '6330',
     bankLocation: 'Kufstein',
   ),
-  '34214': Iban(
-    bic: 'RZOOAT2L214',
+  '34214': Bic(
+    value: 'RZOOAT2L214',
     bankName: 'Raiffeisenbank Kematen-Neuhofen eGen',
     bankShortName: 'Raiffeisenbank Kematen-Neuhofen eGen',
     bankAddress: 'Steyrer Straße 1',
     bankPostcode: '4501',
     bankLocation: 'Neuhofen an der Krems',
   ),
-  '34777': Iban(
-    bic: 'RZOOAT2L777',
+  '34777': Bic(
+    value: 'RZOOAT2L777',
     bankName: 'Raiffeisenbank Perg eGen',
     bankShortName: 'Raiffeisenbank Perg eGen',
     bankAddress: 'Linzerstr. 14',
     bankPostcode: '4320',
     bankLocation: 'Perg',
   ),
-  '37474': Iban(
-    bic: 'RVVGAT2B474',
+  '37474': Bic(
+    value: 'RVVGAT2B474',
     bankName: 'Raiffeisenbank Weissachtal eGen',
     bankShortName: 'Raiffeisenbank Weissachtal eGen',
     bankAddress: 'Dorf 245',
     bankPostcode: '6934',
     bankLocation: 'Sulzberg (Vbg.)',
   ),
-  '37475': Iban(
-    bic: 'RVVGAT2B475',
+  '37475': Bic(
+    value: 'RVVGAT2B475',
     bankName:
         'Raiffeisenbank Vorderland registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4097,16 +4097,16 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6832',
     bankLocation: 'Sulz',
   ),
-  '37482': Iban(
-    bic: 'RVVGAT2B482',
+  '37482': Bic(
+    value: 'RVVGAT2B482',
     bankName: 'Raiffeisenbank am Hofsteig eGen',
     bankShortName: 'Raiffeisenbank am Hofsteig eGen',
     bankAddress: 'Kellhofstraße 12',
     bankPostcode: '6922',
     bankLocation: 'Wolfurt',
   ),
-  '39411': Iban(
-    bic: 'RZKTAT2K411',
+  '39411': Bic(
+    value: 'RZKTAT2K411',
     bankName:
         'Raiffeisenbank Moosburg-Tigring, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4115,32 +4115,32 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9062',
     bankLocation: 'Moosburg (Ktn.)',
   ),
-  '39412': Iban(
-    bic: 'RZKTAT2K412',
+  '39412': Bic(
+    value: 'RZKTAT2K412',
     bankName: 'Raiffeisen Bank Lurnfeld-Mölltal eGen',
     bankShortName: 'Raiffeisen Bank Lurnfeld-Mölltal eGen',
     bankAddress: 'Hauptstr. 23',
     bankPostcode: '9813',
     bankLocation: 'Möllbrücke',
   ),
-  '19380': Iban(
-    bic: 'DENEATW1XXX',
+  '19380': Bic(
+    value: 'DENEATW1XXX',
     bankName: 'Bankhaus Denzel Aktiengesellschaft',
     bankShortName: 'Bankhaus Denzel Aktiengesellschaft',
     bankAddress: 'Erdbergstraße 189-193',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '19390': Iban(
-    bic: 'BMASAT21XXX',
+  '19390': Bic(
+    value: 'BMASAT21XXX',
     bankName: 'BMW Austria Bank GmbH',
     bankShortName: 'BMW Austria Bank GmbH',
     bankAddress: 'Siegfried-Marcus-Str. 24',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '14000': Iban(
-    bic: 'BAWAATWWXXX',
+  '14000': Bic(
+    value: 'BAWAATWWXXX',
     bankName:
         'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankShortName:
@@ -4149,80 +4149,80 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '51000': Iban(
-    bic: 'EHBBAT2EXXX',
+  '51000': Bic(
+    value: 'EHBBAT2EXXX',
     bankName: 'HYPO-BANK BURGENLAND Aktiengesellschaft',
     bankShortName: 'HYPO-BANK BURGENLAND Aktiengesellschaft',
     bankAddress: 'Neusiedler Straße 33',
     bankPostcode: '7000',
     bankLocation: 'Eisenstadt',
   ),
-  '20502': Iban(
-    bic: 'SPIMAT21XXX',
+  '20502': Bic(
+    value: 'SPIMAT21XXX',
     bankName: 'Sparkasse Imst AG',
     bankShortName: 'Sparkasse Imst AG',
     bankAddress: 'Sparkassenplatz 1',
     bankPostcode: '6460',
     bankLocation: 'Imst',
   ),
-  '73800': Iban(
-    bic: 'LEGMATW1XXX',
+  '73800': Bic(
+    value: 'LEGMATW1XXX',
     bankName: 'LEASFINANZ Bank GmbH',
     bankShortName: 'LEASFINANZ Bank GmbH',
     bankAddress: 'Rothschildplatz 4',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '20510': Iban(
-    bic: 'SPSCAT22XXX',
+  '20510': Bic(
+    value: 'SPSCAT22XXX',
     bankName: 'Sparkasse Schwaz AG',
     bankShortName: 'Sparkasse Schwaz AG',
     bankAddress: 'Franz-Josef-Straße 8-10',
     bankPostcode: '6130',
     bankLocation: 'Schwaz',
   ),
-  '32426': Iban(
-    bic: 'RLNWATWW426',
+  '32426': Bic(
+    value: 'RLNWATWW426',
     bankName: 'Raiffeisenbank Langenlois eGen',
     bankShortName: 'Raiffeisenbank Langenlois eGen',
     bankAddress: 'Kornplatz 9',
     bankPostcode: '3550',
     bankLocation: 'Langenlois',
   ),
-  '32438': Iban(
-    bic: 'RLNWATW1438',
+  '32438': Bic(
+    value: 'RLNWATW1438',
     bankName: 'Raiffeisenbank Kreuzenstein eGen',
     bankShortName: 'Raiffeisenbank Kreuzenstein eGen',
     bankAddress: 'Stockerauerstr. 8-10',
     bankPostcode: '2100',
     bankLocation: 'Leobendorf',
   ),
-  '34226': Iban(
-    bic: 'RZOOAT2L226',
+  '34226': Bic(
+    value: 'RZOOAT2L226',
     bankName: 'Raiffeisenbank Kleinmünchen/Linz eGen',
     bankShortName: 'Raiffeisenbank Kleinmünchen/Linz eGen',
     bankAddress: 'Salzburger Str. 5',
     bankPostcode: '4030',
     bankLocation: 'Linz',
   ),
-  '34434': Iban(
-    bic: 'RZOOAT2L434',
+  '34434': Bic(
+    value: 'RZOOAT2L434',
     bankName: 'Raiffeisenbank Pöndorf - Frankenmarkt eGen',
     bankShortName: 'Raiffeisenbank Pöndorf - Frankenmarkt eGen',
     bankAddress: 'Pöndorf 4',
     bankPostcode: '4891',
     bankLocation: 'Pöndorf',
   ),
-  '34741': Iban(
-    bic: 'RZOOAT2L741',
+  '34741': Bic(
+    value: 'RZOOAT2L741',
     bankName: 'Raiffeisenbank Weißkirchen a.d. Traun eGen',
     bankShortName: 'Raiffeisenbank Weißkirchen a.d. Traun eGen',
     bankAddress: 'Raiffeisenweg 1',
     bankPostcode: '4616',
     bankLocation: 'Weißkirchen an der Traun',
   ),
-  '39442': Iban(
-    bic: 'RZKTAT2K442',
+  '39442': Bic(
+    value: 'RZKTAT2K442',
     bankName:
         'Raiffeisenbank Drautal registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4231,24 +4231,24 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9710',
     bankLocation: 'Feistritz an der Drau',
   ),
-  '39457': Iban(
-    bic: 'RZKTAT2K457',
+  '39457': Bic(
+    value: 'RZKTAT2K457',
     bankName: 'Raiffeisenbank Nockberge eGen',
     bankShortName: 'Raiffeisenbank Nockberge eGen',
     bankAddress: 'Hauptstr. 41',
     bankPostcode: '9545',
     bankLocation: 'Radenthein',
   ),
-  '39464': Iban(
-    bic: 'RZKTAT2K464',
+  '39464': Bic(
+    value: 'RZKTAT2K464',
     bankName: 'Raiffeisenbank Lieser-Maltatal eG',
     bankShortName: 'Raiffeisenbank Lieser-Maltatal eG',
     bankAddress: 'Rennweg 6',
     bankPostcode: '9863',
     bankLocation: 'Rennweg',
   ),
-  '39475': Iban(
-    bic: 'RZKTAT2K475',
+  '39475': Bic(
+    value: 'RZKTAT2K475',
     bankName:
         'Raiffeisen-Bezirksbank St. Veit a.d. Glan-Feldkirchen, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4257,8 +4257,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9300',
     bankLocation: 'St. Veit an der Glan',
   ),
-  '39272': Iban(
-    bic: 'RZKTAT2K272',
+  '39272': Bic(
+    value: 'RZKTAT2K272',
     bankName:
         'Raiffeisenbank Bleiburg registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4267,8 +4267,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9150',
     bankLocation: 'Bleiburg',
   ),
-  '39288': Iban(
-    bic: 'RZKTAT2K288',
+  '39288': Bic(
+    value: 'RZKTAT2K288',
     bankName:
         'Raiffeisenbank Eberndorf registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4277,160 +4277,160 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9141',
     bankLocation: 'Eberndorf',
   ),
-  '39292': Iban(
-    bic: 'RZKTAT2K292',
+  '39292': Bic(
+    value: 'RZKTAT2K292',
     bankName: 'Raiffeisenbank Unteres Lavanttal eGen',
     bankShortName: 'Raiffeisenbank Unteres Lavanttal eGen',
     bankAddress: 'Lavamünd 41',
     bankPostcode: '9473',
     bankLocation: 'Lavamünd',
   ),
-  '20404': Iban(
-    bic: 'SBGSAT2SXXX',
+  '20404': Bic(
+    value: 'SBGSAT2SXXX',
     bankName: 'Salzburger Sparkasse Bank Aktiengesellschaft',
     bankShortName: 'Salzburger Sparkasse Bank Aktiengesellschaft',
     bankAddress: 'Alter Markt 3',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '20306': Iban(
-    bic: 'SPFRAT21XXX',
+  '20306': Bic(
+    value: 'SPFRAT21XXX',
     bankName: 'SPARKASSE FRANKENMARKT AKTIENGESELLSCHAFT',
     bankShortName: 'SPARKASSE FRANKENMARKT AKTIENGESELLSCHAFT',
     bankAddress: 'Hauptstraße 94',
     bankPostcode: '4890',
     bankLocation: 'Frankenmarkt',
   ),
-  '20326': Iban(
-    bic: 'SPNKAT21XXX',
+  '20326': Bic(
+    value: 'SPNKAT21XXX',
     bankName: 'Sparkasse Neuhofen Bank Aktiengesellschaft',
     bankShortName: 'Sparkasse Neuhofen Bank Aktiengesellschaft',
     bankAddress: 'Marktplatz 18',
     bankPostcode: '4501',
     bankLocation: 'Neuhofen an der Krems',
   ),
-  '20221': Iban(
-    bic: 'SPHNAT21XXX',
+  '20221': Bic(
+    value: 'SPHNAT21XXX',
     bankName: 'Sparkasse Horn-Ravelsbach-Kirchberg Aktiengesellschaft',
     bankShortName: 'Sparkasse Horn-Ravelsbach-Kirchberg Aktiengesellschaft',
     bankAddress: 'Kirchenplatz 12',
     bankPostcode: '3580',
     bankLocation: 'Horn',
   ),
-  '32000': Iban(
-    bic: 'RLNWATWWXXX',
+  '32000': Bic(
+    value: 'RLNWATWWXXX',
     bankName: 'RAIFFEISENLANDESBANK NIEDERÖSTERREICH-WIEN AG',
     bankShortName: 'RAIFFEISENLANDESBANK NIEDERÖSTERREICH-WIEN AG',
     bankAddress: 'Friedrich-Wilhelm-Raiffeisenplatz 1',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '20330': Iban(
-    bic: 'SPPBAT21XXX',
+  '20330': Bic(
+    value: 'SPPBAT21XXX',
     bankName: 'Sparkasse Eferding-Peuerbach-Waizenkirchen',
     bankShortName: 'Sparkasse Eferding-Peuerbach-Waizenkirchen',
     bankAddress: 'Stadtplatz 1',
     bankPostcode: '4070',
     bankLocation: 'Eferding',
   ),
-  '20112': Iban(
-    bic: 'GIBAAT21XXX',
+  '20112': Bic(
+    value: 'GIBAAT21XXX',
     bankName: 'Die Zweite Wiener Vereins-Sparcasse',
     bankShortName: 'Die Zweite Wiener Vereins-Sparcasse',
     bankAddress: 'Am Schweizer Garten 1, Objekt 2',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '19440': Iban(
-    bic: 'WIPBATWWXXX',
+  '19440': Bic(
+    value: 'WIPBATWWXXX',
     bankName: 'Wiener Privatbank SE',
     bankShortName: 'Wiener Privatbank SE',
     bankAddress: 'Parkring 12',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '20111': Iban(
-    bic: 'GIBAATWWXXX',
+  '20111': Bic(
+    value: 'GIBAATWWXXX',
     bankName: 'Erste Bank der oesterreichischen Sparkassen AG',
     bankShortName: 'Erste Bank der oesterreichischen Sparkassen AG',
     bankAddress: 'Am Belvedere 1',
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '34330': Iban(
-    bic: 'RZOOAT2L330',
+  '34330': Bic(
+    value: 'RZOOAT2L330',
     bankName: 'Raiffeisenbank Mühlviertler Alm eGen',
     bankShortName: 'Raiffeisenbank Mühlviertler Alm eGen',
     bankAddress: 'Schulstr. 2',
     bankPostcode: '4280',
     bankLocation: 'Königswiesen',
   ),
-  '34231': Iban(
-    bic: 'RZOOAT2L231',
+  '34231': Bic(
+    value: 'RZOOAT2L231',
     bankName: 'Raiffeisenbank Kollerschlag eGen',
     bankShortName: 'Raiffeisenbank Kollerschlag eGen',
     bankAddress: 'Markt 4',
     bankPostcode: '4154',
     bankLocation: 'Kollerschlag',
   ),
-  '34437': Iban(
-    bic: 'RZOOAT2L437',
+  '34437': Bic(
+    value: 'RZOOAT2L437',
     bankName: 'Raiffeisenbank Prambachkirchen eGen',
     bankShortName: 'Raiffeisenbank Prambachkirchen eGen',
     bankAddress: 'Hauptstraße 18',
     bankPostcode: '4731',
     bankLocation: 'Prambachkirchen',
   ),
-  '32415': Iban(
-    bic: 'RLNWATWWOWS',
+  '32415': Bic(
+    value: 'RLNWATWWOWS',
     bankName: 'Raiffeisenbank Oberes Waldviertel eGen',
     bankShortName: 'Raiffeisenbank Oberes Waldviertel eGen',
     bankAddress: 'Hauptplatz 22',
     bankPostcode: '3943',
     bankLocation: 'Schrems',
   ),
-  '34747': Iban(
-    bic: 'RZOOAT2L747',
+  '34747': Bic(
+    value: 'RZOOAT2L747',
     bankName: 'Raiffeisenbank Weyer eGen',
     bankShortName: 'Raiffeisenbank Weyer eGen',
     bankAddress: 'Marktplatz 11',
     bankPostcode: '3335',
     bankLocation: 'Weyer (OÖ)',
   ),
-  '32823': Iban(
-    bic: 'RLNWATWW823',
+  '32823': Bic(
+    value: 'RLNWATWW823',
     bankName: 'Raiffeisenbank Region Schwechat eGen',
     bankShortName: 'Raiffeisenbank Region Schwechat eGen',
     bankAddress: 'Bruck-Hainburger Str. 5',
     bankPostcode: '2320',
     bankLocation: 'Schwechat',
   ),
-  '34075': Iban(
-    bic: 'RZOOAT2L075',
+  '34075': Bic(
+    value: 'RZOOAT2L075',
     bankName: 'Raiffeisenbank Donau-Ameisberg eGen',
     bankShortName: 'Raiffeisenbank Donau-Ameisberg eGen',
     bankAddress: 'Marktplatz 10',
     bankPostcode: '4152',
     bankLocation: 'Sarleinsbach',
   ),
-  '39479': Iban(
-    bic: 'RZKTAT2K479',
+  '39479': Bic(
+    value: 'RZKTAT2K479',
     bankName: 'Raiffeisenbank Millstättersee eG',
     bankShortName: 'Raiffeisenbank Millstättersee eG',
     bankAddress: 'Hauptstr. 82',
     bankPostcode: '9871',
     bankLocation: 'Seeboden',
   ),
-  '39481': Iban(
-    bic: 'RZKTAT2K481',
+  '39481': Bic(
+    value: 'RZKTAT2K481',
     bankName: 'Raiffeisenbank Mittleres Lavanttal eGen',
     bankShortName: 'Raiffeisenbank Mittleres Lavanttal eGen',
     bankAddress: 'St. Andrä',
     bankPostcode: '9433',
     bankLocation: 'St. Andrä im Lavanttal',
   ),
-  '39487': Iban(
-    bic: 'RZKTAT2K487',
+  '39487': Bic(
+    value: 'RZKTAT2K487',
     bankName:
         'Raiffeisenbank Rosental, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4439,8 +4439,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9181',
     bankLocation: 'Feistritz im Rosental',
   ),
-  '39491': Iban(
-    bic: 'RZKTAT2K491',
+  '39491': Bic(
+    value: 'RZKTAT2K491',
     bankName:
         'Raiffeisenbank Oberes Lavanttal registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4449,8 +4449,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9462',
     bankLocation: 'Bad St. Leonhard / Lavanttal',
   ),
-  '39496': Iban(
-    bic: 'RZKTAT2K496',
+  '39496': Bic(
+    value: 'RZKTAT2K496',
     bankName:
         'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4459,8 +4459,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9500',
     bankLocation: 'Villach',
   ),
-  '39501': Iban(
-    bic: 'RZKTAT2K501',
+  '39501': Bic(
+    value: 'RZKTAT2K501',
     bankName:
         'Raiffeisenbank Friesach-Metnitztal, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4469,32 +4469,32 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9360',
     bankLocation: 'Friesach (Ktn.)',
   ),
-  '39510': Iban(
-    bic: 'RZKTAT2K510',
+  '39510': Bic(
+    value: 'RZKTAT2K510',
     bankName: 'Raiffeisenbank Ossiacher See eG',
     bankShortName: 'Raiffeisenbank Ossiacher See eG',
     bankAddress: '10.-Oktober-Straße 2',
     bankPostcode: '9551',
     bankLocation: 'Bodensdorf am Ossiacher See',
   ),
-  '39511': Iban(
-    bic: 'RZKTAT2K511',
+  '39511': Bic(
+    value: 'RZKTAT2K511',
     bankName: 'Raiffeisenbank Mittelkärnten eG',
     bankShortName: 'Raiffeisenbank Mittelkärnten eG',
     bankAddress: 'Kreuzstrasse 15',
     bankPostcode: '9330',
     bankLocation: 'Althofen',
   ),
-  '39543': Iban(
-    bic: 'RZKTAT2K543',
+  '39543': Bic(
+    value: 'RZKTAT2K543',
     bankName: 'Raiffeisenbank Hermagor eG',
     bankShortName: 'Raiffeisenbank Hermagor eG',
     bankAddress: 'Gasserplatz 4',
     bankPostcode: '9620',
     bankLocation: 'Hermagor',
   ),
-  '39546': Iban(
-    bic: 'RZKTAT2K546',
+  '39546': Bic(
+    value: 'RZKTAT2K546',
     bankName:
         'Raiffeisenbank Völkermarkt, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4503,8 +4503,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9100',
     bankLocation: 'Völkermarkt',
   ),
-  '39559': Iban(
-    bic: 'RZKTAT2K559',
+  '39559': Bic(
+    value: 'RZKTAT2K559',
     bankName:
         'Raiffeisenbank Wernberg, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4513,8 +4513,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9241',
     bankLocation: 'Wernberg',
   ),
-  '24012': Iban(
-    bic: 'BAOSATWWXXX',
+  '24012': Bic(
+    value: 'BAOSATWWXXX',
     bankName: 'Bausparkasse der österreichischen Sparkassen Aktiengesellschaft',
     bankShortName:
         'Bausparkasse der österreichischen Sparkassen Aktiengesellschaft',
@@ -4522,64 +4522,64 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '20828': Iban(
-    bic: 'SPMZAT21XXX',
+  '20828': Bic(
+    value: 'SPMZAT21XXX',
     bankName: 'Sparkasse Mürzzuschlag Aktiengesellschaft',
     bankShortName: 'Sparkasse Mürzzuschlag Aktiengesellschaft',
     bankAddress: 'Mariazeller Straße 4a',
     bankPostcode: '8680',
     bankLocation: 'Mürzzuschlag',
   ),
-  '18120': Iban(
-    bic: 'PABXATW1XXX',
+  '18120': Bic(
+    value: 'PABXATW1XXX',
     bankName: 'paybox Bank AG',
     bankShortName: 'paybox Bank AG',
     bankAddress: 'Lassallestraße 9',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '20509': Iban(
-    bic: 'SPREAT21XXX',
+  '20509': Bic(
+    value: 'SPREAT21XXX',
     bankName: 'Sparkasse Reutte AG',
     bankShortName: 'Sparkasse Reutte AG',
     bankAddress: 'Obermarkt 51',
     bankPostcode: '6600',
     bankLocation: 'Reutte',
   ),
-  '32477': Iban(
-    bic: 'RLNWATW1477',
+  '32477': Bic(
+    value: 'RLNWATW1477',
     bankName: 'Raiffeisenbank Region Schallaburg eGen',
     bankShortName: 'Raiffeisenbank Region Schallaburg eGen',
     bankAddress: 'Linzer Straße 6',
     bankPostcode: '3382',
     bankLocation: 'Loosdorf/ Bez. Melk',
   ),
-  '34750': Iban(
-    bic: 'RZOOAT2L750',
+  '34750': Bic(
+    value: 'RZOOAT2L750',
     bankName: 'Raiffeisenbank Bad Wimsbach-Neydharting eGen',
     bankShortName: 'Raiffeisenbank Bad Wimsbach-Neydharting eGen',
     bankAddress: 'Markt 23',
     bankPostcode: '4654',
     bankLocation: 'Bad Wimsbach-Neydharting',
   ),
-  '32842': Iban(
-    bic: 'RLNWATWWSTO',
+  '32842': Bic(
+    value: 'RLNWATWWSTO',
     bankName: 'Raiffeisenbank Stockerau eGen',
     bankShortName: 'Raiffeisenbank Stockerau eGen',
     bankAddress: 'Rathausplatz 2',
     bankPostcode: '2000',
     bankLocation: 'Stockerau',
   ),
-  '39561': Iban(
-    bic: 'RZKTAT2K561',
+  '39561': Bic(
+    value: 'RZKTAT2K561',
     bankName: 'Raiffeisenbank Oberes Mölltal-Oberdrauburg eGen',
     bankShortName: 'Raiffeisenbank Oberes Mölltal-Oberdrauburg eGen',
     bankAddress: 'Winklern 37',
     bankPostcode: '9841',
     bankLocation: 'Winklern im Mölltal',
   ),
-  '39320': Iban(
-    bic: 'RZKTAT2K320',
+  '39320': Bic(
+    value: 'RZKTAT2K320',
     bankName:
         'Raiffeisenbank Grafenstein-Magdalensberg und Umgebung, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4588,8 +4588,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9131',
     bankLocation: 'Grafenstein',
   ),
-  '39322': Iban(
-    bic: 'RZKTAT2K322',
+  '39322': Bic(
+    value: 'RZKTAT2K322',
     bankName:
         'Raiffeisenbank Oberdrautal-Weissensee, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4598,8 +4598,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9761',
     bankLocation: 'Greifenburg',
   ),
-  '39364': Iban(
-    bic: 'RZKTAT2K364',
+  '39364': Bic(
+    value: 'RZKTAT2K364',
     bankName:
         'Raiffeisenbank Kötschach - Mauthen, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4608,8 +4608,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9640',
     bankLocation: 'Kötschach-Mauthen',
   ),
-  '39381': Iban(
-    bic: 'RZKTAT2K381',
+  '39381': Bic(
+    value: 'RZKTAT2K381',
     bankName:
         'Raiffeisenbank Landskron - Gegendtal, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4618,16 +4618,16 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9523',
     bankLocation: 'Villach-Landskron',
   ),
-  '18400': Iban(
-    bic: 'BGENATWWXXX',
+  '18400': Bic(
+    value: 'BGENATWWXXX',
     bankName: 'Generali Bank AG',
     bankShortName: 'Generali Bank AG',
     bankAddress: 'Landskrongasse 1-3',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '76032': Iban(
-    bic: 'TEAMDE71TAT',
+  '76032': Bic(
+    value: 'TEAMDE71TAT',
     bankName: 'TeamBank Österreich - Niederlassung der TeamBank AG Nürnberg',
     bankShortName:
         'TeamBank Österreich - Niederlassung der TeamBank AG Nürnberg',
@@ -4635,24 +4635,24 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '20227': Iban(
-    bic: 'SSKOAT21XXX',
+  '20227': Bic(
+    value: 'SSKOAT21XXX',
     bankName: 'Sparkasse Korneuburg AG',
     bankShortName: 'Sparkasse Korneuburg AG',
     bankAddress: 'Sparkassenplatz 1',
     bankPostcode: '2100',
     bankLocation: 'Korneuburg',
   ),
-  '34510': Iban(
-    bic: 'RZOOAT2L510',
+  '34510': Bic(
+    value: 'RZOOAT2L510',
     bankName: 'Raiffeisenbank Salzkammergut eGen',
     bankShortName: 'Raiffeisenbank Salzkammergut eGen',
     bankAddress: 'Klosterplatz 1',
     bankPostcode: '4810',
     bankLocation: 'Gmunden',
   ),
-  '36262': Iban(
-    bic: 'RZTIAT22262',
+  '36262': Bic(
+    value: 'RZTIAT22262',
     bankName:
         'Raiffeisenbank Kirchdorf Tirol registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4661,336 +4661,336 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6382',
     bankLocation: 'Kirchdorf',
   ),
-  '34110': Iban(
-    bic: 'RZOOAT2L110',
+  '34110': Bic(
+    value: 'RZOOAT2L110',
     bankName: 'Raiffeisenbank Region Freistadt eGen',
     bankShortName: 'Raiffeisenbank Region Freistadt eGen',
     bankAddress: 'Linzer Straße 15',
     bankPostcode: '4240',
     bankLocation: 'Freistadt (OÖ)',
   ),
-  '34276': Iban(
-    bic: 'RZOOAT2L276',
+  '34276': Bic(
+    value: 'RZOOAT2L276',
     bankName: 'Raiffeisenbank Linz-Land West eGen',
     bankShortName: 'Raiffeisenbank Linz-Land West eGen',
     bankAddress: 'Stadtpl. 4',
     bankPostcode: '4060',
     bankLocation: 'Leonding',
   ),
-  '32880': Iban(
-    bic: 'RLNWATW1880',
+  '32880': Bic(
+    value: 'RLNWATW1880',
     bankName: 'Raiffeisenbank Tulln eGen',
     bankShortName: 'Raiffeisenbank Tulln eGen',
     bankAddress: 'Bahnhofstraße 9',
     bankPostcode: '3430',
     bankLocation: 'Tulln',
   ),
-  '32901': Iban(
-    bic: 'RLNWATW1901',
+  '32901': Bic(
+    value: 'RLNWATW1901',
     bankName: 'Raiffeisenbank Vitis eGen',
     bankShortName: 'Raiffeisenbank Vitis eGen',
     bankAddress: 'Hauptplatz 30',
     bankPostcode: '3902',
     bankLocation: 'Vitis',
   ),
-  '32904': Iban(
-    bic: 'RLNWATWWWTH',
+  '32904': Bic(
+    value: 'RLNWATWWWTH',
     bankName: 'Raiffeisenbank Waidhofen a. d. Thaya eGen',
     bankShortName: 'Raiffeisenbank Waidhofen a. d. Thaya eGen',
     bankAddress: 'Raiffeisenpromenade 1',
     bankPostcode: '3830',
     bankLocation: 'Waidhofen an der Thaya',
   ),
-  '32906': Iban(
-    bic: 'RLNWATWWWHY',
+  '32906': Bic(
+    value: 'RLNWATWWWHY',
     bankName: 'Raiffeisenbank Ybbstal eGen',
     bankShortName: 'Raiffeisenbank Ybbstal eGen',
     bankAddress: 'Oberer Stadtplatz 22',
     bankPostcode: '3340',
     bankLocation: 'Waidhofen an der Ybbs',
   ),
-  '34442': Iban(
-    bic: 'RZOOAT2L442',
+  '34442': Bic(
+    value: 'RZOOAT2L442',
     bankName: 'Raiffeisenbank Peuerbach eGen',
     bankShortName: 'Raiffeisenbank Peuerbach eGen',
     bankAddress: 'Hauptstraße 14/1',
     bankPostcode: '4722',
     bankLocation: 'Peuerbach',
   ),
-  '39390': Iban(
-    bic: 'RZKTAT2K390',
+  '39390': Bic(
+    value: 'RZKTAT2K390',
     bankName: 'Raiffeisenbank Region Wörthersee eG',
     bankShortName: 'Raiffeisenbank Region Wörthersee eG',
     bankAddress: 'Karawankenplatz 2',
     bankPostcode: '9220',
     bankLocation: 'Velden am Wörther See',
   ),
-  '19140': Iban(
-    bic: 'GUTBATWWXXX',
+  '19140': Bic(
+    value: 'GUTBATWWXXX',
     bankName: 'Bank Gutmann Aktiengesellschaft',
     bankShortName: 'Bank Gutmann Aktiengesellschaft',
     bankAddress: 'Schwarzenbergpl. 16',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '35012': Iban(
-    bic: 'RVSAAT2S012',
+  '35012': Bic(
+    value: 'RVSAAT2S012',
     bankName: 'Raiffeisenbank Hohe Tauern eGen',
     bankShortName: 'Raiffeisenbank Hohe Tauern eGen',
     bankAddress: 'Wilhelm-Fazokas-Straße 2c',
     bankPostcode: '5710',
     bankLocation: 'Kaprun',
   ),
-  '35015': Iban(
-    bic: 'RVSAAT2S015',
+  '35015': Bic(
+    value: 'RVSAAT2S015',
     bankName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankShortName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankAddress: 'Dorf 1',
     bankPostcode: '5301',
     bankLocation: 'Eugendorf',
   ),
-  '35019': Iban(
-    bic: 'RVSAAT2S019',
+  '35019': Bic(
+    value: 'RVSAAT2S019',
     bankName: 'Raiffeisenbank Großarl-Hüttschlag eGen',
     bankShortName: 'Raiffeisenbank Großarl-Hüttschlag eGen',
     bankAddress: 'Marktstraße 8',
     bankPostcode: '5611',
     bankLocation: 'Großarl',
   ),
-  '42390': Iban(
-    bic: 'VBOEATWWINN',
+  '42390': Bic(
+    value: 'VBOEATWWINN',
     bankName: 'Volksbank Tirol AG',
     bankShortName: 'Volksbank Tirol AG',
     bankAddress: 'Meinhardstraße 1',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '20202': Iban(
-    bic: 'SPAMAT21XXX',
+  '20202': Bic(
+    value: 'SPAMAT21XXX',
     bankName: 'Sparkasse der Stadt Amstetten AG',
     bankShortName: 'Sparkasse der Stadt Amstetten AG',
     bankAddress: 'Hauptplatz 31',
     bankPostcode: '3300',
     bankLocation: 'Amstetten (NÖ)',
   ),
-  '19950': Iban(
-    bic: 'WUBUAT2SXXX',
+  '19950': Bic(
+    value: 'WUBUAT2SXXX',
     bankName: 'Bausparkasse Wüstenrot Aktiengesellschaft',
     bankShortName: 'Bausparkasse Wüstenrot Aktiengesellschaft',
     bankAddress: 'Alpenstraße 70',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '36264': Iban(
-    bic: 'RZTIAT22264',
+  '36264': Bic(
+    value: 'RZTIAT22264',
     bankName: 'Raiffeisenbank Kössen-Schwendt eGen',
     bankShortName: 'Raiffeisenbank Kössen-Schwendt eGen',
     bankAddress: 'Dorf 4',
     bankPostcode: '6345',
     bankLocation: 'Kössen',
   ),
-  '32551': Iban(
-    bic: 'RLNWATWWNSD',
+  '32551': Bic(
+    value: 'RLNWATWWNSD',
     bankName: 'Raiffeisenkasse Neusiedl a.d.Zaya eGen',
     bankShortName: 'Raiffeisenkasse Neusiedl a.d.Zaya eGen',
     bankAddress: 'Hauptpl. 3',
     bankPostcode: '2183',
     bankLocation: 'Neusiedl an der Zaya',
   ),
-  '34290': Iban(
-    bic: 'RZOOAT2L290',
+  '34290': Bic(
+    value: 'RZOOAT2L290',
     bankName: 'Raiffeisenbank Lochen am See eGen',
     bankShortName: 'Raiffeisenbank Lochen am See eGen',
     bankAddress: 'Ringstraße 5',
     bankPostcode: '5221',
     bankLocation: 'Lochen am See',
   ),
-  '32937': Iban(
-    bic: 'RLNWATWWWRN',
+  '32937': Bic(
+    value: 'RLNWATWWWRN',
     bankName: 'Raiffeisenbank Wr. Neustadt-Schneebergland eGen',
     bankShortName: 'Raiffeisenbank Wr. Neustadt-Schneebergland eGen',
     bankAddress: 'Hauptplatz 28',
     bankPostcode: '2700',
     bankLocation: 'Wiener Neustadt',
   ),
-  '32939': Iban(
-    bic: 'RLNWATWW939',
+  '32939': Bic(
+    value: 'RLNWATWW939',
     bankName: 'Raiffeisenbank Mittleres Mostviertel eGen',
     bankShortName: 'Raiffeisenbank Mittleres Mostviertel eGen',
     bankAddress: 'Scheibbser Straße 4',
     bankPostcode: '3250',
     bankLocation: 'Wieselburg',
   ),
-  '35021': Iban(
-    bic: 'RVSAAT2S021',
+  '35021': Bic(
+    value: 'RVSAAT2S021',
     bankName: 'Raiffeisenbank Wallersee eGen',
     bankShortName: 'Raiffeisenbank Wallersee eGen',
     bankAddress: 'Hauptstraße 39',
     bankPostcode: '5202',
     bankLocation: 'Neumarkt am Wallersee',
   ),
-  '35022': Iban(
-    bic: 'RVSAAT2S022',
+  '35022': Bic(
+    value: 'RVSAAT2S022',
     bankName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankShortName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankAddress: 'Justin-Robert-Platz 1',
     bankPostcode: '5400',
     bankLocation: 'Hallein',
   ),
-  '35052': Iban(
-    bic: 'RVSAAT2S052',
+  '35052': Bic(
+    value: 'RVSAAT2S052',
     bankName: 'Raiffeisenbank Saalbach-Hinterglemm-Viehhofen eGen',
     bankShortName: 'Raiffeisenbank Saalbach-Hinterglemm-Viehhofen eGen',
     bankAddress: 'Dorfplatz 311',
     bankPostcode: '5753',
     bankLocation: 'Saalbach-Hinterglemm',
   ),
-  '35056': Iban(
-    bic: 'RVSAAT2S056',
+  '35056': Bic(
+    value: 'RVSAAT2S056',
     bankName: 'Raiffeisenbank St.Gilgen-Fuschl-Strobl eGen',
     bankShortName: 'Raiffeisenbank St.Gilgen-Fuschl-Strobl eGen',
     bankAddress: 'Mozartplatz 4',
     bankPostcode: '5340',
     bankLocation: 'St. Gilgen',
   ),
-  '35062': Iban(
-    bic: 'RVSAAT2S062',
+  '35062': Bic(
+    value: 'RVSAAT2S062',
     bankName: 'Raiffeisenbank Straßwalchen eGen',
     bankShortName: 'Raiffeisenbank Straßwalchen eGen',
     bankAddress: 'Salzburger Str. 3',
     bankPostcode: '5204',
     bankLocation: 'Straßwalchen',
   ),
-  '35069': Iban(
-    bic: 'RVSAAT2S069',
+  '35069': Bic(
+    value: 'RVSAAT2S069',
     bankName: 'Raiffeisenbank St. Johann-Wagrain-Kleinarl eGen',
     bankShortName: 'Raiffeisenbank St. Johann-Wagrain-Kleinarl eGen',
     bankAddress: 'Ing. Ludwig Pech-Straße 1',
     bankPostcode: '5600',
     bankLocation: 'St. Johann im Pongau',
   ),
-  '19170': Iban(
-    bic: 'PABAAT2LXXX',
+  '19170': Bic(
+    value: 'PABAAT2LXXX',
     bankName: 'PARTNER BANK AKTIENGESELLSCHAFT',
     bankShortName: 'PARTNER BANK AKTIENGESELLSCHAFT',
     bankAddress: 'Goethestr. 1a',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '20601': Iban(
-    bic: 'SPBRAT2BXXX',
+  '20601': Bic(
+    value: 'SPBRAT2BXXX',
     bankName: 'Sparkasse Bregenz Bank Aktiengesellschaft',
     bankShortName: 'Sparkasse Bregenz Bank Aktiengesellschaft',
     bankAddress: 'Sparkassenplatz 1',
     bankPostcode: '6900',
     bankLocation: 'Bregenz',
   ),
-  '19410': Iban(
-    bic: 'WELCATW1XXX',
+  '19410': Bic(
+    value: 'WELCATW1XXX',
     bankName: 'Mercedes-Benz Bank GmbH',
     bankShortName: 'Mercedes-Benz Bank GmbH',
     bankAddress: 'Mercedes-Benz Platz 1',
     bankPostcode: '5301',
     bankLocation: 'Eugendorf',
   ),
-  '20317': Iban(
-    bic: 'SPLAAT21XXX',
+  '20317': Bic(
+    value: 'SPLAAT21XXX',
     bankName: 'Sparkasse Lambach Bank Aktiengesellschaft',
     bankShortName: 'Sparkasse Lambach Bank Aktiengesellschaft',
     bankAddress: 'Klosterpl. 3',
     bankPostcode: '4650',
     bankLocation: 'Lambach',
   ),
-  '20839': Iban(
-    bic: 'SPVOAT21XXX',
+  '20839': Bic(
+    value: 'SPVOAT21XXX',
     bankName: 'Sparkasse Voitsberg-Köflach Bankaktiengesellschaft',
     bankShortName: 'Sparkasse Voitsberg-Köflach Bankaktiengesellschaft',
     bankAddress: 'Bahnhofstraße 2',
     bankPostcode: '8570',
     bankLocation: 'Voitsberg',
   ),
-  '19675': Iban(
-    bic: 'COBAATWXXXX',
+  '19675': Bic(
+    value: 'COBAATWXXXX',
     bankName: 'Commerzbank AG Niederlassung Wien',
     bankShortName: 'Commerzbank AG Niederlassung Wien',
     bankAddress: 'Hietzinger Kai 101-105',
     bankPostcode: '1130',
     bankLocation: 'Wien',
   ),
-  '76520': Iban(
-    bic: 'COPRATWWXXX',
+  '76520': Bic(
+    value: 'COPRATWWXXX',
     bankName: 'Liechtensteinische Landesbank (Österreich) AG',
     bankShortName: 'Liechtensteinische Landesbank (Österreich) AG',
     bankAddress: 'Hessgasse 1',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '19480': Iban(
-    bic: 'BIIWATWWXXX',
+  '19480': Bic(
+    value: 'BIIWATWWXXX',
     bankName: 'flatexDEGIRO Bank AG',
     bankShortName: 'flatexDEGIRO Bank AG',
     bankAddress: 'Opernring 1/736',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '18250': Iban(
-    bic: 'CAIBATWWXXX',
+  '18250': Bic(
+    value: 'CAIBATWWXXX',
     bankName: 'UniCredit Bank AG, Zweigniederlassung Wien',
     bankShortName: 'UniCredit Bank AG, Zweigniederlassung Wien',
     bankAddress: 'Rothschildplatz 1',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '31000': Iban(
-    bic: 'RZBAATWWXXX',
+  '31000': Bic(
+    value: 'RZBAATWWXXX',
     bankName: 'Raiffeisen Bank International AG',
     bankShortName: 'Raiffeisen Bank International AG',
     bankAddress: 'Am Stadtpark 9',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '44800': Iban(
-    bic: 'VBOEATWWOOE',
+  '44800': Bic(
+    value: 'VBOEATWWOOE',
     bankName: 'Volksbank Oberösterreich AG',
     bankShortName: 'Volksbank Oberösterreich AG',
     bankAddress: 'Pfarrgasse 5',
     bankPostcode: '4600',
     bankLocation: 'Wels',
   ),
-  '19420': Iban(
-    bic: 'RCNOATW1XXX',
+  '19420': Bic(
+    value: 'RCNOATW1XXX',
     bankName: 'RCI Banque SA, Niederlassung Österreich',
     bankShortName: 'RCI Banque SA, Niederlassung Österreich',
     bankAddress: 'Laaer Berg-Straße 64',
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '32614': Iban(
-    bic: 'RLNWATWWODO',
+  '32614': Bic(
+    value: 'RLNWATWWODO',
     bankName: 'Raiffeisenkasse Orth a.d. Donau eGen',
     bankShortName: 'Raiffeisenkasse Orth a.d. Donau eGen',
     bankAddress: 'Am Markt 21',
     bankPostcode: '2304',
     bankLocation: 'Orth/Donau',
   ),
-  '36267': Iban(
-    bic: 'RZTIAT22267',
+  '36267': Bic(
+    value: 'RZTIAT22267',
     bankName: 'Raiffeisenbank Kundl-Münster eGen',
     bankShortName: 'Raiffeisenbank Kundl-Münster eGen',
     bankAddress: 'Dorfstraße 14',
     bankPostcode: '6250',
     bankLocation: 'Kundl',
   ),
-  '32951': Iban(
-    bic: 'RLNWATWWWDF',
+  '32951': Bic(
+    value: 'RLNWATWWWDF',
     bankName: 'Raiffeisenbank Wolkersdorf - Auersthal eGen',
     bankShortName: 'Raiffeisenbank Wolkersdorf - Auersthal eGen',
     bankAddress: 'Hauptstr. 5',
     bankPostcode: '2120',
     bankLocation: 'Wolkersdorf',
   ),
-  '36281': Iban(
-    bic: 'RZTIAT22281',
+  '36281': Bic(
+    value: 'RZTIAT22281',
     bankName:
         'Raiffeisenkasse für Mutters, Natters und Kreith registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -4999,8 +4999,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6162',
     bankLocation: 'Mutters',
   ),
-  '35027': Iban(
-    bic: 'RVSAAT2S027',
+  '35027': Bic(
+    value: 'RVSAAT2S027',
     bankName:
         'Raiffeisenbank Hüttau-St. Martin-Niedernfritz registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -5009,8 +5009,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '5511',
     bankLocation: 'Hüttau',
   ),
-  '35049': Iban(
-    bic: 'RVSAAT2S049',
+  '35049': Bic(
+    value: 'RVSAAT2S049',
     bankName:
         'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -5019,24 +5019,24 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '5550',
     bankLocation: 'Radstadt',
   ),
-  '35020': Iban(
-    bic: 'RVSAAT2S020',
+  '35020': Bic(
+    value: 'RVSAAT2S020',
     bankName: 'Raiffeisenbank Großgmain eGen',
     bankShortName: 'Raiffeisenbank Großgmain eGen',
     bankAddress: 'Salzburger Straße 53',
     bankPostcode: '5084',
     bankLocation: 'Großgmain',
   ),
-  '35063': Iban(
-    bic: 'RVSAAT2S063',
+  '35063': Bic(
+    value: 'RVSAAT2S063',
     bankName: 'Raiffeisenbank Lungau eGen',
     bankShortName: 'Raiffeisenbank Lungau eGen',
     bankAddress: 'Kirchengasse 9',
     bankPostcode: '5580',
     bankLocation: 'Tamsweg',
   ),
-  '35071': Iban(
-    bic: 'RVSAAT2S071',
+  '35071': Bic(
+    value: 'RVSAAT2S071',
     bankName:
         'Raiffeisenbank Wals-Himmelreich registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -5045,160 +5045,160 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '5071',
     bankLocation: 'Wals bei Salzburg',
   ),
-  '35018': Iban(
-    bic: 'RVSAAT2S018',
+  '35018': Bic(
+    value: 'RVSAAT2S018',
     bankName: 'Raiffeisenbank Untersberg eGen',
     bankShortName: 'Raiffeisenbank Untersberg eGen',
     bankAddress: 'Hauptstraße 28',
     bankPostcode: '5082',
     bankLocation: 'Grödig',
   ),
-  '35004': Iban(
-    bic: 'RVSAAT2S004',
+  '35004': Bic(
+    value: 'RVSAAT2S004',
     bankName: 'Raiffeisenbank Altenmarkt-Flachau-Eben eGen',
     bankShortName: 'Raiffeisenbank Altenmarkt-Flachau-Eben eGen',
     bankAddress: 'Marktplatz 5',
     bankPostcode: '5541',
     bankLocation: 'Altenmarkt im Pongau',
   ),
-  '20100': Iban(
-    bic: 'GIBAATWGXXX',
+  '20100': Bic(
+    value: 'GIBAATWGXXX',
     bankName: 'Erste Group Bank AG',
     bankShortName: 'Erste Group Bank AG',
     bankAddress: 'Am Belvedere 1',
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '37434': Iban(
-    bic: 'RANJAT2BXXX',
+  '37434': Bic(
+    value: 'RANJAT2BXXX',
     bankName: 'Walser Raiffeisen Bank Aktiengesellschaft',
     bankShortName: 'Walser Raiffeisen Bank Aktiengesellschaft',
     bankAddress: 'Walserstraße 263',
     bankPostcode: '6992',
     bankLocation: 'Hirschegg',
   ),
-  '19460': Iban(
-    bic: 'BLFLATWWXXX',
+  '19460': Bic(
+    value: 'BLFLATWWXXX',
     bankName: 'LGT Bank AG, Zweigniederlassung Österreich',
     bankShortName: 'LGT Bank AG, Zweigniederlassung Österreich',
     bankAddress: 'Bankgasse 9',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '44960': Iban(
-    bic: 'WSPKATW1XXX',
+  '44960': Bic(
+    value: 'WSPKATW1XXX',
     bankName: 'WSK Bank AG',
     bankShortName: 'WSK Bank AG',
     bankAddress: 'Weimarer Straße 26-28',
     bankPostcode: '1180',
     bankLocation: 'Wien',
   ),
-  '42130': Iban(
-    bic: 'VBOEATWWKLA',
+  '42130': Bic(
+    value: 'VBOEATWWKLA',
     bankName: 'Volksbank Kärnten eG',
     bankShortName: 'Volksbank Kärnten eG',
     bankAddress: 'Pernhartgasse 7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '34922': Iban(
-    bic: 'RZOOAT2LXXX',
+  '34922': Bic(
+    value: 'RZOOAT2LXXX',
     bankName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankShortName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankAddress: 'Europaplatz 1a',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '34920': Iban(
-    bic: 'RZOOAT2LXXX',
+  '34920': Bic(
+    value: 'RZOOAT2LXXX',
     bankName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankShortName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankAddress: 'Europaplatz 1a',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '34921': Iban(
-    bic: 'RZOOAT2LXXX',
+  '34921': Bic(
+    value: 'RZOOAT2LXXX',
     bankName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankShortName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankAddress: 'Europaplatz 1a',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '36268': Iban(
-    bic: 'RZTIAT22268',
+  '36268': Bic(
+    value: 'RZTIAT22268',
     bankName: 'Raiffeisenbank Längenfeld eGen',
     bankShortName: 'Raiffeisenbank Längenfeld eGen',
     bankAddress: 'Oberlängenfeld 72',
     bankPostcode: '6444',
     bankLocation: 'Längenfeld',
   ),
-  '34312': Iban(
-    bic: 'RZOOAT2L312',
+  '34312': Bic(
+    value: 'RZOOAT2L312',
     bankName: 'Raiffeisenbank Maria Schmolln-St. Johann eGen',
     bankShortName: 'Raiffeisenbank Maria Schmolln-St. Johann eGen',
     bankAddress: 'Nr. 68',
     bankPostcode: '5241',
     bankLocation: 'Maria Schmolln',
   ),
-  '34313': Iban(
-    bic: 'RZOOAT2L313',
+  '34313': Bic(
+    value: 'RZOOAT2L313',
     bankName: 'Raiffeisenbank Meggenhofen-Kematen eGen',
     bankShortName: 'Raiffeisenbank Meggenhofen-Kematen eGen',
     bankAddress: 'Meggenhofen 55',
     bankPostcode: '4714',
     bankLocation: 'Meggenhofen',
   ),
-  '34450': Iban(
-    bic: 'RZOOAT2L450',
+  '34450': Bic(
+    value: 'RZOOAT2L450',
     bankName: 'Raiffeisenbank Region Ried i.I. eGen',
     bankShortName: 'Raiffeisenbank Region Ried i.I. eGen',
     bankAddress: 'Friedrich-Thurner-Straße 14',
     bankPostcode: '4910',
     bankLocation: 'Ried im Innkreis',
   ),
-  '36373': Iban(
-    bic: 'RZTIAT22373',
+  '36373': Bic(
+    value: 'RZTIAT22373',
     bankName: 'Raiffeisenkasse Lienzer Talboden eGen',
     bankShortName: 'Raiffeisenkasse Lienzer Talboden eGen',
     bankAddress: 'Glocknerstraße 20',
     bankPostcode: '9990',
     bankLocation: 'Nußdorf-Debant',
   ),
-  '34491': Iban(
-    bic: 'RZOOAT2L491',
+  '34491': Bic(
+    value: 'RZOOAT2L491',
     bankName: 'Raiffeisenbank Windischgarsten eGen',
     bankShortName: 'Raiffeisenbank Windischgarsten eGen',
     bankAddress: 'Bahnhofstraße 6',
     bankPostcode: '4580',
     bankLocation: 'Windischgarsten',
   ),
-  '34521': Iban(
-    bic: 'RZOOAT2L521',
+  '34521': Bic(
+    value: 'RZOOAT2L521',
     bankName: 'Raiffeisenbank St. Agatha eGen',
     bankShortName: 'Raiffeisenbank St. Agatha eGen',
     bankAddress: 'Stauffstraße 8',
     bankPostcode: '4084',
     bankLocation: 'St. Agatha (OÖ)',
   ),
-  '35026': Iban(
-    bic: 'RVSAAT2S026',
+  '35026': Bic(
+    value: 'RVSAAT2S026',
     bankName: 'Raiffeisenbank Gastein eGen',
     bankShortName: 'Raiffeisenbank Gastein eGen',
     bankAddress: 'Kaiser Franz-Platz 4',
     bankPostcode: '5630',
     bankLocation: 'Bad Hofgastein',
   ),
-  '35055': Iban(
-    bic: 'RVSAAT2S055',
+  '35055': Bic(
+    value: 'RVSAAT2S055',
     bankName: 'Raiffeisenbank Pongau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pongau Mitte eGen',
     bankAddress: 'Salzburgerstraße 39b',
     bankPostcode: '5620',
     bankLocation: 'Schwarzach',
   ),
-  '35051': Iban(
-    bic: 'RVSAAT2S051',
+  '35051': Bic(
+    value: 'RVSAAT2S051',
     bankName:
         'Raiffeisenbank Rauris-Bucheben registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -5207,128 +5207,128 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '5661',
     bankLocation: 'Rauris',
   ),
-  '35039': Iban(
-    bic: 'RVSAAT2S039',
+  '35039': Bic(
+    value: 'RVSAAT2S039',
     bankName: 'Raiffeisenbank Oberpinzgau eGen',
     bankShortName: 'Raiffeisenbank Oberpinzgau eGen',
     bankAddress: 'Kirchgasse 12',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '15090': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15090': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15091': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15091': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15003': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15003': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15001': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15001': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '15002': Iban(
-    bic: 'OBKLAT2LXXX',
+  '15002': Bic(
+    value: 'OBKLAT2LXXX',
     bankName: 'Oberbank AG',
     bankShortName: 'Oberbank AG',
     bankAddress: 'Untere Donaulände 28',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '42830': Iban(
-    bic: 'VBOEATWWOOE',
+  '42830': Bic(
+    value: 'VBOEATWWOOE',
     bankName: 'Volksbank Oberösterreich AG',
     bankShortName: 'Volksbank Oberösterreich AG',
     bankAddress: 'Pfarrgasse 5',
     bankPostcode: '4600',
     bankLocation: 'Wels',
   ),
-  '19160': Iban(
-    bic: 'WIPBATWWXXX',
+  '19160': Bic(
+    value: 'WIPBATWWXXX',
     bankName: 'Wiener Privatbank SE',
     bankShortName: 'Wiener Privatbank SE',
     bankAddress: 'Parkring 12',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '32936': Iban(
-    bic: 'RLNWATWWOWS',
+  '32936': Bic(
+    value: 'RLNWATWWOWS',
     bankName: 'Raiffeisenbank Oberes Waldviertel eGen',
     bankShortName: 'Raiffeisenbank Oberes Waldviertel eGen',
     bankAddress: 'Hauptplatz 22',
     bankPostcode: '3943',
     bankLocation: 'Schrems',
   ),
-  '43030': Iban(
-    bic: 'VBOEATWWGRA',
+  '43030': Bic(
+    value: 'VBOEATWWGRA',
     bankName: 'Volksbank Steiermark AG',
     bankShortName: 'Volksbank Steiermark AG',
     bankAddress: 'Schmiedgasse 31',
     bankPostcode: '8010',
     bankLocation: 'Graz',
   ),
-  '48150': Iban(
-    bic: 'VBOEATWWGRA',
+  '48150': Bic(
+    value: 'VBOEATWWGRA',
     bankName: 'Volksbank Steiermark AG',
     bankShortName: 'Volksbank Steiermark AG',
     bankAddress: 'Schmiedgasse 31',
     bankPostcode: '8010',
     bankLocation: 'Graz',
   ),
-  '32651': Iban(
-    bic: 'RLNWATWW939',
+  '32651': Bic(
+    value: 'RLNWATWW939',
     bankName: 'Raiffeisenbank Mittleres Mostviertel eGen',
     bankShortName: 'Raiffeisenbank Mittleres Mostviertel eGen',
     bankAddress: 'Scheibbser Straße 4',
     bankPostcode: '3250',
     bankLocation: 'Wieselburg',
   ),
-  '43510': Iban(
-    bic: 'ABVRATW1XXX',
+  '43510': Bic(
+    value: 'ABVRATW1XXX',
     bankName: 'start:bausparkasse AG',
     bankShortName: 'start:bausparkasse AG',
     bankAddress: 'Wiedner Gürtel 11',
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '32631': Iban(
-    bic: 'RLNWATWWASP',
+  '32631': Bic(
+    value: 'RLNWATWWASP',
     bankName: 'Raiffeisenbank Region Wiener Alpen eGen',
     bankShortName: 'Raiffeisenbank Region Wiener Alpen eGen',
     bankAddress: 'Bahnstraße 3',
     bankPostcode: '2870',
     bankLocation: 'Aspang',
   ),
-  '33092': Iban(
-    bic: 'RLBBAT2E012',
+  '33092': Bic(
+    value: 'RLBBAT2E012',
     bankName: 'Raiffeisenbank Neusiedlersee-Hügelland eGen',
     bankShortName: 'Raiffeisenbank Neusiedlersee-Hügelland eGen',
     bankAddress: 'Hauptstraße 39',
     bankPostcode: '7082',
     bankLocation: 'Donnerskirchen',
   ),
-  '38262': Iban(
-    bic: 'RZSTAT2G102',
+  '38262': Bic(
+    value: 'RZSTAT2G102',
     bankName: 'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
     bankShortName:
         'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
@@ -5336,40 +5336,40 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '8443',
     bankLocation: 'Gleinstätten',
   ),
-  '38104': Iban(
-    bic: 'RZSTAT2G497',
+  '38104': Bic(
+    value: 'RZSTAT2G497',
     bankName: 'Raiffeisenbank Region Feldbach eGen',
     bankShortName: 'Raiffeisenbank Region Feldbach eGen',
     bankAddress: 'Feldbach',
     bankPostcode: '8330',
     bankLocation: 'Feldbach',
   ),
-  '40430': Iban(
-    bic: 'VBOEATWWXXX',
+  '40430': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '35075': Iban(
-    bic: 'RVSAAT2S047',
+  '35075': Bic(
+    value: 'RVSAAT2S047',
     bankName: 'Raiffeisenbank Salzburger Seenland eGen',
     bankShortName: 'Raiffeisenbank Salzburger Seenland eGen',
     bankAddress: 'Hauptstraße 52',
     bankPostcode: '5201',
     bankLocation: 'Seekirchen am Wallersee',
   ),
-  '19220': Iban(
-    bic: 'WISMATWWXXX',
+  '19220': Bic(
+    value: 'WISMATWWXXX',
     bankName: 'Bank Winter & Co. AG',
     bankShortName: 'Bank Winter & Co. AG',
     bankAddress: 'Singerstraße 10',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '33074': Iban(
-    bic: 'RLBBAT2E116',
+  '33074': Bic(
+    value: 'RLBBAT2E116',
     bankName: 'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
     bankShortName:
         'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
@@ -5377,160 +5377,160 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '7132',
     bankLocation: 'Frauenkirchen',
   ),
-  '39104': Iban(
-    bic: 'VSGKAT2KXXX',
+  '39104': Bic(
+    value: 'VSGKAT2KXXX',
     bankName: 'Posojilnica Bank eGen',
     bankShortName: 'Posojilnica Bank eGen',
     bankAddress: 'Paulitschg. 5-7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '39130': Iban(
-    bic: 'VSGKAT2KXXX',
+  '39130': Bic(
+    value: 'VSGKAT2KXXX',
     bankName: 'Posojilnica Bank eGen',
     bankShortName: 'Posojilnica Bank eGen',
     bankAddress: 'Paulitschg. 5-7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '39109': Iban(
-    bic: 'VSGKAT2KXXX',
+  '39109': Bic(
+    value: 'VSGKAT2KXXX',
     bankName: 'Posojilnica Bank eGen',
     bankShortName: 'Posojilnica Bank eGen',
     bankAddress: 'Paulitschg. 5-7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '39116': Iban(
-    bic: 'VSGKAT2KXXX',
+  '39116': Bic(
+    value: 'VSGKAT2KXXX',
     bankName: 'Posojilnica Bank eGen',
     bankShortName: 'Posojilnica Bank eGen',
     bankAddress: 'Paulitschg. 5-7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '39102': Iban(
-    bic: 'VSGKAT2KXXX',
+  '39102': Bic(
+    value: 'VSGKAT2KXXX',
     bankName: 'Posojilnica Bank eGen',
     bankShortName: 'Posojilnica Bank eGen',
     bankAddress: 'Paulitschg. 5-7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '39117': Iban(
-    bic: 'VSGKAT2KXXX',
+  '39117': Bic(
+    value: 'VSGKAT2KXXX',
     bankName: 'Posojilnica Bank eGen',
     bankShortName: 'Posojilnica Bank eGen',
     bankAddress: 'Paulitschg. 5-7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '39101': Iban(
-    bic: 'VSGKAT2KXXX',
+  '39101': Bic(
+    value: 'VSGKAT2KXXX',
     bankName: 'Posojilnica Bank eGen',
     bankShortName: 'Posojilnica Bank eGen',
     bankAddress: 'Paulitschg. 5-7',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt am Wörthersee',
   ),
-  '40100': Iban(
-    bic: 'VBOEATWWXXX',
+  '40100': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '40170': Iban(
-    bic: 'VBOEATWWNOM',
+  '40170': Bic(
+    value: 'VBOEATWWNOM',
     bankName: 'Volksbank Niederösterreich AG',
     bankShortName: 'Volksbank Niederösterreich AG',
     bankAddress: 'Brunngasse 10',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '41600': Iban(
-    bic: 'VBOEATWWXXX',
+  '41600': Bic(
+    value: 'VBOEATWWXXX',
     bankName: 'VOLKSBANK WIEN AG',
     bankShortName: 'VOLKSBANK WIEN AG',
     bankAddress: 'Dietrichgasse 25',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '44780': Iban(
-    bic: 'VBOEATWWGRA',
+  '44780': Bic(
+    value: 'VBOEATWWGRA',
     bankName: 'Volksbank Steiermark AG',
     bankShortName: 'Volksbank Steiermark AG',
     bankAddress: 'Schmiedgasse 31',
     bankPostcode: '8010',
     bankLocation: 'Graz',
   ),
-  '46590': Iban(
-    bic: 'VBOEATWWGRA',
+  '46590': Bic(
+    value: 'VBOEATWWGRA',
     bankName: 'Volksbank Steiermark AG',
     bankShortName: 'Volksbank Steiermark AG',
     bankAddress: 'Schmiedgasse 31',
     bankPostcode: '8010',
     bankLocation: 'Graz',
   ),
-  '36990': Iban(
-    bic: 'RBRTAT22XXX',
+  '36990': Bic(
+    value: 'RBRTAT22XXX',
     bankName: 'Raiffeisenbank Oberland-Reutte eGen',
     bankShortName: 'Raiffeisenbank Oberland-Reutte eGen',
     bankAddress: 'Untermarkt 3',
     bankPostcode: '6600',
     bankLocation: 'Reutte',
   ),
-  '43830': Iban(
-    bic: 'VBOEATWWOOE',
+  '43830': Bic(
+    value: 'VBOEATWWOOE',
     bankName: 'Volksbank Oberösterreich AG',
     bankShortName: 'Volksbank Oberösterreich AG',
     bankAddress: 'Pfarrgasse 5',
     bankPostcode: '4600',
     bankLocation: 'Wels',
   ),
-  '20225': Iban(
-    bic: 'SPBDAT21XXX',
+  '20225': Bic(
+    value: 'SPBDAT21XXX',
     bankName: 'Sparkasse Baden',
     bankShortName: 'Sparkasse Baden',
     bankAddress: 'Hauptplatz 15',
     bankPostcode: '2500',
     bankLocation: 'Baden bei Wien',
   ),
-  '38407': Iban(
-    bic: 'RZSTAT2G056',
+  '38407': Bic(
+    value: 'RZSTAT2G056',
     bankName: 'Raiffeisenbank Süd-Weststeiermark eGen',
     bankShortName: 'Raiffeisenbank Süd-Weststeiermark eGen',
     bankAddress: 'Oberer Markt 9',
     bankPostcode: '8551',
     bankLocation: 'Wies (Stmk.)',
   ),
-  '38171': Iban(
-    bic: 'RZSTAT2G075',
+  '38171': Bic(
+    value: 'RZSTAT2G075',
     bankName: 'Raiffeisenbank Mittlere Südoststeiermark eGen',
     bankShortName: 'Raiffeisenbank Mittlere Südoststeiermark eGen',
     bankAddress: 'Paldau 40',
     bankPostcode: '8341',
     bankLocation: 'Paldau',
   ),
-  '33104': Iban(
-    bic: 'RLBBAT2E002',
+  '33104': Bic(
+    value: 'RLBBAT2E002',
     bankName: 'Raiffeisenbank Seewinkel-Hansag eGen',
     bankShortName: 'Raiffeisenbank Seewinkel-Hansag eGen',
     bankAddress: 'Höchtlgasse 6',
     bankPostcode: '7163',
     bankLocation: 'Andau',
   ),
-  '18140': Iban(
-    bic: 'CITIATWXXXX',
+  '18140': Bic(
+    value: 'CITIATWXXXX',
     bankName: 'Citibank Europe plc, Austria Branch',
     bankShortName: 'Citibank Europe plc, Austria Branch',
     bankAddress: 'Kärntner Ring 11-13/7/2/3',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '75910': Iban(
-    bic: '',
+  '75910': Bic(
+    value: '',
     bankName:
         'PSA Bank Österreich, Niederlassung der PSA Bank Deutschland GmbH',
     bankShortName:
@@ -5539,408 +5539,408 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1220',
     bankLocation: 'Wien',
   ),
-  '36276': Iban(
-    bic: 'RZTIAT22336',
+  '36276': Bic(
+    value: 'RZTIAT22336',
     bankName: 'Raiffeisenbank Tirol Mitte West eGen',
     bankShortName: 'Raiffeisenbank Tirol Mitte West eGen',
     bankAddress: 'Untermarktstr. 3',
     bankPostcode: '6410',
     bankLocation: 'Telfs',
   ),
-  '36254': Iban(
-    bic: 'RZTIAT22263',
+  '36254': Bic(
+    value: 'RZTIAT22263',
     bankName: 'Raiffeisenbank Kitzbühel - St. Johann eGen',
     bankShortName: 'Raiffeisenbank Kitzbühel - St. Johann eGen',
     bankAddress: 'Achenweg 16',
     bankPostcode: '6370',
     bankLocation: 'Kitzbühel',
   ),
-  '38053': Iban(
-    bic: 'RZSTAT2G487',
+  '38053': Bic(
+    value: 'RZSTAT2G487',
     bankName: 'Raiffeisenbank Lipizzanerheimat eGen',
     bankShortName: 'Raiffeisenbank Lipizzanerheimat eGen',
     bankAddress: 'Voitsberg',
     bankPostcode: '8570',
     bankLocation: 'Voitsberg',
   ),
-  '19610': Iban(
-    bic: '',
+  '19610': Bic(
+    value: '',
     bankName: 'BNP PARIBAS PERSONAL FINANCE SA Niederlassung Österreich',
     bankShortName: 'BNP PARIBAS PERSONAL FINANCE SA Niederlassung Österreich',
     bankAddress: 'Vordere Zollamtsstraße 13',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '38326': Iban(
-    bic: 'RZSTAT2G151',
+  '38326': Bic(
+    value: 'RZSTAT2G151',
     bankName: 'Raiffeisenbank Ilz-Großsteinbach-Riegersburg eGen',
     bankShortName: 'Raiffeisenbank Ilz-Großsteinbach-Riegersburg eGen',
     bankAddress: 'Ilz 39',
     bankPostcode: '8262',
     bankLocation: 'Ilz',
   ),
-  '38132': Iban(
-    bic: 'RZSTAT2G071',
+  '38132': Bic(
+    value: 'RZSTAT2G071',
     bankName: 'Raiffeisenbank Region Fehring eGen',
     bankShortName: 'Raiffeisenbank Region Fehring eGen',
     bankAddress: 'Fehring',
     bankPostcode: '8350',
     bankLocation: 'Fehring',
   ),
-  '38120': Iban(
-    bic: 'RZSTAT2G151',
+  '38120': Bic(
+    value: 'RZSTAT2G151',
     bankName: 'Raiffeisenbank Ilz-Großsteinbach-Riegersburg eGen',
     bankShortName: 'Raiffeisenbank Ilz-Großsteinbach-Riegersburg eGen',
     bankAddress: 'Ilz 39',
     bankPostcode: '8262',
     bankLocation: 'Ilz',
   ),
-  '38240': Iban(
-    bic: 'RZSTAT2G186',
+  '38240': Bic(
+    value: 'RZSTAT2G186',
     bankName: 'Raiffeisenbank Mürztal eGen',
     bankShortName: 'Raiffeisenbank Mürztal eGen',
     bankAddress: 'Grazer Straße 19',
     bankPostcode: '8680',
     bankLocation: 'Mürzzuschlag',
   ),
-  '38462': Iban(
-    bic: 'RZSTAT2G347',
+  '38462': Bic(
+    value: 'RZSTAT2G347',
     bankName: 'Raiffeisenbank Turnau-St. Lorenzen eGen',
     bankShortName: 'Raiffeisenbank Turnau-St. Lorenzen eGen',
     bankAddress: 'Hauptstraße 21',
     bankPostcode: '8641',
     bankLocation: 'St. Marein im Mürztal',
   ),
-  '34796': Iban(
-    bic: 'RZOOAT2LXXX',
+  '34796': Bic(
+    value: 'RZOOAT2LXXX',
     bankName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankShortName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankAddress: 'Europaplatz 1a',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '19660': Iban(
-    bic: 'INVOATWWXXX',
+  '19660': Bic(
+    value: 'INVOATWWXXX',
     bankName: 'Kommunalkredit Austria AG',
     bankShortName: 'Kommunalkredit Austria AG',
     bankAddress: 'Türkenstraße 9',
     bankPostcode: '1090',
     bankLocation: 'Wien',
   ),
-  '45330': Iban(
-    bic: 'VBOEATWWOOE',
+  '45330': Bic(
+    value: 'VBOEATWWOOE',
     bankName: 'Volksbank Oberösterreich AG',
     bankShortName: 'Volksbank Oberösterreich AG',
     bankAddress: 'Pfarrgasse 5',
     bankPostcode: '4600',
     bankLocation: 'Wels',
   ),
-  '36249': Iban(
-    bic: 'RZTIAT22218',
+  '36249': Bic(
+    value: 'RZTIAT22218',
     bankName: 'Raiffeisen Regionalbank Achensee eGen',
     bankShortName: 'Raiffeisen Regionalbank Achensee eGen',
     bankAddress: 'Dorfstraße 38',
     bankPostcode: '6212',
     bankLocation: 'Maurach',
   ),
-  '36303': Iban(
-    bic: 'RZTIAT22203',
+  '36303': Bic(
+    value: 'RZTIAT22203',
     bankName: 'Raiffeisenbank Alpbachtal eGen',
     bankShortName: 'Raiffeisenbank Alpbachtal eGen',
     bankAddress: 'Alpbach 177',
     bankPostcode: '6236',
     bankLocation: 'Alpbach',
   ),
-  '33004': Iban(
-    bic: 'RLBBAT2E033',
+  '33004': Bic(
+    value: 'RLBBAT2E033',
     bankName: 'Raiffeisenbank Neusiedlersee-Seewinkel eGen',
     bankShortName: 'Raiffeisenbank Neusiedlersee-Seewinkel eGen',
     bankAddress: 'Hauptplatz 4',
     bankPostcode: '7142',
     bankLocation: 'Illmitz',
   ),
-  '33071': Iban(
-    bic: 'RLBBAT2E033',
+  '33071': Bic(
+    value: 'RLBBAT2E033',
     bankName: 'Raiffeisenbank Neusiedlersee-Seewinkel eGen',
     bankShortName: 'Raiffeisenbank Neusiedlersee-Seewinkel eGen',
     bankAddress: 'Hauptplatz 4',
     bankPostcode: '7142',
     bankLocation: 'Illmitz',
   ),
-  '35028': Iban(
-    bic: 'RVSAAT2S039',
+  '35028': Bic(
+    value: 'RVSAAT2S039',
     bankName: 'Raiffeisenbank Oberpinzgau eGen',
     bankShortName: 'Raiffeisenbank Oberpinzgau eGen',
     bankAddress: 'Kirchgasse 12',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '36201': Iban(
-    bic: 'RZTIAT22218',
+  '36201': Bic(
+    value: 'RZTIAT22218',
     bankName: 'Raiffeisen Regionalbank Achensee eGen',
     bankShortName: 'Raiffeisen Regionalbank Achensee eGen',
     bankAddress: 'Dorfstraße 38',
     bankPostcode: '6212',
     bankLocation: 'Maurach',
   ),
-  '36213': Iban(
-    bic: 'RZTIAT22358',
+  '36213': Bic(
+    value: 'RZTIAT22358',
     bankName: 'Raiffeisen Bezirksbank Kufstein eGen',
     bankShortName: 'Raiffeisen Bezirksbank Kufstein eGen',
     bankAddress: 'Oberer Stadtplatz 1a',
     bankPostcode: '6330',
     bankLocation: 'Kufstein',
   ),
-  '40720': Iban(
-    bic: 'VBOEATWWSAL',
+  '40720': Bic(
+    value: 'VBOEATWWSAL',
     bankName: 'Volksbank Salzburg eG',
     bankShortName: 'Volksbank Salzburg eG',
     bankAddress: 'St. Julien-Str. 12',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '35042': Iban(
-    bic: 'RVSAAT2S039',
+  '35042': Bic(
+    value: 'RVSAAT2S039',
     bankName: 'Raiffeisenbank Oberpinzgau eGen',
     bankShortName: 'Raiffeisenbank Oberpinzgau eGen',
     bankAddress: 'Kirchgasse 12',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '36345': Iban(
-    bic: 'RBRTAT22XXX',
+  '36345': Bic(
+    value: 'RBRTAT22XXX',
     bankName: 'Raiffeisenbank Oberland-Reutte eGen',
     bankShortName: 'Raiffeisenbank Oberland-Reutte eGen',
     bankAddress: 'Untermarkt 3',
     bankPostcode: '6600',
     bankLocation: 'Reutte',
   ),
-  '43180': Iban(
-    bic: 'VBOEATWWOOE',
+  '43180': Bic(
+    value: 'VBOEATWWOOE',
     bankName: 'Volksbank Oberösterreich AG',
     bankShortName: 'Volksbank Oberösterreich AG',
     bankAddress: 'Pfarrgasse 5',
     bankPostcode: '4600',
     bankLocation: 'Wels',
   ),
-  '38211': Iban(
-    bic: 'RZSTAT2G487',
+  '38211': Bic(
+    value: 'RZSTAT2G487',
     bankName: 'Raiffeisenbank Lipizzanerheimat eGen',
     bankShortName: 'Raiffeisenbank Lipizzanerheimat eGen',
     bankAddress: 'Voitsberg',
     bankPostcode: '8570',
     bankLocation: 'Voitsberg',
   ),
-  '38131': Iban(
-    bic: 'RZSTAT2G497',
+  '38131': Bic(
+    value: 'RZSTAT2G497',
     bankName: 'Raiffeisenbank Region Feldbach eGen',
     bankShortName: 'Raiffeisenbank Region Feldbach eGen',
     bankAddress: 'Feldbach',
     bankPostcode: '8330',
     bankLocation: 'Feldbach',
   ),
-  '38266': Iban(
-    bic: 'RZSTAT2G249',
+  '38266': Bic(
+    value: 'RZSTAT2G249',
     bankName: 'Raiffeisenbank Steirisches Salzkammergut-Öblarn eGen',
     bankShortName: 'Raiffeisenbank Steirisches Salzkammergut-Öblarn eGen',
     bankAddress: 'Bad Mitterndorf 13',
     bankPostcode: '8983',
     bankLocation: 'Bad Mitterndorf',
   ),
-  '53100': Iban(
-    bic: 'HYPNATWWLDS',
+  '53100': Bic(
+    value: 'HYPNATWWLDS',
     bankName: 'HYPO NOE Landesbank für Niederösterreich und Wien AG',
     bankShortName: 'HYPO NOE Landesbank für Niederösterreich und Wien AG',
     bankAddress: 'Hypogasse 1',
     bankPostcode: '3100',
     bankLocation: 'St.Pölten',
   ),
-  '38235': Iban(
-    bic: 'RZSTAT2G487',
+  '38235': Bic(
+    value: 'RZSTAT2G487',
     bankName: 'Raiffeisenbank Lipizzanerheimat eGen',
     bankShortName: 'Raiffeisenbank Lipizzanerheimat eGen',
     bankAddress: 'Voitsberg',
     bankPostcode: '8570',
     bankLocation: 'Voitsberg',
   ),
-  '35011': Iban(
-    bic: 'RVSAAT2S039',
+  '35011': Bic(
+    value: 'RVSAAT2S039',
     bankName: 'Raiffeisenbank Oberpinzgau eGen',
     bankShortName: 'Raiffeisenbank Oberpinzgau eGen',
     bankAddress: 'Kirchgasse 12',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '39355': Iban(
-    bic: 'RZKTAT2K390',
+  '39355': Bic(
+    value: 'RZKTAT2K390',
     bankName: 'Raiffeisenbank Region Wörthersee eG',
     bankShortName: 'Raiffeisenbank Region Wörthersee eG',
     bankAddress: 'Karawankenplatz 2',
     bankPostcode: '9220',
     bankLocation: 'Velden am Wörther See',
   ),
-  '39305': Iban(
-    bic: 'RZKTAT2K257',
+  '39305': Bic(
+    value: 'RZKTAT2K257',
     bankName: 'Raiffeisenbank Arnoldstein-Fürnitz eG',
     bankShortName: 'Raiffeisenbank Arnoldstein-Fürnitz eG',
     bankAddress: 'Gemeindeplatz 2',
     bankPostcode: '9601',
     bankLocation: 'Arnoldstein',
   ),
-  '38348': Iban(
-    bic: 'RZSTAT2G215',
+  '38348': Bic(
+    value: 'RZSTAT2G215',
     bankName: 'Raiffeisenbank Liezen-Rottenmann-Trieben eGen',
     bankShortName: 'Raiffeisenbank Liezen-Rottenmann-Trieben eGen',
     bankAddress: 'Hauptplatz 11',
     bankPostcode: '8940',
     bankLocation: 'Liezen',
   ),
-  '35111': Iban(
-    bic: 'RVSAAT2S039',
+  '35111': Bic(
+    value: 'RVSAAT2S039',
     bankName: 'Raiffeisenbank Oberpinzgau eGen',
     bankShortName: 'Raiffeisenbank Oberpinzgau eGen',
     bankAddress: 'Kirchgasse 12',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '35070': Iban(
-    bic: 'RVSAAT2S039',
+  '35070': Bic(
+    value: 'RVSAAT2S039',
     bankName: 'Raiffeisenbank Oberpinzgau eGen',
     bankShortName: 'Raiffeisenbank Oberpinzgau eGen',
     bankAddress: 'Kirchgasse 12',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '53000': Iban(
-    bic: 'HYPNATWWXXX',
+  '53000': Bic(
+    value: 'HYPNATWWXXX',
     bankName: 'HYPO NOE Landesbank für Niederösterreich und Wien AG',
     bankShortName: 'HYPO NOE Landesbank für Niederösterreich und Wien AG',
     bankAddress: 'Hypogasse 1',
     bankPostcode: '3100',
     bankLocation: 'St.Pölten',
   ),
-  '35170': Iban(
-    bic: 'RVSAAT2S039',
+  '35170': Bic(
+    value: 'RVSAAT2S039',
     bankName: 'Raiffeisenbank Oberpinzgau eGen',
     bankShortName: 'Raiffeisenbank Oberpinzgau eGen',
     bankAddress: 'Kirchgasse 12',
     bankPostcode: '5730',
     bankLocation: 'Mittersill',
   ),
-  '44400': Iban(
-    bic: 'OVLIAT21XXX',
+  '44400': Bic(
+    value: 'OVLIAT21XXX',
     bankName: 'DolomitenBank Osttirol-Westkärnten eG',
     bankShortName: 'DolomitenBank Osttirol-Westkärnten eG',
     bankAddress: 'Südtiroler Platz 9',
     bankPostcode: '9900',
     bankLocation: 'Lienz',
   ),
-  '38477': Iban(
-    bic: 'RZSTAT2G477',
+  '38477': Bic(
+    value: 'RZSTAT2G477',
     bankName: 'Raiffeisenbank Region Graz-Thalerhof eGen',
     bankShortName: 'Raiffeisenbank Region Graz-Thalerhof eGen',
     bankAddress: 'Hauptstraße 135',
     bankPostcode: '8401',
     bankLocation: 'Kalsdorf bei Graz',
   ),
-  '38072': Iban(
-    bic: 'RZSTAT2G477',
+  '38072': Bic(
+    value: 'RZSTAT2G477',
     bankName: 'Raiffeisenbank Region Graz-Thalerhof eGen',
     bankShortName: 'Raiffeisenbank Region Graz-Thalerhof eGen',
     bankAddress: 'Hauptstraße 135',
     bankPostcode: '8401',
     bankLocation: 'Kalsdorf bei Graz',
   ),
-  '32414': Iban(
-    bic: 'RLNWATWWPRB',
+  '32414': Bic(
+    value: 'RLNWATWWPRB',
     bankName: 'Raiffeisenbank Wienerwald eGen',
     bankShortName: 'Raiffeisenbank Wienerwald eGen',
     bankAddress: 'Hauptstr. 62',
     bankPostcode: '3021',
     bankLocation: 'Pressbaum',
   ),
-  '44790': Iban(
-    bic: 'VBOEATWWOOE',
+  '44790': Bic(
+    value: 'VBOEATWWOOE',
     bankName: 'Volksbank Oberösterreich AG',
     bankShortName: 'Volksbank Oberösterreich AG',
     bankAddress: 'Pfarrgasse 5',
     bankPostcode: '4600',
     bankLocation: 'Wels',
   ),
-  '34362': Iban(
-    bic: 'RZOOAT2L380',
+  '34362': Bic(
+    value: 'RZOOAT2L380',
     bankName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankShortName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankAddress: 'Garnisonstraße 1',
     bankPostcode: '4560',
     bankLocation: 'Kirchdorf an der Krems',
   ),
-  '34481': Iban(
-    bic: 'RZOOAT2L380',
+  '34481': Bic(
+    value: 'RZOOAT2L380',
     bankName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankShortName: 'Raiffeisenbank Region Kirchdorf eGen',
     bankAddress: 'Garnisonstraße 1',
     bankPostcode: '4560',
     bankLocation: 'Kirchdorf an der Krems',
   ),
-  '34543': Iban(
-    bic: 'RZOOAT2L114',
+  '34543': Bic(
+    value: 'RZOOAT2L114',
     bankName: 'Raiffeisenbank Steyr eGen',
     bankShortName: 'Raiffeisenbank Steyr eGen',
     bankAddress: 'Bergerweg 1',
     bankPostcode: '4400',
     bankLocation: 'Steyr',
   ),
-  '34400': Iban(
-    bic: 'RZOOAT2L630',
+  '34400': Bic(
+    value: 'RZOOAT2L630',
     bankName: 'Raiffeisenbank Region Schwanenstadt eGen',
     bankShortName: 'Raiffeisenbank Region Schwanenstadt eGen',
     bankAddress: 'Stadtpl. 25-26',
     bankPostcode: '4690',
     bankLocation: 'Schwanenstadt',
   ),
-  '34661': Iban(
-    bic: 'RZOOAT2L060',
+  '34661': Bic(
+    value: 'RZOOAT2L060',
     bankName: 'Raiffeisenbank Region Braunau eGen',
     bankShortName: 'Raiffeisenbank Region Braunau eGen',
     bankAddress: 'Salzburger Straße 4',
     bankPostcode: '5280',
     bankLocation: 'Braunau am Inn',
   ),
-  '38373': Iban(
-    bic: 'RZSTAT2G227',
+  '38373': Bic(
+    value: 'RZSTAT2G227',
     bankName: 'Raiffeisenbank Liesingtal-St. Stefan eGen',
     bankShortName: 'Raiffeisenbank Liesingtal-St. Stefan eGen',
     bankAddress: 'Hauptstraße 18',
     bankPostcode: '8774',
     bankLocation: 'Mautern (Stmk.)',
   ),
-  '39461': Iban(
-    bic: 'RZKTAT2K457',
+  '39461': Bic(
+    value: 'RZKTAT2K457',
     bankName: 'Raiffeisenbank Nockberge eGen',
     bankShortName: 'Raiffeisenbank Nockberge eGen',
     bankAddress: 'Hauptstr. 41',
     bankPostcode: '9545',
     bankLocation: 'Radenthein',
   ),
-  '39436': Iban(
-    bic: 'RZKTAT2K412',
+  '39436': Bic(
+    value: 'RZKTAT2K412',
     bankName: 'Raiffeisen Bank Lurnfeld-Mölltal eGen',
     bankShortName: 'Raiffeisen Bank Lurnfeld-Mölltal eGen',
     bankAddress: 'Hauptstr. 23',
     bankPostcode: '9813',
     bankLocation: 'Möllbrücke',
   ),
-  '32615': Iban(
-    bic: 'RLNWATWWZWE',
+  '32615': Bic(
+    value: 'RLNWATWWZWE',
     bankName: 'Raiffeisenbank Region Waldviertel Mitte eGen',
     bankShortName: 'Raiffeisenbank Region Waldviertel Mitte eGen',
     bankAddress: 'Landstraße 23, Postfach 10',
     bankPostcode: '3910',
     bankLocation: 'Zwettl',
   ),
-  '39254': Iban(
-    bic: 'RZKTAT2K475',
+  '39254': Bic(
+    value: 'RZKTAT2K475',
     bankName:
         'Raiffeisen-Bezirksbank St. Veit a.d. Glan-Feldkirchen, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -5949,24 +5949,24 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9300',
     bankLocation: 'St. Veit an der Glan',
   ),
-  '36360': Iban(
-    bic: 'RZTIAT22229',
+  '36360': Bic(
+    value: 'RZTIAT22229',
     bankName: 'Raiffeisen Regionalbank Fügen-Kaltenbach-Zell eGen',
     bankShortName: 'Raiffeisen Regionalbank Fügen-Kaltenbach-Zell eGen',
     bankAddress: 'Franziskusweg 10',
     bankPostcode: '6263',
     bankLocation: 'Fügen',
   ),
-  '32033': Iban(
-    bic: 'RLNWATWWAMS',
+  '32033': Bic(
+    value: 'RLNWATWWAMS',
     bankName: 'Raiffeisenbank Region Amstetten eGen',
     bankShortName: 'Raiffeisenbank Region Amstetten eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '3300',
     bankLocation: 'Amstetten',
   ),
-  '38118': Iban(
-    bic: 'RZSTAT2G102',
+  '38118': Bic(
+    value: 'RZSTAT2G102',
     bankName: 'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
     bankShortName:
         'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
@@ -5974,40 +5974,40 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '8443',
     bankLocation: 'Gleinstätten',
   ),
-  '38375': Iban(
-    bic: 'RZSTAT2G043',
+  '38375': Bic(
+    value: 'RZSTAT2G043',
     bankName: 'Raiffeisenbank Schilcherland eGen',
     bankShortName: 'Raiffeisenbank Schilcherland eGen',
     bankAddress: 'Raiffeisenstraße 1',
     bankPostcode: '8530',
     bankLocation: 'Deutschlandsberg',
   ),
-  '35008': Iban(
-    bic: 'RVSAAT2S015',
+  '35008': Bic(
+    value: 'RVSAAT2S015',
     bankName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankShortName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankAddress: 'Dorf 1',
     bankPostcode: '5301',
     bankLocation: 'Eugendorf',
   ),
-  '35108': Iban(
-    bic: 'RVSAAT2S015',
+  '35108': Bic(
+    value: 'RVSAAT2S015',
     bankName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankShortName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankAddress: 'Dorf 1',
     bankPostcode: '5301',
     bankLocation: 'Eugendorf',
   ),
-  '19888': Iban(
-    bic: 'ICBKATWWXXX',
+  '19888': Bic(
+    value: 'ICBKATWWXXX',
     bankName: 'ICBC Austria Bank GmbH',
     bankShortName: 'ICBC Austria Bank GmbH',
     bankAddress: 'Kolingasse 4',
     bankPostcode: '1090',
     bankLocation: 'Wien',
   ),
-  '39358': Iban(
-    bic: 'RZKTAT2KXXX',
+  '39358': Bic(
+    value: 'RZKTAT2KXXX',
     bankName:
         'Raiffeisenlandesbank Kärnten - Rechenzentrum und Revisionsverband, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -6016,40 +6016,40 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
   ),
-  '35037': Iban(
-    bic: 'RVSAAT2S063',
+  '35037': Bic(
+    value: 'RVSAAT2S063',
     bankName: 'Raiffeisenbank Lungau eGen',
     bankShortName: 'Raiffeisenbank Lungau eGen',
     bankAddress: 'Kirchengasse 9',
     bankPostcode: '5580',
     bankLocation: 'Tamsweg',
   ),
-  '38292': Iban(
-    bic: 'RZSTAT2G499',
+  '38292': Bic(
+    value: 'RZSTAT2G499',
     bankName: 'Raiffeisenbank Wildon-Preding eGen',
     bankShortName: 'Raiffeisenbank Wildon-Preding eGen',
     bankAddress: 'Leibnitzerstraße 1',
     bankPostcode: '8410',
     bankLocation: 'Wildon',
   ),
-  '37439': Iban(
-    bic: 'RVVGAT2B431',
+  '37439': Bic(
+    value: 'RVVGAT2B431',
     bankName: 'Raiffeisenbank Bodensee-Leiblachtal eGen',
     bankShortName: 'Raiffeisenbank Bodensee-Leiblachtal eGen',
     bankAddress: 'Seestraße 1',
     bankPostcode: '6971',
     bankLocation: 'Hard (Vbg.)',
   ),
-  '38411': Iban(
-    bic: 'RZSTAT2G403',
+  '38411': Bic(
+    value: 'RZSTAT2G403',
     bankName: 'Raiffeisenbank Region Hartberg eGen',
     bankShortName: 'Raiffeisenbank Region Hartberg eGen',
     bankAddress: 'Wiesengasse 2',
     bankPostcode: '8230',
     bankLocation: 'Hartberg',
   ),
-  '36275': Iban(
-    bic: 'RZTIAT22285',
+  '36275': Bic(
+    value: 'RZTIAT22285',
     bankName: 'Raiffeisenbank Neustift-Mieders-Schönberg im Stubaital eGen',
     bankShortName:
         'Raiffeisenbank Neustift-Mieders-Schönberg im Stubaital eGen',
@@ -6057,48 +6057,48 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '6167',
     bankLocation: 'Neustift im Stubaital',
   ),
-  '35036': Iban(
-    bic: 'RVSAAT2S063',
+  '35036': Bic(
+    value: 'RVSAAT2S063',
     bankName: 'Raiffeisenbank Lungau eGen',
     bankShortName: 'Raiffeisenbank Lungau eGen',
     bankAddress: 'Kirchengasse 9',
     bankPostcode: '5580',
     bankLocation: 'Tamsweg',
   ),
-  '34160': Iban(
-    bic: 'RZOOAT2L410',
+  '34160': Bic(
+    value: 'RZOOAT2L410',
     bankName: 'Raiffeisenbank Region Rohrbach eGen',
     bankShortName: 'Raiffeisenbank Region Rohrbach eGen',
     bankAddress: 'Stadtplatz 30',
     bankPostcode: '4150',
     bankLocation: 'Rohrbach-Berg(OÖ)',
   ),
-  '19520': Iban(
-    bic: 'STSPAT2GXXX',
+  '19520': Bic(
+    value: 'STSPAT2GXXX',
     bankName: 'Steiermärkische Bank und Sparkassen Aktiengesellschaft',
     bankShortName: 'Steiermärkische Bank und Sparkassen Aktiengesellschaft',
     bankAddress: 'Sparkassenplatz 4',
     bankPostcode: '8010',
     bankLocation: 'Graz',
   ),
-  '35023': Iban(
-    bic: 'RVSAAT2S015',
+  '35023': Bic(
+    value: 'RVSAAT2S015',
     bankName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankShortName: 'Raiffeisenbank Flachgau Mitte eGen',
     bankAddress: 'Dorf 1',
     bankPostcode: '5301',
     bankLocation: 'Eugendorf',
   ),
-  '34420': Iban(
-    bic: 'RZOOAT2L330',
+  '34420': Bic(
+    value: 'RZOOAT2L330',
     bankName: 'Raiffeisenbank Mühlviertler Alm eGen',
     bankShortName: 'Raiffeisenbank Mühlviertler Alm eGen',
     bankAddress: 'Schulstr. 2',
     bankPostcode: '4280',
     bankLocation: 'Königswiesen',
   ),
-  '33054': Iban(
-    bic: 'RLBBAT2E116',
+  '33054': Bic(
+    value: 'RLBBAT2E116',
     bankName: 'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
     bankShortName:
         'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
@@ -6106,56 +6106,56 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '7132',
     bankLocation: 'Frauenkirchen',
   ),
-  '35061': Iban(
-    bic: 'RVSAAT2S063',
+  '35061': Bic(
+    value: 'RVSAAT2S063',
     bankName: 'Raiffeisenbank Lungau eGen',
     bankShortName: 'Raiffeisenbank Lungau eGen',
     bankAddress: 'Kirchengasse 9',
     bankPostcode: '5580',
     bankLocation: 'Tamsweg',
   ),
-  '35161': Iban(
-    bic: 'RVSAAT2S063',
+  '35161': Bic(
+    value: 'RVSAAT2S063',
     bankName: 'Raiffeisenbank Lungau eGen',
     bankShortName: 'Raiffeisenbank Lungau eGen',
     bankAddress: 'Kirchengasse 9',
     bankPostcode: '5580',
     bankLocation: 'Tamsweg',
   ),
-  '35261': Iban(
-    bic: 'RVSAAT2S063',
+  '35261': Bic(
+    value: 'RVSAAT2S063',
     bankName: 'Raiffeisenbank Lungau eGen',
     bankShortName: 'Raiffeisenbank Lungau eGen',
     bankAddress: 'Kirchengasse 9',
     bankPostcode: '5580',
     bankLocation: 'Tamsweg',
   ),
-  '35361': Iban(
-    bic: 'RVSAAT2S063',
+  '35361': Bic(
+    value: 'RVSAAT2S063',
     bankName: 'Raiffeisenbank Lungau eGen',
     bankShortName: 'Raiffeisenbank Lungau eGen',
     bankAddress: 'Kirchengasse 9',
     bankPostcode: '5580',
     bankLocation: 'Tamsweg',
   ),
-  '34161': Iban(
-    bic: 'RZOOAT2L111',
+  '34161': Bic(
+    value: 'RZOOAT2L111',
     bankName: 'Raiffeisenbank Region Gallneukirchen eGen',
     bankShortName: 'Raiffeisenbank Region Gallneukirchen eGen',
     bankAddress: 'Reichenauerstr. 6-8',
     bankPostcode: '4210',
     bankLocation: 'Gallneukirchen',
   ),
-  '34637': Iban(
-    bic: 'RZOOAT2L777',
+  '34637': Bic(
+    value: 'RZOOAT2L777',
     bankName: 'Raiffeisenbank Perg eGen',
     bankShortName: 'Raiffeisenbank Perg eGen',
     bankAddress: 'Linzerstr. 14',
     bankPostcode: '4320',
     bankLocation: 'Perg',
   ),
-  '14200': Iban(
-    bic: 'BAWAATWWXXX',
+  '14200': Bic(
+    value: 'BAWAATWWXXX',
     bankName:
         'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankShortName:
@@ -6164,80 +6164,80 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '34475': Iban(
-    bic: 'RZOOAT2L111',
+  '34475': Bic(
+    value: 'RZOOAT2L111',
     bankName: 'Raiffeisenbank Region Gallneukirchen eGen',
     bankShortName: 'Raiffeisenbank Region Gallneukirchen eGen',
     bankAddress: 'Reichenauerstr. 6-8',
     bankPostcode: '4210',
     bankLocation: 'Gallneukirchen',
   ),
-  '32227': Iban(
-    bic: 'RLNWATWWZDF',
+  '32227': Bic(
+    value: 'RLNWATWWZDF',
     bankName: 'Raiffeisenbank Weinviertel Nordost eGen',
     bankShortName: 'Raiffeisenbank Weinviertel Nordost eGen',
     bankAddress: 'Hauptstr. 39',
     bankPostcode: '2225',
     bankLocation: 'Zistersdorf',
   ),
-  '32982': Iban(
-    bic: 'RLNWATW1322',
+  '32982': Bic(
+    value: 'RLNWATW1322',
     bankName: 'Raiffeisenbank Hollabrunn eGen',
     bankShortName: 'Raiffeisenbank Hollabrunn eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '2020',
     bankLocation: 'Hollabrunn',
   ),
-  '32769': Iban(
-    bic: 'RLNWATWWOBG',
+  '32769': Bic(
+    value: 'RLNWATWWOBG',
     bankName: 'Raiffeisenbank Region St. Pölten eGen',
     bankShortName: 'Raiffeisenbank Region St. Pölten eGen',
     bankAddress: 'Kremser Landstraße 18',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '32356': Iban(
-    bic: 'RLNWATWWOBG',
+  '32356': Bic(
+    value: 'RLNWATWWOBG',
     bankName: 'Raiffeisenbank Region St. Pölten eGen',
     bankShortName: 'Raiffeisenbank Region St. Pölten eGen',
     bankAddress: 'Kremser Landstraße 18',
     bankPostcode: '3100',
     bankLocation: 'St. Pölten',
   ),
-  '38026': Iban(
-    bic: 'RZSTAT2G282',
+  '38026': Bic(
+    value: 'RZSTAT2G282',
     bankName: 'Raiffeisenbank Passail eGen',
     bankShortName: 'Raiffeisenbank Passail eGen',
     bankAddress: 'Markt 15',
     bankPostcode: '8162',
     bankLocation: 'Passail',
   ),
-  '35024': Iban(
-    bic: 'RVSAAT2S021',
+  '35024': Bic(
+    value: 'RVSAAT2S021',
     bankName: 'Raiffeisenbank Wallersee eGen',
     bankShortName: 'Raiffeisenbank Wallersee eGen',
     bankAddress: 'Hauptstraße 39',
     bankPostcode: '5202',
     bankLocation: 'Neumarkt am Wallersee',
   ),
-  '35034': Iban(
-    bic: 'RVSAAT2S034',
+  '35034': Bic(
+    value: 'RVSAAT2S034',
     bankName: 'Raiffeisenbank Salzburg Liefering-Maxglan-Siezenheim eGen',
     bankShortName: 'Raiffeisenbank Salzburg Liefering-Maxglan-Siezenheim eGen',
     bankAddress: 'Innsbrucker Bundesstraße 34',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '35054': Iban(
-    bic: 'RVSAAT2S034',
+  '35054': Bic(
+    value: 'RVSAAT2S034',
     bankName: 'Raiffeisenbank Salzburg Liefering-Maxglan-Siezenheim eGen',
     bankShortName: 'Raiffeisenbank Salzburg Liefering-Maxglan-Siezenheim eGen',
     bankAddress: 'Innsbrucker Bundesstraße 34',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '14210': Iban(
-    bic: 'BAWAATWWXXX',
+  '14210': Bic(
+    value: 'BAWAATWWXXX',
     bankName:
         'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankShortName:
@@ -6246,40 +6246,40 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '19450': Iban(
-    bic: 'COPRATWWXXX',
+  '19450': Bic(
+    value: 'COPRATWWXXX',
     bankName: 'Liechtensteinische Landesbank (Österreich) AG',
     bankShortName: 'Liechtensteinische Landesbank (Österreich) AG',
     bankAddress: 'Hessgasse 1',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '37445': Iban(
-    bic: 'RVVGAT2B474',
+  '37445': Bic(
+    value: 'RVVGAT2B474',
     bankName: 'Raiffeisenbank Weissachtal eGen',
     bankShortName: 'Raiffeisenbank Weissachtal eGen',
     bankAddress: 'Dorf 245',
     bankPostcode: '6934',
     bankLocation: 'Sulzberg (Vbg.)',
   ),
-  '38481': Iban(
-    bic: 'RZSTAT2G113',
+  '38481': Bic(
+    value: 'RZSTAT2G113',
     bankName: 'Raiffeisenbank Schladming-Gröbming eGen',
     bankShortName: 'Raiffeisenbank Schladming-Gröbming eGen',
     bankAddress: 'Hauptstraße 279',
     bankPostcode: '8962',
     bankLocation: 'Gröbming',
   ),
-  '33124': Iban(
-    bic: 'RLBBAT2E065',
+  '33124': Bic(
+    value: 'RLBBAT2E065',
     bankName: 'Raiffeisenbank Burgenland Mitte eGen',
     bankShortName: 'Raiffeisenbank Burgenland Mitte eGen',
     bankAddress: 'Hauptstraße 34',
     bankPostcode: '7350',
     bankLocation: 'Oberpullendorf',
   ),
-  '39407': Iban(
-    bic: 'RZKTAT2K475',
+  '39407': Bic(
+    value: 'RZKTAT2K475',
     bankName:
         'Raiffeisen-Bezirksbank St. Veit a.d. Glan-Feldkirchen, registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -6288,8 +6288,8 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9300',
     bankLocation: 'St. Veit an der Glan',
   ),
-  '39383': Iban(
-    bic: 'RZKTAT2K496',
+  '39383': Bic(
+    value: 'RZKTAT2K496',
     bankName:
         'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -6298,192 +6298,192 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9500',
     bankLocation: 'Villach',
   ),
-  '34535': Iban(
-    bic: 'RZOOAT2L300',
+  '34535': Bic(
+    value: 'RZOOAT2L300',
     bankName: 'Raiffeisenbank Region Neufelden eGen',
     bankShortName: 'Raiffeisenbank Region Neufelden eGen',
     bankAddress: 'Markt 17',
     bankPostcode: '4113',
     bankLocation: 'St. Martin im Mühlkreis',
   ),
-  '34361': Iban(
-    bic: 'RZOOAT2L300',
+  '34361': Bic(
+    value: 'RZOOAT2L300',
     bankName: 'Raiffeisenbank Region Neufelden eGen',
     bankShortName: 'Raiffeisenbank Region Neufelden eGen',
     bankAddress: 'Markt 17',
     bankPostcode: '4113',
     bankLocation: 'St. Martin im Mühlkreis',
   ),
-  '35058': Iban(
-    bic: 'RVSAAT2S029',
+  '35058': Bic(
+    value: 'RVSAAT2S029',
     bankName: 'Raiffeisenbank Kuchl-St. Koloman eGen',
     bankShortName: 'Raiffeisenbank Kuchl-St. Koloman eGen',
     bankAddress: 'Markt 222',
     bankPostcode: '5431',
     bankLocation: 'Kuchl',
   ),
-  '35003': Iban(
-    bic: 'RVSAAT2S053',
+  '35003': Bic(
+    value: 'RVSAAT2S053',
     bankName: 'Raiffeisenbank Pinzgau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pinzgau Mitte eGen',
     bankAddress: 'Lofererstr.5',
     bankPostcode: '5760',
     bankLocation: 'Saalfelden am Stein. Meer',
   ),
-  '35013': Iban(
-    bic: 'RVSAAT2S053',
+  '35013': Bic(
+    value: 'RVSAAT2S053',
     bankName: 'Raiffeisenbank Pinzgau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pinzgau Mitte eGen',
     bankAddress: 'Lofererstr.5',
     bankPostcode: '5760',
     bankLocation: 'Saalfelden am Stein. Meer',
   ),
-  '35031': Iban(
-    bic: 'RVSAAT2S053',
+  '35031': Bic(
+    value: 'RVSAAT2S053',
     bankName: 'Raiffeisenbank Pinzgau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pinzgau Mitte eGen',
     bankAddress: 'Lofererstr.5',
     bankPostcode: '5760',
     bankLocation: 'Saalfelden am Stein. Meer',
   ),
-  '35045': Iban(
-    bic: 'RVSAAT2S022',
+  '35045': Bic(
+    value: 'RVSAAT2S022',
     bankName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankShortName: 'Raiffeisenbank Hallein-Oberalm eGen',
     bankAddress: 'Justin-Robert-Platz 1',
     bankPostcode: '5400',
     bankLocation: 'Hallein',
   ),
-  '35057': Iban(
-    bic: 'RVSAAT2S069',
+  '35057': Bic(
+    value: 'RVSAAT2S069',
     bankName: 'Raiffeisenbank St. Johann-Wagrain-Kleinarl eGen',
     bankShortName: 'Raiffeisenbank St. Johann-Wagrain-Kleinarl eGen',
     bankAddress: 'Ing. Ludwig Pech-Straße 1',
     bankPostcode: '5600',
     bankLocation: 'St. Johann im Pongau',
   ),
-  '36306': Iban(
-    bic: 'RZTIAT22315',
+  '36306': Bic(
+    value: 'RZTIAT22315',
     bankName: 'Raiffeisenbank Serfaus-Fiss-Ried eGen',
     bankShortName: 'Raiffeisenbank Serfaus-Fiss-Ried eGen',
     bankAddress: 'Dorfbahnstraße 41-43',
     bankPostcode: '6534',
     bankLocation: 'Serfaus',
   ),
-  '35035': Iban(
-    bic: 'RVSAAT2S053',
+  '35035': Bic(
+    value: 'RVSAAT2S053',
     bankName: 'Raiffeisenbank Pinzgau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pinzgau Mitte eGen',
     bankAddress: 'Lofererstr.5',
     bankPostcode: '5760',
     bankLocation: 'Saalfelden am Stein. Meer',
   ),
-  '36367': Iban(
-    bic: 'RZTIAT22378',
+  '36367': Bic(
+    value: 'RZTIAT22378',
     bankName: 'Raiffeisen Regionalbank Matrei i.O. eGen',
     bankShortName: 'Raiffeisen Regionalbank Matrei i.O. eGen',
     bankAddress: 'Rauterplatz 4',
     bankPostcode: '9971',
     bankLocation: 'Matrei in Osttirol',
   ),
-  '32242': Iban(
-    bic: 'RLNWATW1002',
+  '32242': Bic(
+    value: 'RLNWATW1002',
     bankName: 'Raiffeisenbank Wagram-Schmidatal eGen',
     bankShortName: 'Raiffeisenbank Wagram-Schmidatal eGen',
     bankAddress: 'Bahnhofstraße 25',
     bankPostcode: '3462',
     bankLocation: 'Absdorf',
   ),
-  '32497': Iban(
-    bic: 'RLNWATW1880',
+  '32497': Bic(
+    value: 'RLNWATW1880',
     bankName: 'Raiffeisenbank Tulln eGen',
     bankShortName: 'Raiffeisenbank Tulln eGen',
     bankAddress: 'Bahnhofstraße 9',
     bankPostcode: '3430',
     bankLocation: 'Tulln',
   ),
-  '32930': Iban(
-    bic: 'RLNWATWWBAD',
+  '32930': Bic(
+    value: 'RLNWATWWBAD',
     bankName: 'Raiffeisenbank Region Baden eGen',
     bankShortName: 'Raiffeisenbank Region Baden eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '2500',
     bankLocation: 'Baden bei Wien',
   ),
-  '32247': Iban(
-    bic: 'RLNWATWWBAD',
+  '32247': Bic(
+    value: 'RLNWATWWBAD',
     bankName: 'Raiffeisenbank Region Baden eGen',
     bankShortName: 'Raiffeisenbank Region Baden eGen',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '2500',
     bankLocation: 'Baden bei Wien',
   ),
-  '38108': Iban(
-    bic: 'RZSTAT2G023',
+  '38108': Bic(
+    value: 'RZSTAT2G023',
     bankName: 'Raiffeisenbank Oststeiermark Nord eGen',
     bankShortName: 'Raiffeisenbank Oststeiermark Nord eGen',
     bankAddress: 'Raiffeisenplatz 200',
     bankPostcode: '8225',
     bankLocation: 'Pöllau bei Hartberg',
   ),
-  '33031': Iban(
-    bic: 'RLBBAT2E010',
+  '33031': Bic(
+    value: 'RLBBAT2E010',
     bankName: 'Raiffeisenbank Region Deutschkreutz-Horitschon eGen',
     bankShortName: 'Raiffeisenbank Region Deutschkreutz-Horitschon eGen',
     bankAddress: 'Hauptstraße 49',
     bankPostcode: '7301',
     bankLocation: 'Deutschkreutz',
   ),
-  '33058': Iban(
-    bic: 'RLBBAT2E010',
+  '33058': Bic(
+    value: 'RLBBAT2E010',
     bankName: 'Raiffeisenbank Region Deutschkreutz-Horitschon eGen',
     bankShortName: 'Raiffeisenbank Region Deutschkreutz-Horitschon eGen',
     bankAddress: 'Hauptstraße 49',
     bankPostcode: '7301',
     bankLocation: 'Deutschkreutz',
   ),
-  '38041': Iban(
-    bic: 'RZSTAT2G023',
+  '38041': Bic(
+    value: 'RZSTAT2G023',
     bankName: 'Raiffeisenbank Oststeiermark Nord eGen',
     bankShortName: 'Raiffeisenbank Oststeiermark Nord eGen',
     bankAddress: 'Raiffeisenplatz 200',
     bankPostcode: '8225',
     bankLocation: 'Pöllau bei Hartberg',
   ),
-  '35043': Iban(
-    bic: 'RVSAAT2S012',
+  '35043': Bic(
+    value: 'RVSAAT2S012',
     bankName: 'Raiffeisenbank Hohe Tauern eGen',
     bankShortName: 'Raiffeisenbank Hohe Tauern eGen',
     bankAddress: 'Wilhelm-Fazokas-Straße 2c',
     bankPostcode: '5710',
     bankLocation: 'Kaprun',
   ),
-  '37429': Iban(
-    bic: 'RVVGAT2B422',
+  '37429': Bic(
+    value: 'RVVGAT2B422',
     bankName: 'Raiffeisenbank Montfort eGen',
     bankShortName: 'Raiffeisenbank Montfort eGen',
     bankAddress: 'Bahnhofstraße 2',
     bankPostcode: '6830',
     bankLocation: 'Rankweil',
   ),
-  '37402': Iban(
-    bic: 'RVVGAT2B422',
+  '37402': Bic(
+    value: 'RVVGAT2B422',
     bankName: 'Raiffeisenbank Montfort eGen',
     bankShortName: 'Raiffeisenbank Montfort eGen',
     bankAddress: 'Bahnhofstraße 2',
     bankPostcode: '6830',
     bankLocation: 'Rankweil',
   ),
-  '37461': Iban(
-    bic: 'RVVGAT2B422',
+  '37461': Bic(
+    value: 'RVVGAT2B422',
     bankName: 'Raiffeisenbank Montfort eGen',
     bankShortName: 'Raiffeisenbank Montfort eGen',
     bankAddress: 'Bahnhofstraße 2',
     bankPostcode: '6830',
     bankLocation: 'Rankweil',
   ),
-  '94648': Iban(
-    bic: 'VPAYATW2XXX',
+  '94648': Bic(
+    value: 'VPAYATW2XXX',
     bankName: 'Viva Payment Services S.A. Zweigniederlassung Wien/Österreich',
     bankShortName:
         'Viva Payment Services S.A. Zweigniederlassung Wien/Österreich',
@@ -6492,72 +6492,72 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1150',
     bankLocation: 'Wien',
   ),
-  '19515': Iban(
-    bic: 'OPBAATW2XXX',
+  '19515': Bic(
+    value: 'OPBAATW2XXX',
     bankName: 'Opel Bank S.A. Niederlassung Österreich',
     bankShortName: 'Opel Bank S.A. Niederlassung Österreich',
     bankAddress: 'Groß-Enzersdorfer Straße 59',
     bankPostcode: '1220',
     bankLocation: 'Wien',
   ),
-  '38122': Iban(
-    bic: 'RZSTAT2G077',
+  '38122': Bic(
+    value: 'RZSTAT2G077',
     bankName: 'Raiffeisenbank Region Fürstenfeld eGen',
     bankShortName: 'Raiffeisenbank Region Fürstenfeld eGen',
     bankAddress: 'Kommendegasse 1',
     bankPostcode: '8280',
     bankLocation: 'Fürstenfeld',
   ),
-  '19835': Iban(
-    bic: 'FAZFAT21XXX',
+  '19835': Bic(
+    value: 'FAZFAT21XXX',
     bankName: 'Ford Bank GmbH, Zweigniederlassung Österreich',
     bankShortName: 'Ford Bank GmbH, Zweigniederlassung Österreich',
     bankAddress: 'Sterneckstraße 31-33',
     bankPostcode: '5020',
     bankLocation: 'Salzburg',
   ),
-  '35048': Iban(
-    bic: 'RVSAAT2S012',
+  '35048': Bic(
+    value: 'RVSAAT2S012',
     bankName: 'Raiffeisenbank Hohe Tauern eGen',
     bankShortName: 'Raiffeisenbank Hohe Tauern eGen',
     bankAddress: 'Wilhelm-Fazokas-Straße 2c',
     bankPostcode: '5710',
     bankLocation: 'Kaprun',
   ),
-  '38112': Iban(
-    bic: 'RZSTAT2G138',
+  '38112': Bic(
+    value: 'RZSTAT2G138',
     bankName: 'Raiffeisenbank Gratwein-Hitzendorf eGen',
     bankShortName: 'Raiffeisenbank Gratwein-Hitzendorf eGen',
     bankAddress: 'Bahnhofstrasse 22',
     bankPostcode: '8112',
     bankLocation: 'Gratwein-Straßengel',
   ),
-  '39431': Iban(
-    bic: 'RZKTAT2K561',
+  '39431': Bic(
+    value: 'RZKTAT2K561',
     bankName: 'Raiffeisenbank Oberes Mölltal-Oberdrauburg eGen',
     bankShortName: 'Raiffeisenbank Oberes Mölltal-Oberdrauburg eGen',
     bankAddress: 'Winklern 37',
     bankPostcode: '9841',
     bankLocation: 'Winklern im Mölltal',
   ),
-  '38223': Iban(
-    bic: 'RZSTAT2G377',
+  '38223': Bic(
+    value: 'RZSTAT2G377',
     bankName: 'Raiffeisenbank Region Graz Nord eGen',
     bankShortName: 'Raiffeisenbank Region Graz Nord eGen',
     bankAddress: 'Grazer Straße 62',
     bankPostcode: '8045',
     bankLocation: 'Graz',
   ),
-  '39400': Iban(
-    bic: 'RZKTAT2K464',
+  '39400': Bic(
+    value: 'RZKTAT2K464',
     bankName: 'Raiffeisenbank Lieser-Maltatal eG',
     bankShortName: 'Raiffeisenbank Lieser-Maltatal eG',
     bankAddress: 'Rennweg 6',
     bankPostcode: '9863',
     bankLocation: 'Rennweg',
   ),
-  '39404': Iban(
-    bic: 'RZKTAT2K442',
+  '39404': Bic(
+    value: 'RZKTAT2K442',
     bankName:
         'Raiffeisenbank Drautal registrierte Genossenschaft mit beschränkter Haftung',
     bankShortName:
@@ -6566,184 +6566,184 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '9710',
     bankLocation: 'Feistritz an der Drau',
   ),
-  '33034': Iban(
-    bic: 'RLBBAT2E027',
+  '33034': Bic(
+    value: 'RLBBAT2E027',
     bankName: 'Raiffeisen Regionalbank Güssing-Jennersdorf eGen',
     bankShortName: 'Raiffeisen Regionalbank Güssing-Jennersdorf eGen',
     bankAddress: 'Hauptstraße 3',
     bankPostcode: '7540',
     bankLocation: 'Güssing',
   ),
-  '33041': Iban(
-    bic: 'RLBBAT2E027',
+  '33041': Bic(
+    value: 'RLBBAT2E027',
     bankName: 'Raiffeisen Regionalbank Güssing-Jennersdorf eGen',
     bankShortName: 'Raiffeisen Regionalbank Güssing-Jennersdorf eGen',
     bankAddress: 'Hauptstraße 3',
     bankPostcode: '7540',
     bankLocation: 'Güssing',
   ),
-  '33055': Iban(
-    bic: 'RLBBAT2E012',
+  '33055': Bic(
+    value: 'RLBBAT2E012',
     bankName: 'Raiffeisenbank Neusiedlersee-Hügelland eGen',
     bankShortName: 'Raiffeisenbank Neusiedlersee-Hügelland eGen',
     bankAddress: 'Hauptstraße 39',
     bankPostcode: '7082',
     bankLocation: 'Donnerskirchen',
   ),
-  '33085': Iban(
-    bic: 'RLBBAT2E012',
+  '33085': Bic(
+    value: 'RLBBAT2E012',
     bankName: 'Raiffeisenbank Neusiedlersee-Hügelland eGen',
     bankShortName: 'Raiffeisenbank Neusiedlersee-Hügelland eGen',
     bankAddress: 'Hauptstraße 39',
     bankPostcode: '7082',
     bankLocation: 'Donnerskirchen',
   ),
-  '36200': Iban(
-    bic: 'RZTIAT22200',
+  '36200': Bic(
+    value: 'RZTIAT22200',
     bankName: 'Raiffeisenbank Absam-Thaur eGen',
     bankShortName: 'Raiffeisenbank Absam-Thaur eGen',
     bankAddress: 'Schulgasse 14',
     bankPostcode: '6065',
     bankLocation: 'Thaur',
   ),
-  '55000': Iban(
-    bic: 'SLHYAT2SXXX',
+  '55000': Bic(
+    value: 'SLHYAT2SXXX',
     bankName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankShortName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankAddress: 'Europaplatz 1a',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '56000': Iban(
-    bic: 'RZSTAT2GXXX',
+  '56000': Bic(
+    value: 'RZSTAT2GXXX',
     bankName: 'Raiffeisen-Landesbank Steiermark AG',
     bankShortName: 'Raiffeisen-Landesbank Steiermark AG',
     bankAddress: 'Kaiserfeldgasse 5',
     bankPostcode: '8010',
     bankLocation: 'Graz',
   ),
-  '55500': Iban(
-    bic: 'SLHYAT2S500',
+  '55500': Bic(
+    value: 'SLHYAT2S500',
     bankName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankShortName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankAddress: 'Europaplatz 1a',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '19600': Iban(
-    bic: 'BSSWATWWXXX',
+  '19600': Bic(
+    value: 'BSSWATWWXXX',
     bankName: 'Schelhammer Capital Bank AG',
     bankShortName: 'Schelhammer Capital Bank AG',
     bankAddress: 'Goldschmiedg. 3',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '32940': Iban(
-    bic: 'RLNWATWWWRN',
+  '32940': Bic(
+    value: 'RLNWATWWWRN',
     bankName: 'Raiffeisenbank Wr. Neustadt-Schneebergland eGen',
     bankShortName: 'Raiffeisenbank Wr. Neustadt-Schneebergland eGen',
     bankAddress: 'Hauptplatz 28',
     bankPostcode: '2700',
     bankLocation: 'Wiener Neustadt',
   ),
-  '36230': Iban(
-    bic: 'RZTIAT22329',
+  '36230': Bic(
+    value: 'RZTIAT22329',
     bankName: 'Raiffeisenbank Wipptal - Stubaital Mitte eGen',
     bankShortName: 'Raiffeisenbank Wipptal - Stubaital Mitte eGen',
     bankAddress: 'Brennerstraße 52',
     bankPostcode: '6150',
     bankLocation: 'Steinach a.Br.',
   ),
-  '36337': Iban(
-    bic: 'RZTIAT22200',
+  '36337': Bic(
+    value: 'RZTIAT22200',
     bankName: 'Raiffeisenbank Absam-Thaur eGen',
     bankShortName: 'Raiffeisenbank Absam-Thaur eGen',
     bankAddress: 'Schulgasse 14',
     bankPostcode: '6065',
     bankLocation: 'Thaur',
   ),
-  '36279': Iban(
-    bic: 'RZTIAT22267',
+  '36279': Bic(
+    value: 'RZTIAT22267',
     bankName: 'Raiffeisenbank Kundl-Münster eGen',
     bankShortName: 'Raiffeisenbank Kundl-Münster eGen',
     bankAddress: 'Dorfstraße 14',
     bankPostcode: '6250',
     bankLocation: 'Kundl',
   ),
-  '32647': Iban(
-    bic: 'RLNWATWWASP',
+  '32647': Bic(
+    value: 'RLNWATWWASP',
     bankName: 'Raiffeisenbank Region Wiener Alpen eGen',
     bankShortName: 'Raiffeisenbank Region Wiener Alpen eGen',
     bankAddress: 'Bahnstraße 3',
     bankPostcode: '2870',
     bankLocation: 'Aspang',
   ),
-  '32663': Iban(
-    bic: 'RLNWATWWMIB',
+  '32663': Bic(
+    value: 'RLNWATWWMIB',
     bankName: 'Raiffeisenbank im Weinviertel eGen',
     bankShortName: 'Raiffeisenbank im Weinviertel eGen',
     bankAddress: 'Hauptpl. 37',
     bankPostcode: '2130',
     bankLocation: 'Mistelbach',
   ),
-  '35046': Iban(
-    bic: 'RVSAAT2S030',
+  '35046': Bic(
+    value: 'RVSAAT2S030',
     bankName: 'Raiffeisenbank Flachgau Nord eGen',
     bankShortName: 'Raiffeisenbank Flachgau Nord eGen',
     bankAddress: 'Hauptstr.3',
     bankPostcode: '5112',
     bankLocation: 'Lamprechtshausen',
   ),
-  '35044': Iban(
-    bic: 'RVSAAT2S030',
+  '35044': Bic(
+    value: 'RVSAAT2S030',
     bankName: 'Raiffeisenbank Flachgau Nord eGen',
     bankShortName: 'Raiffeisenbank Flachgau Nord eGen',
     bankAddress: 'Hauptstr.3',
     bankPostcode: '5112',
     bankLocation: 'Lamprechtshausen',
   ),
-  '38285': Iban(
-    bic: 'RZSTAT2G103',
+  '38285': Bic(
+    value: 'RZSTAT2G103',
     bankName: 'Raiffeisenbank Region Gleisdorf-Pischelsdorf eGen',
     bankShortName: 'Raiffeisenbank Region Gleisdorf-Pischelsdorf eGen',
     bankAddress: 'Florianiplatz 18-19',
     bankPostcode: '8200',
     bankLocation: 'Gleisdorf',
   ),
-  '35025': Iban(
-    bic: 'RVSAAT2S065',
+  '35025': Bic(
+    value: 'RVSAAT2S065',
     bankName: 'Raiffeisenbank Fuschlsee West eGen',
     bankShortName: 'Raiffeisenbank Fuschlsee West eGen',
     bankAddress: 'Wolfgangseestr. 26',
     bankPostcode: '5322',
     bankLocation: 'Hof bei Salzburg',
   ),
-  '35125': Iban(
-    bic: 'RVSAAT2S065',
+  '35125': Bic(
+    value: 'RVSAAT2S065',
     bankName: 'Raiffeisenbank Fuschlsee West eGen',
     bankShortName: 'Raiffeisenbank Fuschlsee West eGen',
     bankAddress: 'Wolfgangseestr. 26',
     bankPostcode: '5322',
     bankLocation: 'Hof bei Salzburg',
   ),
-  '35225': Iban(
-    bic: 'RVSAAT2S065',
+  '35225': Bic(
+    value: 'RVSAAT2S065',
     bankName: 'Raiffeisenbank Fuschlsee West eGen',
     bankShortName: 'Raiffeisenbank Fuschlsee West eGen',
     bankAddress: 'Wolfgangseestr. 26',
     bankPostcode: '5322',
     bankLocation: 'Hof bei Salzburg',
   ),
-  '36359': Iban(
-    bic: 'RBRTAT22XXX',
+  '36359': Bic(
+    value: 'RBRTAT22XXX',
     bankName: 'Raiffeisenbank Oberland-Reutte eGen',
     bankShortName: 'Raiffeisenbank Oberland-Reutte eGen',
     bankAddress: 'Untermarkt 3',
     bankPostcode: '6600',
     bankLocation: 'Reutte',
   ),
-  '19250': Iban(
-    bic: 'DIRAAT2SXXX',
+  '19250': Bic(
+    value: 'DIRAAT2SXXX',
     bankName:
         'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankShortName:
@@ -6752,368 +6752,368 @@ const Map<String, Iban> _atBankCodes = <String, Iban>{
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
-  '36272': Iban(
-    bic: 'RZTIAT22322',
+  '36272': Bic(
+    value: 'RZTIAT22322',
     bankName: 'Raiffeisen Regionalbank Schwaz eGen',
     bankShortName: 'Raiffeisen Regionalbank Schwaz eGen',
     bankAddress: 'Innsbrucker Straße 11',
     bankPostcode: '6130',
     bankLocation: 'Schwaz',
   ),
-  '35010': Iban(
-    bic: 'RVSAAT2S055',
+  '35010': Bic(
+    value: 'RVSAAT2S055',
     bankName: 'Raiffeisenbank Pongau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pongau Mitte eGen',
     bankAddress: 'Salzburgerstraße 39b',
     bankPostcode: '5620',
     bankLocation: 'Schwarzach',
   ),
-  '35110': Iban(
-    bic: 'RVSAAT2S055',
+  '35110': Bic(
+    value: 'RVSAAT2S055',
     bankName: 'Raiffeisenbank Pongau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pongau Mitte eGen',
     bankAddress: 'Salzburgerstraße 39b',
     bankPostcode: '5620',
     bankLocation: 'Schwarzach',
   ),
-  '35310': Iban(
-    bic: 'RVSAAT2S055',
+  '35310': Bic(
+    value: 'RVSAAT2S055',
     bankName: 'Raiffeisenbank Pongau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pongau Mitte eGen',
     bankAddress: 'Salzburgerstraße 39b',
     bankPostcode: '5620',
     bankLocation: 'Schwarzach',
   ),
-  '35038': Iban(
-    bic: 'RVSAAT2S030',
+  '35038': Bic(
+    value: 'RVSAAT2S030',
     bankName: 'Raiffeisenbank Flachgau Nord eGen',
     bankShortName: 'Raiffeisenbank Flachgau Nord eGen',
     bankAddress: 'Hauptstr.3',
     bankPostcode: '5112',
     bankLocation: 'Lamprechtshausen',
   ),
-  '19210': Iban(
-    bic: 'SPBAATWWB99',
+  '19210': Bic(
+    value: 'SPBAATWWB99',
     bankName: 'bank99 AG',
     bankShortName: 'bank99 AG',
     bankAddress: 'Praterstraße 31',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '38374': Iban(
-    bic: 'RZSTAT2G075',
+  '38374': Bic(
+    value: 'RZSTAT2G075',
     bankName: 'Raiffeisenbank Mittlere Südoststeiermark eGen',
     bankShortName: 'Raiffeisenbank Mittlere Südoststeiermark eGen',
     bankAddress: 'Paldau 40',
     bankPostcode: '8341',
     bankLocation: 'Paldau',
   ),
-  '34438': Iban(
-    bic: 'RZOOAT2L081',
+  '34438': Bic(
+    value: 'RZOOAT2L081',
     bankName: 'Raiffeisenbank Eberschwang-Pramet eGen',
     bankShortName: 'Raiffeisenbank Eberschwang-Pramet eGen',
     bankAddress: 'Eberschwang 116',
     bankPostcode: '4906',
     bankLocation: 'Eberschwang',
   ),
-  '76022': Iban(
-    bic: 'VIAUATW1XXX',
+  '76022': Bic(
+    value: 'VIAUATW1XXX',
     bankName: 'card complete Service Bank AG',
     bankShortName: 'card complete Service Bank AG',
     bankAddress: 'Lassallestraße 3',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '33048': Iban(
-    bic: 'RLBBAT2E010',
+  '33048': Bic(
+    value: 'RLBBAT2E010',
     bankName: 'Raiffeisenbank Region Deutschkreutz-Horitschon eGen',
     bankShortName: 'Raiffeisenbank Region Deutschkreutz-Horitschon eGen',
     bankAddress: 'Hauptstraße 49',
     bankPostcode: '7301',
     bankLocation: 'Deutschkreutz',
   ),
-  '35005': Iban(
-    bic: 'RVSAAT2S018',
+  '35005': Bic(
+    value: 'RVSAAT2S018',
     bankName: 'Raiffeisenbank Untersberg eGen',
     bankShortName: 'Raiffeisenbank Untersberg eGen',
     bankAddress: 'Hauptstraße 28',
     bankPostcode: '5082',
     bankLocation: 'Grödig',
   ),
-  '35105': Iban(
-    bic: 'RVSAAT2S018',
+  '35105': Bic(
+    value: 'RVSAAT2S018',
     bankName: 'Raiffeisenbank Untersberg eGen',
     bankShortName: 'Raiffeisenbank Untersberg eGen',
     bankAddress: 'Hauptstraße 28',
     bankPostcode: '5082',
     bankLocation: 'Grödig',
   ),
-  '39384': Iban(
-    bic: 'RZKTAT2K511',
+  '39384': Bic(
+    value: 'RZKTAT2K511',
     bankName: 'Raiffeisenbank Mittelkärnten eG',
     bankShortName: 'Raiffeisenbank Mittelkärnten eG',
     bankAddress: 'Kreuzstrasse 15',
     bankPostcode: '9330',
     bankLocation: 'Althofen',
   ),
-  '39340': Iban(
-    bic: 'RZKTAT2K511',
+  '39340': Bic(
+    value: 'RZKTAT2K511',
     bankName: 'Raiffeisenbank Mittelkärnten eG',
     bankShortName: 'Raiffeisenbank Mittelkärnten eG',
     bankAddress: 'Kreuzstrasse 15',
     bankPostcode: '9330',
     bankLocation: 'Althofen',
   ),
-  '35006': Iban(
-    bic: 'RVSAAT2S001',
+  '35006': Bic(
+    value: 'RVSAAT2S001',
     bankName: 'Raiffeisenbank Lammertal eGen',
     bankShortName: 'Raiffeisenbank Lammertal eGen',
     bankAddress: 'Markt 49',
     bankPostcode: '5441',
     bankLocation: 'Abtenau',
   ),
-  '39255': Iban(
-    bic: 'RZKTAT2K511',
+  '39255': Bic(
+    value: 'RZKTAT2K511',
     bankName: 'Raiffeisenbank Mittelkärnten eG',
     bankShortName: 'Raiffeisenbank Mittelkärnten eG',
     bankAddress: 'Kreuzstrasse 15',
     bankPostcode: '9330',
     bankLocation: 'Althofen',
   ),
-  '35072': Iban(
-    bic: 'RVSAAT2S055',
+  '35072': Bic(
+    value: 'RVSAAT2S055',
     bankName: 'Raiffeisenbank Pongau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pongau Mitte eGen',
     bankAddress: 'Salzburgerstraße 39b',
     bankPostcode: '5620',
     bankLocation: 'Schwarzach',
   ),
-  '35172': Iban(
-    bic: 'RVSAAT2S055',
+  '35172': Bic(
+    value: 'RVSAAT2S055',
     bankName: 'Raiffeisenbank Pongau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pongau Mitte eGen',
     bankAddress: 'Salzburgerstraße 39b',
     bankPostcode: '5620',
     bankLocation: 'Schwarzach',
   ),
-  '35272': Iban(
-    bic: 'RVSAAT2S055',
+  '35272': Bic(
+    value: 'RVSAAT2S055',
     bankName: 'Raiffeisenbank Pongau Mitte eGen',
     bankShortName: 'Raiffeisenbank Pongau Mitte eGen',
     bankAddress: 'Salzburgerstraße 39b',
     bankPostcode: '5620',
     bankLocation: 'Schwarzach',
   ),
-  '36318': Iban(
-    bic: 'RZTIAT22245',
+  '36318': Bic(
+    value: 'RZTIAT22245',
     bankName: 'Raiffeisenbank Wilder Kaiser - Brixental West eGen',
     bankShortName: 'Raiffeisenbank Wilder Kaiser - Brixental West eGen',
     bankAddress: 'Brixentalerstraße 15',
     bankPostcode: '6361',
     bankLocation: 'Hopfgarten',
   ),
-  '36354': Iban(
-    bic: 'RZTIAT22245',
+  '36354': Bic(
+    value: 'RZTIAT22245',
     bankName: 'Raiffeisenbank Wilder Kaiser - Brixental West eGen',
     bankShortName: 'Raiffeisenbank Wilder Kaiser - Brixental West eGen',
     bankAddress: 'Brixentalerstraße 15',
     bankPostcode: '6361',
     bankLocation: 'Hopfgarten',
   ),
-  '36269': Iban(
-    bic: 'RZTIAT22339',
+  '36269': Bic(
+    value: 'RZTIAT22339',
     bankName: 'Raiffeisenbank Langkampfen-Thiersee eGen',
     bankShortName: 'Raiffeisenbank Langkampfen-Thiersee eGen',
     bankAddress: 'Vorderthiersee 40',
     bankPostcode: '6335',
     bankLocation: 'Thiersee',
   ),
-  '36252': Iban(
-    bic: 'RZTIAT22248',
+  '36252': Bic(
+    value: 'RZTIAT22248',
     bankName: 'Raiffeisenbank Arlberg Silvretta eGen',
     bankShortName: 'Raiffeisenbank Arlberg Silvretta eGen',
     bankAddress: 'Dorfstraße 24',
     bankPostcode: '6580',
     bankLocation: 'St. Anton am Arlberg',
   ),
-  '36260': Iban(
-    bic: 'RZTIAT22336',
+  '36260': Bic(
+    value: 'RZTIAT22336',
     bankName: 'Raiffeisenbank Tirol Mitte West eGen',
     bankShortName: 'Raiffeisenbank Tirol Mitte West eGen',
     bankAddress: 'Untermarktstr. 3',
     bankPostcode: '6410',
     bankLocation: 'Telfs',
   ),
-  '36209': Iban(
-    bic: 'RZTIAT22336',
+  '36209': Bic(
+    value: 'RZTIAT22336',
     bankName: 'Raiffeisenbank Tirol Mitte West eGen',
     bankShortName: 'Raiffeisenbank Tirol Mitte West eGen',
     bankAddress: 'Untermarktstr. 3',
     bankPostcode: '6410',
     bankLocation: 'Telfs',
   ),
-  '36220': Iban(
-    bic: 'RBRTAT22XXX',
+  '36220': Bic(
+    value: 'RBRTAT22XXX',
     bankName: 'Raiffeisenbank Oberland-Reutte eGen',
     bankShortName: 'Raiffeisenbank Oberland-Reutte eGen',
     bankAddress: 'Untermarkt 3',
     bankPostcode: '6600',
     bankLocation: 'Reutte',
   ),
-  '34170': Iban(
-    bic: 'RZOOAT2L276',
+  '34170': Bic(
+    value: 'RZOOAT2L276',
     bankName: 'Raiffeisenbank Linz-Land West eGen',
     bankShortName: 'Raiffeisenbank Linz-Land West eGen',
     bankAddress: 'Stadtpl. 4',
     bankPostcode: '4060',
     bankLocation: 'Leonding',
   ),
-  '38238': Iban(
-    bic: 'RZSTAT2G402',
+  '38238': Bic(
+    value: 'RZSTAT2G402',
     bankName: 'Raiffeisenbank Murau eGen',
     bankShortName: 'Raiffeisenbank Murau eGen',
     bankAddress: 'Bundesstraße 5',
     bankPostcode: '8850',
     bankLocation: 'Murau',
   ),
-  '32039': Iban(
-    bic: 'RLNWATWWWDF',
+  '32039': Bic(
+    value: 'RLNWATWWWDF',
     bankName: 'Raiffeisenbank Wolkersdorf - Auersthal eGen',
     bankShortName: 'Raiffeisenbank Wolkersdorf - Auersthal eGen',
     bankAddress: 'Hauptstr. 5',
     bankPostcode: '2120',
     bankLocation: 'Wolkersdorf',
   ),
-  '34613': Iban(
-    bic: 'RZOOAT2L460',
+  '34613': Bic(
+    value: 'RZOOAT2L460',
     bankName: 'Raiffeisenbank Aist eGen',
     bankShortName: 'Raiffeisenbank Aist eGen',
     bankAddress: 'Stadtplatz 17',
     bankPostcode: '4230',
     bankLocation: 'Pregarten',
   ),
-  '32865': Iban(
-    bic: 'RLNWATWWWRN',
+  '32865': Bic(
+    value: 'RLNWATWWWRN',
     bankName: 'Raiffeisenbank Wr. Neustadt-Schneebergland eGen',
     bankShortName: 'Raiffeisenbank Wr. Neustadt-Schneebergland eGen',
     bankAddress: 'Hauptplatz 28',
     bankPostcode: '2700',
     bankLocation: 'Wiener Neustadt',
   ),
-  '32642': Iban(
-    bic: 'RLNWATWWWRN',
+  '32642': Bic(
+    value: 'RLNWATWWWRN',
     bankName: 'Raiffeisenbank Wr. Neustadt-Schneebergland eGen',
     bankShortName: 'Raiffeisenbank Wr. Neustadt-Schneebergland eGen',
     bankAddress: 'Hauptplatz 28',
     bankPostcode: '2700',
     bankLocation: 'Wiener Neustadt',
   ),
-  '34735': Iban(
-    bic: 'RZOOAT2L450',
+  '34735': Bic(
+    value: 'RZOOAT2L450',
     bankName: 'Raiffeisenbank Region Ried i.I. eGen',
     bankShortName: 'Raiffeisenbank Region Ried i.I. eGen',
     bankAddress: 'Friedrich-Thurner-Straße 14',
     bankPostcode: '4910',
     bankLocation: 'Ried im Innkreis',
   ),
-  '34284': Iban(
-    bic: 'RZOOAT2L450',
+  '34284': Bic(
+    value: 'RZOOAT2L450',
     bankName: 'Raiffeisenbank Region Ried i.I. eGen',
     bankShortName: 'Raiffeisenbank Region Ried i.I. eGen',
     bankAddress: 'Friedrich-Thurner-Straße 14',
     bankPostcode: '4910',
     bankLocation: 'Ried im Innkreis',
   ),
-  '19360': Iban(
-    bic: '',
+  '19360': Bic(
+    value: '',
     bankName: 'ING Austria Branch of ING Bank N.V.',
     bankShortName: 'ING Austria Branch of ING Bank N.V.',
     bankAddress: 'Praterstraße 1/Space 35',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '1000': Iban(
-    bic: 'BUNDATWWXXX',
+  '1000': Bic(
+    value: 'BUNDATWWXXX',
     bankName: 'Republik Österreich',
     bankShortName: 'Republik Österreich',
     bankAddress: 'Ballhausplatz 2',
     bankPostcode: '1010',
     bankLocation: 'Wien',
   ),
-  '57100': Iban(
-    bic: 'HYPTAT22XXX',
+  '57100': Bic(
+    value: 'HYPTAT22XXX',
     bankName: 'HYPO TIROL BANK AG',
     bankShortName: 'HYPO TIROL BANK AG',
     bankAddress: 'Meraner Straße 8',
     bankPostcode: '6020',
     bankLocation: 'Innsbruck',
   ),
-  '34923': Iban(
-    bic: 'RZOOAT2LXXX',
+  '34923': Bic(
+    value: 'RZOOAT2LXXX',
     bankName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankShortName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankAddress: 'Europaplatz 1a',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '34955': Iban(
-    bic: 'RZOOAT2LXXX',
+  '34955': Bic(
+    value: 'RZOOAT2LXXX',
     bankName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankShortName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankAddress: 'Europaplatz 1a',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '31111': Iban(
-    bic: 'RZBAATWWVAM',
+  '31111': Bic(
+    value: 'RZBAATWWVAM',
     bankName: 'Raiffeisen Bank International AG',
     bankShortName: 'Raiffeisen Bank International AG',
     bankAddress: 'Am Stadtpark 9',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '31112': Iban(
-    bic: 'RZBAATWWREC',
+  '31112': Bic(
+    value: 'RZBAATWWREC',
     bankName: 'Raiffeisen Bank International AG',
     bankShortName: 'Raiffeisen Bank International AG',
     bankAddress: 'Am Stadtpark 9',
     bankPostcode: '1030',
     bankLocation: 'Wien',
   ),
-  '12005': Iban(
-    bic: 'BKAUATWWXXX',
+  '12005': Bic(
+    value: 'BKAUATWWXXX',
     bankName: 'UniCredit Bank Austria AG',
     bankShortName: 'UniCredit Bank Austria AG',
     bankAddress: 'Rothschildplatz 1',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '12004': Iban(
-    bic: 'BKAUATWWXXX',
+  '12004': Bic(
+    value: 'BKAUATWWXXX',
     bankName: 'UniCredit Bank Austria AG',
     bankShortName: 'UniCredit Bank Austria AG',
     bankAddress: 'Rothschildplatz 1',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '12002': Iban(
-    bic: 'BKAUATWWXXX',
+  '12002': Bic(
+    value: 'BKAUATWWXXX',
     bankName: 'UniCredit Bank Austria AG',
     bankShortName: 'UniCredit Bank Austria AG',
     bankAddress: 'Rothschildplatz 1',
     bankPostcode: '1020',
     bankLocation: 'Wien',
   ),
-  '34950': Iban(
-    bic: 'RZOOAT2LXXX',
+  '34950': Bic(
+    value: 'RZOOAT2LXXX',
     bankName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankShortName: 'Raiffeisenlandesbank Oberösterreich Aktiengesellschaft',
     bankAddress: 'Europaplatz 1a',
     bankPostcode: '4020',
     bankLocation: 'Linz',
   ),
-  '19931': Iban(
-    bic: 'CENBATWWRDB',
+  '19931': Bic(
+    value: 'CENBATWWRDB',
     bankName: 'Raiffeisen Centrobank AG',
     bankShortName: 'Raiffeisen Centrobank AG',
     bankAddress: 'Am Stadtpark 9',

@@ -1,3 +1,8 @@
+## 0.0.6
+
+* renamed Iban class to "Bic"
+* Bic.bankName & bankShortName are never null
+
 ## 0.0.5
 
 * added support for LT ibans

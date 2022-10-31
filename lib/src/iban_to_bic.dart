@@ -1,6 +1,6 @@
 part of iban_to_bic;
 
-Iban ibanToBic(String ibanString) {
+Bic ibanToBic(String ibanString) {
   ibanString = ibantools.electronicFormat(ibanString);
   if (!ibantools.isValid(ibanString)) {
     throw Exception('The given iban string $ibanString is invalid.');
@@ -24,18 +24,18 @@ Iban ibanToBic(String ibanString) {
   }
 }
 
-class Iban {
-  final String bic;
-  final String? bankName;
-  final String? bankShortName;
+class Bic {
+  final String value;
+  final String bankName;
+  final String bankShortName;
   final String? bankAddress;
   final String? bankPostcode;
   final String? bankLocation;
 
-  const Iban({
-    required this.bic,
-    this.bankName,
-    this.bankShortName,
+  const Bic({
+    required this.value,
+    required this.bankName,
+    required this.bankShortName,
     this.bankAddress,
     this.bankPostcode,
     this.bankLocation,
@@ -43,13 +43,13 @@ class Iban {
 
   @override
   String toString() {
-    return 'Iban(${json.encode(<String, String?>{
-          'bic': bic,
+    return 'Bic(${json.encode(<String, String?>{
+          'bic': value,
           'bankName': bankName,
           'bankShortName': bankShortName,
-          'bankAddress': bankAddress,
-          'bankPostcode': bankPostcode,
-          'bankLocation': bankLocation,
+          if (bankAddress != null) 'bankAddress': bankAddress,
+          if (bankPostcode != null) 'bankPostcode': bankPostcode,
+          if (bankLocation != null) 'bankLocation': bankLocation,
         })})';
   }
 }

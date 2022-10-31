@@ -1,5019 +1,5019 @@
 part of iban_to_bic;
 
-const Map<String, Iban> _beBankCodes = <String, Iban>{
-  '000': Iban(
-    bic: 'BPOT BE B1',
+const Map<String, Bic> _beBankCodes = <String, Bic>{
+  '000': Bic(
+    value: 'BPOT BE B1',
     bankName: 'bpost bank',
     bankShortName: 'bpost bank',
   ),
-  '001': Iban(
-    bic: 'GEBA BE BB',
+  '001': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '002': Iban(
-    bic: 'GEBA BE BB',
+  '002': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '003': Iban(
-    bic: 'GEBA BE BB',
+  '003': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '004': Iban(
-    bic: 'GEBA BE BB',
+  '004': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '005': Iban(
-    bic: 'GEBA BE BB',
+  '005': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '006': Iban(
-    bic: 'GEBA BE BB',
+  '006': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '007': Iban(
-    bic: 'GEBA BE BB',
+  '007': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '008': Iban(
-    bic: 'GEBA BE BB',
+  '008': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '009': Iban(
-    bic: 'GEBA BE BB',
+  '009': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '010': Iban(
-    bic: 'GEBA BE BB',
+  '010': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '011': Iban(
-    bic: 'GEBA BE BB',
+  '011': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '012': Iban(
-    bic: 'GEBA BE BB',
+  '012': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '013': Iban(
-    bic: 'GEBA BE BB',
+  '013': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '014': Iban(
-    bic: 'GEBA BE BB',
+  '014': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '015': Iban(
-    bic: 'GEBA BE BB',
+  '015': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '016': Iban(
-    bic: 'GEBA BE BB',
+  '016': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '017': Iban(
-    bic: 'GEBA BE BB',
+  '017': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '018': Iban(
-    bic: 'GEBA BE BB',
+  '018': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '019': Iban(
-    bic: 'GEBA BE BB',
+  '019': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '020': Iban(
-    bic: 'GEBA BE BB',
+  '020': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '021': Iban(
-    bic: 'GEBA BE BB',
+  '021': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '022': Iban(
-    bic: 'GEBA BE BB',
+  '022': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '023': Iban(
-    bic: 'GEBA BE BB',
+  '023': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '024': Iban(
-    bic: 'GEBA BE BB',
+  '024': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '025': Iban(
-    bic: 'GEBA BE BB',
+  '025': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '026': Iban(
-    bic: 'GEBA BE BB',
+  '026': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '027': Iban(
-    bic: 'GEBA BE BB',
+  '027': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '028': Iban(
-    bic: 'GEBA BE BB',
+  '028': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '029': Iban(
-    bic: 'GEBA BE BB',
+  '029': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '030': Iban(
-    bic: 'GEBA BE BB',
+  '030': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '031': Iban(
-    bic: 'GEBA BE BB',
+  '031': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '032': Iban(
-    bic: 'GEBA BE BB',
+  '032': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '033': Iban(
-    bic: 'GEBA BE BB',
+  '033': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '034': Iban(
-    bic: 'GEBA BE BB',
+  '034': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '035': Iban(
-    bic: 'GEBA BE BB',
+  '035': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '036': Iban(
-    bic: 'GEBA BE BB',
+  '036': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '037': Iban(
-    bic: 'GEBA BE BB',
+  '037': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '038': Iban(
-    bic: 'GEBA BE BB',
+  '038': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '039': Iban(
-    bic: 'GEBA BE BB',
+  '039': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '040': Iban(
-    bic: 'GEBA BE BB',
+  '040': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '041': Iban(
-    bic: 'GEBA BE BB',
+  '041': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '042': Iban(
-    bic: 'GEBA BE BB',
+  '042': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '043': Iban(
-    bic: 'GEBA BE BB',
+  '043': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '044': Iban(
-    bic: 'GEBA BE BB',
+  '044': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '045': Iban(
-    bic: 'GEBA BE BB',
+  '045': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '046': Iban(
-    bic: 'GEBA BE BB',
+  '046': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '047': Iban(
-    bic: 'GEBA BE BB',
+  '047': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '048': Iban(
-    bic: 'GEBA BE BB',
+  '048': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '049': Iban(
-    bic: 'GEBA BE BB',
+  '049': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '050': Iban(
-    bic: 'GKCC BE BB',
+  '050': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '051': Iban(
-    bic: 'GKCC BE BB',
+  '051': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '052': Iban(
-    bic: 'GKCC BE BB',
+  '052': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '053': Iban(
-    bic: 'GKCC BE BB',
+  '053': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '054': Iban(
-    bic: 'GKCC BE BB',
+  '054': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '055': Iban(
-    bic: 'GKCC BE BB',
+  '055': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '056': Iban(
-    bic: 'GKCC BE BB',
+  '056': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '057': Iban(
-    bic: 'GKCC BE BB',
+  '057': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '058': Iban(
-    bic: 'GKCC BE BB',
+  '058': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '059': Iban(
-    bic: 'GKCC BE BB',
+  '059': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '060': Iban(
-    bic: 'GKCC BE BB',
+  '060': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '061': Iban(
-    bic: 'GKCC BE BB',
+  '061': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '062': Iban(
-    bic: 'GKCC BE BB',
+  '062': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '063': Iban(
-    bic: 'GKCC BE BB',
+  '063': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '064': Iban(
-    bic: 'GKCC BE BB',
+  '064': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '065': Iban(
-    bic: 'GKCC BE BB',
+  '065': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '066': Iban(
-    bic: 'GKCC BE BB',
+  '066': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '067': Iban(
-    bic: 'GKCC BE BB',
+  '067': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '068': Iban(
-    bic: 'GKCC BE BB',
+  '068': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '069': Iban(
-    bic: 'GKCC BE BB',
+  '069': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '070': Iban(
-    bic: 'GKCC BE BB',
+  '070': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '071': Iban(
-    bic: 'GKCC BE BB',
+  '071': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '072': Iban(
-    bic: 'GKCC BE BB',
+  '072': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '073': Iban(
-    bic: 'GKCC BE BB',
+  '073': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '074': Iban(
-    bic: 'GKCC BE BB',
+  '074': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '075': Iban(
-    bic: 'GKCC BE BB',
+  '075': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '076': Iban(
-    bic: 'GKCC BE BB',
+  '076': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '077': Iban(
-    bic: 'GKCC BE BB',
+  '077': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '078': Iban(
-    bic: 'GKCC BE BB',
+  '078': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '079': Iban(
-    bic: 'GKCC BE BB',
+  '079': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '080': Iban(
-    bic: 'GKCC BE BB',
+  '080': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '081': Iban(
-    bic: 'GKCC BE BB',
+  '081': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '082': Iban(
-    bic: 'GKCC BE BB',
+  '082': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '083': Iban(
-    bic: 'GKCC BE BB',
+  '083': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '084': Iban(
-    bic: 'GKCC BE BB',
+  '084': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '085': Iban(
-    bic: 'GKCC BE BB',
+  '085': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '086': Iban(
-    bic: 'GKCC BE BB',
+  '086': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '087': Iban(
-    bic: 'GKCC BE BB',
+  '087': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '088': Iban(
-    bic: 'GKCC BE BB',
+  '088': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '089': Iban(
-    bic: 'GKCC BE BB',
+  '089': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '090': Iban(
-    bic: 'GKCC BE BB',
+  '090': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '091': Iban(
-    bic: 'GKCC BE BB',
+  '091': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '092': Iban(
-    bic: 'GKCC BE BB',
+  '092': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '093': Iban(
-    bic: 'GKCC BE BB',
+  '093': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '094': Iban(
-    bic: 'GKCC BE BB',
+  '094': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '095': Iban(
-    bic: 'GKCC BE BB',
+  '095': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '096': Iban(
-    bic: 'GKCC BE BB',
+  '096': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '097': Iban(
-    bic: 'GKCC BE BB',
+  '097': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '098': Iban(
-    bic: 'GKCC BE BB',
+  '098': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '099': Iban(
-    bic: 'GKCC BE BB',
+  '099': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '100': Iban(
-    bic: 'NBBE BE BB 203',
+  '100': Bic(
+    value: 'NBBE BE BB 203',
     bankName: 'Nationale Bank van België',
     bankShortName: 'Nationale Bank van België',
   ),
-  '101': Iban(
-    bic: 'NBBE BE BB HCC',
+  '101': Bic(
+    value: 'NBBE BE BB HCC',
     bankName: 'Nationale Bank van België (Hoofdkas)',
     bankShortName: 'Nationale Bank van België (Hoofdkas)',
   ),
-  '102': Iban(
-    bic: 'nav',
+  '102': Bic(
+    value: 'nav',
     bankName: 'Uitwisselingscentrum en Verrekening (U.C.V.)',
     bankShortName: 'Uitwisselingscentrum en Verrekening (U.C.V.)',
   ),
-  '103': Iban(
-    bic: 'NICA BE BB',
+  '103': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '104': Iban(
-    bic: 'NICA BE BB',
+  '104': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '105': Iban(
-    bic: 'NICA BE BB',
+  '105': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '106': Iban(
-    bic: 'NICA BE BB',
+  '106': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '107': Iban(
-    bic: 'NICA BE BB',
+  '107': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '108': Iban(
-    bic: 'NICA BE BB',
+  '108': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '109': Iban(
-    bic: 'CTBK BE BX',
+  '109': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '110': Iban(
-    bic: 'CTBK BE BX',
+  '110': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '111': Iban(
-    bic: 'ABER BE 22',
+  '111': Bic(
+    value: 'ABER BE 22',
     bankName: 'Bank J. Van Breda & C°',
     bankShortName: 'Bank J. Van Breda & C°',
   ),
-  '112': Iban(
-    bic: 'VRIJ',
+  '112': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '113': Iban(
-    bic: 'CTBK BE BX',
+  '113': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '114': Iban(
-    bic: 'CTBK BE BX',
+  '114': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '115': Iban(
-    bic: 'VRIJ',
+  '115': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '116': Iban(
-    bic: 'VRIJ',
+  '116': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '117': Iban(
-    bic: 'VRIJ',
+  '117': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '118': Iban(
-    bic: 'VRIJ',
+  '118': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '119': Iban(
-    bic: 'CTBK BE BX',
+  '119': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '120': Iban(
-    bic: 'CTBK BE BX',
+  '120': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '121': Iban(
-    bic: 'CTBK BE BX',
+  '121': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '122': Iban(
-    bic: 'CTBK BE BX',
+  '122': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '123': Iban(
-    bic: 'CTBK BE BX',
+  '123': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '124': Iban(
-    bic: 'CTBK BE BX',
+  '124': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '125': Iban(
-    bic: 'CPHB BE 75',
+  '125': Bic(
+    value: 'CPHB BE 75',
     bankName: 'Banque CPH',
     bankShortName: 'Banque CPH',
   ),
-  '126': Iban(
-    bic: 'CPHB BE 75',
+  '126': Bic(
+    value: 'CPHB BE 75',
     bankName: 'Banque CPH',
     bankShortName: 'Banque CPH',
   ),
-  '127': Iban(
-    bic: 'CTBK BE BX',
+  '127': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '128': Iban(
-    bic: 'VRIJ',
+  '128': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '129': Iban(
-    bic: 'CTBK BE BX',
+  '129': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '130': Iban(
-    bic: 'VRIJ',
+  '130': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '131': Iban(
-    bic: 'CTBK BE BX',
+  '131': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '132': Iban(
-    bic: 'BNAG BE BB',
+  '132': Bic(
+    value: 'BNAG BE BB',
     bankName: 'Bank Nagelmackers',
     bankShortName: 'Bank Nagelmackers',
   ),
-  '133': Iban(
-    bic: 'CTBK BE BX',
+  '133': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '134': Iban(
-    bic: 'CTBK BE BX',
+  '134': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '135': Iban(
-    bic: 'VRIJ',
+  '135': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '136': Iban(
-    bic: 'VRIJ',
+  '136': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '137': Iban(
-    bic: 'GEBA BE BB',
+  '137': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '138': Iban(
-    bic: 'NAP',
+  '138': Bic(
+    value: 'NAP',
     bankName: 'Onbeschikbaar',
     bankShortName: 'Onbeschikbaar',
   ),
-  '139': Iban(
-    bic: 'VRIJ',
+  '139': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '140': Iban(
-    bic: 'GEBA BE BB',
+  '140': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '141': Iban(
-    bic: 'GEBA BE BB',
+  '141': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '142': Iban(
-    bic: 'GEBA BE BB',
+  '142': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '143': Iban(
-    bic: 'GEBA BE BB',
+  '143': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '144': Iban(
-    bic: 'GEBA BE BB',
+  '144': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '145': Iban(
-    bic: 'GEBA BE BB',
+  '145': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '146': Iban(
-    bic: 'GEBA BE BB',
+  '146': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '147': Iban(
-    bic: 'GEBA BE BB',
+  '147': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '148': Iban(
-    bic: 'GEBA BE BB',
+  '148': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '149': Iban(
-    bic: 'GEBA BE BB',
+  '149': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '150': Iban(
-    bic: 'BCMC BE BB',
+  '150': Bic(
+    value: 'BCMC BE BB',
     bankName: 'Bancontact Payconiq Company',
     bankShortName: 'Bancontact Payconiq Company',
   ),
-  '151': Iban(
-    bic: 'VRIJ',
+  '151': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '152': Iban(
-    bic: 'VRIJ',
+  '152': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '153': Iban(
-    bic: 'VRIJ',
+  '153': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '154': Iban(
-    bic: 'nav',
+  '154': Bic(
+    value: 'nav',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '155': Iban(
-    bic: 'VRIJ',
+  '155': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '156': Iban(
-    bic: 'VRIJ',
+  '156': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '157': Iban(
-    bic: 'VRIJ',
+  '157': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '158': Iban(
-    bic: 'VRIJ',
+  '158': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '159': Iban(
-    bic: 'VRIJ',
+  '159': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '160': Iban(
-    bic: 'VRIJ',
+  '160': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '161': Iban(
-    bic: 'VRIJ',
+  '161': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '162': Iban(
-    bic: 'VRIJ',
+  '162': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '163': Iban(
-    bic: 'VRIJ',
+  '163': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '164': Iban(
-    bic: 'VRIJ',
+  '164': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '165': Iban(
-    bic: 'VRIJ',
+  '165': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '166': Iban(
-    bic: 'VRIJ',
+  '166': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '167': Iban(
-    bic: 'VRIJ',
+  '167': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '168': Iban(
-    bic: 'VRIJ',
+  '168': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '169': Iban(
-    bic: 'VRIJ',
+  '169': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '170': Iban(
-    bic: 'VRIJ',
+  '170': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '171': Iban(
-    bic: 'CPHB BE 75',
+  '171': Bic(
+    value: 'CPHB BE 75',
     bankName: '',
     bankShortName: '',
   ),
-  '172': Iban(
-    bic: 'RABO BE 23',
+  '172': Bic(
+    value: 'RABO BE 23',
     bankName: 'Coöperatieve Rabobank U.A.',
     bankShortName: 'Coöperatieve Rabobank U.A.',
   ),
-  '173': Iban(
-    bic: 'RABO BE 23',
+  '173': Bic(
+    value: 'RABO BE 23',
     bankName: 'Coöperatieve Rabobank U.A.',
     bankShortName: 'Coöperatieve Rabobank U.A.',
   ),
-  '174': Iban(
-    bic: 'VRIJ',
+  '174': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '175': Iban(
-    bic: 'NAV',
+  '175': Bic(
+    value: 'NAV',
     bankName: '',
     bankShortName: '',
   ),
-  '176': Iban(
-    bic: 'BSCH BE BB RET',
+  '176': Bic(
+    value: 'BSCH BE BB RET',
     bankName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
     bankShortName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
-  '177': Iban(
-    bic: 'VRIJ',
+  '177': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '178': Iban(
-    bic: 'COBA BE BX',
+  '178': Bic(
+    value: 'COBA BE BX',
     bankName: 'Commerzbank',
     bankShortName: 'Commerzbank',
   ),
-  '179': Iban(
-    bic: 'COBA BE BX',
+  '179': Bic(
+    value: 'COBA BE BX',
     bankName: 'Commerzbank',
     bankShortName: 'Commerzbank',
   ),
-  '180': Iban(
-    bic: 'VRIJ',
+  '180': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '181': Iban(
-    bic: 'VRIJ',
+  '181': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '182': Iban(
-    bic: 'VRIJ',
+  '182': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '183': Iban(
-    bic: 'BARB BE BB',
+  '183': Bic(
+    value: 'BARB BE BB',
     bankName: 'Bank of Baroda',
     bankShortName: 'Bank of Baroda',
   ),
-  '184': Iban(
-    bic: 'VRIJ',
+  '184': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '185': Iban(
-    bic: 'BBRU BE BB',
+  '185': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '186': Iban(
-    bic: 'VRIJ',
+  '186': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '187': Iban(
-    bic: 'VRIJ',
+  '187': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '188': Iban(
-    bic: 'VRIJ',
+  '188': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '189': Iban(
-    bic: 'SMBC BE BB',
+  '189': Bic(
+    value: 'SMBC BE BB',
     bankName: 'Sumitomo Mitsui Banking Corporation (SMBC)',
     bankShortName: 'Sumitomo Mitsui Banking Corporation (SMBC)',
   ),
-  '190': Iban(
-    bic: 'CREG BE BB',
+  '190': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '191': Iban(
-    bic: 'CREG BE BB',
+  '191': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '192': Iban(
-    bic: 'CREG BE BB',
+  '192': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '193': Iban(
-    bic: 'CREG BE BB',
+  '193': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '194': Iban(
-    bic: 'CREG BE BB',
+  '194': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '195': Iban(
-    bic: 'CREG BE BB',
+  '195': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '196': Iban(
-    bic: 'CREG BE BB',
+  '196': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '197': Iban(
-    bic: 'CREG BE BB',
+  '197': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '198': Iban(
-    bic: 'CREG BE BB',
+  '198': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '199': Iban(
-    bic: 'CREG BE BB',
+  '199': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '200': Iban(
-    bic: 'GEBA BE BB',
+  '200': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '201': Iban(
-    bic: 'GEBA BE BB',
+  '201': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '202': Iban(
-    bic: 'GEBA BE BB',
+  '202': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '203': Iban(
-    bic: 'GEBA BE BB',
+  '203': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '204': Iban(
-    bic: 'GEBA BE BB',
+  '204': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '205': Iban(
-    bic: 'GEBA BE BB',
+  '205': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '206': Iban(
-    bic: 'GEBA BE BB',
+  '206': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '207': Iban(
-    bic: 'GEBA BE BB',
+  '207': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '208': Iban(
-    bic: 'GEBA BE BB',
+  '208': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '209': Iban(
-    bic: 'GEBA BE BB',
+  '209': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '210': Iban(
-    bic: 'GEBA BE BB',
+  '210': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '211': Iban(
-    bic: 'GEBA BE BB',
+  '211': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '212': Iban(
-    bic: 'GEBA BE BB',
+  '212': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '213': Iban(
-    bic: 'GEBA BE BB',
+  '213': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '214': Iban(
-    bic: 'GEBA BE BB',
+  '214': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '215': Iban(
-    bic: 'VRIJ',
+  '215': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '216': Iban(
-    bic: 'VRIJ',
+  '216': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '217': Iban(
-    bic: 'VRIJ',
+  '217': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '218': Iban(
-    bic: 'VRIJ',
+  '218': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '219': Iban(
-    bic: 'VRIJ',
+  '219': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '220': Iban(
-    bic: 'GEBA BE BB',
+  '220': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '221': Iban(
-    bic: 'GEBA BE BB',
+  '221': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '222': Iban(
-    bic: 'GEBA BE BB',
+  '222': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '223': Iban(
-    bic: 'GEBA BE BB',
+  '223': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '224': Iban(
-    bic: 'GEBA BE BB',
+  '224': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '225': Iban(
-    bic: 'GEBA BE BB',
+  '225': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '226': Iban(
-    bic: 'GEBA BE BB',
+  '226': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '227': Iban(
-    bic: 'GEBA BE BB',
+  '227': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '228': Iban(
-    bic: 'GEBA BE BB',
+  '228': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '229': Iban(
-    bic: 'GEBA BE BB',
+  '229': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '230': Iban(
-    bic: 'GEBA BE BB',
+  '230': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '231': Iban(
-    bic: 'GEBA BE BB',
+  '231': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '232': Iban(
-    bic: 'GEBA BE BB',
+  '232': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '233': Iban(
-    bic: 'GEBA BE BB',
+  '233': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '234': Iban(
-    bic: 'GEBA BE BB',
+  '234': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '235': Iban(
-    bic: 'GEBA BE BB',
+  '235': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '236': Iban(
-    bic: 'GEBA BE BB',
+  '236': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '237': Iban(
-    bic: 'GEBA BE BB',
+  '237': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '238': Iban(
-    bic: 'GEBA BE BB',
+  '238': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '239': Iban(
-    bic: 'GEBA BE BB',
+  '239': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '240': Iban(
-    bic: 'GEBA BE BB',
+  '240': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '241': Iban(
-    bic: 'GEBA BE BB',
+  '241': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '242': Iban(
-    bic: 'GEBA BE BB',
+  '242': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '243': Iban(
-    bic: 'GEBA BE BB',
+  '243': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '244': Iban(
-    bic: 'GEBA BE BB',
+  '244': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '245': Iban(
-    bic: 'GEBA BE BB',
+  '245': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '246': Iban(
-    bic: 'GEBA BE BB',
+  '246': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '247': Iban(
-    bic: 'GEBA BE BB',
+  '247': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '248': Iban(
-    bic: 'GEBA BE BB',
+  '248': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '249': Iban(
-    bic: 'GEBA BE BB',
+  '249': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '250': Iban(
-    bic: 'GEBA BE BB',
+  '250': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '251': Iban(
-    bic: 'GEBA BE BB',
+  '251': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '252': Iban(
-    bic: 'GEBA BE BB',
+  '252': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '253': Iban(
-    bic: 'GEBA BE BB',
+  '253': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '254': Iban(
-    bic: 'GEBA BE BB',
+  '254': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '255': Iban(
-    bic: 'GEBA BE BB',
+  '255': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '256': Iban(
-    bic: 'GEBA BE BB',
+  '256': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '257': Iban(
-    bic: 'GEBA BE BB',
+  '257': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '258': Iban(
-    bic: 'GEBA BE BB',
+  '258': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '259': Iban(
-    bic: 'GEBA BE BB',
+  '259': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '260': Iban(
-    bic: 'GEBA BE BB',
+  '260': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '261': Iban(
-    bic: 'GEBA BE BB',
+  '261': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '262': Iban(
-    bic: 'GEBA BE BB',
+  '262': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '263': Iban(
-    bic: 'GEBA BE BB',
+  '263': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '264': Iban(
-    bic: 'GEBA BE BB',
+  '264': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '265': Iban(
-    bic: 'GEBA BE BB',
+  '265': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '266': Iban(
-    bic: 'GEBA BE BB',
+  '266': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '267': Iban(
-    bic: 'GEBA BE BB',
+  '267': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '268': Iban(
-    bic: 'GEBA BE BB',
+  '268': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '269': Iban(
-    bic: 'GEBA BE BB',
+  '269': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '270': Iban(
-    bic: 'GEBA BE BB',
+  '270': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '271': Iban(
-    bic: 'GEBA BE BB',
+  '271': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '272': Iban(
-    bic: 'GEBA BE BB',
+  '272': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '273': Iban(
-    bic: 'GEBA BE BB',
+  '273': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '274': Iban(
-    bic: 'GEBA BE BB',
+  '274': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '275': Iban(
-    bic: 'GEBA BE BB',
+  '275': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '276': Iban(
-    bic: 'GEBA BE BB',
+  '276': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '277': Iban(
-    bic: 'GEBA BE BB',
+  '277': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '278': Iban(
-    bic: 'GEBA BE BB',
+  '278': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '279': Iban(
-    bic: 'GEBA BE BB',
+  '279': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '280': Iban(
-    bic: 'GEBA BE BB',
+  '280': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '281': Iban(
-    bic: 'GEBA BE BB',
+  '281': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '282': Iban(
-    bic: 'GEBA BE BB',
+  '282': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '283': Iban(
-    bic: 'GEBA BE BB',
+  '283': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '284': Iban(
-    bic: 'GEBA BE BB',
+  '284': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '285': Iban(
-    bic: 'GEBA BE BB',
+  '285': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '286': Iban(
-    bic: 'GEBA BE BB',
+  '286': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '287': Iban(
-    bic: 'GEBA BE BB',
+  '287': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '288': Iban(
-    bic: 'GEBA BE BB',
+  '288': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '289': Iban(
-    bic: 'GEBA BE BB',
+  '289': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '290': Iban(
-    bic: 'GEBA BE BB',
+  '290': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '291': Iban(
-    bic: 'GEBA BE BB',
+  '291': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '292': Iban(
-    bic: 'GEBA BE BB',
+  '292': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '293': Iban(
-    bic: 'GEBA BE BB',
+  '293': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '294': Iban(
-    bic: 'GEBA BE BB',
+  '294': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '295': Iban(
-    bic: 'GEBA BE BB',
+  '295': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '296': Iban(
-    bic: 'GEBA BE BB',
+  '296': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '297': Iban(
-    bic: 'GEBA BE BB',
+  '297': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '298': Iban(
-    bic: 'GEBA BE BB',
+  '298': Bic(
+    value: 'GEBA BE BB',
     bankName: 'BNP Paribas Fortis',
     bankShortName: 'BNP Paribas Fortis',
   ),
-  '299': Iban(
-    bic: 'BPOT BE B1',
+  '299': Bic(
+    value: 'BPOT BE B1',
     bankName: 'bpost bank',
     bankShortName: 'bpost bank',
   ),
-  '300': Iban(
-    bic: 'BBRU BE BB',
+  '300': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '301': Iban(
-    bic: 'BBRU BE BB',
+  '301': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '302': Iban(
-    bic: 'BBRU BE BB',
+  '302': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '303': Iban(
-    bic: 'BBRU BE BB',
+  '303': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '304': Iban(
-    bic: 'BBRU BE BB',
+  '304': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '305': Iban(
-    bic: 'BBRU BE BB',
+  '305': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '306': Iban(
-    bic: 'BBRU BE BB',
+  '306': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '307': Iban(
-    bic: 'BBRU BE BB',
+  '307': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '308': Iban(
-    bic: 'BBRU BE BB',
+  '308': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '309': Iban(
-    bic: 'BBRU BE BB',
+  '309': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '310': Iban(
-    bic: 'BBRU BE BB',
+  '310': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '311': Iban(
-    bic: 'BBRU BE BB',
+  '311': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '312': Iban(
-    bic: 'BBRU BE BB',
+  '312': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '313': Iban(
-    bic: 'BBRU BE BB',
+  '313': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '314': Iban(
-    bic: 'BBRU BE BB',
+  '314': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '315': Iban(
-    bic: 'BBRU BE BB',
+  '315': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '316': Iban(
-    bic: 'BBRU BE BB',
+  '316': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '317': Iban(
-    bic: 'BBRU BE BB',
+  '317': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '318': Iban(
-    bic: 'BBRU BE BB',
+  '318': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '319': Iban(
-    bic: 'BBRU BE BB',
+  '319': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '320': Iban(
-    bic: 'BBRU BE BB',
+  '320': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '321': Iban(
-    bic: 'BBRU BE BB',
+  '321': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '322': Iban(
-    bic: 'BBRU BE BB',
+  '322': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '323': Iban(
-    bic: 'BBRU BE BB',
+  '323': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '324': Iban(
-    bic: 'BBRU BE BB',
+  '324': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '325': Iban(
-    bic: 'BBRU BE BB',
+  '325': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '326': Iban(
-    bic: 'BBRU BE BB',
+  '326': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '327': Iban(
-    bic: 'BBRU BE BB',
+  '327': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '328': Iban(
-    bic: 'BBRU BE BB',
+  '328': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '329': Iban(
-    bic: 'BBRU BE BB',
+  '329': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '330': Iban(
-    bic: 'BBRU BE BB',
+  '330': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '331': Iban(
-    bic: 'BBRU BE BB',
+  '331': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '332': Iban(
-    bic: 'BBRU BE BB',
+  '332': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '333': Iban(
-    bic: 'BBRU BE BB',
+  '333': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '334': Iban(
-    bic: 'BBRU BE BB',
+  '334': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '335': Iban(
-    bic: 'BBRU BE BB',
+  '335': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '336': Iban(
-    bic: 'BBRU BE BB',
+  '336': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '337': Iban(
-    bic: 'BBRU BE BB',
+  '337': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '338': Iban(
-    bic: 'BBRU BE BB',
+  '338': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '339': Iban(
-    bic: 'BBRU BE BB',
+  '339': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '340': Iban(
-    bic: 'BBRU BE BB',
+  '340': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '341': Iban(
-    bic: 'BBRU BE BB',
+  '341': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '342': Iban(
-    bic: 'BBRU BE BB',
+  '342': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '343': Iban(
-    bic: 'BBRU BE BB',
+  '343': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '344': Iban(
-    bic: 'BBRU BE BB',
+  '344': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '345': Iban(
-    bic: 'BBRU BE BB',
+  '345': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '346': Iban(
-    bic: 'BBRU BE BB',
+  '346': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '347': Iban(
-    bic: 'BBRU BE BB',
+  '347': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '348': Iban(
-    bic: 'BBRU BE BB',
+  '348': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '349': Iban(
-    bic: 'BBRU BE BB',
+  '349': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '350': Iban(
-    bic: 'BBRU BE BB',
+  '350': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '351': Iban(
-    bic: 'BBRU BE BB',
+  '351': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '352': Iban(
-    bic: 'BBRU BE BB',
+  '352': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '353': Iban(
-    bic: 'BBRU BE BB',
+  '353': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '354': Iban(
-    bic: 'BBRU BE BB',
+  '354': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '355': Iban(
-    bic: 'BBRU BE BB',
+  '355': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '356': Iban(
-    bic: 'BBRU BE BB',
+  '356': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '357': Iban(
-    bic: 'BBRU BE BB',
+  '357': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '358': Iban(
-    bic: 'BBRU BE BB',
+  '358': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '359': Iban(
-    bic: 'BBRU BE BB',
+  '359': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '360': Iban(
-    bic: 'BBRU BE BB',
+  '360': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '361': Iban(
-    bic: 'BBRU BE BB',
+  '361': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '362': Iban(
-    bic: 'BBRU BE BB',
+  '362': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '363': Iban(
-    bic: 'BBRU BE BB',
+  '363': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '364': Iban(
-    bic: 'BBRU BE BB',
+  '364': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '365': Iban(
-    bic: 'BBRU BE BB',
+  '365': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '366': Iban(
-    bic: 'BBRU BE BB',
+  '366': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '367': Iban(
-    bic: 'BBRU BE BB',
+  '367': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '368': Iban(
-    bic: 'BBRU BE BB',
+  '368': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '369': Iban(
-    bic: 'BBRU BE BB',
+  '369': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '370': Iban(
-    bic: 'BBRU BE BB',
+  '370': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '371': Iban(
-    bic: 'BBRU BE BB',
+  '371': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '372': Iban(
-    bic: 'BBRU BE BB',
+  '372': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '373': Iban(
-    bic: 'BBRU BE BB',
+  '373': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '374': Iban(
-    bic: 'BBRU BE BB',
+  '374': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '375': Iban(
-    bic: 'BBRU BE BB',
+  '375': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '376': Iban(
-    bic: 'BBRU BE BB',
+  '376': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '377': Iban(
-    bic: 'BBRU BE BB',
+  '377': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '378': Iban(
-    bic: 'BBRU BE BB',
+  '378': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '379': Iban(
-    bic: 'BBRU BE BB',
+  '379': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '380': Iban(
-    bic: 'BBRU BE BB',
+  '380': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '381': Iban(
-    bic: 'BBRU BE BB',
+  '381': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '382': Iban(
-    bic: 'BBRU BE BB',
+  '382': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '383': Iban(
-    bic: 'BBRU BE BB',
+  '383': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '384': Iban(
-    bic: 'BBRU BE BB',
+  '384': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '385': Iban(
-    bic: 'BBRU BE BB',
+  '385': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '386': Iban(
-    bic: 'BBRU BE BB',
+  '386': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '387': Iban(
-    bic: 'BBRU BE BB',
+  '387': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '388': Iban(
-    bic: 'BBRU BE BB',
+  '388': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '389': Iban(
-    bic: 'BBRU BE BB',
+  '389': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '390': Iban(
-    bic: 'BBRU BE BB',
+  '390': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '391': Iban(
-    bic: 'BBRU BE BB',
+  '391': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '392': Iban(
-    bic: 'BBRU BE BB',
+  '392': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '393': Iban(
-    bic: 'BBRU BE BB',
+  '393': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '394': Iban(
-    bic: 'BBRU BE BB',
+  '394': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '395': Iban(
-    bic: 'BBRU BE BB',
+  '395': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '396': Iban(
-    bic: 'BBRU BE BB',
+  '396': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '397': Iban(
-    bic: 'BBRU BE BB',
+  '397': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '398': Iban(
-    bic: 'BBRU BE BB',
+  '398': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '399': Iban(
-    bic: 'BBRU BE BB',
+  '399': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '400': Iban(
-    bic: 'KRED BE BB',
+  '400': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '401': Iban(
-    bic: 'KRED BE BB',
+  '401': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '402': Iban(
-    bic: 'KRED BE BB',
+  '402': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '403': Iban(
-    bic: 'KRED BE BB',
+  '403': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '404': Iban(
-    bic: 'KRED BE BB',
+  '404': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '405': Iban(
-    bic: 'KRED BE BB',
+  '405': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '406': Iban(
-    bic: 'KRED BE BB',
+  '406': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '407': Iban(
-    bic: 'KRED BE BB',
+  '407': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '408': Iban(
-    bic: 'KRED BE BB',
+  '408': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '409': Iban(
-    bic: 'KRED BE BB',
+  '409': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '410': Iban(
-    bic: 'KRED BE BB',
+  '410': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '411': Iban(
-    bic: 'KRED BE BB',
+  '411': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '412': Iban(
-    bic: 'KRED BE BB',
+  '412': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '413': Iban(
-    bic: 'KRED BE BB',
+  '413': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '414': Iban(
-    bic: 'KRED BE BB',
+  '414': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '415': Iban(
-    bic: 'KRED BE BB',
+  '415': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '416': Iban(
-    bic: 'KRED BE BB',
+  '416': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '417': Iban(
-    bic: 'KRED BE BB',
+  '417': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '418': Iban(
-    bic: 'KRED BE BB',
+  '418': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '419': Iban(
-    bic: 'KRED BE BB',
+  '419': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '420': Iban(
-    bic: 'KRED BE BB',
+  '420': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '421': Iban(
-    bic: 'KRED BE BB',
+  '421': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '422': Iban(
-    bic: 'KRED BE BB',
+  '422': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '423': Iban(
-    bic: 'KRED BE BB',
+  '423': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '424': Iban(
-    bic: 'KRED BE BB',
+  '424': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '425': Iban(
-    bic: 'KRED BE BB',
+  '425': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '426': Iban(
-    bic: 'KRED BE BB',
+  '426': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '427': Iban(
-    bic: 'KRED BE BB',
+  '427': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '428': Iban(
-    bic: 'KRED BE BB',
+  '428': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '429': Iban(
-    bic: 'KRED BE BB',
+  '429': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '430': Iban(
-    bic: 'KRED BE BB',
+  '430': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '431': Iban(
-    bic: 'KRED BE BB',
+  '431': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '432': Iban(
-    bic: 'KRED BE BB',
+  '432': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '433': Iban(
-    bic: 'KRED BE BB',
+  '433': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '434': Iban(
-    bic: 'KRED BE BB',
+  '434': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '435': Iban(
-    bic: 'KRED BE BB',
+  '435': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '436': Iban(
-    bic: 'KRED BE BB',
+  '436': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '437': Iban(
-    bic: 'KRED BE BB',
+  '437': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '438': Iban(
-    bic: 'KRED BE BB',
+  '438': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '439': Iban(
-    bic: 'KRED BE BB',
+  '439': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '440': Iban(
-    bic: 'KRED BE BB',
+  '440': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '441': Iban(
-    bic: 'KRED BE BB',
+  '441': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '442': Iban(
-    bic: 'KRED BE BB',
+  '442': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '443': Iban(
-    bic: 'KRED BE BB',
+  '443': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '444': Iban(
-    bic: 'KRED BE BB',
+  '444': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '445': Iban(
-    bic: 'KRED BE BB',
+  '445': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '446': Iban(
-    bic: 'KRED BE BB',
+  '446': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '447': Iban(
-    bic: 'KRED BE BB',
+  '447': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '448': Iban(
-    bic: 'KRED BE BB',
+  '448': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '449': Iban(
-    bic: 'KRED BE BB',
+  '449': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '450': Iban(
-    bic: 'KRED BE BB',
+  '450': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '451': Iban(
-    bic: 'KRED BE BB',
+  '451': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '452': Iban(
-    bic: 'KRED BE BB',
+  '452': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '453': Iban(
-    bic: 'KRED BE BB',
+  '453': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '454': Iban(
-    bic: 'KRED BE BB',
+  '454': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '455': Iban(
-    bic: 'KRED BE BB',
+  '455': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '456': Iban(
-    bic: 'KRED BE BB',
+  '456': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '457': Iban(
-    bic: 'KRED BE BB',
+  '457': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '458': Iban(
-    bic: 'KRED BE BB',
+  '458': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '459': Iban(
-    bic: 'KRED BE BB',
+  '459': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '460': Iban(
-    bic: 'KRED BE BB',
+  '460': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '461': Iban(
-    bic: 'KRED BE BB',
+  '461': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '462': Iban(
-    bic: 'KRED BE BB',
+  '462': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '463': Iban(
-    bic: 'KRED BE BB',
+  '463': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '464': Iban(
-    bic: 'KRED BE BB',
+  '464': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '465': Iban(
-    bic: 'KRED BE BB',
+  '465': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '466': Iban(
-    bic: 'KRED BE BB',
+  '466': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '467': Iban(
-    bic: 'KRED BE BB',
+  '467': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '468': Iban(
-    bic: 'KRED BE BB',
+  '468': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '469': Iban(
-    bic: 'KRED BE BB',
+  '469': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '470': Iban(
-    bic: 'KRED BE BB',
+  '470': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '471': Iban(
-    bic: 'KRED BE BB',
+  '471': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '472': Iban(
-    bic: 'KRED BE BB',
+  '472': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '473': Iban(
-    bic: 'KRED BE BB',
+  '473': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '474': Iban(
-    bic: 'KRED BE BB',
+  '474': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '475': Iban(
-    bic: 'KRED BE BB',
+  '475': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '476': Iban(
-    bic: 'KRED BE BB',
+  '476': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '477': Iban(
-    bic: 'KRED BE BB',
+  '477': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '478': Iban(
-    bic: 'KRED BE BB',
+  '478': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '479': Iban(
-    bic: 'KRED BE BB',
+  '479': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '480': Iban(
-    bic: 'KRED BE BB',
+  '480': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '481': Iban(
-    bic: 'KRED BE BB',
+  '481': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '482': Iban(
-    bic: 'KRED BE BB',
+  '482': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '483': Iban(
-    bic: 'KRED BE BB',
+  '483': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '484': Iban(
-    bic: 'KRED BE BB',
+  '484': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '485': Iban(
-    bic: 'KRED BE BB',
+  '485': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '486': Iban(
-    bic: 'KRED BE BB',
+  '486': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '487': Iban(
-    bic: 'KRED BE BB',
+  '487': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '488': Iban(
-    bic: 'KRED BE BB',
+  '488': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '489': Iban(
-    bic: 'KRED BE BB',
+  '489': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '490': Iban(
-    bic: 'KRED BE BB',
+  '490': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '491': Iban(
-    bic: 'KRED BE BB',
+  '491': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '492': Iban(
-    bic: 'KRED BE BB',
+  '492': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '493': Iban(
-    bic: 'KRED BE BB',
+  '493': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '494': Iban(
-    bic: 'KRED BE BB',
+  '494': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '495': Iban(
-    bic: 'KRED BE BB',
+  '495': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '496': Iban(
-    bic: 'KRED BE BB',
+  '496': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '497': Iban(
-    bic: 'KRED BE BB',
+  '497': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '498': Iban(
-    bic: 'KRED BE BB',
+  '498': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '499': Iban(
-    bic: 'KRED BE BB',
+  '499': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '500': Iban(
-    bic: 'MTPS BE BB',
+  '500': Bic(
+    value: 'MTPS BE BB',
     bankName: 'Moneytrans Payment Services',
     bankShortName: 'Moneytrans Payment Services',
   ),
-  '501': Iban(
-    bic: 'DHBN BE BB',
+  '501': Bic(
+    value: 'DHBN BE BB',
     bankName: 'Demir-Halk Bank (Nederland) (DHB)',
     bankShortName: 'Demir-Halk Bank (Nederland) (DHB)',
   ),
-  '502': Iban(
-    bic: 'VRIJ',
+  '502': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '503': Iban(
-    bic: 'VRIJ',
+  '503': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '504': Iban(
-    bic: 'PANX BE B1',
+  '504': Bic(
+    value: 'PANX BE B1',
     bankName: 'Unifiedpost Payments',
     bankShortName: 'Unifiedpost Payments',
   ),
-  '505': Iban(
-    bic: 'VRIJ',
+  '505': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '506': Iban(
-    bic: 'VRIJ',
+  '506': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '507': Iban(
-    bic: 'DIER BE 21',
+  '507': Bic(
+    value: 'DIER BE 21',
     bankName: 'Dierickx, Leys & Cie Effectenbank',
     bankShortName: 'Dierickx, Leys & Cie Effectenbank',
   ),
-  '508': Iban(
-    bic: 'PARB BE BZ MDC',
+  '508': Bic(
+    value: 'PARB BE BZ MDC',
     bankName: 'BNP Paribas SA, Belgium Branch – Securities Services business',
     bankShortName:
         'BNP Paribas SA, Belgium Branch – Securities Services business',
   ),
-  '509': Iban(
-    bic: 'ABNA BE 2A IPC',
+  '509': Bic(
+    value: 'ABNA BE 2A IPC',
     bankName: 'ABN AMRO Bank N.V.',
     bankShortName: 'ABN AMRO Bank N.V.',
   ),
-  '510': Iban(
-    bic: 'VAPE BE 22',
+  '510': Bic(
+    value: 'VAPE BE 22',
     bankName: 'VAN DE PUT & CO Privaatbankiers',
     bankShortName: 'VAN DE PUT & CO Privaatbankiers',
   ),
-  '511': Iban(
-    bic: 'VRIJ',
+  '511': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '512': Iban(
-    bic: 'DNIB BE 21',
+  '512': Bic(
+    value: 'DNIB BE 21',
     bankName: 'NIBC BANK',
     bankShortName: 'NIBC BANK',
   ),
-  '513': Iban(
-    bic: 'ABNA BE 2A IPC',
+  '513': Bic(
+    value: 'ABNA BE 2A IPC',
     bankName: 'ABN AMRO Bank N.V.',
     bankShortName: 'ABN AMRO Bank N.V.',
   ),
-  '514': Iban(
-    bic: 'PUIL BE BB',
+  '514': Bic(
+    value: 'PUIL BE BB',
     bankName: 'Puilaetco Branch of Quintet Private Bank SA',
     bankShortName: 'Puilaetco Branch of Quintet Private Bank SA',
   ),
-  '515': Iban(
-    bic: 'IRVT BE BB',
+  '515': Bic(
+    value: 'IRVT BE BB',
     bankName: 'The Bank of New York Mellon NV/SA',
     bankShortName: 'The Bank of New York Mellon NV/SA',
   ),
-  '516': Iban(
-    bic: 'VRIJ',
+  '516': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '517': Iban(
-    bic: 'VRIJ',
+  '517': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '518': Iban(
-    bic: 'VRIJ',
+  '518': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '519': Iban(
-    bic: 'VRIJ',
+  '519': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '520': Iban(
-    bic: 'NAP',
+  '520': Bic(
+    value: 'NAP',
     bankName: 'Onbeschikbaar',
     bankShortName: 'Onbeschikbaar',
   ),
-  '521': Iban(
-    bic: 'FVLB BE 22',
+  '521': Bic(
+    value: 'FVLB BE 22',
     bankName: 'F. van Lanschot Bankiers',
     bankShortName: 'F. van Lanschot Bankiers',
   ),
-  '522': Iban(
-    bic: 'UTWB BE BB',
+  '522': Bic(
+    value: 'UTWB BE BB',
     bankName: 'United Taiwan Bank',
     bankShortName: 'United Taiwan Bank',
   ),
-  '523': Iban(
-    bic: 'TRIO BE BB',
+  '523': Bic(
+    value: 'TRIO BE BB',
     bankName: 'Triodos Bank',
     bankShortName: 'Triodos Bank',
   ),
-  '524': Iban(
-    bic: 'WAFA BE BB',
+  '524': Bic(
+    value: 'WAFA BE BB',
     bankName: 'Attijariwafa bank Europe',
     bankShortName: 'Attijariwafa bank Europe',
   ),
-  '525': Iban(
-    bic: 'FVLB BE 22',
+  '525': Bic(
+    value: 'FVLB BE 22',
     bankName: 'F. van Lanschot Bankiers',
     bankShortName: 'F. van Lanschot Bankiers',
   ),
-  '526': Iban(
-    bic: 'VRIJ',
+  '526': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '527': Iban(
-    bic: 'VRIJ',
+  '527': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '528': Iban(
-    bic: 'VRIJ',
+  '528': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '529': Iban(
-    bic: 'NAV',
+  '529': Bic(
+    value: 'NAV',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '530': Iban(
-    bic: 'SHIZ BE BB',
+  '530': Bic(
+    value: 'SHIZ BE BB',
     bankName: 'Shizuoka Bank (Europe)',
     bankShortName: 'Shizuoka Bank (Europe)',
   ),
-  '531': Iban(
-    bic: 'VRIJ',
+  '531': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '532': Iban(
-    bic: 'VRIJ',
+  '532': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '533': Iban(
-    bic: 'VRIJ',
+  '533': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '534': Iban(
-    bic: 'VRIJ',
+  '534': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '535': Iban(
-    bic: 'VRIJ',
+  '535': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '536': Iban(
-    bic: 'VRIJ',
+  '536': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '537': Iban(
-    bic: 'VRIJ',
+  '537': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '538': Iban(
-    bic: 'nav',
+  '538': Bic(
+    value: 'nav',
     bankName: 'Hoist Finance AB',
     bankShortName: 'Hoist Finance AB',
   ),
-  '539': Iban(
-    bic: 'NAP',
+  '539': Bic(
+    value: 'NAP',
     bankName: 'Onbeschikbaar',
     bankShortName: 'Onbeschikbaar',
   ),
-  '540': Iban(
-    bic: 'VRIJ',
+  '540': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '541': Iban(
-    bic: 'BKID BE 22',
+  '541': Bic(
+    value: 'BKID BE 22',
     bankName: 'BANK OF INDIA',
     bankShortName: 'BANK OF INDIA',
   ),
-  '542': Iban(
-    bic: 'VRIJ',
+  '542': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '543': Iban(
-    bic: 'VRIJ',
+  '543': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '544': Iban(
-    bic: 'VRIJ',
+  '544': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '545': Iban(
-    bic: 'NAP',
+  '545': Bic(
+    value: 'NAP',
     bankName: 'Onbeschikbaar',
     bankShortName: 'Onbeschikbaar',
   ),
-  '546': Iban(
-    bic: 'WAFA BE BB',
+  '546': Bic(
+    value: 'WAFA BE BB',
     bankName: 'Attijariwafa bank Europe',
     bankShortName: 'Attijariwafa bank Europe',
   ),
-  '547': Iban(
-    bic: 'VRIJ',
+  '547': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '548': Iban(
-    bic: 'LOCY BE BB',
+  '548': Bic(
+    value: 'LOCY BE BB',
     bankName: 'Lombard Odier (Europe)',
     bankShortName: 'Lombard Odier (Europe)',
   ),
-  '549': Iban(
-    bic: 'CHAS BE BX',
+  '549': Bic(
+    value: 'CHAS BE BX',
     bankName: 'J.P. Morgan SE -Brussels Branch',
     bankShortName: 'J.P. Morgan SE -Brussels Branch',
   ),
-  '550': Iban(
-    bic: 'GKCC BE BB',
+  '550': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '551': Iban(
-    bic: 'GKCC BE BB',
+  '551': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '552': Iban(
-    bic: 'GKCC BE BB',
+  '552': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '553': Iban(
-    bic: 'GKCC BE BB',
+  '553': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '554': Iban(
-    bic: 'GKCC BE BB',
+  '554': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '555': Iban(
-    bic: 'GKCC BE BB',
+  '555': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '556': Iban(
-    bic: 'GKCC BE BB',
+  '556': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '557': Iban(
-    bic: 'GKCC BE BB',
+  '557': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '558': Iban(
-    bic: 'GKCC BE BB',
+  '558': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '559': Iban(
-    bic: 'GKCC BE BB',
+  '559': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '560': Iban(
-    bic: 'GKCC BE BB',
+  '560': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '561': Iban(
-    bic: 'VRIJ',
+  '561': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '562': Iban(
-    bic: 'GKCC BE BB',
+  '562': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '563': Iban(
-    bic: 'GKCC BE BB',
+  '563': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '564': Iban(
-    bic: 'GKCC BE BB',
+  '564': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '565': Iban(
-    bic: 'GKCC BE BB',
+  '565': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '566': Iban(
-    bic: 'GKCC BE BB',
+  '566': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '567': Iban(
-    bic: 'GKCC BE BB',
+  '567': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '568': Iban(
-    bic: 'GKCC BE BB',
+  '568': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '569': Iban(
-    bic: 'GKCC BE BB',
+  '569': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '570': Iban(
-    bic: 'CITI BE BX',
+  '570': Bic(
+    value: 'CITI BE BX',
     bankName: 'Citibank Europe Plc - Belgium Branch',
     bankShortName: 'Citibank Europe Plc - Belgium Branch',
   ),
-  '571': Iban(
-    bic: 'CITI BE BX',
+  '571': Bic(
+    value: 'CITI BE BX',
     bankName: 'Citibank Europe Plc - Belgium Branch',
     bankShortName: 'Citibank Europe Plc - Belgium Branch',
   ),
-  '572': Iban(
-    bic: 'CITI BE BX',
+  '572': Bic(
+    value: 'CITI BE BX',
     bankName: 'Citibank Europe Plc - Belgium Branch',
     bankShortName: 'Citibank Europe Plc - Belgium Branch',
   ),
-  '573': Iban(
-    bic: 'CITI BE BX',
+  '573': Bic(
+    value: 'CITI BE BX',
     bankName: 'Citibank Europe Plc - Belgium Branch',
     bankShortName: 'Citibank Europe Plc - Belgium Branch',
   ),
-  '574': Iban(
-    bic: 'CITI BE BX',
+  '574': Bic(
+    value: 'CITI BE BX',
     bankName: 'Citibank Europe Plc - Belgium Branch',
     bankShortName: 'Citibank Europe Plc - Belgium Branch',
   ),
-  '575': Iban(
-    bic: 'CITI BE BX',
+  '575': Bic(
+    value: 'CITI BE BX',
     bankName: 'Citibank Europe Plc - Belgium Branch',
     bankShortName: 'Citibank Europe Plc - Belgium Branch',
   ),
-  '576': Iban(
-    bic: 'CITI BE BX',
+  '576': Bic(
+    value: 'CITI BE BX',
     bankName: 'Citibank Europe Plc - Belgium Branch',
     bankShortName: 'Citibank Europe Plc - Belgium Branch',
   ),
-  '577': Iban(
-    bic: 'CITI BE BX',
+  '577': Bic(
+    value: 'CITI BE BX',
     bankName: 'Citibank Europe Plc - Belgium Branch',
     bankShortName: 'Citibank Europe Plc - Belgium Branch',
   ),
-  '578': Iban(
-    bic: 'CITI BE BX',
+  '578': Bic(
+    value: 'CITI BE BX',
     bankName: 'Citibank Europe Plc - Belgium Branch',
     bankShortName: 'Citibank Europe Plc - Belgium Branch',
   ),
-  '579': Iban(
-    bic: 'CITI BE BX',
+  '579': Bic(
+    value: 'CITI BE BX',
     bankName: 'Citibank Europe Plc - Belgium Branch',
     bankShortName: 'Citibank Europe Plc - Belgium Branch',
   ),
-  '580': Iban(
-    bic: 'VRIJ',
+  '580': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '581': Iban(
-    bic: 'MHCB BE BB',
+  '581': Bic(
+    value: 'MHCB BE BB',
     bankName: 'Mizuho Bank Europe N.V. Brussels Branch',
     bankShortName: 'Mizuho Bank Europe N.V. Brussels Branch',
   ),
-  '582': Iban(
-    bic: 'VRIJ',
+  '582': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '583': Iban(
-    bic: 'DEGR BE BB',
+  '583': Bic(
+    value: 'DEGR BE BB',
     bankName: 'Banque Degroof Petercam Luxembourg',
     bankShortName: 'Banque Degroof Petercam Luxembourg',
   ),
-  '584': Iban(
-    bic: 'VRIJ',
+  '584': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '585': Iban(
-    bic: 'RCBP BE BB',
+  '585': Bic(
+    value: 'RCBP BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '586': Iban(
-    bic: 'CFFR BE B1',
+  '586': Bic(
+    value: 'CFFR BE B1',
     bankName: '',
     bankShortName: '',
   ),
-  '587': Iban(
-    bic: 'BIBL BE 21',
+  '587': Bic(
+    value: 'BIBL BE 21',
     bankName: 'BinckBank',
     bankShortName: 'BinckBank',
   ),
-  '588': Iban(
-    bic: 'CMCI BE B1 BTB',
+  '588': Bic(
+    value: 'CMCI BE B1 BTB',
     bankName: 'Banque Transatlantique Belgium',
     bankShortName: 'Banque Transatlantique Belgium',
   ),
-  '589': Iban(
-    bic: 'VRIJ',
+  '589': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '590': Iban(
-    bic: 'BSCH BE BB',
+  '590': Bic(
+    value: 'BSCH BE BB',
     bankName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
     bankShortName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
-  '591': Iban(
-    bic: 'BSCH BE BB',
+  '591': Bic(
+    value: 'BSCH BE BB',
     bankName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
     bankShortName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
-  '592': Iban(
-    bic: 'BSCH BE BB',
+  '592': Bic(
+    value: 'BSCH BE BB',
     bankName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
     bankShortName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
-  '593': Iban(
-    bic: 'BSCH BE BB',
+  '593': Bic(
+    value: 'BSCH BE BB',
     bankName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
     bankShortName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
-  '594': Iban(
-    bic: 'BSCH BE BB',
+  '594': Bic(
+    value: 'BSCH BE BB',
     bankName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
     bankShortName:
         'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
-  '595': Iban(
-    bic: 'CTBK BE BX',
+  '595': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '596': Iban(
-    bic: 'CTBK BE BX',
+  '596': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '597': Iban(
-    bic: 'CTBK BE BX',
+  '597': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '598': Iban(
-    bic: 'CTBK BE BX',
+  '598': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '599': Iban(
-    bic: 'CTBK BE BX',
+  '599': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '600': Iban(
-    bic: 'CTBK BE BX',
+  '600': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '601': Iban(
-    bic: 'CTBK BE BX',
+  '601': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '602': Iban(
-    bic: 'VRIJ',
+  '602': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '603': Iban(
-    bic: 'VRIJ',
+  '603': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '604': Iban(
-    bic: 'VRIJ',
+  '604': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '605': Iban(
-    bic: 'BKCH BE BB',
+  '605': Bic(
+    value: 'BKCH BE BB',
     bankName: 'Bank of China (Europe) SA Brussels Branch',
     bankShortName: 'Bank of China (Europe) SA Brussels Branch',
   ),
-  '606': Iban(
-    bic: 'VRIJ',
+  '606': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '607': Iban(
-    bic: 'ICBK BE BB',
+  '607': Bic(
+    value: 'ICBK BE BB',
     bankName: 'Industrial and Commercial Bank of China (Europe)',
     bankShortName: 'Industrial and Commercial Bank of China (Europe)',
   ),
-  '608': Iban(
-    bic: 'VRIJ',
+  '608': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '609': Iban(
-    bic: 'VRIJ',
+  '609': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '610': Iban(
-    bic: 'DEUT BE BE',
+  '610': Bic(
+    value: 'DEUT BE BE',
     bankName: 'Deutsche Bank AG',
     bankShortName: 'Deutsche Bank AG',
   ),
-  '611': Iban(
-    bic: 'DEUT BE BE',
+  '611': Bic(
+    value: 'DEUT BE BE',
     bankName: 'Deutsche Bank AG',
     bankShortName: 'Deutsche Bank AG',
   ),
-  '612': Iban(
-    bic: 'DEUT BE BE',
+  '612': Bic(
+    value: 'DEUT BE BE',
     bankName: 'Deutsche Bank AG',
     bankShortName: 'Deutsche Bank AG',
   ),
-  '613': Iban(
-    bic: 'DEUT BE BE',
+  '613': Bic(
+    value: 'DEUT BE BE',
     bankName: 'Deutsche Bank AG',
     bankShortName: 'Deutsche Bank AG',
   ),
-  '614': Iban(
-    bic: 'VRIJ',
+  '614': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '615': Iban(
-    bic: 'VRIJ',
+  '615': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '616': Iban(
-    bic: 'VRIJ',
+  '616': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '617': Iban(
-    bic: 'VRIJ',
+  '617': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '618': Iban(
-    bic: 'VRIJ',
+  '618': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '619': Iban(
-    bic: 'VRIJ',
+  '619': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '620': Iban(
-    bic: 'VRIJ',
+  '620': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '621': Iban(
-    bic: 'VRIJ',
+  '621': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '622': Iban(
-    bic: 'VRIJ',
+  '622': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '623': Iban(
-    bic: 'VRIJ',
+  '623': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '624': Iban(
-    bic: 'GKCC BE BB',
+  '624': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '625': Iban(
-    bic: 'GKCC BE BB',
+  '625': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '626': Iban(
-    bic: 'VRIJ',
+  '626': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '627': Iban(
-    bic: 'VRIJ',
+  '627': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '628': Iban(
-    bic: 'VRIJ',
+  '628': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '629': Iban(
-    bic: 'VRIJ',
+  '629': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '630': Iban(
-    bic: 'BBRU BE BB',
+  '630': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '631': Iban(
-    bic: 'BBRU BE BB',
+  '631': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '632': Iban(
-    bic: 'VRIJ',
+  '632': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '633': Iban(
-    bic: 'VRIJ',
+  '633': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '634': Iban(
-    bic: 'BNAG BE BB',
+  '634': Bic(
+    value: 'BNAG BE BB',
     bankName: 'Bank Nagelmackers',
     bankShortName: 'Bank Nagelmackers',
   ),
-  '635': Iban(
-    bic: 'BNAG BE BB',
+  '635': Bic(
+    value: 'BNAG BE BB',
     bankName: 'Bank Nagelmackers',
     bankShortName: 'Bank Nagelmackers',
   ),
-  '636': Iban(
-    bic: 'BNAG BE BB',
+  '636': Bic(
+    value: 'BNAG BE BB',
     bankName: 'Bank Nagelmackers',
     bankShortName: 'Bank Nagelmackers',
   ),
-  '637': Iban(
-    bic: 'VRIJ',
+  '637': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '638': Iban(
-    bic: 'GKCC BE BB',
+  '638': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '639': Iban(
-    bic: 'VRIJ',
+  '639': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '640': Iban(
-    bic: 'ADIA BE 22',
+  '640': Bic(
+    value: 'ADIA BE 22',
     bankName: 'KBC Bank N.V. Business Center Diamant',
     bankShortName: 'KBC Bank N.V. Business Center Diamant',
   ),
-  '641': Iban(
-    bic: 'VRIJ',
+  '641': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '642': Iban(
-    bic: 'BBVA BE BB',
+  '642': Bic(
+    value: 'BBVA BE BB',
     bankName: 'Banco Bilbao Vizcaya Argentaria',
     bankShortName: 'Banco Bilbao Vizcaya Argentaria',
   ),
-  '643': Iban(
-    bic: 'BMPB BE BB',
+  '643': Bic(
+    value: 'BMPB BE BB',
     bankName: 'Aion',
     bankShortName: 'Aion',
   ),
-  '644': Iban(
-    bic: 'NAV',
+  '644': Bic(
+    value: 'NAV',
     bankName: 'FCA Bank S.p.A.',
     bankShortName: 'FCA Bank S.p.A.',
   ),
-  '645': Iban(
-    bic: 'JVBA BE 22',
+  '645': Bic(
+    value: 'JVBA BE 22',
     bankName: 'Bank J. Van Breda & C°',
     bankShortName: 'Bank J. Van Breda & C°',
   ),
-  '646': Iban(
-    bic: 'BNAG BE BB',
+  '646': Bic(
+    value: 'BNAG BE BB',
     bankName: 'Bank Nagelmackers',
     bankShortName: 'Bank Nagelmackers',
   ),
-  '647': Iban(
-    bic: 'BNAG BE BB',
+  '647': Bic(
+    value: 'BNAG BE BB',
     bankName: 'Bank Nagelmackers',
     bankShortName: 'Bank Nagelmackers',
   ),
-  '648': Iban(
-    bic: 'BMPB BE BB VOD',
+  '648': Bic(
+    value: 'BMPB BE BB VOD',
     bankName: 'Aion',
     bankShortName: 'Aion',
   ),
-  '649': Iban(
-    bic: 'CEPA BE B2',
+  '649': Bic(
+    value: 'CEPA BE B2',
     bankName: '',
     bankShortName: '',
   ),
-  '650': Iban(
-    bic: 'VRIJ',
+  '650': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '651': Iban(
-    bic: 'KEYT BE BB',
+  '651': Bic(
+    value: 'KEYT BE BB',
     bankName:
         'Arkéa Direct Bank (nom commercial / commerciële naam: Keytrade Bank)',
     bankShortName:
         'Arkéa Direct Bank (nom commercial / commerciële naam: Keytrade Bank)',
   ),
-  '652': Iban(
-    bic: 'BBRU BE BB',
+  '652': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '653': Iban(
-    bic: 'BARC BE BB',
+  '653': Bic(
+    value: 'BARC BE BB',
     bankName: 'Barclays Bank Ireland Plc Brussels Branch',
     bankShortName: 'Barclays Bank Ireland Plc Brussels Branch',
   ),
-  '654': Iban(
-    bic: 'nav',
+  '654': Bic(
+    value: 'nav',
     bankName: '',
     bankShortName: '',
   ),
-  '655': Iban(
-    bic: 'VRIJ',
+  '655': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '656': Iban(
-    bic: 'VRIJ',
+  '656': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '657': Iban(
-    bic: 'GKCC BE BB',
+  '657': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '658': Iban(
-    bic: 'HABB BE BB',
+  '658': Bic(
+    value: 'HABB BE BB',
     bankName: 'Habib Bank',
     bankShortName: 'Habib Bank',
   ),
-  '659': Iban(
-    bic: 'VRIJ',
+  '659': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '660': Iban(
-    bic: 'VRIJ',
+  '660': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '661': Iban(
-    bic: 'VRIJ',
+  '661': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '662': Iban(
-    bic: 'VRIJ',
+  '662': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '663': Iban(
-    bic: 'BMEU BE B1',
+  '663': Bic(
+    value: 'BMEU BE B1',
     bankName: 'BMCE Euro Services',
     bankShortName: 'BMCE Euro Services',
   ),
-  '664': Iban(
-    bic: 'BCDM BE BB',
+  '664': Bic(
+    value: 'BCDM BE BB',
     bankName: 'Banque Chaabi du Maroc',
     bankShortName: 'Banque Chaabi du Maroc',
   ),
-  '665': Iban(
-    bic: 'VRIJ',
+  '665': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '666': Iban(
-    bic: 'nav',
+  '666': Bic(
+    value: 'nav',
     bankName: 'WORLDLINE NV',
     bankShortName: 'WORLDLINE NV',
   ),
-  '667': Iban(
-    bic: 'CMCI BE B1 CIC',
+  '667': Bic(
+    value: 'CMCI BE B1 CIC',
     bankName: 'Crédit Industriel et Commercial - Succursale de Bruxelles',
     bankShortName: 'Crédit Industriel et Commercial - Succursale de Bruxelles',
   ),
-  '668': Iban(
-    bic: 'SBIN BE 2X',
+  '668': Bic(
+    value: 'SBIN BE 2X',
     bankName: 'State Bank of India',
     bankShortName: 'State Bank of India',
   ),
-  '669': Iban(
-    bic: 'nav',
+  '669': Bic(
+    value: 'nav',
     bankName: 'WORLDLINE NV',
     bankShortName: 'WORLDLINE NV',
   ),
-  '670': Iban(
-    bic: 'NYA',
+  '670': Bic(
+    value: 'NYA',
     bankName: 'CNH Industrial Capital EUROPE',
     bankShortName: 'CNH Industrial Capital EUROPE',
   ),
-  '671': Iban(
-    bic: 'EURB BE 99',
+  '671': Bic(
+    value: 'EURB BE 99',
     bankName: 'Europabank',
     bankShortName: 'Europabank',
   ),
-  '672': Iban(
-    bic: 'GKCC BE BB',
+  '672': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '673': Iban(
-    bic: 'BBRU BE BB',
+  '673': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '674': Iban(
-    bic: 'ABNA BE 2A IDJ',
+  '674': Bic(
+    value: 'ABNA BE 2A IDJ',
     bankName: 'ABN AMRO Bank N.V.',
     bankShortName: 'ABN AMRO Bank N.V.',
   ),
-  '675': Iban(
-    bic: 'BYBB BE BB',
+  '675': Bic(
+    value: 'BYBB BE BB',
     bankName: 'Byblos Bank Europe',
     bankShortName: 'Byblos Bank Europe',
   ),
-  '676': Iban(
-    bic: 'DEGR BE BB',
+  '676': Bic(
+    value: 'DEGR BE BB',
     bankName: 'Bank Degroof Petercam',
     bankShortName: 'Bank Degroof Petercam',
   ),
-  '677': Iban(
-    bic: 'CBPX BE 99',
+  '677': Bic(
+    value: 'CBPX BE 99',
     bankName: '',
     bankShortName: '',
   ),
-  '678': Iban(
-    bic: 'DELE BE 22',
+  '678': Bic(
+    value: 'DELE BE 22',
     bankName: 'Delen Private Bank',
     bankShortName: 'Delen Private Bank',
   ),
-  '679': Iban(
-    bic: 'PCHQ BE BB',
+  '679': Bic(
+    value: 'PCHQ BE BB',
     bankName: 'bpost',
     bankShortName: 'bpost',
   ),
-  '680': Iban(
-    bic: 'GKCC BE BB',
+  '680': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '681': Iban(
-    bic: 'VRIJ',
+  '681': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '682': Iban(
-    bic: 'GKCC BE BB',
+  '682': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '683': Iban(
-    bic: 'GKCC BE BB',
+  '683': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '684': Iban(
-    bic: 'SGAB BE B2',
+  '684': Bic(
+    value: 'SGAB BE B2',
     bankName: 'Société Générale',
     bankShortName: 'Société Générale',
   ),
-  '685': Iban(
-    bic: 'BOFA BE 3X',
+  '685': Bic(
+    value: 'BOFA BE 3X',
     bankName: '',
     bankShortName: '',
   ),
-  '686': Iban(
-    bic: 'BOFA BE 3X',
+  '686': Bic(
+    value: 'BOFA BE 3X',
     bankName: '',
     bankShortName: '',
   ),
-  '687': Iban(
-    bic: 'MGTC BE BE',
+  '687': Bic(
+    value: 'MGTC BE BE',
     bankName: 'Euroclear Bank',
     bankShortName: 'Euroclear Bank',
   ),
-  '688': Iban(
-    bic: 'SGAB BE B2',
+  '688': Bic(
+    value: 'SGAB BE B2',
     bankName: 'Société Générale',
     bankShortName: 'Société Générale',
   ),
-  '689': Iban(
-    bic: 'VRIJ',
+  '689': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '690': Iban(
-    bic: 'VRIJ',
+  '690': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '691': Iban(
-    bic: 'VRIJ',
+  '691': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '692': Iban(
-    bic: 'VRIJ',
+  '692': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '693': Iban(
-    bic: 'BOTK BE BX',
+  '693': Bic(
+    value: 'BOTK BE BX',
     bankName: 'MUFG Bank (Europe)',
     bankShortName: 'MUFG Bank (Europe)',
   ),
-  '694': Iban(
-    bic: 'DEUT BE BE',
+  '694': Bic(
+    value: 'DEUT BE BE',
     bankName: 'Deutsche Bank AG',
     bankShortName: 'Deutsche Bank AG',
   ),
-  '695': Iban(
-    bic: 'VRIJ',
+  '695': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '696': Iban(
-    bic: 'CRLY BE BB',
+  '696': Bic(
+    value: 'CRLY BE BB',
     bankName: 'Crédit Agricole Corporate & Investment Bank',
     bankShortName: 'Crédit Agricole Corporate & Investment Bank',
   ),
-  '697': Iban(
-    bic: 'VRIJ',
+  '697': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '698': Iban(
-    bic: 'VRIJ',
+  '698': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '699': Iban(
-    bic: 'VRIJ',
+  '699': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '700': Iban(
-    bic: 'AXAB BE 22',
+  '700': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '701': Iban(
-    bic: 'AXAB BE 22',
+  '701': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '702': Iban(
-    bic: 'AXAB BE 22',
+  '702': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '703': Iban(
-    bic: 'AXAB BE 22',
+  '703': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '704': Iban(
-    bic: 'AXAB BE 22',
+  '704': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '705': Iban(
-    bic: 'AXAB BE 22',
+  '705': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '706': Iban(
-    bic: 'AXAB BE 22',
+  '706': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '707': Iban(
-    bic: 'AXAB BE 22',
+  '707': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '708': Iban(
-    bic: 'AXAB BE 22',
+  '708': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '709': Iban(
-    bic: 'AXAB BE 22',
+  '709': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '710': Iban(
-    bic: 'VRIJ',
+  '710': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '711': Iban(
-    bic: 'VRIJ',
+  '711': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '712': Iban(
-    bic: 'VRIJ',
+  '712': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '713': Iban(
-    bic: 'VRIJ',
+  '713': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '714': Iban(
-    bic: 'VRIJ',
+  '714': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '715': Iban(
-    bic: 'VRIJ',
+  '715': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '716': Iban(
-    bic: 'VRIJ',
+  '716': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '717': Iban(
-    bic: 'VRIJ',
+  '717': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '718': Iban(
-    bic: 'VRIJ',
+  '718': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '719': Iban(
-    bic: 'ABNA BE 2A XXX',
+  '719': Bic(
+    value: 'ABNA BE 2A XXX',
     bankName: 'ABN AMRO Bank N.V.',
     bankShortName: 'ABN AMRO Bank N.V.',
   ),
-  '720': Iban(
-    bic: 'VRIJ',
+  '720': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '721': Iban(
-    bic: 'VRIJ',
+  '721': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '722': Iban(
-    bic: 'ABNA BE 2A IPC',
+  '722': Bic(
+    value: 'ABNA BE 2A IPC',
     bankName: 'ABN AMRO Bank N.V.',
     bankShortName: 'ABN AMRO Bank N.V.',
   ),
-  '723': Iban(
-    bic: 'VRIJ',
+  '723': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '724': Iban(
-    bic: 'VRIJ',
+  '724': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '725': Iban(
-    bic: 'KRED BE BB',
+  '725': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '726': Iban(
-    bic: 'KRED BE BB',
+  '726': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '727': Iban(
-    bic: 'KRED BE BB',
+  '727': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '728': Iban(
-    bic: 'CREG BE BB',
+  '728': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '729': Iban(
-    bic: 'CREG BE BB',
+  '729': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '730': Iban(
-    bic: 'KRED BE BB',
+  '730': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '731': Iban(
-    bic: 'KRED BE BB',
+  '731': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '732': Iban(
-    bic: 'CREG BE BB',
+  '732': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '733': Iban(
-    bic: 'KRED BE BB',
+  '733': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '734': Iban(
-    bic: 'KRED BE BB',
+  '734': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '735': Iban(
-    bic: 'KRED BE BB',
+  '735': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '736': Iban(
-    bic: 'KRED BE BB',
+  '736': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '737': Iban(
-    bic: 'KRED BE BB',
+  '737': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '738': Iban(
-    bic: 'KRED BE BB',
+  '738': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '739': Iban(
-    bic: 'KRED BE BB',
+  '739': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '740': Iban(
-    bic: 'KRED BE BB',
+  '740': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '741': Iban(
-    bic: 'KRED BE BB',
+  '741': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '742': Iban(
-    bic: 'CREG BE BB',
+  '742': Bic(
+    value: 'CREG BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '743': Iban(
-    bic: 'KRED BE BB',
+  '743': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '744': Iban(
-    bic: 'KRED BE BB',
+  '744': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '745': Iban(
-    bic: 'KRED BE BB',
+  '745': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '746': Iban(
-    bic: 'KRED BE BB',
+  '746': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '747': Iban(
-    bic: 'KRED BE BB',
+  '747': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '748': Iban(
-    bic: 'KRED BE BB',
+  '748': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '749': Iban(
-    bic: 'KRED BE BB',
+  '749': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '750': Iban(
-    bic: 'AXAB BE 22',
+  '750': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '751': Iban(
-    bic: 'AXAB BE 22',
+  '751': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '752': Iban(
-    bic: 'AXAB BE 22',
+  '752': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '753': Iban(
-    bic: 'AXAB BE 22',
+  '753': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '754': Iban(
-    bic: 'AXAB BE 22',
+  '754': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '755': Iban(
-    bic: 'AXAB BE 22',
+  '755': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '756': Iban(
-    bic: 'AXAB BE 22',
+  '756': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '757': Iban(
-    bic: 'AXAB BE 22',
+  '757': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '758': Iban(
-    bic: 'AXAB BE 22',
+  '758': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '759': Iban(
-    bic: 'AXAB BE 22',
+  '759': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '760': Iban(
-    bic: 'AXAB BE 22',
+  '760': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '761': Iban(
-    bic: 'AXAB BE 22',
+  '761': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '762': Iban(
-    bic: 'AXAB BE 22',
+  '762': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '763': Iban(
-    bic: 'AXAB BE 22',
+  '763': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '764': Iban(
-    bic: 'AXAB BE 22',
+  '764': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '765': Iban(
-    bic: 'AXAB BE 22',
+  '765': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '766': Iban(
-    bic: 'AXAB BE 22',
+  '766': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '767': Iban(
-    bic: 'AXAB BE 22',
+  '767': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '768': Iban(
-    bic: 'AXAB BE 22',
+  '768': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '769': Iban(
-    bic: 'AXAB BE 22',
+  '769': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '770': Iban(
-    bic: 'AXAB BE 22',
+  '770': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '771': Iban(
-    bic: 'AXAB BE 22',
+  '771': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '772': Iban(
-    bic: 'AXAB BE 22',
+  '772': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '773': Iban(
-    bic: 'AXAB BE 22',
+  '773': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '774': Iban(
-    bic: 'AXAB BE 22',
+  '774': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '775': Iban(
-    bic: 'GKCC BE BB',
+  '775': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '776': Iban(
-    bic: 'GKCC BE BB',
+  '776': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '777': Iban(
-    bic: 'GKCC BE BB',
+  '777': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '778': Iban(
-    bic: 'GKCC BE BB',
+  '778': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '779': Iban(
-    bic: 'GKCC BE BB',
+  '779': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '780': Iban(
-    bic: 'GKCC BE BB',
+  '780': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '781': Iban(
-    bic: 'GKCC BE BB',
+  '781': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '782': Iban(
-    bic: 'GKCC BE BB',
+  '782': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '783': Iban(
-    bic: 'GKCC BE BB',
+  '783': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '784': Iban(
-    bic: 'GKCC BE BB',
+  '784': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '785': Iban(
-    bic: 'GKCC BE BB',
+  '785': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '786': Iban(
-    bic: 'GKCC BE BB',
+  '786': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '787': Iban(
-    bic: 'GKCC BE BB',
+  '787': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '788': Iban(
-    bic: 'GKCC BE BB',
+  '788': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '789': Iban(
-    bic: 'GKCC BE BB',
+  '789': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '790': Iban(
-    bic: 'GKCC BE BB',
+  '790': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '791': Iban(
-    bic: 'GKCC BE BB',
+  '791': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '792': Iban(
-    bic: 'GKCC BE BB',
+  '792': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '793': Iban(
-    bic: 'GKCC BE BB',
+  '793': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '794': Iban(
-    bic: 'GKCC BE BB',
+  '794': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '795': Iban(
-    bic: 'GKCC BE BB',
+  '795': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '796': Iban(
-    bic: 'GKCC BE BB',
+  '796': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '797': Iban(
-    bic: 'GKCC BE BB',
+  '797': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '798': Iban(
-    bic: 'GKCC BE BB',
+  '798': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '799': Iban(
-    bic: 'GKCC BE BB',
+  '799': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '800': Iban(
-    bic: 'AXAB BE 22',
+  '800': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '801': Iban(
-    bic: 'AXAB BE 22',
+  '801': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '802': Iban(
-    bic: 'AXAB BE 22',
+  '802': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '803': Iban(
-    bic: 'AXAB BE 22',
+  '803': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '804': Iban(
-    bic: 'AXAB BE 22',
+  '804': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '805': Iban(
-    bic: 'AXAB BE 22',
+  '805': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '806': Iban(
-    bic: 'AXAB BE 22',
+  '806': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '807': Iban(
-    bic: 'AXAB BE 22',
+  '807': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '808': Iban(
-    bic: 'AXAB BE 22',
+  '808': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '809': Iban(
-    bic: 'AXAB BE 22',
+  '809': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '810': Iban(
-    bic: 'AXAB BE 22',
+  '810': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '811': Iban(
-    bic: 'AXAB BE 22',
+  '811': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '812': Iban(
-    bic: 'AXAB BE 22',
+  '812': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '813': Iban(
-    bic: 'AXAB BE 22',
+  '813': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '814': Iban(
-    bic: 'AXAB BE 22',
+  '814': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '815': Iban(
-    bic: 'AXAB BE 22',
+  '815': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '816': Iban(
-    bic: 'AXAB BE 22',
+  '816': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '817': Iban(
-    bic: 'ISAE BE BB',
+  '817': Bic(
+    value: 'ISAE BE BB',
     bankName: 'CACEIS Bank Belgian Branch',
     bankShortName: 'CACEIS Bank Belgian Branch',
   ),
-  '818': Iban(
-    bic: 'VRIJ',
+  '818': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '819': Iban(
-    bic: 'VRIJ',
+  '819': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '820': Iban(
-    bic: 'VRIJ',
+  '820': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '821': Iban(
-    bic: 'VRIJ',
+  '821': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '822': Iban(
-    bic: 'VRIJ',
+  '822': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '823': Iban(
-    bic: 'BLUX BE BB',
+  '823': Bic(
+    value: 'BLUX BE BB',
     bankName: 'Banque de Luxembourg',
     bankShortName: 'Banque de Luxembourg',
   ),
-  '824': Iban(
-    bic: 'NAV',
+  '824': Bic(
+    value: 'NAV',
     bankName: 'ING Bank',
     bankShortName: 'ING Bank',
   ),
-  '825': Iban(
-    bic: 'DEUT BE BE',
+  '825': Bic(
+    value: 'DEUT BE BE',
     bankName: 'Deutsche Bank AG',
     bankShortName: 'Deutsche Bank AG',
   ),
-  '826': Iban(
-    bic: 'DEUT BE BE',
+  '826': Bic(
+    value: 'DEUT BE BE',
     bankName: 'Deutsche Bank AG',
     bankShortName: 'Deutsche Bank AG',
   ),
-  '827': Iban(
-    bic: 'VRIJ',
+  '827': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '828': Iban(
-    bic: 'BBRU BE BB',
+  '828': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '829': Iban(
-    bic: 'VRIJ',
+  '829': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '830': Iban(
-    bic: 'GKCC BE BB',
+  '830': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '831': Iban(
-    bic: 'GKCC BE BB',
+  '831': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '832': Iban(
-    bic: 'GKCC BE BB',
+  '832': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '833': Iban(
-    bic: 'GKCC BE BB',
+  '833': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '834': Iban(
-    bic: 'GKCC BE BB',
+  '834': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '835': Iban(
-    bic: 'GKCC BE BB',
+  '835': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '836': Iban(
-    bic: 'GKCC BE BB',
+  '836': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '837': Iban(
-    bic: 'GKCC BE BB',
+  '837': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '838': Iban(
-    bic: 'GKCC BE BB',
+  '838': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '839': Iban(
-    bic: 'GKCC BE BB',
+  '839': Bic(
+    value: 'GKCC BE BB',
     bankName: 'BELFIUS BANK',
     bankShortName: 'BELFIUS BANK',
   ),
-  '840': Iban(
-    bic: 'PRIB BE BB',
+  '840': Bic(
+    value: 'PRIB BE BB',
     bankName: 'Edmond de Rothschild (Europe)',
     bankShortName: 'Edmond de Rothschild (Europe)',
   ),
-  '841': Iban(
-    bic: 'VRIJ',
+  '841': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '842': Iban(
-    bic: 'VRIJ',
+  '842': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '843': Iban(
-    bic: 'VRIJ',
+  '843': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '844': Iban(
-    bic: 'RABO BE 22',
+  '844': Bic(
+    value: 'RABO BE 22',
     bankName: 'Rabobank.be',
     bankShortName: 'Rabobank.be',
   ),
-  '845': Iban(
-    bic: 'DEGR BE BB',
+  '845': Bic(
+    value: 'DEGR BE BB',
     bankName: 'Bank Degroof Petercam',
     bankShortName: 'Bank Degroof Petercam',
   ),
-  '846': Iban(
-    bic: 'VRIJ',
+  '846': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '847': Iban(
-    bic: 'VRIJ',
+  '847': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '848': Iban(
-    bic: 'VRIJ',
+  '848': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '849': Iban(
-    bic: 'VRIJ',
+  '849': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '850': Iban(
-    bic: 'NICA BE BB',
+  '850': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '851': Iban(
-    bic: 'NICA BE BB',
+  '851': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '852': Iban(
-    bic: 'NICA BE BB',
+  '852': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '853': Iban(
-    bic: 'NICA BE BB',
+  '853': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '854': Iban(
-    bic: 'VRIJ',
+  '854': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '855': Iban(
-    bic: 'VRIJ',
+  '855': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '856': Iban(
-    bic: 'VRIJ',
+  '856': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '857': Iban(
-    bic: 'VRIJ',
+  '857': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '858': Iban(
-    bic: 'VRIJ',
+  '858': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '859': Iban(
-    bic: 'NICA BE BB',
+  '859': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '860': Iban(
-    bic: 'NICA BE BB',
+  '860': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '861': Iban(
-    bic: 'VRIJ',
+  '861': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '862': Iban(
-    bic: 'NICA BE BB',
+  '862': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '863': Iban(
-    bic: 'NICA BE BB',
+  '863': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '864': Iban(
-    bic: 'VRIJ',
+  '864': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '865': Iban(
-    bic: 'NICA BE BB',
+  '865': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '866': Iban(
-    bic: 'NICA BE BB',
+  '866': Bic(
+    value: 'NICA BE BB',
     bankName: 'Crelan',
     bankShortName: 'Crelan',
   ),
-  '867': Iban(
-    bic: 'VRIJ',
+  '867': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '868': Iban(
-    bic: 'KRED BE BB',
+  '868': Bic(
+    value: 'KRED BE BB',
     bankName: 'KBC Bank',
     bankShortName: 'KBC Bank',
   ),
-  '869': Iban(
-    bic: 'VRIJ',
+  '869': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '870': Iban(
-    bic: 'VRIJ',
+  '870': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '871': Iban(
-    bic: 'BNAG BE BB',
+  '871': Bic(
+    value: 'BNAG BE BB',
     bankName: 'Bank Nagelmackers',
     bankShortName: 'Bank Nagelmackers',
   ),
-  '872': Iban(
-    bic: 'VRIJ',
+  '872': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '873': Iban(
-    bic: 'PCHQ BE BB',
+  '873': Bic(
+    value: 'PCHQ BE BB',
     bankName: 'bpost',
     bankShortName: 'bpost',
   ),
-  '874': Iban(
-    bic: 'VRIJ',
+  '874': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '875': Iban(
-    bic: 'VRIJ - LIBRE',
+  '875': Bic(
+    value: 'VRIJ - LIBRE',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '876': Iban(
-    bic: 'MBWM BE BB',
+  '876': Bic(
+    value: 'MBWM BE BB',
     bankName: 'MeDirect Bank S.A.',
     bankShortName: 'MeDirect Bank S.A.',
   ),
-  '877': Iban(
-    bic: 'BNAG BE BB',
+  '877': Bic(
+    value: 'BNAG BE BB',
     bankName: 'Bank Nagelmackers',
     bankShortName: 'Bank Nagelmackers',
   ),
-  '878': Iban(
-    bic: 'BNAG BE BB',
+  '878': Bic(
+    value: 'BNAG BE BB',
     bankName: 'Bank Nagelmackers',
     bankShortName: 'Bank Nagelmackers',
   ),
-  '879': Iban(
-    bic: 'BNAG BE BB',
+  '879': Bic(
+    value: 'BNAG BE BB',
     bankName: 'Bank Nagelmackers',
     bankShortName: 'Bank Nagelmackers',
   ),
-  '880': Iban(
-    bic: 'BBRU BE BB',
+  '880': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '881': Iban(
-    bic: 'BBRU BE BB',
+  '881': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '882': Iban(
-    bic: 'VRIJ',
+  '882': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '883': Iban(
-    bic: 'BBRU BE BB',
+  '883': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '884': Iban(
-    bic: 'BBRU BE BB',
+  '884': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '885': Iban(
-    bic: 'VRIJ',
+  '885': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '886': Iban(
-    bic: 'VRIJ',
+  '886': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '887': Iban(
-    bic: 'BBRU BE BB',
+  '887': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '888': Iban(
-    bic: 'BBRU BE BB',
+  '888': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '889': Iban(
-    bic: 'VRIJ',
+  '889': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '890': Iban(
-    bic: 'VDSP BE 91',
+  '890': Bic(
+    value: 'VDSP BE 91',
     bankName: 'vdk bank',
     bankShortName: 'vdk bank',
   ),
-  '891': Iban(
-    bic: 'VDSP BE 91',
+  '891': Bic(
+    value: 'VDSP BE 91',
     bankName: 'vdk bank',
     bankShortName: 'vdk bank',
   ),
-  '892': Iban(
-    bic: 'VDSP BE 91',
+  '892': Bic(
+    value: 'VDSP BE 91',
     bankName: 'vdk bank',
     bankShortName: 'vdk bank',
   ),
-  '893': Iban(
-    bic: 'VDSP BE 91',
+  '893': Bic(
+    value: 'VDSP BE 91',
     bankName: 'vdk bank',
     bankShortName: 'vdk bank',
   ),
-  '894': Iban(
-    bic: 'VDSP BE 91',
+  '894': Bic(
+    value: 'VDSP BE 91',
     bankName: 'vdk bank',
     bankShortName: 'vdk bank',
   ),
-  '895': Iban(
-    bic: 'VDSP BE 91',
+  '895': Bic(
+    value: 'VDSP BE 91',
     bankName: 'vdk bank',
     bankShortName: 'vdk bank',
   ),
-  '896': Iban(
-    bic: 'VDSP BE 91',
+  '896': Bic(
+    value: 'VDSP BE 91',
     bankName: 'vdk bank',
     bankShortName: 'vdk bank',
   ),
-  '897': Iban(
-    bic: 'VDSP BE 91',
+  '897': Bic(
+    value: 'VDSP BE 91',
     bankName: 'vdk bank',
     bankShortName: 'vdk bank',
   ),
-  '898': Iban(
-    bic: 'VDSP BE 91',
+  '898': Bic(
+    value: 'VDSP BE 91',
     bankName: 'vdk bank',
     bankShortName: 'vdk bank',
   ),
-  '899': Iban(
-    bic: 'VDSP BE 91',
+  '899': Bic(
+    value: 'VDSP BE 91',
     bankName: 'vdk bank',
     bankShortName: 'vdk bank',
   ),
-  '900': Iban(
-    bic: 'NAP',
+  '900': Bic(
+    value: 'NAP',
     bankName: 'Onbeschikbaar',
     bankShortName: 'Onbeschikbaar',
   ),
-  '901': Iban(
-    bic: 'NAP',
+  '901': Bic(
+    value: 'NAP',
     bankName: 'Onbeschikbaar',
     bankShortName: 'Onbeschikbaar',
   ),
-  '902': Iban(
-    bic: 'NAP',
+  '902': Bic(
+    value: 'NAP',
     bankName: 'Onbeschikbaar',
     bankShortName: 'Onbeschikbaar',
   ),
-  '903': Iban(
-    bic: 'VRIJ',
+  '903': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '904': Iban(
-    bic: 'VRIJ',
+  '904': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '905': Iban(
-    bic: 'VRIJ',
+  '905': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '906': Iban(
-    bic: 'CEKV BE 88',
+  '906': Bic(
+    value: 'CEKV BE 88',
     bankName: 'Centrale Kredietverlening (C.K.V.)',
     bankShortName: 'Centrale Kredietverlening (C.K.V.)',
   ),
-  '907': Iban(
-    bic: 'VRIJ',
+  '907': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '908': Iban(
-    bic: 'CEKV BE 88',
+  '908': Bic(
+    value: 'CEKV BE 88',
     bankName: 'Centrale Kredietverlening (C.K.V.)',
     bankShortName: 'Centrale Kredietverlening (C.K.V.)',
   ),
-  '909': Iban(
-    bic: 'VRIJ',
+  '909': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '910': Iban(
-    bic: 'BBRU BE BB',
+  '910': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '911': Iban(
-    bic: 'TUNZ BE B1',
+  '911': Bic(
+    value: 'TUNZ BE B1',
     bankName: 'Worldline Financial Solutions nv/SA',
     bankShortName: 'Worldline Financial Solutions nv/SA',
   ),
-  '912': Iban(
-    bic: 'VRIJ',
+  '912': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '913': Iban(
-    bic: 'EPBF BE BB',
+  '913': Bic(
+    value: 'EPBF BE BB',
     bankName: 'EPBF',
     bankShortName: 'EPBF',
   ),
-  '914': Iban(
-    bic: 'FXBBBEBB',
+  '914': Bic(
+    value: 'FXBBBEBB',
     bankName: 'FX4BIZ',
     bankShortName: 'FX4BIZ',
   ),
-  '915': Iban(
-    bic: 'OONX BE BB',
+  '915': Bic(
+    value: 'OONX BE BB',
     bankName: 'Oonex',
     bankShortName: 'Oonex',
   ),
-  '916': Iban(
-    bic: 'GOCF BE B1',
+  '916': Bic(
+    value: 'GOCF BE B1',
     bankName: 'GOLD COMMODITIES FOREX (G.C.F.)',
     bankShortName: 'GOLD COMMODITIES FOREX (G.C.F.)',
   ),
-  '917': Iban(
-    bic: '-',
+  '917': Bic(
+    value: '-',
     bankName: 'Buy Way Personal Finance',
     bankShortName: 'Buy Way Personal Finance',
   ),
-  '918': Iban(
-    bic: 'VRIJ',
+  '918': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '919': Iban(
-    bic: 'VRIJ',
+  '919': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '920': Iban(
-    bic: 'BBRU BE BB',
+  '920': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '921': Iban(
-    bic: 'VRIJ',
+  '921': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '922': Iban(
-    bic: 'BBRU BE BB',
+  '922': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '923': Iban(
-    bic: 'BBRU BE BB',
+  '923': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '924': Iban(
-    bic: 'FMMS BE B1',
+  '924': Bic(
+    value: 'FMMS BE B1',
     bankName: 'Fimaser',
     bankShortName: 'Fimaser',
   ),
-  '925': Iban(
-    bic: 'VRIJ',
+  '925': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '926': Iban(
-    bic: 'EBPB BE B1',
+  '926': Bic(
+    value: 'EBPB BE B1',
     bankName: 'Ebury Partners Belgium',
     bankShortName: 'Ebury Partners Belgium',
   ),
-  '927': Iban(
-    bic: 'VRIJ',
+  '927': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '928': Iban(
-    bic: 'VPAY BE 21',
+  '928': Bic(
+    value: 'VPAY BE 21',
     bankName: 'VIVA Payment Services',
     bankShortName: 'VIVA Payment Services',
   ),
-  '929': Iban(
-    bic: 'BBRU BE BB',
+  '929': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '930': Iban(
-    bic: 'BBRU BE BB',
+  '930': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '931': Iban(
-    bic: 'BBRU BE BB',
+  '931': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '932': Iban(
-    bic: 'VRIJ',
+  '932': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '933': Iban(
-    bic: 'VRIJ',
+  '933': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '934': Iban(
-    bic: 'BBRU BE BB',
+  '934': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '935': Iban(
-    bic: 'VRIJ',
+  '935': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '936': Iban(
-    bic: 'BBRU BE BB',
+  '936': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '937': Iban(
-    bic: 'VRIJ',
+  '937': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '938': Iban(
-    bic: 'VRIJ',
+  '938': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '939': Iban(
-    bic: 'BBRU BE BB',
+  '939': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '940': Iban(
-    bic: 'CLIQ BE B1',
+  '940': Bic(
+    value: 'CLIQ BE B1',
     bankName: 'Banque Centrale de Compensation (Clearnet)',
     bankShortName: 'Banque Centrale de Compensation (Clearnet)',
   ),
-  '941': Iban(
-    bic: 'CVMC BE BB',
+  '941': Bic(
+    value: 'CVMC BE BB',
     bankName: 'C A Indosuez Wealth (Europe)',
     bankShortName: 'C A Indosuez Wealth (Europe)',
   ),
-  '942': Iban(
-    bic: 'PUIL BE BB',
+  '942': Bic(
+    value: 'PUIL BE BB',
     bankName: 'Puilaetco Branch of Quintet Private Bank SA',
     bankShortName: 'Puilaetco Branch of Quintet Private Bank SA',
   ),
-  '943': Iban(
-    bic: 'nav',
+  '943': Bic(
+    value: 'nav',
     bankName: 'IC Financial Services SA – Belgian Branch',
     bankShortName: 'IC Financial Services SA – Belgian Branch',
   ),
-  '944': Iban(
-    bic: 'VRIJ',
+  '944': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '945': Iban(
-    bic: 'JPMG BE BB',
+  '945': Bic(
+    value: 'JPMG BE BB',
     bankName: 'J.P. Morgan SE – Brussels Branch',
     bankShortName: 'J.P. Morgan SE – Brussels Branch',
   ),
-  '946': Iban(
-    bic: '-',
+  '946': Bic(
+    value: '-',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '947': Iban(
-    bic: 'VRIJ',
+  '947': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '948': Iban(
-    bic: 'HOMN BE B1',
+  '948': Bic(
+    value: 'HOMN BE B1',
     bankName: 'Mastercard Transaction Services (Europe) NV/SA',
     bankShortName: 'Mastercard Transaction Services (Europe) NV/SA',
   ),
-  '949': Iban(
-    bic: 'HSBC BE BB',
+  '949': Bic(
+    value: 'HSBC BE BB',
     bankName: 'HSBC Continental Europe Belgium',
     bankShortName: 'HSBC Continental Europe Belgium',
   ),
-  '950': Iban(
-    bic: 'CTBK BE BX',
+  '950': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '951': Iban(
-    bic: 'CTBK BE BX',
+  '951': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '952': Iban(
-    bic: 'CTBK BE BX',
+  '952': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '953': Iban(
-    bic: 'CTBK BE BX',
+  '953': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '954': Iban(
-    bic: 'CTBK BE BX',
+  '954': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '955': Iban(
-    bic: 'CTBK BE BX',
+  '955': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '956': Iban(
-    bic: 'CTBK BE BX',
+  '956': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '957': Iban(
-    bic: 'CTBK BE BX',
+  '957': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '958': Iban(
-    bic: 'CTBK BE BX',
+  '958': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '959': Iban(
-    bic: 'CTBK BE BX',
+  '959': Bic(
+    value: 'CTBK BE BX',
     bankName: 'Beobank',
     bankShortName: 'Beobank',
   ),
-  '960': Iban(
-    bic: 'ABNA BE 2A IPC',
+  '960': Bic(
+    value: 'ABNA BE 2A IPC',
     bankName: 'ABN AMRO Bank N.V.',
     bankShortName: 'ABN AMRO Bank N.V.',
   ),
-  '961': Iban(
-    bic: 'BBRU BE BB',
+  '961': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '962': Iban(
-    bic: 'VRIJ',
+  '962': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '963': Iban(
-    bic: 'AXAB BE 22',
+  '963': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '964': Iban(
-    bic: 'FPEBBEB2',
+  '964': Bic(
+    value: 'FPEBBEB2',
     bankName: 'FINANCIERE DES PAIEMENTS ELECTRONIQUES SAS - NICKEL BELGIUM',
     bankShortName:
         'FINANCIERE DES PAIEMENTS ELECTRONIQUES SAS - NICKEL BELGIUM',
   ),
-  '965': Iban(
-    bic: 'VRIJ',
+  '965': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '966': Iban(
-    bic: 'NEEC BE B2',
+  '966': Bic(
+    value: 'NEEC BE B2',
     bankName: 'NewB',
     bankShortName: 'NewB',
   ),
-  '967': Iban(
-    bic: 'TRWI BE B1',
+  '967': Bic(
+    value: 'TRWI BE B1',
     bankName: 'Wise Europe SA',
     bankShortName: 'Wise Europe SA',
   ),
-  '968': Iban(
-    bic: 'ENIB BE BB',
+  '968': Bic(
+    value: 'ENIB BE BB',
     bankName: '',
     bankShortName: '',
   ),
-  '969': Iban(
-    bic: 'PUIL BE BB',
+  '969': Bic(
+    value: 'PUIL BE BB',
     bankName: 'Puilaetco Branch of Quintet Private Bank SA',
     bankShortName: 'Puilaetco Branch of Quintet Private Bank SA',
   ),
-  '970': Iban(
-    bic: 'VRIJ',
+  '970': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '971': Iban(
-    bic: 'BBRU BE BB',
+  '971': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '972': Iban(
-    bic: 'NAP',
+  '972': Bic(
+    value: 'NAP',
     bankName: 'Onbeschikbaar',
     bankShortName: 'Onbeschikbaar',
   ),
-  '973': Iban(
-    bic: 'ARSP BE 22',
+  '973': Bic(
+    value: 'ARSP BE 22',
     bankName: 'Argenta Spaarbank (ASPA)',
     bankShortName: 'Argenta Spaarbank (ASPA)',
   ),
-  '974': Iban(
-    bic: 'PESO BE B1',
+  '974': Bic(
+    value: 'PESO BE B1',
     bankName: 'PPS EU SA',
     bankShortName: 'PPS EU SA',
   ),
-  '975': Iban(
-    bic: 'AXAB BE 22',
+  '975': Bic(
+    value: 'AXAB BE 22',
     bankName: 'AXA Bank Belgium',
     bankShortName: 'AXA Bank Belgium',
   ),
-  '976': Iban(
-    bic: 'BBRU BE BB',
+  '976': Bic(
+    value: 'BBRU BE BB',
     bankName: 'ING België',
     bankShortName: 'ING België',
   ),
-  '977': Iban(
-    bic: 'PAYV BE B2',
+  '977': Bic(
+    value: 'PAYV BE B2',
     bankName: 'Paynovate',
     bankShortName: 'Paynovate',
   ),
-  '978': Iban(
-    bic: 'ARSP BE 22',
+  '978': Bic(
+    value: 'ARSP BE 22',
     bankName: 'Argenta Spaarbank (ASPA)',
     bankShortName: 'Argenta Spaarbank (ASPA)',
   ),
-  '979': Iban(
-    bic: 'ARSP BE 22',
+  '979': Bic(
+    value: 'ARSP BE 22',
     bankName: 'Argenta Spaarbank (ASPA)',
     bankShortName: 'Argenta Spaarbank (ASPA)',
   ),
-  '980': Iban(
-    bic: 'ARSP BE 22',
+  '980': Bic(
+    value: 'ARSP BE 22',
     bankName: 'Argenta Spaarbank (ASPA)',
     bankShortName: 'Argenta Spaarbank (ASPA)',
   ),
-  '981': Iban(
-    bic: 'PCHQ BE BB',
+  '981': Bic(
+    value: 'PCHQ BE BB',
     bankName: 'bpost',
     bankShortName: 'bpost',
   ),
-  '982': Iban(
-    bic: 'PCHQ BE BB',
+  '982': Bic(
+    value: 'PCHQ BE BB',
     bankName: 'bpost',
     bankShortName: 'bpost',
   ),
-  '983': Iban(
-    bic: 'PCHQ BE BB',
+  '983': Bic(
+    value: 'PCHQ BE BB',
     bankName: 'bpost',
     bankShortName: 'bpost',
   ),
-  '984': Iban(
-    bic: 'PCHQ BE BB',
+  '984': Bic(
+    value: 'PCHQ BE BB',
     bankName: 'bpost',
     bankShortName: 'bpost',
   ),
-  '985': Iban(
-    bic: 'VRIJ',
+  '985': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '986': Iban(
-    bic: 'VRIJ',
+  '986': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '987': Iban(
-    bic: 'VRIJ',
+  '987': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '988': Iban(
-    bic: 'VRIJ',
+  '988': Bic(
+    value: 'VRIJ',
     bankName: 'VRIJ',
     bankShortName: 'VRIJ',
   ),
-  '989': Iban(
-    bic: 'nav',
+  '989': Bic(
+    value: 'nav',
     bankName: 'bpost',
     bankShortName: 'bpost',
   ),
-  '990': Iban(
-    bic: 'nav',
+  '990': Bic(
+    value: 'nav',
     bankName: 'Bpost',
     bankShortName: 'Bpost',
   ),
-  '991': Iban(
-    bic: 'nav',
+  '991': Bic(
+    value: 'nav',
     bankName: 'Bpost',
     bankShortName: 'Bpost',
   ),
-  '992': Iban(
-    bic: 'nav',
+  '992': Bic(
+    value: 'nav',
     bankName: 'Bpost',
     bankShortName: 'Bpost',
   ),
-  '993': Iban(
-    bic: 'nav',
+  '993': Bic(
+    value: 'nav',
     bankName: 'Bpost',
     bankShortName: 'Bpost',
   ),
-  '994': Iban(
-    bic: 'nav',
+  '994': Bic(
+    value: 'nav',
     bankName: 'Bpost',
     bankShortName: 'Bpost',
   ),
-  '995': Iban(
-    bic: 'nav',
+  '995': Bic(
+    value: 'nav',
     bankName: 'Bpost',
     bankShortName: 'Bpost',
   ),
-  '996': Iban(
-    bic: 'nav',
+  '996': Bic(
+    value: 'nav',
     bankName: 'Bpost',
     bankShortName: 'Bpost',
   ),
-  '997': Iban(
-    bic: 'nav',
+  '997': Bic(
+    value: 'nav',
     bankName: 'Bpost',
     bankShortName: 'Bpost',
   ),
-  '998': Iban(
-    bic: 'nav',
+  '998': Bic(
+    value: 'nav',
     bankName: 'Bpost',
     bankShortName: 'Bpost',
   ),
-  '999': Iban(
-    bic: 'nav',
+  '999': Bic(
+    value: 'nav',
     bankName: 'Bpost',
     bankShortName: 'Bpost',
   ),

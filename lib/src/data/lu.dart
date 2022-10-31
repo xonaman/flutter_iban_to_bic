@@ -1,694 +1,694 @@
 part of iban_to_bic;
 
-const Map<String, Iban> _luBankCodes = <String, Iban>{
-  '001': Iban(
-    bic: 'BCEE LU LL',
+const Map<String, Bic> _luBankCodes = <String, Bic>{
+  '001': Bic(
+    value: 'BCEE LU LL',
     bankName: 'Banque et Caisse d’Epargne de l’Etat, Luxembourg (Spuerkeess)',
     bankShortName:
         'Banque et Caisse d’Epargne de l’Etat, Luxembourg (Spuerkeess)',
   ),
-  '002': Iban(
-    bic: 'BILL LU LL',
+  '002': Bic(
+    value: 'BILL LU LL',
     bankName: 'Banque Internationale à Luxembourg S.A.',
     bankShortName: 'Banque Internationale à Luxembourg S.A.',
   ),
-  '003': Iban(
-    bic: 'BGLL LU LL',
+  '003': Bic(
+    value: 'BGLL LU LL',
     bankName: 'BGL BNP Paribas S.A.',
     bankShortName: 'BGL BNP Paribas S.A.',
   ),
-  '007': Iban(
-    bic: 'BSUI LU LL',
+  '007': Bic(
+    value: 'BSUI LU LL',
     bankName: 'CACEIS Bank Luxembourg Branch',
     bankShortName: 'CACEIS Bank Luxembourg Branch',
   ),
-  '008': Iban(
-    bic: 'BLUX LU LL',
+  '008': Bic(
+    value: 'BLUX LU LL',
     bankName: 'Banque de Luxembourg',
     bankShortName: 'Banque de Luxembourg',
   ),
-  '009': Iban(
-    bic: 'CCRA LU LL',
+  '009': Bic(
+    value: 'CCRA LU LL',
     bankName: 'Banque Raiffeisen',
     bankShortName: 'Banque Raiffeisen',
   ),
-  '010': Iban(
-    bic: 'FOTN LU LL',
+  '010': Bic(
+    value: 'FOTN LU LL',
     bankName: 'Fortuna Banque s.c.',
     bankShortName: 'Fortuna Banque s.c.',
   ),
-  '014': Iban(
-    bic: 'CELL LU LL',
+  '014': Bic(
+    value: 'CELL LU LL',
     bankName: 'ING Luxembourg',
     bankShortName: 'ING Luxembourg',
   ),
-  '025': Iban(
-    bic: 'BMEC LU LL',
+  '025': Bic(
+    value: 'BMEC LU LL',
     bankName: 'Banque BCP S.A.',
     bankShortName: 'Banque BCP S.A.',
   ),
-  '032': Iban(
-    bic: 'BAERLULU',
+  '032': Bic(
+    value: 'BAERLULU',
     bankName: 'Bank Julius Baer Europe S.A.',
     bankShortName: 'Bank Julius Baer Europe S.A.',
   ),
-  '033': Iban(
-    bic: 'BSCHLULL',
+  '033': Bic(
+    value: 'BSCHLULL',
     bankName: 'Banco Santander (Brasil) S.A., Luxembourg Branch',
     bankShortName: 'Banco Santander (Brasil) S.A., Luxembourg Branch',
   ),
-  '034': Iban(
-    bic: 'CITI LU LX',
+  '034': Bic(
+    value: 'CITI LU LX',
     bankName: 'Citibank Europe plc, Luxembourg Branch',
     bankShortName: 'Citibank Europe plc, Luxembourg Branch',
   ),
-  '036': Iban(
-    bic: 'DEUT LU LL',
+  '036': Bic(
+    value: 'DEUT LU LL',
     bankName: 'Deutsche Bank Luxembourg S.A.',
     bankShortName: 'Deutsche Bank Luxembourg S.A.',
   ),
-  '038': Iban(
-    bic: 'DBSA LU LL',
+  '038': Bic(
+    value: 'DBSA LU LL',
     bankName: 'Union Bancaire Privée (Europe) S.A.',
     bankShortName: 'Union Bancaire Privée (Europe) S.A.',
   ),
-  '051': Iban(
-    bic: 'NOLA LU LL',
+  '051': Bic(
+    value: 'NOLA LU LL',
     bankName: 'NORD/LB Luxembourg S.A. Covered Bond Bank',
     bankShortName: 'NORD/LB Luxembourg S.A. Covered Bond Bank',
   ),
-  '058': Iban(
-    bic: 'WBWC LU LL',
+  '058': Bic(
+    value: 'WBWC LU LL',
     bankName: 'European Depositary Bank S.A.',
     bankShortName: 'European Depositary Bank S.A.',
   ),
-  '060': Iban(
-    bic: 'SGABLU2S',
+  '060': Bic(
+    value: 'SGABLU2S',
     bankName: 'Société Générale Luxembourg',
     bankShortName: 'Société Générale Luxembourg',
   ),
-  '061': Iban(
-    bic: 'SGAB LU LL',
+  '061': Bic(
+    value: 'SGAB LU LL',
     bankName: 'Société Générale Luxembourg',
     bankShortName: 'Société Générale Luxembourg',
   ),
-  '062': Iban(
-    bic: 'HAUK LU LL',
+  '062': Bic(
+    value: 'HAUK LU LL',
     bankName: 'Hauck & Aufhäuser Privatbankiers AG, Niederlassung Luxemburg',
     bankShortName:
         'Hauck & Aufhäuser Privatbankiers AG, Niederlassung Luxemburg',
   ),
-  '064': Iban(
-    bic: 'ESSE LU LL',
+  '064': Bic(
+    value: 'ESSE LU LL',
     bankName: 'Skandinaviska Enskilda Banken AB (publ), Luxembourg Branch',
     bankShortName: 'Skandinaviska Enskilda Banken AB (publ), Luxembourg Branch',
   ),
-  '067': Iban(
-    bic: 'CHAS LU LX',
+  '067': Bic(
+    value: 'CHAS LU LX',
     bankName: 'J.P. Morgan Bank Luxembourg S.A.',
     bankShortName: 'J.P. Morgan Bank Luxembourg S.A.',
   ),
-  '070': Iban(
-    bic: 'UBSW LU LL',
+  '070': Bic(
+    value: 'UBSW LU LL',
     bankName: 'UBS EUROPE SE, Luxembourg Branch',
     bankShortName: 'UBS EUROPE SE, Luxembourg Branch',
   ),
-  '077': Iban(
-    bic: 'MUGC LU LL',
+  '077': Bic(
+    value: 'MUGC LU LL',
     bankName: 'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
     bankShortName:
         'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
   ),
-  '078': Iban(
-    bic: 'CRES LU LL',
+  '078': Bic(
+    value: 'CRES LU LL',
     bankName: 'Credit Suisse (Luxembourg) S.A.',
     bankShortName: 'Credit Suisse (Luxembourg) S.A.',
   ),
-  '079': Iban(
-    bic: 'MUGCLULLBAS',
+  '079': Bic(
+    value: 'MUGCLULLBAS',
     bankName: 'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
     bankShortName:
         'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
   ),
-  '080': Iban(
-    bic: 'NIKO LU LL',
+  '080': Bic(
+    value: 'NIKO LU LL',
     bankName: 'SMBC Nikko Bank (Luxembourg) S.A.',
     bankShortName: 'SMBC Nikko Bank (Luxembourg) S.A.',
   ),
-  '082': Iban(
-    bic: 'EWUB LU LL',
+  '082': Bic(
+    value: 'EWUB LU LL',
     bankName: 'East-West United Bank S.A.',
     bankShortName: 'East-West United Bank S.A.',
   ),
-  '083': Iban(
-    bic: 'DEGR LU LL',
+  '083': Bic(
+    value: 'DEGR LU LL',
     bankName: 'Banque Degroof Petercam Luxembourg S.A.',
     bankShortName: 'Banque Degroof Petercam Luxembourg S.A.',
   ),
-  '087': Iban(
-    bic: 'SEBK LU LL',
+  '087': Bic(
+    value: 'SEBK LU LL',
     bankName: 'Intesa Sanpaolo Bank Luxembourg S.A.',
     bankShortName: 'Intesa Sanpaolo Bank Luxembourg S.A.',
   ),
-  '093': Iban(
-    bic: 'DABA LU LL',
+  '093': Bic(
+    value: 'DABA LU LL',
     bankName: 'Danske Bank International S.A.',
     bankShortName: 'Danske Bank International S.A.',
   ),
-  '097': Iban(
-    bic: 'HSHN LU LL',
+  '097': Bic(
+    value: 'HSHN LU LL',
     bankName: 'HCOB Securities S.A.',
     bankShortName: 'HCOB Securities S.A.',
   ),
-  '104': Iban(
-    bic: 'SNCI LU L1',
+  '104': Bic(
+    value: 'SNCI LU L1',
     bankName: 'Société Nationale de Crédit et d’Investissement',
     bankShortName: 'Société Nationale de Crédit et d’Investissement',
   ),
-  '107': Iban(
-    bic: 'GENO LU LL',
+  '107': Bic(
+    value: 'GENO LU LL',
     bankName: 'DZ PRIVATBANK S.A.',
     bankShortName: 'DZ PRIVATBANK S.A.',
   ),
-  '111': Iban(
-    bic: 'CCPL LU LL',
+  '111': Bic(
+    value: 'CCPL LU LL',
     bankName: 'POST Group',
     bankShortName: 'POST Group',
   ),
-  '116': Iban(
-    bic: 'BKCH LU LL',
+  '116': Bic(
+    value: 'BKCH LU LL',
     bankName: 'Bank of China Limited Luxembourg Branch',
     bankShortName: 'Bank of China Limited Luxembourg Branch',
   ),
-  '123': Iban(
-    bic: 'AGRI LU LA',
+  '123': Bic(
+    value: 'AGRI LU LA',
     bankName: 'CA Indosuez Wealth (Europe)',
     bankShortName: 'CA Indosuez Wealth (Europe)',
   ),
-  '131': Iban(
-    bic: 'SPLB LU L1',
+  '131': Bic(
+    value: 'SPLB LU L1',
     bankName: 'State Street Bank Luxembourg S.A. (formerly Sanpaolo Bank S.A.)',
     bankShortName:
         'State Street Bank Luxembourg S.A. (formerly Sanpaolo Bank S.A.)',
   ),
-  '133': Iban(
-    bic: 'BBDE LU LL',
+  '133': Bic(
+    value: 'BBDE LU LL',
     bankName: 'Banco Bradesco Europa S.A.',
     bankShortName: 'Banco Bradesco Europa S.A.',
   ),
-  '134': Iban(
-    bic: 'BPCP LU LL',
+  '134': Bic(
+    value: 'BPCP LU LL',
     bankName: 'Banque de Commerce et de Placements S.A., Luxembourg Branch',
     bankShortName:
         'Banque de Commerce et de Placements S.A., Luxembourg Branch',
   ),
-  '135': Iban(
-    bic: 'DGZFLULI',
+  '135': Bic(
+    value: 'DGZFLULI',
     bankName: 'DekaBank Deutsche Girozentrale, Succursale de Luxembourg',
     bankShortName: 'DekaBank Deutsche Girozentrale, Succursale de Luxembourg',
   ),
-  '143': Iban(
-    bic: 'UBNL LU LL',
+  '143': Bic(
+    value: 'UBNL LU LL',
     bankName: 'DNB Luxembourg S.A.',
     bankShortName: 'DNB Luxembourg S.A.',
   ),
-  '144': Iban(
-    bic: 'IKBD LU L1',
+  '144': Bic(
+    value: 'IKBD LU L1',
     bankName: 'IKB Deutsche Industriebank AG, Filiale Luxemburg',
     bankShortName: 'IKB Deutsche Industriebank AG, Filiale Luxemburg',
   ),
-  '146': Iban(
-    bic: 'STBC LU LL',
+  '146': Bic(
+    value: 'STBC LU LL',
     bankName: 'Sumitomo Mitsui Trust Bank (Luxembourg) S.A.',
     bankShortName: 'Sumitomo Mitsui Trust Bank (Luxembourg) S.A.',
   ),
-  '147': Iban(
-    bic: 'BLIC LU LX',
+  '147': Bic(
+    value: 'BLIC LU LX',
     bankName: 'HSBC Private Bank (Luxembourg) S.A.',
     bankShortName: 'HSBC Private Bank (Luxembourg) S.A.',
   ),
-  '148': Iban(
-    bic: 'BSAF LU LL',
+  '148': Bic(
+    value: 'BSAF LU LL',
     bankName: 'Banque J. Safra Sarasin (Luxembourg) SA',
     bankShortName: 'Banque J. Safra Sarasin (Luxembourg) SA',
   ),
-  '149': Iban(
-    bic: 'BNPA LU LS',
+  '149': Bic(
+    value: 'BNPA LU LS',
     bankName: 'BNP Paribas, Luxembourg Branch',
     bankShortName: 'BNP Paribas, Luxembourg Branch',
   ),
-  '151': Iban(
-    bic: 'ERBK LU LL',
+  '151': Bic(
+    value: 'ERBK LU LL',
     bankName: 'Eurobank Private Bank Luxembourg S.A.',
     bankShortName: 'Eurobank Private Bank Luxembourg S.A.',
   ),
-  '158': Iban(
-    bic: 'UNCR LU LL',
+  '158': Bic(
+    value: 'UNCR LU LL',
     bankName: 'UniCredit International Bank (Luxembourg) S.A.',
     bankShortName: 'UniCredit International Bank (Luxembourg) S.A.',
   ),
-  '162': Iban(
-    bic: 'RBOSLULL',
+  '162': Bic(
+    value: 'RBOSLULL',
     bankName:
         'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
     bankShortName:
         'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
   ),
-  '164': Iban(
-    bic: 'HSHN LU LB',
+  '164': Bic(
+    value: 'HSHN LU LB',
     bankName: 'Hamburg Commercial Bank AG Luxembourg Branch',
     bankShortName: 'Hamburg Commercial Bank AG Luxembourg Branch',
   ),
-  '167': Iban(
-    bic: 'BBDA LU LX',
+  '167': Bic(
+    value: 'BBDA LU LX',
     bankName: 'HSBC Continental Europe, Luxembourg',
     bankShortName: 'HSBC Continental Europe, Luxembourg',
   ),
-  '172': Iban(
-    bic: 'PRIB LU LL',
+  '172': Bic(
+    value: 'PRIB LU LL',
     bankName: 'Edmond de Rothschild (Europe)',
     bankShortName: 'Edmond de Rothschild (Europe)',
   ),
-  '177': Iban(
-    bic: 'BKBK LU LL',
+  '177': Bic(
+    value: 'BKBK LU LL',
     bankName: 'Bankinter Luxembourg S.A.',
     bankShortName: 'Bankinter Luxembourg S.A.',
   ),
-  '178': Iban(
-    bic: 'BBHC LU LL',
+  '178': Bic(
+    value: 'BBHC LU LL',
     bankName: 'Brown Brothers Harriman (Luxembourg) S.C.A.',
     bankShortName: 'Brown Brothers Harriman (Luxembourg) S.C.A.',
   ),
-  '181': Iban(
-    bic: 'MHTB LU LL',
+  '181': Bic(
+    value: 'MHTB LU LL',
     bankName: 'Mizuho Trust & Banking (Luxembourg) S.A.',
     bankShortName: 'Mizuho Trust & Banking (Luxembourg) S.A.',
   ),
-  '183': Iban(
-    bic: 'VPBV LU LL',
+  '183': Bic(
+    value: 'VPBV LU LL',
     bankName: 'VP Bank (Luxembourg) SA',
     bankShortName: 'VP Bank (Luxembourg) SA',
   ),
-  '193': Iban(
-    bic: 'CMCI LU L1',
+  '193': Bic(
+    value: 'CMCI LU L1',
     bankName: 'Banque Transatlantique Luxembourg S.A.',
     bankShortName: 'Banque Transatlantique Luxembourg S.A.',
   ),
-  '197': Iban(
-    bic: 'NATX LU LL',
+  '197': Bic(
+    value: 'NATX LU LL',
     bankName: 'Natixis Wealth Management Luxembourg',
     bankShortName: 'Natixis Wealth Management Luxembourg',
   ),
-  '198': Iban(
-    bic: 'PICT LU LX',
+  '198': Bic(
+    value: 'PICT LU LX',
     bankName: 'Pictet & Cie (Europe) S.A.',
     bankShortName: 'Pictet & Cie (Europe) S.A.',
   ),
-  '204': Iban(
-    bic: 'NBLX LU LL',
+  '204': Bic(
+    value: 'NBLX LU LL',
     bankName: 'Nomura Bank (Luxembourg) S.A.',
     bankShortName: 'Nomura Bank (Luxembourg) S.A.',
   ),
-  '222': Iban(
-    bic: 'BKCHLULA',
+  '222': Bic(
+    value: 'BKCHLULA',
     bankName: 'Bank of China (Luxembourg) S.A.',
     bankShortName: 'Bank of China (Luxembourg) S.A.',
   ),
-  '229': Iban(
-    bic: 'HAND LU LB',
+  '229': Bic(
+    value: 'HAND LU LB',
     bankName: 'Svenska Handelsbanken AB (Publ), Luxembourg Branch',
     bankShortName: 'Svenska Handelsbanken AB (Publ), Luxembourg Branch',
   ),
-  '250': Iban(
-    bic: 'CHASLULW',
+  '250': Bic(
+    value: 'CHASLULW',
     bankName: 'J.P. Morgan Bank Luxembourg S.A.',
     bankShortName: 'J.P. Morgan Bank Luxembourg S.A.',
   ),
-  '259': Iban(
-    bic: 'DEUT LU LB',
+  '259': Bic(
+    value: 'DEUT LU LB',
     bankName: 'Deutsche Bank AG, Filiale Luxemburg',
     bankShortName: 'Deutsche Bank AG, Filiale Luxemburg',
   ),
-  '265': Iban(
-    bic: 'PBNKLULL',
+  '265': Bic(
+    value: 'PBNKLULL',
     bankName:
         'Deutsche Bank AG, Filiale Luxemburg (formerly Postbank Luxemburg)',
     bankShortName:
         'Deutsche Bank AG, Filiale Luxemburg (formerly Postbank Luxemburg)',
   ),
-  '281': Iban(
-    bic: 'FISPLU22',
+  '281': Bic(
+    value: 'FISPLU22',
     bankName: 'FIS Privatbank - die Unternehmerbank',
     bankShortName: 'FIS Privatbank - die Unternehmerbank',
   ),
-  '284': Iban(
-    bic: 'HAVLLULL',
+  '284': Bic(
+    value: 'HAVLLULL',
     bankName: 'Banque Havilland S.A.',
     bankShortName: 'Banque Havilland S.A.',
   ),
-  '289': Iban(
-    bic: 'CEDE LU LL',
+  '289': Bic(
+    value: 'CEDE LU LL',
     bankName: 'Clearstream Banking',
     bankShortName: 'Clearstream Banking',
   ),
-  '298': Iban(
-    bic: 'BPMO LU LS',
+  '298': Bic(
+    value: 'BPMO LU LS',
     bankName: 'BPER Bank Luxembourg S.A.',
     bankShortName: 'BPER Bank Luxembourg S.A.',
   ),
-  '301': Iban(
-    bic: 'EFGBLULX',
+  '301': Bic(
+    value: 'EFGBLULX',
     bankName: 'EFG Bank (Luxembourg) S.A.',
     bankShortName: 'EFG Bank (Luxembourg) S.A.',
   ),
-  '305': Iban(
-    bic: 'DELE LU LL',
+  '305': Bic(
+    value: 'DELE LU LL',
     bankName: 'Delen Private Bank Luxembourg S.A.',
     bankShortName: 'Delen Private Bank Luxembourg S.A.',
   ),
-  '308': Iban(
-    bic: 'FIBK LU LL',
+  '308': Bic(
+    value: 'FIBK LU LL',
     bankName: 'Fideuram Bank (Luxembourg) S.A.',
     bankShortName: 'Fideuram Bank (Luxembourg) S.A.',
   ),
-  '309': Iban(
-    bic: 'FIBKLULLFPB',
+  '309': Bic(
+    value: 'FIBKLULLFPB',
     bankName: 'Fideuram Bank (Luxembourg) S.A.',
     bankShortName: 'Fideuram Bank (Luxembourg) S.A.',
   ),
-  '316': Iban(
-    bic: 'ICBK LU LL',
+  '316': Bic(
+    value: 'ICBK LU LL',
     bankName: 'Industrial and Commercial Bank of China Ltd., Luxembourg Branch',
     bankShortName:
         'Industrial and Commercial Bank of China Ltd., Luxembourg Branch',
   ),
-  '317': Iban(
-    bic: 'JODE LU L1',
+  '317': Bic(
+    value: 'JODE LU L1',
     bankName: 'John Deere Bank S.A.',
     bankShortName: 'John Deere Bank S.A.',
   ),
-  '318': Iban(
-    bic: 'HAVL LU LL',
+  '318': Bic(
+    value: 'HAVL LU LL',
     bankName: 'Banque Havilland S.A.',
     bankShortName: 'Banque Havilland S.A.',
   ),
-  '324': Iban(
-    bic: 'SWQBLULL',
+  '324': Bic(
+    value: 'SWQBLULL',
     bankName: 'Swissquote Bank Europe S.A.',
     bankShortName: 'Swissquote Bank Europe S.A.',
   ),
-  '328': Iban(
-    bic: 'PARB LU LL',
+  '328': Bic(
+    value: 'PARB LU LL',
     bankName: 'BNP Paribas, Luxembourg Branch',
     bankShortName: 'BNP Paribas, Luxembourg Branch',
   ),
-  '338': Iban(
-    bic: 'CRES LU LX',
+  '338': Bic(
+    value: 'CRES LU LX',
     bankName: 'Credit Suisse AG, Luxembourg Branch',
     bankShortName: 'Credit Suisse AG, Luxembourg Branch',
   ),
-  '340': Iban(
-    bic: 'IRVTLULX',
+  '340': Bic(
+    value: 'IRVTLULX',
     bankName: 'The Bank of New York Mellon S.A./N.V., Luxembourg Branch',
     bankShortName: 'The Bank of New York Mellon S.A./N.V., Luxembourg Branch',
   ),
-  '341': Iban(
-    bic: 'FETA LU LL',
+  '341': Bic(
+    value: 'FETA LU LL',
     bankName: 'RBC Investor Services Bank S.A.',
     bankShortName: 'RBC Investor Services Bank S.A.',
   ),
-  '342': Iban(
-    bic: 'MEOI LU L1',
+  '342': Bic(
+    value: 'MEOI LU L1',
     bankName: 'Mediobanca International (Luxembourg) S.A.',
     bankShortName: 'Mediobanca International (Luxembourg) S.A.',
   ),
-  '343': Iban(
-    bic: 'EFGB LU LX',
+  '343': Bic(
+    value: 'EFGB LU LX',
     bankName: 'EFG Bank (Luxembourg) S.A.',
     bankShortName: 'EFG Bank (Luxembourg) S.A.',
   ),
-  '344': Iban(
-    bic: 'ADVZ LU LL',
+  '344': Bic(
+    value: 'ADVZ LU LL',
     bankName: 'Advanzia Bank S.A.',
     bankShortName: 'Advanzia Bank S.A.',
   ),
-  '347': Iban(
-    bic: 'COBA LU LU',
+  '347': Bic(
+    value: 'COBA LU LU',
     bankName: 'Commerzbank AG, Filiale Luxemburg',
     bankShortName: 'Commerzbank AG, Filiale Luxemburg',
   ),
-  '348': Iban(
-    bic: 'ICBK LU LU',
+  '348': Bic(
+    value: 'ICBK LU LU',
     bankName: 'Industrial and Commercial Bank of China (Europe) S.A.',
     bankShortName: 'Industrial and Commercial Bank of China (Europe) S.A.',
   ),
-  '349': Iban(
-    bic: 'CITC LU LL',
+  '349': Bic(
+    value: 'CITC LU LL',
     bankName: 'Citco Bank Nederland N.V., Luxembourg Branch',
     bankShortName: 'Citco Bank Nederland N.V., Luxembourg Branch',
   ),
-  '350': Iban(
-    bic: 'CBPX LU LL',
+  '350': Bic(
+    value: 'CBPX LU LL',
     bankName: 'Compagnie de Banque Privée Quilvest S.A.',
     bankShortName: 'Compagnie de Banque Privée Quilvest S.A.',
   ),
-  '351': Iban(
-    bic: 'PPLX LU LL',
+  '351': Bic(
+    value: 'PPLX LU LL',
     bankName: 'PayPal (Europe) S.à r.l. et Cie, S.C.A.',
     bankShortName: 'PayPal (Europe) S.à r.l. et Cie, S.C.A.',
   ),
-  '358': Iban(
-    bic: 'SBOS LU LX',
+  '358': Bic(
+    value: 'SBOS LU LX',
     bankName:
         'State Street Bank International GmbH, Zweigniederlassung Luxemburg',
     bankShortName:
         'State Street Bank International GmbH, Zweigniederlassung Luxemburg',
   ),
-  '359': Iban(
-    bic: 'KEYTLULL',
+  '359': Bic(
+    value: 'KEYTLULL',
     bankName: 'Keytrade Bank Luxembourg S.A.',
     bankShortName: 'Keytrade Bank Luxembourg S.A.',
   ),
-  '360': Iban(
-    bic: 'BACA LU LL',
+  '360': Bic(
+    value: 'BACA LU LL',
     bankName: 'Andbank Luxembourg',
     bankShortName: 'Andbank Luxembourg',
   ),
-  '361': Iban(
-    bic: 'BBPP LU LL',
+  '361': Bic(
+    value: 'BBPP LU LL',
     bankName: 'Banque de Patrimoines Privés',
     bankShortName: 'Banque de Patrimoines Privés',
   ),
-  '364': Iban(
-    bic: 'LOCY LU LL',
+  '364': Bic(
+    value: 'LOCY LU LL',
     bankName: 'Lombard Odier (Europe) S.A.',
     bankShortName: 'Lombard Odier (Europe) S.A.',
   ),
-  '365': Iban(
-    bic: 'BESC LU LL',
+  '365': Bic(
+    value: 'BESC LU LL',
     bankName: 'Novo Banco S.A., Succursale de Luxembourg',
     bankShortName: 'Novo Banco S.A., Succursale de Luxembourg',
   ),
-  '368': Iban(
-    bic: 'BMAR LU 2M',
+  '368': Bic(
+    value: 'BMAR LU 2M',
     bankName: 'Banca March, S.A., Luxembourg Branch',
     bankShortName: 'Banca March, S.A., Luxembourg Branch',
   ),
-  '371': Iban(
-    bic: 'SAFRLULLCCY',
+  '371': Bic(
+    value: 'SAFRLULLCCY',
     bankName: 'Banco Safra S.A., Luxembourg Branch',
     bankShortName: 'Banco Safra S.A., Luxembourg Branch',
   ),
-  '372': Iban(
-    bic: 'BEMO LU LL',
+  '372': Bic(
+    value: 'BEMO LU LL',
     bankName: 'BEMO Europe - Banque Privée',
     bankShortName: 'BEMO Europe - Banque Privée',
   ),
-  '374': Iban(
-    bic: 'HSBCLULL',
+  '374': Bic(
+    value: 'HSBCLULL',
     bankName: 'HSBC Continental Europe, Luxembourg',
     bankShortName: 'HSBC Continental Europe, Luxembourg',
   ),
-  '375': Iban(
-    bic: 'PCBC LU LL',
+  '375': Bic(
+    value: 'PCBC LU LL',
     bankName: 'China Construction Bank (Europe) S.A.',
     bankShortName: 'China Construction Bank (Europe) S.A.',
   ),
-  '377': Iban(
-    bic: 'PCBC LU LX',
+  '377': Bic(
+    value: 'PCBC LU LX',
     bankName: 'China Construction Bank Corporation, Luxembourg Branch',
     bankShortName: 'China Construction Bank Corporation, Luxembourg Branch',
   ),
-  '379': Iban(
-    bic: 'GAZP LU LL',
+  '379': Bic(
+    value: 'GAZP LU LL',
     bankName: 'Bank GPB International S.A.',
     bankShortName: 'Bank GPB International S.A.',
   ),
-  '381': Iban(
-    bic: 'MIRA LU LL',
+  '381': Bic(
+    value: 'MIRA LU LL',
     bankName: 'Mirabaud & Cie (Europe) S.A.',
     bankShortName: 'Mirabaud & Cie (Europe) S.A.',
   ),
-  '386': Iban(
-    bic: 'ALLF LU LL',
+  '386': Bic(
+    value: 'ALLF LU LL',
     bankName: 'Allfunds Bank International S.A.',
     bankShortName: 'Allfunds Bank International S.A.',
   ),
-  '390': Iban(
-    bic: 'COMM LU LL',
+  '390': Bic(
+    value: 'COMM LU LL',
     bankName: 'Bank of Communications (Luxembourg) S.A.',
     bankShortName: 'Bank of Communications (Luxembourg) S.A.',
   ),
-  '391': Iban(
-    bic: 'CMBC LU LL',
+  '391': Bic(
+    value: 'CMBC LU LL',
     bankName: 'China Merchants Bank Co., Ltd., Luxembourg Branch',
     bankShortName: 'China Merchants Bank Co., Ltd., Luxembourg Branch',
   ),
-  '392': Iban(
-    bic: 'ABOC LU LL',
+  '392': Bic(
+    value: 'ABOC LU LL',
     bankName: 'Agricultural Bank of China (Luxembourg) S.A.',
     bankShortName: 'Agricultural Bank of China (Luxembourg) S.A.',
   ),
-  '393': Iban(
-    bic: 'ABOCLULB',
+  '393': Bic(
+    value: 'ABOCLULB',
     bankName: 'Agricultural Bank of China, Luxembourg Branch',
     bankShortName: 'Agricultural Bank of China, Luxembourg Branch',
   ),
-  '400': Iban(
-    bic: 'RRBALULL',
+  '400': Bic(
+    value: 'RRBALULL',
     bankName: 'RiverBank S.A.',
     bankShortName: 'RiverBank S.A.',
   ),
-  '404': Iban(
-    bic: 'HYVELULL',
+  '404': Bic(
+    value: 'HYVELULL',
     bankName: 'UniCredit Bank AG Luxembourg Branch',
     bankShortName: 'UniCredit Bank AG Luxembourg Branch',
   ),
-  '408': Iban(
-    bic: 'BCIRLULL',
+  '408': Bic(
+    value: 'BCIRLULL',
     bankName: 'Banking Circle S.A.',
     bankShortName: 'Banking Circle S.A.',
   ),
-  '409': Iban(
-    bic: 'BARCLULL',
+  '409': Bic(
+    value: 'BARCLULL',
     bankName: 'Barclays Bank Ireland plc, Luxembourg Branch',
     bankShortName: 'Barclays Bank Ireland plc, Luxembourg Branch',
   ),
-  '411': Iban(
-    bic: 'CAIXLULL',
+  '411': Bic(
+    value: 'CAIXLULL',
     bankName: 'CaixaBank Wealth Management Luxembourg S.A.',
     bankShortName: 'CaixaBank Wealth Management Luxembourg S.A.',
   ),
-  '413': Iban(
-    bic: 'CRBALULL',
+  '413': Bic(
+    value: 'CRBALULL',
     bankName: 'Alpha Bank S.A., Luxembourg Branch',
     bankShortName: 'Alpha Bank S.A., Luxembourg Branch',
   ),
-  '414': Iban(
-    bic: 'USBKLU2L',
+  '414': Bic(
+    value: 'USBKLU2L',
     bankName: 'Elavon Financial Services DAC - Luxembourg Branch',
     bankShortName: 'Elavon Financial Services DAC - Luxembourg Branch',
   ),
-  '606': Iban(
-    bic: 'OLKILUL1',
+  '606': Bic(
+    value: 'OLKILUL1',
     bankName: 'Olky Payment Service Provider S.A.',
     bankShortName: 'Olky Payment Service Provider S.A.',
   ),
-  '613': Iban(
-    bic: 'ONPXLULM',
+  '613': Bic(
+    value: 'ONPXLULM',
     bankName: 'iBAN-X S.A.',
     bankShortName: 'iBAN-X S.A.',
   ),
-  '619': Iban(
-    bic: 'SOXALULL',
+  '619': Bic(
+    value: 'SOXALULL',
     bankName: 'Sogexia S.A.',
     bankShortName: 'Sogexia S.A.',
   ),
-  '625': Iban(
-    bic: 'PANXLUL2',
+  '625': Bic(
+    value: 'PANXLUL2',
     bankName: 'UnifiedPost Payments S.A. - Luxembourg Branch',
     bankShortName: 'UnifiedPost Payments S.A. - Luxembourg Branch',
   ),
-  '699': Iban(
-    bic: 'RBOSLULL',
+  '699': Bic(
+    value: 'RBOSLULL',
     bankName:
         'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
     bankShortName:
         'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
   ),
-  '700': Iban(
-    bic: 'EWUB LU L2',
+  '700': Bic(
+    value: 'EWUB LU L2',
     bankName: 'East-West United Bank S.A.',
     bankShortName: 'East-West United Bank S.A.',
   ),
-  '701': Iban(
-    bic: 'RAPSLUL1',
+  '701': Bic(
+    value: 'RAPSLUL1',
     bankName: 'Rakuten Europe Bank S.A.',
     bankShortName: 'Rakuten Europe Bank S.A.',
   ),
-  '705': Iban(
-    bic: 'KBLX LU LL',
+  '705': Bic(
+    value: 'KBLX LU LL',
     bankName: 'Quintet Private Bank (Europe) S.A.',
     bankShortName: 'Quintet Private Bank (Europe) S.A.',
   ),
-  '711': Iban(
-    bic: 'DOCKLU22',
+  '711': Bic(
+    value: 'DOCKLU22',
     bankName: 'Dock Financial S.A.',
     bankShortName: 'Dock Financial S.A.',
   ),
-  '713': Iban(
-    bic: 'IBNXLULM',
+  '713': Bic(
+    value: 'IBNXLULM',
     bankName: 'iBAN-X S.A.',
     bankShortName: 'iBAN-X S.A.',
   ),
-  '777': Iban(
-    bic: 'MUGCLULX',
+  '777': Bic(
+    value: 'MUGCLULX',
     bankName: 'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
     bankShortName:
         'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
   ),
-  '802': Iban(
-    bic: 'SATYLUL1SRV',
+  '802': Bic(
+    value: 'SATYLUL1SRV',
     bankName: 'Satispay Europe S.A.',
     bankShortName: 'Satispay Europe S.A.',
   ),
-  '805': Iban(
-    bic: 'MAGYLUL1',
+  '805': Bic(
+    value: 'MAGYLUL1',
     bankName: 'MANGOPAY S.A.',
     bankShortName: 'MANGOPAY S.A.',
   ),
-  '807': Iban(
-    bic: 'SSWILUL1',
+  '807': Bic(
+    value: 'SSWILUL1',
     bankName: 'SnapSwap International S.A.',
     bankShortName: 'SnapSwap International S.A.',
   ),
-  '810': Iban(
-    bic: 'SATYLUL1XXX',
+  '810': Bic(
+    value: 'SATYLUL1XXX',
     bankName: 'Satispay Europe S.A.',
     bankShortName: 'Satispay Europe S.A.',
   ),
-  '811': Iban(
-    bic: 'DOCKLUL2',
+  '811': Bic(
+    value: 'DOCKLUL2',
     bankName: 'Dock Financial S.A.',
     bankShortName: 'Dock Financial S.A.',
   ),
-  '813': Iban(
-    bic: 'VPAYLUL2',
+  '813': Bic(
+    value: 'VPAYLUL2',
     bankName: 'Viva Payment Services S.A. - Luxembourg Branch',
     bankShortName: 'Viva Payment Services S.A. - Luxembourg Branch',
   ),
-  '815': Iban(
-    bic: 'JOEULUL2',
+  '815': Bic(
+    value: 'JOEULUL2',
     bankName: 'Joompay Europe S.A.',
     bankShortName: 'Joompay Europe S.A.',
   ),
-  '998': Iban(
-    bic: 'BEIL LU LL',
+  '998': Bic(
+    value: 'BEIL LU LL',
     bankName: 'Banque européenne d’investissement',
     bankShortName: 'Banque européenne d’investissement',
   ),
-  '999': Iban(
-    bic: 'BCLX LU LL',
+  '999': Bic(
+    value: 'BCLX LU LL',
     bankName: 'Banque centrale du Luxembourg',
     bankShortName: 'Banque centrale du Luxembourg',
   ),

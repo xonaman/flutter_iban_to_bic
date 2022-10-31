@@ -1,24858 +1,24858 @@
 part of iban_to_bic;
 
-const Map<String, Iban> _deBankCodes = <String, Iban>{
-  '10000000': Iban(
-    bic: 'MARKDEF1100',
+const Map<String, Bic> _deBankCodes = <String, Bic>{
+  '10000000': Bic(
+    value: 'MARKDEF1100',
     bankName: 'Bundesbank',
     bankShortName: 'Bundesbank',
     bankPostcode: '10591',
     bankLocation: 'Berlin',
   ),
-  '10010010': Iban(
-    bic: 'PBNKDEFFXXX',
+  '10010010': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '10559',
     bankLocation: 'Berlin',
   ),
-  '10010123': Iban(
-    bic: 'QNTODEB2XXX',
+  '10010123': Bic(
+    value: 'QNTODEB2XXX',
     bankName: 'OLINDA Zweigniederlassung Deutschland',
     bankShortName: 'Olinda, Berlin',
     bankPostcode: '10785',
     bankLocation: 'Berlin',
   ),
-  '10010300': Iban(
-    bic: 'KLRNDEBEXXX',
+  '10010300': Bic(
+    value: 'KLRNDEBEXXX',
     bankName: 'Klarna Bank German Branch',
     bankShortName: 'Klarna Bank, Berlin',
     bankPostcode: '10115',
     bankLocation: 'Berlin',
   ),
-  '10010424': Iban(
-    bic: 'AARBDE5W100',
+  '10010424': Bic(
+    value: 'AARBDE5W100',
     bankName: 'Aareal Bank',
     bankShortName: 'Aareal Bank',
     bankPostcode: '10666',
     bankLocation: 'Berlin',
   ),
-  '10010500': Iban(
-    bic: 'AFOPDEB2XXX',
+  '10010500': Bic(
+    value: 'AFOPDEB2XXX',
     bankName: 'Afone Paiement, Berlin',
     bankShortName: 'Afone Paiement',
     bankPostcode: '10719',
     bankLocation: 'Berlin',
   ),
-  '10010700': Iban(
-    bic: 'FPEGDEB2XXX',
+  '10010700': Bic(
+    value: 'FPEGDEB2XXX',
     bankName: 'Financiere des Paiements Electroniques NL Deutschland',
     bankShortName: 'FPE Deutschland',
     bankPostcode: '10719',
     bankLocation: 'Berlin',
   ),
-  '10011001': Iban(
-    bic: 'NTSBDEB1XXX',
+  '10011001': Bic(
+    value: 'NTSBDEB1XXX',
     bankName: 'N26 Bank Berlin',
     bankShortName: 'N26 Bank',
     bankPostcode: '10179',
     bankLocation: 'Berlin',
   ),
-  '10014000': Iban(
-    bic: 'SWNBDEBBXXX',
+  '10014000': Bic(
+    value: 'SWNBDEBBXXX',
     bankName: 'Swan Zweigniederlassung Deutschland',
     bankShortName: 'Swan Zndl Deutschland',
     bankPostcode: '10117',
     bankLocation: 'Berlin',
   ),
-  '10014001': Iban(
-    bic: 'SWNBDEBBXXX',
+  '10014001': Bic(
+    value: 'SWNBDEBBXXX',
     bankName: 'Swan Zweigniederlassung Deutschland (Geschäftsfeld)',
     bankShortName: 'Swan Zndl Deutschland',
     bankPostcode: '10117',
     bankLocation: 'Berlin',
   ),
-  '10017997': Iban(
-    bic: 'HOLVDEB1XXX',
+  '10017997': Bic(
+    value: 'HOLVDEB1XXX',
     bankName: 'Holvi Payment Services Zweigniederlassung Deutschland',
     bankShortName: 'Holvi - Berlin',
     bankPostcode: '12059',
     bankLocation: 'Berlin',
   ),
-  '10020200': Iban(
-    bic: 'BHFBDEFF100',
+  '10020200': Bic(
+    value: 'BHFBDEFF100',
     bankName: 'BHF-BANK Berlin',
     bankShortName: 'BHF-BANK',
     bankPostcode: '10117',
     bankLocation: 'Berlin',
   ),
-  '10020500': Iban(
-    bic: 'BFSWDE33BER',
+  '10020500': Bic(
+    value: 'BFSWDE33BER',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Bank für Sozialwirtschaft',
     bankPostcode: '10178',
     bankLocation: 'Berlin',
   ),
-  '10020510': Iban(
-    bic: 'BFSWDE33BER',
+  '10020510': Bic(
+    value: 'BFSWDE33BER',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Sozialbank Berlin',
     bankPostcode: '10178',
     bankLocation: 'Berlin',
   ),
-  '10020520': Iban(
-    bic: 'BFSWDE33BER',
+  '10020520': Bic(
+    value: 'BFSWDE33BER',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Sozialbank Berlin',
     bankPostcode: '10178',
     bankLocation: 'Berlin',
   ),
-  '10020890': Iban(
-    bic: 'HYVEDEMM488',
+  '10020890': Bic(
+    value: 'HYVEDEMM488',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '15711',
     bankLocation: 'Königs Wusterhausen',
   ),
-  '10030200': Iban(
-    bic: 'BHYPDEB2XXX',
+  '10030200': Bic(
+    value: 'BHYPDEB2XXX',
     bankName: 'Berlin Hyp',
     bankShortName: 'Berlin Hyp',
     bankPostcode: '10787',
     bankLocation: 'Berlin',
   ),
-  '10030400': Iban(
-    bic: 'ABKBDEB1XXX',
+  '10030400': Bic(
+    value: 'ABKBDEB1XXX',
     bankName: 'ABK Allgemeine Beamten Bank',
     bankShortName: 'ABK Bank Berlin',
     bankPostcode: '10115',
     bankLocation: 'Berlin',
   ),
-  '10030500': Iban(
-    bic: 'LOEBDEBBXXX',
+  '10030500': Bic(
+    value: 'LOEBDEBBXXX',
     bankName: 'M.M. Warburg & Co (vormals Bankhaus Löbbecke)',
     bankShortName: 'M.M. Warburg (Löbbecke)',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '10030600': Iban(
-    bic: 'GENODEF1OGK',
+  '10030600': Bic(
+    value: 'GENODEF1OGK',
     bankName: 'North Channel Bank Mainz',
     bankShortName: 'North Channel Bank',
     bankPostcode: '55118',
     bankLocation: 'Mainz',
   ),
-  '10030700': Iban(
-    bic: 'DLGHDEB1XXX',
+  '10030700': Bic(
+    value: 'DLGHDEB1XXX',
     bankName: 'Eurocity Bank (Gf P2)',
     bankShortName: 'Eurocity Bank',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '10030730': Iban(
-    bic: 'DLGHDEB1XXX',
+  '10030730': Bic(
+    value: 'DLGHDEB1XXX',
     bankName: 'Eurocity Bank Gf GAA',
     bankShortName: 'Eurocity Bank Gf GAA',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '10031000': Iban(
-    bic: 'EIEGDEB1XXX',
+  '10031000': Bic(
+    value: 'EIEGDEB1XXX',
     bankName: 'EIS Einlagensicherungsbank',
     bankShortName: 'EIS Bank Berlin',
     bankPostcode: '10178',
     bankLocation: 'Berlin',
   ),
-  '10033300': Iban(
-    bic: 'SCFBDE33XXX',
+  '10033300': Bic(
+    value: 'SCFBDE33XXX',
     bankName: 'Santander Consumer Bank',
     bankShortName: 'Santander Bank Berlin',
     bankPostcode: '10439',
     bankLocation: 'Berlin',
   ),
-  '10040000': Iban(
-    bic: 'COBADEBBXXX',
+  '10040000': Bic(
+    value: 'COBADEBBXXX',
     bankName: 'Commerzbank, Filiale Berlin 1',
     bankShortName: 'Commerzbank Fil. Berlin 1',
     bankPostcode: '10891',
     bankLocation: 'Berlin',
   ),
-  '10040005': Iban(
-    bic: 'COBADEBBXXX',
+  '10040005': Bic(
+    value: 'COBADEBBXXX',
     bankName: 'Commerzbank, Filiale Berlin 3',
     bankShortName: 'Commerzbank Fil. Berlin 3',
     bankPostcode: '10891',
     bankLocation: 'Berlin',
   ),
-  '10040010': Iban(
-    bic: 'COBADEFFXXX',
+  '10040010': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC SP, Berlin',
     bankShortName: 'Commerzbank, CC SP',
     bankPostcode: '10877',
     bankLocation: 'Berlin',
   ),
-  '10040048': Iban(
-    bic: 'COBADEFFXXX',
+  '10040048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank BER GF-B48',
     bankShortName: 'Commerzbank GF-B48',
     bankPostcode: '10891',
     bankLocation: 'Berlin',
   ),
-  '10040060': Iban(
-    bic: 'COBADEFFXXX',
+  '10040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf 160 Berlin',
     bankShortName: 'Commerzbank Gf 160',
     bankPostcode: '10891',
     bankLocation: 'Berlin',
   ),
-  '10040061': Iban(
-    bic: 'COBADEFFXXX',
+  '10040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf 161 Berlin',
     bankShortName: 'Commerzbank Gf 161',
     bankPostcode: '10891',
     bankLocation: 'Berlin',
   ),
-  '10040062': Iban(
-    bic: 'COBADEFFXXX',
+  '10040062': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Berlin',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '10783',
     bankLocation: 'Berlin',
   ),
-  '10040063': Iban(
-    bic: 'COBADEFFXXX',
+  '10040063': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Berlin',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '10783',
     bankLocation: 'Berlin',
   ),
-  '10040085': Iban(
-    bic: 'COBADEFFXXX',
+  '10040085': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf WK, Berlin',
     bankShortName: 'Commerzbank, Gf Web-K',
     bankPostcode: '10877',
     bankLocation: 'Berlin',
   ),
-  '10045050': Iban(
-    bic: 'COBADEFFXXX',
+  '10045050': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Service-BZ',
     bankShortName: 'Commerzbank Service-BZ',
     bankPostcode: '10785',
     bankLocation: 'Berlin',
   ),
-  '10050000': Iban(
-    bic: 'BELADEBEXXX',
+  '10050000': Bic(
+    value: 'BELADEBEXXX',
     bankName: 'Landesbank Berlin - Berliner Sparkasse',
     bankShortName: 'LBB - Berliner Sparkasse',
     bankPostcode: '10889',
     bankLocation: 'Berlin',
   ),
-  '10050005': Iban(
-    bic: 'BELADEBEXXX',
+  '10050005': Bic(
+    value: 'BELADEBEXXX',
     bankName: 'Landesbank Berlin - E 1 -',
     bankShortName: 'Landesbank Berlin - E 1 -',
     bankPostcode: '10889',
     bankLocation: 'Berlin',
   ),
-  '10050006': Iban(
-    bic: 'BELADEBEXXX',
+  '10050006': Bic(
+    value: 'BELADEBEXXX',
     bankName: 'Landesbank Berlin - E 2 -',
     bankShortName: 'Landesbank Berlin - E 2 -',
     bankPostcode: '10889',
     bankLocation: 'Berlin',
   ),
-  '10050007': Iban(
-    bic: 'BELADEBEXXX',
+  '10050007': Bic(
+    value: 'BELADEBEXXX',
     bankName: 'Landesbank Berlin - E 3 -',
     bankShortName: 'Landesbank Berlin - E 3 -',
     bankPostcode: '10889',
     bankLocation: 'Berlin',
   ),
-  '10050008': Iban(
-    bic: 'BELADEBEXXX',
+  '10050008': Bic(
+    value: 'BELADEBEXXX',
     bankName: 'Landesbank Berlin - E 4 -',
     bankShortName: 'Landesbank Berlin - E 4 -',
     bankPostcode: '10889',
     bankLocation: 'Berlin',
   ),
-  '10050020': Iban(
-    bic: 'SKPADEB1XXX',
+  '10050020': Bic(
+    value: 'SKPADEB1XXX',
     bankName: 'S-Kreditpartner, Berlin',
     bankShortName: 'S-Kreditpartner, Berlin',
     bankPostcode: '10715',
     bankLocation: 'Berlin',
   ),
-  '10050500': Iban(
-    bic: 'LBSODEB1BLN',
+  '10050500': Bic(
+    value: 'LBSODEB1BLN',
     bankName: 'LBS Ost Berlin',
     bankShortName: 'LBS Ost Berlin',
     bankPostcode: '10405',
     bankLocation: 'Berlin',
   ),
-  '10050999': Iban(
-    bic: 'DGZFDEFFBER',
+  '10050999': Bic(
+    value: 'DGZFDEFFBER',
     bankName: 'DekaBank',
     bankShortName: 'DekaBank',
     bankPostcode: '60040',
     bankLocation: 'Frankfurt am Main',
   ),
-  '10060198': Iban(
-    bic: 'GENODED1PA6',
+  '10060198': Bic(
+    value: 'GENODED1PA6',
     bankName: 'Pax-Bank Berlin',
     bankShortName: 'Pax-Bank',
     bankPostcode: '14005',
     bankLocation: 'Berlin',
   ),
-  '10061006': Iban(
-    bic: 'GENODED1KDB',
+  '10061006': Bic(
+    value: 'GENODED1KDB',
     bankName: 'Bank für Kirche und Diakonie - KD-Bank Gf Sonder-BLZ',
     bankShortName: 'KD-Bank Berlin',
     bankPostcode: '10117',
     bankLocation: 'Berlin',
   ),
-  '10070000': Iban(
-    bic: 'DEUTDEBBXXX',
+  '10070000': Bic(
+    value: 'DEUTDEBBXXX',
     bankName: 'Deutsche Bank Gf P2',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '10883',
     bankLocation: 'Berlin',
   ),
-  '10070024': Iban(
-    bic: 'DEUTDEDBBER',
+  '10070024': Bic(
+    value: 'DEUTDEDBBER',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '10883',
     bankLocation: 'Berlin',
   ),
-  '10070100': Iban(
-    bic: 'DEUTDEBB101',
+  '10070100': Bic(
+    value: 'DEUTDEBB101',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '10883',
     bankLocation: 'Berlin',
   ),
-  '10070124': Iban(
-    bic: 'DEUTDEDB101',
+  '10070124': Bic(
+    value: 'DEUTDEDB101',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '10883',
     bankLocation: 'Berlin',
   ),
-  '10070324': Iban(
-    bic: 'DEUTDEDBP30',
+  '10070324': Bic(
+    value: 'DEUTDEDBP30',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '10117',
     bankLocation: 'Berlin',
   ),
-  '10070397': Iban(
-    bic: 'DEUTDEBBP30',
+  '10070397': Bic(
+    value: 'DEUTDEBBP30',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '10117',
     bankLocation: 'Berlin',
   ),
-  '10070398': Iban(
-    bic: 'DEUTDEBBP31',
+  '10070398': Bic(
+    value: 'DEUTDEBBP31',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '12105',
     bankLocation: 'Berlin',
   ),
-  '10070399': Iban(
-    bic: 'DEUTDEBBP32',
+  '10070399': Bic(
+    value: 'DEUTDEBBP32',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '13125',
     bankLocation: 'Berlin',
   ),
-  '10070848': Iban(
-    bic: 'DEUTDEDB110',
+  '10070848': Bic(
+    value: 'DEUTDEDB110',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '10623',
     bankLocation: 'Berlin',
   ),
-  '10071324': Iban(
-    bic: 'DEUTDEDBP31',
+  '10071324': Bic(
+    value: 'DEUTDEDBP31',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '12105',
     bankLocation: 'Berlin',
   ),
-  '10072324': Iban(
-    bic: 'DEUTDEDBP32',
+  '10072324': Bic(
+    value: 'DEUTDEDBP32',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '13125',
     bankLocation: 'Berlin',
   ),
-  '10077777': Iban(
-    bic: 'NORSDE51XXX',
+  '10077777': Bic(
+    value: 'NORSDE51XXX',
     bankName: 'norisbank',
     bankShortName: 'norisbank',
     bankPostcode: '10625',
     bankLocation: 'Berlin',
   ),
-  '10080000': Iban(
-    bic: 'DRESDEFF100',
+  '10080000': Bic(
+    value: 'DRESDEFF100',
     bankName: 'Commerzbank vormals Dresdner Bank Filiale Berlin I',
     bankShortName: 'Commerzbank Fil I Berlin',
     bankPostcode: '10877',
     bankLocation: 'Berlin',
   ),
-  '10080005': Iban(
-    bic: 'DRESDEFFI26',
+  '10080005': Bic(
+    value: 'DRESDEFFI26',
     bankName: 'Commerzbank vormals Dresdner Bank Zw A',
     bankShortName: 'Commerzbank Berlin Zw A',
     bankPostcode: '10623',
     bankLocation: 'Berlin',
   ),
-  '10080006': Iban(
-    bic: 'DRESDEFFXXX',
+  '10080006': Bic(
+    value: 'DRESDEFFXXX',
     bankName: 'Commerzbank vormals Dresdner Bank Zw B',
     bankShortName: 'Commerzbank Berlin Zw B',
     bankPostcode: '10623',
     bankLocation: 'Berlin',
   ),
-  '10080055': Iban(
-    bic: 'DRESDEFF112',
+  '10080055': Bic(
+    value: 'DRESDEFF112',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 55',
     bankShortName: 'Commerzbank Zw 55 Berlin',
     bankPostcode: '10623',
     bankLocation: 'Berlin',
   ),
-  '10080057': Iban(
-    bic: 'DRESDEFF114',
+  '10080057': Bic(
+    value: 'DRESDEFF114',
     bankName: 'Commerzbank vormals Dresdner Bank Gf ZW 57',
     bankShortName: 'Commerzbk ZW 57 Berlin',
     bankPostcode: '10877',
     bankLocation: 'Berlin',
   ),
-  '10080085': Iban(
-    bic: 'DRESDEFFI53',
+  '10080085': Bic(
+    value: 'DRESDEFFI53',
     bankName: 'Commerzbank vormals Dresdner Bank Gf PCC DCC-ITGK 3',
     bankShortName: 'Commerzbank ITKG3 Berlin',
     bankPostcode: '10877',
     bankLocation: 'Berlin',
   ),
-  '10080086': Iban(
-    bic: 'DRESDEFFI71',
+  '10080086': Bic(
+    value: 'DRESDEFFI71',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 4',
     bankShortName: 'Commerzbank ITGK4 Berlin',
     bankPostcode: '10877',
     bankLocation: 'Berlin',
   ),
-  '10080087': Iban(
-    bic: 'DRESDEFFI72',
+  '10080087': Bic(
+    value: 'DRESDEFFI72',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 5',
     bankShortName: 'Commerzbank ITGK5 Berlin',
     bankPostcode: '10877',
     bankLocation: 'Berlin',
   ),
-  '10080088': Iban(
-    bic: 'DRESDEFFXXX',
+  '10080088': Bic(
+    value: 'DRESDEFFXXX',
     bankName: 'Commerzbank vormals Dresdner Bank IBLZ',
     bankShortName: 'Commerzbank IBLZ Berlin',
     bankPostcode: '10623',
     bankLocation: 'Berlin',
   ),
-  '10080089': Iban(
-    bic: 'DRESDEFFI73',
+  '10080089': Bic(
+    value: 'DRESDEFFI73',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 6',
     bankShortName: 'Commerzbank ITGK6 Berlin',
     bankPostcode: '10877',
     bankLocation: 'Berlin',
   ),
-  '10080900': Iban(
-    bic: 'DRESDEFF199',
+  '10080900': Bic(
+    value: 'DRESDEFF199',
     bankName: 'Commerzbank vormals Dresdner Bank Filiale Berlin III',
     bankShortName: 'Commerzbk Fil III Berlin',
     bankPostcode: '10877',
     bankLocation: 'Berlin',
   ),
-  '10089260': Iban(
-    bic: 'DRESDEFFI14',
+  '10089260': Bic(
+    value: 'DRESDEFFI14',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Berlin',
     bankPostcode: '10877',
     bankLocation: 'Berlin',
   ),
-  '10089999': Iban(
-    bic: 'DRESDEFFI99',
+  '10089999': Bic(
+    value: 'DRESDEFFI99',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK 2',
     bankShortName: 'Commerzbank ITGK 2 Berlin',
     bankPostcode: '10117',
     bankLocation: 'Berlin',
   ),
-  '10090000': Iban(
-    bic: 'BEVODEBBXXX',
+  '10090000': Bic(
+    value: 'BEVODEBBXXX',
     bankName: 'Volksbank Potsdam Zndl d Berliner Volksbank',
     bankShortName: 'Volksbank Potsdam',
     bankPostcode: '14467',
     bankLocation: 'Potsdam',
   ),
-  '10090300': Iban(
-    bic: 'GENODEF1BSB',
+  '10090300': Bic(
+    value: 'GENODEF1BSB',
     bankName: 'Bank für Schiffahrt (BFS) Fil d Ostfr VB Leer',
     bankShortName: 'Bk f Schiffahrt BFS Berlin',
     bankPostcode: '13353',
     bankLocation: 'Berlin',
   ),
-  '10090900': Iban(
-    bic: 'GENODEF1P01',
+  '10090900': Bic(
+    value: 'GENODEF1P01',
     bankName: 'PSD Bank Berlin-Brandenburg (Gf P2)',
     bankShortName: 'PSD Bank Berlin',
     bankPostcode: '12154',
     bankLocation: 'Berlin',
   ),
-  '10110300': Iban(
-    bic: 'MACODEB1XXX',
+  '10110300': Bic(
+    value: 'MACODEB1XXX',
     bankName: 'Westend Bank',
     bankShortName: 'Westend Bank',
     bankPostcode: '60599',
     bankLocation: 'Frankfurt am Main',
   ),
-  '10110400': Iban(
-    bic: 'IBBBDEBBXXX',
+  '10110400': Bic(
+    value: 'IBBBDEBBXXX',
     bankName: 'Investitionsbank Berlin',
     bankShortName: 'Investitionsbank Berlin',
     bankPostcode: '10702',
     bankLocation: 'Berlin',
   ),
-  '10110600': Iban(
-    bic: 'QUBKDEBBXXX',
+  '10110600': Bic(
+    value: 'QUBKDEBBXXX',
     bankName: 'Quirin Privatbank Berlin',
     bankShortName: 'Quirin Privatbank',
     bankPostcode: '10711',
     bankLocation: 'Berlin',
   ),
-  '10120100': Iban(
-    bic: 'WELADED1WBB',
+  '10120100': Bic(
+    value: 'WELADED1WBB',
     bankName: 'Weberbank',
     bankShortName: 'Weberbank',
     bankPostcode: '10893',
     bankLocation: 'Berlin',
   ),
-  '10130600': Iban(
-    bic: 'ISBKDEFXXXX',
+  '10130600': Bic(
+    value: 'ISBKDEFXXXX',
     bankName: 'Isbank Fil Berlin',
     bankShortName: 'Isbank Berlin',
     bankPostcode: '13353',
     bankLocation: 'Berlin',
   ),
-  '10130800': Iban(
-    bic: 'BIWBDE33XXX',
+  '10130800': Bic(
+    value: 'BIWBDE33XXX',
     bankName: 'flatex Bank, Frankfurt',
     bankShortName: 'flatexDEGIRO Bank',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '10220500': Iban(
-    bic: 'BOFSDEB1XXX',
+  '10220500': Bic(
+    value: 'BOFSDEB1XXX',
     bankName: 'Lloyds Bank',
     bankShortName: 'Lloyds Bank',
     bankPostcode: '10178',
     bankLocation: 'Berlin',
   ),
-  '10220600': Iban(
-    bic: 'SYBKDE22BER',
+  '10220600': Bic(
+    value: 'SYBKDE22BER',
     bankName: 'Sydbank Filiale Berlin',
     bankShortName: 'Sydbank Berlin',
     bankPostcode: '24937',
     bankLocation: 'Flensburg',
   ),
-  '10310600': Iban(
-    bic: 'TRDADEB1PBK',
+  '10310600': Bic(
+    value: 'TRDADEB1PBK',
     bankName: 'Tradegate Wertpapierhandelsbank Berlin',
     bankShortName: 'Tradegate Berlin',
     bankPostcode: '10711',
     bankLocation: 'Berlin',
   ),
-  '10310666': Iban(
-    bic: 'TRDADEBBDIR',
+  '10310666': Bic(
+    value: 'TRDADEBBDIR',
     bankName: 'Tradegate Wertpapierhandelsbank, GF DIR',
     bankShortName: 'Tradegate GF DIR',
     bankPostcode: '10711',
     bankLocation: 'Berlin',
   ),
-  '11010100': Iban(
-    bic: 'SOBKDEBBXXX',
+  '11010100': Bic(
+    value: 'SOBKDEBBXXX',
     bankName: 'solarisBank',
     bankShortName: 'solarisBank',
     bankPostcode: '10997',
     bankLocation: 'Berlin',
   ),
-  '11010101': Iban(
-    bic: 'SOBKDEB2XXX',
+  '11010101': Bic(
+    value: 'SOBKDEB2XXX',
     bankName: 'solarisBank Gf (S)',
     bankShortName: 'solarisBank Gf (S)',
     bankPostcode: '10178',
     bankLocation: 'Berlin',
   ),
-  '11010111': Iban(
-    bic: 'PNTADEBBXXX',
+  '11010111': Bic(
+    value: 'PNTADEBBXXX',
     bankName: 'solarisBank Gf (PNTA)',
     bankShortName: 'solarisBank Gf (PNTA)',
     bankPostcode: '10997',
     bankLocation: 'Berlin',
   ),
-  '12016836': Iban(
-    bic: 'KFWIDEFF100',
+  '12016836': Bic(
+    value: 'KFWIDEFF100',
     bankName: 'KfW Kreditanstalt für Wiederaufbau',
     bankShortName: 'KfW Berlin',
     bankPostcode: '10117',
     bankLocation: 'Berlin',
   ),
-  '12030000': Iban(
-    bic: 'BYLADEM1001',
+  '12030000': Bic(
+    value: 'BYLADEM1001',
     bankName: 'Deutsche Kreditbank (Gf P2)',
     bankShortName: 'Deutsche Kreditbank (Gf P2)',
     bankPostcode: '10117',
     bankLocation: 'Berlin',
   ),
-  '12030900': Iban(
-    bic: 'MEFIDEMM100',
+  '12030900': Bic(
+    value: 'MEFIDEMM100',
     bankName: 'Merck Finck A Quintet Private Bank',
     bankShortName: 'Merck Finck',
     bankPostcode: '10719',
     bankLocation: 'Berlin',
   ),
-  '12040000': Iban(
-    bic: 'COBADEBB120',
+  '12040000': Bic(
+    value: 'COBADEBB120',
     bankName: 'Commerzbank Filiale Berlin 2',
     bankShortName: 'Commerzbank Fil. Berlin 2',
     bankPostcode: '10891',
     bankLocation: 'Berlin',
   ),
-  '12050555': Iban(
-    bic: 'NOLADE21DVS',
+  '12050555': Bic(
+    value: 'NOLADE21DVS',
     bankName: 'ZVA Norddeutsche Landesbank Gf SA',
     bankShortName: 'ZVA NORD LB Gf SA',
     bankPostcode: '30151',
     bankLocation: 'Hannover',
   ),
-  '12060000': Iban(
-    bic: 'GENODEFF120',
+  '12060000': Bic(
+    value: 'GENODEFF120',
     bankName: 'DZ BANK',
     bankShortName: 'DZ BANK',
     bankPostcode: '10001',
     bankLocation: 'Berlin',
   ),
-  '12070000': Iban(
-    bic: 'DEUTDEBB165',
+  '12070000': Bic(
+    value: 'DEUTDEBB165',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '14641',
     bankLocation: 'Nauen',
   ),
-  '12070024': Iban(
-    bic: 'DEUTDEDB124',
+  '12070024': Bic(
+    value: 'DEUTDEDB124',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '15801',
     bankLocation: 'Zossen',
   ),
-  '12070070': Iban(
-    bic: 'DEUTDEFFVAC',
+  '12070070': Bic(
+    value: 'DEUTDEFFVAC',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '14405',
     bankLocation: 'Potsdam',
   ),
-  '12070088': Iban(
-    bic: 'DEUTDEDBPAL',
+  '12070088': Bic(
+    value: 'DEUTDEDBPAL',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '14405',
     bankLocation: 'Potsdam',
   ),
-  '12070400': Iban(
-    bic: 'DEUTDEBBP33',
+  '12070400': Bic(
+    value: 'DEUTDEBBP33',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '03046',
     bankLocation: 'Cottbus',
   ),
-  '12070424': Iban(
-    bic: 'DEUTDEDBP33',
+  '12070424': Bic(
+    value: 'DEUTDEDBP33',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '03046',
     bankLocation: 'Cottbus',
   ),
-  '12080000': Iban(
-    bic: 'DRESDEFF120',
+  '12080000': Bic(
+    value: 'DRESDEFF120',
     bankName: 'Commerzbank vormals Dresdner Bank Filiale Berlin II',
     bankShortName: 'Commerzbank Fil II Berlin',
     bankPostcode: '10623',
     bankLocation: 'Berlin',
   ),
-  '12096597': Iban(
-    bic: 'GENODEF1S10',
+  '12096597': Bic(
+    value: 'GENODEF1S10',
     bankName: 'Sparda-Bank Berlin (Gf P2)',
     bankShortName: 'Sparda-Bank Berlin',
     bankPostcode: '10407',
     bankLocation: 'Berlin',
   ),
-  '13000000': Iban(
-    bic: 'MARKDEF1130',
+  '13000000': Bic(
+    value: 'MARKDEF1130',
     bankName: 'BBk Rostock',
     bankShortName: 'Bundesbank',
     bankPostcode: '18004',
     bankLocation: 'Rostock',
   ),
-  '13040000': Iban(
-    bic: 'COBADEFFXXX',
+  '13040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Roggentin',
     bankShortName: 'Commerzbank',
     bankPostcode: '18184',
     bankLocation: 'Roggentin',
   ),
-  '13050000': Iban(
-    bic: 'NOLADE21ROS',
+  '13050000': Bic(
+    value: 'NOLADE21ROS',
     bankName: 'Ostseesparkasse Rostock',
     bankShortName: 'Ostseesparkasse Rostock',
     bankPostcode: '18201',
     bankLocation: 'Bad Doberan',
   ),
-  '13051042': Iban(
-    bic: 'NOLADE21RUE',
+  '13051042': Bic(
+    value: 'NOLADE21RUE',
     bankName: 'Sparkasse Vorpommern auf Rügen',
     bankShortName: 'Spk Vorpommern auf Rügen',
     bankPostcode: '18525',
     bankLocation: 'Bergen auf Rügen',
   ),
-  '13061008': Iban(
-    bic: 'GENODEF1WOG',
+  '13061008': Bic(
+    value: 'GENODEF1WOG',
     bankName: 'Volksbank Wolgast (Gf P2)',
     bankShortName: 'Volksbank Wolgast',
     bankPostcode: '17438',
     bankLocation: 'Wolgast',
   ),
-  '13061078': Iban(
-    bic: 'GENODEF1HWI',
+  '13061078': Bic(
+    value: 'GENODEF1HWI',
     bankName: 'Volks- und Raiffeisenbank (Gf P2)',
     bankShortName: 'VB u Raiffbk',
     bankPostcode: '23952',
     bankLocation: 'Wismar',
   ),
-  '13061088': Iban(
-    bic: 'GENODEF1HWR',
+  '13061088': Bic(
+    value: 'GENODEF1HWR',
     bankName: 'Raiffeisenbank Wismar -alt-',
     bankShortName: 'VB u Raiffbk -alt-',
     bankPostcode: '23952',
     bankLocation: 'Wismar',
   ),
-  '13061128': Iban(
-    bic: 'GENODEF1DBR',
+  '13061128': Bic(
+    value: 'GENODEF1DBR',
     bankName: 'Raiffeisenbank Bad Doberan',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '18202',
     bankLocation: 'Bad Doberan',
   ),
-  '13070000': Iban(
-    bic: 'DEUTDEBR132',
+  '13070000': Bic(
+    value: 'DEUTDEBR132',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '18356',
     bankLocation: 'Barth',
   ),
-  '13070024': Iban(
-    bic: 'DEUTDEDB159',
+  '13070024': Bic(
+    value: 'DEUTDEDB159',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '17438',
     bankLocation: 'Wolgast',
   ),
-  '13070405': Iban(
-    bic: 'DEUTDEBBP35',
+  '13070405': Bic(
+    value: 'DEUTDEBBP35',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '19053',
     bankLocation: 'Schwerin',
   ),
-  '13070424': Iban(
-    bic: 'DEUTDEDBP35',
+  '13070424': Bic(
+    value: 'DEUTDEDBP35',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '19053',
     bankLocation: 'Schwerin',
   ),
-  '13080000': Iban(
-    bic: 'DRESDEFF130',
+  '13080000': Bic(
+    value: 'DRESDEFF130',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Rostock',
     bankPostcode: '18010',
     bankLocation: 'Rostock',
   ),
-  '13090000': Iban(
-    bic: 'GENODEF1HR1',
+  '13090000': Bic(
+    value: 'GENODEF1HR1',
     bankName: 'Rostocker Volks- und Raiffeisenbank (Gf P2)',
     bankShortName: 'Rostocker VR Bank',
     bankPostcode: '18003',
     bankLocation: 'Rostock',
   ),
-  '13091054': Iban(
-    bic: 'GENODEF1HST',
+  '13091054': Bic(
+    value: 'GENODEF1HST',
     bankName: 'Pommersche Volksbank (Gf P2)',
     bankShortName: 'Pommersche Volksbank',
     bankPostcode: '18401',
     bankLocation: 'Stralsund',
   ),
-  '13091084': Iban(
-    bic: 'GENODEF1HWV',
+  '13091084': Bic(
+    value: 'GENODEF1HWV',
     bankName: 'Volksbank Wismar -alt-',
     bankShortName: 'VB u Raiffbk -alt-',
     bankPostcode: '23952',
     bankLocation: 'Wismar',
   ),
-  '14040000': Iban(
-    bic: 'COBADEFFXXX',
+  '14040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Parchim',
     bankShortName: 'Commerzbank',
     bankPostcode: '19361',
     bankLocation: 'Parchim',
   ),
-  '14051000': Iban(
-    bic: 'NOLADE21WIS',
+  '14051000': Bic(
+    value: 'NOLADE21WIS',
     bankName: 'Sparkasse Mecklenburg-Nordwest',
     bankShortName: 'Spk Mecklenburg-Nordwest',
     bankPostcode: '23923',
     bankLocation: 'Selmsdorf',
   ),
-  '14051362': Iban(
-    bic: 'NOLADE21PCH',
+  '14051362': Bic(
+    value: 'NOLADE21PCH',
     bankName: 'Sparkasse Parchim-Lübz',
     bankShortName: 'Sparkasse Parchim-Lübz',
     bankPostcode: '19370',
     bankLocation: 'Parchim',
   ),
-  '14051462': Iban(
-    bic: 'NOLADE21SNS',
+  '14051462': Bic(
+    value: 'NOLADE21SNS',
     bankName: 'Sparkasse Schwerin -alt-',
     bankShortName: 'Sparkasse Schwerin -alt-',
     bankPostcode: '19053',
     bankLocation: 'Schwerin',
   ),
-  '14052000': Iban(
-    bic: 'NOLADE21LWL',
+  '14052000': Bic(
+    value: 'NOLADE21LWL',
     bankName: 'Sparkasse Mecklenburg-Schwerin',
     bankShortName: 'Spk Mecklenburg-Schwerin',
     bankPostcode: '19221',
     bankLocation: 'Hagenow',
   ),
-  '14061308': Iban(
-    bic: 'GENODEF1GUE',
+  '14061308': Bic(
+    value: 'GENODEF1GUE',
     bankName: 'VR Bank Mecklenburg (Gf P2)',
     bankShortName: 'VR Bank Mecklenburg',
     bankPostcode: '19055',
     bankLocation: 'Schwerin',
   ),
-  '14061438': Iban(
-    bic: 'GENODEF1GDB',
+  '14061438': Bic(
+    value: 'GENODEF1GDB',
     bankName: 'Raiffeisen-VB Gadebusch-alt',
     bankShortName: 'Raiffeisen-Volksbank -alt-',
     bankPostcode: '19205',
     bankLocation: 'Gadebusch',
   ),
-  '14080000': Iban(
-    bic: 'DRESDEFF140',
+  '14080000': Bic(
+    value: 'DRESDEFF140',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Parchim',
     bankPostcode: '19361',
     bankLocation: 'Parchim',
   ),
-  '14080011': Iban(
-    bic: 'DRESDEFFI27',
+  '14080011': Bic(
+    value: 'DRESDEFFI27',
     bankName: 'Commerzbank vormals Dresdner Bank Zw W',
     bankShortName: 'Commerzbank Schwerin Zw W',
     bankPostcode: '19006',
     bankLocation: 'Schwerin',
   ),
-  '14091464': Iban(
-    bic: 'GENODEF1SN1',
+  '14091464': Bic(
+    value: 'GENODEF1SN1',
     bankName: 'VR-Bank Schwerin',
     bankShortName: 'VR-Bank Schwerin',
     bankPostcode: '19370',
     bankLocation: 'Parchim',
   ),
-  '15000000': Iban(
-    bic: 'MARKDEF1150',
+  '15000000': Bic(
+    value: 'MARKDEF1150',
     bankName: 'BBk Neubrandenburg',
     bankShortName: 'Bundesbank',
     bankPostcode: '17020',
     bankLocation: 'Neubrandenburg',
   ),
-  '15040068': Iban(
-    bic: 'COBADEFFXXX',
+  '15040068': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Pasewalk',
     bankShortName: 'Commerzbank',
     bankPostcode: '17302',
     bankLocation: 'Pasewalk',
   ),
-  '15050100': Iban(
-    bic: 'NOLADE21WRN',
+  '15050100': Bic(
+    value: 'NOLADE21WRN',
     bankName: 'Müritz-Sparkasse Waren',
     bankShortName: 'Müritz-Sparkasse',
     bankPostcode: '17181',
     bankLocation: 'Waren (Müritz)',
   ),
-  '15050200': Iban(
-    bic: 'NOLADE21NBS',
+  '15050200': Bic(
+    value: 'NOLADE21NBS',
     bankName: 'Sparkasse Neubrandenburg-Demmin',
     bankShortName: 'Spk Neubrandenburg-Demmin',
     bankPostcode: '17087',
     bankLocation: 'Altentreptow',
   ),
-  '15050400': Iban(
-    bic: 'NOLADE21PSW',
+  '15050400': Bic(
+    value: 'NOLADE21PSW',
     bankName: 'Spk Uecker-Randow Ueckermde',
     bankShortName: 'Sparkasse Uecker-Randow Gs',
     bankPostcode: '17373',
     bankLocation: 'Ueckermünde',
   ),
-  '15050500': Iban(
-    bic: 'NOLADE21GRW',
+  '15050500': Bic(
+    value: 'NOLADE21GRW',
     bankName: 'Sparkasse Vorpommern',
     bankShortName: 'Spk Vorpommern',
     bankPostcode: '18439',
     bankLocation: 'Stralsund',
   ),
-  '15051732': Iban(
-    bic: 'NOLADE21MST',
+  '15051732': Bic(
+    value: 'NOLADE21MST',
     bankName: 'Sparkasse Mecklenburg-Strelitz Gs',
     bankShortName: 'Spk Meckl-Strelitz Feldberg',
     bankPostcode: '17258',
     bankLocation: 'Feldberger Seenlandschaft',
   ),
-  '15061618': Iban(
-    bic: 'GENODEF1WRN',
+  '15061618': Bic(
+    value: 'GENODEF1WRN',
     bankName: 'Raiffeisenbank Mecklenburger Seenplatte (Gf P2)',
     bankShortName: 'Raiffbk Mecklenb Seenplatte',
     bankPostcode: '17192',
     bankLocation: 'Waren (Müritz)',
   ),
-  '15061638': Iban(
-    bic: 'GENODEF1ANK',
+  '15061638': Bic(
+    value: 'GENODEF1ANK',
     bankName: 'Volksbank Vorpommern (Gf P2)',
     bankShortName: 'VB Vorpommern',
     bankPostcode: '17462',
     bankLocation: 'Greifswald',
   ),
-  '15061698': Iban(
-    bic: 'GENODEF1MAL',
+  '15061698': Bic(
+    value: 'GENODEF1MAL',
     bankName: 'Raiffeisenbank Malchin (Gf P2)',
     bankShortName: 'Raiffeisenbank Malchin',
     bankPostcode: '17131',
     bankLocation: 'Malchin',
   ),
-  '15080000': Iban(
-    bic: 'DRESDEFF150',
+  '15080000': Bic(
+    value: 'DRESDEFF150',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Pasewalk',
     bankPostcode: '17302',
     bankLocation: 'Pasewalk',
   ),
-  '15091674': Iban(
-    bic: 'GENODEF1DM1',
+  '15091674': Bic(
+    value: 'GENODEF1DM1',
     bankName: 'Volksbank Demmin (Gf P2)',
     bankShortName: 'Volksbank Demmin',
     bankPostcode: '17109',
     bankLocation: 'Demmin, Hansestadt',
   ),
-  '15091704': Iban(
-    bic: 'GENODEF1PZ1',
+  '15091704': Bic(
+    value: 'GENODEF1PZ1',
     bankName: 'VR-Bank Uckermark-Randow (Gf P2)',
     bankShortName: 'VR-Bank Uckermark-Randow',
     bankPostcode: '17291',
     bankLocation: 'Prenzlau',
   ),
-  '16010300': Iban(
-    bic: 'ILBXDE8XXXX',
+  '16010300': Bic(
+    value: 'ILBXDE8XXXX',
     bankName: 'Investitionsbank des Landes Brandenburg',
     bankShortName: 'Investitionsbk Potsdam',
     bankPostcode: '14473',
     bankLocation: 'Potsdam',
   ),
-  '16020086': Iban(
-    bic: 'HYVEDEMM470',
+  '16020086': Bic(
+    value: 'HYVEDEMM470',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '14467',
     bankLocation: 'Potsdam',
   ),
-  '16040000': Iban(
-    bic: 'COBADEFFXXX',
+  '16040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Angermünde',
     bankShortName: 'Commerzbank',
     bankPostcode: '16278',
     bankLocation: 'Angermünde',
   ),
-  '16050000': Iban(
-    bic: 'WELADED1PMB',
+  '16050000': Bic(
+    value: 'WELADED1PMB',
     bankName: 'Mittelbrandenburgische Sparkasse in Potsdam',
     bankShortName: 'Mittelbrandenbg Sparkasse',
     bankPostcode: '14459',
     bankLocation: 'Potsdam',
   ),
-  '16050101': Iban(
-    bic: 'WELADED1PRP',
+  '16050101': Bic(
+    value: 'WELADED1PRP',
     bankName: 'Spk Prignitz Putlitz',
     bankShortName: 'Sparkasse Prignitz',
     bankPostcode: '16949',
     bankLocation: 'Putlitz',
   ),
-  '16050202': Iban(
-    bic: 'WELADED1OPR',
+  '16050202': Bic(
+    value: 'WELADED1OPR',
     bankName: 'Sparkasse Ostprignitz-Ruppin',
     bankShortName: 'Spk Ostprignitz-Ruppin',
     bankPostcode: '16909',
     bankLocation: 'Wittstock/Dosse',
   ),
-  '16050500': Iban(
-    bic: 'LBSODEB1XXX',
+  '16050500': Bic(
+    value: 'LBSODEB1XXX',
     bankName: 'LBS Ostdeutsche Landesbausparkasse',
     bankShortName: 'LBS Ost Potsdam',
     bankPostcode: '14463',
     bankLocation: 'Potsdam',
   ),
-  '16060122': Iban(
-    bic: 'GENODEF1PER',
+  '16060122': Bic(
+    value: 'GENODEF1PER',
     bankName: 'Volks- und Raiffeisenbank Prignitz (Gf P2)',
     bankShortName: 'Volks- u Raiffbk Prignitz',
     bankPostcode: '19348',
     bankLocation: 'Perleberg',
   ),
-  '16061938': Iban(
-    bic: 'GENODEF1NPP',
+  '16061938': Bic(
+    value: 'GENODEF1NPP',
     bankName: 'Raiffeisenbank Ostprignitz-Ruppin (Gf P2)',
     bankShortName: 'Raiffeisenbank Ostpr-Ruppin',
     bankPostcode: '16803',
     bankLocation: 'Neuruppin',
   ),
-  '16062008': Iban(
-    bic: 'GENODEF1LUK',
+  '16062008': Bic(
+    value: 'GENODEF1LUK',
     bankName: 'VR-Bank Fläming-Elsterland (Gf P2)',
     bankShortName: 'VR-Bank Fläming-Elsterland',
     bankPostcode: '14943',
     bankLocation: 'Luckenwalde',
   ),
-  '16062073': Iban(
-    bic: 'GENODEF1BRB',
+  '16062073': Bic(
+    value: 'GENODEF1BRB',
     bankName: 'Brandenburger Bank (Gf P2)',
     bankShortName: 'Brandenburger Bank',
     bankPostcode: '14770',
     bankLocation: 'Brandenburg an der Havel',
   ),
-  '16080000': Iban(
-    bic: 'DRESDEFF160',
+  '16080000': Bic(
+    value: 'DRESDEFF160',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Stendal',
     bankPostcode: '39554',
     bankLocation: 'Stendal',
   ),
-  '16091994': Iban(
-    bic: 'GENODEF1RN1',
+  '16091994': Bic(
+    value: 'GENODEF1RN1',
     bankName: 'Volksbank Rathenow (Gf P2)',
     bankShortName: 'Volksbank Rathenow',
     bankPostcode: '14704',
     bankLocation: 'Rathenow',
   ),
-  '17020086': Iban(
-    bic: 'HYVEDEMM471',
+  '17020086': Bic(
+    value: 'HYVEDEMM471',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '15230',
     bankLocation: 'Frankfurt (Oder)',
   ),
-  '17040000': Iban(
-    bic: 'COBADEFFXXX',
+  '17040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Wildau',
     bankShortName: 'Commerzbank',
     bankPostcode: '15745',
     bankLocation: 'Wildau',
   ),
-  '17052000': Iban(
-    bic: 'WELADED1GZE',
+  '17052000': Bic(
+    value: 'WELADED1GZE',
     bankName: 'Sparkasse Barnim Bernau',
     bankShortName: 'Sparkasse Barnim',
     bankPostcode: '16311',
     bankLocation: 'Bernau bei Berlin',
   ),
-  '17052302': Iban(
-    bic: 'WELADED1UMX',
+  '17052302': Bic(
+    value: 'WELADED1UMX',
     bankName: 'Stadtsparkasse Schwedt',
     bankShortName: 'St Spk Schwedt',
     bankPostcode: '16303',
     bankLocation: 'Schwedt/Oder',
   ),
-  '17054040': Iban(
-    bic: 'WELADED1MOL',
+  '17054040': Bic(
+    value: 'WELADED1MOL',
     bankName: 'Kreissparkasse Märkisch-Oderland',
     bankShortName: 'Spk Märkisch-Oderland',
     bankPostcode: '15344',
     bankLocation: 'Strausberg',
   ),
-  '17055050': Iban(
-    bic: 'WELADED1LOS',
+  '17055050': Bic(
+    value: 'WELADED1LOS',
     bankName: 'Sparkasse Oder-Spree',
     bankShortName: 'Sparkasse Oder-Spree',
     bankPostcode: '15890',
     bankLocation: 'Eisenhüttenstadt',
   ),
-  '17056060': Iban(
-    bic: 'WELADED1UMP',
+  '17056060': Bic(
+    value: 'WELADED1UMP',
     bankName: 'Sparkasse Uckermark Gs',
     bankShortName: 'Spk Uckermark Gartz',
     bankPostcode: '16307',
     bankLocation: 'Gartz (Oder)',
   ),
-  '17062428': Iban(
-    bic: 'GENODEF1BKW',
+  '17062428': Bic(
+    value: 'GENODEF1BKW',
     bankName: 'Raiffeisenbank-Volksbank Oder-Spree (Gf P2)',
     bankShortName: 'Raiff-VB Oder-Spree Beeskow',
     bankPostcode: '15848',
     bankLocation: 'Beeskow',
   ),
-  '17080000': Iban(
-    bic: 'DRESDEFF170',
+  '17080000': Bic(
+    value: 'DRESDEFF170',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Fürstenwalde',
     bankPostcode: '15502',
     bankLocation: 'Fürstenwalde/Spree',
   ),
-  '17092404': Iban(
-    bic: 'GENODEF1FW1',
+  '17092404': Bic(
+    value: 'GENODEF1FW1',
     bankName: 'VR Bank Fürstenwalde Seelow Wriezen (Gf P2)',
     bankShortName: 'VR Bank Fürstenwalde',
     bankPostcode: '15501',
     bankLocation: 'Fürstenwalde/Spree',
   ),
-  '18020086': Iban(
-    bic: 'HYVEDEMM472',
+  '18020086': Bic(
+    value: 'HYVEDEMM472',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '03046',
     bankLocation: 'Cottbus',
   ),
-  '18040000': Iban(
-    bic: 'COBADEFFXXX',
+  '18040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Luckau',
     bankShortName: 'Commerzbank',
     bankPostcode: '15926',
     bankLocation: 'Luckau',
   ),
-  '18050000': Iban(
-    bic: 'WELADED1CBN',
+  '18050000': Bic(
+    value: 'WELADED1CBN',
     bankName: 'Sparkasse Spree-Neiße',
     bankShortName: 'Sparkasse Spree-Neiße',
     bankPostcode: '03149',
     bankLocation: 'Forst (Lausitz)',
   ),
-  '18051000': Iban(
-    bic: 'WELADED1EES',
+  '18051000': Bic(
+    value: 'WELADED1EES',
     bankName: 'Sparkasse Elbe-Elster',
     bankShortName: 'Sparkasse Elbe-Elster',
     bankPostcode: '03231',
     bankLocation: 'Finsterwalde',
   ),
-  '18055000': Iban(
-    bic: 'WELADED1OSL',
+  '18055000': Bic(
+    value: 'WELADED1OSL',
     bankName: 'Sparkasse Niederlausitz',
     bankShortName: 'Sparkasse Niederlausitz',
     bankPostcode: '01996',
     bankLocation: 'Hosena',
   ),
-  '18062678': Iban(
-    bic: 'GENODEF1FWA',
+  '18062678': Bic(
+    value: 'GENODEF1FWA',
     bankName: 'VR Bank Lausitz (Gf P2)',
     bankShortName: 'VR Bank Lausitz',
     bankPostcode: '03044',
     bankLocation: 'Cottbus',
   ),
-  '18062758': Iban(
-    bic: 'GENODEF1FOR',
+  '18062758': Bic(
+    value: 'GENODEF1FOR',
     bankName: 'VR Bank Forst -alt-',
     bankShortName: 'VR Bank Forst -alt-',
     bankPostcode: '03149',
     bankLocation: 'Forst (Lausitz)',
   ),
-  '18080000': Iban(
-    bic: 'DRESDEFF180',
+  '18080000': Bic(
+    value: 'DRESDEFF180',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Luckau',
     bankPostcode: '15926',
     bankLocation: 'Luckau',
   ),
-  '18092684': Iban(
-    bic: 'GENODEF1LN1',
+  '18092684': Bic(
+    value: 'GENODEF1LN1',
     bankName: 'Spreewaldbank (Gf P2)',
     bankShortName: 'Spreewaldbank Lübben',
     bankPostcode: '15907',
     bankLocation: 'Lübben (Spreewald)',
   ),
-  '18092744': Iban(
-    bic: 'GENODEF1SPM',
+  '18092744': Bic(
+    value: 'GENODEF1SPM',
     bankName: 'Volksbank Spree-Neiße (Gf P2)',
     bankShortName: 'Volksbank Spree-Neiße',
     bankPostcode: '03130',
     bankLocation: 'Spremberg',
   ),
-  '20000000': Iban(
-    bic: 'MARKDEF1200',
+  '20000000': Bic(
+    value: 'MARKDEF1200',
     bankName: 'BBk Hamburg',
     bankShortName: 'Bundesbank',
     bankPostcode: '22772',
     bankLocation: 'Hamburg',
   ),
-  '20010020': Iban(
-    bic: 'PBNKDEFFXXX',
+  '20010020': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '22280',
     bankLocation: 'Hamburg',
   ),
-  '20010424': Iban(
-    bic: 'AARBDE5W200',
+  '20010424': Bic(
+    value: 'AARBDE5W200',
     bankName: 'Aareal Bank ehem. Filiale Hamburg',
     bankShortName: 'Aareal Bank Wiesbaden',
     bankPostcode: '65189',
     bankLocation: 'Wiesbaden',
   ),
-  '20020200': Iban(
-    bic: 'ESSEDEFFHAM',
+  '20020200': Bic(
+    value: 'ESSEDEFFHAM',
     bankName: 'Skandinaviska Enskilda Banken (publ) Hamburg Branch',
     bankShortName: 'SEB, Hamburg',
     bankPostcode: '60313',
     bankLocation: 'Frankfurt am Main',
   ),
-  '20020500': Iban(
-    bic: 'JYBADEHHXXX',
+  '20020500': Bic(
+    value: 'JYBADEHHXXX',
     bankName: 'Jyske Bank Fil Hamburg',
     bankShortName: 'Jyske Bank Hamburg',
     bankPostcode: '20023',
     bankLocation: 'Hamburg',
   ),
-  '20020900': Iban(
-    bic: 'SIBSDEHHXXX',
+  '20020900': Bic(
+    value: 'SIBSDEHHXXX',
     bankName: 'Signal Iduna Bauspar',
     bankShortName: 'Signal Iduna Bauspar',
     bankPostcode: '20351',
     bankLocation: 'Hamburg',
   ),
-  '20030000': Iban(
-    bic: 'HYVEDEMM300',
+  '20030000': Bic(
+    value: 'HYVEDEMM300',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '24768',
     bankLocation: 'Rendsburg',
   ),
-  '20030133': Iban(
-    bic: 'VGAGDEHHXXX',
+  '20030133': Bic(
+    value: 'VGAGDEHHXXX',
     bankName: 'Varengold Bank',
     bankShortName: 'Varengold Bank',
     bankPostcode: '22767',
     bankLocation: 'Hamburg',
   ),
-  '20030300': Iban(
-    bic: 'CHDBDEHHXXX',
+  '20030300': Bic(
+    value: 'CHDBDEHHXXX',
     bankName: 'DONNER & REUSCHEL',
     bankShortName: 'DONNER & REUSCHEL',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20030301': Iban(
-    bic: 'CHDBDEHHXXX',
+  '20030301': Bic(
+    value: 'CHDBDEHHXXX',
     bankName: 'Donner + Reuschel GF NL LUX',
     bankShortName: 'Donner + Reuschel GF NL LUX',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20030400': Iban(
-    bic: 'MCRDDEHHXXX',
+  '20030400': Bic(
+    value: 'MCRDDEHHXXX',
     bankName: 'Marcard, Stein & Co Bankiers',
     bankShortName: 'Marcardbank Hamburg',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20030600': Iban(
-    bic: 'SYBKDE22HAM',
+  '20030600': Bic(
+    value: 'SYBKDE22HAM',
     bankName: 'Sydbank Fil Hamburg',
     bankShortName: 'Sydbank Hamburg',
     bankPostcode: '20459',
     bankLocation: 'Hamburg',
   ),
-  '20030700': Iban(
-    bic: 'MEFIDEMM200',
+  '20030700': Bic(
+    value: 'MEFIDEMM200',
     bankName: 'Merck Finck A Quintet Private Bank',
     bankShortName: 'Merck Finck',
     bankPostcode: '20312',
     bankLocation: 'Hamburg',
   ),
-  '20040000': Iban(
-    bic: 'COBADEHHXXX',
+  '20040000': Bic(
+    value: 'COBADEHHXXX',
     bankName: 'Commerzbank Quickborn Holst',
     bankShortName: 'Commerzbank',
     bankPostcode: '25451',
     bankLocation: 'Quickborn',
   ),
-  '20040005': Iban(
-    bic: 'COBADEHHXXX',
+  '20040005': Bic(
+    value: 'COBADEHHXXX',
     bankName: 'Commerzbank, Filiale Hamburg 2',
     bankShortName: 'Commerzbank Fil. Hamburg 2',
     bankPostcode: '20454',
     bankLocation: 'Hamburg',
   ),
-  '20040020': Iban(
-    bic: 'COBADEFFXXX',
+  '20040020': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC SP, Hamburg',
     bankShortName: 'Commerzbank, CC SP',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20040040': Iban(
-    bic: 'COBADEFFXXX',
+  '20040040': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank GF RME, Hamburg',
     bankShortName: 'Commerzbank GF RME',
     bankPostcode: '20454',
     bankLocation: 'Hamburg',
   ),
-  '20040048': Iban(
-    bic: 'COBADEFFXXX',
+  '20040048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank HBG GF-H48',
     bankShortName: 'Commerzbank GF-H48',
     bankPostcode: '20454',
     bankLocation: 'Hamburg',
   ),
-  '20040050': Iban(
-    bic: 'COBADEFFXXX',
+  '20040050': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank GF COC',
     bankShortName: 'Commerzbank GF COC',
     bankPostcode: '20457',
     bankLocation: 'Hamburg',
   ),
-  '20040060': Iban(
-    bic: 'COBADEFFXXX',
+  '20040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf 260 Hamburg',
     bankShortName: 'Commerzbank Gf 260',
     bankPostcode: '20454',
     bankLocation: 'Hamburg',
   ),
-  '20040061': Iban(
-    bic: 'COBADEFFXXX',
+  '20040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf 261 Hamburg',
     bankShortName: 'Commerzbank Gf 261',
     bankPostcode: '20454',
     bankLocation: 'Hamburg',
   ),
-  '20040062': Iban(
-    bic: 'COBADEFFXXX',
+  '20040062': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Hamburg',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '20457',
     bankLocation: 'Hamburg',
   ),
-  '20040063': Iban(
-    bic: 'COBADEFFXXX',
+  '20040063': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Hamburg',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '20457',
     bankLocation: 'Hamburg',
   ),
-  '20041111': Iban(
-    bic: 'COBADEHDXXX',
+  '20041111': Bic(
+    value: 'COBADEHDXXX',
     bankName: 'Commerzbank - GF comdirect',
     bankShortName: 'Commerzbank - GF comdirect',
     bankPostcode: '25449',
     bankLocation: 'Quickborn',
   ),
-  '20041133': Iban(
-    bic: 'COBADEHD001',
+  '20041133': Bic(
+    value: 'COBADEHD001',
     bankName: 'Commerzbank - GF comdirect',
     bankShortName: 'Commerzbank - GF comdirect',
     bankPostcode: '25449',
     bankLocation: 'Quickborn',
   ),
-  '20041144': Iban(
-    bic: 'COBADEHD044',
+  '20041144': Bic(
+    value: 'COBADEHD044',
     bankName: 'Commerzbank - GF comdirect',
     bankShortName: 'Commerzbank - GF comdirect',
     bankPostcode: '25449',
     bankLocation: 'Quickborn',
   ),
-  '20041155': Iban(
-    bic: 'COBADEHD055',
+  '20041155': Bic(
+    value: 'COBADEHD055',
     bankName: 'Commerzbank - GF comdirect',
     bankShortName: 'Commerzbank - GF comdirect',
     bankPostcode: '25449',
     bankLocation: 'Quickborn',
   ),
-  '20041166': Iban(
-    bic: 'COBADEHD066',
+  '20041166': Bic(
+    value: 'COBADEHD066',
     bankName: 'Commerzbank - GF comdirect',
     bankShortName: 'Commerzbank - GF comdirect',
     bankPostcode: '25449',
     bankLocation: 'Quickborn',
   ),
-  '20041177': Iban(
-    bic: 'COBADEHD077',
+  '20041177': Bic(
+    value: 'COBADEHD077',
     bankName: 'Commerzbank - GF comdirect',
     bankShortName: 'Commerzbank - GF comdirect',
     bankPostcode: '25449',
     bankLocation: 'Quickborn',
   ),
-  '20041188': Iban(
-    bic: 'COBADEHD088',
+  '20041188': Bic(
+    value: 'COBADEHD088',
     bankName: 'Commerzbank - GF comdirect',
     bankShortName: 'Commerzbank - GF comdirect',
     bankPostcode: '25449',
     bankLocation: 'Quickborn',
   ),
-  '20041199': Iban(
-    bic: 'COBADEHD099',
+  '20041199': Bic(
+    value: 'COBADEHD099',
     bankName: 'Commerzbank - GF comdirect',
     bankShortName: 'Commerzbank - GF comdirect',
     bankPostcode: '25449',
     bankLocation: 'Quickborn',
   ),
-  '20050000': Iban(
-    bic: 'HSHNDEHHXXX',
+  '20050000': Bic(
+    value: 'HSHNDEHHXXX',
     bankName: 'Hamburg Commercial Bank, ehemals HSH Nordbank Hamburg',
     bankShortName: 'Hamburg Commercial Bank',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20050550': Iban(
-    bic: 'HASPDEHHXXX',
+  '20050550': Bic(
+    value: 'HASPDEHHXXX',
     bankName: 'Hamburger Sparkasse',
     bankShortName: 'Haspa Barsbüttel',
     bankPostcode: '22885',
     bankLocation: 'Barsbüttel',
   ),
-  '20060000': Iban(
-    bic: 'GENODEFF200',
+  '20060000': Bic(
+    value: 'GENODEFF200',
     bankName: 'DZ BANK',
     bankShortName: 'DZ BANK',
     bankPostcode: '20045',
     bankLocation: 'Hamburg',
   ),
-  '20069111': Iban(
-    bic: 'GENODEF1NDR',
+  '20069111': Bic(
+    value: 'GENODEF1NDR',
     bankName: 'Norderstedter Bank (Gf P2)',
     bankShortName: 'Norderstedter Bank',
     bankPostcode: '22827',
     bankLocation: 'Norderstedt',
   ),
-  '20069125': Iban(
-    bic: 'GENODEF1KLK',
+  '20069125': Bic(
+    value: 'GENODEF1KLK',
     bankName: 'Kaltenkirchener Bank (Gf P2)',
     bankShortName: 'Kaltenkirchener Bank',
     bankPostcode: '24568',
     bankLocation: 'Kaltenkirchen',
   ),
-  '20069130': Iban(
-    bic: 'GENODEF1BBR',
+  '20069130': Bic(
+    value: 'GENODEF1BBR',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffbk',
     bankPostcode: '24571',
     bankLocation: 'Bad Bramstedt',
   ),
-  '20069144': Iban(
-    bic: 'GENODEF1SST',
+  '20069144': Bic(
+    value: 'GENODEF1SST',
     bankName: 'Raiffeisenbank Seestermühe',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '25371',
     bankLocation: 'Seestermühe',
   ),
-  '20069177': Iban(
-    bic: 'GENODEF1GRS',
+  '20069177': Bic(
+    value: 'GENODEF1GRS',
     bankName: 'Raiffeisenbank Südstormarn Mölln (Gf P2)',
     bankShortName: 'Raiffbk Südstormarn Mölln',
     bankPostcode: '23879',
     bankLocation: 'Mölln',
   ),
-  '20069232': Iban(
-    bic: 'GENODEF1STV',
+  '20069232': Bic(
+    value: 'GENODEF1STV',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffbk Struvenhütten',
     bankPostcode: '24643',
     bankLocation: 'Struvenhütten',
   ),
-  '20069641': Iban(
-    bic: 'GENODEF1OWS',
+  '20069641': Bic(
+    value: 'GENODEF1OWS',
     bankName: 'Raiffeisenbank Owschlag (Gf P2)',
     bankShortName: 'Raiffeisenbank Owschlag',
     bankPostcode: '24811',
     bankLocation: 'Owschlag',
   ),
-  '20069780': Iban(
-    bic: 'GENODEF1AST',
+  '20069780': Bic(
+    value: 'GENODEF1AST',
     bankName: 'Volksbank Ahlerstedt (Gf P2)',
     bankShortName: 'Volksbank Ahlerstedt',
     bankPostcode: '21702',
     bankLocation: 'Ahlerstedt',
   ),
-  '20069782': Iban(
-    bic: 'GENODEF1APE',
+  '20069782': Bic(
+    value: 'GENODEF1APE',
     bankName: 'Volksbank Geest (Gf P2)',
     bankShortName: 'Volksbank Geest',
     bankPostcode: '21641',
     bankLocation: 'Apensen',
   ),
-  '20069786': Iban(
-    bic: 'GENODEF1DRO',
+  '20069786': Bic(
+    value: 'GENODEF1DRO',
     bankName: 'Volksbank Kehdingen Zndl. der Ostfriesischen Volksbank',
     bankShortName: 'VB Kehdingen',
     bankPostcode: '21734',
     bankLocation: 'Oederquart',
   ),
-  '20069800': Iban(
-    bic: 'GENODEF1HAA',
+  '20069800': Bic(
+    value: 'GENODEF1HAA',
     bankName: 'Spar- und Kreditbank Hammah',
     bankShortName: 'Spar- und Kreditbank Hammah',
     bankPostcode: '21684',
     bankLocation: 'Stade',
   ),
-  '20069812': Iban(
-    bic: 'GENODEF1FRB',
+  '20069812': Bic(
+    value: 'GENODEF1FRB',
     bankName: 'Volksbank Fredenbeck (Gf P2)',
     bankShortName: 'Volksbank Fredenbeck',
     bankPostcode: '21717',
     bankLocation: 'Fredenbeck',
   ),
-  '20069815': Iban(
-    bic: 'GENODEF1815',
+  '20069815': Bic(
+    value: 'GENODEF1815',
     bankName: 'Volksbank Oldendorf',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '21724',
     bankLocation: 'Oldendorf',
   ),
-  '20069861': Iban(
-    bic: 'GENODEF1RRZ',
+  '20069861': Bic(
+    value: 'GENODEF1RRZ',
     bankName: 'Raiffeisenbank Ratzeburg',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '23909',
     bankLocation: 'Ratzeburg',
   ),
-  '20069882': Iban(
-    bic: 'GENODEF1RLT',
+  '20069882': Bic(
+    value: 'GENODEF1RLT',
     bankName: 'Raiffeisenbank Travemünde (Gf P2)',
     bankShortName: 'Raiffeisenbank Travemünde',
     bankPostcode: '23570',
     bankLocation: 'Lübeck',
   ),
-  '20069965': Iban(
-    bic: 'GENODEF1WIM',
+  '20069965': Bic(
+    value: 'GENODEF1WIM',
     bankName: 'Volksbank Winsener Marsch (Gf P2)',
     bankShortName: 'VB Winsener Marsch',
     bankPostcode: '21436',
     bankLocation: 'Marschacht',
   ),
-  '20069989': Iban(
-    bic: 'GENODEF1WUL',
+  '20069989': Bic(
+    value: 'GENODEF1WUL',
     bankName: 'Volksbank Wulfsen (Gf P2)',
     bankShortName: 'Volksbank Wulfsen',
     bankPostcode: '21445',
     bankLocation: 'Wulfsen',
   ),
-  '20070000': Iban(
-    bic: 'DEUTDEHH213',
+  '20070000': Bic(
+    value: 'DEUTDEHH213',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '21451',
     bankLocation: 'Reinbek',
   ),
-  '20070024': Iban(
-    bic: 'DEUTDEDB204',
+  '20070024': Bic(
+    value: 'DEUTDEDB204',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '22871',
     bankLocation: 'Wedel',
   ),
-  '20070404': Iban(
-    bic: 'DEUTDEHHP34',
+  '20070404': Bic(
+    value: 'DEUTDEHHP34',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20070424': Iban(
-    bic: 'DEUTDEDBP34',
+  '20070424': Bic(
+    value: 'DEUTDEDBP34',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20080000': Iban(
-    bic: 'DRESDEFF200',
+  '20080000': Bic(
+    value: 'DRESDEFF200',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Wedel Holst',
     bankPostcode: '22871',
     bankLocation: 'Wedel',
   ),
-  '20080055': Iban(
-    bic: 'DRESDEFF207',
+  '20080055': Bic(
+    value: 'DRESDEFF207',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 55',
     bankShortName: 'Commerzbank Zw 55 Hamburg',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20080057': Iban(
-    bic: 'DRESDEFF208',
+  '20080057': Bic(
+    value: 'DRESDEFF208',
     bankName: 'Commerzbank vormals Dresdner Bank Gf ZW 57',
     bankShortName: 'Commerzbk ZW 57 Hamburg',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20080085': Iban(
-    bic: 'DRESDEFFI56',
+  '20080085': Bic(
+    value: 'DRESDEFFI56',
     bankName: 'Commerzbank vormals Dresdner Bank Gf PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITKG2 Hamburg',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20080086': Iban(
-    bic: 'DRESDEFFI63',
+  '20080086': Bic(
+    value: 'DRESDEFFI63',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 3',
     bankShortName: 'Commerzbank ITGK 3',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20080087': Iban(
-    bic: 'DRESDEFFI64',
+  '20080087': Bic(
+    value: 'DRESDEFFI64',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 4',
     bankShortName: 'Commerzbank ITGK4 Hamburg',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20080088': Iban(
-    bic: 'DRESDEFFI74',
+  '20080088': Bic(
+    value: 'DRESDEFFI74',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 5',
     bankShortName: 'Commerzbank ITGK5 Hamburg',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20080089': Iban(
-    bic: 'DRESDEFFI75',
+  '20080089': Bic(
+    value: 'DRESDEFFI75',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 6',
     bankShortName: 'Commerzbank ITGK6 Hamburg',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20080091': Iban(
-    bic: 'DRESDEFFJ33',
+  '20080091': Bic(
+    value: 'DRESDEFFJ33',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 7',
     bankShortName: 'Commerzbank ITGK 7',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20080092': Iban(
-    bic: 'DRESDEFFJ34',
+  '20080092': Bic(
+    value: 'DRESDEFFJ34',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 8',
     bankShortName: 'Commerzbank ITGK 8',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20080093': Iban(
-    bic: 'DRESDEFFJ35',
+  '20080093': Bic(
+    value: 'DRESDEFFJ35',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 9',
     bankShortName: 'Commerzbank ITGK 9',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20080094': Iban(
-    bic: 'DRESDEFFJ36',
+  '20080094': Bic(
+    value: 'DRESDEFFJ36',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 10',
     bankShortName: 'Commerzbank ITGK 10',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20080095': Iban(
-    bic: 'DRESDEFFJ37',
+  '20080095': Bic(
+    value: 'DRESDEFFJ37',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 11',
     bankShortName: 'Commerzbank ITGK 11',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20089200': Iban(
-    bic: 'DRESDEFFI06',
+  '20089200': Bic(
+    value: 'DRESDEFFI06',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Hamburg',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '20090400': Iban(
-    bic: 'DGHYDEH1XXX',
+  '20090400': Bic(
+    value: 'DGHYDEH1XXX',
     bankName: 'DZ HYP Hamburg',
     bankShortName: 'DZ HYP',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20090500': Iban(
-    bic: 'AUGBDE71NET',
+  '20090500': Bic(
+    value: 'AUGBDE71NET',
     bankName: 'Augsburger Aktienbank (netbank)',
     bankShortName: 'AAB (netbank)',
     bankPostcode: '86150',
     bankLocation: 'Augsburg',
   ),
-  '20090700': Iban(
-    bic: 'EDEKDEHHXXX',
+  '20090700': Bic(
+    value: 'EDEKDEHHXXX',
     bankName: 'Edekabank (Gf P2)',
     bankShortName: 'Edekabank (Gf P2)',
     bankPostcode: '22297',
     bankLocation: 'Hamburg',
   ),
-  '20090745': Iban(
-    bic: 'EDEKDEHHXXX',
+  '20090745': Bic(
+    value: 'EDEKDEHHXXX',
     bankName: 'EBANK Gf Cash Hamburg',
     bankShortName: 'EBANK Gf Cash',
     bankPostcode: '22297',
     bankLocation: 'Hamburg',
   ),
-  '20090900': Iban(
-    bic: 'GENODEF1P08',
+  '20090900': Bic(
+    value: 'GENODEF1P08',
     bankName: 'PSD Bank Nord (Gf P2)',
     bankShortName: 'PSD Bank Nord (Gf P2)',
     bankPostcode: '22023',
     bankLocation: 'Hamburg',
   ),
-  '20110022': Iban(
-    bic: 'PBNKDEFFXXX',
+  '20110022': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '22283',
     bankLocation: 'Hamburg',
   ),
-  '20110700': Iban(
-    bic: 'BOTKDEH1XXX',
+  '20110700': Bic(
+    value: 'BOTKDEH1XXX',
     bankName: 'MUFG Bank (Europe) Germany Branch',
     bankShortName: 'MUFG Bank',
     bankPostcode: '40040',
     bankLocation: 'Düsseldorf',
   ),
-  '20110800': Iban(
-    bic: 'BKCHDEFFHMB',
+  '20110800': Bic(
+    value: 'BKCHDEFFHMB',
     bankName: 'Bank of China Fil Hamburg',
     bankShortName: 'Bank of China Hamburg',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20120000': Iban(
-    bic: 'BEGODEHHXXX',
+  '20120000': Bic(
+    value: 'BEGODEHHXXX',
     bankName: 'Joh. Berenberg, Gossler & Co',
     bankShortName: 'Berenberg, Hamburg',
     bankPostcode: '20354',
     bankLocation: 'Hamburg',
   ),
-  '20120100': Iban(
-    bic: 'WBWCDEHHXXX',
+  '20120100': Bic(
+    value: 'WBWCDEHHXXX',
     bankName: 'M.M. Warburg & CO',
     bankShortName: 'M.M. Warburg & CO',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20120200': Iban(
-    bic: 'BHFBDEFF200',
+  '20120200': Bic(
+    value: 'BHFBDEFF200',
     bankName: 'BHF-BANK Hamburg',
     bankShortName: 'BHF-BANK',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20120400': Iban(
-    bic: 'DRBKDEH1XXX',
+  '20120400': Bic(
+    value: 'DRBKDEH1XXX',
     bankName: 'start:bausparkasse',
     bankShortName: 'start:bausparkasse',
     bankPostcode: '22756',
     bankLocation: 'Hamburg',
   ),
-  '20120520': Iban(
-    bic: 'BFSWDE33HAN',
+  '20120520': Bic(
+    value: 'BFSWDE33HAN',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Sozialbank Hamburg',
     bankPostcode: '22297',
     bankLocation: 'Hamburg',
   ),
-  '20120600': Iban(
-    bic: 'GOGODEH1XXX',
+  '20120600': Bic(
+    value: 'GOGODEH1XXX',
     bankName: 'Goyer & Göppel Hamburg',
     bankShortName: 'Goyer & Göppel',
     bankPostcode: '20354',
     bankLocation: 'Hamburg',
   ),
-  '20120700': Iban(
-    bic: 'HSTBDEHHXXX',
+  '20120700': Bic(
+    value: 'HSTBDEHHXXX',
     bankName: 'Hanseatic Bank Hamburg',
     bankShortName: 'Hanseatic Bank',
     bankPostcode: '22177',
     bankLocation: 'Hamburg',
   ),
-  '20130400': Iban(
-    bic: 'GREBDEH1XXX',
+  '20130400': Bic(
+    value: 'GREBDEH1XXX',
     bankName: 'GRENKE BANK',
     bankShortName: 'GRENKE BANK',
     bankPostcode: '76532',
     bankLocation: 'Baden-Baden',
   ),
-  '20130600': Iban(
-    bic: 'BARCDEHAXXX',
+  '20130600': Bic(
+    value: 'BARCDEHAXXX',
     bankName: 'Barclays Bank Ireland Hamburg Branch (Gf P2)',
     bankShortName: 'Barclays Bank (Gf P2)',
     bankPostcode: '22761',
     bankLocation: 'Hamburg',
   ),
-  '20133300': Iban(
-    bic: 'SCFBDE33XXX',
+  '20133300': Bic(
+    value: 'SCFBDE33XXX',
     bankName: 'Santander Consumer Bank',
     bankShortName: 'Santander Bank Hamburg',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20190003': Iban(
-    bic: 'GENODEF1HH2',
+  '20190003': Bic(
+    value: 'GENODEF1HH2',
     bankName: 'Hamburger Volksbank (Gf P2)',
     bankShortName: 'Hamburger Volksbank',
     bankPostcode: '20019',
     bankLocation: 'Hamburg',
   ),
-  '20190077': Iban(
-    bic: 'GENODEF1HH2',
+  '20190077': Bic(
+    value: 'GENODEF1HH2',
     bankName: 'Hamburger Volksbank (Gf GAA)',
     bankShortName: 'Hamburger Volksbank Gf GAA',
     bankPostcode: '20097',
     bankLocation: 'Hamburg',
   ),
-  '20190109': Iban(
-    bic: 'GENODEF1HH4',
+  '20190109': Bic(
+    value: 'GENODEF1HH4',
     bankName: 'Volksbank Raiffeisenbank (Gf P2)',
     bankShortName: 'Volksbank Raiffeisenbank',
     bankPostcode: '23843',
     bankLocation: 'Bad Oldesloe',
   ),
-  '20190206': Iban(
-    bic: 'GENODEF1HH1',
+  '20190206': Bic(
+    value: 'GENODEF1HH1',
     bankName: 'Volksbank Hamburg Ost-West -alt- (Gf P2)',
     bankShortName: 'VB Hamburg Ost-West -alt-',
     bankPostcode: '20019',
     bankLocation: 'Hamburg',
   ),
-  '20190301': Iban(
-    bic: 'GENODEF1HH3',
+  '20190301': Bic(
+    value: 'GENODEF1HH3',
     bankName: 'Vierländer Volksbank (Gf P2)',
     bankShortName: 'Vierländer VB Hamburg',
     bankPostcode: '21037',
     bankLocation: 'Hamburg',
   ),
-  '20190800': Iban(
-    bic: 'GENODEF1MKB',
+  '20190800': Bic(
+    value: 'GENODEF1MKB',
     bankName: 'MKB Mittelstandskreditbank (Gf P2)',
     bankShortName: 'MKB Hamburg',
     bankPostcode: '22547',
     bankLocation: 'Hamburg',
   ),
-  '20210200': Iban(
-    bic: 'MELIDEHHXXX',
+  '20210200': Bic(
+    value: 'MELIDEHHXXX',
     bankName: 'Bank Melli Iran Hamburg',
     bankShortName: 'Bank Melli Iran',
     bankPostcode: '20421',
     bankLocation: 'Hamburg',
   ),
-  '20210300': Iban(
-    bic: 'SIHRDEH1HAM',
+  '20210300': Bic(
+    value: 'SIHRDEH1HAM',
     bankName: 'Bank Saderat Iran Hamburg',
     bankShortName: 'Bank Saderat Iran',
     bankPostcode: '20422',
     bankLocation: 'Hamburg',
   ),
-  '20220100': Iban(
-    bic: 'DNBADEHXXXX',
+  '20220100': Bic(
+    value: 'DNBADEHXXXX',
     bankName: 'DNB Bank ASA - Filiale Deutschland',
     bankShortName: 'DNB Bank',
     bankPostcode: '20354',
     bankLocation: 'Hamburg',
   ),
-  '20220400': Iban(
-    bic: 'MMWHDEH1XXX',
+  '20220400': Bic(
+    value: 'MMWHDEH1XXX',
     bankName: 'Warburg, M.M. - Hypothekenbank',
     bankShortName: 'M.M. Warburg Hyp Hamburg',
     bankPostcode: '20044',
     bankLocation: 'Hamburg',
   ),
-  '20220800': Iban(
-    bic: 'SXPYDEHHXXX',
+  '20220800': Bic(
+    value: 'SXPYDEHHXXX',
     bankName: 'Banking Circle - German Branch',
     bankShortName: 'Banking Circle Germany',
     bankPostcode: '80333',
     bankLocation: 'München',
   ),
-  '20230300': Iban(
-    bic: 'OSCBDEH1XXX',
+  '20230300': Bic(
+    value: 'OSCBDEH1XXX',
     bankName: 'Otto M. Schröder Bank',
     bankShortName: 'Schröderbank Hamburg',
     bankPostcode: '20355',
     bankLocation: 'Hamburg',
   ),
-  '20230600': Iban(
-    bic: 'ISBKDEFXXXX',
+  '20230600': Bic(
+    value: 'ISBKDEFXXXX',
     bankName: 'Isbank Hamburg',
     bankShortName: 'Isbank Hamburg',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20230800': Iban(
-    bic: 'MHSBDEHBXXX',
+  '20230800': Bic(
+    value: 'MHSBDEHBXXX',
     bankName: 'Sutor Bank Hamburg',
     bankShortName: 'Max Heinr. Sutor',
     bankPostcode: '20433',
     bankLocation: 'Hamburg',
   ),
-  '20310300': Iban(
-    bic: 'EIHBDEHHXXX',
+  '20310300': Bic(
+    value: 'EIHBDEHHXXX',
     bankName: 'Europäisch-Iranische Handelsbank',
     bankShortName: 'Europ-Iran Handelsbk Hambg',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '20320500': Iban(
-    bic: 'DABADEHHXXX',
+  '20320500': Bic(
+    value: 'DABADEHHXXX',
     bankName: 'Danske Bank Hamburg',
     bankShortName: 'Danske Bank',
     bankPostcode: '20010',
     bankLocation: 'Hamburg',
   ),
-  '20690500': Iban(
-    bic: 'GENODEF1S11',
+  '20690500': Bic(
+    value: 'GENODEF1S11',
     bankName: 'Sparda-Bank Hamburg (Gf P2)',
     bankShortName: 'Sparda-Bank Hamburg',
     bankPostcode: '22704',
     bankLocation: 'Hamburg',
   ),
-  '20730001': Iban(
-    bic: 'HYVEDEMME01',
+  '20730001': Bic(
+    value: 'HYVEDEMME01',
     bankName: 'UniCredit Bank - HVB Settlement EAC01',
     bankShortName: 'UniCredit Bk Settlemt EAC01',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730002': Iban(
-    bic: 'HYVEDEMME02',
+  '20730002': Bic(
+    value: 'HYVEDEMME02',
     bankName: 'UniCredit Bank - HVB Settlement EAC02',
     bankShortName: 'UniCredit Bk Settlemt EAC02',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730003': Iban(
-    bic: 'HYVEDEMME03',
+  '20730003': Bic(
+    value: 'HYVEDEMME03',
     bankName: 'UniCredit Bank - HVB Settlement EAC03',
     bankShortName: 'UniCredit Bk Settlemt EAC03',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730004': Iban(
-    bic: 'HYVEDEMME04',
+  '20730004': Bic(
+    value: 'HYVEDEMME04',
     bankName: 'UniCredit Bank - HVB Settlement EAC04',
     bankShortName: 'UniCredit Bk Settlemt EAC04',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730005': Iban(
-    bic: 'HYVEDEMME05',
+  '20730005': Bic(
+    value: 'HYVEDEMME05',
     bankName: 'UniCredit Bank - HVB Settlement EAC05',
     bankShortName: 'UniCredit Bk Settlemt EAC05',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730006': Iban(
-    bic: 'HYVEDEMME06',
+  '20730006': Bic(
+    value: 'HYVEDEMME06',
     bankName: 'UniCredit Bank - HVB Settlement EAC06',
     bankShortName: 'UniCredit Bk Settlemt EAC06',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730007': Iban(
-    bic: 'HYVEDEMME07',
+  '20730007': Bic(
+    value: 'HYVEDEMME07',
     bankName: 'UniCredit Bank - HVB Settlement EAC07',
     bankShortName: 'UniCredit Bk Settlemt EAC07',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730008': Iban(
-    bic: 'HYVEDEMME08',
+  '20730008': Bic(
+    value: 'HYVEDEMME08',
     bankName: 'UniCredit Bank - HVB Settlement EAC08',
     bankShortName: 'UniCredit Bk Settlemt EAC08',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730009': Iban(
-    bic: 'HYVEDEMME09',
+  '20730009': Bic(
+    value: 'HYVEDEMME09',
     bankName: 'UniCredit Bank - HVB Settlement EAC09',
     bankShortName: 'UniCredit Bk Settlemt EAC09',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730010': Iban(
-    bic: 'HYVEDEMME10',
+  '20730010': Bic(
+    value: 'HYVEDEMME10',
     bankName: 'UniCredit Bank - HVB Settlement EAC10',
     bankShortName: 'UniCredit Bk Settlemt EAC10',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730011': Iban(
-    bic: 'HYVEDEMME11',
+  '20730011': Bic(
+    value: 'HYVEDEMME11',
     bankName: 'UniCredit Bank - HVB Settlement EAC11',
     bankShortName: 'UniCredit Bk Settlemt EAC11',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730012': Iban(
-    bic: 'HYVEDEMME12',
+  '20730012': Bic(
+    value: 'HYVEDEMME12',
     bankName: 'UniCredit Bank - HVB Settlement EAC12',
     bankShortName: 'UniCredit Bk Settlemt EAC12',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730013': Iban(
-    bic: 'HYVEDEMME13',
+  '20730013': Bic(
+    value: 'HYVEDEMME13',
     bankName: 'UniCredit Bank - HVB Settlement EAC13',
     bankShortName: 'UniCredit Bk Settlemt EAC13',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730014': Iban(
-    bic: 'HYVEDEMME14',
+  '20730014': Bic(
+    value: 'HYVEDEMME14',
     bankName: 'UniCredit Bank - HVB Settlement EAC14',
     bankShortName: 'UniCredit Bk Settlemt EAC14',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730015': Iban(
-    bic: 'HYVEDEMME15',
+  '20730015': Bic(
+    value: 'HYVEDEMME15',
     bankName: 'UniCredit Bank - HVB Settlement EAC15',
     bankShortName: 'UniCredit Bk Settlemt EAC15',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730016': Iban(
-    bic: 'HYVEDEMME16',
+  '20730016': Bic(
+    value: 'HYVEDEMME16',
     bankName: 'UniCredit Bank - HVB Settlement EAC16',
     bankShortName: 'UniCredit Bk Settlemt EAC16',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730017': Iban(
-    bic: 'HYVEDEMME17',
+  '20730017': Bic(
+    value: 'HYVEDEMME17',
     bankName: 'UniCredit Bank - HVB Settlement EAC17',
     bankShortName: 'UniCredit Bk Settlemt EAC17',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730018': Iban(
-    bic: 'HYVEDEMME18',
+  '20730018': Bic(
+    value: 'HYVEDEMME18',
     bankName: 'UniCredit Bank - HVB Settlement EAC18',
     bankShortName: 'UniCredit Bk Settlemt EAC18',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730019': Iban(
-    bic: 'HYVEDEMME19',
+  '20730019': Bic(
+    value: 'HYVEDEMME19',
     bankName: 'UniCredit Bank - HVB Settlement EAC19',
     bankShortName: 'UniCredit Bk Settlemt EAC19',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730020': Iban(
-    bic: 'HYVEDEMME20',
+  '20730020': Bic(
+    value: 'HYVEDEMME20',
     bankName: 'UniCredit Bank - HVB Settlement EAC20',
     bankShortName: 'UniCredit Bk Settlemt EAC20',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730021': Iban(
-    bic: 'HYVEDEMME21',
+  '20730021': Bic(
+    value: 'HYVEDEMME21',
     bankName: 'UniCredit Bank - HVB Settlement EAC21',
     bankShortName: 'UniCredit Bk Settlemt EAC21',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730022': Iban(
-    bic: 'HYVEDEMME22',
+  '20730022': Bic(
+    value: 'HYVEDEMME22',
     bankName: 'UniCredit Bank - HVB Settlement EAC22',
     bankShortName: 'UniCredit Bk Settlemt EAC22',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730023': Iban(
-    bic: 'HYVEDEMME23',
+  '20730023': Bic(
+    value: 'HYVEDEMME23',
     bankName: 'UniCredit Bank - HVB Settlement EAC23',
     bankShortName: 'UniCredit Bk Settlemt EAC23',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730024': Iban(
-    bic: 'HYVEDEMME24',
+  '20730024': Bic(
+    value: 'HYVEDEMME24',
     bankName: 'UniCredit Bank - HVB Settlement EAC24',
     bankShortName: 'UniCredit Bk Settlemt EAC24',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730025': Iban(
-    bic: 'HYVEDEMME25',
+  '20730025': Bic(
+    value: 'HYVEDEMME25',
     bankName: 'UniCredit Bank - HVB Settlement EAC25',
     bankShortName: 'UniCredit Bk Settlemt EAC25',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730026': Iban(
-    bic: 'HYVEDEMME26',
+  '20730026': Bic(
+    value: 'HYVEDEMME26',
     bankName: 'UniCredit Bank - HVB Settlement EAC26',
     bankShortName: 'UniCredit Bk Settlemt EAC26',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730027': Iban(
-    bic: 'HYVEDEMME27',
+  '20730027': Bic(
+    value: 'HYVEDEMME27',
     bankName: 'UniCredit Bank - HVB Settlement EAC27',
     bankShortName: 'UniCredit Bk Settlemt EAC27',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730028': Iban(
-    bic: 'HYVEDEMME28',
+  '20730028': Bic(
+    value: 'HYVEDEMME28',
     bankName: 'UniCredit Bank - HVB Settlement EAC28',
     bankShortName: 'UniCredit Bk Settlemt EAC28',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730029': Iban(
-    bic: 'HYVEDEMME29',
+  '20730029': Bic(
+    value: 'HYVEDEMME29',
     bankName: 'UniCredit Bank - HVB Settlement EAC29',
     bankShortName: 'UniCredit Bk Settlemt EAC29',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730030': Iban(
-    bic: 'HYVEDEMME30',
+  '20730030': Bic(
+    value: 'HYVEDEMME30',
     bankName: 'UniCredit Bank - HVB Settlement EAC30',
     bankShortName: 'UniCredit Bk Settlemt EAC30',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730031': Iban(
-    bic: 'HYVEDEMME31',
+  '20730031': Bic(
+    value: 'HYVEDEMME31',
     bankName: 'UniCredit Bank - HVB Settlement EAC31',
     bankShortName: 'UniCredit Bk Settlemt EAC31',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730032': Iban(
-    bic: 'HYVEDEMME32',
+  '20730032': Bic(
+    value: 'HYVEDEMME32',
     bankName: 'UniCredit Bank - HVB Settlement EAC32',
     bankShortName: 'UniCredit Bk Settlemt EAC32',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730033': Iban(
-    bic: 'HYVEDEMME33',
+  '20730033': Bic(
+    value: 'HYVEDEMME33',
     bankName: 'UniCredit Bank - HVB Settlement EAC33',
     bankShortName: 'UniCredit Bk Settlemt EAC33',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730034': Iban(
-    bic: 'HYVEDEMME34',
+  '20730034': Bic(
+    value: 'HYVEDEMME34',
     bankName: 'UniCredit Bank - HVB Settlement EAC34',
     bankShortName: 'UniCredit Bk Settlemt EAC34',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730035': Iban(
-    bic: 'HYVEDEMME35',
+  '20730035': Bic(
+    value: 'HYVEDEMME35',
     bankName: 'UniCredit Bank - HVB Settlement EAC35',
     bankShortName: 'UniCredit Bk Settlemt EAC35',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730036': Iban(
-    bic: 'HYVEDEMME36',
+  '20730036': Bic(
+    value: 'HYVEDEMME36',
     bankName: 'UniCredit Bank - HVB Settlement EAC36',
     bankShortName: 'UniCredit Bk Settlemt EAC36',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730037': Iban(
-    bic: 'HYVEDEMME37',
+  '20730037': Bic(
+    value: 'HYVEDEMME37',
     bankName: 'UniCredit Bank - HVB Settlement EAC37',
     bankShortName: 'UniCredit Bk Settlemt EAC37',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730038': Iban(
-    bic: 'HYVEDEMME38',
+  '20730038': Bic(
+    value: 'HYVEDEMME38',
     bankName: 'UniCredit Bank - HVB Settlement EAC38',
     bankShortName: 'UniCredit Bk Settlemt EAC38',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730039': Iban(
-    bic: 'HYVEDEMME39',
+  '20730039': Bic(
+    value: 'HYVEDEMME39',
     bankName: 'UniCredit Bank - HVB Settlement EAC39',
     bankShortName: 'UniCredit Bk Settlemt EAC39',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730040': Iban(
-    bic: 'HYVEDEMME40',
+  '20730040': Bic(
+    value: 'HYVEDEMME40',
     bankName: 'UniCredit Bank - HVB Settlement EAC40',
     bankShortName: 'UniCredit Bk Settlemt EAC40',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730041': Iban(
-    bic: 'HYVEDEMME41',
+  '20730041': Bic(
+    value: 'HYVEDEMME41',
     bankName: 'UniCredit Bank - HVB Settlement EAC41',
     bankShortName: 'UniCredit Bk Settlemt EAC41',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730042': Iban(
-    bic: 'HYVEDEMME42',
+  '20730042': Bic(
+    value: 'HYVEDEMME42',
     bankName: 'UniCredit Bank - HVB Settlement EAC42',
     bankShortName: 'UniCredit Bk Settlemt EAC42',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730043': Iban(
-    bic: 'HYVEDEMME43',
+  '20730043': Bic(
+    value: 'HYVEDEMME43',
     bankName: 'UniCredit Bank - HVB Settlement EAC43',
     bankShortName: 'UniCredit Bk Settlemt EAC43',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730044': Iban(
-    bic: 'HYVEDEMME44',
+  '20730044': Bic(
+    value: 'HYVEDEMME44',
     bankName: 'UniCredit Bank - HVB Settlement EAC44',
     bankShortName: 'UniCredit Bk Settlemt EAC44',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730045': Iban(
-    bic: 'HYVEDEMME45',
+  '20730045': Bic(
+    value: 'HYVEDEMME45',
     bankName: 'UniCredit Bank - HVB Settlement EAC45',
     bankShortName: 'UniCredit Bk Settlemt EAC45',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730046': Iban(
-    bic: 'HYVEDEMME46',
+  '20730046': Bic(
+    value: 'HYVEDEMME46',
     bankName: 'UniCredit Bank - HVB Settlement EAC46',
     bankShortName: 'UniCredit Bk Settlemt EAC46',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730047': Iban(
-    bic: 'HYVEDEMME47',
+  '20730047': Bic(
+    value: 'HYVEDEMME47',
     bankName: 'UniCredit Bank - HVB Settlement EAC47',
     bankShortName: 'UniCredit Bk Settlemt EAC47',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730048': Iban(
-    bic: 'HYVEDEMME48',
+  '20730048': Bic(
+    value: 'HYVEDEMME48',
     bankName: 'UniCredit Bank - HVB Settlement EAC48',
     bankShortName: 'UniCredit Bk Settlemt EAC48',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730049': Iban(
-    bic: 'HYVEDEMME49',
+  '20730049': Bic(
+    value: 'HYVEDEMME49',
     bankName: 'UniCredit Bank - HVB Settlement EAC49',
     bankShortName: 'UniCredit Bk Settlemt EAC49',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730050': Iban(
-    bic: 'HYVEDEMME50',
+  '20730050': Bic(
+    value: 'HYVEDEMME50',
     bankName: 'UniCredit Bank - HVB Settlement EAC50',
     bankShortName: 'UniCredit Bk Settlemt EAC50',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730052': Iban(
-    bic: 'HYVEDEMME52',
+  '20730052': Bic(
+    value: 'HYVEDEMME52',
     bankName: 'UniCredit Bank - HVB Settlement EAC52',
     bankShortName: 'UniCredit Bk Settlemt EAC52',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730055': Iban(
-    bic: 'HYVEDEMME55',
+  '20730055': Bic(
+    value: 'HYVEDEMME55',
     bankName: 'UniCredit Bank - HVB Settlement EAC55',
     bankShortName: 'UniCredit Bk Settlemt EAC55',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730056': Iban(
-    bic: 'HYVEDEMME56',
+  '20730056': Bic(
+    value: 'HYVEDEMME56',
     bankName: 'UniCredit Bank - HVB Settlement EAC56',
     bankShortName: 'UniCredit Bk Settlemt EAC56',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730057': Iban(
-    bic: 'HYVEDEMME57',
+  '20730057': Bic(
+    value: 'HYVEDEMME57',
     bankName: 'UniCredit Bank - HVB Settlement EAC57',
     bankShortName: 'UniCredit Bk Settlemt EAC57',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730058': Iban(
-    bic: 'HYVEDEMME58',
+  '20730058': Bic(
+    value: 'HYVEDEMME58',
     bankName: 'UniCredit Bank - HVB Settlement EAC58',
     bankShortName: 'UniCredit Bk Settlemt EAC58',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730059': Iban(
-    bic: 'HYVEDEMME59',
+  '20730059': Bic(
+    value: 'HYVEDEMME59',
     bankName: 'UniCredit Bank - HVB Settlement EAC59',
     bankShortName: 'UniCredit Bk Settlemt EAC59',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730060': Iban(
-    bic: 'HYVEDEMME60',
+  '20730060': Bic(
+    value: 'HYVEDEMME60',
     bankName: 'UniCredit Bank - HVB Settlement EAC60',
     bankShortName: 'UniCredit Bk Settlemt EAC60',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730061': Iban(
-    bic: 'HYVEDEMME61',
+  '20730061': Bic(
+    value: 'HYVEDEMME61',
     bankName: 'UniCredit Bank - HVB Settlement EAC61',
     bankShortName: 'UniCredit Bk Settlemt EAC61',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730062': Iban(
-    bic: 'HYVEDEMME62',
+  '20730062': Bic(
+    value: 'HYVEDEMME62',
     bankName: 'UniCredit Bank - HVB Settlement EAC62',
     bankShortName: 'UniCredit Bk Settlemt EAC62',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730063': Iban(
-    bic: 'HYVEDEMME63',
+  '20730063': Bic(
+    value: 'HYVEDEMME63',
     bankName: 'UniCredit Bank - HVB Settlement EAC63',
     bankShortName: 'UniCredit Bk Settlemt EAC63',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730064': Iban(
-    bic: 'HYVEDEMME64',
+  '20730064': Bic(
+    value: 'HYVEDEMME64',
     bankName: 'UniCredit Bank - HVB Settlement EAC64',
     bankShortName: 'UniCredit Bk Settlemt EAC64',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730065': Iban(
-    bic: 'HYVEDEMME65',
+  '20730065': Bic(
+    value: 'HYVEDEMME65',
     bankName: 'UniCredit Bank - HVB Settlement EAC65',
     bankShortName: 'UniCredit Bk Settlemt EAC65',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730066': Iban(
-    bic: 'HYVEDEMME66',
+  '20730066': Bic(
+    value: 'HYVEDEMME66',
     bankName: 'UniCredit Bank - HVB Settlement EAC66',
     bankShortName: 'UniCredit Bk Settlemt EAC66',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730067': Iban(
-    bic: 'HYVEDEMME67',
+  '20730067': Bic(
+    value: 'HYVEDEMME67',
     bankName: 'UniCredit Bank - HVB Settlement EAC67',
     bankShortName: 'UniCredit Bk Settlemt EAC67',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730068': Iban(
-    bic: 'HYVEDEMME68',
+  '20730068': Bic(
+    value: 'HYVEDEMME68',
     bankName: 'UniCredit Bank - HVB Settlement EAC68',
     bankShortName: 'UniCredit Bk Settlemt EAC68',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730069': Iban(
-    bic: 'HYVEDEMME69',
+  '20730069': Bic(
+    value: 'HYVEDEMME69',
     bankName: 'UniCredit Bank - HVB Settlement EAC69',
     bankShortName: 'UniCredit Bk Settlemt EAC69',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730070': Iban(
-    bic: 'HYVEDEMME70',
+  '20730070': Bic(
+    value: 'HYVEDEMME70',
     bankName: 'UniCredit Bank - HVB Settlement EAC70',
     bankShortName: 'UniCredit Bk Settlemt EAC70',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730071': Iban(
-    bic: 'HYVEDEMME71',
+  '20730071': Bic(
+    value: 'HYVEDEMME71',
     bankName: 'UniCredit Bank - HVB Settlement EAC71',
     bankShortName: 'UniCredit Bk Settlemt EAC71',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730072': Iban(
-    bic: 'HYVEDEMME72',
+  '20730072': Bic(
+    value: 'HYVEDEMME72',
     bankName: 'UniCredit Bank - HVB Settlement EAC72',
     bankShortName: 'UniCredit Bk Settlemt EAC72',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730073': Iban(
-    bic: 'HYVEDEMME73',
+  '20730073': Bic(
+    value: 'HYVEDEMME73',
     bankName: 'UniCredit Bank - HVB Settlement EAC73',
     bankShortName: 'UniCredit Bk Settlemt EAC73',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730074': Iban(
-    bic: 'HYVEDEMME74',
+  '20730074': Bic(
+    value: 'HYVEDEMME74',
     bankName: 'UniCredit Bank - HVB Settlement EAC74',
     bankShortName: 'UniCredit Bk Settlemt EAC74',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730075': Iban(
-    bic: 'HYVEDEMME75',
+  '20730075': Bic(
+    value: 'HYVEDEMME75',
     bankName: 'UniCredit Bank - HVB Settlement EAC75',
     bankShortName: 'UniCredit Bk Settlemt EAC75',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730076': Iban(
-    bic: 'HYVEDEMME76',
+  '20730076': Bic(
+    value: 'HYVEDEMME76',
     bankName: 'UniCredit Bank - HVB Settlement EAC76',
     bankShortName: 'UniCredit Bk Settlemt EAC76',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730077': Iban(
-    bic: 'HYVEDEMME77',
+  '20730077': Bic(
+    value: 'HYVEDEMME77',
     bankName: 'UniCredit Bank - HVB Settlement EAC77',
     bankShortName: 'UniCredit Bk Settlemt EAC77',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730078': Iban(
-    bic: 'HYVEDEMME78',
+  '20730078': Bic(
+    value: 'HYVEDEMME78',
     bankName: 'UniCredit Bank - HVB Settlement EAC78',
     bankShortName: 'UniCredit Bk Settlemt EAC78',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730079': Iban(
-    bic: 'HYVEDEMME79',
+  '20730079': Bic(
+    value: 'HYVEDEMME79',
     bankName: 'UniCredit Bank - HVB Settlement EAC79',
     bankShortName: 'UniCredit Bk Settlemt EAC79',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730080': Iban(
-    bic: 'HYVEDEMME80',
+  '20730080': Bic(
+    value: 'HYVEDEMME80',
     bankName: 'UniCredit Bank - HVB Settlement EAC80',
     bankShortName: 'UniCredit Bk Settlemt EAC80',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730081': Iban(
-    bic: 'HYVEDEMME81',
+  '20730081': Bic(
+    value: 'HYVEDEMME81',
     bankName: 'UniCredit Bank - HVB Settlement EAC81',
     bankShortName: 'UniCredit Bk Settlemt EAC81',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730082': Iban(
-    bic: 'HYVEDEMME82',
+  '20730082': Bic(
+    value: 'HYVEDEMME82',
     bankName: 'UniCredit Bank - HVB Settlement EAC82',
     bankShortName: 'UniCredit Bk Settlemt EAC82',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730083': Iban(
-    bic: 'HYVEDEMME83',
+  '20730083': Bic(
+    value: 'HYVEDEMME83',
     bankName: 'UniCredit Bank - HVB Settlement EAC83',
     bankShortName: 'UniCredit Bk Settlemt EAC83',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730084': Iban(
-    bic: 'HYVEDEMME84',
+  '20730084': Bic(
+    value: 'HYVEDEMME84',
     bankName: 'UniCredit Bank - HVB Settlement EAC84',
     bankShortName: 'UniCredit Bk Settlemt EAC84',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730085': Iban(
-    bic: 'HYVEDEMME85',
+  '20730085': Bic(
+    value: 'HYVEDEMME85',
     bankName: 'UniCredit Bank - HVB Settlement EAC85',
     bankShortName: 'UniCredit Bk Settlemt EAC85',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730086': Iban(
-    bic: 'HYVEDEMME86',
+  '20730086': Bic(
+    value: 'HYVEDEMME86',
     bankName: 'UniCredit Bank - HVB Settlement EAC86',
     bankShortName: 'UniCredit Bk Settlemt EAC86',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730087': Iban(
-    bic: 'HYVEDEMME87',
+  '20730087': Bic(
+    value: 'HYVEDEMME87',
     bankName: 'UniCredit Bank - HVB Settlement EAC87',
     bankShortName: 'UniCredit Bk Settlemt EAC87',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730088': Iban(
-    bic: 'HYVEDEMME88',
+  '20730088': Bic(
+    value: 'HYVEDEMME88',
     bankName: 'UniCredit Bank - HVB Settlement EAC88',
     bankShortName: 'UniCredit Bk Settlemt EAC88',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730089': Iban(
-    bic: 'HYVEDEMME89',
+  '20730089': Bic(
+    value: 'HYVEDEMME89',
     bankName: 'UniCredit Bank - HVB Settlement EAC89',
     bankShortName: 'UniCredit Bk Settlemt EAC89',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730090': Iban(
-    bic: 'HYVEDEMME90',
+  '20730090': Bic(
+    value: 'HYVEDEMME90',
     bankName: 'UniCredit Bank - HVB Settlement EAC90',
     bankShortName: 'UniCredit Bk Settlemt EAC90',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730091': Iban(
-    bic: 'HYVEDEMME91',
+  '20730091': Bic(
+    value: 'HYVEDEMME91',
     bankName: 'UniCredit Bank - HVB Settlement EAC91',
     bankShortName: 'UniCredit Bk Settlemt EAC91',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730092': Iban(
-    bic: 'HYVEDEMME92',
+  '20730092': Bic(
+    value: 'HYVEDEMME92',
     bankName: 'UniCredit Bank - HVB Settlement EAC92',
     bankShortName: 'UniCredit Bk Settlemt EAC92',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730093': Iban(
-    bic: 'HYVEDEMME93',
+  '20730093': Bic(
+    value: 'HYVEDEMME93',
     bankName: 'UniCredit Bank - HVB Settlement EAC93',
     bankShortName: 'UniCredit Bk Settlemt EAC93',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730094': Iban(
-    bic: 'HYVEDEMME94',
+  '20730094': Bic(
+    value: 'HYVEDEMME94',
     bankName: 'UniCredit Bank - HVB Settlement EAC94',
     bankShortName: 'UniCredit Bk Settlemt EAC94',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730095': Iban(
-    bic: 'HYVEDEMME95',
+  '20730095': Bic(
+    value: 'HYVEDEMME95',
     bankName: 'UniCredit Bank - HVB Settlement EAC95',
     bankShortName: 'UniCredit Bk Settlemt EAC95',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730096': Iban(
-    bic: 'HYVEDEMME96',
+  '20730096': Bic(
+    value: 'HYVEDEMME96',
     bankName: 'UniCredit Bank - HVB Settlement EAC96',
     bankShortName: 'UniCredit Bk Settlemt EAC96',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730097': Iban(
-    bic: 'HYVEDEMME97',
+  '20730097': Bic(
+    value: 'HYVEDEMME97',
     bankName: 'UniCredit Bank - HVB Settlement EAC97',
     bankShortName: 'UniCredit Bk Settlemt EAC97',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730098': Iban(
-    bic: 'HYVEDEMME98',
+  '20730098': Bic(
+    value: 'HYVEDEMME98',
     bankName: 'UniCredit Bank - HVB Settlement EAC98',
     bankShortName: 'UniCredit Bk Settlemt EAC98',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20730099': Iban(
-    bic: 'HYVEDEMME99',
+  '20730099': Bic(
+    value: 'HYVEDEMME99',
     bankName: 'UniCredit Bank - HVB Settlement EAC99',
     bankShortName: 'UniCredit Bk Settlemt EAC99',
     bankPostcode: '21050',
     bankLocation: 'Hamburg',
   ),
-  '20750000': Iban(
-    bic: 'NOLADE21HAM',
+  '20750000': Bic(
+    value: 'NOLADE21HAM',
     bankName: 'Sparkasse Harburg-Buxtehude',
     bankShortName: 'Spk Harburg-Buxtehude',
     bankPostcode: '21255',
     bankLocation: 'Tostedt',
   ),
-  '21000000': Iban(
-    bic: 'MARKDEF1210',
+  '21000000': Bic(
+    value: 'MARKDEF1210',
     bankName: 'BBk Hamburg eh Kiel',
     bankShortName: 'Bundesbank eh Kiel',
     bankPostcode: '22772',
     bankLocation: 'Hamburg',
   ),
-  '21020600': Iban(
-    bic: 'SYBKDE22KIE',
+  '21020600': Bic(
+    value: 'SYBKDE22KIE',
     bankName: 'Sydbank Filiale Kiel',
     bankShortName: 'Sydbank Fil. Kiel',
     bankPostcode: '24103',
     bankLocation: 'Kiel',
   ),
-  '21040010': Iban(
-    bic: 'COBADEFFXXX',
+  '21040010': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Schleswig',
     bankShortName: 'Commerzbank',
     bankPostcode: '24821',
     bankLocation: 'Schleswig',
   ),
-  '21042076': Iban(
-    bic: 'COBADEFFXXX',
+  '21042076': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Eckernförde',
     bankShortName: 'Commerzbank',
     bankPostcode: '24331',
     bankLocation: 'Eckernförde',
   ),
-  '21050000': Iban(
-    bic: 'HSHNDEHHXXX',
+  '21050000': Bic(
+    value: 'HSHNDEHHXXX',
     bankName: 'Hamburg Commercial Bank, ehemals HSH Nordbank Hamburg',
     bankShortName: 'Hamburg Commercial Bank',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '21050170': Iban(
-    bic: 'NOLADE21KIE',
+  '21050170': Bic(
+    value: 'NOLADE21KIE',
     bankName: 'Förde Sparkasse',
     bankShortName: 'Förde Sparkasse',
     bankPostcode: '24351',
     bankLocation: 'Damp',
   ),
-  '21051275': Iban(
-    bic: 'NOLADE21BOR',
+  '21051275': Bic(
+    value: 'NOLADE21BOR',
     bankName: 'Bordesholmer Sparkasse',
     bankShortName: 'Bordesholmer Sparkasse',
     bankPostcode: '25572',
     bankLocation: 'Sankt Margarethen',
   ),
-  '21051580': Iban(
-    bic: 'NOLADE21PLN',
+  '21051580': Bic(
+    value: 'NOLADE21PLN',
     bankName: 'Sparkasse Kreis Plön -alt-',
     bankShortName: 'Spk Kreis Plön -alt-',
     bankPostcode: '24301',
     bankLocation: 'Plön',
   ),
-  '21052090': Iban(
-    bic: 'NOLADE21ECK',
+  '21052090': Bic(
+    value: 'NOLADE21ECK',
     bankName: 'Sparkasse Eckernförde -alt-',
     bankShortName: 'Sparkasse Eckernförde -alt-',
     bankPostcode: '24340',
     bankLocation: 'Eckernförde',
   ),
-  '21070020': Iban(
-    bic: 'DEUTDEHH214',
+  '21070020': Bic(
+    value: 'DEUTDEHH214',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '24768',
     bankLocation: 'Rendsburg',
   ),
-  '21070024': Iban(
-    bic: 'DEUTDEDB214',
+  '21070024': Bic(
+    value: 'DEUTDEDB214',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '24768',
     bankLocation: 'Rendsburg',
   ),
-  '21080050': Iban(
-    bic: 'DRESDEFF210',
+  '21080050': Bic(
+    value: 'DRESDEFF210',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Kiel',
     bankPostcode: '24018',
     bankLocation: 'Kiel',
   ),
-  '21089201': Iban(
-    bic: 'DRESDEFFI07',
+  '21089201': Bic(
+    value: 'DRESDEFFI07',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Kiel',
     bankPostcode: '24018',
     bankLocation: 'Kiel',
   ),
-  '21090007': Iban(
-    bic: 'GENODEF1KIL',
+  '21090007': Bic(
+    value: 'GENODEF1KIL',
     bankName: 'Kieler Volksbank (Gf P2)',
     bankShortName: 'Kieler Volksbank',
     bankPostcode: '24027',
     bankLocation: 'Kiel',
   ),
-  '21090099': Iban(
-    bic: 'GENODEF1KIL',
+  '21090099': Bic(
+    value: 'GENODEF1KIL',
     bankName: 'Kieler Volksbank (Gf GAA)',
     bankShortName: 'Kieler Volksbank (Gf GAA)',
     bankPostcode: '24027',
     bankLocation: 'Kiel',
   ),
-  '21090900': Iban(
-    bic: 'GENODEF1P11',
+  '21090900': Bic(
+    value: 'GENODEF1P11',
     bankName: 'PSD Bank Kiel (Gf P2)',
     bankShortName: 'PSD Bank Kiel',
     bankPostcode: '24034',
     bankLocation: 'Kiel',
   ),
-  '21092023': Iban(
-    bic: 'GENODEF1EFO',
+  '21092023': Bic(
+    value: 'GENODEF1EFO',
     bankName: 'Eckernförder Bank Volksbank-Raiffeisenbank (Gf P2)',
     bankShortName: 'Eckernförder Bank VRB',
     bankPostcode: '24331',
     bankLocation: 'Eckernförde',
   ),
-  '21240040': Iban(
-    bic: 'COBADEFFXXX',
+  '21240040': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Wahlstedt',
     bankShortName: 'Commerzbank',
     bankPostcode: '23807',
     bankLocation: 'Wahlstedt',
   ),
-  '21241540': Iban(
-    bic: 'COBADEFFXXX',
+  '21241540': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Bramstedt',
     bankShortName: 'Commerzbank',
     bankPostcode: '24571',
     bankLocation: 'Bad Bramstedt',
   ),
-  '21261089': Iban(
-    bic: 'GENODEF1WAS',
+  '21261089': Bic(
+    value: 'GENODEF1WAS',
     bankName: 'Raiffeisenbank Wasbek -alt-',
     bankShortName: 'Raiffeisenbank -alt-',
     bankPostcode: '24647',
     bankLocation: 'Wasbek',
   ),
-  '21261227': Iban(
-    bic: 'GENODEF1BOO',
+  '21261227': Bic(
+    value: 'GENODEF1BOO',
     bankName: 'Raiffbk Kl-Kummerfeld -alt-',
     bankShortName: 'Raiffbk Kl-Kummerfeld -alt-',
     bankPostcode: '24626',
     bankLocation: 'Groß Kummerfeld',
   ),
-  '21270020': Iban(
-    bic: 'DEUTDEHH212',
+  '21270020': Bic(
+    value: 'DEUTDEHH212',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '24504',
     bankLocation: 'Neumünster',
   ),
-  '21270024': Iban(
-    bic: 'DEUTDEDB212',
+  '21270024': Bic(
+    value: 'DEUTDEDB212',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '24504',
     bankLocation: 'Neumünster',
   ),
-  '21280002': Iban(
-    bic: 'DRESDEFF212',
+  '21280002': Bic(
+    value: 'DRESDEFF212',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Neumünster',
     bankPostcode: '24504',
     bankLocation: 'Neumünster',
   ),
-  '21290016': Iban(
-    bic: 'GENODEF1NMS',
+  '21290016': Bic(
+    value: 'GENODEF1NMS',
     bankName: 'VR Bank Neumünster (Gf P2)',
     bankShortName: 'VR Bank Neumünster',
     bankPostcode: '24517',
     bankLocation: 'Neumünster',
   ),
-  '21340010': Iban(
-    bic: 'COBADEFFXXX',
+  '21340010': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Neustadt Holst',
     bankShortName: 'Commerzbank',
     bankPostcode: '23722',
     bankLocation: 'Neustadt in Holstein',
   ),
-  '21352240': Iban(
-    bic: 'NOLADE21HOL',
+  '21352240': Bic(
+    value: 'NOLADE21HOL',
     bankName: 'Spk Holstein Bad Oldesloe',
     bankShortName: 'Sparkasse Holstein',
     bankPostcode: '23843',
     bankLocation: 'Bad Oldesloe',
   ),
-  '21390008': Iban(
-    bic: 'GENODEF1NSH',
+  '21390008': Bic(
+    value: 'GENODEF1NSH',
     bankName: 'VR Bank zwischen den Meeren (Gf P2)',
     bankShortName: 'VR Bank zdM, Neumünster',
     bankPostcode: '24534',
     bankLocation: 'Neumünster',
   ),
-  '21392218': Iban(
-    bic: 'GENODEF1EUT',
+  '21392218': Bic(
+    value: 'GENODEF1EUT',
     bankName: 'Volksbank Eutin Raiffeisenbank (Gf P2)',
     bankShortName: 'Volksbank Eutin',
     bankPostcode: '23693',
     bankLocation: 'Eutin',
   ),
-  '21440045': Iban(
-    bic: 'COBADEFFXXX',
+  '21440045': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Rendsburg',
     bankShortName: 'Commerzbank',
     bankPostcode: '24768',
     bankLocation: 'Rendsburg',
   ),
-  '21450000': Iban(
-    bic: 'NOLADE21RDB',
+  '21450000': Bic(
+    value: 'NOLADE21RDB',
     bankName: 'Spk Mittelholst Hennstedt',
     bankShortName: 'Sparkasse Mittelholstein',
     bankPostcode: '25779',
     bankLocation: 'Hennstedt',
   ),
-  '21451205': Iban(
-    bic: 'NOLADE21BDF',
+  '21451205': Bic(
+    value: 'NOLADE21BDF',
     bankName: 'Sparkasse Büdelsdorf -alt-',
     bankShortName: 'Sparkasse Büdelsdorf -alt-',
     bankPostcode: '24782',
     bankLocation: 'Büdelsdorf',
   ),
-  '21452030': Iban(
-    bic: 'NOLADE21HWS',
+  '21452030': Bic(
+    value: 'NOLADE21HWS',
     bankName: 'Sparkasse Hohenwestedt',
     bankShortName: 'Spk Wasbek',
     bankPostcode: '24647',
     bankLocation: 'Wasbek',
   ),
-  '21463603': Iban(
-    bic: 'GENODEF1NTO',
+  '21463603': Bic(
+    value: 'GENODEF1NTO',
     bankName: 'Volksbank-Raiffeisenbank im Kreis Rendsburg (Gf P2)',
     bankShortName: 'VB-Raiffbk i Kr Rendsburg',
     bankPostcode: '24783',
     bankLocation: 'Osterrönfeld',
   ),
-  '21464671': Iban(
-    bic: 'GENODEF1TOB',
+  '21464671': Bic(
+    value: 'GENODEF1TOB',
     bankName: 'Raiffeisenbank Todenbüttel',
     bankShortName: 'Raiffeisenbank Todenbüttel',
     bankPostcode: '25557',
     bankLocation: 'Hanerau-Hademarschen',
   ),
-  '21480003': Iban(
-    bic: 'DRESDEFF214',
+  '21480003': Bic(
+    value: 'DRESDEFF214',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Rendsburg',
     bankPostcode: '24752',
     bankLocation: 'Rendsburg',
   ),
-  '21510600': Iban(
-    bic: 'SYBKDE22XXX',
+  '21510600': Bic(
+    value: 'SYBKDE22XXX',
     bankName: 'Sydbank Filiale Flensburg',
     bankShortName: 'Sydbank Fil. Flensburg',
     bankPostcode: '24937',
     bankLocation: 'Flensburg',
   ),
-  '21520100': Iban(
-    bic: 'UNBNDE21XXX',
+  '21520100': Bic(
+    value: 'UNBNDE21XXX',
     bankName: 'Union-Bank Flensburg (Gf P2)',
     bankShortName: 'Union-Bank Flensburg',
     bankPostcode: '24937',
     bankLocation: 'Flensburg',
   ),
-  '21540060': Iban(
-    bic: 'COBADEFFXXX',
+  '21540060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Flensburg',
     bankShortName: 'Commerzbank',
     bankPostcode: '24903',
     bankLocation: 'Flensburg',
   ),
-  '21565316': Iban(
-    bic: 'GENODEF1HDW',
+  '21565316': Bic(
+    value: 'GENODEF1HDW',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffbk Handewitt',
     bankPostcode: '24983',
     bankLocation: 'Handewitt',
   ),
-  '21570011': Iban(
-    bic: 'DEUTDEHH216',
+  '21570011': Bic(
+    value: 'DEUTDEHH216',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '25963',
     bankLocation: 'Sylt',
   ),
-  '21570024': Iban(
-    bic: 'DEUTDEDB216',
+  '21570024': Bic(
+    value: 'DEUTDEDB216',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '25963',
     bankLocation: 'Sylt',
   ),
-  '21570202': Iban(
-    bic: 'DEUTDEHHP01',
+  '21570202': Bic(
+    value: 'DEUTDEHHP01',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '24937',
     bankLocation: 'Flensburg',
   ),
-  '21570224': Iban(
-    bic: 'DEUTDEDBP01',
+  '21570224': Bic(
+    value: 'DEUTDEDBP01',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '24937',
     bankLocation: 'Flensburg',
   ),
-  '21580000': Iban(
-    bic: 'DRESDEFF215',
+  '21580000': Bic(
+    value: 'DRESDEFF215',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Flensburg',
     bankPostcode: '24904',
     bankLocation: 'Flensburg',
   ),
-  '21661719': Iban(
-    bic: 'GENODEF1RSL',
+  '21661719': Bic(
+    value: 'GENODEF1RSL',
     bankName: 'VR Bank Flensburg-Schleswig (Gf P2)',
     bankShortName: 'VR Bank Flensburg-Schleswig',
     bankPostcode: '24837',
     bankLocation: 'Schleswig',
   ),
-  '21690020': Iban(
-    bic: 'GENODEF1SLW',
+  '21690020': Bic(
+    value: 'GENODEF1SLW',
     bankName: 'VR Bank Schleswig-Mittelholstein (Gf P2)',
     bankShortName: 'VR Bank SL MH',
     bankPostcode: '24783',
     bankLocation: 'Osterrönfeld',
   ),
-  '21740043': Iban(
-    bic: 'COBADEFFXXX',
+  '21740043': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Husum Nordsee',
     bankShortName: 'Commerzbank',
     bankPostcode: '25801',
     bankLocation: 'Husum',
   ),
-  '21741674': Iban(
-    bic: 'COBADEFFXXX',
+  '21741674': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Niebüll',
     bankShortName: 'Commerzbank',
     bankPostcode: '25899',
     bankLocation: 'Niebüll',
   ),
-  '21741825': Iban(
-    bic: 'COBADEFFXXX',
+  '21741825': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Westerland',
     bankShortName: 'Commerzbank',
     bankPostcode: '25961',
     bankLocation: 'Sylt',
   ),
-  '21750000': Iban(
-    bic: 'NOLADE21NOS',
+  '21750000': Bic(
+    value: 'NOLADE21NOS',
     bankName: 'Nord-Ostsee Spk Schleswig',
     bankShortName: 'Nord-Ostsee Sparkasse',
     bankPostcode: '24887',
     bankLocation: 'Silberstedt',
   ),
-  '21751230': Iban(
-    bic: 'NOLADE21BRD',
+  '21751230': Bic(
+    value: 'NOLADE21BRD',
     bankName: 'Spar- und Leihkasse zu Bredstedt',
     bankShortName: 'Spk Langenhorn',
     bankPostcode: '25842',
     bankLocation: 'Langenhorn',
   ),
-  '21762550': Iban(
-    bic: 'GENODEF1HUM',
+  '21762550': Bic(
+    value: 'GENODEF1HUM',
     bankName: 'VR Bank Westküste (Gf P2)',
     bankShortName: 'VR Bank Westküste',
     bankPostcode: '25803',
     bankLocation: 'Husum',
   ),
-  '21763542': Iban(
-    bic: 'GENODEF1BDS',
+  '21763542': Bic(
+    value: 'GENODEF1BDS',
     bankName: 'VR Bank Nord (Gf P2)',
     bankShortName: 'VR Bank Nord',
     bankPostcode: '24937',
     bankLocation: 'Flensburg',
   ),
-  '21770011': Iban(
-    bic: 'DEUTDEHH217',
+  '21770011': Bic(
+    value: 'DEUTDEHH217',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '25801',
     bankLocation: 'Husum',
   ),
-  '21770024': Iban(
-    bic: 'DEUTDEDB217',
+  '21770024': Bic(
+    value: 'DEUTDEDB217',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '25801',
     bankLocation: 'Husum',
   ),
-  '21791805': Iban(
-    bic: 'GENODEF1SYL',
+  '21791805': Bic(
+    value: 'GENODEF1SYL',
     bankName: 'Sylter Bank (Gf P2)',
     bankShortName: 'Sylter Bank',
     bankPostcode: '25980',
     bankLocation: 'Sylt',
   ),
-  '21791906': Iban(
-    bic: 'GENODEF1WYK',
+  '21791906': Bic(
+    value: 'GENODEF1WYK',
     bankName: 'Vereinigte VR Bank (Gf P2)',
     bankShortName: 'Vereinigte VR Bank',
     bankPostcode: '25930',
     bankLocation: 'Wyk auf Föhr',
   ),
-  '21840078': Iban(
-    bic: 'COBADEFFXXX',
+  '21840078': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Heide Holst',
     bankShortName: 'Commerzbank',
     bankPostcode: '25740',
     bankLocation: 'Heide',
   ),
-  '21841328': Iban(
-    bic: 'COBADEFFXXX',
+  '21841328': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Brunsbüttel',
     bankShortName: 'Commerzbank',
     bankPostcode: '25541',
     bankLocation: 'Brunsbüttel',
   ),
-  '21852310': Iban(
-    bic: 'NOLADE21WEB',
+  '21852310': Bic(
+    value: 'NOLADE21WEB',
     bankName: 'Sparkasse Hennstedt-Wesselburen -alt-',
     bankShortName: 'Spk Hennst.-Wesselb. -alt-',
     bankPostcode: '25764',
     bankLocation: 'Wesselburen',
   ),
-  '21860418': Iban(
-    bic: 'GENODEF1RHE',
+  '21860418': Bic(
+    value: 'GENODEF1RHE',
     bankName: 'Raiffeisenbank Heide (Gf P2)',
     bankShortName: 'Raiffeisenbank Heide',
     bankPostcode: '25746',
     bankLocation: 'Heide',
   ),
-  '21890022': Iban(
-    bic: 'GENODEF1DVR',
+  '21890022': Bic(
+    value: 'GENODEF1DVR',
     bankName: 'Dithmarscher Volks- und Raiffeisenbank (Gf P2)',
     bankShortName: 'Dithmarscher VB Heide',
     bankPostcode: '25746',
     bankLocation: 'Heide',
   ),
-  '22140028': Iban(
-    bic: 'COBADEFFXXX',
+  '22140028': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Stade',
     bankShortName: 'Commerzbank',
     bankPostcode: '21682',
     bankLocation: 'Stade',
   ),
-  '22141028': Iban(
-    bic: 'COBADEFFXXX',
+  '22141028': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Henstedt-Ulzbg',
     bankShortName: 'Commerzbank',
     bankPostcode: '24558',
     bankLocation: 'Henstedt-Ulzburg',
   ),
-  '22141428': Iban(
-    bic: 'COBADEFFXXX',
+  '22141428': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Pinneberg',
     bankShortName: 'Commerzbank',
     bankPostcode: '25402',
     bankLocation: 'Pinneberg',
   ),
-  '22141628': Iban(
-    bic: 'COBADEFFXXX',
+  '22141628': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Uetersen',
     bankShortName: 'Commerzbank',
     bankPostcode: '25429',
     bankLocation: 'Uetersen',
   ),
-  '22150000': Iban(
-    bic: 'NOLADE21ELH',
+  '22150000': Bic(
+    value: 'NOLADE21ELH',
     bankName: 'Sparkasse Elmshorn',
     bankShortName: 'Spk Elmshorn',
     bankPostcode: '25335',
     bankLocation: 'Elmshorn',
   ),
-  '22151730': Iban(
-    bic: 'NOLADE21WED',
+  '22151730': Bic(
+    value: 'NOLADE21WED',
     bankName: 'Stadtsparkasse Wedel',
     bankShortName: 'St Spk Wedel',
     bankPostcode: '22880',
     bankLocation: 'Wedel',
   ),
-  '22163114': Iban(
-    bic: 'GENODEF1HTE',
+  '22163114': Bic(
+    value: 'GENODEF1HTE',
     bankName: 'Raiffeisenbank Elbmarsch Heist',
     bankShortName: 'Raiffbk Elbmarsch Heist',
     bankPostcode: '25488',
     bankLocation: 'Holm',
   ),
-  '22180000': Iban(
-    bic: 'DRESDEFF221',
+  '22180000': Bic(
+    value: 'DRESDEFF221',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Elmshorn',
     bankPostcode: '25335',
     bankLocation: 'Elmshorn',
   ),
-  '22181400': Iban(
-    bic: 'DRESDEFF206',
+  '22181400': Bic(
+    value: 'DRESDEFF206',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Pinneberg',
     bankPostcode: '25403',
     bankLocation: 'Pinneberg',
   ),
-  '22190030': Iban(
-    bic: 'GENODEF1ELM',
+  '22190030': Bic(
+    value: 'GENODEF1ELM',
     bankName: 'Volksbank Elmshorn (Gf P2)',
     bankShortName: 'Volksbank Elmshorn',
     bankPostcode: '25335',
     bankLocation: 'Elmshorn',
   ),
-  '22191405': Iban(
-    bic: 'GENODEF1PIN',
+  '22191405': Bic(
+    value: 'GENODEF1PIN',
     bankName: 'VR Bank in Holstein (Gf P2)',
     bankShortName: 'VR Bank in Holstein',
     bankPostcode: '25421',
     bankLocation: 'Pinneberg',
   ),
-  '22240073': Iban(
-    bic: 'COBADEFFXXX',
+  '22240073': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Itzehoe',
     bankShortName: 'Commerzbank',
     bankPostcode: '25502',
     bankLocation: 'Itzehoe',
   ),
-  '22250020': Iban(
-    bic: 'NOLADE21WHO',
+  '22250020': Bic(
+    value: 'NOLADE21WHO',
     bankName: 'Sparkasse Westholstein',
     bankShortName: 'Spk Westholstein',
     bankPostcode: '25358',
     bankLocation: 'Horst (Holstein)',
   ),
-  '22280000': Iban(
-    bic: 'DRESDEFF201',
+  '22280000': Bic(
+    value: 'DRESDEFF201',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Itzehoe',
     bankPostcode: '25503',
     bankLocation: 'Itzehoe',
   ),
-  '22290031': Iban(
-    bic: 'GENODEF1VIT',
+  '22290031': Bic(
+    value: 'GENODEF1VIT',
     bankName: 'Volksbank Raiffeisenbank Itzehoe Norderstedt Hohenwestedt',
     bankShortName: 'VR Itzehoe Norderstedt',
     bankPostcode: '22827',
     bankLocation: 'Norderstedt',
   ),
-  '23000000': Iban(
-    bic: 'MARKDEF1230',
+  '23000000': Bic(
+    value: 'MARKDEF1230',
     bankName: 'BBk Hamburg eh Lübeck',
     bankShortName: 'Bundesbank eh Lübeck',
     bankPostcode: '22772',
     bankLocation: 'Hamburg',
   ),
-  '23040022': Iban(
-    bic: 'COBADEFFXXX',
+  '23040022': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Schwartau',
     bankShortName: 'Commerzbank',
     bankPostcode: '23611',
     bankLocation: 'Bad Schwartau',
   ),
-  '23050000': Iban(
-    bic: 'HSHNDEHH230',
+  '23050000': Bic(
+    value: 'HSHNDEHH230',
     bankName: 'Hamburg Commercial Bank, ehemals HSH Nordbank Hamburg',
     bankShortName: 'Hamburg Commercial Bank',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '23050101': Iban(
-    bic: 'NOLADE21SPL',
+  '23050101': Bic(
+    value: 'NOLADE21SPL',
     bankName: 'Sparkasse zu Lübeck',
     bankShortName: 'Sparkasse zu Lübeck',
     bankPostcode: '23547',
     bankLocation: 'Lübeck',
   ),
-  '23051030': Iban(
-    bic: 'NOLADE21SHO',
+  '23051030': Bic(
+    value: 'NOLADE21SHO',
     bankName: 'Spk Südholstein Neumünster',
     bankShortName: 'Sparkasse Südholstein',
     bankPostcode: '23795',
     bankLocation: 'Bad Segeberg',
   ),
-  '23052750': Iban(
-    bic: 'NOLADE21RZB',
+  '23052750': Bic(
+    value: 'NOLADE21RZB',
     bankName: 'Kreissparkasse Herzogtum Lauenburg',
     bankShortName: 'Kr Spk Herzogtum Lauenburg',
     bankPostcode: '23879',
     bankLocation: 'Mölln',
   ),
-  '23061220': Iban(
-    bic: 'GENODEF1LZN',
+  '23061220': Bic(
+    value: 'GENODEF1LZN',
     bankName: 'Raiffeisenbank Leezen (Gf P2)',
     bankShortName: 'Raiffeisenbank Leezen',
     bankPostcode: '23816',
     bankLocation: 'Leezen',
   ),
-  '23062124': Iban(
-    bic: 'GENODEF1BAR',
+  '23062124': Bic(
+    value: 'GENODEF1BAR',
     bankName: 'Raiffeisenbank Bargteheide',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '22935',
     bankLocation: 'Bargteheide',
   ),
-  '23063129': Iban(
-    bic: 'GENODEF1RLB',
+  '23063129': Bic(
+    value: 'GENODEF1RLB',
     bankName: 'Raiffeisenbank Lauenburg',
     bankShortName: 'Raiffeisenbank Lauenburg',
     bankPostcode: '21487',
     bankLocation: 'Schwarzenbek',
   ),
-  '23064107': Iban(
-    bic: 'GENODEF1BCH',
+  '23064107': Bic(
+    value: 'GENODEF1BCH',
     bankName: 'Raiffeisenbank Büchen',
     bankShortName: 'Raiffeisenbank Büchen',
     bankPostcode: '19075',
     bankLocation: 'Pampow',
   ),
-  '23070203': Iban(
-    bic: 'DEUTDEHHP02',
+  '23070203': Bic(
+    value: 'DEUTDEHHP02',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '23566',
     bankLocation: 'Lübeck',
   ),
-  '23070224': Iban(
-    bic: 'DEUTDEDBP02',
+  '23070224': Bic(
+    value: 'DEUTDEDBP02',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '23566',
     bankLocation: 'Lübeck',
   ),
-  '23070700': Iban(
-    bic: 'DEUTDEDB237',
+  '23070700': Bic(
+    value: 'DEUTDEDB237',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '23795',
     bankLocation: 'Bad Segeberg',
   ),
-  '23070710': Iban(
-    bic: 'DEUTDEHH222',
+  '23070710': Bic(
+    value: 'DEUTDEHH222',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '23547',
     bankLocation: 'Lübeck',
   ),
-  '23080040': Iban(
-    bic: 'DRESDEFF230',
+  '23080040': Bic(
+    value: 'DRESDEFF230',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bad Schwartau',
     bankPostcode: '23611',
     bankLocation: 'Bad Schwartau',
   ),
-  '23089201': Iban(
-    bic: 'DRESDEFFI08',
+  '23089201': Bic(
+    value: 'DRESDEFFI08',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Lübeck',
     bankPostcode: '23501',
     bankLocation: 'Lübeck',
   ),
-  '23090142': Iban(
-    bic: 'GENODEF1HLU',
+  '23090142': Bic(
+    value: 'GENODEF1HLU',
     bankName: 'Volksbank Lübeck (Gf P2)',
     bankShortName: 'Volksbank Lübeck',
     bankPostcode: '23505',
     bankLocation: 'Lübeck',
   ),
-  '24040000': Iban(
-    bic: 'COBADEFFXXX',
+  '24040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Lüneburg',
     bankShortName: 'Commerzbank',
     bankPostcode: '21303',
     bankLocation: 'Lüneburg',
   ),
-  '24050110': Iban(
-    bic: 'NOLADE21LBG',
+  '24050110': Bic(
+    value: 'NOLADE21LBG',
     bankName: 'Sparkasse Lüneburg',
     bankShortName: 'Spk Lüneburg',
     bankPostcode: '19273',
     bankLocation: 'Neuhaus',
   ),
-  '24060300': Iban(
-    bic: 'GENODEF1NBU',
+  '24060300': Bic(
+    value: 'GENODEF1NBU',
     bankName: 'Volksbank Lüneburger Heide (Gf P2)',
     bankShortName: 'VB Lüneburger Heide',
     bankPostcode: '21412',
     bankLocation: 'Winsen (Luhe)',
   ),
-  '24061392': Iban(
-    bic: 'GENODEF1DAB',
+  '24061392': Bic(
+    value: 'GENODEF1DAB',
     bankName: 'Volksbank Bleckede-Dahlenburg -alt-',
     bankShortName: 'VB Bleckede-Dahlenbg -alt-',
     bankPostcode: '21366',
     bankLocation: 'Dahlenburg',
   ),
-  '24070024': Iban(
-    bic: 'DEUTDEDB242',
+  '24070024': Bic(
+    value: 'DEUTDEDB242',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '29503',
     bankLocation: 'Uelzen',
   ),
-  '24070075': Iban(
-    bic: 'DEUTDE2H241',
+  '24070075': Bic(
+    value: 'DEUTDE2H241',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '29503',
     bankLocation: 'Uelzen',
   ),
-  '24070324': Iban(
-    bic: 'DEUTDEDBP22',
+  '24070324': Bic(
+    value: 'DEUTDEDBP22',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '21335',
     bankLocation: 'Lüneburg',
   ),
-  '24070368': Iban(
-    bic: 'DEUTDE2HP22',
+  '24070368': Bic(
+    value: 'DEUTDE2HP22',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '21335',
     bankLocation: 'Lüneburg',
   ),
-  '24080000': Iban(
-    bic: 'DRESDEFF240',
+  '24080000': Bic(
+    value: 'DRESDEFF240',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Lüneburg',
     bankPostcode: '21304',
     bankLocation: 'Lüneburg',
   ),
-  '24090041': Iban(
-    bic: 'GENODEF1LUE',
+  '24090041': Bic(
+    value: 'GENODEF1LUE',
     bankName: 'Volksbank Lüneburg (Gf P2)',
     bankShortName: 'VB Lüneburg',
     bankPostcode: '21319',
     bankLocation: 'Lüneburg',
   ),
-  '24121000': Iban(
-    bic: 'GENODED1RKI',
+  '24121000': Bic(
+    value: 'GENODED1RKI',
     bankName: 'Ritterschaftliches Kreditinstitut Stade',
     bankShortName: 'Ritter Kredit Stade',
     bankPostcode: '21682',
     bankLocation: 'Stade',
   ),
-  '24140041': Iban(
-    bic: 'COBADEFFXXX',
+  '24140041': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Cuxhaven',
     bankShortName: 'Commerzbank',
     bankPostcode: '27451',
     bankLocation: 'Cuxhaven',
   ),
-  '24150001': Iban(
-    bic: 'BRLADE21CUX',
+  '24150001': Bic(
+    value: 'BRLADE21CUX',
     bankName: 'Stadtsparkasse Cuxhaven',
     bankShortName: 'St Spk Cuxhaven',
     bankPostcode: '27456',
     bankLocation: 'Cuxhaven',
   ),
-  '24151005': Iban(
-    bic: 'NOLADE21STS',
+  '24151005': Bic(
+    value: 'NOLADE21STS',
     bankName: 'Sparkasse Stade-Altes Land',
     bankShortName: 'Spk Stade-Altes Land',
     bankPostcode: '21720',
     bankLocation: 'Steinkirchen',
   ),
-  '24151116': Iban(
-    bic: 'NOLADE21STK',
+  '24151116': Bic(
+    value: 'NOLADE21STK',
     bankName: 'Kreissparkasse Stade',
     bankShortName: 'Kreissparkasse Stade',
     bankPostcode: '21641',
     bankLocation: 'Apensen',
   ),
-  '24151235': Iban(
-    bic: 'BRLADE21ROB',
+  '24151235': Bic(
+    value: 'BRLADE21ROB',
     bankName: 'Sparkasse Rotenburg Osterholz',
     bankShortName: 'Spk Rotenburg Osterholz',
     bankPostcode: '27393',
     bankLocation: 'Zeven',
   ),
-  '24161594': Iban(
-    bic: 'GENODEF1SIT',
+  '24161594': Bic(
+    value: 'GENODEF1SIT',
     bankName: 'Zevener Volksbank (Gf P2)',
     bankShortName: 'Zevener Volksbank',
     bankPostcode: '27404',
     bankLocation: 'Zeven',
   ),
-  '24162898': Iban(
-    bic: 'GENODEF1LAS',
+  '24162898': Bic(
+    value: 'GENODEF1LAS',
     bankName: 'Spar- u Darlehnskasse Börde Lamstedt-Hechthausen (Gf P2)',
     bankShortName: 'Spar- u Darlehnskasse Börde',
     bankPostcode: '21767',
     bankLocation: 'Lamstedt',
   ),
-  '24180000': Iban(
-    bic: 'DRESDEFF242',
+  '24180000': Bic(
+    value: 'DRESDEFF242',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Otterndorf',
     bankPostcode: '21758',
     bankLocation: 'Otterndorf',
   ),
-  '24180001': Iban(
-    bic: 'DRESDEFF241',
+  '24180001': Bic(
+    value: 'DRESDEFF241',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Cuxhaven',
     bankPostcode: '27452',
     bankLocation: 'Cuxhaven',
   ),
-  '24191015': Iban(
-    bic: 'GENODEF1SDE',
+  '24191015': Bic(
+    value: 'GENODEF1SDE',
     bankName: 'Volksbank Stade-Cuxhaven (Gf P2)',
     bankShortName: 'Volksbank Stade-Cuxhaven',
     bankPostcode: '21661',
     bankLocation: 'Stade',
   ),
-  '25000000': Iban(
-    bic: 'MARKDEF1250',
+  '25000000': Bic(
+    value: 'MARKDEF1250',
     bankName: 'BBk Hannover',
     bankShortName: 'Bundesbank',
     bankPostcode: '30002',
     bankLocation: 'Hannover',
   ),
-  '25010030': Iban(
-    bic: 'PBNKDEFFXXX',
+  '25010030': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '30139',
     bankLocation: 'Hannover',
   ),
-  '25010424': Iban(
-    bic: 'AARBDE5W250',
+  '25010424': Bic(
+    value: 'AARBDE5W250',
     bankName: 'Aareal Bank ehem. Filiale Hannover',
     bankShortName: 'Aareal Bank Wiesbaden',
     bankPostcode: '65189',
     bankLocation: 'Wiesbaden',
   ),
-  '25010600': Iban(
-    bic: 'DEHYDE2HXXX',
+  '25010600': Bic(
+    value: 'DEHYDE2HXXX',
     bankName: 'NORD/LB vormals Deutsche Hypothekenbank',
     bankShortName: 'NORD/LB Deut. Hypo Hannover',
     bankPostcode: '30159',
     bankLocation: 'Hannover',
   ),
-  '25010900': Iban(
-    bic: 'CKVHDE21XXX',
+  '25010900': Bic(
+    value: 'CKVHDE21XXX',
     bankName: 'Calenbg Kreditver Hannover',
     bankShortName: 'Calenberger Kreditverein',
     bankPostcode: '30159',
     bankLocation: 'Hannover',
   ),
-  '25020200': Iban(
-    bic: 'BHFBDEFF250',
+  '25020200': Bic(
+    value: 'BHFBDEFF250',
     bankName: 'BHF-BANK Hannover',
     bankShortName: 'BHF-BANK',
     bankPostcode: '30159',
     bankLocation: 'Hannover',
   ),
-  '25020600': Iban(
-    bic: 'SCFBDE33XXX',
+  '25020600': Bic(
+    value: 'SCFBDE33XXX',
     bankName: 'Santander Consumer Bank',
     bankShortName: 'Santander Consumer Bank',
     bankPostcode: '30179',
     bankLocation: 'Hannover',
   ),
-  '25040060': Iban(
-    bic: 'COBADEFFXXX',
+  '25040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Hannover',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '30159',
     bankLocation: 'Hannover',
   ),
-  '25040061': Iban(
-    bic: 'COBADEFFXXX',
+  '25040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Hannover',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '30159',
     bankLocation: 'Hannover',
   ),
-  '25040066': Iban(
-    bic: 'COBADEFFXXX',
+  '25040066': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Burgwedel',
     bankShortName: 'Commerzbank',
     bankPostcode: '30929',
     bankLocation: 'Burgwedel',
   ),
-  '25050000': Iban(
-    bic: 'NOLADE2HXXX',
+  '25050000': Bic(
+    value: 'NOLADE2HXXX',
     bankName: 'Norddeutsche Landesbank Girozentrale',
     bankShortName: 'Nord LB Hamburg',
     bankPostcode: '20408',
     bankLocation: 'Hamburg',
   ),
-  '25050055': Iban(
-    bic: 'NOLADE21CSH',
+  '25050055': Bic(
+    value: 'NOLADE21CSH',
     bankName: 'ZVA Norddeutsche Landesbank SH',
     bankShortName: 'ZVA Nord LB SH',
     bankPostcode: '30151',
     bankLocation: 'Hannover',
   ),
-  '25050066': Iban(
-    bic: 'NOLADE21CMV',
+  '25050066': Bic(
+    value: 'NOLADE21CMV',
     bankName: 'ZVA Norddeutsche Landesbank Gf MV',
     bankShortName: 'ZVA NORD LB Gf MV',
     bankPostcode: '30151',
     bankLocation: 'Hannover',
   ),
-  '25050180': Iban(
-    bic: 'SPKHDE2HXXX',
+  '25050180': Bic(
+    value: 'SPKHDE2HXXX',
     bankName: 'Sparkasse Hannover',
     bankShortName: 'Sparkasse Hannover',
     bankPostcode: '31515',
     bankLocation: 'Wunstorf',
   ),
-  '25050299': Iban(
-    bic: 'SPKHDE2HXXX',
+  '25050299': Bic(
+    value: 'SPKHDE2HXXX',
     bankName: 'Sparkasse Hannover -alt-',
     bankShortName: 'Kr Spk Hannover -alt-',
     bankPostcode: '30056',
     bankLocation: 'Hannover',
   ),
-  '25055500': Iban(
-    bic: 'NOLADE21LBS',
+  '25055500': Bic(
+    value: 'NOLADE21LBS',
     bankName: 'LBS-Norddeutsche Landesbausparkasse',
     bankShortName: 'LBS-Nord, Hannover',
     bankPostcode: '30002',
     bankLocation: 'Hannover',
   ),
-  '25060000': Iban(
-    bic: 'GENODEFF280',
+  '25060000': Bic(
+    value: 'GENODEFF280',
     bankName: 'DZ BANK Hannover',
     bankShortName: 'DZ BANK',
     bankPostcode: '26016',
     bankLocation: 'Oldenburg',
   ),
-  '25060180': Iban(
-    bic: 'HALLDE2HXXX',
+  '25060180': Bic(
+    value: 'HALLDE2HXXX',
     bankName: 'M.M. Warburg & Co (vormals Bankhaus Hallbaum)',
     bankShortName: 'M.M. Warburg (Hallbaum)',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '25069168': Iban(
-    bic: 'GENODEF1DES',
+  '25069168': Bic(
+    value: 'GENODEF1DES',
     bankName: 'Volks- und Raiffeisenbank Leinebergland (Gf P2)',
     bankShortName: 'VB u RB Leinebgld Delligsen',
     bankPostcode: '31069',
     bankLocation: 'Delligsen',
   ),
-  '25069262': Iban(
-    bic: 'GENODEF1NST',
+  '25069262': Bic(
+    value: 'GENODEF1NST',
     bankName: 'Raiffeisen-Volksbank Neustadt (Gf P2)',
     bankShortName: 'Raiff-VB Neustadt',
     bankPostcode: '31535',
     bankLocation: 'Neustadt am Rübenberge',
   ),
-  '25069270': Iban(
-    bic: 'GENODEF1MUA',
+  '25069270': Bic(
+    value: 'GENODEF1MUA',
     bankName: 'Volksbank Aller-Oker (Gf P2)',
     bankShortName: 'Volksbank Aller-Oker',
     bankPostcode: '38539',
     bankLocation: 'Müden (Aller)',
   ),
-  '25069503': Iban(
-    bic: 'GENODEF1BNT',
+  '25069503': Bic(
+    value: 'GENODEF1BNT',
     bankName: 'Volksbank Diepholz-Barnstorf (Gf P2)',
     bankShortName: 'VB Diepholz-Barnstorf',
     bankPostcode: '49356',
     bankLocation: 'Diepholz',
   ),
-  '25070024': Iban(
-    bic: 'DEUTDEDB258',
+  '25070024': Bic(
+    value: 'DEUTDEDB258',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '29601',
     bankLocation: 'Soltau',
   ),
-  '25070066': Iban(
-    bic: 'DEUTDE2H265',
+  '25070066': Bic(
+    value: 'DEUTDE2H265',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31642',
     bankLocation: 'Stadthagen',
   ),
-  '25070070': Iban(
-    bic: 'DEUTDE2H252',
+  '25070070': Bic(
+    value: 'DEUTDE2H252',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31287',
     bankLocation: 'Burgdorf',
   ),
-  '25070077': Iban(
-    bic: 'DEUTDE2H256',
+  '25070077': Bic(
+    value: 'DEUTDE2H256',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31562',
     bankLocation: 'Nienburg (Weser)',
   ),
-  '25070084': Iban(
-    bic: 'DEUTDE2H284',
+  '25070084': Bic(
+    value: 'DEUTDE2H284',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '29624',
     bankLocation: 'Munster',
   ),
-  '25070086': Iban(
-    bic: 'DEUTDE2H251',
+  '25070086': Bic(
+    value: 'DEUTDE2H251',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '37591',
     bankLocation: 'Holzminden',
   ),
-  '25070324': Iban(
-    bic: 'DEUTDEDBP24',
+  '25070324': Bic(
+    value: 'DEUTDEDBP24',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '30159',
     bankLocation: 'Hannover',
   ),
-  '25070370': Iban(
-    bic: 'DEUTDE2HP24',
+  '25070370': Bic(
+    value: 'DEUTDE2HP24',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '30159',
     bankLocation: 'Hannover',
   ),
-  '25080020': Iban(
-    bic: 'DRESDEFF250',
+  '25080020': Bic(
+    value: 'DRESDEFF250',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Burgwedel',
     bankPostcode: '30929',
     bankLocation: 'Burgwedel',
   ),
-  '25080085': Iban(
-    bic: 'DRESDEFFI65',
+  '25080085': Bic(
+    value: 'DRESDEFFI65',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITGK2 Hannov',
     bankPostcode: '20349',
     bankLocation: 'Hamburg',
   ),
-  '25089220': Iban(
-    bic: 'DRESDEFFI09',
+  '25089220': Bic(
+    value: 'DRESDEFFI09',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Hannover',
     bankPostcode: '30002',
     bankLocation: 'Hannover',
   ),
-  '25090300': Iban(
-    bic: 'GENODEF1BFS',
+  '25090300': Bic(
+    value: 'GENODEF1BFS',
     bankName: 'Bank für Schiffahrt (BFS) Fil d Ostfr VB Leer',
     bankShortName: 'Bk f Schiffahrt Hannover',
     bankPostcode: '30175',
     bankLocation: 'Hannover',
   ),
-  '25090500': Iban(
-    bic: 'GENODEF1S09',
+  '25090500': Bic(
+    value: 'GENODEF1S09',
     bankName: 'Sparda-Bank Hannover (Gf P2)',
     bankShortName: 'Sparda-Bank Hannover',
     bankPostcode: '30159',
     bankLocation: 'Hannover',
   ),
-  '25090900': Iban(
-    bic: 'GENODEF1P09',
+  '25090900': Bic(
+    value: 'GENODEF1P09',
     bankName: 'PSD Bank Hannover',
     bankShortName: 'PSD Bank (Gf P2)',
     bankPostcode: '30016',
     bankLocation: 'Hannover',
   ),
-  '25120510': Iban(
-    bic: 'BFSWDE33HAN',
+  '25120510': Bic(
+    value: 'BFSWDE33HAN',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Bank für Sozialwirtschaft',
     bankPostcode: '22089',
     bankLocation: 'Hamburg',
   ),
-  '25151270': Iban(
-    bic: 'NOLADE21BAH',
+  '25151270': Bic(
+    value: 'NOLADE21BAH',
     bankName: 'Stadtsparkasse Barsinghausen',
     bankShortName: 'St Spk Barsinghausen',
     bankPostcode: '30890',
     bankLocation: 'Barsinghausen',
   ),
-  '25151371': Iban(
-    bic: 'NOLADE21BUF',
+  '25151371': Bic(
+    value: 'NOLADE21BUF',
     bankName: 'Stadtsparkasse Burgdorf',
     bankShortName: 'Stadtsparkasse Burgdorf',
     bankPostcode: '31290',
     bankLocation: 'Burgdorf',
   ),
-  '25152375': Iban(
-    bic: 'NOLADE21WAL',
+  '25152375': Bic(
+    value: 'NOLADE21WAL',
     bankName: 'Kreissparkasse Fallingbostel in Walsrode',
     bankShortName: 'Kr Spk Fallingbostel',
     bankPostcode: '29676',
     bankLocation: 'Bad Fallingbostel',
   ),
-  '25152490': Iban(
-    bic: 'NOLADE21WST',
+  '25152490': Bic(
+    value: 'NOLADE21WST',
     bankName: 'Stadtsparkasse Wunstorf',
     bankShortName: 'St Spk Wunstorf',
     bankPostcode: '31501',
     bankLocation: 'Wunstorf',
   ),
-  '25190001': Iban(
-    bic: 'VOHADE2HXXX',
+  '25190001': Bic(
+    value: 'VOHADE2HXXX',
     bankName: 'Hannoversche Volksbank (Gf P2)',
     bankShortName: 'Hannoversche Volksbank',
     bankPostcode: '30159',
     bankLocation: 'Hannover',
   ),
-  '25190088': Iban(
-    bic: 'VOHADE2HXXX',
+  '25190088': Bic(
+    value: 'VOHADE2HXXX',
     bankName: 'Hannoversche Volksbank GS nur für GAA',
     bankShortName: 'HanVB - GS nur für GAA',
     bankPostcode: '29690',
     bankLocation: 'Lindwedel',
   ),
-  '25193331': Iban(
-    bic: 'GENODEF1PAT',
+  '25193331': Bic(
+    value: 'GENODEF1PAT',
     bankName: 'Volksbank (Gf P2)',
     bankShortName: 'Volksbank',
     bankPostcode: '30982',
     bankLocation: 'Pattensen',
   ),
-  '25250001': Iban(
-    bic: 'NOLADE21PEI',
+  '25250001': Bic(
+    value: 'NOLADE21PEI',
     bankName: 'Kreissparkasse Peine -alt-',
     bankShortName: 'Kreissparkasse Peine -alt-',
     bankPostcode: '31204',
     bankLocation: 'Peine',
   ),
-  '25260010': Iban(
-    bic: 'GENODEF1PEV',
+  '25260010': Bic(
+    value: 'GENODEF1PEV',
     bankName: 'Volksbank Peine (Gf P2)',
     bankShortName: 'Volksbank Peine',
     bankPostcode: '31224',
     bankLocation: 'Peine',
   ),
-  '25410200': Iban(
-    bic: 'BHWBDE2HXXX',
+  '25410200': Bic(
+    value: 'BHWBDE2HXXX',
     bankName: 'BHW Bauspk Hameln',
     bankShortName: 'BHW Bausparkasse',
     bankPostcode: '31763',
     bankLocation: 'Hameln',
   ),
-  '25440047': Iban(
-    bic: 'COBADEFFXXX',
+  '25440047': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Hameln',
     bankShortName: 'Commerzbank',
     bankPostcode: '31752',
     bankLocation: 'Hameln',
   ),
-  '25450001': Iban(
-    bic: 'NOLADE21HMS',
+  '25450001': Bic(
+    value: 'NOLADE21HMS',
     bankName: 'Stadtsparkasse Hameln -alt-',
     bankShortName: 'St Spk Hameln -alt-',
     bankPostcode: '31784',
     bankLocation: 'Hameln',
   ),
-  '25450110': Iban(
-    bic: 'NOLADE21SWB',
+  '25450110': Bic(
+    value: 'NOLADE21SWB',
     bankName: 'Sparkasse Hameln-Weserbergland',
     bankShortName: 'Spk Hameln-Weserbergland',
     bankPostcode: '31763',
     bankLocation: 'Hameln',
   ),
-  '25451345': Iban(
-    bic: 'NOLADE21PMT',
+  '25451345': Bic(
+    value: 'NOLADE21PMT',
     bankName: 'Stadtsparkasse Bad Pyrmont',
     bankShortName: 'St Spk Bad Pyrmont',
     bankPostcode: '31797',
     bankLocation: 'Bad Pyrmont',
   ),
-  '25462160': Iban(
-    bic: 'GENODEF1HMP',
+  '25462160': Bic(
+    value: 'GENODEF1HMP',
     bankName: 'Volksbank Hameln-Stadthagen (Gf P2)',
     bankShortName: 'VB Hameln-Stadthagen',
     bankPostcode: '31763',
     bankLocation: 'Hameln',
   ),
-  '25462680': Iban(
-    bic: 'GENODEF1COP',
+  '25462680': Bic(
+    value: 'GENODEF1COP',
     bankName: 'Volksbank im Wesertal (Gf P2)',
     bankShortName: 'VB im Wesertal Coppenbrügge',
     bankPostcode: '31861',
     bankLocation: 'Coppenbrügge',
   ),
-  '25470024': Iban(
-    bic: 'DEUTDEDB255',
+  '25470024': Bic(
+    value: 'DEUTDEDB255',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31793',
     bankLocation: 'Bad Pyrmont',
   ),
-  '25470073': Iban(
-    bic: 'DEUTDE2H254',
+  '25470073': Bic(
+    value: 'DEUTDE2H254',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31785',
     bankLocation: 'Hameln',
   ),
-  '25471024': Iban(
-    bic: 'DEUTDEDB264',
+  '25471024': Bic(
+    value: 'DEUTDEDB264',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31737',
     bankLocation: 'Rinteln',
   ),
-  '25471073': Iban(
-    bic: 'DEUTDE2H264',
+  '25471073': Bic(
+    value: 'DEUTDE2H264',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31737',
     bankLocation: 'Rinteln',
   ),
-  '25480021': Iban(
-    bic: 'DRESDEFF254',
+  '25480021': Bic(
+    value: 'DRESDEFF254',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Hameln',
     bankPostcode: '31752',
     bankLocation: 'Hameln',
   ),
-  '25491273': Iban(
-    bic: 'GENODED1AEZ',
+  '25491273': Bic(
+    value: 'GENODED1AEZ',
     bankName: 'Volksbank Aerzen (Gf P2)',
     bankShortName: 'Volksbank Aerzen',
     bankPostcode: '31850',
     bankLocation: 'Aerzen',
   ),
-  '25541426': Iban(
-    bic: 'COBADEFFXXX',
+  '25541426': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bückeburg',
     bankShortName: 'Commerzbank',
     bankPostcode: '31667',
     bankLocation: 'Bückeburg',
   ),
-  '25551480': Iban(
-    bic: 'NOLADE21SHG',
+  '25551480': Bic(
+    value: 'NOLADE21SHG',
     bankName: 'Sparkasse Schaumburg',
     bankShortName: 'Sparkasse Schaumburg',
     bankPostcode: '31726',
     bankLocation: 'Rinteln',
   ),
-  '25591413': Iban(
-    bic: 'GENODEF1BCK',
+  '25591413': Bic(
+    value: 'GENODEF1BCK',
     bankName: 'Volksbank in Schaumburg (Gf P2)',
     bankShortName: 'Volksbank in Schaumburg',
     bankPostcode: '31737',
     bankLocation: 'Rinteln',
   ),
-  '25621327': Iban(
-    bic: 'OLBODEH2XXX',
+  '25621327': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Wagenfeld',
     bankPostcode: '49414',
     bankLocation: 'Wagenfeld',
   ),
-  '25641302': Iban(
-    bic: 'COBADEFFXXX',
+  '25641302': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Diepholz',
     bankShortName: 'Commerzbank',
     bankPostcode: '49356',
     bankLocation: 'Diepholz',
   ),
-  '25650106': Iban(
-    bic: 'NOLADE21NIB',
+  '25650106': Bic(
+    value: 'NOLADE21NIB',
     bankName: 'Sparkasse Nienburg',
     bankShortName: 'Sparkasse Nienburg',
     bankPostcode: '31567',
     bankLocation: 'Nienburg (Weser)',
   ),
-  '25651325': Iban(
-    bic: 'BRLADE21DHZ',
+  '25651325': Bic(
+    value: 'BRLADE21DHZ',
     bankName: 'Kreissparkasse Grafschaft Diepholz',
     bankShortName: 'Kr Spk Diepholz',
     bankPostcode: '49402',
     bankLocation: 'Barnstorf',
   ),
-  '25662540': Iban(
-    bic: 'GENODEF1STY',
+  '25662540': Bic(
+    value: 'GENODEF1STY',
     bankName: 'Volksbank Steyerberg',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '31593',
     bankLocation: 'Steyerberg',
   ),
-  '25663584': Iban(
-    bic: 'GENODEF1HOY',
+  '25663584': Bic(
+    value: 'GENODEF1HOY',
     bankName: 'Volksbank Aller-Weser (Gf P2)',
     bankShortName: 'Volksbank Aller-Weser',
     bankPostcode: '27318',
     bankLocation: 'Hoya',
   ),
-  '25690009': Iban(
-    bic: 'GENODEF1NIN',
+  '25690009': Bic(
+    value: 'GENODEF1NIN',
     bankName: 'Volksbank Nienburg (Gf P2)',
     bankShortName: 'Volksbank Nienburg',
     bankPostcode: '31582',
     bankLocation: 'Nienburg (Weser)',
   ),
-  '25691633': Iban(
-    bic: 'GENODEF1SUL',
+  '25691633': Bic(
+    value: 'GENODEF1SUL',
     bankName: 'Volksbank Niedersachsen-Mitte (Gf P2)',
     bankShortName: 'VB Niedersachsen-Mitte',
     bankPostcode: '27318',
     bankLocation: 'Hoya',
   ),
-  '25691699': Iban(
-    bic: 'GENODEF1SUL',
+  '25691699': Bic(
+    value: 'GENODEF1SUL',
     bankName: 'Volksbank Niedersachsen-Mitte (Gf GAA)',
     bankShortName: 'VB Niedersachsen-Mitte',
     bankPostcode: '27318',
     bankLocation: 'Hoya',
   ),
-  '25740061': Iban(
-    bic: 'COBADEFFXXX',
+  '25740061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Celle',
     bankShortName: 'Commerzbank',
     bankPostcode: '29201',
     bankLocation: 'Celle',
   ),
-  '25750001': Iban(
-    bic: 'NOLADE21CEL',
+  '25750001': Bic(
+    value: 'NOLADE21CEL',
     bankName: 'Sparkasse Celle -alt-',
     bankShortName: 'Sparkasse Celle -alt-',
     bankPostcode: '29221',
     bankLocation: 'Celle',
   ),
-  '25761894': Iban(
-    bic: 'GENODEF1WIK',
+  '25761894': Bic(
+    value: 'GENODEF1WIK',
     bankName: 'Volksbank Wittingen-Klötze (Gf P2)',
     bankShortName: 'Volksbank Wittingen-Klötze',
     bankPostcode: '29371',
     bankLocation: 'Wittingen',
   ),
-  '25770024': Iban(
-    bic: 'DEUTDEDB257',
+  '25770024': Bic(
+    value: 'DEUTDEDB257',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '29221',
     bankLocation: 'Celle',
   ),
-  '25770069': Iban(
-    bic: 'DEUTDE2H257',
+  '25770069': Bic(
+    value: 'DEUTDE2H257',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '29221',
     bankLocation: 'Celle',
   ),
-  '25780022': Iban(
-    bic: 'DRESDEFF257',
+  '25780022': Bic(
+    value: 'DRESDEFF257',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Celle',
     bankPostcode: '29204',
     bankLocation: 'Celle',
   ),
-  '25791516': Iban(
-    bic: 'GENODEF1HKB',
+  '25791516': Bic(
+    value: 'GENODEF1HKB',
     bankName: 'Volksbank Hankensbüttel-Wahrenholz (Gf P2)',
     bankShortName: 'Volksbank Hankensbüttel',
     bankPostcode: '29384',
     bankLocation: 'Hankensbüttel',
   ),
-  '25791635': Iban(
-    bic: 'GENODEF1HMN',
+  '25791635': Bic(
+    value: 'GENODEF1HMN',
     bankName: 'Volksbank Südheide - Isenhagener Land - Altmark (Gf P2)',
     bankShortName: 'VB Südh.-Isenh.L.-Altm',
     bankPostcode: '29221',
     bankLocation: 'Celle',
   ),
-  '25840048': Iban(
-    bic: 'COBADEFFXXX',
+  '25840048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Uelzen',
     bankShortName: 'Commerzbank',
     bankPostcode: '29503',
     bankLocation: 'Uelzen',
   ),
-  '25841403': Iban(
-    bic: 'COBADEFFXXX',
+  '25841403': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Salzwedel',
     bankShortName: 'Commerzbank',
     bankPostcode: '29401',
     bankLocation: 'Salzwedel, Hansestadt',
   ),
-  '25841708': Iban(
-    bic: 'COBADEFFXXX',
+  '25841708': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Schneverdingen',
     bankShortName: 'Commerzbank',
     bankPostcode: '29634',
     bankLocation: 'Schneverdingen',
   ),
-  '25850110': Iban(
-    bic: 'NOLADE21UEL',
+  '25850110': Bic(
+    value: 'NOLADE21UEL',
     bankName: 'Sparkasse Uelzen Lüchow-Dannenberg',
     bankShortName: 'Sparkasse Uelzen Lüchow-Dbg',
     bankPostcode: '29439',
     bankLocation: 'Lüchow (Wendland)',
   ),
-  '25851335': Iban(
-    bic: 'NOLADE21DAN',
+  '25851335': Bic(
+    value: 'NOLADE21DAN',
     bankName: 'Sparkasse Uelzen Lüchow-Dannenberg -alt-',
     bankShortName: 'Spk Uelzen Lüchow-Dbg.-alt-',
     bankPostcode: '29446',
     bankLocation: 'Dannenberg (Elbe)',
   ),
-  '25851660': Iban(
-    bic: 'NOLADE21SOL',
+  '25851660': Bic(
+    value: 'NOLADE21SOL',
     bankName: 'Kreissparkasse Soltau',
     bankShortName: 'Kr Spk Soltau',
     bankPostcode: '29646',
     bankLocation: 'Bispingen',
   ),
-  '25861990': Iban(
-    bic: 'GENODEF1CLZ',
+  '25861990': Bic(
+    value: 'GENODEF1CLZ',
     bankName: 'Volksbank Clenze-Hitzacker (Gf P2)',
     bankShortName: 'Volksbank Clenze-Hitzacker',
     bankPostcode: '29459',
     bankLocation: 'Clenze',
   ),
-  '25862292': Iban(
-    bic: 'GENODEF1EUB',
+  '25862292': Bic(
+    value: 'GENODEF1EUB',
     bankName: 'Volksbank Uelzen-Salzwedel (Gf P2)',
     bankShortName: 'Volksbank Uelzen-Salzwedel',
     bankPostcode: '29525',
     bankLocation: 'Uelzen',
   ),
-  '25863489': Iban(
-    bic: 'GENODEF1WOT',
+  '25863489': Bic(
+    value: 'GENODEF1WOT',
     bankName: 'VR PLUS Altmark-Wendland (Gf P2)',
     bankShortName: 'VR PLUS Altmark-Wendland',
     bankPostcode: '29439',
     bankLocation: 'Lüchow (Wendland)',
   ),
-  '25891636': Iban(
-    bic: 'GENODEF1SOL',
+  '25891636': Bic(
+    value: 'GENODEF1SOL',
     bankName: 'Volksbank Lüneburger Heide (Gf P2)',
     bankShortName: 'VB Lüneburger Heide',
     bankPostcode: '29605',
     bankLocation: 'Soltau',
   ),
-  '25940033': Iban(
-    bic: 'COBADEFFXXX',
+  '25940033': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Hildesheim',
     bankShortName: 'Commerzbank',
     bankPostcode: '31102',
     bankLocation: 'Hildesheim',
   ),
-  '25950001': Iban(
-    bic: 'NOLADE21HIS',
+  '25950001': Bic(
+    value: 'NOLADE21HIS',
     bankName: 'Stadtsparkasse Hildesheim -alt-',
     bankShortName: 'St Spk Hildesheim -alt-',
     bankPostcode: '31112',
     bankLocation: 'Hildesheim',
   ),
-  '25950130': Iban(
-    bic: 'NOLADE21HIK',
+  '25950130': Bic(
+    value: 'NOLADE21HIK',
     bankName: 'Sparkasse Hildesheim Goslar Peine',
     bankShortName: 'Sparkasse HGP',
     bankPostcode: '31134',
     bankLocation: 'Hildesheim',
   ),
-  '25970024': Iban(
-    bic: 'DEUTDEDB259',
+  '25970024': Bic(
+    value: 'DEUTDEDB259',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31103',
     bankLocation: 'Hildesheim',
   ),
-  '25970074': Iban(
-    bic: 'DEUTDE2H259',
+  '25970074': Bic(
+    value: 'DEUTDE2H259',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31103',
     bankLocation: 'Hildesheim',
   ),
-  '25971024': Iban(
-    bic: 'DEUTDEDB261',
+  '25971024': Bic(
+    value: 'DEUTDEDB261',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31021',
     bankLocation: 'Gronau (Leine)',
   ),
-  '25971071': Iban(
-    bic: 'DEUTDE2H261',
+  '25971071': Bic(
+    value: 'DEUTDE2H261',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31021',
     bankLocation: 'Gronau (Leine)',
   ),
-  '25980027': Iban(
-    bic: 'DRESDEFF259',
+  '25980027': Bic(
+    value: 'DRESDEFF259',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Hildesheim',
     bankPostcode: '31103',
     bankLocation: 'Hildesheim',
   ),
-  '25990011': Iban(
-    bic: 'GENODEF1HIH',
+  '25990011': Bic(
+    value: 'GENODEF1HIH',
     bankName: 'Volksbank Hildesheim (Gf P2)',
     bankShortName: 'Volksbank Hildesheim',
     bankPostcode: '31113',
     bankLocation: 'Hildesheim',
   ),
-  '25991528': Iban(
-    bic: 'GENODEF1SLD',
+  '25991528': Bic(
+    value: 'GENODEF1SLD',
     bankName: 'Volksbank Hildesheimer Börde (Gf P2)',
     bankShortName: 'VB Hildesheimer Börde',
     bankPostcode: '31185',
     bankLocation: 'Söhlde',
   ),
-  '26000000': Iban(
-    bic: 'MARKDEF1260',
+  '26000000': Bic(
+    value: 'MARKDEF1260',
     bankName: 'BBk Göttingen',
     bankShortName: 'Bundesbank',
     bankPostcode: '37016',
     bankLocation: 'Göttingen',
   ),
-  '26040030': Iban(
-    bic: 'COBADEFFXXX',
+  '26040030': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Göttingen',
     bankShortName: 'Commerzbank',
     bankPostcode: '37005',
     bankLocation: 'Göttingen',
   ),
-  '26050001': Iban(
-    bic: 'NOLADE21GOE',
+  '26050001': Bic(
+    value: 'NOLADE21GOE',
     bankName: 'Sparkasse Göttingen',
     bankShortName: 'Sparkasse Göttingen',
     bankPostcode: '37136',
     bankLocation: 'Ebergötzen',
   ),
-  '26051260': Iban(
-    bic: 'NOLADE21DUD',
+  '26051260': Bic(
+    value: 'NOLADE21DUD',
     bankName: 'Sparkasse Duderstadt',
     bankShortName: 'Sparkasse Duderstadt',
     bankPostcode: '37434',
     bankLocation: 'Gieboldehausen',
   ),
-  '26051450': Iban(
-    bic: 'NOLADE21HMU',
+  '26051450': Bic(
+    value: 'NOLADE21HMU',
     bankName: 'Kreis- und Stadtsparkasse Münden -alt-',
     bankShortName: 'Kr u St Spk Münden -alt-',
     bankPostcode: '37095',
     bankLocation: 'Göttingen',
   ),
-  '26061291': Iban(
-    bic: 'GENODEF1DUD',
+  '26061291': Bic(
+    value: 'GENODEF1DUD',
     bankName: 'Volksbank Mitte (Gf P2)',
     bankShortName: 'Volksbank Mitte',
     bankPostcode: '37104',
     bankLocation: 'Duderstadt',
   ),
-  '26061556': Iban(
-    bic: 'GENODEF1ADE',
+  '26061556': Bic(
+    value: 'GENODEF1ADE',
     bankName: 'Volksbank Adelebsen',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '37139',
     bankLocation: 'Adelebsen',
   ),
-  '26062433': Iban(
-    bic: 'GENODEF1DRA',
+  '26062433': Bic(
+    value: 'GENODEF1DRA',
     bankName: 'VR-Bank in Südniedersachsen (Gf P2)',
     bankShortName: 'VR-Bank in Südniedersachsen',
     bankPostcode: '37125',
     bankLocation: 'Dransfeld',
   ),
-  '26070024': Iban(
-    bic: 'DEUTDEDB263',
+  '26070024': Bic(
+    value: 'DEUTDEDB263',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '37142',
     bankLocation: 'Northeim',
   ),
-  '26070072': Iban(
-    bic: 'DEUTDE2H263',
+  '26070072': Bic(
+    value: 'DEUTDE2H263',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '37142',
     bankLocation: 'Northeim',
   ),
-  '26080024': Iban(
-    bic: 'DRESDEFF260',
+  '26080024': Bic(
+    value: 'DRESDEFF260',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Göttingen',
     bankPostcode: '37006',
     bankLocation: 'Göttingen',
   ),
-  '26090050': Iban(
-    bic: 'GENODEF1GOE',
+  '26090050': Bic(
+    value: 'GENODEF1GOE',
     bankName: 'Volksbank Göttingen',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '37027',
     bankLocation: 'Göttingen',
   ),
-  '26240039': Iban(
-    bic: 'COBADEFFXXX',
+  '26240039': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Einbeck',
     bankShortName: 'Commerzbank',
     bankPostcode: '37552',
     bankLocation: 'Einbeck',
   ),
-  '26250001': Iban(
-    bic: 'NOLADE21NOM',
+  '26250001': Bic(
+    value: 'NOLADE21NOM',
     bankName: 'Kreis-Sparkasse Northeim',
     bankShortName: 'Kr Spk Northeim',
     bankPostcode: '37192',
     bankLocation: 'Bodenfelde',
   ),
-  '26251425': Iban(
-    bic: 'NOLADE21EIN',
+  '26251425': Bic(
+    value: 'NOLADE21EIN',
     bankName: 'Sparkasse Einbeck',
     bankShortName: 'Sparkasse Einbeck',
     bankPostcode: '37586',
     bankLocation: 'Dassel',
   ),
-  '26261492': Iban(
-    bic: 'GENODEF1EIN',
+  '26261492': Bic(
+    value: 'GENODEF1EIN',
     bankName: 'Volksbank Einbeck (Gf P2)',
     bankShortName: 'Volksbank Einbeck',
     bankPostcode: '37559',
     bankLocation: 'Einbeck',
   ),
-  '26261693': Iban(
-    bic: 'GENODEF1HDG',
+  '26261693': Bic(
+    value: 'GENODEF1HDG',
     bankName: 'Volksbank Solling Zw Harste',
     bankShortName: 'Volksbank Solling Zw Harste',
     bankPostcode: '37120',
     bankLocation: 'Bovenden',
   ),
-  '26271424': Iban(
-    bic: 'DEUTDEDB262',
+  '26271424': Bic(
+    value: 'DEUTDEDB262',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '37553',
     bankLocation: 'Einbeck',
   ),
-  '26271471': Iban(
-    bic: 'DEUTDE2H262',
+  '26271471': Bic(
+    value: 'DEUTDE2H262',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '37553',
     bankLocation: 'Einbeck',
   ),
-  '26280020': Iban(
-    bic: 'DRESDEFF261',
+  '26280020': Bic(
+    value: 'DRESDEFF261',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Northeim Han',
     bankPostcode: '37142',
     bankLocation: 'Northeim',
   ),
-  '26281420': Iban(
-    bic: 'DRESDEFF262',
+  '26281420': Bic(
+    value: 'DRESDEFF262',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Einbeck',
     bankPostcode: '37553',
     bankLocation: 'Einbeck',
   ),
-  '26340056': Iban(
-    bic: 'COBADEFFXXX',
+  '26340056': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Osterode Harz',
     bankShortName: 'Commerzbank',
     bankPostcode: '37520',
     bankLocation: 'Osterode am Harz',
   ),
-  '26341072': Iban(
-    bic: 'COBADEFFXXX',
+  '26341072': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Herzberg Harz',
     bankShortName: 'Commerzbank',
     bankPostcode: '37412',
     bankLocation: 'Herzberg am Harz',
   ),
-  '26350001': Iban(
-    bic: 'NOLADE21OHA',
+  '26350001': Bic(
+    value: 'NOLADE21OHA',
     bankName: 'Stadtsparkasse Osterode -alt-',
     bankShortName: 'St Spk Osterode -alt-',
     bankPostcode: '37507',
     bankLocation: 'Osterode am Harz',
   ),
-  '26351015': Iban(
-    bic: 'NOLADE21HZB',
+  '26351015': Bic(
+    value: 'NOLADE21HZB',
     bankName: 'Sparkasse Osterode am Harz',
     bankShortName: 'Sparkasse Osterode am Harz',
     bankPostcode: '37199',
     bankLocation: 'Wulften',
   ),
-  '26351445': Iban(
-    bic: 'NOLADE21SAC',
+  '26351445': Bic(
+    value: 'NOLADE21SAC',
     bankName: 'Stadtsparkasse Bad Sachsa -alt-',
     bankShortName: 'St Spk Bad Sachsa -alt-',
     bankPostcode: '37438',
     bankLocation: 'Bad Sachsa',
   ),
-  '26500000': Iban(
-    bic: 'MARKDEF1265',
+  '26500000': Bic(
+    value: 'MARKDEF1265',
     bankName: 'BBk Osnabrück',
     bankShortName: 'Bundesbank',
     bankPostcode: '49018',
     bankLocation: 'Osnabrück',
   ),
-  '26520017': Iban(
-    bic: 'OLBODEH2XXX',
+  '26520017': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Hagen',
     bankPostcode: '49166',
     bankLocation: 'Hagen am Teutoburger Wald',
   ),
-  '26521703': Iban(
-    bic: 'OLBODEH2XXX',
+  '26521703': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Merzen',
     bankPostcode: '49586',
     bankLocation: 'Merzen',
   ),
-  '26522319': Iban(
-    bic: 'OLBODEH2XXX',
+  '26522319': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Ankum',
     bankPostcode: '49572',
     bankLocation: 'Ankum',
   ),
-  '26540070': Iban(
-    bic: 'COBADEFFXXX',
+  '26540070': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Melle',
     bankShortName: 'Commerzbank',
     bankPostcode: '49303',
     bankLocation: 'Melle',
   ),
-  '26550105': Iban(
-    bic: 'NOLADE22XXX',
+  '26550105': Bic(
+    value: 'NOLADE22XXX',
     bankName: 'Sparkasse Osnabrück',
     bankShortName: 'Sparkasse Osnabrück',
     bankPostcode: '49018',
     bankLocation: 'Osnabrück',
   ),
-  '26551540': Iban(
-    bic: 'NOLADE21BEB',
+  '26551540': Bic(
+    value: 'NOLADE21BEB',
     bankName: 'Kreissparkasse Bersenbrück',
     bankShortName: 'Kr Spk Bersenbrück',
     bankPostcode: '49586',
     bankLocation: 'Neuenkirchen',
   ),
-  '26552286': Iban(
-    bic: 'NOLADE21MEL',
+  '26552286': Bic(
+    value: 'NOLADE21MEL',
     bankName: 'Kreissparkasse Melle',
     bankShortName: 'Kreissparkasse Melle',
     bankPostcode: '49304',
     bankLocation: 'Melle',
   ),
-  '26562490': Iban(
-    bic: 'GENODEF1HTR',
+  '26562490': Bic(
+    value: 'GENODEF1HTR',
     bankName: 'Volksbank Bad Laer-Borgloh-Hilter-Melle (Gf P2)',
     bankShortName: 'VB Laer-Borgl-Hilter-Melle',
     bankPostcode: '49176',
     bankLocation: 'Hilter am Teutoburger Wald',
   ),
-  '26563960': Iban(
-    bic: 'GENODEF1WHO',
+  '26563960': Bic(
+    value: 'GENODEF1WHO',
     bankName: 'Volksbank Bramgau-Wittlage (GF P2)',
     bankShortName: 'VB Bramgau-Wittlage',
     bankPostcode: '49554',
     bankLocation: 'Bramsche',
   ),
-  '26565928': Iban(
-    bic: 'GENODEF1HGM',
+  '26565928': Bic(
+    value: 'GENODEF1HGM',
     bankName: 'Volksbank GMHütte-Hagen-Bissendorf (Gf P2)',
     bankShortName: 'VB GMHütte-Hagen-Bissendorf',
     bankPostcode: '49124',
     bankLocation: 'Georgsmarienhütte',
   ),
-  '26566939': Iban(
-    bic: 'GENODEF1MRZ',
+  '26566939': Bic(
+    value: 'GENODEF1MRZ',
     bankName: 'Volksbank Osnabrücker Nordland (Gf P2)',
     bankShortName: 'VB Osnabrücker Nd',
     bankPostcode: '49578',
     bankLocation: 'Fürstenau',
   ),
-  '26567943': Iban(
-    bic: 'GENODEF1NOP',
+  '26567943': Bic(
+    value: 'GENODEF1NOP',
     bankName: 'VR-Bank Osnabrücker Nordland (Gf P2)',
     bankShortName: 'VR-Bank Osnabrücker Nordl.',
     bankPostcode: '49584',
     bankLocation: 'Fürstenau',
   ),
-  '26570024': Iban(
-    bic: 'DEUTDEDB925',
+  '26570024': Bic(
+    value: 'DEUTDEDB925',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '49601',
     bankLocation: 'Quakenbrück',
   ),
-  '26570090': Iban(
-    bic: 'DEUTDE3B272',
+  '26570090': Bic(
+    value: 'DEUTDE3B272',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '49601',
     bankLocation: 'Quakenbrück',
   ),
-  '26580070': Iban(
-    bic: 'DRESDEFF265',
+  '26580070': Bic(
+    value: 'DRESDEFF265',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Melle',
     bankPostcode: '49303',
     bankLocation: 'Melle',
   ),
-  '26589210': Iban(
-    bic: 'DRESDEFFI10',
+  '26589210': Bic(
+    value: 'DRESDEFFI10',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbk ITGK Osnabrück',
     bankPostcode: '49007',
     bankLocation: 'Osnabrück',
   ),
-  '26590025': Iban(
-    bic: 'GENODEF1OSV',
+  '26590025': Bic(
+    value: 'GENODEF1OSV',
     bankName: 'Vereinigte Volksbank Bramgau Osnabrück Wittlage (Gf P2)',
     bankShortName: 'Vereinigte Volksbank',
     bankPostcode: '49090',
     bankLocation: 'Osnabrück',
   ),
-  '26620010': Iban(
-    bic: 'OLBODEH2XXX',
+  '26620010': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Spelle',
     bankPostcode: '48478',
     bankLocation: 'Spelle',
   ),
-  '26621413': Iban(
-    bic: 'OLBODEH2XXX',
+  '26621413': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Haren Ems',
     bankPostcode: '49724',
     bankLocation: 'Haren (Ems)',
   ),
-  '26640049': Iban(
-    bic: 'COBADEFFXXX',
+  '26640049': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Meppen',
     bankShortName: 'Commerzbank',
     bankPostcode: '49702',
     bankLocation: 'Meppen',
   ),
-  '26650001': Iban(
-    bic: 'NOLADE21EMS',
+  '26650001': Bic(
+    value: 'NOLADE21EMS',
     bankName: 'Sparkasse Emsland',
     bankShortName: 'Spk Emsland',
     bankPostcode: '49754',
     bankLocation: 'Werlte',
   ),
-  '26660060': Iban(
-    bic: 'GENODEF1LIG',
+  '26660060': Bic(
+    value: 'GENODEF1LIG',
     bankName: 'Emsländische Volksbank (Gf P2)',
     bankShortName: 'Emsländische Volksbank',
     bankPostcode: '49791',
     bankLocation: 'Lingen (Ems)',
   ),
-  '26661380': Iban(
-    bic: 'GENODEF1HLN',
+  '26661380': Bic(
+    value: 'GENODEF1HLN',
     bankName: 'Volksbank Haselünne (Gf P2)',
     bankShortName: 'Volksbank Haselünne',
     bankPostcode: '49734',
     bankLocation: 'Haselünne',
   ),
-  '26661494': Iban(
-    bic: 'GENODEF1MEP',
+  '26661494': Bic(
+    value: 'GENODEF1MEP',
     bankName: 'Emsländische Volksbank Meppen (Gf P2)',
     bankShortName: 'Emsländische VB Meppen',
     bankPostcode: '49716',
     bankLocation: 'Meppen',
   ),
-  '26662932': Iban(
-    bic: 'GENODEF1LEN',
+  '26662932': Bic(
+    value: 'GENODEF1LEN',
     bankName: 'Volksbank Lengerich',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '49838',
     bankLocation: 'Lengerich',
   ),
-  '26691213': Iban(
-    bic: 'GENODEF1HAR',
+  '26691213': Bic(
+    value: 'GENODEF1HAR',
     bankName: 'Volksbank Haren Fil d Ostfriesischen VB',
     bankShortName: 'Volksbank Haren',
     bankPostcode: '49725',
     bankLocation: 'Haren (Ems)',
   ),
-  '26720028': Iban(
-    bic: 'OLBODEH2XXX',
+  '26720028': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Ldbank Wietmarschen',
     bankPostcode: '49833',
     bankLocation: 'Wietmarschen',
   ),
-  '26740044': Iban(
-    bic: 'COBADEFFXXX',
+  '26740044': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Nordhorn',
     bankShortName: 'Commerzbank',
     bankPostcode: '48502',
     bankLocation: 'Nordhorn',
   ),
-  '26750001': Iban(
-    bic: 'NOLADE21NOH',
+  '26750001': Bic(
+    value: 'NOLADE21NOH',
     bankName: 'Kreissparkasse Grafschaft Bentheim zu Nordhorn',
     bankShortName: 'Kr Spk Nordhorn',
     bankPostcode: '48455',
     bankLocation: 'Bad Bentheim',
   ),
-  '26760005': Iban(
-    bic: 'GENODEF1NDH',
+  '26760005': Bic(
+    value: 'GENODEF1NDH',
     bankName: 'Raiffeisen- und Volksbank Nordhorn -alt-',
     bankShortName: 'Raiff- u VB Nordhorn -alt-',
     bankPostcode: '48511',
     bankLocation: 'Nordhorn',
   ),
-  '26770024': Iban(
-    bic: 'DEUTDEDB928',
+  '26770024': Bic(
+    value: 'DEUTDEDB928',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '48456',
     bankLocation: 'Schüttorf',
   ),
-  '26770095': Iban(
-    bic: 'DEUTDE3B275',
+  '26770095': Bic(
+    value: 'DEUTDE3B275',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '48456',
     bankLocation: 'Schüttorf',
   ),
-  '26840032': Iban(
-    bic: 'COBADEFFXXX',
+  '26840032': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Harzburg',
     bankShortName: 'Commerzbank',
     bankPostcode: '38667',
     bankLocation: 'Bad Harzburg',
   ),
-  '26850001': Iban(
-    bic: 'NOLADE21GSL',
+  '26850001': Bic(
+    value: 'NOLADE21GSL',
     bankName: 'Sparkasse Goslar/Harz -alt-',
     bankShortName: 'Sparkasse Goslar/Harz -alt-',
     bankPostcode: '38640',
     bankLocation: 'Goslar',
   ),
-  '26851410': Iban(
-    bic: 'NOLADE21CLZ',
+  '26851410': Bic(
+    value: 'NOLADE21CLZ',
     bankName: 'Kreissparkasse Clausthal-Zellerfeld -alt-',
     bankShortName: 'Kr Spk Clausthal-Zell.-alt-',
     bankPostcode: '38669',
     bankLocation: 'Clausthal-Zellerfeld',
   ),
-  '26851620': Iban(
-    bic: 'NOLADE21SZG',
+  '26851620': Bic(
+    value: 'NOLADE21SZG',
     bankName: 'Sparkasse Salzgitter -alt-',
     bankShortName: 'Sparkasse Salzgitter -alt-',
     bankPostcode: '38246',
     bankLocation: 'Salzgitter',
   ),
-  '26870024': Iban(
-    bic: 'DEUTDEDB934',
+  '26870024': Bic(
+    value: 'DEUTDEDB934',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38712',
     bankLocation: 'Seesen',
   ),
-  '26870032': Iban(
-    bic: 'DEUTDE2H285',
+  '26870032': Bic(
+    value: 'DEUTDE2H285',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38712',
     bankLocation: 'Seesen',
   ),
-  '26880063': Iban(
-    bic: 'DRESDEFF268',
+  '26880063': Bic(
+    value: 'DRESDEFF268',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Goslar',
     bankPostcode: '38640',
     bankLocation: 'Goslar',
   ),
-  '26890019': Iban(
-    bic: 'GENODEF1VNH',
+  '26890019': Bic(
+    value: 'GENODEF1VNH',
     bankName: 'Volksbank Nordharz (Gf P2)',
     bankShortName: 'Volksbank Nordharz',
     bankPostcode: '38640',
     bankLocation: 'Goslar',
   ),
-  '26891484': Iban(
-    bic: 'GENODEF1OHA',
+  '26891484': Bic(
+    value: 'GENODEF1OHA',
     bankName: 'Volksbank im Harz (Gf P2)',
     bankShortName: 'Volksbank im Harz',
     bankPostcode: '37504',
     bankLocation: 'Osterode am Harz',
   ),
-  '26941053': Iban(
-    bic: 'COBADEFFXXX',
+  '26941053': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Wolfsburg',
     bankShortName: 'Commerzbank Wolfsburg',
     bankPostcode: '38440',
     bankLocation: 'Wolfsburg',
   ),
-  '26951311': Iban(
-    bic: 'NOLADE21GFW',
+  '26951311': Bic(
+    value: 'NOLADE21GFW',
     bankName: 'Sparkasse Celle-Gifhorn-Wolfsburg',
     bankShortName: 'Spk Celle-Gifhorn-Wolfsburg',
     bankPostcode: '38518',
     bankLocation: 'Gifhorn',
   ),
-  '26971024': Iban(
-    bic: 'DEUTDEDB269',
+  '26971024': Bic(
+    value: 'DEUTDEDB269',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38402',
     bankLocation: 'Wolfsburg',
   ),
-  '26971038': Iban(
-    bic: 'DEUTDE2H269',
+  '26971038': Bic(
+    value: 'DEUTDE2H269',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38402',
     bankLocation: 'Wolfsburg',
   ),
-  '26981062': Iban(
-    bic: 'DRESDEFF269',
+  '26981062': Bic(
+    value: 'DRESDEFF269',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Wolfsburg',
     bankPostcode: '38402',
     bankLocation: 'Wolfsburg',
   ),
-  '26989221': Iban(
-    bic: 'DRESDEFFI11',
+  '26989221': Bic(
+    value: 'DRESDEFFI11',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbk ITGK Wolfsburg',
     bankPostcode: '38402',
     bankLocation: 'Wolfsburg',
   ),
-  '26991066': Iban(
-    bic: 'GENODEF1WOB',
+  '26991066': Bic(
+    value: 'GENODEF1WOB',
     bankName: 'Volksbank Braunschweig Wolfsburg (Gf P2)',
     bankShortName: 'Volksbank Brawo',
     bankPostcode: '38440',
     bankLocation: 'Wolfsburg',
   ),
-  '27020000': Iban(
-    bic: 'VOWADE2BXXX',
+  '27020000': Bic(
+    value: 'VOWADE2BXXX',
     bankName: 'Volkswagen Bank Braunschwg',
     bankShortName: 'Volkswagen Bank',
     bankPostcode: '38112',
     bankLocation: 'Braunschweig',
   ),
-  '27020001': Iban(
-    bic: 'AUDFDE21XXX',
+  '27020001': Bic(
+    value: 'AUDFDE21XXX',
     bankName: 'Audi Bank Zndl d Volkswagen Bank',
     bankShortName: 'Audi Bank Braunschweig',
     bankPostcode: '38112',
     bankLocation: 'Braunschweig',
   ),
-  '27020003': Iban(
-    bic: 'SKODDE21XXX',
+  '27020003': Bic(
+    value: 'SKODDE21XXX',
     bankName: 'Skoda Bank',
     bankShortName: 'Skoda Bank',
     bankPostcode: '38093',
     bankLocation: 'Braunschweig',
   ),
-  '27020004': Iban(
-    bic: 'ECBKDE21XXX',
+  '27020004': Bic(
+    value: 'ECBKDE21XXX',
     bankName: 'AutoEuropa Bank',
     bankShortName: 'AutoEuropa Bank',
     bankPostcode: '38112',
     bankLocation: 'Braunschweig',
   ),
-  '27020800': Iban(
-    bic: 'SEATDE21XXX',
+  '27020800': Bic(
+    value: 'SEATDE21XXX',
     bankName: 'Seat Bank Zndl d Volkswagen Bank',
     bankShortName: 'Seat Bank Braunschweig',
     bankPostcode: '38093',
     bankLocation: 'Braunschweig',
   ),
-  '27032500': Iban(
-    bic: 'BCLSDE21XXX',
+  '27032500': Bic(
+    value: 'BCLSDE21XXX',
     bankName: 'Seeligerbank Wolfenbüttel',
     bankShortName: 'Bankhaus C. L. Seeliger',
     bankPostcode: '38300',
     bankLocation: 'Wolfenbüttel',
   ),
-  '27040080': Iban(
-    bic: 'COBADEFFXXX',
+  '27040080': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Wolfenbüttel',
     bankShortName: 'Commerzbank',
     bankPostcode: '38282',
     bankLocation: 'Wolfenbüttel',
   ),
-  '27062290': Iban(
-    bic: 'GENODEF1BOH',
+  '27062290': Bic(
+    value: 'GENODEF1BOH',
     bankName: 'Volksbank Börßum-Hornburg (Gf P2)',
     bankShortName: 'Volksbank Börßum-Hornburg',
     bankPostcode: '38312',
     bankLocation: 'Börßum',
   ),
-  '27070024': Iban(
-    bic: 'DEUTDEDB275',
+  '27070024': Bic(
+    value: 'DEUTDEDB275',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31202',
     bankLocation: 'Peine',
   ),
-  '27070030': Iban(
-    bic: 'DEUTDE2H270',
+  '27070030': Bic(
+    value: 'DEUTDE2H270',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38022',
     bankLocation: 'Braunschweig',
   ),
-  '27070031': Iban(
-    bic: 'DEUTDE2H271',
+  '27070031': Bic(
+    value: 'DEUTDE2H271',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38502',
     bankLocation: 'Gifhorn',
   ),
-  '27070034': Iban(
-    bic: 'DEUTDE2H278',
+  '27070034': Bic(
+    value: 'DEUTDE2H278',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '37424',
     bankLocation: 'Bad Lauterberg im Harz',
   ),
-  '27070041': Iban(
-    bic: 'DEUTDE2H279',
+  '27070041': Bic(
+    value: 'DEUTDE2H279',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '37441',
     bankLocation: 'Bad Sachsa',
   ),
-  '27070042': Iban(
-    bic: 'DEUTDE2H272',
+  '27070042': Bic(
+    value: 'DEUTDE2H272',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38667',
     bankLocation: 'Bad Harzburg',
   ),
-  '27070043': Iban(
-    bic: 'DEUTDE2H273',
+  '27070043': Bic(
+    value: 'DEUTDE2H273',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38335',
     bankLocation: 'Helmstedt',
   ),
-  '27070079': Iban(
-    bic: 'DEUTDE2H275',
+  '27070079': Bic(
+    value: 'DEUTDE2H275',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '31202',
     bankLocation: 'Peine',
   ),
-  '27070324': Iban(
-    bic: 'DEUTDEDBP23',
+  '27070324': Bic(
+    value: 'DEUTDEDBP23',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '38102',
     bankLocation: 'Braunschweig',
   ),
-  '27070369': Iban(
-    bic: 'DEUTDE2HP23',
+  '27070369': Bic(
+    value: 'DEUTDE2HP23',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '38102',
     bankLocation: 'Braunschweig',
   ),
-  '27072524': Iban(
-    bic: 'DEUTDEDB277',
+  '27072524': Bic(
+    value: 'DEUTDEDB277',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38282',
     bankLocation: 'Wolfenbüttel',
   ),
-  '27072537': Iban(
-    bic: 'DEUTDE2H277',
+  '27072537': Bic(
+    value: 'DEUTDE2H277',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38282',
     bankLocation: 'Wolfenbüttel',
   ),
-  '27072724': Iban(
-    bic: 'DEUTDEDB276',
+  '27072724': Bic(
+    value: 'DEUTDEDB276',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38242',
     bankLocation: 'Salzgitter',
   ),
-  '27072736': Iban(
-    bic: 'DEUTDE2H276',
+  '27072736': Bic(
+    value: 'DEUTDE2H276',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '38242',
     bankLocation: 'Salzgitter',
   ),
-  '27080060': Iban(
-    bic: 'DRESDEFF270',
+  '27080060': Bic(
+    value: 'DRESDEFF270',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Wolfenbüttel',
     bankPostcode: '38282',
     bankLocation: 'Wolfenbüttel',
   ),
-  '27089221': Iban(
-    bic: 'DRESDEFFI12',
+  '27089221': Bic(
+    value: 'DRESDEFFI12',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbk ITGK Braunschwg',
     bankPostcode: '38007',
     bankLocation: 'Braunschweig',
   ),
-  '27090900': Iban(
-    bic: 'GENODEF1P02',
+  '27090900': Bic(
+    value: 'GENODEF1P02',
     bankName: 'PSD Bank Braunschweig',
     bankShortName: 'PSD Bank Braunschweig',
     bankPostcode: '06108',
     bankLocation: 'Halle (Saale)',
   ),
-  '27092555': Iban(
-    bic: 'GENODEF1WFV',
+  '27092555': Bic(
+    value: 'GENODEF1WFV',
     bankName: 'Volksbank (Gf P2)',
     bankShortName: 'Volksbank',
     bankPostcode: '38289',
     bankLocation: 'Wolfenbüttel',
   ),
-  '27131300': Iban(
-    bic: 'GENODEF1RTS',
+  '27131300': Bic(
+    value: 'GENODEF1RTS',
     bankName: 'Rautenschlein Schöningen',
     bankShortName: 'Bankhaus Rautenschlein',
     bankPostcode: '38364',
     bankLocation: 'Schöningen',
   ),
-  '27240004': Iban(
-    bic: 'COBADEFFXXX',
+  '27240004': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Holzminden',
     bankShortName: 'Commerzbank',
     bankPostcode: '37591',
     bankLocation: 'Holzminden',
   ),
-  '27290087': Iban(
-    bic: 'GENODEF1HMV',
+  '27290087': Bic(
+    value: 'GENODEF1HMV',
     bankName: 'Volksbank Weserbergland Holzminden',
     bankShortName: 'VB Weserbergland Holzminden',
     bankPostcode: '37647',
     bankLocation: 'Polle',
   ),
-  '27893359': Iban(
-    bic: 'GENODEF1BLG',
+  '27893359': Bic(
+    value: 'GENODEF1BLG',
     bankName: 'Volksbank Braunlage Zw Walkenried',
     bankShortName: 'Volksbank Braunlage',
     bankPostcode: '37445',
     bankLocation: 'Walkenried',
   ),
-  '27893760': Iban(
-    bic: 'GENODEF1SES',
+  '27893760': Bic(
+    value: 'GENODEF1SES',
     bankName: 'Volksbank (Gf P2)',
     bankShortName: 'Volksbank Seesen',
     bankPostcode: '38715',
     bankLocation: 'Seesen',
   ),
-  '28000000': Iban(
-    bic: 'MARKDEF1280',
+  '28000000': Bic(
+    value: 'MARKDEF1280',
     bankName: 'BBk Oldenburg',
     bankShortName: 'Bundesbank',
     bankPostcode: '26016',
     bankLocation: 'Oldenburg',
   ),
-  '28020050': Iban(
-    bic: 'OLBODEH2XXX',
+  '28020050': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Wardenburg',
     bankPostcode: '26198',
     bankLocation: 'Wardenburg',
   ),
-  '28021002': Iban(
-    bic: 'OLBODEH2XXX',
+  '28021002': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Stadland',
     bankPostcode: '26935',
     bankLocation: 'Stadland',
   ),
-  '28021301': Iban(
-    bic: 'OLBODEH2XXX',
+  '28021301': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Edewecht',
     bankPostcode: '26182',
     bankLocation: 'Edewecht',
   ),
-  '28021504': Iban(
-    bic: 'OLBODEH2XXX',
+  '28021504': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Saterland',
     bankPostcode: '26683',
     bankLocation: 'Saterland',
   ),
-  '28021623': Iban(
-    bic: 'OLBODEH2XXX',
+  '28021623': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Ldbank Neuenkirchen',
     bankPostcode: '49434',
     bankLocation: 'Neuenkirchen-Vörden',
   ),
-  '28021705': Iban(
-    bic: 'OLBODEH2XXX',
+  '28021705': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG Delmenhorst',
     bankShortName: 'Oldb Ldbank Delmenh Stuhr',
     bankPostcode: '28809',
     bankLocation: 'Stuhr',
   ),
-  '28021906': Iban(
-    bic: 'OLBODEH2XXX',
+  '28021906': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Berne',
     bankPostcode: '27804',
     bankLocation: 'Berne',
   ),
-  '28022015': Iban(
-    bic: 'OLBODEH2XXX',
+  '28022015': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Nordenham',
     bankPostcode: '26944',
     bankLocation: 'Nordenham',
   ),
-  '28022412': Iban(
-    bic: 'OLBODEH2XXX',
+  '28022412': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Lähden',
     bankPostcode: '49772',
     bankLocation: 'Lähden',
   ),
-  '28022511': Iban(
-    bic: 'OLBODEH2XXX',
+  '28022511': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Steinfeld',
     bankPostcode: '49436',
     bankLocation: 'Steinfeld (Oldenburg)',
   ),
-  '28022620': Iban(
-    bic: 'OLBODEH2XXX',
+  '28022620': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Wiefelstede',
     bankPostcode: '26210',
     bankLocation: 'Wiefelstede',
   ),
-  '28022822': Iban(
-    bic: 'OLBODEH2XXX',
+  '28022822': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Bakum',
     bankPostcode: '49454',
     bankLocation: 'Bakum',
   ),
-  '28023224': Iban(
-    bic: 'OLBODEH2XXX',
+  '28023224': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Apen',
     bankPostcode: '26689',
     bankLocation: 'Apen',
   ),
-  '28023325': Iban(
-    bic: 'OLBODEH2XXX',
+  '28023325': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Ldbank Großenkneten',
     bankPostcode: '26190',
     bankLocation: 'Großenkneten',
   ),
-  '28030300': Iban(
-    bic: 'FORTDEH4XXX',
+  '28030300': Bic(
+    value: 'FORTDEH4XXX',
     bankName: 'Oldenburgische Landesbank (vormals W. Fortmann & Söhne)',
     bankShortName: 'OLB, Oldenburg',
     bankPostcode: '26122',
     bankLocation: 'Oldenburg',
   ),
-  '28040046': Iban(
-    bic: 'COBADEFFXXX',
+  '28040046': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Oldenburg',
     bankShortName: 'Commerzbank',
     bankPostcode: '26016',
     bankLocation: 'Oldenburg',
   ),
-  '28042865': Iban(
-    bic: 'COBADEFFXXX',
+  '28042865': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Vechta',
     bankShortName: 'Commerzbank',
     bankPostcode: '49360',
     bankLocation: 'Vechta',
   ),
-  '28050100': Iban(
-    bic: 'SLZODE22XXX',
+  '28050100': Bic(
+    value: 'SLZODE22XXX',
     bankName: 'Landessparkasse zu Oldenburg',
     bankShortName: 'Landessparkasse Oldenburg',
     bankPostcode: '26016',
     bankLocation: 'Oldenburg',
   ),
-  '28060228': Iban(
-    bic: 'GENODEF1OL2',
+  '28060228': Bic(
+    value: 'GENODEF1OL2',
     bankName: 'Raiffeisenbank Oldenburg (Gf P2)',
     bankShortName: 'Raiffbk Oldenburg',
     bankPostcode: '26016',
     bankLocation: 'Oldenburg',
   ),
-  '28061410': Iban(
-    bic: 'GENODEF1BRN',
+  '28061410': Bic(
+    value: 'GENODEF1BRN',
     bankName: 'Raiffeisenbank Wesermarsch-Süd (Gf P2)',
     bankShortName: 'Raiffbk Wesermarsch-Süd',
     bankPostcode: '26913',
     bankLocation: 'Brake (Unterweser)',
   ),
-  '28061501': Iban(
-    bic: 'GENODEF1CLP',
+  '28061501': Bic(
+    value: 'GENODEF1CLP',
     bankName: 'VR-Bank in Südoldenburg (Gf P2)',
     bankShortName: 'VR-Bank Südoldenburg',
     bankPostcode: '49681',
     bankLocation: 'Garrel',
   ),
-  '28061679': Iban(
-    bic: 'GENODEF1DAM',
+  '28061679': Bic(
+    value: 'GENODEF1DAM',
     bankName: 'Volksbank Dammer Berge (Gf P2)',
     bankShortName: 'Volksbank Dammer Berge',
     bankPostcode: '49396',
     bankLocation: 'Damme',
   ),
-  '28061822': Iban(
-    bic: 'GENODEF1EDE',
+  '28061822': Bic(
+    value: 'GENODEF1EDE',
     bankName: 'Volksbank Quakenbrück Zndl. d. VB Oldenburg',
     bankShortName: 'Volksbank Oldenburg',
     bankPostcode: '49603',
     bankLocation: 'Quakenbrück',
   ),
-  '28062165': Iban(
-    bic: 'GENODEF1RSE',
+  '28062165': Bic(
+    value: 'GENODEF1RSE',
     bankName: 'Raiffeisenbank Rastede (Gf P2)',
     bankShortName: 'Raiffeisenbank Rastede',
     bankPostcode: '26170',
     bankLocation: 'Rastede',
   ),
-  '28062249': Iban(
-    bic: 'GENODEF1HUD',
+  '28062249': Bic(
+    value: 'GENODEF1HUD',
     bankName: 'Vereinigte Volksbank (Gf P2)',
     bankShortName: 'Vereinigte Volksbank',
     bankPostcode: '27795',
     bankLocation: 'Hude',
   ),
-  '28062299': Iban(
-    bic: 'GENODEF1HUD',
+  '28062299': Bic(
+    value: 'GENODEF1HUD',
     bankName: 'Vereinigte Volksbank GAA',
     bankShortName: 'Vereinigte Volksbank GAA',
     bankPostcode: '27798',
     bankLocation: 'Hude',
   ),
-  '28062560': Iban(
-    bic: 'GENODEF1LON',
+  '28062560': Bic(
+    value: 'GENODEF1LON',
     bankName: 'Volksbank Lohne-Mühlen (Gf P2)',
     bankShortName: 'Volksbank Lohne-Mühlen',
     bankPostcode: '49379',
     bankLocation: 'Lohne (Oldenburg)',
   ),
-  '28062740': Iban(
-    bic: 'GENODEF1GBH',
+  '28062740': Bic(
+    value: 'GENODEF1GBH',
     bankName: 'Volksbank Bookholzberg-Lemwerder (Gf P2)',
     bankShortName: 'VB Bookholzberg-Lemwerder',
     bankPostcode: '27770',
     bankLocation: 'Ganderkesee',
   ),
-  '28062913': Iban(
-    bic: 'GENODEF1BSL',
+  '28062913': Bic(
+    value: 'GENODEF1BSL',
     bankName: 'Volksbank Bösel (Gf P2)',
     bankShortName: 'Volksbank Bösel',
     bankPostcode: '26216',
     bankLocation: 'Bösel',
   ),
-  '28063253': Iban(
-    bic: 'GENODEF1WRE',
+  '28063253': Bic(
+    value: 'GENODEF1WRE',
     bankName: 'Volksbank Westerstede (Gf P2)',
     bankShortName: 'Volksbank Westerstede',
     bankPostcode: '26655',
     bankLocation: 'Westerstede',
   ),
-  '28063526': Iban(
-    bic: 'GENODEF1ESO',
+  '28063526': Bic(
+    value: 'GENODEF1ESO',
     bankName: 'Volksbank Essen-Cappeln (Gf P2)',
     bankShortName: 'VB Essen-Cappeln',
     bankPostcode: '49692',
     bankLocation: 'Cappeln (Oldenburg)',
   ),
-  '28063607': Iban(
-    bic: 'GENODEF1BAM',
+  '28063607': Bic(
+    value: 'GENODEF1BAM',
     bankName: 'Volksbank Bakum (Gf P2)',
     bankShortName: 'Volksbank Bakum',
     bankPostcode: '49456',
     bankLocation: 'Bakum',
   ),
-  '28064179': Iban(
-    bic: 'GENODEF1VEC',
+  '28064179': Bic(
+    value: 'GENODEF1VEC',
     bankName: 'Volksbank Vechta (Gf P2)',
     bankShortName: 'Volksbank Vechta',
     bankPostcode: '49364',
     bankLocation: 'Vechta',
   ),
-  '28064241': Iban(
-    bic: 'GENODEF1NHE',
+  '28064241': Bic(
+    value: 'GENODEF1NHE',
     bankName: 'Raiffeisen-Volksbank Varel-Nordenham',
     bankShortName: 'Raiff-VB Varel-Nordenham',
     bankPostcode: '26945',
     bankLocation: 'Nordenham',
   ),
-  '28065061': Iban(
-    bic: 'GENODEF1LOG',
+  '28065061': Bic(
+    value: 'GENODEF1LOG',
     bankName: 'Volksbank Löningen (Gf P2)',
     bankShortName: 'Volksbank Löningen',
     bankPostcode: '49619',
     bankLocation: 'Löningen',
   ),
-  '28065108': Iban(
-    bic: 'GENODEF1DIK',
+  '28065108': Bic(
+    value: 'GENODEF1DIK',
     bankName: 'VR-Bank Dinklage-Steinfeld (Gf P2)',
     bankShortName: 'VR-Bank Dinklage-Steinfeld',
     bankPostcode: '49407',
     bankLocation: 'Dinklage',
   ),
-  '28065286': Iban(
-    bic: 'GENODEF1SAN',
+  '28065286': Bic(
+    value: 'GENODEF1SAN',
     bankName: 'Raiffeisenbank Scharrel (Gf P2)',
     bankShortName: 'Raiffeisenbank Scharrel',
     bankPostcode: '26683',
     bankLocation: 'Saterland',
   ),
-  '28066103': Iban(
-    bic: 'GENODEF1VIS',
+  '28066103': Bic(
+    value: 'GENODEF1VIS',
     bankName: 'Volksbank Visbek (Gf P2)',
     bankShortName: 'Volksbank Visbek',
     bankPostcode: '49425',
     bankLocation: 'Visbek',
   ),
-  '28066214': Iban(
-    bic: 'GENODEF1WDH',
+  '28066214': Bic(
+    value: 'GENODEF1WDH',
     bankName: 'VR Bank Oldenburg Land (Gf P2)',
     bankShortName: 'VR Bank Oldenburg Land',
     bankPostcode: '27793',
     bankLocation: 'Wildeshausen',
   ),
-  '28066620': Iban(
-    bic: 'GENODEF1FOY',
+  '28066620': Bic(
+    value: 'GENODEF1FOY',
     bankName: 'Volksbank (Gf P2)',
     bankShortName: 'Volksbank',
     bankPostcode: '26169',
     bankLocation: 'Friesoythe',
   ),
-  '28067068': Iban(
-    bic: 'GENODEF1NEO',
+  '28067068': Bic(
+    value: 'GENODEF1NEO',
     bankName: 'Volksbank Neuenkirchen-Vörden (Gf P2)',
     bankShortName: 'VB Neuenkirchen-Vörden',
     bankPostcode: '49434',
     bankLocation: 'Neuenkirchen-Vörden',
   ),
-  '28067170': Iban(
-    bic: 'GENODEF1GSC',
+  '28067170': Bic(
+    value: 'GENODEF1GSC',
     bankName: 'Volksbank Delmenhorst Schierbrok (Gf P2)',
     bankShortName: 'VB Delmenhorst Schierbrok',
     bankPostcode: '27738',
     bankLocation: 'Delmenhorst',
   ),
-  '28067257': Iban(
-    bic: 'GENODEF1LAP',
+  '28067257': Bic(
+    value: 'GENODEF1LAP',
     bankName: 'Volksbank Lastrup (Gf P2)',
     bankShortName: 'Volksbank Lastrup',
     bankPostcode: '49686',
     bankLocation: 'Lastrup',
   ),
-  '28068218': Iban(
-    bic: 'GENODEF1BUT',
+  '28068218': Bic(
+    value: 'GENODEF1BUT',
     bankName: 'Raiffeisenbank Butjadingen-Abbehausen (Gf P2)',
     bankShortName: 'Raiffbk Butjadingen-Abbehsn',
     bankPostcode: '26963',
     bankLocation: 'Butjadingen',
   ),
-  '28069052': Iban(
-    bic: 'GENODEF1ORF',
+  '28069052': Bic(
+    value: 'GENODEF1ORF',
     bankName: 'Raiffeisenbank Strücklingen-Idafehn (Gf P2)',
     bankShortName: 'Raiffbk Strückl.-Idafehn',
     bankPostcode: '26842',
     bankLocation: 'Ostrhauderfehn',
   ),
-  '28069092': Iban(
-    bic: 'GENODEF1HAT',
+  '28069092': Bic(
+    value: 'GENODEF1HAT',
     bankName: 'VR Bank Oldenburg Land West (Gf P2)',
     bankShortName: 'VR Bank Oldenburg Land West',
     bankPostcode: '26209',
     bankLocation: 'Hatten',
   ),
-  '28069109': Iban(
-    bic: 'GENODEF1EMK',
+  '28069109': Bic(
+    value: 'GENODEF1EMK',
     bankName: 'Volksbank Emstek (Gf P2)',
     bankShortName: 'Volksbank Emstek',
     bankPostcode: '49683',
     bankLocation: 'Emstek',
   ),
-  '28069128': Iban(
-    bic: 'GENODEF1GRR',
+  '28069128': Bic(
+    value: 'GENODEF1GRR',
     bankName: 'Raiffeisenbank Garrel (Gf P2)',
     bankShortName: 'Raiffeisenbank Garrel',
     bankPostcode: '49675',
     bankLocation: 'Garrel',
   ),
-  '28069138': Iban(
-    bic: 'GENODEF1VAG',
+  '28069138': Bic(
+    value: 'GENODEF1VAG',
     bankName: 'VR Bank Oldenburg Land West (Gf P2)',
     bankShortName: 'VR Bank Oldenburg Land West',
     bankPostcode: '26209',
     bankLocation: 'Hatten',
   ),
-  '28069293': Iban(
-    bic: 'GENODEF1BBH',
+  '28069293': Bic(
+    value: 'GENODEF1BBH',
     bankName: 'Volksbank Obergrafschaft -alt- (Gf P2)',
     bankShortName: 'VB Obergrafschaft -alt-',
     bankPostcode: '48465',
     bankLocation: 'Schüttorf',
   ),
-  '28069381': Iban(
-    bic: 'GENODEF1WLT',
+  '28069381': Bic(
+    value: 'GENODEF1WLT',
     bankName: 'Hümmlinger Volksbank (Gf P2)',
     bankShortName: 'Hümmlinger Volksbank',
     bankPostcode: '49757',
     bankLocation: 'Werlte',
   ),
-  '28069706': Iban(
-    bic: 'GENODEF1BOG',
+  '28069706': Bic(
+    value: 'GENODEF1BOG',
     bankName: 'Volksbank Nordhümmling (Gf P2)',
     bankShortName: 'Volksbank Nordhümmling',
     bankPostcode: '26904',
     bankLocation: 'Börger',
   ),
-  '28069755': Iban(
-    bic: 'GENODEF1MLO',
+  '28069755': Bic(
+    value: 'GENODEF1MLO',
     bankName: 'Raiffeisenbank Oldersum',
     bankShortName: 'Raiffeisenbank Oldersum',
     bankPostcode: '26798',
     bankLocation: 'Moormerland',
   ),
-  '28069773': Iban(
-    bic: 'GENODEF1WWM',
+  '28069773': Bic(
+    value: 'GENODEF1WWM',
     bankName: 'Raiffeisenbank Wiesedermeer-Wiesede-Marcardsm (Gf P2)',
     bankShortName: 'Raiffbk Wiesederm-Wiesede-M',
     bankPostcode: '26446',
     bankLocation: 'Friedeburg',
   ),
-  '28069878': Iban(
-    bic: 'GENODEF1KBL',
+  '28069878': Bic(
+    value: 'GENODEF1KBL',
     bankName: 'Raiffeisenbank Ems-Vechte (Gf P2)',
     bankShortName: 'Raiffeisenbank Ems-Vechte',
     bankPostcode: '49777',
     bankLocation: 'Klein Berßen',
   ),
-  '28069926': Iban(
-    bic: 'GENODEF1HOO',
+  '28069926': Bic(
+    value: 'GENODEF1HOO',
     bankName: 'Volksbank Niedergrafschaft (Gf P2)',
     bankShortName: 'VB Niedergrafschaft',
     bankPostcode: '49843',
     bankLocation: 'Uelsen',
   ),
-  '28069935': Iban(
-    bic: 'GENODEF1LRU',
+  '28069935': Bic(
+    value: 'GENODEF1LRU',
     bankName: 'Raiffeisenbank Lorup (Gf P2)',
     bankShortName: 'Raiffeisenbank Lorup',
     bankPostcode: '26900',
     bankLocation: 'Lorup',
   ),
-  '28069956': Iban(
-    bic: 'GENODEF1NEV',
+  '28069956': Bic(
+    value: 'GENODEF1NEV',
     bankName: 'Grafschafter Volksbank (Gf P2)',
     bankShortName: 'Grafschafter Volksbank',
     bankPostcode: '48511',
     bankLocation: 'Nordhorn',
   ),
-  '28069991': Iban(
-    bic: 'GENODEF1LTH',
+  '28069991': Bic(
+    value: 'GENODEF1LTH',
     bankName: 'Volksbank Emstal (Gf P2)',
     bankShortName: 'Volksbank Emstal',
     bankPostcode: '49759',
     bankLocation: 'Lathen',
   ),
-  '28069994': Iban(
-    bic: 'GENODEF1SPL',
+  '28069994': Bic(
+    value: 'GENODEF1SPL',
     bankName: 'Volksbank Süd-Emsland (Gf P2)',
     bankShortName: 'Volksbank Süd-Emsland',
     bankPostcode: '48480',
     bankLocation: 'Spelle',
   ),
-  '28070024': Iban(
-    bic: 'DEUTDEDB281',
+  '28070024': Bic(
+    value: 'DEUTDEDB281',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '26147',
     bankLocation: 'Bad Zwischenahn',
   ),
-  '28070057': Iban(
-    bic: 'DEUTDEHB281',
+  '28070057': Bic(
+    value: 'DEUTDEHB281',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '26147',
     bankLocation: 'Bad Zwischenahn',
   ),
-  '28220026': Iban(
-    bic: 'OLBODEH2XXX',
+  '28220026': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Sande',
     bankPostcode: '26448',
     bankLocation: 'Sande',
   ),
-  '28222208': Iban(
-    bic: 'OLBODEH2XXX',
+  '28222208': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Wittmund',
     bankPostcode: '26400',
     bankLocation: 'Wittmund',
   ),
-  '28222621': Iban(
-    bic: 'OLBODEH2XXX',
+  '28222621': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank Gs Jaderberg',
     bankShortName: 'Oldb Landesbank Jade',
     bankPostcode: '26346',
     bankLocation: 'Jade',
   ),
-  '28240023': Iban(
-    bic: 'COBADEFFXXX',
+  '28240023': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Wilhelmshaven',
     bankShortName: 'Commerzbank',
     bankPostcode: '26353',
     bankLocation: 'Wilhelmshaven',
   ),
-  '28250110': Iban(
-    bic: 'BRLADE21WHV',
+  '28250110': Bic(
+    value: 'BRLADE21WHV',
     bankName: 'Sparkasse Wilhelmshaven',
     bankShortName: 'Sparkasse Wilhelmshaven',
     bankPostcode: '26363',
     bankLocation: 'Wilhelmshaven',
   ),
-  '28252760': Iban(
-    bic: 'BRLADE21WTM',
+  '28252760': Bic(
+    value: 'BRLADE21WTM',
     bankName: 'Kreissparkasse Wittmund',
     bankShortName: 'Kr Spk Wittmund',
     bankPostcode: '26409',
     bankLocation: 'Wittmund',
   ),
-  '28262254': Iban(
-    bic: 'GENODEF1JEV',
+  '28262254': Bic(
+    value: 'GENODEF1JEV',
     bankName: 'Volksbank Jever (Gf P2)',
     bankShortName: 'Volksbank Jever',
     bankPostcode: '26436',
     bankLocation: 'Jever',
   ),
-  '28262673': Iban(
-    bic: 'GENODEF1VAR',
+  '28262673': Bic(
+    value: 'GENODEF1VAR',
     bankName: 'Raiffeisen-Volksbank Varel-Nordenham (Gf P2)',
     bankShortName: 'RVB Varel-Nordenham',
     bankPostcode: '26316',
     bankLocation: 'Varel',
   ),
-  '28270024': Iban(
-    bic: 'DEUTDEDB283',
+  '28270024': Bic(
+    value: 'DEUTDEDB283',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '26437',
     bankLocation: 'Jever',
   ),
-  '28270056': Iban(
-    bic: 'DEUTDEHB283',
+  '28270056': Bic(
+    value: 'DEUTDEHB283',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '26437',
     bankLocation: 'Jever',
   ),
-  '28280012': Iban(
-    bic: 'DRESDEFF282',
+  '28280012': Bic(
+    value: 'DRESDEFF282',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Wilhelmshaven',
     bankPostcode: '26352',
     bankLocation: 'Wilhelmshaven',
   ),
-  '28290063': Iban(
-    bic: 'GENODEF1WHV',
+  '28290063': Bic(
+    value: 'GENODEF1WHV',
     bankName: 'Volksbank Wilhelmshaven (Gf P2)',
     bankShortName: 'Volksbank Wilhelmshaven',
     bankPostcode: '26382',
     bankLocation: 'Wilhelmshaven',
   ),
-  '28291551': Iban(
-    bic: 'GENODEF1ESE',
+  '28291551': Bic(
+    value: 'GENODEF1ESE',
     bankName: 'Volksbank Esens (Gf P2)',
     bankShortName: 'VB Esens',
     bankPostcode: '26422',
     bankLocation: 'Esens',
   ),
-  '28320014': Iban(
-    bic: 'OLBODEH2XXX',
+  '28320014': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Marienhafe',
     bankPostcode: '26525',
     bankLocation: 'Marienhafe',
   ),
-  '28321816': Iban(
-    bic: 'OLBODEH2XXX',
+  '28321816': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Norderney',
     bankPostcode: '26536',
     bankLocation: 'Norderney',
   ),
-  '28350000': Iban(
-    bic: 'BRLADE21ANO',
+  '28350000': Bic(
+    value: 'BRLADE21ANO',
     bankName: 'Sparkasse Aurich-Norden',
     bankShortName: 'Spk Aurich-Norden',
     bankPostcode: '26632',
     bankLocation: 'Ihlow',
   ),
-  '28361592': Iban(
-    bic: 'GENODEF1MAR',
+  '28361592': Bic(
+    value: 'GENODEF1MAR',
     bankName: 'Raiffeisen-Volksbank Fresena (Gf P2)',
     bankShortName: 'Raiff-VB Fresena',
     bankPostcode: '26506',
     bankLocation: 'Norden',
   ),
-  '28420007': Iban(
-    bic: 'OLBODEH2XXX',
+  '28420007': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Borkum',
     bankPostcode: '26745',
     bankLocation: 'Borkum',
   ),
-  '28421030': Iban(
-    bic: 'OLBODEH2XXX',
+  '28421030': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Ldbank Südbrookmerland',
     bankPostcode: '26619',
     bankLocation: 'Südbrookmerland',
   ),
-  '28440037': Iban(
-    bic: 'COBADEFFXXX',
+  '28440037': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Emden',
     bankShortName: 'Commerzbank',
     bankPostcode: '26693',
     bankLocation: 'Emden',
   ),
-  '28450000': Iban(
-    bic: 'BRLADE21EMD',
+  '28450000': Bic(
+    value: 'BRLADE21EMD',
     bankName: 'Sparkasse Emden',
     bankShortName: 'Sparkasse Emden',
     bankPostcode: '26702',
     bankLocation: 'Emden',
   ),
-  '28470024': Iban(
-    bic: 'DEUTDEDB298',
+  '28470024': Bic(
+    value: 'DEUTDEDB298',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '26533',
     bankLocation: 'Norderney',
   ),
-  '28470091': Iban(
-    bic: 'DEUTDEHB298',
+  '28470091': Bic(
+    value: 'DEUTDEHB298',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '26533',
     bankLocation: 'Norderney',
   ),
-  '28520009': Iban(
-    bic: 'OLBODEH2XXX',
+  '28520009': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Bunde',
     bankPostcode: '26827',
     bankLocation: 'Bunde',
   ),
-  '28521518': Iban(
-    bic: 'OLBODEH2XXX',
+  '28521518': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG',
     bankShortName: 'Oldb Landesbank Dörpen',
     bankPostcode: '26892',
     bankLocation: 'Dörpen',
   ),
-  '28540034': Iban(
-    bic: 'COBADEFFXXX',
+  '28540034': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Leer Ostfriesld',
     bankShortName: 'Commerzbank',
     bankPostcode: '26763',
     bankLocation: 'Leer (Ostfriesland)',
   ),
-  '28550000': Iban(
-    bic: 'BRLADE21LER',
+  '28550000': Bic(
+    value: 'BRLADE21LER',
     bankName: 'Sparkasse LeerWittmund',
     bankShortName: 'Sparkasse LeerWittmund',
     bankPostcode: '26399',
     bankLocation: 'Wittmund',
   ),
-  '28562297': Iban(
-    bic: 'GENODEF1UPL',
+  '28562297': Bic(
+    value: 'GENODEF1UPL',
     bankName: 'Raiffeisen-Volksbank (Gf P2)',
     bankShortName: 'RVB Aurich',
     bankPostcode: '26589',
     bankLocation: 'Aurich',
   ),
-  '28562716': Iban(
-    bic: 'GENODEF1WEF',
+  '28562716': Bic(
+    value: 'GENODEF1WEF',
     bankName: 'Raiffeisenbank Flachsmeer (Gf P2)',
     bankShortName: 'Raiffbk Flachsmeer Westover',
     bankPostcode: '26810',
     bankLocation: 'Westoverledingen',
   ),
-  '28562863': Iban(
-    bic: 'GENODEF1HTL',
+  '28562863': Bic(
+    value: 'GENODEF1HTL',
     bankName: 'Raiffeisenbank Moormerland',
     bankShortName: 'Raiffeisenbank Moormerland',
     bankPostcode: '26835',
     bankLocation: 'Holtland',
   ),
-  '28563749': Iban(
-    bic: 'GENODEF1MML',
+  '28563749': Bic(
+    value: 'GENODEF1MML',
     bankName: 'Raiffeisenbank Moormerland',
     bankShortName: 'Raiffeisenbank Moormerland',
     bankPostcode: '26725',
     bankLocation: 'Emden',
   ),
-  '28570024': Iban(
-    bic: 'DEUTDEDB288',
+  '28570024': Bic(
+    value: 'DEUTDEDB288',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '26819',
     bankLocation: 'Weener',
   ),
-  '28570092': Iban(
-    bic: 'DEUTDEHB288',
+  '28570092': Bic(
+    value: 'DEUTDEHB288',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '26819',
     bankLocation: 'Weener',
   ),
-  '28590075': Iban(
-    bic: 'GENODEF1LER',
+  '28590075': Bic(
+    value: 'GENODEF1LER',
     bankName: 'Ostfriesische Volksbank Leer (Gf P2)',
     bankShortName: 'Ostfriesische VB Leer',
     bankPostcode: '26768',
     bankLocation: 'Leer (Ostfriesland)',
   ),
-  '28591579': Iban(
-    bic: 'GENODEF1PAP',
+  '28591579': Bic(
+    value: 'GENODEF1PAP',
     bankName: 'Volksbank Papenburg Fil d. Ostfries. VB Leer',
     bankShortName: 'Volksbank Papenburg',
     bankPostcode: '26858',
     bankLocation: 'Papenburg',
   ),
-  '28591654': Iban(
-    bic: 'GENODEF1WRH',
+  '28591654': Bic(
+    value: 'GENODEF1WRH',
     bankName: 'Volksbank Westrhauderfehn Zw Ostrhauderfehn',
     bankShortName: 'Volksbank Westrhauderfehn',
     bankPostcode: '26842',
     bankLocation: 'Ostrhauderfehn',
   ),
-  '29000000': Iban(
-    bic: 'MARKDEF1290',
+  '29000000': Bic(
+    value: 'MARKDEF1290',
     bankName: 'BBk Hannover eh Bremen',
     bankShortName: 'Bundesbank eh Bremen',
     bankPostcode: '30002',
     bankLocation: 'Hannover',
   ),
-  '29020000': Iban(
-    bic: 'NEELDE22XXX',
+  '29020000': Bic(
+    value: 'NEELDE22XXX',
     bankName: 'Bankhaus Neelmeyer Bremen',
     bankShortName: 'Bankhaus Neelmeyer',
     bankPostcode: '28195',
     bankLocation: 'Bremen',
   ),
-  '29020200': Iban(
-    bic: 'NFHBDE21XXX',
+  '29020200': Bic(
+    value: 'NFHBDE21XXX',
     bankName: 'Greensill Bank Bremen',
     bankShortName: 'Greensill Bank',
     bankPostcode: '28028',
     bankLocation: 'Bremen',
   ),
-  '29030400': Iban(
-    bic: 'PLUMDE29XXX',
+  '29030400': Bic(
+    value: 'PLUMDE29XXX',
     bankName: 'M.M. Warburg & Co (vormals Bankhaus Carl F. Plump & CO)',
     bankShortName: 'M.M. Warburg (Plump)',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '29040060': Iban(
-    bic: 'COBADEFFXXX',
+  '29040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Bremen',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '28195',
     bankLocation: 'Bremen',
   ),
-  '29040061': Iban(
-    bic: 'COBADEFFXXX',
+  '29040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Bremen',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '28195',
     bankLocation: 'Bremen',
   ),
-  '29040090': Iban(
-    bic: 'COBADEFFXXX',
+  '29040090': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Achim Bremen',
     bankShortName: 'Commerzbank',
     bankPostcode: '28817',
     bankLocation: 'Achim',
   ),
-  '29050000': Iban(
-    bic: 'BRLADE22OLD',
+  '29050000': Bic(
+    value: 'BRLADE22OLD',
     bankName: 'Norddeutsche Landesbank - Girozentrale -',
     bankShortName: 'Nord LB Oldenburg',
     bankPostcode: '26122',
     bankLocation: 'Oldenburg',
   ),
-  '29050101': Iban(
-    bic: 'SBREDE22XXX',
+  '29050101': Bic(
+    value: 'SBREDE22XXX',
     bankName: 'Sparkasse Bremen Gf P2',
     bankShortName: 'Sparkasse Bremen Gf P2',
     bankPostcode: '28078',
     bankLocation: 'Bremen',
   ),
-  '29070024': Iban(
-    bic: 'DEUTDEDB290',
+  '29070024': Bic(
+    value: 'DEUTDEDB290',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '49360',
     bankLocation: 'Vechta',
   ),
-  '29070050': Iban(
-    bic: 'DEUTDEHB297',
+  '29070050': Bic(
+    value: 'DEUTDEHB297',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '27701',
     bankLocation: 'Osterholz-Scharmbeck',
   ),
-  '29070051': Iban(
-    bic: 'DEUTDEHB292',
+  '29070051': Bic(
+    value: 'DEUTDEHB292',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '27568',
     bankLocation: 'Bremerhaven',
   ),
-  '29070052': Iban(
-    bic: 'DEUTDEHB294',
+  '29070052': Bic(
+    value: 'DEUTDEHB294',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '27732',
     bankLocation: 'Delmenhorst',
   ),
-  '29070058': Iban(
-    bic: 'DEUTDEHB293',
+  '29070058': Bic(
+    value: 'DEUTDEHB293',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '49647',
     bankLocation: 'Cloppenburg',
   ),
-  '29070059': Iban(
-    bic: 'DEUTDEHB296',
+  '29070059': Bic(
+    value: 'DEUTDEHB296',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '49380',
     bankLocation: 'Lohne (Oldenburg)',
   ),
-  '29070324': Iban(
-    bic: 'DEUTDEDBP21',
+  '29070324': Bic(
+    value: 'DEUTDEDBP21',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '28195',
     bankLocation: 'Bremen',
   ),
-  '29070367': Iban(
-    bic: 'DEUTDEHBP21',
+  '29070367': Bic(
+    value: 'DEUTDEHBP21',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '28195',
     bankLocation: 'Bremen',
   ),
-  '29080010': Iban(
-    bic: 'DRESDEFF290',
+  '29080010': Bic(
+    value: 'DRESDEFF290',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Papenburg',
     bankPostcode: '26852',
     bankLocation: 'Papenburg',
   ),
-  '29089210': Iban(
-    bic: 'DRESDEFFI13',
+  '29089210': Bic(
+    value: 'DRESDEFFI13',
     bankName: 'Commerzbank vormals Bremer Bank (Dresdner Bank) ITGK',
     bankShortName: 'Commerzbank ITGK Bremen',
     bankPostcode: '28079',
     bankLocation: 'Bremen',
   ),
-  '29090900': Iban(
-    bic: 'GENODEF1P03',
+  '29090900': Bic(
+    value: 'GENODEF1P03',
     bankName: 'PSD Bank Nord Bremen',
     bankShortName: 'PSD Bank Nord',
     bankPostcode: '28361',
     bankLocation: 'Bremen',
   ),
-  '29121731': Iban(
-    bic: 'OLBODEH2XXX',
+  '29121731': Bic(
+    value: 'OLBODEH2XXX',
     bankName: 'Oldenburgische Landesbank AG Syke',
     bankShortName: 'Oldb Landesbank Syke Stuhr',
     bankPostcode: '28802',
     bankLocation: 'Stuhr',
   ),
-  '29151700': Iban(
-    bic: 'BRLADE21SYK',
+  '29151700': Bic(
+    value: 'BRLADE21SYK',
     bankName: 'Kreissparkasse Syke',
     bankShortName: 'Kreissparkasse Syke',
     bankPostcode: '28834',
     bankLocation: 'Weyhe',
   ),
-  '29152300': Iban(
-    bic: 'BRLADE21OHZ',
+  '29152300': Bic(
+    value: 'BRLADE21OHZ',
     bankName: 'Kreissparkasse Osterholz -alt-',
     bankShortName: 'Kr Spk Osterholz -alt-',
     bankPostcode: '27702',
     bankLocation: 'Osterholz-Scharmbeck',
   ),
-  '29152550': Iban(
-    bic: 'BRLADE21SHL',
+  '29152550': Bic(
+    value: 'BRLADE21SHL',
     bankName: 'Zweckverbandssparkasse Scheeßel',
     bankShortName: 'Spk Scheeßel',
     bankPostcode: '27404',
     bankLocation: 'Elsdorf',
   ),
-  '29152670': Iban(
-    bic: 'BRLADE21VER',
+  '29152670': Bic(
+    value: 'BRLADE21VER',
     bankName: 'Kreissparkasse Verden',
     bankShortName: 'Kr Spk Verden',
     bankPostcode: '27321',
     bankLocation: 'Thedinghausen',
   ),
-  '29162394': Iban(
-    bic: 'GENODEF1OHZ',
+  '29162394': Bic(
+    value: 'GENODEF1OHZ',
     bankName: 'Volksbank (Gf P2)',
     bankShortName: 'Volksbank',
     bankPostcode: '27704',
     bankLocation: 'Osterholz-Scharmbeck',
   ),
-  '29162453': Iban(
-    bic: 'GENODEF1SWW',
+  '29162453': Bic(
+    value: 'GENODEF1SWW',
     bankName: 'Volksbank Schwanewede (Gf P2)',
     bankShortName: 'Volksbank Schwanewede',
     bankPostcode: '28784',
     bankLocation: 'Schwanewede',
   ),
-  '29162697': Iban(
-    bic: 'GENODEF1VER',
+  '29162697': Bic(
+    value: 'GENODEF1VER',
     bankName: 'Volksbank Aller-Weser (Gf P2)',
     bankShortName: 'Volksbank Aller-Weser',
     bankPostcode: '27268',
     bankLocation: 'Verden (Aller)',
   ),
-  '29165545': Iban(
-    bic: 'GENODEF1OYT',
+  '29165545': Bic(
+    value: 'GENODEF1OYT',
     bankName: 'Volksbank Oyten (Gf P2)',
     bankShortName: 'Volksbank Oyten',
     bankPostcode: '28871',
     bankLocation: 'Oyten',
   ),
-  '29165681': Iban(
-    bic: 'GENODEF1SUM',
+  '29165681': Bic(
+    value: 'GENODEF1SUM',
     bankName: 'Volksbank Sottrum (Gf P2)',
     bankShortName: 'Volksbank Sottrum',
     bankPostcode: '27364',
     bankLocation: 'Sottrum',
   ),
-  '29166568': Iban(
-    bic: 'GENODEF1WOP',
+  '29166568': Bic(
+    value: 'GENODEF1WOP',
     bankName: 'Volksbank Worpswede',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '27726',
     bankLocation: 'Worpswede',
   ),
-  '29167624': Iban(
-    bic: 'GENODEF1SHR',
+  '29167624': Bic(
+    value: 'GENODEF1SHR',
     bankName: 'Volksbank Syke (Gf P2)',
     bankShortName: 'Volksbank Syke',
     bankPostcode: '28848',
     bankLocation: 'Syke',
   ),
-  '29172624': Iban(
-    bic: 'DEUTDEDB291',
+  '29172624': Bic(
+    value: 'DEUTDEDB291',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '27262',
     bankLocation: 'Verden (Aller)',
   ),
-  '29172655': Iban(
-    bic: 'DEUTDEHB291',
+  '29172655': Bic(
+    value: 'DEUTDEHB291',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '27262',
     bankLocation: 'Verden (Aller)',
   ),
-  '29190024': Iban(
-    bic: 'GENODEF1HB1',
+  '29190024': Bic(
+    value: 'GENODEF1HB1',
     bankName: 'Volksbank Rotenburg Hzw d Bremischen VB',
     bankShortName: 'Volksbank Rotenburg Wümme',
     bankPostcode: '27356',
     bankLocation: 'Rotenburg (Wümme)',
   ),
-  '29190330': Iban(
-    bic: 'GENODEF1HB2',
+  '29190330': Bic(
+    value: 'GENODEF1HB2',
     bankName: 'Volksbank Bremen-Nord (Gf P2)',
     bankShortName: 'Volksbank Bremen-Nord',
     bankPostcode: '28730',
     bankLocation: 'Bremen',
   ),
-  '29190399': Iban(
-    bic: 'GENODEF1HB2',
+  '29190399': Bic(
+    value: 'GENODEF1HB2',
     bankName: 'Volksbank Bremen-Nord (Gf GAA)',
     bankShortName: 'Volksbank Bremen-Nord',
     bankPostcode: '28757',
     bankLocation: 'Bremen',
   ),
-  '29240024': Iban(
-    bic: 'COBADEFFXXX',
+  '29240024': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bremerhaven',
     bankShortName: 'Commerzbank',
     bankPostcode: '27515',
     bankLocation: 'Bremerhaven',
   ),
-  '29250000': Iban(
-    bic: 'BRLADE21BRS',
+  '29250000': Bic(
+    value: 'BRLADE21BRS',
     bankName: 'Weser-Elbe Sparkasse, BHV',
     bankShortName: 'Weser-Elbe Sparkasse',
     bankPostcode: '27568',
     bankLocation: 'Bremerhaven',
   ),
-  '29250150': Iban(
-    bic: 'BRLADE21BRK',
+  '29250150': Bic(
+    value: 'BRLADE21BRK',
     bankName: 'Kreissparkasse Wesermünde-Hadeln -alt-',
     bankShortName: 'Kr Spk Wesermünde-Hadeln',
     bankPostcode: '27570',
     bankLocation: 'Bremerhaven',
   ),
-  '29262722': Iban(
-    bic: 'GENODEF1BRV',
+  '29262722': Bic(
+    value: 'GENODEF1BRV',
     bankName: 'Volksbank Geeste-Nord (Gf P2)',
     bankShortName: 'Volksbank Geeste-Nord',
     bankPostcode: '27607',
     bankLocation: 'Geestland',
   ),
-  '29265747': Iban(
-    bic: 'GENODEF1BEV',
+  '29265747': Bic(
+    value: 'GENODEF1BEV',
     bankName: 'Volksbank Bremerhaven-Cuxland (Gf P2)',
     bankShortName: 'VB Bremerhaven-Cuxland',
     bankPostcode: '27613',
     bankLocation: 'Beverstedt',
   ),
-  '29280011': Iban(
-    bic: 'DRESDEFF292',
+  '29280011': Bic(
+    value: 'DRESDEFF292',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bremerhaven',
     bankPostcode: '27502',
     bankLocation: 'Bremerhaven',
   ),
-  '29290034': Iban(
-    bic: 'GENODEF1HBV',
+  '29290034': Bic(
+    value: 'GENODEF1HBV',
     bankName: 'Volksbank Bremerhaven-Wesermünde -alt- (Gf P2)',
     bankShortName: 'VB Bremerh-Wesermünde -alt-',
     bankPostcode: '27539',
     bankLocation: 'Bremerhaven',
   ),
-  '30000000': Iban(
-    bic: 'MARKDEF1300',
+  '30000000': Bic(
+    value: 'MARKDEF1300',
     bankName: 'Bundesbank eh Düsseldorf',
     bankShortName: 'BBk eh Düsseldorf',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30010400': Iban(
-    bic: 'IKBDDEDDXXX',
+  '30010400': Bic(
+    value: 'IKBDDEDDXXX',
     bankName: 'IKB Deutsche Industriebank',
     bankShortName: 'IKB Düsseldorf',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30010444': Iban(
-    bic: 'IKBDDEDDDIR',
+  '30010444': Bic(
+    value: 'IKBDDEDDDIR',
     bankName: 'IKB Privatkunden - IKB Deutsche Industriebank',
     bankShortName: 'IKB Privatkunden Düsseldorf',
     bankPostcode: '40474',
     bankLocation: 'Düsseldorf',
   ),
-  '30010700': Iban(
-    bic: 'BOTKDEDXXXX',
+  '30010700': Bic(
+    value: 'BOTKDEDXXXX',
     bankName: 'MUFG Bank (Europe) Germany Branch',
     bankShortName: 'MUFG Bank',
     bankPostcode: '40040',
     bankLocation: 'Düsseldorf',
   ),
-  '30018800': Iban(
-    bic: 'VPAYDE32XXX',
+  '30018800': Bic(
+    value: 'VPAYDE32XXX',
     bankName: 'VIVA PAYMENT SERVICES - Zweigniederlassung Deutschland',
     bankShortName: 'VIVA Payments',
     bankPostcode: '10785',
     bankLocation: 'Berlin',
   ),
-  '30020500': Iban(
-    bic: 'BHFBDEFF300',
+  '30020500': Bic(
+    value: 'BHFBDEFF300',
     bankName: 'BHF-BANK Düsseldorf',
     bankShortName: 'BHF-BANK',
     bankPostcode: '40213',
     bankLocation: 'Düsseldorf',
   ),
-  '30020700': Iban(
-    bic: 'MHCBDEDDXXX',
+  '30020700': Bic(
+    value: 'MHCBDEDDXXX',
     bankName: 'Mizuho Bank Filiale Düsseldorf',
     bankShortName: 'Mizuho Bank Düsseldorf',
     bankPostcode: '40100',
     bankLocation: 'Düsseldorf',
   ),
-  '30020900': Iban(
-    bic: 'CMCIDEDDXXX',
+  '30020900': Bic(
+    value: 'CMCIDEDDXXX',
     bankName: 'TARGOBANK Düsseldorf',
     bankShortName: 'TARGOBANK',
     bankPostcode: '40213',
     bankLocation: 'Düsseldorf',
   ),
-  '30022000': Iban(
-    bic: 'NRWBDEDMXXX',
+  '30022000': Bic(
+    value: 'NRWBDEDMXXX',
     bankName: 'NRW.BANK Düsseldorf',
     bankShortName: 'NRW.BANK',
     bankPostcode: '40213',
     bankLocation: 'Düsseldorf',
   ),
-  '30030100': Iban(
-    bic: 'PULSDEDDXXX',
+  '30030100': Bic(
+    value: 'PULSDEDDXXX',
     bankName: 'S Broker Wiesbaden',
     bankShortName: 'S Broker Wiesbaden',
     bankPostcode: '65203',
     bankLocation: 'Wiesbaden',
   ),
-  '30030500': Iban(
-    bic: 'CUABDED1XXX',
+  '30030500': Bic(
+    value: 'CUABDED1XXX',
     bankName: 'Bank11direkt Neuss',
     bankShortName: 'Bank11direkt',
     bankPostcode: '41460',
     bankLocation: 'Neuss',
   ),
-  '30030600': Iban(
-    bic: 'ETRIDE31XXX',
+  '30030600': Bic(
+    value: 'ETRIDE31XXX',
     bankName: 'ETRIS Bank Wuppertal',
     bankShortName: 'ETRIS Bank',
     bankPostcode: '42389',
     bankLocation: 'Wuppertal',
   ),
-  '30030880': Iban(
-    bic: 'TUBDDEDDXXX',
+  '30030880': Bic(
+    value: 'TUBDDEDDXXX',
     bankName: 'HSBC Trinkaus & Burkhardt',
     bankShortName: 'HSBC Trinkaus Düsseldorf',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30030889': Iban(
-    bic: 'TUBDDEDDXXX',
+  '30030889': Bic(
+    value: 'TUBDDEDDXXX',
     bankName: 'HSBC Trinkaus VAC',
     bankShortName: 'HSBC Trinkaus VAC',
     bankPostcode: '40212',
     bankLocation: 'Düsseldorf',
   ),
-  '30030900': Iban(
-    bic: 'MEFIDEMM300',
+  '30030900': Bic(
+    value: 'MEFIDEMM300',
     bankName: 'Merck Finck A Quintet Private Bank',
     bankShortName: 'Merck Finck',
     bankPostcode: '40028',
     bankLocation: 'Düsseldorf',
   ),
-  '30040000': Iban(
-    bic: 'COBADEDDXXX',
+  '30040000': Bic(
+    value: 'COBADEDDXXX',
     bankName: 'Commerzbank Meerbusch Büder',
     bankShortName: 'Commerzbank Fil Büderich',
     bankPostcode: '40637',
     bankLocation: 'Meerbusch',
   ),
-  '30040005': Iban(
-    bic: 'COBADEDDXXX',
+  '30040005': Bic(
+    value: 'COBADEDDXXX',
     bankName: 'Commerzbank, Filiale Düsseldorf 2',
     bankShortName: 'Commerzbank Fil. Düsseld 2',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30040048': Iban(
-    bic: 'COBADEFFXXX',
+  '30040048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank DDF GF-D48',
     bankShortName: 'Commerzbank GF-D48',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30040060': Iban(
-    bic: 'COBADEFFXXX',
+  '30040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf 660 Düsseldf',
     bankShortName: 'Commerzbank Gf 660',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30040061': Iban(
-    bic: 'COBADEFFXXX',
+  '30040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf 661 Düsseldf',
     bankShortName: 'Commerzbank Gf 661',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30040062': Iban(
-    bic: 'COBADEFFXXX',
+  '30040062': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Düsseldorf',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '40213',
     bankLocation: 'Düsseldorf',
   ),
-  '30040063': Iban(
-    bic: 'COBADEFFXXX',
+  '30040063': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Düsseldorf',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '40213',
     bankLocation: 'Düsseldorf',
   ),
-  '30040099': Iban(
-    bic: 'COBADEFFSTS',
+  '30040099': Bic(
+    value: 'COBADEFFSTS',
     bankName: 'Commerzbank Gf Comp. Center STS',
     bankShortName: 'Commerzbank Gf Comp.Center',
     bankPostcode: '40213',
     bankLocation: 'Düsseldorf',
   ),
-  '30050000': Iban(
-    bic: 'WELADEDDXXX',
+  '30050000': Bic(
+    value: 'WELADEDDXXX',
     bankName: 'Landesbank Hessen-Thüringen Girozentrale NL. Düsseldorf',
     bankShortName: 'Ld Bk Hess-Thür, Gz, Dus',
     bankPostcode: '40019',
     bankLocation: 'Düsseldorf',
   ),
-  '30050110': Iban(
-    bic: 'DUSSDEDDXXX',
+  '30050110': Bic(
+    value: 'DUSSDEDDXXX',
     bankName: 'Stadtsparkasse Düsseldorf',
     bankShortName: 'St Spk Düsseldorf',
     bankPostcode: '40001',
     bankLocation: 'Düsseldorf',
   ),
-  '30060010': Iban(
-    bic: 'GENODEDDXXX',
+  '30060010': Bic(
+    value: 'GENODEDDXXX',
     bankName: 'DZ BANK Düsseldorf',
     bankShortName: 'DZ BANK (Gf P2)',
     bankPostcode: '40001',
     bankLocation: 'Düsseldorf',
   ),
-  '30060601': Iban(
-    bic: 'DAAEDEDDXXX',
+  '30060601': Bic(
+    value: 'DAAEDEDDXXX',
     bankName: 'apoBank Düsseldorf',
     bankShortName: 'apoBank (Gf P3)',
     bankPostcode: '40547',
     bankLocation: 'Düsseldorf',
   ),
-  '30060992': Iban(
-    bic: 'GENODEF1P05',
+  '30060992': Bic(
+    value: 'GENODEF1P05',
     bankName: 'PSD Bank Rhein-Ruhr (Gf P2)',
     bankShortName: 'PSD Bank Rhein-Ruhr',
     bankPostcode: '40032',
     bankLocation: 'Düsseldorf',
   ),
-  '30070010': Iban(
-    bic: 'DEUTDEDD302',
+  '30070010': Bic(
+    value: 'DEUTDEDD302',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '40766',
     bankLocation: 'Monheim am Rhein',
   ),
-  '30070024': Iban(
-    bic: 'DEUTDEDB304',
+  '30070024': Bic(
+    value: 'DEUTDEDB304',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '40878',
     bankLocation: 'Ratingen',
   ),
-  '30070207': Iban(
-    bic: 'DEUTDEDDP06',
+  '30070207': Bic(
+    value: 'DEUTDEDDP06',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '40210',
     bankLocation: 'Düsseldorf',
   ),
-  '30070224': Iban(
-    bic: 'DEUTDEDBP06',
+  '30070224': Bic(
+    value: 'DEUTDEDBP06',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '40210',
     bankLocation: 'Düsseldorf',
   ),
-  '30080000': Iban(
-    bic: 'DRESDEFF300',
+  '30080000': Bic(
+    value: 'DRESDEFF300',
     bankName: 'Commerzbank vormals Dresdner Bank Fil Büderich',
     bankShortName: 'Commerzbank Meerbusch',
     bankPostcode: '40667',
     bankLocation: 'Meerbusch',
   ),
-  '30080005': Iban(
-    bic: 'DRESDEFFXXX',
+  '30080005': Bic(
+    value: 'DRESDEFFXXX',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 05',
     bankShortName: 'Commerzbank Düsseldorf 05',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30080022': Iban(
-    bic: 'DRESDEFFI28',
+  '30080022': Bic(
+    value: 'DRESDEFFI28',
     bankName: 'Commerzbank vormals Dresdner Bank Ztv 22',
     bankShortName: 'Commerzbank Düsseldorf 22',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30080038': Iban(
-    bic: 'DRESDEFFXXX',
+  '30080038': Bic(
+    value: 'DRESDEFFXXX',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 38',
     bankShortName: 'Commerzbank Düsseldorf 38',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30080041': Iban(
-    bic: 'DRESDEFFI29',
+  '30080041': Bic(
+    value: 'DRESDEFFI29',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 41',
     bankShortName: 'Commerzbank Düsseldorf 41',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30080053': Iban(
-    bic: 'DRESDEFFI30',
+  '30080053': Bic(
+    value: 'DRESDEFFI30',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 53',
     bankShortName: 'Commerzbank Düsseldorf 53',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30080055': Iban(
-    bic: 'DRESDEFF309',
+  '30080055': Bic(
+    value: 'DRESDEFF309',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 55',
     bankShortName: 'Commerzbk Zw55 Düsseldorf',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30080057': Iban(
-    bic: 'DRESDEFF316',
+  '30080057': Bic(
+    value: 'DRESDEFF316',
     bankName: 'Commerzbank vormals Dresdner Bank Gf ZW 57',
     bankShortName: 'Commerzbk ZW57 Düsseldorf',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30080061': Iban(
-    bic: 'DRESDEFFI31',
+  '30080061': Bic(
+    value: 'DRESDEFFI31',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 61',
     bankShortName: 'Commerzbank Düsseldorf 61',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30080074': Iban(
-    bic: 'DRESDEFFI32',
+  '30080074': Bic(
+    value: 'DRESDEFFI32',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 74',
     bankShortName: 'Commerzbank Düsseldorf 74',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30080080': Iban(
-    bic: 'DRESDEFFI76',
+  '30080080': Bic(
+    value: 'DRESDEFFI76',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 3',
     bankShortName: 'Commerzbank ITGK3 Ddrf',
     bankPostcode: '40300',
     bankLocation: 'Düsseldorf',
   ),
-  '30080081': Iban(
-    bic: 'DRESDEFFI77',
+  '30080081': Bic(
+    value: 'DRESDEFFI77',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 4',
     bankShortName: 'Commerzbank ITGK4 Ddrf',
     bankPostcode: '40300',
     bankLocation: 'Düsseldorf',
   ),
-  '30080082': Iban(
-    bic: 'DRESDEFFI78',
+  '30080082': Bic(
+    value: 'DRESDEFFI78',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 5',
     bankShortName: 'Commerzbank ITGK5 Ddrf',
     bankPostcode: '40300',
     bankLocation: 'Düsseldorf',
   ),
-  '30080083': Iban(
-    bic: 'DRESDEFFI79',
+  '30080083': Bic(
+    value: 'DRESDEFFI79',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 6',
     bankShortName: 'Commerzbank ITGK6 Ddrf',
     bankPostcode: '40300',
     bankLocation: 'Düsseldorf',
   ),
-  '30080084': Iban(
-    bic: 'DRESDEFFI80',
+  '30080084': Bic(
+    value: 'DRESDEFFI80',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 7',
     bankShortName: 'Commerzbank ITGK7 Ddrf',
     bankPostcode: '40300',
     bankLocation: 'Düsseldorf',
   ),
-  '30080085': Iban(
-    bic: 'DRESDEFFI81',
+  '30080085': Bic(
+    value: 'DRESDEFFI81',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 8',
     bankShortName: 'Commerzbank ITGK8 Ddrf',
     bankPostcode: '40300',
     bankLocation: 'Düsseldorf',
   ),
-  '30080086': Iban(
-    bic: 'DRESDEFFI82',
+  '30080086': Bic(
+    value: 'DRESDEFFI82',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 9',
     bankShortName: 'Commerzbank ITGK9 Ddrf',
     bankPostcode: '40300',
     bankLocation: 'Düsseldorf',
   ),
-  '30080087': Iban(
-    bic: 'DRESDEFFI83',
+  '30080087': Bic(
+    value: 'DRESDEFFI83',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 10',
     bankShortName: 'Commerzbank ITGK10 Ddrf',
     bankPostcode: '40300',
     bankLocation: 'Düsseldorf',
   ),
-  '30080088': Iban(
-    bic: 'DRESDEFFI84',
+  '30080088': Bic(
+    value: 'DRESDEFFI84',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 11',
     bankShortName: 'Commerzbank ITGK11 Ddrf',
     bankPostcode: '40300',
     bankLocation: 'Düsseldorf',
   ),
-  '30080089': Iban(
-    bic: 'DRESDEFFI85',
+  '30080089': Bic(
+    value: 'DRESDEFFI85',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 12',
     bankShortName: 'Commerzbank ITGK12 Ddrf',
     bankPostcode: '40300',
     bankLocation: 'Düsseldorf',
   ),
-  '30080095': Iban(
-    bic: 'DRESDEFFI33',
+  '30080095': Bic(
+    value: 'DRESDEFFI33',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 95',
     bankShortName: 'Commerzbank Düsseldorf 95',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30089300': Iban(
-    bic: 'DRESDEFFI02',
+  '30089300': Bic(
+    value: 'DRESDEFFI02',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK I',
     bankShortName: 'Commerzbk ITGK I Düsseldf',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30089302': Iban(
-    bic: 'DRESDEFFI03',
+  '30089302': Bic(
+    value: 'DRESDEFFI03',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK II',
     bankShortName: 'Commerzbk ITGK II Düsseld',
     bankPostcode: '40002',
     bankLocation: 'Düsseldorf',
   ),
-  '30110300': Iban(
-    bic: 'SMBCDEDDXXX',
+  '30110300': Bic(
+    value: 'SMBCDEDDXXX',
     bankName: 'Sumitomo Mitsui Banking Corporation',
     bankShortName: 'SMBC Düsseldorf',
     bankPostcode: '40510',
     bankLocation: 'Düsseldorf',
   ),
-  '30130100': Iban(
-    bic: 'DHBNDEDDXXX',
+  '30130100': Bic(
+    value: 'DHBNDEDDXXX',
     bankName: 'Demir-Halk Bank (Nederland)',
     bankShortName: 'Demir-Halk Bank Düsseldorf',
     bankPostcode: '40213',
     bankLocation: 'Düsseldorf',
   ),
-  '30130200': Iban(
-    bic: 'UGBIDEDDXXX',
+  '30130200': Bic(
+    value: 'UGBIDEDDXXX',
     bankName: 'GarantiBank Int Düsseldorf',
     bankShortName: 'GarantiBank International',
     bankPostcode: '40474',
     bankLocation: 'Düsseldorf',
   ),
-  '30130600': Iban(
-    bic: 'ISBKDEFXDUS',
+  '30130600': Bic(
+    value: 'ISBKDEFXDUS',
     bankName: 'Isbank Fil Düsseldorf',
     bankShortName: 'Isbank Düsseldorf',
     bankPostcode: '40210',
     bankLocation: 'Düsseldorf',
   ),
-  '30150001': Iban(
-    bic: 'ISBKDEFXDUS',
+  '30150001': Bic(
+    value: 'ISBKDEFXDUS',
     bankName: 'Helaba Düsseldorf Gf Verrechnung FI-Dus',
     bankShortName: 'Helaba Dus, Gf Ver. FI-Dus',
     bankPostcode: '40019',
     bankLocation: 'Düsseldorf',
   ),
-  '30150200': Iban(
-    bic: 'WELADED1KSD',
+  '30150200': Bic(
+    value: 'WELADED1KSD',
     bankName: 'Kr Spk Düsseldorf Heiligenh',
     bankShortName: 'Kreissparkasse Düsseldorf',
     bankPostcode: '42579',
     bankLocation: 'Heiligenhaus',
   ),
-  '30160213': Iban(
-    bic: 'GENODED1DNE',
+  '30160213': Bic(
+    value: 'GENODED1DNE',
     bankName: 'Volksbank Düsseldorf Neuss Zw Ratingen',
     bankShortName: 'VB Düsseldorf Neuss',
     bankPostcode: '40878',
     bankLocation: 'Ratingen',
   ),
-  '30160266': Iban(
-    bic: 'GENODED1DNE',
+  '30160266': Bic(
+    value: 'GENODED1DNE',
     bankName: 'Volksbank Düsseldorf Neuss (Gf GAA)',
     bankShortName: 'VB Düsseldorf Neuss',
     bankPostcode: '40215',
     bankLocation: 'Düsseldorf',
   ),
-  '30220190': Iban(
-    bic: 'HYVEDEMM414',
+  '30220190': Bic(
+    value: 'HYVEDEMM414',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '41061',
     bankLocation: 'Mönchengladbach',
   ),
-  '30330800': Iban(
-    bic: 'BIWBDE33303',
+  '30330800': Bic(
+    value: 'BIWBDE33303',
     bankName: 'flatex Bank, Frankfurt',
     bankShortName: 'flatexDEGIRO Bank',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '30351220': Iban(
-    bic: 'WELADED1HAA',
+  '30351220': Bic(
+    value: 'WELADED1HAA',
     bankName: 'Stadt-Sparkasse Haan',
     bankShortName: 'St Spk Haan',
     bankPostcode: '42781',
     bankLocation: 'Haan',
   ),
-  '30520000': Iban(
-    bic: 'RCIDDE3NXXX',
+  '30520000': Bic(
+    value: 'RCIDDE3NXXX',
     bankName: 'RCI Banque Niederlassung Deutschland',
     bankShortName: 'RCI Banque Ndl Deutschland',
     bankPostcode: '41468',
     bankLocation: 'Neuss',
   ),
-  '30520037': Iban(
-    bic: 'RCIDDE3NPAY',
+  '30520037': Bic(
+    value: 'RCIDDE3NPAY',
     bankName: 'RCI Banque Direkt',
     bankShortName: 'RCI Banque Direkt',
     bankPostcode: '41468',
     bankLocation: 'Neuss',
   ),
-  '30524400': Iban(
-    bic: 'KREDDEDDXXX',
+  '30524400': Bic(
+    value: 'KREDDEDDXXX',
     bankName: 'KBC Bank Ndl Deutschland',
     bankShortName: 'KBC Bank Düsseldorf',
     bankPostcode: '40215',
     bankLocation: 'Düsseldorf',
   ),
-  '30530000': Iban(
-    bic: 'WERHDED1XXX',
+  '30530000': Bic(
+    value: 'WERHDED1XXX',
     bankName: 'Bankhaus Werhahn (Gf P2)',
     bankShortName: 'Bankhaus Werhahn',
     bankPostcode: '41460',
     bankLocation: 'Neuss',
   ),
-  '30530500': Iban(
-    bic: 'WEFZDED1XXX',
+  '30530500': Bic(
+    value: 'WEFZDED1XXX',
     bankName: 'Bank11 für Privatkunden und Handel, Neuss',
     bankShortName: 'Bank11 Neuss',
     bankPostcode: '41460',
     bankLocation: 'Neuss',
   ),
-  '30550000': Iban(
-    bic: 'WELADEDNXXX',
+  '30550000': Bic(
+    value: 'WELADEDNXXX',
     bankName: 'Sparkasse Neuss',
     bankShortName: 'Sparkasse Neuss',
     bankPostcode: '41456',
     bankLocation: 'Neuss',
   ),
-  '30551240': Iban(
-    bic: 'WELADED1KST',
+  '30551240': Bic(
+    value: 'WELADED1KST',
     bankName: 'Stadtsparkasse Kaarst-Büttgen -alt-',
     bankShortName: 'St Spk Kaarst Büttgen -alt-',
     bankPostcode: '41552',
     bankLocation: 'Kaarst',
   ),
-  '30560090': Iban(
-    bic: 'GENODED1NSS',
+  '30560090': Bic(
+    value: 'GENODED1NSS',
     bankName: 'Volksbank Neuss -alt-',
     bankShortName: 'Volksbank Neuss -alt-',
     bankPostcode: '41415',
     bankLocation: 'Neuss',
   ),
-  '30560548': Iban(
-    bic: 'GENODED1NLD',
+  '30560548': Bic(
+    value: 'GENODED1NLD',
     bankName: 'VR Bank Zw Neurath',
     bankShortName: 'VR Bank Dormagen',
     bankPostcode: '41517',
     bankLocation: 'Grevenbroich',
   ),
-  '30560591': Iban(
-    bic: 'GENODED1NLD',
+  '30560591': Bic(
+    value: 'GENODED1NLD',
     bankName: 'VR Bank (Gf GAA)',
     bankShortName: 'VR Bank Gf GAA',
     bankPostcode: '40789',
     bankLocation: 'Monheim am Rhein',
   ),
-  '31010833': Iban(
-    bic: 'SCFBDE33XXX',
+  '31010833': Bic(
+    value: 'SCFBDE33XXX',
     bankName: 'Santander Consumer Bank Gf P3',
     bankShortName: 'Santander Consumer Bank MG',
     bankPostcode: '41061',
     bankLocation: 'Mönchengladbach',
   ),
-  '31040015': Iban(
-    bic: 'COBADEFFXXX',
+  '31040015': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Fil Nettetal-Lobberich',
     bankShortName: 'Commerzbank Nettetal-Lobbe',
     bankPostcode: '41301',
     bankLocation: 'Nettetal',
   ),
-  '31040060': Iban(
-    bic: 'COBADEFFXXX',
+  '31040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Mgladbach',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '41061',
     bankLocation: 'Mönchengladbach',
   ),
-  '31040061': Iban(
-    bic: 'COBADEFFXXX',
+  '31040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Mgladbach',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '41061',
     bankLocation: 'Mönchengladbach',
   ),
-  '31050000': Iban(
-    bic: 'MGLSDE33XXX',
+  '31050000': Bic(
+    value: 'MGLSDE33XXX',
     bankName: 'Stadtsparkasse Mönchengladbach',
     bankShortName: 'St Spk Mönchengladbach',
     bankPostcode: '41003',
     bankLocation: 'Mönchengladbach',
   ),
-  '31060181': Iban(
-    bic: 'GENODED1GBM',
+  '31060181': Bic(
+    value: 'GENODED1GBM',
     bankName: 'Gladbacher Bank von 1922 (Gf P2)',
     bankShortName: 'Gladbacher Bank von 1922',
     bankPostcode: '41006',
     bankLocation: 'Mönchengladbach',
   ),
-  '31060517': Iban(
-    bic: 'GENODED1MRB',
+  '31060517': Bic(
+    value: 'GENODED1MRB',
     bankName: 'Volksbank Mönchengladbach (Gf P2)',
     bankShortName: 'VB Mönchengladbach',
     bankPostcode: '41241',
     bankLocation: 'Mönchengladbach',
   ),
-  '31062154': Iban(
-    bic: 'GENODED1KBN',
+  '31062154': Bic(
+    value: 'GENODED1KBN',
     bankName: 'Volksbank Brüggen-Nettetal Zw',
     bankShortName: 'Volksbank Brüggen-Nettetal',
     bankPostcode: '41334',
     bankLocation: 'Nettetal',
   ),
-  '31062553': Iban(
-    bic: 'GENODED1NKR',
+  '31062553': Bic(
+    value: 'GENODED1NKR',
     bankName: 'Volksbank Schwalmtal (Gf P2)',
     bankShortName: 'Volksbank Schwalmtal',
     bankPostcode: '41372',
     bankLocation: 'Niederkrüchten',
   ),
-  '31070001': Iban(
-    bic: 'DEUTDEDD319',
+  '31070001': Bic(
+    value: 'DEUTDEDD319',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '41802',
     bankLocation: 'Erkelenz',
   ),
-  '31070024': Iban(
-    bic: 'DEUTDEDB318',
+  '31070024': Bic(
+    value: 'DEUTDEDB318',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '41838',
     bankLocation: 'Wegberg',
   ),
-  '31070206': Iban(
-    bic: 'DEUTDEDDP05',
+  '31070206': Bic(
+    value: 'DEUTDEDDP05',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '41061',
     bankLocation: 'Mönchengladbach',
   ),
-  '31070224': Iban(
-    bic: 'DEUTDEDBP05',
+  '31070224': Bic(
+    value: 'DEUTDEDBP05',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '41061',
     bankLocation: 'Mönchengladbach',
   ),
-  '31080015': Iban(
-    bic: 'DRESDEFF310',
+  '31080015': Bic(
+    value: 'DRESDEFF310',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Grevenbroich',
     bankPostcode: '41486',
     bankLocation: 'Grevenbroich',
   ),
-  '31080061': Iban(
-    bic: 'DRESDEFFI34',
+  '31080061': Bic(
+    value: 'DRESDEFFI34',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 61',
     bankShortName: 'Commerzbank Mgladbach 61',
     bankPostcode: '41004',
     bankLocation: 'Mönchengladbach',
   ),
-  '31251220': Iban(
-    bic: 'WELADED1ERK',
+  '31251220': Bic(
+    value: 'WELADED1ERK',
     bankName: 'Kreissparkasse Heinsberg in Erkelenz',
     bankShortName: 'Kr Spk Heinsberg Erkelenz',
     bankPostcode: '52538',
     bankLocation: 'Selfkant',
   ),
-  '31261282': Iban(
-    bic: 'GENODED1EHE',
+  '31261282': Bic(
+    value: 'GENODED1EHE',
     bankName: 'Volksbank Erkelenz (Gf P2)',
     bankShortName: 'Volksbank Erkelenz',
     bankPostcode: '41812',
     bankLocation: 'Erkelenz',
   ),
-  '31263359': Iban(
-    bic: 'GENODED1LOE',
+  '31263359': Bic(
+    value: 'GENODED1LOE',
     bankName: 'Raiffeisenbank Erkelenz (Gf P2)',
     bankShortName: 'Raiffbk Erkelenz',
     bankPostcode: '41801',
     bankLocation: 'Erkelenz',
   ),
-  '31460290': Iban(
-    bic: 'GENODED1VSN',
+  '31460290': Bic(
+    value: 'GENODED1VSN',
     bankName: 'Volksbank Viersen (Gf P2)',
     bankShortName: 'Volksbank Viersen',
     bankPostcode: '41730',
     bankLocation: 'Viersen',
   ),
-  '31470004': Iban(
-    bic: 'DEUTDEDD316',
+  '31470004': Bic(
+    value: 'DEUTDEDD316',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '47920',
     bankLocation: 'Grefrath',
   ),
-  '31470024': Iban(
-    bic: 'DEUTDEDB315',
+  '31470024': Bic(
+    value: 'DEUTDEDB315',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '41334',
     bankLocation: 'Nettetal',
   ),
-  '32040024': Iban(
-    bic: 'COBADEFFXXX',
+  '32040024': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Meerbusch-Oster',
     bankShortName: 'Commerzbank Fil Osterath',
     bankPostcode: '40644',
     bankLocation: 'Meerbusch',
   ),
-  '32050000': Iban(
-    bic: 'SPKRDE33XXX',
+  '32050000': Bic(
+    value: 'SPKRDE33XXX',
     bankName: 'Sparkasse Krefeld',
     bankShortName: 'Sparkasse Krefeld',
     bankPostcode: '47509',
     bankLocation: 'Rheurdt',
   ),
-  '32051996': Iban(
-    bic: 'WELADED1STR',
+  '32051996': Bic(
+    value: 'WELADED1STR',
     bankName: 'Sparkasse der Stadt Straelen -alt-',
     bankShortName: 'Sparkasse Straelen -alt-',
     bankPostcode: '47630',
     bankLocation: 'Straelen',
   ),
-  '32060362': Iban(
-    bic: 'GENODED1HTK',
+  '32060362': Bic(
+    value: 'GENODED1HTK',
     bankName: 'Volksbank Krefeld (Gf P2)',
     bankShortName: 'Volksbank Krefeld',
     bankPostcode: '47832',
     bankLocation: 'Krefeld',
   ),
-  '32061384': Iban(
-    bic: 'GENODED1GDL',
+  '32061384': Bic(
+    value: 'GENODED1GDL',
     bankName: 'Volksbank an der Niers (Gf P2)',
     bankShortName: 'Volksbank an der Niers',
     bankPostcode: '47623',
     bankLocation: 'Kevelaer',
   ),
-  '32061414': Iban(
-    bic: 'GENODED1KMP',
+  '32061414': Bic(
+    value: 'GENODED1KMP',
     bankName: 'Volksbank Kempen-Grefrath Zw',
     bankShortName: 'Volksbank Kempen-Grefrath',
     bankPostcode: '47929',
     bankLocation: 'Grefrath',
   ),
-  '32070024': Iban(
-    bic: 'DEUTDEDB321',
+  '32070024': Bic(
+    value: 'DEUTDEDB321',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '46501',
     bankLocation: 'Xanten',
   ),
-  '32070080': Iban(
-    bic: 'DEUTDEDD321',
+  '32070080': Bic(
+    value: 'DEUTDEDD321',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '46501',
     bankLocation: 'Xanten',
   ),
-  '32080010': Iban(
-    bic: 'DRESDEFF320',
+  '32080010': Bic(
+    value: 'DRESDEFF320',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Emmerich',
     bankPostcode: '46423',
     bankLocation: 'Emmerich am Rhein',
   ),
-  '32250050': Iban(
-    bic: 'WELADED1GOC',
+  '32250050': Bic(
+    value: 'WELADED1GOC',
     bankName: 'Verbandssparkasse Goch',
     bankShortName: 'Verb Spk Goch',
     bankPostcode: '47623',
     bankLocation: 'Kevelaer',
   ),
-  '32440023': Iban(
-    bic: 'COBADEFFXXX',
+  '32440023': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Rees',
     bankShortName: 'Commerzbank',
     bankPostcode: '46450',
     bankLocation: 'Rees',
   ),
-  '32450000': Iban(
-    bic: 'WELADED1KLE',
+  '32450000': Bic(
+    value: 'WELADED1KLE',
     bankName: 'Sparkasse Rhein-Maas',
     bankShortName: 'Sparkasse Rhein-Maas',
     bankPostcode: '47533',
     bankLocation: 'Kleve',
   ),
-  '32460422': Iban(
-    bic: 'GENODED1KLL',
+  '32460422': Bic(
+    value: 'GENODED1KLL',
     bankName: 'Volksbank Kleverland Zw',
     bankShortName: 'Volksbank Kleverland',
     bankPostcode: '47559',
     bankLocation: 'Kranenburg',
   ),
-  '32470024': Iban(
-    bic: 'DEUTDEDB325',
+  '32470024': Bic(
+    value: 'DEUTDEDB325',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '47562',
     bankLocation: 'Goch',
   ),
-  '32470077': Iban(
-    bic: 'DEUTDEDD326',
+  '32470077': Bic(
+    value: 'DEUTDEDD326',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '46423',
     bankLocation: 'Emmerich am Rhein',
   ),
-  '33020000': Iban(
-    bic: 'AKFBDE31XXX',
+  '33020000': Bic(
+    value: 'AKFBDE31XXX',
     bankName: 'akf bank Wuppertal',
     bankShortName: 'akf bank',
     bankPostcode: '42231',
     bankLocation: 'Wuppertal',
   ),
-  '33020190': Iban(
-    bic: 'HYVEDEMM809',
+  '33020190': Bic(
+    value: 'HYVEDEMM809',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '42103',
     bankLocation: 'Wuppertal',
   ),
-  '33030000': Iban(
-    bic: 'GGABDE31XXX',
+  '33030000': Bic(
+    value: 'GGABDE31XXX',
     bankName: 'GEFA BANK Wuppertal',
     bankShortName: 'GEFA BANK',
     bankPostcode: '42347',
     bankLocation: 'Wuppertal',
   ),
-  '33040001': Iban(
-    bic: 'COBADEFFXXX',
+  '33040001': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Langenberg',
     bankShortName: 'Commerzbank Langenberg',
     bankPostcode: '42555',
     bankLocation: 'Velbert',
   ),
-  '33040310': Iban(
-    bic: 'COBADEDHXXX',
+  '33040310': Bic(
+    value: 'COBADEDHXXX',
     bankName: 'Commerzbank Zw 117',
     bankShortName: 'Commerzbank Zw 117',
     bankPostcode: '42555',
     bankLocation: 'Velbert',
   ),
-  '33050000': Iban(
-    bic: 'WUPSDE33XXX',
+  '33050000': Bic(
+    value: 'WUPSDE33XXX',
     bankName: 'Stadtsparkasse Wuppertal',
     bankShortName: 'St Spk Wuppertal',
     bankPostcode: '42103',
     bankLocation: 'Wuppertal',
   ),
-  '33060098': Iban(
-    bic: 'GENODED1CVW',
+  '33060098': Bic(
+    value: 'GENODED1CVW',
     bankName: 'Credit- und Volksbank Wuppertal (Gf P2)',
     bankShortName: 'Credit- u VB Wuppertal',
     bankPostcode: '42203',
     bankLocation: 'Wuppertal',
   ),
-  '33060592': Iban(
-    bic: 'GENODED1SPW',
+  '33060592': Bic(
+    value: 'GENODED1SPW',
     bankName: 'Sparda-Bank West',
     bankShortName: 'Sparda-Bank West',
     bankPostcode: '42697',
     bankLocation: 'Solingen',
   ),
-  '33070024': Iban(
-    bic: 'DEUTDEDB335',
+  '33070024': Bic(
+    value: 'DEUTDEDB335',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '42478',
     bankLocation: 'Wülfrath',
   ),
-  '33070090': Iban(
-    bic: 'DEUTDEDW335',
+  '33070090': Bic(
+    value: 'DEUTDEDW335',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '42478',
     bankLocation: 'Wülfrath',
   ),
-  '33080001': Iban(
-    bic: 'DRESDEFFI86',
+  '33080001': Bic(
+    value: 'DRESDEFFI86',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Wuppertal',
     bankPostcode: '42300',
     bankLocation: 'Wuppertal',
   ),
-  '33080030': Iban(
-    bic: 'DRESDEFF332',
+  '33080030': Bic(
+    value: 'DRESDEFF332',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Schwelm',
     bankPostcode: '58318',
     bankLocation: 'Schwelm',
   ),
-  '33080085': Iban(
-    bic: 'DRESDEFFI87',
+  '33080085': Bic(
+    value: 'DRESDEFFI87',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITGK2 Wuppertal',
     bankPostcode: '42300',
     bankLocation: 'Wuppertal',
   ),
-  '33080086': Iban(
-    bic: 'DRESDEFFI88',
+  '33080086': Bic(
+    value: 'DRESDEFFI88',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 3',
     bankShortName: 'Commerzbank ITGK3 Wuppertal',
     bankPostcode: '42300',
     bankLocation: 'Wuppertal',
   ),
-  '33080087': Iban(
-    bic: 'DRESDEFFI89',
+  '33080087': Bic(
+    value: 'DRESDEFFI89',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 4',
     bankShortName: 'Commerzbank ITGK4 Wuppertal',
     bankPostcode: '42300',
     bankLocation: 'Wuppertal',
   ),
-  '33080088': Iban(
-    bic: 'DRESDEFFI90',
+  '33080088': Bic(
+    value: 'DRESDEFFI90',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 5',
     bankShortName: 'Commerzbank ITGK5 Wuppertal',
     bankPostcode: '42300',
     bankLocation: 'Wuppertal',
   ),
-  '33440035': Iban(
-    bic: 'COBADEFFXXX',
+  '33440035': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Heiligenhaus',
     bankShortName: 'Commerzbank',
     bankPostcode: '42566',
     bankLocation: 'Heiligenhaus',
   ),
-  '33450000': Iban(
-    bic: 'WELADED1VEL',
+  '33450000': Bic(
+    value: 'WELADED1VEL',
     bankName: 'Sparkasse Hilden-Ratingen-Velbert',
     bankShortName: 'Sparkasse HRV',
     bankPostcode: '40721',
     bankLocation: 'Hilden',
   ),
-  '33451220': Iban(
-    bic: 'WELADED1HGH',
+  '33451220': Bic(
+    value: 'WELADED1HGH',
     bankName: 'Sparkasse Heiligenhaus -alt-',
     bankShortName: 'Spk Heiligenhaus -alt-',
     bankPostcode: '42579',
     bankLocation: 'Heiligenhaus',
   ),
-  '34040049': Iban(
-    bic: 'COBADEFFXXX',
+  '34040049': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Wipperfürth',
     bankShortName: 'Commerzbank',
     bankPostcode: '51675',
     bankLocation: 'Wipperfürth',
   ),
-  '34050000': Iban(
-    bic: 'WELADEDRXXX',
+  '34050000': Bic(
+    value: 'WELADEDRXXX',
     bankName: 'Stadtsparkasse Remscheid',
     bankShortName: 'St Spk Remscheid',
     bankPostcode: '42808',
     bankLocation: 'Remscheid',
   ),
-  '34051350': Iban(
-    bic: 'WELADED1RVW',
+  '34051350': Bic(
+    value: 'WELADED1RVW',
     bankName: 'Sparkasse Radevormwald-Hückeswagen',
     bankShortName: 'Spk Radevormwald-Hückeswgn',
     bankPostcode: '42464',
     bankLocation: 'Radevormwald',
   ),
-  '34051570': Iban(
-    bic: 'WELADED1WMK',
+  '34051570': Bic(
+    value: 'WELADED1WMK',
     bankName: 'Stadtsparkasse Wermelskirchen',
     bankShortName: 'St Spk Wermelskirchen',
     bankPostcode: '42904',
     bankLocation: 'Wermelskirchen',
   ),
-  '34060094': Iban(
-    bic: 'VBRSDE33347',
+  '34060094': Bic(
+    value: 'VBRSDE33347',
     bankName: 'Volksbank im Bergischen Land (Gf P2)',
     bankShortName: 'Volksbank i.Bergischen Land',
     bankPostcode: '42897',
     bankLocation: 'Remscheid',
   ),
-  '34070024': Iban(
-    bic: 'DEUTDEDB341',
+  '34070024': Bic(
+    value: 'DEUTDEDB341',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '51675',
     bankLocation: 'Wipperfürth',
   ),
-  '34070093': Iban(
-    bic: 'DEUTDEDW345',
+  '34070093': Bic(
+    value: 'DEUTDEDW345',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '42460',
     bankLocation: 'Radevormwald',
   ),
-  '34080031': Iban(
-    bic: 'DRESDEFF340',
+  '34080031': Bic(
+    value: 'DRESDEFF340',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Remscheid',
     bankPostcode: '42802',
     bankLocation: 'Remscheid',
   ),
-  '34240050': Iban(
-    bic: 'COBADEFFXXX',
+  '34240050': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Langenfeld Rhld',
     bankShortName: 'Commerzbank',
     bankPostcode: '40736',
     bankLocation: 'Langenfeld (Rheinland)',
   ),
-  '34250000': Iban(
-    bic: 'SOLSDE33XXX',
+  '34250000': Bic(
+    value: 'SOLSDE33XXX',
     bankName: 'Stadt-Sparkasse Solingen',
     bankShortName: 'St Spk Solingen',
     bankPostcode: '42648',
     bankLocation: 'Solingen',
   ),
-  '34270024': Iban(
-    bic: 'DEUTDEDB343',
+  '34270024': Bic(
+    value: 'DEUTDEDB343',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '42756',
     bankLocation: 'Haan',
   ),
-  '34270094': Iban(
-    bic: 'DEUTDEDW343',
+  '34270094': Bic(
+    value: 'DEUTDEDW343',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '42756',
     bankLocation: 'Haan',
   ),
-  '34280032': Iban(
-    bic: 'DRESDEFF342',
+  '34280032': Bic(
+    value: 'DRESDEFF342',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Haan Rheinl',
     bankPostcode: '42756',
     bankLocation: 'Haan',
   ),
-  '35040038': Iban(
-    bic: 'COBADEFFXXX',
+  '35040038': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Moers',
     bankShortName: 'Commerzbank',
     bankPostcode: '47403',
     bankLocation: 'Moers',
   ),
-  '35040085': Iban(
-    bic: 'COBADEFFXXX',
+  '35040085': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf WK, Duisburg',
     bankShortName: 'Commerzbank, Gf Web-K',
     bankPostcode: '47002',
     bankLocation: 'Duisburg',
   ),
-  '35050000': Iban(
-    bic: 'DUISDE33XXX',
+  '35050000': Bic(
+    value: 'DUISDE33XXX',
     bankName: 'Sparkasse Duisburg',
     bankShortName: 'Spk Duisburg',
     bankPostcode: '47015',
     bankLocation: 'Duisburg',
   ),
-  '35060190': Iban(
-    bic: 'GENODED1DKD',
+  '35060190': Bic(
+    value: 'GENODED1DKD',
     bankName: 'LKG Sachsen Zndl der Bank für Kirche u. Diakonie - KD-Bank',
     bankShortName: 'LKG Zndl d. KD-Bank Dresden',
     bankPostcode: '01067',
     bankLocation: 'Dresden',
   ),
-  '35060199': Iban(
-    bic: 'GENODED1DKD',
+  '35060199': Bic(
+    value: 'GENODED1DKD',
     bankName: 'Bank für Kirche und Diakonie - KD-Bank (Gf GAA RB)',
     bankShortName: 'KD-Bank (Gf GAA RB)Dortmund',
     bankPostcode: '44135',
     bankLocation: 'Dortmund',
   ),
-  '35060386': Iban(
-    bic: 'GENODED1VRR',
+  '35060386': Bic(
+    value: 'GENODED1VRR',
     bankName: 'Volksbank Rhein-Ruhr (Gf P2)',
     bankShortName: 'VB Rhein-Ruhr Duisburg',
     bankPostcode: '47013',
     bankLocation: 'Duisburg',
   ),
-  '35070024': Iban(
-    bic: 'DEUTDEDB356',
+  '35070024': Bic(
+    value: 'DEUTDEDB356',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '46461',
     bankLocation: 'Wesel',
   ),
-  '35070030': Iban(
-    bic: 'DEUTDEDE356',
+  '35070030': Bic(
+    value: 'DEUTDEDE356',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '46553',
     bankLocation: 'Voerde (Niederrhein)',
   ),
-  '35080070': Iban(
-    bic: 'DRESDEFF350',
+  '35080070': Bic(
+    value: 'DRESDEFF350',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Wesel',
     bankPostcode: '46462',
     bankLocation: 'Wesel',
   ),
-  '35080085': Iban(
-    bic: 'DRESDEFFI91',
+  '35080085': Bic(
+    value: 'DRESDEFFI91',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Duisburg',
     bankPostcode: '47301',
     bankLocation: 'Duisburg',
   ),
-  '35080086': Iban(
-    bic: 'DRESDEFFI92',
+  '35080086': Bic(
+    value: 'DRESDEFFI92',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITGK2 Duisburg',
     bankPostcode: '47301',
     bankLocation: 'Duisburg',
   ),
-  '35080087': Iban(
-    bic: 'DRESDEFFI93',
+  '35080087': Bic(
+    value: 'DRESDEFFI93',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 3',
     bankShortName: 'Commerzbank ITGK3 Duisburg',
     bankPostcode: '47301',
     bankLocation: 'Duisburg',
   ),
-  '35080088': Iban(
-    bic: 'DRESDEFFI94',
+  '35080088': Bic(
+    value: 'DRESDEFFI94',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 4',
     bankShortName: 'Commerzbank ITGK4 Duisburg',
     bankPostcode: '47301',
     bankLocation: 'Duisburg',
   ),
-  '35080089': Iban(
-    bic: 'DRESDEFFI95',
+  '35080089': Bic(
+    value: 'DRESDEFFI95',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 5',
     bankShortName: 'Commerzbank ITGK5 Duisburg',
     bankPostcode: '47301',
     bankLocation: 'Duisburg',
   ),
-  '35090300': Iban(
-    bic: 'GENODEF1BSD',
+  '35090300': Bic(
+    value: 'GENODEF1BSD',
     bankName: 'Bank für Schiffahrt (BFS) Fil d Ostfr VB Leer',
     bankShortName: 'Bk f Schiffahrt Duisburg',
     bankPostcode: '47119',
     bankLocation: 'Duisburg',
   ),
-  '35251000': Iban(
-    bic: 'WELADED1DIN',
+  '35251000': Bic(
+    value: 'WELADED1DIN',
     bankName: 'Sparkasse Dinslaken-Voerde-Hünxe -alt-',
     bankShortName: 'Spk Dinslaken-Voerde-Hünxe',
     bankPostcode: '46535',
     bankLocation: 'Dinslaken',
   ),
-  '35261248': Iban(
-    bic: 'GENODED1DLK',
+  '35261248': Bic(
+    value: 'GENODED1DLK',
     bankName: 'Volksbank Dinslaken (Gf P2)',
     bankShortName: 'Volksbank Dinslaken',
     bankPostcode: '46525',
     bankLocation: 'Dinslaken',
   ),
-  '35450000': Iban(
-    bic: 'WELADED1MOR',
+  '35450000': Bic(
+    value: 'WELADED1MOR',
     bankName: 'Sparkasse am Niederrhein',
     bankShortName: 'Sparkasse am Niederrhein',
     bankPostcode: '46519',
     bankLocation: 'Alpen',
   ),
-  '35451460': Iban(
-    bic: 'WELADED1NVL',
+  '35451460': Bic(
+    value: 'WELADED1NVL',
     bankName: 'Sparkasse Neukirchen-Vluyn -alt-',
     bankShortName: 'Spk Neukirchen-Vluyn -alt-',
     bankPostcode: '47504',
     bankLocation: 'Neukirchen-Vluyn',
   ),
-  '35451775': Iban(
-    bic: 'WELADED1RHB',
+  '35451775': Bic(
+    value: 'WELADED1RHB',
     bankName: 'Sparkasse Rheinberg -alt-',
     bankShortName: 'Spk Rheinberg -alt-',
     bankPostcode: '47479',
     bankLocation: 'Rheinberg',
   ),
-  '35461106': Iban(
-    bic: 'GENODED1NRH',
+  '35461106': Bic(
+    value: 'GENODED1NRH',
     bankName: 'Volksbank Niederrhein Zw',
     bankShortName: 'Volksbank Niederrhein',
     bankPostcode: '47506',
     bankLocation: 'Neukirchen-Vluyn',
   ),
-  '35640064': Iban(
-    bic: 'COBADEFFXXX',
+  '35640064': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Duisburg-Walsum',
     bankShortName: 'Commerzbank Fil Du-Walsum',
     bankPostcode: '47172',
     bankLocation: 'Duisburg',
   ),
-  '35650000': Iban(
-    bic: 'WELADED1WES',
+  '35650000': Bic(
+    value: 'WELADED1WES',
     bankName: 'Niederrheinische Sparkasse RheinLippe',
     bankShortName: 'NISPA',
     bankPostcode: '46466',
     bankLocation: 'Wesel',
   ),
-  '35660501': Iban(
-    bic: 'GENODED1RLW',
+  '35660501': Bic(
+    value: 'GENODED1RLW',
     bankName: 'Volksbank Rhein-Lippe (GAA)',
     bankShortName: 'Volksbank Rhein-Lippe (GAA)',
     bankPostcode: '46483',
     bankLocation: 'Wesel',
   ),
-  '35660599': Iban(
-    bic: 'GENODED1RLW',
+  '35660599': Bic(
+    value: 'GENODED1RLW',
     bankName: 'Volksbank Rhein-Lippe (Gf P2)',
     bankShortName: 'Volksbank Rhein-Lippe',
     bankPostcode: '46465',
     bankLocation: 'Wesel',
   ),
-  '35850000': Iban(
-    bic: 'WELADED1EMR',
+  '35850000': Bic(
+    value: 'WELADED1EMR',
     bankName: 'Stadtsparkasse Emmerich-Rees -alt-',
     bankShortName: 'St Spk Emmerich-Rees -alt-',
     bankPostcode: '46428',
     bankLocation: 'Emmerich am Rhein',
   ),
-  '35860245': Iban(
-    bic: 'GENODED1EMR',
+  '35860245': Bic(
+    value: 'GENODED1EMR',
     bankName: 'Volksbank Emmerich-Rees (Gf P2)',
     bankShortName: 'Volksbank Emmerich-Rees',
     bankPostcode: '46427',
     bankLocation: 'Emmerich am Rhein',
   ),
-  '36000000': Iban(
-    bic: 'MARKDEF1360',
+  '36000000': Bic(
+    value: 'MARKDEF1360',
     bankName: 'Bundesbank eh Essen',
     bankShortName: 'BBk eh Essen',
     bankPostcode: '45024',
     bankLocation: 'Essen',
   ),
-  '36010043': Iban(
-    bic: 'PBNKDEFFXXX',
+  '36010043': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '45125',
     bankLocation: 'Essen',
   ),
-  '36010424': Iban(
-    bic: 'AARBDE5W360',
+  '36010424': Bic(
+    value: 'AARBDE5W360',
     bankName: 'Aareal Bank Essen',
     bankShortName: 'Aareal Bank',
     bankPostcode: '45009',
     bankLocation: 'Essen',
   ),
-  '36020030': Iban(
-    bic: 'NBAGDE3EXXX',
+  '36020030': Bic(
+    value: 'NBAGDE3EXXX',
     bankName: 'National-Bank Essen',
     bankShortName: 'National-Bank Essen',
     bankPostcode: '45027',
     bankLocation: 'Essen',
   ),
-  '36020186': Iban(
-    bic: 'HYVEDEMM360',
+  '36020186': Bic(
+    value: 'HYVEDEMM360',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '45005',
     bankLocation: 'Essen',
   ),
-  '36033300': Iban(
-    bic: 'SCFBDE33XXX',
+  '36033300': Bic(
+    value: 'SCFBDE33XXX',
     bankName: 'Santander Consumer Bank',
     bankShortName: 'Santander Bank Essen',
     bankPostcode: '45128',
     bankLocation: 'Essen',
   ),
-  '36040039': Iban(
-    bic: 'COBADEFFXXX',
+  '36040039': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Fil Marl-Hüls',
     bankShortName: 'Commerzbank Marl-Hüls',
     bankPostcode: '45743',
     bankLocation: 'Marl',
   ),
-  '36040060': Iban(
-    bic: 'COBADEFFXXX',
+  '36040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Essen',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '45127',
     bankLocation: 'Essen',
   ),
-  '36040061': Iban(
-    bic: 'COBADEFFXXX',
+  '36040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Essen',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '45127',
     bankLocation: 'Essen',
   ),
-  '36040085': Iban(
-    bic: 'COBADEFFXXX',
+  '36040085': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf WK, Essen',
     bankShortName: 'Commerzbank, Gf Web-K',
     bankPostcode: '45116',
     bankLocation: 'Essen',
   ),
-  '36050105': Iban(
-    bic: 'SPESDE3EXXX',
+  '36050105': Bic(
+    value: 'SPESDE3EXXX',
     bankName: 'Sparkasse Essen',
     bankShortName: 'Sparkasse Essen',
     bankPostcode: '45117',
     bankLocation: 'Essen',
   ),
-  '36060192': Iban(
-    bic: 'GENODED1PA2',
+  '36060192': Bic(
+    value: 'GENODED1PA2',
     bankName: 'Pax-Bank Essen',
     bankShortName: 'Pax-Bank',
     bankPostcode: '45029',
     bankLocation: 'Essen',
   ),
-  '36060295': Iban(
-    bic: 'GENODED1BBE',
+  '36060295': Bic(
+    value: 'GENODED1BBE',
     bankName: 'Bank im Bistum Essen (Gf P2)',
     bankShortName: 'Bank im Bistum Essen',
     bankPostcode: '45008',
     bankLocation: 'Essen',
   ),
-  '36060488': Iban(
-    bic: 'GENODEM1GBE',
+  '36060488': Bic(
+    value: 'GENODEM1GBE',
     bankName: 'GENO BANK ESSEN Zw. Niederwenigern',
     bankShortName: 'GENO BANK ESSEN',
     bankPostcode: '45529',
     bankLocation: 'Hattingen',
   ),
-  '36060591': Iban(
-    bic: 'GENODED1SPE',
+  '36060591': Bic(
+    value: 'GENODED1SPE',
     bankName: 'Sparda-Bank West',
     bankShortName: 'Sparda-Bank West',
     bankPostcode: '45128',
     bankLocation: 'Essen',
   ),
-  '36070024': Iban(
-    bic: 'DEUTDEDBESS',
+  '36070024': Bic(
+    value: 'DEUTDEDBESS',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '45116',
     bankLocation: 'Essen',
   ),
-  '36070050': Iban(
-    bic: 'DEUTDEDEXXX',
+  '36070050': Bic(
+    value: 'DEUTDEDEXXX',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '45116',
     bankLocation: 'Essen',
   ),
-  '36070208': Iban(
-    bic: 'DEUTDEDEP07',
+  '36070208': Bic(
+    value: 'DEUTDEDEP07',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '45127',
     bankLocation: 'Essen',
   ),
-  '36070224': Iban(
-    bic: 'DEUTDEDBP07',
+  '36070224': Bic(
+    value: 'DEUTDEDBP07',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '45127',
     bankLocation: 'Essen',
   ),
-  '36080080': Iban(
-    bic: 'DRESDEFF360',
+  '36080080': Bic(
+    value: 'DRESDEFF360',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bottrop',
     bankPostcode: '46204',
     bankLocation: 'Bottrop',
   ),
-  '36080085': Iban(
-    bic: 'DRESDEFFI66',
+  '36080085': Bic(
+    value: 'DRESDEFFI66',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK  2',
     bankShortName: 'Commerzbank ITGK2 Essen',
     bankPostcode: '45357',
     bankLocation: 'Essen',
   ),
-  '36089321': Iban(
-    bic: 'DRESDEFFI17',
+  '36089321': Bic(
+    value: 'DRESDEFFI17',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Essen',
     bankPostcode: '45008',
     bankLocation: 'Essen',
   ),
-  '36240045': Iban(
-    bic: 'COBADEFFXXX',
+  '36240045': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Mülheim Ruhr',
     bankShortName: 'Commerzbank',
     bankPostcode: '45403',
     bankLocation: 'Mülheim an der Ruhr',
   ),
-  '36250000': Iban(
-    bic: 'SPMHDE3EXXX',
+  '36250000': Bic(
+    value: 'SPMHDE3EXXX',
     bankName: 'Sparkasse Mülheim an der Ruhr',
     bankShortName: 'Spk Mülheim an der Ruhr',
     bankPostcode: '45466',
     bankLocation: 'Mülheim an der Ruhr',
   ),
-  '36270024': Iban(
-    bic: 'DEUTDEDB362',
+  '36270024': Bic(
+    value: 'DEUTDEDB362',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '45404',
     bankLocation: 'Mülheim an der Ruhr',
   ),
-  '36270048': Iban(
-    bic: 'DEUTDEDE362',
+  '36270048': Bic(
+    value: 'DEUTDEDE362',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '45404',
     bankLocation: 'Mülheim an der Ruhr',
   ),
-  '36280071': Iban(
-    bic: 'DRESDEFF362',
+  '36280071': Bic(
+    value: 'DRESDEFF362',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Mülheim Ruhr',
     bankPostcode: '45404',
     bankLocation: 'Mülheim an der Ruhr',
   ),
-  '36540046': Iban(
-    bic: 'COBADEFFXXX',
+  '36540046': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Oberhausen',
     bankShortName: 'Commerzbank',
     bankPostcode: '46003',
     bankLocation: 'Oberhausen',
   ),
-  '36550000': Iban(
-    bic: 'WELADED1OBH',
+  '36550000': Bic(
+    value: 'WELADED1OBH',
     bankName: 'Stadtsparkasse Oberhausen',
     bankShortName: 'St Spk Oberhausen',
     bankPostcode: '46014',
     bankLocation: 'Oberhausen',
   ),
-  '36570024': Iban(
-    bic: 'DEUTDEDB365',
+  '36570024': Bic(
+    value: 'DEUTDEDB365',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '46003',
     bankLocation: 'Oberhausen',
   ),
-  '36570049': Iban(
-    bic: 'DEUTDEDE365',
+  '36570049': Bic(
+    value: 'DEUTDEDE365',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '46003',
     bankLocation: 'Oberhausen',
   ),
-  '36580072': Iban(
-    bic: 'DRESDEFF365',
+  '36580072': Bic(
+    value: 'DRESDEFF365',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Oberhausen',
     bankPostcode: '46003',
     bankLocation: 'Oberhausen',
   ),
-  '37000000': Iban(
-    bic: 'MARKDEF1370',
+  '37000000': Bic(
+    value: 'MARKDEF1370',
     bankName: 'Bundesbank',
     bankShortName: 'BBk Köln',
     bankPostcode: '50463',
     bankLocation: 'Köln',
   ),
-  '37010050': Iban(
-    bic: 'PBNKDEFFXXX',
+  '37010050': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '51222',
     bankLocation: 'Köln',
   ),
-  '37010600': Iban(
-    bic: 'BNPADEFFXXX',
+  '37010600': Bic(
+    value: 'BNPADEFFXXX',
     bankName: 'BNP Paribas Niederlassung Deutschland',
     bankShortName: 'BNP Paribas Ndl Deutschland',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '37010699': Iban(
-    bic: 'BNPADEFFXXX',
+  '37010699': Bic(
+    value: 'BNPADEFFXXX',
     bankName: 'BNP Paribas Niederlassung Deutschland',
     bankShortName: 'BNP Paribas Ndl Deutschland',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '37011000': Iban(
-    bic: 'PBNKDEFFXXX',
+  '37011000': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '51149',
     bankLocation: 'Köln',
   ),
-  '37019000': Iban(
-    bic: 'BUNQDE82XXX',
+  '37019000': Bic(
+    value: 'BUNQDE82XXX',
     bankName: 'bunq Niederlassung Deutschland',
     bankShortName: 'bunq, Koeln',
     bankPostcode: '50667',
     bankLocation: 'Köln',
   ),
-  '37020090': Iban(
-    bic: 'HYVEDEMM429',
+  '37020090': Bic(
+    value: 'HYVEDEMM429',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '50443',
     bankLocation: 'Köln',
   ),
-  '37020200': Iban(
-    bic: 'AXABDE31XXX',
+  '37020200': Bic(
+    value: 'AXABDE31XXX',
     bankName: 'Fondsdepot Bank',
     bankShortName: 'Fondsdepot Bank',
     bankPostcode: '95030',
     bankLocation: 'Hof',
   ),
-  '37020400': Iban(
-    bic: 'TOBADE33XXX',
+  '37020400': Bic(
+    value: 'TOBADE33XXX',
     bankName: 'TOYOTA Kreditbank Köln',
     bankShortName: 'TOYOTA Kreditbank',
     bankPostcode: '50858',
     bankLocation: 'Köln',
   ),
-  '37020500': Iban(
-    bic: 'BFSWDE33XXX',
+  '37020500': Bic(
+    value: 'BFSWDE33XXX',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Bank für Sozialwirtschaft',
     bankPostcode: '50443',
     bankLocation: 'Köln',
   ),
-  '37020600': Iban(
-    bic: 'AKBCDE31XXX',
+  '37020600': Bic(
+    value: 'AKBCDE31XXX',
     bankName: 'Santander Consumer Bank MG',
     bankShortName: 'Santander Consumer Bank MG',
     bankPostcode: '50674',
     bankLocation: 'Köln',
   ),
-  '37020900': Iban(
-    bic: 'FDBADE3KXXX',
+  '37020900': Bic(
+    value: 'FDBADE3KXXX',
     bankName: 'Ford Bank Ndl. der FCE Bank',
     bankShortName: 'Ford Bank Köln',
     bankPostcode: '50735',
     bankLocation: 'Köln',
   ),
-  '37021500': Iban(
-    bic: 'FDBADE8FXXX',
+  '37021500': Bic(
+    value: 'FDBADE8FXXX',
     bankName: 'Ford Bank, Köln',
     bankShortName: 'Ford Bank',
     bankPostcode: '50735',
     bankLocation: 'Köln',
   ),
-  '37021548': Iban(
-    bic: 'LRFSDE31XXX',
+  '37021548': Bic(
+    value: 'LRFSDE31XXX',
     bankName: 'Ford Bank (GF EG), Köln',
     bankShortName: 'Ford Bank (GF EG)',
     bankPostcode: '50735',
     bankLocation: 'Köln',
   ),
-  '37030700': Iban(
-    bic: 'WWBADE3AXXX',
+  '37030700': Bic(
+    value: 'WWBADE3AXXX',
     bankName: 'abcbank Köln',
     bankShortName: 'abcbank',
     bankPostcode: '50672',
     bankLocation: 'Köln',
   ),
-  '37030800': Iban(
-    bic: 'ISBKDEFXKOL',
+  '37030800': Bic(
+    value: 'ISBKDEFXKOL',
     bankName: 'Isbank Fil Köln',
     bankShortName: 'Isbank Köln',
     bankPostcode: '50670',
     bankLocation: 'Köln',
   ),
-  '37040037': Iban(
-    bic: 'COBADEFFXXX',
+  '37040037': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC SP, Köln',
     bankShortName: 'Commerzbank, CC SP',
     bankPostcode: '50447',
     bankLocation: 'Köln',
   ),
-  '37040044': Iban(
-    bic: 'COBADEFFXXX',
+  '37040044': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Leverk-Opladen',
     bankShortName: 'Commerzbank Fil Opladen',
     bankPostcode: '51302',
     bankLocation: 'Leverkusen',
   ),
-  '37040048': Iban(
-    bic: 'COBADEFFXXX',
+  '37040048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Hürth Rheinl',
     bankShortName: 'Commerzbank',
     bankPostcode: '50328',
     bankLocation: 'Hürth',
   ),
-  '37040060': Iban(
-    bic: 'COBADEFFXXX',
+  '37040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Köln',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '50672',
     bankLocation: 'Köln',
   ),
-  '37040061': Iban(
-    bic: 'COBADEFFXXX',
+  '37040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Köln',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '50672',
     bankLocation: 'Köln',
   ),
-  '37050198': Iban(
-    bic: 'COLSDE33XXX',
+  '37050198': Bic(
+    value: 'COLSDE33XXX',
     bankName: 'Sparkasse KölnBonn',
     bankShortName: 'Sparkasse KölnBonn',
     bankPostcode: '50667',
     bankLocation: 'Köln',
   ),
-  '37050299': Iban(
-    bic: 'COKSDE33XXX',
+  '37050299': Bic(
+    value: 'COKSDE33XXX',
     bankName: 'Kreissparkasse Köln',
     bankShortName: 'Kreissparkasse Köln',
     bankPostcode: '50461',
     bankLocation: 'Köln',
   ),
-  '37060120': Iban(
-    bic: 'GENODED1PA7',
+  '37060120': Bic(
+    value: 'GENODED1PA7',
     bankName: 'Pax-Bank Gf MHD',
     bankShortName: 'Pax-Bank Gf MHD',
     bankPostcode: '50467',
     bankLocation: 'Köln',
   ),
-  '37060193': Iban(
-    bic: 'GENODED1PAX',
+  '37060193': Bic(
+    value: 'GENODED1PAX',
     bankName: 'Pax-Bank (Gf P2)',
     bankShortName: 'Pax-Bank Köln',
     bankPostcode: '50467',
     bankLocation: 'Köln',
   ),
-  '37060194': Iban(
-    bic: 'GENODED1PAX',
+  '37060194': Bic(
+    value: 'GENODED1PAX',
     bankName: 'Pax-Bank GF GAA',
     bankShortName: 'Pax-Bank Köln',
     bankPostcode: '50670',
     bankLocation: 'Köln',
   ),
-  '37060590': Iban(
-    bic: 'GENODED1SPK',
+  '37060590': Bic(
+    value: 'GENODED1SPK',
     bankName: 'Sparda-Bank West',
     bankShortName: 'Sparda-Bank West',
     bankPostcode: '41747',
     bankLocation: 'Viersen',
   ),
-  '37060993': Iban(
-    bic: 'GENODEF1P13',
+  '37060993': Bic(
+    value: 'GENODEF1P13',
     bankName: 'PSD Bank West (Gf P2)',
     bankShortName: 'PSD Bank West',
     bankPostcode: '50667',
     bankLocation: 'Köln',
   ),
-  '37062124': Iban(
-    bic: 'GENODED1BGL',
+  '37062124': Bic(
+    value: 'GENODED1BGL',
     bankName: 'Bensberger Bank (Gf P2)',
     bankShortName: 'Bensberger Bank',
     bankPostcode: '51401',
     bankLocation: 'Bergisch Gladbach',
   ),
-  '37062365': Iban(
-    bic: 'GENODED1FHH',
+  '37062365': Bic(
+    value: 'GENODED1FHH',
     bankName: 'Volksbank Rhein-Erft-Köln (Gf P2)',
     bankShortName: 'VB Rhein-Erft-Köln',
     bankPostcode: '50354',
     bankLocation: 'Hürth',
   ),
-  '37062600': Iban(
-    bic: 'GENODED1PAF',
+  '37062600': Bic(
+    value: 'GENODED1PAF',
     bankName: 'VR Bank Bergisch Gladbach-Leverkusen (GF P2)',
     bankShortName: 'VR Bank Berg.Gladbach-Lever',
     bankPostcode: '51465',
     bankLocation: 'Bergisch Gladbach',
   ),
-  '37063367': Iban(
-    bic: 'GENODED1FKH',
+  '37063367': Bic(
+    value: 'GENODED1FKH',
     bankName: 'Raiffeisenbank Fischenich-Kendenich (Gf P2)',
     bankShortName: 'Raiffbk Fischenich-Kende',
     bankPostcode: '50354',
     bankLocation: 'Hürth',
   ),
-  '37069101': Iban(
-    bic: 'GENODED1AEG',
+  '37069101': Bic(
+    value: 'GENODED1AEG',
     bankName: 'Spar- und Darlehnskasse Aegidienberg (Gf P2)',
     bankShortName: 'Spar-u Darlehnskasse',
     bankPostcode: '53593',
     bankLocation: 'Bad Honnef',
   ),
-  '37069103': Iban(
-    bic: 'GENODED1ALD',
+  '37069103': Bic(
+    value: 'GENODED1ALD',
     bankName: 'Raiffeisenbank Aldenhoven Zw',
     bankShortName: 'Raiffbk Aldenhoven Linnich',
     bankPostcode: '52441',
     bankLocation: 'Linnich',
   ),
-  '37069125': Iban(
-    bic: 'GENODED1RKO',
+  '37069125': Bic(
+    value: 'GENODED1RKO',
     bankName: 'Volksbank Berg (Gf P2)',
     bankShortName: 'Volksbank Berg',
     bankPostcode: '51679',
     bankLocation: 'Wipperfürth',
   ),
-  '37069153': Iban(
-    bic: 'GENODED1HCK',
+  '37069153': Bic(
+    value: 'GENODED1HCK',
     bankName: 'Spar- und Darlehnskasse Brachelen (Gf P2)',
     bankShortName: 'Spar-u Darlehnskasse',
     bankPostcode: '41827',
     bankLocation: 'Hückelhoven',
   ),
-  '37069164': Iban(
-    bic: 'GENODED1MBU',
+  '37069164': Bic(
+    value: 'GENODED1MBU',
     bankName: 'Volksbank Meerbusch (Gf P2)',
     bankShortName: 'Volksbank Meerbusch',
     bankPostcode: '40670',
     bankLocation: 'Meerbusch',
   ),
-  '37069252': Iban(
-    bic: 'GENODED1ERE',
+  '37069252': Bic(
+    value: 'GENODED1ERE',
     bankName: 'Volksbank Erft (Gf P2)',
     bankShortName: 'Volksbank Erft (Gf P2)',
     bankPostcode: '50183',
     bankLocation: 'Elsdorf',
   ),
-  '37069302': Iban(
-    bic: 'GENODED1GLK',
+  '37069302': Bic(
+    value: 'GENODED1GLK',
     bankName: 'Raiffeisenbank Geilenkirchen Zw Uetterath',
     bankShortName: 'Raiffbk Geilenkirchen',
     bankPostcode: '52525',
     bankLocation: 'Heinsberg',
   ),
-  '37069303': Iban(
-    bic: 'GENODED1GKK',
+  '37069303': Bic(
+    value: 'GENODED1GKK',
     bankName: 'Volksbank Gemünd-Kall',
     bankShortName: 'Volksbank Gemünd-Kall',
     bankPostcode: '53932',
     bankLocation: 'Schleiden',
   ),
-  '37069306': Iban(
-    bic: 'GENODED1GRB',
+  '37069306': Bic(
+    value: 'GENODED1GRB',
     bankName: 'Raiffeisenbank Grevenbroich (Gf P2)',
     bankShortName: 'Raiffeisenbank Grevenbroich',
     bankPostcode: '41515',
     bankLocation: 'Grevenbroich',
   ),
-  '37069322': Iban(
-    bic: 'GENODED1EGY',
+  '37069322': Bic(
+    value: 'GENODED1EGY',
     bankName: 'Raiffeisenbank Gymnich (Gf P2)',
     bankShortName: 'Raiffeisenbank Gymnich',
     bankPostcode: '50374',
     bankLocation: 'Erftstadt',
   ),
-  '37069330': Iban(
-    bic: 'GENODED1HAW',
+  '37069330': Bic(
+    value: 'GENODED1HAW',
     bankName: 'Volksbank Haaren (Gf P2)',
     bankShortName: 'Volksbank Haaren',
     bankPostcode: '52525',
     bankLocation: 'Waldfeucht',
   ),
-  '37069331': Iban(
-    bic: 'GENODED1KHO',
+  '37069331': Bic(
+    value: 'GENODED1KHO',
     bankName: 'Raiffeisenbank von 1895 Zw Horrem (Gf P2)',
     bankShortName: 'Raiffeisenbank von 1895',
     bankPostcode: '50169',
     bankLocation: 'Kerpen',
   ),
-  '37069342': Iban(
-    bic: 'GENODED1HMB',
+  '37069342': Bic(
+    value: 'GENODED1HMB',
     bankName: 'Volksbank Heimbach (Gf P2)',
     bankShortName: 'Volksbank Heimbach',
     bankPostcode: '52396',
     bankLocation: 'Heimbach',
   ),
-  '37069354': Iban(
-    bic: 'GENODED1SEG',
+  '37069354': Bic(
+    value: 'GENODED1SEG',
     bankName: 'Raiffeisenbank Selfkant',
     bankShortName: 'Raiffeisenbank Selfkant',
     bankPostcode: '52538',
     bankLocation: 'Selfkant',
   ),
-  '37069355': Iban(
-    bic: 'GENODED1AHO',
+  '37069355': Bic(
+    value: 'GENODED1AHO',
     bankName: 'Spar- und Darlehnskasse Hoengen (Gf P2)',
     bankShortName: 'Spar-u Darlehnskasse',
     bankPostcode: '52477',
     bankLocation: 'Alsdorf',
   ),
-  '37069381': Iban(
-    bic: 'GENODED1IMM',
+  '37069381': Bic(
+    value: 'GENODED1IMM',
     bankName: 'VR-Bank Rur-Wurm (Gf P2)',
     bankShortName: 'VR-Bank Rur-Wurm',
     bankPostcode: '52511',
     bankLocation: 'Geilenkirchen',
   ),
-  '37069401': Iban(
-    bic: 'GENODED1JUK',
+  '37069401': Bic(
+    value: 'GENODED1JUK',
     bankName: 'Raiffeisenbank Junkersdorf (Gf P2)',
     bankShortName: 'Raiffeisenbank Junkersdorf',
     bankPostcode: '50841',
     bankLocation: 'Köln',
   ),
-  '37069405': Iban(
-    bic: 'GENODED1KAA',
+  '37069405': Bic(
+    value: 'GENODED1KAA',
     bankName: 'Raiffeisenbank Kaarst (Gf P2)',
     bankShortName: 'Raiffeisenbank Kaarst',
     bankPostcode: '41564',
     bankLocation: 'Kaarst',
   ),
-  '37069412': Iban(
-    bic: 'GENODED1HRB',
+  '37069412': Bic(
+    value: 'GENODED1HRB',
     bankName: 'Volksbank Heinsberg (Gf P2)',
     bankShortName: 'Volksbank Heinsberg',
     bankPostcode: '52518',
     bankLocation: 'Heinsberg',
   ),
-  '37069427': Iban(
-    bic: 'GENODED1DHK',
+  '37069427': Bic(
+    value: 'GENODED1DHK',
     bankName: 'Volksbank Dünnwald-Holweide (Gf P2)',
     bankShortName: 'Volksbank Dünnwald-Holweide',
     bankPostcode: '51069',
     bankLocation: 'Köln',
   ),
-  '37069429': Iban(
-    bic: 'GENODED1KNL',
+  '37069429': Bic(
+    value: 'GENODED1KNL',
     bankName: 'Volksbank Köln-Nord (Gf P2)',
     bankShortName: 'Volksbank Köln-Nord',
     bankPostcode: '50739',
     bankLocation: 'Köln',
   ),
-  '37069472': Iban(
-    bic: 'GENODED1ERF',
+  '37069472': Bic(
+    value: 'GENODED1ERF',
     bankName: 'Raiffeisenbk Erftstadt -alt-',
     bankShortName: 'Raiffeisenbk Erftstadt-alt-',
     bankPostcode: '50364',
     bankLocation: 'Erftstadt',
   ),
-  '37069520': Iban(
-    bic: 'GENODED1RST',
+  '37069520': Bic(
+    value: 'GENODED1RST',
     bankName: 'VR-Bank Bonn Rhein-Sieg (Gf P2)',
     bankShortName: 'VR-Bank Bonn Rhein-Sieg',
     bankPostcode: '53721',
     bankLocation: 'Siegburg',
   ),
-  '37069521': Iban(
-    bic: 'GENODED1MNH',
+  '37069521': Bic(
+    value: 'GENODED1MNH',
     bankName: 'Raiffeisenbank Rhein-Berg (Gf P2)',
     bankShortName: 'Raiffeisenbank Rhein-Berg',
     bankPostcode: '40789',
     bankLocation: 'Monheim am Rhein',
   ),
-  '37069524': Iban(
-    bic: 'GENODED1MUC',
+  '37069524': Bic(
+    value: 'GENODED1MUC',
     bankName: 'Raiffeisenbank Much-Ruppichteroth (Gf P2)',
     bankShortName: 'Raiffbk Much-Ruppichteroth',
     bankPostcode: '53798',
     bankLocation: 'Much',
   ),
-  '37069627': Iban(
-    bic: 'GENODED1RBC',
+  '37069627': Bic(
+    value: 'GENODED1RBC',
     bankName: 'Raiffeisenbank Voreifel (Gf P2)',
     bankShortName: 'Raiffbk Voreifel, Rheinbach',
     bankPostcode: '53351',
     bankLocation: 'Rheinbach',
   ),
-  '37069639': Iban(
-    bic: 'GENODED1WND',
+  '37069639': Bic(
+    value: 'GENODED1WND',
     bankName: 'Rosbacher Raiffeisenbank (Gf P2)',
     bankShortName: 'Rosbacher Raiffeisenbank',
     bankPostcode: '51556',
     bankLocation: 'Windeck',
   ),
-  '37069642': Iban(
-    bic: 'GENODED1SMR',
+  '37069642': Bic(
+    value: 'GENODED1SMR',
     bankName: 'Raiffeisenbank Gs Roetgen',
     bankShortName: 'Raiffbk Simmerath',
     bankPostcode: '52159',
     bankLocation: 'Roetgen',
   ),
-  '37069707': Iban(
-    bic: 'GENODED1SAM',
+  '37069707': Bic(
+    value: 'GENODED1SAM',
     bankName: 'Raiffeisenbank Sankt Augustin (Gf P2)',
     bankShortName: 'Raiffbk Sankt Augustin',
     bankPostcode: '53734',
     bankLocation: 'Sankt Augustin',
   ),
-  '37069720': Iban(
-    bic: 'GENODED1SLE',
+  '37069720': Bic(
+    value: 'GENODED1SLE',
     bankName: 'VR-Bank Nordeifel Schleiden',
     bankShortName: 'VR-Bank Nordeifel (Gf P2)',
     bankPostcode: '53932',
     bankLocation: 'Schleiden',
   ),
-  '37069805': Iban(
-    bic: 'GENODED1WVI',
+  '37069805': Bic(
+    value: 'GENODED1WVI',
     bankName: 'Volksbank Wachtberg (Gf P2)',
     bankShortName: 'Volksbank Wachtberg',
     bankPostcode: '53343',
     bankLocation: 'Wachtberg',
   ),
-  '37069833': Iban(
-    bic: 'GENODED1WSL',
+  '37069833': Bic(
+    value: 'GENODED1WSL',
     bankName: 'Raiffeisenbk Wesseling -alt-',
     bankShortName: 'Raiffeisenbk Wesseling-alt-',
     bankPostcode: '50378',
     bankLocation: 'Wesseling',
   ),
-  '37069840': Iban(
-    bic: 'GENODED1WPF',
+  '37069840': Bic(
+    value: 'GENODED1WPF',
     bankName: 'Volksbank Wipperfürth-Lindlar (Gf P2)',
     bankShortName: 'VB Wipperfürth-Lindlar',
     bankPostcode: '51688',
     bankLocation: 'Wipperfürth',
   ),
-  '37069991': Iban(
-    bic: 'GENODED1BRL',
+  '37069991': Bic(
+    value: 'GENODED1BRL',
     bankName: 'Brühler Bank (Gf P2)',
     bankShortName: 'Brühler Bank, Brühl',
     bankPostcode: '50321',
     bankLocation: 'Brühl',
   ),
-  '37070000': Iban(
-    bic: 'DEUTDEDK402',
+  '37070000': Bic(
+    value: 'DEUTDEDK402',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '50467',
     bankLocation: 'Köln',
   ),
-  '37070024': Iban(
-    bic: 'DEUTDEDB371',
+  '37070024': Bic(
+    value: 'DEUTDEDB371',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '50389',
     bankLocation: 'Wesseling',
   ),
-  '37070060': Iban(
-    bic: 'DEUTDEDK358',
+  '37070060': Bic(
+    value: 'DEUTDEDK358',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '50171',
     bankLocation: 'Kerpen',
   ),
-  '37070209': Iban(
-    bic: 'DEUTDEDKP08',
+  '37070209': Bic(
+    value: 'DEUTDEDKP08',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '50667',
     bankLocation: 'Köln',
   ),
-  '37070224': Iban(
-    bic: 'DEUTDEDBP08',
+  '37070224': Bic(
+    value: 'DEUTDEDBP08',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '50667',
     bankLocation: 'Köln',
   ),
-  '37080040': Iban(
-    bic: 'DRESDEFF370',
+  '37080040': Bic(
+    value: 'DRESDEFF370',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bonn',
     bankPostcode: '53111',
     bankLocation: 'Bonn',
   ),
-  '37080085': Iban(
-    bic: 'DRESDEFFI51',
+  '37080085': Bic(
+    value: 'DRESDEFFI51',
     bankName: 'Commerzbank vormals Dresdner Bank Gf PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITKG1 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080086': Iban(
-    bic: 'DRESDEFFI67',
+  '37080086': Bic(
+    value: 'DRESDEFFI67',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 4',
     bankShortName: 'Commerzbank ITGK4 Köln',
     bankPostcode: '50756',
     bankLocation: 'Köln',
   ),
-  '37080087': Iban(
-    bic: 'DRESDEFFI96',
+  '37080087': Bic(
+    value: 'DRESDEFFI96',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 5',
     bankShortName: 'Commerzbank ITGK5 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080088': Iban(
-    bic: 'DRESDEFFI97',
+  '37080088': Bic(
+    value: 'DRESDEFFI97',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 6',
     bankShortName: 'Commerzbank ITGK6 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080089': Iban(
-    bic: 'DRESDEFFI98',
+  '37080089': Bic(
+    value: 'DRESDEFFI98',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 7',
     bankShortName: 'Commerzbank ITGK7 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080090': Iban(
-    bic: 'DRESDEFFJ01',
+  '37080090': Bic(
+    value: 'DRESDEFFJ01',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 8',
     bankShortName: 'Commerzbank ITGK8 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080091': Iban(
-    bic: 'DRESDEFFJ02',
+  '37080091': Bic(
+    value: 'DRESDEFFJ02',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 9',
     bankShortName: 'Commerzbank ITGK9 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080092': Iban(
-    bic: 'DRESDEFFJ03',
+  '37080092': Bic(
+    value: 'DRESDEFFJ03',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 10',
     bankShortName: 'Commerzbank ITGK10 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080093': Iban(
-    bic: 'DRESDEFFJ04',
+  '37080093': Bic(
+    value: 'DRESDEFFJ04',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 11',
     bankShortName: 'Commerzbank ITGK11 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080094': Iban(
-    bic: 'DRESDEFFJ05',
+  '37080094': Bic(
+    value: 'DRESDEFFJ05',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 12',
     bankShortName: 'Commerzbank ITGK12 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080095': Iban(
-    bic: 'DRESDEFFJ06',
+  '37080095': Bic(
+    value: 'DRESDEFFJ06',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 13',
     bankShortName: 'Commerzbank ITGK13 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080096': Iban(
-    bic: 'DRESDEFFXXX',
+  '37080096': Bic(
+    value: 'DRESDEFFXXX',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 96',
     bankShortName: 'Commerzbank Zw 96 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080097': Iban(
-    bic: 'DRESDEFFXXX',
+  '37080097': Bic(
+    value: 'DRESDEFFXXX',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 97',
     bankShortName: 'Commerzbank Zw 97 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080098': Iban(
-    bic: 'DRESDEFFJ07',
+  '37080098': Bic(
+    value: 'DRESDEFFJ07',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 14',
     bankShortName: 'Commerzbank ITGK14 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37080099': Iban(
-    bic: 'DRESDEFFI36',
+  '37080099': Bic(
+    value: 'DRESDEFFI36',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 99',
     bankShortName: 'Commerzbank Zw 99 Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37089340': Iban(
-    bic: 'DRESDEFFI04',
+  '37089340': Bic(
+    value: 'DRESDEFFI04',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK I',
     bankShortName: 'Commerzbank ITGK I Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37089342': Iban(
-    bic: 'DRESDEFFI05',
+  '37089342': Bic(
+    value: 'DRESDEFFI05',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK II',
     bankShortName: 'Commerzbank ITGK II Köln',
     bankPostcode: '50450',
     bankLocation: 'Köln',
   ),
-  '37160087': Iban(
-    bic: 'GENODED1CGN',
+  '37160087': Bic(
+    value: 'GENODED1CGN',
     bankName: 'Kölner Bank (Gf P2)',
     bankShortName: 'Kölner Bank',
     bankPostcode: '50461',
     bankLocation: 'Köln',
   ),
-  '37161289': Iban(
-    bic: 'GENODED1BRH',
+  '37161289': Bic(
+    value: 'GENODED1BRH',
     bankName: 'VR-Bank Rhein-Erft (Gf P2)',
     bankShortName: 'VR-Bank Rhein-Erft',
     bankPostcode: '50309',
     bankLocation: 'Brühl',
   ),
-  '37540050': Iban(
-    bic: 'COBADEFFXXX',
+  '37540050': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Leverkusen',
     bankShortName: 'Commerzbank',
     bankPostcode: '51302',
     bankLocation: 'Leverkusen',
   ),
-  '37551020': Iban(
-    bic: 'WELADED1LEI',
+  '37551020': Bic(
+    value: 'WELADED1LEI',
     bankName: 'Stadt-Sparkasse Leichlingen',
     bankShortName: 'St Spk Leichlingen Rheinl',
     bankPostcode: '42787',
     bankLocation: 'Leichlingen (Rheinland)',
   ),
-  '37551440': Iban(
-    bic: 'WELADEDLLEV',
+  '37551440': Bic(
+    value: 'WELADEDLLEV',
     bankName: 'Sparkasse Leverkusen',
     bankShortName: 'Sparkasse Leverkusen',
     bankPostcode: '51312',
     bankLocation: 'Leverkusen',
   ),
-  '37551780': Iban(
-    bic: 'WELADED1LAF',
+  '37551780': Bic(
+    value: 'WELADED1LAF',
     bankName: 'Stadt-Sparkasse Langenfeld',
     bankShortName: 'St Spk Langenfeld',
     bankPostcode: '40740',
     bankLocation: 'Langenfeld (Rheinland)',
   ),
-  '37560092': Iban(
-    bic: 'GENODED1RWL',
+  '37560092': Bic(
+    value: 'GENODED1RWL',
     bankName: 'Volksbank Rhein-Wupper Zw Leichlingen',
     bankShortName: 'Volksbank Rhein-Wupper',
     bankPostcode: '42787',
     bankLocation: 'Leichlingen (Rheinland)',
   ),
-  '37570024': Iban(
-    bic: 'DEUTDEDB377',
+  '37570024': Bic(
+    value: 'DEUTDEDB377',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '42782',
     bankLocation: 'Leichlingen (Rheinland)',
   ),
-  '37570064': Iban(
-    bic: 'DEUTDEDK377',
+  '37570064': Bic(
+    value: 'DEUTDEDK377',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '42782',
     bankLocation: 'Leichlingen (Rheinland)',
   ),
-  '38010053': Iban(
-    bic: 'PBNKDEFF380',
+  '38010053': Bic(
+    value: 'PBNKDEFF380',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '53113',
     bankLocation: 'Bonn',
   ),
-  '38010700': Iban(
-    bic: 'PBNKDEFFDSL',
+  '38010700': Bic(
+    value: 'PBNKDEFFDSL',
     bankName: 'DSL Bank Ndl der Deutsche Bank',
     bankShortName: 'DSL Bank Ndl Deutsche Bank',
     bankPostcode: '53175',
     bankLocation: 'Bonn',
   ),
-  '38010900': Iban(
-    bic: 'DTABDED1XXX',
+  '38010900': Bic(
+    value: 'DTABDED1XXX',
     bankName: 'KfW Ndl Bonn',
     bankShortName: 'KfW Bonn',
     bankPostcode: '53170',
     bankLocation: 'Bonn',
   ),
-  '38010999': Iban(
-    bic: 'DTABDED1AUS',
+  '38010999': Bic(
+    value: 'DTABDED1AUS',
     bankName: 'KfW Ausbildungsförderung Bonn',
     bankShortName: 'KfW Ausbildungsförderung',
     bankPostcode: '53170',
     bankLocation: 'Bonn',
   ),
-  '38011000': Iban(
-    bic: 'VZVDDED1XXX',
+  '38011000': Bic(
+    value: 'VZVDDED1XXX',
     bankName: 'VÖB-ZVD Processing',
     bankShortName: 'VÖB-ZVD Bonn',
     bankPostcode: '53175',
     bankLocation: 'Bonn',
   ),
-  '38011001': Iban(
-    bic: 'VZVDDED1001',
+  '38011001': Bic(
+    value: 'VZVDDED1001',
     bankName: 'VÖB-ZVD Processing',
     bankShortName: 'VÖB-ZVD Bonn',
     bankPostcode: '53175',
     bankLocation: 'Bonn',
   ),
-  '38011002': Iban(
-    bic: 'VZVDDED1002',
+  '38011002': Bic(
+    value: 'VZVDDED1002',
     bankName: 'VÖB-ZVD Processing',
     bankShortName: 'VÖB-ZVD Bonn',
     bankPostcode: '53175',
     bankLocation: 'Bonn',
   ),
-  '38011003': Iban(
-    bic: 'VZVDDED1003',
+  '38011003': Bic(
+    value: 'VZVDDED1003',
     bankName: 'VÖB-ZVD Processing',
     bankShortName: 'VÖB-ZVD Bonn',
     bankPostcode: '53175',
     bankLocation: 'Bonn',
   ),
-  '38011004': Iban(
-    bic: 'VZVDDED1004',
+  '38011004': Bic(
+    value: 'VZVDDED1004',
     bankName: 'VÖB-ZVD Processing',
     bankShortName: 'VÖB-ZVD Bonn',
     bankPostcode: '53175',
     bankLocation: 'Bonn',
   ),
-  '38011005': Iban(
-    bic: 'VZVDDED1005',
+  '38011005': Bic(
+    value: 'VZVDDED1005',
     bankName: 'VÖB-ZVD Processing',
     bankShortName: 'VÖB-ZVD Bonn',
     bankPostcode: '53175',
     bankLocation: 'Bonn',
   ),
-  '38011006': Iban(
-    bic: 'VZVDDED1006',
+  '38011006': Bic(
+    value: 'VZVDDED1006',
     bankName: 'VÖB-ZVD Processing',
     bankShortName: 'VÖB-ZVD Bonn',
     bankPostcode: '53175',
     bankLocation: 'Bonn',
   ),
-  '38011007': Iban(
-    bic: 'VZVDDED1007',
+  '38011007': Bic(
+    value: 'VZVDDED1007',
     bankName: 'VÖB-ZVD Processing',
     bankShortName: 'VÖB-ZVD Bonn',
     bankPostcode: '53175',
     bankLocation: 'Bonn',
   ),
-  '38011008': Iban(
-    bic: 'VZVDDED1008',
+  '38011008': Bic(
+    value: 'VZVDDED1008',
     bankName: 'VÖB-ZVD Processing',
     bankShortName: 'VÖB-ZVD Bonn',
     bankPostcode: '53175',
     bankLocation: 'Bonn',
   ),
-  '38020090': Iban(
-    bic: 'HYVEDEMM402',
+  '38020090': Bic(
+    value: 'HYVEDEMM402',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '53002',
     bankLocation: 'Bonn',
   ),
-  '38040007': Iban(
-    bic: 'COBADEFFXXX',
+  '38040007': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Siegburg',
     bankShortName: 'Commerzbank',
     bankPostcode: '53702',
     bankLocation: 'Siegburg',
   ),
-  '38050000': Iban(
-    bic: 'COLSDE33BON',
+  '38050000': Bic(
+    value: 'COLSDE33BON',
     bankName: 'Sparkasse Bonn -alt-',
     bankShortName: 'Sparkasse Bonn -alt-',
     bankPostcode: '53101',
     bankLocation: 'Bonn',
   ),
-  '38051290': Iban(
-    bic: 'WELADED1HON',
+  '38051290': Bic(
+    value: 'WELADED1HON',
     bankName: 'Stadtsparkasse Bad Honnef',
     bankShortName: 'St Spk Bad Honnef',
     bankPostcode: '53587',
     bankLocation: 'Bad Honnef',
   ),
-  '38060186': Iban(
-    bic: 'GENODED1BRS',
+  '38060186': Bic(
+    value: 'GENODED1BRS',
     bankName: 'Volksbank Köln Bonn (Gf P2)',
     bankShortName: 'Volksbank Köln Bonn',
     bankPostcode: '53015',
     bankLocation: 'Bonn',
   ),
-  '38070024': Iban(
-    bic: 'DEUTDEDB945',
+  '38070024': Bic(
+    value: 'DEUTDEDB945',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '53349',
     bankLocation: 'Rheinbach',
   ),
-  '38070059': Iban(
-    bic: 'DEUTDEDK387',
+  '38070059': Bic(
+    value: 'DEUTDEDK387',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '53604',
     bankLocation: 'Bad Honnef',
   ),
-  '38070408': Iban(
-    bic: 'DEUTDEDKP38',
+  '38070408': Bic(
+    value: 'DEUTDEDKP38',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '53113',
     bankLocation: 'Bonn',
   ),
-  '38070424': Iban(
-    bic: 'DEUTDEDBP38',
+  '38070424': Bic(
+    value: 'DEUTDEDBP38',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '53113',
     bankLocation: 'Bonn',
   ),
-  '38070724': Iban(
-    bic: 'DEUTDEDBXXX',
+  '38070724': Bic(
+    value: 'DEUTDEDBXXX',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '53117',
     bankLocation: 'Bonn',
   ),
-  '38077724': Iban(
-    bic: 'DEUTDEDB383',
+  '38077724': Bic(
+    value: 'DEUTDEDB383',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '53639',
     bankLocation: 'Königswinter',
   ),
-  '38080055': Iban(
-    bic: 'DRESDEFF380',
+  '38080055': Bic(
+    value: 'DRESDEFF380',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bonn',
     bankPostcode: '53004',
     bankLocation: 'Bonn',
   ),
-  '38160220': Iban(
-    bic: 'GENODED1HBO',
+  '38160220': Bic(
+    value: 'GENODED1HBO',
     bankName: 'VR-Bank Bonn (Gf P2)',
     bankShortName: 'VR-Bank Bonn',
     bankPostcode: '53123',
     bankLocation: 'Bonn',
   ),
-  '38250110': Iban(
-    bic: 'WELADED1EUS',
+  '38250110': Bic(
+    value: 'WELADED1EUS',
     bankName: 'Kreissparkasse Euskirchen',
     bankShortName: 'Kreissparkasse Euskirchen',
     bankPostcode: '53861',
     bankLocation: 'Euskirchen',
   ),
-  '38260082': Iban(
-    bic: 'GENODED1EVB',
+  '38260082': Bic(
+    value: 'GENODED1EVB',
     bankName: 'Volksbank Euskirchen (Gf P2)',
     bankShortName: 'Volksbank Euskirchen',
     bankPostcode: '53879',
     bankLocation: 'Euskirchen',
   ),
-  '38440016': Iban(
-    bic: 'COBADEFFXXX',
+  '38440016': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Wiehl',
     bankShortName: 'Commerzbank',
     bankPostcode: '51656',
     bankLocation: 'Wiehl',
   ),
-  '38450000': Iban(
-    bic: 'WELADED1GMB',
+  '38450000': Bic(
+    value: 'WELADED1GMB',
     bankName: 'Sparkasse Gummersbach',
     bankShortName: 'Spk Gummersbach',
     bankPostcode: '51702',
     bankLocation: 'Bergneustadt',
   ),
-  '38452490': Iban(
-    bic: 'WELADED1WIE',
+  '38452490': Bic(
+    value: 'WELADED1WIE',
     bankName: 'Sparkasse der Homburgischen Gemeinden',
     bankShortName: 'Sparkasse Nümbrecht',
     bankPostcode: '51588',
     bankLocation: 'Nümbrecht',
   ),
-  '38462135': Iban(
-    bic: 'GENODED1WIL',
+  '38462135': Bic(
+    value: 'GENODED1WIL',
     bankName: 'Volksbank Oberberg (Gf P2)',
     bankShortName: 'Volksbank Oberberg',
     bankPostcode: '51674',
     bankLocation: 'Wiehl',
   ),
-  '38470024': Iban(
-    bic: 'DEUTDEDB387',
+  '38470024': Bic(
+    value: 'DEUTDEDB387',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '51532',
     bankLocation: 'Waldbröl',
   ),
-  '38470091': Iban(
-    bic: 'DEUTDEDW387',
+  '38470091': Bic(
+    value: 'DEUTDEDW387',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '51532',
     bankLocation: 'Waldbröl',
   ),
-  '38621500': Iban(
-    bic: 'GENODED1STB',
+  '38621500': Bic(
+    value: 'GENODED1STB',
     bankName: 'Steyler Bank (Gf P2)',
     bankShortName: 'Steyler Bank',
     bankPostcode: '53757',
     bankLocation: 'Sankt Augustin',
   ),
-  '38650000': Iban(
-    bic: 'WELADED1SGB',
+  '38650000': Bic(
+    value: 'WELADED1SGB',
     bankName: 'Kreissparkasse Siegburg',
     bankShortName: 'Kr Spk Siegburg',
     bankPostcode: '53705',
     bankLocation: 'Siegburg',
   ),
-  '38651390': Iban(
-    bic: 'WELADED1HEN',
+  '38651390': Bic(
+    value: 'WELADED1HEN',
     bankName: 'Sparkasse Hennef',
     bankShortName: 'Sparkasse Hennef',
     bankPostcode: '53762',
     bankLocation: 'Hennef (Sieg)',
   ),
-  '39020000': Iban(
-    bic: 'AABSDE31XXX',
+  '39020000': Bic(
+    value: 'AABSDE31XXX',
     bankName: 'Aachener Bauspk Aachen',
     bankShortName: 'Aachener Bausparkasse',
     bankPostcode: '52001',
     bankLocation: 'Aachen',
   ),
-  '39040013': Iban(
-    bic: 'COBADEFFXXX',
+  '39040013': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Heinsberg',
     bankShortName: 'Commerzbank',
     bankPostcode: '52518',
     bankLocation: 'Heinsberg',
   ),
-  '39050000': Iban(
-    bic: 'AACSDE33XXX',
+  '39050000': Bic(
+    value: 'AACSDE33XXX',
     bankName: 'Sparkasse Aachen',
     bankShortName: 'Sparkasse Aachen',
     bankPostcode: '52222',
     bankLocation: 'Stolberg (Rhld.)',
   ),
-  '39060180': Iban(
-    bic: 'GENODED1AAC',
+  '39060180': Bic(
+    value: 'GENODED1AAC',
     bankName: 'Aachener Bank (Gf P2)',
     bankShortName: 'Aachener Bank',
     bankPostcode: '52001',
     bankLocation: 'Aachen',
   ),
-  '39061981': Iban(
-    bic: 'GENODED1HNB',
+  '39061981': Bic(
+    value: 'GENODED1HNB',
     bankName: 'Heinsberger Volksbank (Gf P2)',
     bankShortName: 'Heinsberger Volksbank',
     bankPostcode: '52525',
     bankLocation: 'Heinsberg',
   ),
-  '39070020': Iban(
-    bic: 'DEUTDEDK401',
+  '39070020': Bic(
+    value: 'DEUTDEDK401',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '52517',
     bankLocation: 'Heinsberg',
   ),
-  '39070024': Iban(
-    bic: 'DEUTDEDB947',
+  '39070024': Bic(
+    value: 'DEUTDEDB947',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '52136',
     bankLocation: 'Würselen',
   ),
-  '39070210': Iban(
-    bic: 'DEUTDEDKP09',
+  '39070210': Bic(
+    value: 'DEUTDEDKP09',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '52062',
     bankLocation: 'Aachen',
   ),
-  '39070224': Iban(
-    bic: 'DEUTDEDBP09',
+  '39070224': Bic(
+    value: 'DEUTDEDBP09',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '52062',
     bankLocation: 'Aachen',
   ),
-  '39080005': Iban(
-    bic: 'DRESDEFF390',
+  '39080005': Bic(
+    value: 'DRESDEFF390',
     bankName: 'Commerzbank vormals Dresdner Bank Fil Kohlscheid',
     bankShortName: 'Commerzbank Herzogenrath',
     bankPostcode: '52119',
     bankLocation: 'Herzogenrath',
   ),
-  '39080098': Iban(
-    bic: 'DRESDEFFI37',
+  '39080098': Bic(
+    value: 'DRESDEFFI37',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 98',
     bankShortName: 'Commerzbank Zw 98 Aachen',
     bankPostcode: '52006',
     bankLocation: 'Aachen',
   ),
-  '39080099': Iban(
-    bic: 'DRESDEFFI38',
+  '39080099': Bic(
+    value: 'DRESDEFFI38',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 99',
     bankShortName: 'Commerzbank Zw 99 Aachen',
     bankPostcode: '52006',
     bankLocation: 'Aachen',
   ),
-  '39160191': Iban(
-    bic: 'GENODED1PA1',
+  '39160191': Bic(
+    value: 'GENODED1PA1',
     bankName: 'Pax-Bank Aachen',
     bankShortName: 'Pax-Bank',
     bankPostcode: '52012',
     bankLocation: 'Aachen',
   ),
-  '39161490': Iban(
-    bic: 'GENODED1AAS',
+  '39161490': Bic(
+    value: 'GENODED1AAS',
     bankName: 'Volksbank Aachen Süd',
     bankShortName: 'Volksbank Aachen Süd',
     bankPostcode: '52037',
     bankLocation: 'Aachen',
   ),
-  '39162980': Iban(
-    bic: 'GENODED1WUR',
+  '39162980': Bic(
+    value: 'GENODED1WUR',
     bankName: 'VR-Bank Würselen',
     bankShortName: 'VR-Bank (Gf P2)',
     bankPostcode: '52135',
     bankLocation: 'Würselen',
   ),
-  '39362254': Iban(
-    bic: 'GENODED1RSC',
+  '39362254': Bic(
+    value: 'GENODED1RSC',
     bankName: 'Raiffeisen-Bank Eschweiler (Gf P2)',
     bankShortName: 'Raiffeisen-Bank Eschweiler',
     bankPostcode: '52231',
     bankLocation: 'Eschweiler',
   ),
-  '39540052': Iban(
-    bic: 'COBADEFFXXX',
+  '39540052': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Düren',
     bankShortName: 'Commerzbank',
     bankPostcode: '52351',
     bankLocation: 'Düren',
   ),
-  '39550110': Iban(
-    bic: 'SDUEDE33XXX',
+  '39550110': Bic(
+    value: 'SDUEDE33XXX',
     bankName: 'Sparkasse Düren',
     bankShortName: 'Sparkasse Düren',
     bankPostcode: '52394',
     bankLocation: 'Heimbach',
   ),
-  '39560201': Iban(
-    bic: 'GENODED1DUE',
+  '39560201': Bic(
+    value: 'GENODED1DUE',
     bankName: 'Volksbank Düren Zw Schlich',
     bankShortName: 'Volksbank Düren',
     bankPostcode: '52379',
     bankLocation: 'Langerwehe',
   ),
-  '39570024': Iban(
-    bic: 'DEUTDEDB396',
+  '39570024': Bic(
+    value: 'DEUTDEDB396',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '52368',
     bankLocation: 'Kreuzau',
   ),
-  '39570061': Iban(
-    bic: 'DEUTDEDK396',
+  '39570061': Bic(
+    value: 'DEUTDEDK396',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '52368',
     bankLocation: 'Kreuzau',
   ),
-  '39580041': Iban(
-    bic: 'DRESDEFF395',
+  '39580041': Bic(
+    value: 'DRESDEFF395',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Erftstadt',
     bankPostcode: '50363',
     bankLocation: 'Erftstadt',
   ),
-  '40022000': Iban(
-    bic: 'NRWBDEDMMST',
+  '40022000': Bic(
+    value: 'NRWBDEDMMST',
     bankName: 'NRW.BANK Münster',
     bankShortName: 'NRW.BANK',
     bankPostcode: '48145',
     bankLocation: 'Münster',
   ),
-  '40030000': Iban(
-    bic: 'MLBKDEH1MUE',
+  '40030000': Bic(
+    value: 'MLBKDEH1MUE',
     bankName: 'Münsterländische Bank Thie & Co (Gf P3)',
     bankShortName: 'Münsterländische Bk Münster',
     bankPostcode: '48143',
     bankLocation: 'Münster',
   ),
-  '40040028': Iban(
-    bic: 'COBADEFFXXX',
+  '40040028': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Warendorf',
     bankShortName: 'Commerzbank',
     bankPostcode: '48204',
     bankLocation: 'Warendorf',
   ),
-  '40050000': Iban(
-    bic: 'WELADE3MXXX',
+  '40050000': Bic(
+    value: 'WELADE3MXXX',
     bankName: 'Landesbank Hessen-Thüringen Girozentrale NL. Düsseldorf',
     bankShortName: 'Ld Bk Hess-Thür, Gz, Dus',
     bankPostcode: '48134',
     bankLocation: 'Münster',
   ),
-  '40050150': Iban(
-    bic: 'WELADED1MST',
+  '40050150': Bic(
+    value: 'WELADED1MST',
     bankName: 'Sparkasse Münsterland Ost',
     bankShortName: 'Spk Münsterland Ost',
     bankPostcode: '48317',
     bankLocation: 'Drensteinfurt',
   ),
-  '40055555': Iban(
-    bic: 'LBSWDE31XXX',
+  '40055555': Bic(
+    value: 'LBSWDE31XXX',
     bankName: 'LBS Westdeutsche Landesbausparkasse',
     bankShortName: 'LBS West Münster',
     bankPostcode: '48149',
     bankLocation: 'Münster',
   ),
-  '40060000': Iban(
-    bic: 'GENODEMSXXX',
+  '40060000': Bic(
+    value: 'GENODEMSXXX',
     bankName: 'DZ BANK (Gf P2)',
     bankShortName: 'DZ BANK (Gf P2)',
     bankPostcode: '48136',
     bankLocation: 'Münster',
   ),
-  '40060265': Iban(
-    bic: 'GENODEM1DKM',
+  '40060265': Bic(
+    value: 'GENODEM1DKM',
     bankName: 'DKM Darlehnskasse Münster (Gf P2)',
     bankShortName: 'DKM Darlehnskasse Münster',
     bankPostcode: '48008',
     bankLocation: 'Münster',
   ),
-  '40060300': Iban(
-    bic: 'GENODEM1WLM',
+  '40060300': Bic(
+    value: 'GENODEM1WLM',
     bankName: 'DZ HYP - Münster (Gf P2)',
     bankShortName: 'DZ HYP - Münster',
     bankPostcode: '48136',
     bankLocation: 'Münster',
   ),
-  '40060560': Iban(
-    bic: 'GENODEF1S08',
+  '40060560': Bic(
+    value: 'GENODEF1S08',
     bankName: 'Sparda-Bank West Ibbenbüren',
     bankShortName: 'Sparda-Bank West',
     bankPostcode: '49477',
     bankLocation: 'Ibbenbüren',
   ),
-  '40061238': Iban(
-    bic: 'GENODEM1GRV',
+  '40061238': Bic(
+    value: 'GENODEM1GRV',
     bankName: 'Volksbank Greven (Gf P2)',
     bankShortName: 'Volksbank Greven',
     bankPostcode: '48256',
     bankLocation: 'Greven',
   ),
-  '40069226': Iban(
-    bic: 'GENODEM1CND',
+  '40069226': Bic(
+    value: 'GENODEM1CND',
     bankName: 'Volksbank Lette-Darup-Rorup (Gf P2)',
     bankShortName: 'Volksbank Lette-Darup-Rorup',
     bankPostcode: '48645',
     bankLocation: 'Coesfeld',
   ),
-  '40069266': Iban(
-    bic: 'GENODEM1MAS',
+  '40069266': Bic(
+    value: 'GENODEM1MAS',
     bankName: 'Volksbank im Hochsauerland (Gf P2)',
     bankShortName: 'VB im Hochsauerland',
     bankPostcode: '59889',
     bankLocation: 'Eslohe (Sauerland)',
   ),
-  '40069283': Iban(
-    bic: 'GENODEM1SLN',
+  '40069283': Bic(
+    value: 'GENODEM1SLN',
     bankName: 'Volksbank Schlangen (Gf P2)',
     bankShortName: 'Volksbank Schlangen',
     bankPostcode: '33185',
     bankLocation: 'Schlangen',
   ),
-  '40069348': Iban(
-    bic: 'GENODEM1MDB',
+  '40069348': Bic(
+    value: 'GENODEM1MDB',
     bankName: 'Volksbank Medebach (Gf P2)',
     bankShortName: 'Volksbank Medebach',
     bankPostcode: '59961',
     bankLocation: 'Medebach',
   ),
-  '40069362': Iban(
-    bic: 'GENODEM1SAE',
+  '40069362': Bic(
+    value: 'GENODEM1SAE',
     bankName: 'Volksbank Saerbeck',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '48369',
     bankLocation: 'Saerbeck',
   ),
-  '40069363': Iban(
-    bic: 'GENODEM1SMB',
+  '40069363': Bic(
+    value: 'GENODEM1SMB',
     bankName: 'Volksbank Schermbeck (Gf P2)',
     bankShortName: 'Volksbank Schermbeck',
     bankPostcode: '46510',
     bankLocation: 'Schermbeck',
   ),
-  '40069371': Iban(
-    bic: 'GENODEM1BTH',
+  '40069371': Bic(
+    value: 'GENODEM1BTH',
     bankName: 'Volksbank Thülen (Gf P2)',
     bankShortName: 'Volksbank Thülen',
     bankPostcode: '59929',
     bankLocation: 'Brilon',
   ),
-  '40069408': Iban(
-    bic: 'GENODEM1BAU',
+  '40069408': Bic(
+    value: 'GENODEM1BAU',
     bankName: 'Volksbank Baumberge (Gf P2)',
     bankShortName: 'Volksbank Baumberge',
     bankPostcode: '48727',
     bankLocation: 'Billerbeck',
   ),
-  '40069477': Iban(
-    bic: 'GENODEM1DWU',
+  '40069477': Bic(
+    value: 'GENODEM1DWU',
     bankName: 'Volksbank Wulfen -alt-',
     bankShortName: 'Volksbank Wulfen -alt-',
     bankPostcode: '46263',
     bankLocation: 'Dorsten',
   ),
-  '40069546': Iban(
-    bic: 'GENODEM1SDN',
+  '40069546': Bic(
+    value: 'GENODEM1SDN',
     bankName: 'Volksbank Senden (Gf P2)',
     bankShortName: 'Volksbank Senden',
     bankPostcode: '48308',
     bankLocation: 'Senden',
   ),
-  '40069600': Iban(
-    bic: 'GENODEM1MAB',
+  '40069600': Bic(
+    value: 'GENODEM1MAB',
     bankName: 'Volksbank Amelsbüren (Gf P2)',
     bankShortName: 'Volksbank Amelsbüren',
     bankPostcode: '48085',
     bankLocation: 'Münster',
   ),
-  '40069601': Iban(
-    bic: 'GENODEM1CAN',
+  '40069601': Bic(
+    value: 'GENODEM1CAN',
     bankName: 'Volksbank Ascheberg-Herbern (Gf P2)',
     bankShortName: 'Volksbank Ascheberg-Herbern',
     bankPostcode: '59381',
     bankLocation: 'Ascheberg',
   ),
-  '40069606': Iban(
-    bic: 'GENODEM1ERR',
+  '40069606': Bic(
+    value: 'GENODEM1ERR',
     bankName: 'Volksbank Erle (Gf P2)',
     bankShortName: 'Volksbank Erle',
     bankPostcode: '46348',
     bankLocation: 'Raesfeld',
   ),
-  '40069622': Iban(
-    bic: 'GENODEM1LSP',
+  '40069622': Bic(
+    value: 'GENODEM1LSP',
     bankName: 'Volksbank Seppenrade (Gf P2)',
     bankShortName: 'Volksbank Seppenrade',
     bankPostcode: '59348',
     bankLocation: 'Lüdinghausen',
   ),
-  '40069709': Iban(
-    bic: 'GENODEM1DLR',
+  '40069709': Bic(
+    value: 'GENODEM1DLR',
     bankName: 'Volksbank in der Hohen Mark (Gf P2)',
     bankShortName: 'Volksbank Hohen Mark, Reken',
     bankPostcode: '48734',
     bankLocation: 'Reken',
   ),
-  '40069716': Iban(
-    bic: 'GENODEM1SCN',
+  '40069716': Bic(
+    value: 'GENODEM1SCN',
     bankName: 'Volksbank Südkirchen-Capelle-Nordkirchen (Gf P2)',
     bankShortName: 'Volksbank Nordkirchen',
     bankPostcode: '59394',
     bankLocation: 'Nordkirchen',
   ),
-  '40070024': Iban(
-    bic: 'DEUTDEDB404',
+  '40070024': Bic(
+    value: 'DEUTDEDB404',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '48204',
     bankLocation: 'Warendorf',
   ),
-  '40070080': Iban(
-    bic: 'DEUTDE3B440',
+  '40070080': Bic(
+    value: 'DEUTDE3B440',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '48632',
     bankLocation: 'Coesfeld',
   ),
-  '40070211': Iban(
-    bic: 'DEUTDE3BP10',
+  '40070211': Bic(
+    value: 'DEUTDE3BP10',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '48143',
     bankLocation: 'Münster',
   ),
-  '40070224': Iban(
-    bic: 'DEUTDEDBP10',
+  '40070224': Bic(
+    value: 'DEUTDEDBP10',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '48143',
     bankLocation: 'Münster',
   ),
-  '40080040': Iban(
-    bic: 'DRESDEFF400',
+  '40080040': Bic(
+    value: 'DRESDEFF400',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Rheine Westf',
     bankPostcode: '48403',
     bankLocation: 'Rheine',
   ),
-  '40080085': Iban(
-    bic: 'DRESDEFFI68',
+  '40080085': Bic(
+    value: 'DRESDEFFI68',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Münster',
     bankPostcode: '48084',
     bankLocation: 'Münster',
   ),
-  '40090900': Iban(
-    bic: 'GENODEF1P15',
+  '40090900': Bic(
+    value: 'GENODEF1P15',
     bankName: 'PSD Bank Westfalen-Lippe (Gf P2)',
     bankShortName: 'PSD Bank Westfalen-Lippe',
     bankPostcode: '48155',
     bankLocation: 'Münster',
   ),
-  '40150001': Iban(
-    bic: 'GENODEF1P15',
+  '40150001': Bic(
+    value: 'GENODEF1P15',
     bankName: 'Helaba Düsseldorf Gf Verrechnung FI-Münster',
     bankShortName: 'Helaba Dus, Gf Ver. FI-Mün',
     bankPostcode: '40019',
     bankLocation: 'Düsseldorf',
   ),
-  '40153768': Iban(
-    bic: 'WELADED1EMS',
+  '40153768': Bic(
+    value: 'WELADED1EMS',
     bankName: 'Verbundsparkasse Emsdetten Ochtrup',
     bankShortName: 'Sparkasse Emsdetten Ochtrup',
     bankPostcode: '48602',
     bankLocation: 'Ochtrup',
   ),
-  '40154006': Iban(
-    bic: 'WELADED1GRO',
+  '40154006': Bic(
+    value: 'WELADED1GRO',
     bankName: 'Sparkasse Gronau',
     bankShortName: 'Spk Gronau',
     bankPostcode: '48599',
     bankLocation: 'Gronau (Westf.)',
   ),
-  '40154476': Iban(
-    bic: 'WELADED1LEN',
+  '40154476': Bic(
+    value: 'WELADED1LEN',
     bankName: 'Stadtsparkasse Lengerich',
     bankShortName: 'St Spk Lengerich',
     bankPostcode: '49515',
     bankLocation: 'Lengerich',
   ),
-  '40154530': Iban(
-    bic: 'WELADE3WXXX',
+  '40154530': Bic(
+    value: 'WELADE3WXXX',
     bankName: 'Sparkasse Westmünsterland',
     bankShortName: 'Sparkasse Westmünsterland',
     bankPostcode: '48686',
     bankLocation: 'Vreden',
   ),
-  '40154702': Iban(
-    bic: 'WELADED1STL',
+  '40154702': Bic(
+    value: 'WELADED1STL',
     bankName: 'Stadtsparkasse Stadtlohn',
     bankShortName: 'St Spk Stadtlohn',
     bankPostcode: '48695',
     bankLocation: 'Stadtlohn',
   ),
-  '40160050': Iban(
-    bic: 'GENODEM1MSC',
+  '40160050': Bic(
+    value: 'GENODEM1MSC',
     bankName: 'Vereinigte Volksbank Münster (Gf P2)',
     bankShortName: 'Vereinigte VB Münster',
     bankPostcode: '48044',
     bankLocation: 'Münster',
   ),
-  '40163720': Iban(
-    bic: 'GENODEM1SEE',
+  '40163720': Bic(
+    value: 'GENODEM1SEE',
     bankName: 'Volksbank Nordmünsterland (Gf P2)',
     bankShortName: 'VB Nordmünsterland Rheine',
     bankPostcode: '48411',
     bankLocation: 'Rheine',
   ),
-  '40164024': Iban(
-    bic: 'GENODEM1GRN',
+  '40164024': Bic(
+    value: 'GENODEM1GRN',
     bankName: 'Volksbank Vreden Ndl der VB Gronau-Ahaus',
     bankShortName: 'Volksbank Gronau-Ahaus',
     bankPostcode: '48691',
     bankLocation: 'Vreden',
   ),
-  '40164256': Iban(
-    bic: 'GENODEM1LAE',
+  '40164256': Bic(
+    value: 'GENODEM1LAE',
     bankName: 'Volksbank Laer-Horstmar-Leer (Gf P2)',
     bankShortName: 'VB Laer-Horstmar-Leer',
     bankPostcode: '48362',
     bankLocation: 'Laer',
   ),
-  '40164352': Iban(
-    bic: 'GENODEM1CNO',
+  '40164352': Bic(
+    value: 'GENODEM1CNO',
     bankName: 'Volksbank Nottuln (Gf P2)',
     bankShortName: 'Volksbank Nottuln',
     bankPostcode: '48301',
     bankLocation: 'Nottuln',
   ),
-  '40164528': Iban(
-    bic: 'GENODEM1LHN',
+  '40164528': Bic(
+    value: 'GENODEM1LHN',
     bankName: 'Volksbank Südmünsterland-Mitte (Gf P2)',
     bankShortName: 'VB Südmünsterland-Mitte',
     bankPostcode: '59336',
     bankLocation: 'Lüdinghausen',
   ),
-  '40164618': Iban(
-    bic: 'GENODEM1OTR',
+  '40164618': Bic(
+    value: 'GENODEM1OTR',
     bankName: 'Volksbank Ochtrup-Laer (Gf P2)',
     bankShortName: 'Volksbank Ochtrup-Laer',
     bankPostcode: '48602',
     bankLocation: 'Ochtrup',
   ),
-  '40164901': Iban(
-    bic: 'GENODEM1GE1',
+  '40164901': Bic(
+    value: 'GENODEM1GE1',
     bankName: 'Volksbank (Gf P2)',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '48705',
     bankLocation: 'Gescher',
   ),
-  '40165366': Iban(
-    bic: 'GENODEM1SEM',
+  '40165366': Bic(
+    value: 'GENODEM1SEM',
     bankName: 'Volksbank Selm-Bork (Gf P2)',
     bankShortName: 'Volksbank Selm-Bork',
     bankPostcode: '59371',
     bankLocation: 'Selm',
   ),
-  '40166439': Iban(
-    bic: 'GENODEM1LLE',
+  '40166439': Bic(
+    value: 'GENODEM1LLE',
     bankName: 'Volksbank Lengerich/Lotte -alt-',
     bankShortName: 'VB Lengerich/Lotte -alt-',
     bankPostcode: '49515',
     bankLocation: 'Lengerich',
   ),
-  '40166800': Iban(
-    bic: 'GENODEM1BUL',
+  '40166800': Bic(
+    value: 'GENODEM1BUL',
     bankName: 'Volksbank Buldern -alt-',
     bankShortName: 'Volksbank Buldern -alt-',
     bankPostcode: '48249',
     bankLocation: 'Dülmen',
   ),
-  '40340030': Iban(
-    bic: 'COBADEFFXXX',
+  '40340030': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Ibbenbüren',
     bankShortName: 'Commerzbank',
     bankPostcode: '49461',
     bankLocation: 'Ibbenbüren',
   ),
-  '40350005': Iban(
-    bic: 'WELADED1RHN',
+  '40350005': Bic(
+    value: 'WELADED1RHN',
     bankName: 'Stadtsparkasse Rheine',
     bankShortName: 'St Spk Rheine',
     bankPostcode: '48410',
     bankLocation: 'Rheine',
   ),
-  '40351060': Iban(
-    bic: 'WELADED1STF',
+  '40351060': Bic(
+    value: 'WELADED1STF',
     bankName: 'Kreissparkasse Steinfurt',
     bankShortName: 'Kr Spk Steinfurt',
     bankPostcode: '48489',
     bankLocation: 'Wettringen',
   ),
-  '40351220': Iban(
-    bic: 'WELADED1IBB',
+  '40351220': Bic(
+    value: 'WELADED1IBB',
     bankName: 'Sparkasse Steinfurt -alt-',
     bankShortName: 'Sparkasse Steinfurt -alt-',
     bankPostcode: '48543',
     bankLocation: 'Steinfurt',
   ),
-  '40361627': Iban(
-    bic: 'GENODEM1WKP',
+  '40361627': Bic(
+    value: 'GENODEM1WKP',
     bankName: 'Volksbank Westerkappeln-Saerbeck (Gf P2)',
     bankShortName: 'VB Westerkappeln-Saerbeck',
     bankPostcode: '49492',
     bankLocation: 'Westerkappeln',
   ),
-  '40361906': Iban(
-    bic: 'GENODEM1IBB',
+  '40361906': Bic(
+    value: 'GENODEM1IBB',
     bankName: 'Volksbank Münsterland Nord (Gf P2)',
     bankShortName: 'Volksbank Münsterland Nord',
     bankPostcode: '48143',
     bankLocation: 'Münster',
   ),
-  '40363433': Iban(
-    bic: 'GENODEM1HRL',
+  '40363433': Bic(
+    value: 'GENODEM1HRL',
     bankName: 'Volksbank Hörstel -alt-',
     bankShortName: 'Volksbank Hörstel -alt-',
     bankPostcode: '48467',
     bankLocation: 'Hörstel',
   ),
-  '40370024': Iban(
-    bic: 'DEUTDEDB409',
+  '40370024': Bic(
+    value: 'DEUTDEDB409',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '48684',
     bankLocation: 'Vreden',
   ),
-  '40370079': Iban(
-    bic: 'DEUTDE3B407',
+  '40370079': Bic(
+    value: 'DEUTDE3B407',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '49462',
     bankLocation: 'Ibbenbüren',
   ),
-  '41040018': Iban(
-    bic: 'COBADEFFXXX',
+  '41040018': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Ahlen Westf',
     bankShortName: 'Commerzbank',
     bankPostcode: '59203',
     bankLocation: 'Ahlen',
   ),
-  '41041000': Iban(
-    bic: 'COBADEFFXXX',
+  '41041000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'ZTB der Commerzbank',
     bankShortName: 'ZTB der Commerzbank',
     bankPostcode: '59003',
     bankLocation: 'Hamm',
   ),
-  '41050095': Iban(
-    bic: 'WELADED1HAM',
+  '41050095': Bic(
+    value: 'WELADED1HAM',
     bankName: 'Sparkasse Hamm',
     bankShortName: 'Sparkasse Hamm',
     bankPostcode: '59061',
     bankLocation: 'Hamm',
   ),
-  '41051605': Iban(
-    bic: 'WELADED1WRN',
+  '41051605': Bic(
+    value: 'WELADED1WRN',
     bankName: 'Stadtsparkasse Werne -alt-',
     bankShortName: 'St Spk Werne -alt-',
     bankPostcode: '59358',
     bankLocation: 'Werne',
   ),
-  '41051845': Iban(
-    bic: 'WELADED1BGK',
+  '41051845': Bic(
+    value: 'WELADED1BGK',
     bankName: 'Sparkasse Bergkamen-Bönen',
     bankShortName: 'Spk Bönen-Bergkamen',
     bankPostcode: '59199',
     bankLocation: 'Bönen',
   ),
-  '41061011': Iban(
-    bic: 'GENODEM1HBH',
+  '41061011': Bic(
+    value: 'GENODEM1HBH',
     bankName: 'Spar- und Darlehnskasse Bockum-Hövel (Gf P2)',
     bankShortName: 'Spar-u Darlehnskasse',
     bankPostcode: '59038',
     bankLocation: 'Hamm',
   ),
-  '41061903': Iban(
-    bic: 'GENODEM1BAG',
+  '41061903': Bic(
+    value: 'GENODEM1BAG',
     bankName: 'BAG Bankaktiengesellschaft',
     bankShortName: 'BAG Bankaktienges Hamm',
     bankPostcode: '59069',
     bankLocation: 'Hamm',
   ),
-  '41062215': Iban(
-    bic: 'GENODEM1BO1',
+  '41062215': Bic(
+    value: 'GENODEM1BO1',
     bankName: 'Volksbank Bönen (Gf P2)',
     bankShortName: 'Volksbank Bönen',
     bankPostcode: '59194',
     bankLocation: 'Bönen',
   ),
-  '41070024': Iban(
-    bic: 'DEUTDEDB412',
+  '41070024': Bic(
+    value: 'DEUTDEDB412',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59203',
     bankLocation: 'Ahlen',
   ),
-  '41070049': Iban(
-    bic: 'DEUTDEDE412',
+  '41070049': Bic(
+    value: 'DEUTDEDE412',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59203',
     bankLocation: 'Ahlen',
   ),
-  '41240048': Iban(
-    bic: 'COBADEFFXXX',
+  '41240048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank BE F-B48',
     bankShortName: 'Commerzbank',
     bankPostcode: '59269',
     bankLocation: 'Beckum',
   ),
-  '41250035': Iban(
-    bic: 'WELADED1BEK',
+  '41250035': Bic(
+    value: 'WELADED1BEK',
     bankName: 'Sparkasse Beckum-Wadersloh',
     bankShortName: 'Spk Beckum-Wadersloh',
     bankPostcode: '59329',
     bankLocation: 'Wadersloh',
   ),
-  '41260006': Iban(
-    bic: 'GENODEM1BEK',
+  '41260006': Bic(
+    value: 'GENODEM1BEK',
     bankName: 'Volksbank Beckum (Gf P2)',
     bankShortName: 'Volksbank Beckum',
     bankPostcode: '59249',
     bankLocation: 'Beckum',
   ),
-  '41261324': Iban(
-    bic: 'GENODEM1EOW',
+  '41261324': Bic(
+    value: 'GENODEM1EOW',
     bankName: 'Volksbank Enniger-Ostenfelde-Westkirchen (Gf P2)',
     bankShortName: 'VB Enniger-Ostenfelde-Westk',
     bankPostcode: '59307',
     bankLocation: 'Ennigerloh',
   ),
-  '41261419': Iban(
-    bic: 'GENODEM1OEN',
+  '41261419': Bic(
+    value: 'GENODEM1OEN',
     bankName: 'Volksbank Oelde-Ennigerloh-Neubeckum (Gf P2)',
     bankShortName: 'VB Oelde-Ennigerloh-Neubeck',
     bankPostcode: '59320',
     bankLocation: 'Ennigerloh',
   ),
-  '41262501': Iban(
-    bic: 'GENODEM1AHL',
+  '41262501': Bic(
+    value: 'GENODEM1AHL',
     bankName: 'Volksbank (Gf P2)',
     bankShortName: 'Volksbank',
     bankPostcode: '48212',
     bankLocation: 'Warendorf',
   ),
-  '41280043': Iban(
-    bic: 'DRESDEFF413',
+  '41280043': Bic(
+    value: 'DRESDEFF413',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Lippstadt',
     bankPostcode: '59524',
     bankLocation: 'Lippstadt',
   ),
-  '41440018': Iban(
-    bic: 'COBADEFFXXX',
+  '41440018': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Soest Westf',
     bankShortName: 'Commerzbank',
     bankPostcode: '59472',
     bankLocation: 'Soest',
   ),
-  '41450075': Iban(
-    bic: 'WELADED1SOS',
+  '41450075': Bic(
+    value: 'WELADED1SOS',
     bankName: 'Sparkasse SoestWerl',
     bankShortName: 'Sparkasse SoestWerl',
     bankPostcode: '59089',
     bankLocation: 'Werl',
   ),
-  '41451750': Iban(
-    bic: 'WELADED1WRL',
+  '41451750': Bic(
+    value: 'WELADED1WRL',
     bankName: 'Sparkasse Werl -alt-',
     bankShortName: 'Sparkasse Werl -alt-',
     bankPostcode: '59089',
     bankLocation: 'Werl',
   ),
-  '41460116': Iban(
-    bic: 'GENODEM1SOE',
+  '41460116': Bic(
+    value: 'GENODEM1SOE',
     bankName: 'Volksbank Hellweg Zw Körbecke',
     bankShortName: 'Volksbank Hellweg',
     bankPostcode: '59519',
     bankLocation: 'Möhnesee',
   ),
-  '41462295': Iban(
-    bic: 'GENODEM1WRU',
+  '41462295': Bic(
+    value: 'GENODEM1WRU',
     bankName: 'Volksbank Wickede (Ruhr) (Gf P2)',
     bankShortName: 'Volksbank Wickede (Ruhr)',
     bankPostcode: '58734',
     bankLocation: 'Wickede (Ruhr)',
   ),
-  '41650001': Iban(
-    bic: 'WELADED1LIP',
+  '41650001': Bic(
+    value: 'WELADED1LIP',
     bankName: 'Sparkasse Lippstadt',
     bankShortName: 'Spk Lippstadt',
     bankPostcode: '59553',
     bankLocation: 'Lippstadt',
   ),
-  '41651770': Iban(
-    bic: 'WELADED1HSL',
+  '41651770': Bic(
+    value: 'WELADED1HSL',
     bankName: 'Spk Hochsauerland Brilon',
     bankShortName: 'Sparkasse Hochsauerland',
     bankPostcode: '59929',
     bankLocation: 'Brilon',
   ),
-  '41651815': Iban(
-    bic: 'WELADED1ERW',
+  '41651815': Bic(
+    value: 'WELADED1ERW',
     bankName: 'Sparkasse Erwitte-Anröchte',
     bankShortName: 'Spk Erwitte-Anröchte',
     bankPostcode: '59609',
     bankLocation: 'Anröchte',
   ),
-  '41651965': Iban(
-    bic: 'WELADED1GES',
+  '41651965': Bic(
+    value: 'WELADED1GES',
     bankName: 'Sparkasse Geseke',
     bankShortName: 'Sparkasse Geseke',
     bankPostcode: '59585',
     bankLocation: 'Geseke',
   ),
-  '41660124': Iban(
-    bic: 'GENODEM1LPS',
+  '41660124': Bic(
+    value: 'GENODEM1LPS',
     bankName: 'Volksbank Beckum-Lippstadt Zndl',
     bankShortName: 'Volksbank Beckum-Lippstadt',
     bankPostcode: '59249',
     bankLocation: 'Beckum',
   ),
-  '41661206': Iban(
-    bic: 'GENODEM1ANR',
+  '41661206': Bic(
+    value: 'GENODEM1ANR',
     bankName: 'Volksbank Rüthen Ndl der Volksbank Anröchte',
     bankShortName: 'Volksbank Anröchte',
     bankPostcode: '59602',
     bankLocation: 'Rüthen',
   ),
-  '41661504': Iban(
-    bic: 'GENODEM1LBH',
+  '41661504': Bic(
+    value: 'GENODEM1LBH',
     bankName: 'Volksbank Benninghausen (Gf P2)',
     bankShortName: 'Volksbank Benninghausen',
     bankPostcode: '59556',
     bankLocation: 'Lippstadt',
   ),
-  '41661719': Iban(
-    bic: 'GENODEM1BRI',
+  '41661719': Bic(
+    value: 'GENODEM1BRI',
     bankName: 'Volksbank Brilon (Gf P2)',
     bankShortName: 'Volksbank Brilon',
     bankPostcode: '59920',
     bankLocation: 'Brilon',
   ),
-  '41662465': Iban(
-    bic: 'GENODEM1SGE',
+  '41662465': Bic(
+    value: 'GENODEM1SGE',
     bankName: 'Volksbank Störmede-Hörste (Gf P2)',
     bankShortName: 'VB Störmede-Hörste, Geseke',
     bankPostcode: '59590',
     bankLocation: 'Geseke',
   ),
-  '41662557': Iban(
-    bic: 'GENODEM1WST',
+  '41662557': Bic(
+    value: 'GENODEM1WST',
     bankName: 'Volksbank Warstein-Belecke -alt-',
     bankShortName: 'VB Warstein-Belecke -alt-',
     bankPostcode: '59564',
     bankLocation: 'Warstein',
   ),
-  '41663335': Iban(
-    bic: 'GENODEM1HOE',
+  '41663335': Bic(
+    value: 'GENODEM1HOE',
     bankName: 'Volksbank Hörste (Gf P2)',
     bankShortName: 'Volksbank Hörste',
     bankPostcode: '59558',
     bankLocation: 'Lippstadt',
   ),
-  '41670024': Iban(
-    bic: 'DEUTDEDB418',
+  '41670024': Bic(
+    value: 'DEUTDEDB418',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59441',
     bankLocation: 'Werl',
   ),
-  '41670027': Iban(
-    bic: 'DEUTDE3B416',
+  '41670027': Bic(
+    value: 'DEUTDE3B416',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59524',
     bankLocation: 'Lippstadt',
   ),
-  '41670028': Iban(
-    bic: 'DEUTDE3B417',
+  '41670028': Bic(
+    value: 'DEUTDE3B417',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59929',
     bankLocation: 'Brilon',
   ),
-  '41670029': Iban(
-    bic: 'DEUTDE3B414',
+  '41670029': Bic(
+    value: 'DEUTDE3B414',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59472',
     bankLocation: 'Soest',
   ),
-  '41670030': Iban(
-    bic: 'DEUTDE3B418',
+  '41670030': Bic(
+    value: 'DEUTDE3B418',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59441',
     bankLocation: 'Werl',
   ),
-  '42030600': Iban(
-    bic: 'ISBKDEFXGEL',
+  '42030600': Bic(
+    value: 'ISBKDEFXGEL',
     bankName: 'Isbank Fil Gelsenkirchen',
     bankShortName: 'Isbank Gelsenkirchen',
     bankPostcode: '45879',
     bankLocation: 'Gelsenkirchen',
   ),
-  '42040040': Iban(
-    bic: 'COBADEFFXXX',
+  '42040040': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Fil. Herten-Westerholt',
     bankShortName: 'Commerzbank Herten-Westerh',
     bankPostcode: '45683',
     bankLocation: 'Herten',
   ),
-  '42050001': Iban(
-    bic: 'WELADED1GEK',
+  '42050001': Bic(
+    value: 'WELADED1GEK',
     bankName: 'Sparkasse Gelsenkirchen',
     bankShortName: 'Sparkasse Gelsenkirchen',
     bankPostcode: '45801',
     bankLocation: 'Gelsenkirchen',
   ),
-  '42070024': Iban(
-    bic: 'DEUTDEDB421',
+  '42070024': Bic(
+    value: 'DEUTDEDB421',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '45657',
     bankLocation: 'Recklinghausen',
   ),
-  '42070062': Iban(
-    bic: 'DEUTDEDE421',
+  '42070062': Bic(
+    value: 'DEUTDEDE421',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '45657',
     bankLocation: 'Recklinghausen',
   ),
-  '42080082': Iban(
-    bic: 'DRESDEFF420',
+  '42080082': Bic(
+    value: 'DRESDEFF420',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Gelsenkirchen',
     bankPostcode: '45806',
     bankLocation: 'Gelsenkirchen',
   ),
-  '42260001': Iban(
-    bic: 'GENODEM1GBU',
+  '42260001': Bic(
+    value: 'GENODEM1GBU',
     bankName: 'Volksbank Ruhr Mitte (Gf P2)',
     bankShortName: 'VB Ruhr Mitte Gelsenkirchen',
     bankPostcode: '45877',
     bankLocation: 'Gelsenkirchen',
   ),
-  '42450040': Iban(
-    bic: 'WELADED1GLA',
+  '42450040': Bic(
+    value: 'WELADED1GLA',
     bankName: 'Stadtsparkasse Gladbeck',
     bankShortName: 'St Spk Gladbeck',
     bankPostcode: '45955',
     bankLocation: 'Gladbeck',
   ),
-  '42451220': Iban(
-    bic: 'WELADED1BOT',
+  '42451220': Bic(
+    value: 'WELADED1BOT',
     bankName: 'Sparkasse Bottrop',
     bankShortName: 'Spk Bottrop',
     bankPostcode: '46215',
     bankLocation: 'Bottrop',
   ),
-  '42461435': Iban(
-    bic: 'GENODEM1KIH',
+  '42461435': Bic(
+    value: 'GENODEM1KIH',
     bankName: 'Vereinte Volksbank (Gf P2)',
     bankShortName: 'Vereinte Volksbank',
     bankPostcode: '46282',
     bankLocation: 'Dorsten',
   ),
-  '42640048': Iban(
-    bic: 'COBADEFFXXX',
+  '42640048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Recklinghausen',
     bankShortName: 'Commerzbank',
     bankPostcode: '45603',
     bankLocation: 'Recklinghausen',
   ),
-  '42650150': Iban(
-    bic: 'WELADED1REK',
+  '42650150': Bic(
+    value: 'WELADED1REK',
     bankName: 'Sparkasse Vest Recklinghausen',
     bankShortName: 'Spk Recklinghausen',
     bankPostcode: '44575',
     bankLocation: 'Castrop-Rauxel',
   ),
-  '42651315': Iban(
-    bic: 'WELADED1HAT',
+  '42651315': Bic(
+    value: 'WELADED1HAT',
     bankName: 'Stadtsparkasse Haltern am See',
     bankShortName: 'St Spk Haltern',
     bankPostcode: '45713',
     bankLocation: 'Haltern am See',
   ),
-  '42661008': Iban(
-    bic: 'GENODEM1MRL',
+  '42661008': Bic(
+    value: 'GENODEM1MRL',
     bankName: 'Volksbank Marl-Recklinghausen Zw',
     bankShortName: 'VB Marl-Recklinghausen',
     bankPostcode: '45657',
     bankLocation: 'Recklinghausen',
   ),
-  '42661088': Iban(
-    bic: 'GENODEM1MRL',
+  '42661088': Bic(
+    value: 'GENODEM1MRL',
     bankName: 'Volksbank Marl-Recklinghausen (Gf GAA)',
     bankShortName: 'VB Marl-Recklinghausen',
     bankPostcode: '45772',
     bankLocation: 'Marl',
   ),
-  '42661330': Iban(
-    bic: 'GENODEM1HLT',
+  '42661330': Bic(
+    value: 'GENODEM1HLT',
     bankName: 'Volksbank Haltern (Gf P2)',
     bankShortName: 'Volksbank Haltern',
     bankPostcode: '45721',
     bankLocation: 'Haltern am See',
   ),
-  '42661717': Iban(
-    bic: 'GENODEM1WLW',
+  '42661717': Bic(
+    value: 'GENODEM1WLW',
     bankName: 'Volksbank Waltrop (Gf P2)',
     bankShortName: 'Volksbank Waltrop',
     bankPostcode: '45724',
     bankLocation: 'Waltrop',
   ),
-  '42662320': Iban(
-    bic: 'GENODEM1DST',
+  '42662320': Bic(
+    value: 'GENODEM1DST',
     bankName: 'Volksbank Dorsten (Gf P2)',
     bankShortName: 'Volksbank Dorsten',
     bankPostcode: '46256',
     bankLocation: 'Dorsten',
   ),
-  '42680081': Iban(
-    bic: 'DRESDEFF426',
+  '42680081': Bic(
+    value: 'DRESDEFF426',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Dorsten',
     bankPostcode: '46252',
     bankLocation: 'Dorsten',
   ),
-  '42840005': Iban(
-    bic: 'COBADEFFXXX',
+  '42840005': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Rhede Westf',
     bankShortName: 'Commerzbank',
     bankPostcode: '46406',
     bankLocation: 'Rhede',
   ),
-  '42850035': Iban(
-    bic: 'WELADED1BOH',
+  '42850035': Bic(
+    value: 'WELADED1BOH',
     bankName: 'Stadtsparkasse Bocholt',
     bankShortName: 'Stadtsparkasse Bocholt',
     bankPostcode: '46372',
     bankLocation: 'Bocholt',
   ),
-  '42860003': Iban(
-    bic: 'GENODEM1BOH',
+  '42860003': Bic(
+    value: 'GENODEM1BOH',
     bankName: 'Volksbank Bocholt (Gf P2)',
     bankShortName: 'Volksbank Bocholt',
     bankPostcode: '46374',
     bankLocation: 'Bocholt',
   ),
-  '42861239': Iban(
-    bic: 'GENODEM1RKN',
+  '42861239': Bic(
+    value: 'GENODEM1RKN',
     bankName: 'Spar- und Darlehnskasse (Gf P2)',
     bankShortName: 'Spar-u Darlehnskasse Reken',
     bankPostcode: '48729',
     bankLocation: 'Reken',
   ),
-  '42861387': Iban(
-    bic: 'GENODEM1BOB',
+  '42861387': Bic(
+    value: 'GENODEM1BOB',
     bankName: 'VR-Bank Westmünsterland (Gf P2)',
     bankShortName: 'VR-Bank Westmünsterland',
     bankPostcode: '48653',
     bankLocation: 'Coesfeld',
   ),
-  '42861515': Iban(
-    bic: 'GENODEM1BOG',
+  '42861515': Bic(
+    value: 'GENODEM1BOG',
     bankName: 'Volksbank Gemen (Gf P2)',
     bankShortName: 'Volksbank Gemen',
     bankPostcode: '46325',
     bankLocation: 'Borken',
   ),
-  '42861608': Iban(
-    bic: 'GENODEM1HEI',
+  '42861608': Bic(
+    value: 'GENODEM1HEI',
     bankName: 'Volksbank Heiden (Gf P2)',
     bankShortName: 'Volksbank Heiden',
     bankPostcode: '46356',
     bankLocation: 'Heiden',
   ),
-  '42861814': Iban(
-    bic: 'GENODEM1RHD',
+  '42861814': Bic(
+    value: 'GENODEM1RHD',
     bankName: 'Volksbank Rhede Hzw Rhedebrügge',
     bankShortName: 'VB Rhede Rhedebrügge',
     bankPostcode: '46325',
     bankLocation: 'Borken',
   ),
-  '42862451': Iban(
-    bic: 'GENODEM1RAE',
+  '42862451': Bic(
+    value: 'GENODEM1RAE',
     bankName: 'Volksbank Raesfeld und Erle (Gf P2)',
     bankShortName: 'Volksbank Raesfeld und Erle',
     bankPostcode: '46348',
     bankLocation: 'Raesfeld',
   ),
-  '42870024': Iban(
-    bic: 'DEUTDEDB429',
+  '42870024': Bic(
+    value: 'DEUTDEDB429',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '46302',
     bankLocation: 'Borken',
   ),
-  '42870077': Iban(
-    bic: 'DEUTDE3B429',
+  '42870077': Bic(
+    value: 'DEUTDE3B429',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '46302',
     bankLocation: 'Borken',
   ),
-  '43000000': Iban(
-    bic: 'MARKDEF1430',
+  '43000000': Bic(
+    value: 'MARKDEF1430',
     bankName: 'Bundesbank eh Bochum',
     bankShortName: 'BBk eh Bochum',
     bankPostcode: '44715',
     bankLocation: 'Bochum',
   ),
-  '43040036': Iban(
-    bic: 'COBADEFFXXX',
+  '43040036': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Hattingen',
     bankShortName: 'Commerzbank',
     bankPostcode: '45501',
     bankLocation: 'Hattingen',
   ),
-  '43050001': Iban(
-    bic: 'WELADED1BOC',
+  '43050001': Bic(
+    value: 'WELADED1BOC',
     bankName: 'Sparkasse Bochum',
     bankShortName: 'Sparkasse Bochum',
     bankPostcode: '44724',
     bankLocation: 'Bochum',
   ),
-  '43051040': Iban(
-    bic: 'WELADED1HTG',
+  '43051040': Bic(
+    value: 'WELADED1HTG',
     bankName: 'Sparkasse Hattingen',
     bankShortName: 'Sparkasse Hattingen',
     bankPostcode: '45504',
     bankLocation: 'Hattingen',
   ),
-  '43060129': Iban(
-    bic: 'GENODEM1BOC',
+  '43060129': Bic(
+    value: 'GENODEM1BOC',
     bankName: 'Volksbank Bochum Witten (Gf P2)',
     bankShortName: 'Volksbank Bochum Witten',
     bankPostcode: '44728',
     bankLocation: 'Bochum',
   ),
-  '43060967': Iban(
-    bic: 'GENODEM1GLS',
+  '43060967': Bic(
+    value: 'GENODEM1GLS',
     bankName: 'GLS Gemeinschaftsbank (Gf P2)',
     bankShortName: 'GLS Gemeinschaftsbank',
     bankPostcode: '44708',
     bankLocation: 'Bochum',
   ),
-  '43060988': Iban(
-    bic: 'GENODEM1GLS',
+  '43060988': Bic(
+    value: 'GENODEM1GLS',
     bankName: 'GLS Gemeinschaftsbank (GAA)',
     bankShortName: 'GLS Bank in Bochum (GAA)',
     bankPostcode: '44789',
     bankLocation: 'Bochum',
   ),
-  '43070024': Iban(
-    bic: 'DEUTDEDB431',
+  '43070024': Bic(
+    value: 'DEUTDEDB431',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '58403',
     bankLocation: 'Witten',
   ),
-  '43070061': Iban(
-    bic: 'DEUTDEDE431',
+  '43070061': Bic(
+    value: 'DEUTDEDE431',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '58403',
     bankLocation: 'Witten',
   ),
-  '43080083': Iban(
-    bic: 'DRESDEFF430',
+  '43080083': Bic(
+    value: 'DRESDEFF430',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Hattingen',
     bankPostcode: '45501',
     bankLocation: 'Hattingen',
   ),
-  '43250030': Iban(
-    bic: 'WELADED1HRN',
+  '43250030': Bic(
+    value: 'WELADED1HRN',
     bankName: 'Herner Sparkasse',
     bankShortName: 'Herner Sparkasse',
     bankPostcode: '44621',
     bankLocation: 'Herne',
   ),
-  '44000000': Iban(
-    bic: 'MARKDEF1440',
+  '44000000': Bic(
+    value: 'MARKDEF1440',
     bankName: 'Bundesbank eh Dortmund -alt-',
     bankShortName: 'BBk eh Dortmund -alt-',
     bankPostcode: '44025',
     bankLocation: 'Dortmund',
   ),
-  '44010046': Iban(
-    bic: 'PBNKDEFFXXX',
+  '44010046': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '44131',
     bankLocation: 'Dortmund',
   ),
-  '44020090': Iban(
-    bic: 'HYVEDEMM808',
+  '44020090': Bic(
+    value: 'HYVEDEMM808',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '58095',
     bankLocation: 'Hagen',
   ),
-  '44040037': Iban(
-    bic: 'COBADEFFXXX',
+  '44040037': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Wetter Ruhr',
     bankShortName: 'Commerzbank',
     bankPostcode: '58287',
     bankLocation: 'Wetter (Ruhr)',
   ),
-  '44040060': Iban(
-    bic: 'COBADEFFXXX',
+  '44040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Dortmund',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '44137',
     bankLocation: 'Dortmund',
   ),
-  '44040061': Iban(
-    bic: 'COBADEFFXXX',
+  '44040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Dortmund',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '44137',
     bankLocation: 'Dortmund',
   ),
-  '44040085': Iban(
-    bic: 'COBADEFFXXX',
+  '44040085': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf WK, Dortmund',
     bankShortName: 'Commerzbank, Gf Web-K',
     bankPostcode: '44047',
     bankLocation: 'Dortmund',
   ),
-  '44050000': Iban(
-    bic: 'WELADE3DXXX',
+  '44050000': Bic(
+    value: 'WELADE3DXXX',
     bankName: 'Landesbank Hessen-Thüringen Girozentrale NL. Düsseldorf',
     bankShortName: 'Ld Bk Hess-Thür, Gz, Dus',
     bankPostcode: '44047',
     bankLocation: 'Dortmund',
   ),
-  '44050199': Iban(
-    bic: 'DORTDE33XXX',
+  '44050199': Bic(
+    value: 'DORTDE33XXX',
     bankName: 'Sparkasse Dortmund',
     bankShortName: 'Sparkasse Dortmund',
     bankPostcode: '44047',
     bankLocation: 'Dortmund',
   ),
-  '44060122': Iban(
-    bic: 'GENODEM1DNW',
+  '44060122': Bic(
+    value: 'GENODEM1DNW',
     bankName: 'Volksbank Dortmund-Nordwest (Gf P2)',
     bankShortName: 'Volksbank Dortmund-Nordwest',
     bankPostcode: '44359',
     bankLocation: 'Dortmund',
   ),
-  '44064406': Iban(
-    bic: 'GENODED1KDD',
+  '44064406': Bic(
+    value: 'GENODED1KDD',
     bankName: 'Bank für Kirche und Diakonie - KD-Bank Gf Sonder-BLZ',
     bankShortName: 'KD-Bank Dortmund',
     bankPostcode: '44135',
     bankLocation: 'Dortmund',
   ),
-  '44070024': Iban(
-    bic: 'DEUTDEDB448',
+  '44070024': Bic(
+    value: 'DEUTDEDB448',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59354',
     bankLocation: 'Werne',
   ),
-  '44070050': Iban(
-    bic: 'DEUTDEDE448',
+  '44070050': Bic(
+    value: 'DEUTDEDE448',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59354',
     bankLocation: 'Werne',
   ),
-  '44080050': Iban(
-    bic: 'DRESDEFF440',
+  '44080050': Bic(
+    value: 'DRESDEFF440',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Schwerte',
     bankPostcode: '58207',
     bankLocation: 'Schwerte',
   ),
-  '44080055': Iban(
-    bic: 'DRESDEFF446',
+  '44080055': Bic(
+    value: 'DRESDEFF446',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 55',
     bankShortName: 'Commerzbk Zw55 Dortmund',
     bankPostcode: '44047',
     bankLocation: 'Dortmund',
   ),
-  '44080057': Iban(
-    bic: 'DRESDEFF447',
+  '44080057': Bic(
+    value: 'DRESDEFF447',
     bankName: 'Commerzbank vormals Dresdner Bank Gf ZW 57',
     bankShortName: 'Commerzbk ZW 57 Dortmund',
     bankPostcode: '44047',
     bankLocation: 'Dortmund',
   ),
-  '44080085': Iban(
-    bic: 'DRESDEFFI69',
+  '44080085': Bic(
+    value: 'DRESDEFFI69',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITGK2 Dortmnd',
     bankPostcode: '44401',
     bankLocation: 'Dortmund',
   ),
-  '44089320': Iban(
-    bic: 'DRESDEFFI18',
+  '44089320': Bic(
+    value: 'DRESDEFFI18',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Dortmund',
     bankPostcode: '44047',
     bankLocation: 'Dortmund',
   ),
-  '44090920': Iban(
-    bic: 'GENODEF1P04',
+  '44090920': Bic(
+    value: 'GENODEF1P04',
     bankName: 'PSD Bank Dortmund -alt-',
     bankShortName: 'PSD Bank Dortmund -alt-',
     bankPostcode: '44139',
     bankLocation: 'Dortmund',
   ),
-  '44152370': Iban(
-    bic: 'WELADED1LUN',
+  '44152370': Bic(
+    value: 'WELADED1LUN',
     bankName: 'Sparkasse an der Lippe',
     bankShortName: 'Sparkasse an der Lippe',
     bankPostcode: '59379',
     bankLocation: 'Selm',
   ),
-  '44152490': Iban(
-    bic: 'WELADED1SWT',
+  '44152490': Bic(
+    value: 'WELADED1SWT',
     bankName: 'Stadtsparkasse Schwerte -alt-',
     bankShortName: 'Sparkasse Schwerte -alt-',
     bankPostcode: '58212',
     bankLocation: 'Schwerte',
   ),
-  '44160014': Iban(
-    bic: 'GENODEM1DOR',
+  '44160014': Bic(
+    value: 'GENODEM1DOR',
     bankName: 'Volksbank Waltrop Zndl d Dortmunder Volksbank',
     bankShortName: 'Dortmunder Volksbank',
     bankPostcode: '45724',
     bankLocation: 'Waltrop',
   ),
-  '44340037': Iban(
-    bic: 'COBADEFFXXX',
+  '44340037': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Unna',
     bankShortName: 'Commerzbank',
     bankPostcode: '59401',
     bankLocation: 'Unna',
   ),
-  '44350060': Iban(
-    bic: 'WELADED1UNN',
+  '44350060': Bic(
+    value: 'WELADED1UNN',
     bankName: 'Sparkasse UnnaKamen',
     bankShortName: 'Sparkasse UnnaKamen',
     bankPostcode: '59439',
     bankLocation: 'Holzwickede',
   ),
-  '44351380': Iban(
-    bic: 'WELADED1KAM',
+  '44351380': Bic(
+    value: 'WELADED1KAM',
     bankName: 'Sparkasse Kamen -alt-',
     bankShortName: 'Sparkasse Kamen -alt-',
     bankPostcode: '59159',
     bankLocation: 'Kamen',
   ),
-  '44351740': Iban(
-    bic: 'WELADED1FRN',
+  '44351740': Bic(
+    value: 'WELADED1FRN',
     bankName: 'Sparkasse Fröndenberg -alt-',
     bankShortName: 'Sparkasse Fröndenberg -alt-',
     bankPostcode: '58720',
     bankLocation: 'Fröndenberg/Ruhr',
   ),
-  '44361342': Iban(
-    bic: 'GENODEM1KWK',
+  '44361342': Bic(
+    value: 'GENODEM1KWK',
     bankName: 'Volksbank Kamen-Werne (Gf P2)',
     bankShortName: 'VB Kamen-Werne',
     bankPostcode: '59174',
     bankLocation: 'Kamen',
   ),
-  '44540022': Iban(
-    bic: 'COBADEFFXXX',
+  '44540022': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Menden Sauerl',
     bankShortName: 'Commerzbank',
     bankPostcode: '58684',
     bankLocation: 'Menden (Sauerland)',
   ),
-  '44550045': Iban(
-    bic: 'WELADED1ISL',
+  '44550045': Bic(
+    value: 'WELADED1ISL',
     bankName: 'Sparkasse der Stadt Iserlohn',
     bankShortName: 'Spk der Stadt Iserlohn',
     bankPostcode: '58634',
     bankLocation: 'Iserlohn',
   ),
-  '44551210': Iban(
-    bic: 'WELADED1HEM',
+  '44551210': Bic(
+    value: 'WELADED1HEM',
     bankName: 'Sparkasse Märkisches Sauerland Hemer-Menden',
     bankShortName: 'Spk Märkisches Sauerland',
     bankPostcode: '58675',
     bankLocation: 'Hemer',
   ),
-  '44570004': Iban(
-    bic: 'DEUTDEDW448',
+  '44570004': Bic(
+    value: 'DEUTDEDW448',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '58805',
     bankLocation: 'Neuenrade',
   ),
-  '44570024': Iban(
-    bic: 'DEUTDEDB953',
+  '44570024': Bic(
+    value: 'DEUTDEDB953',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '58772',
     bankLocation: 'Werdohl',
   ),
-  '44580070': Iban(
-    bic: 'DRESDEFF445',
+  '44580070': Bic(
+    value: 'DRESDEFF445',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Menden Sauerl',
     bankPostcode: '58682',
     bankLocation: 'Menden (Sauerland)',
   ),
-  '44580085': Iban(
-    bic: 'DRESDEFFI70',
+  '44580085': Bic(
+    value: 'DRESDEFFI70',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Iserlhn',
     bankPostcode: '58582',
     bankLocation: 'Iserlohn',
   ),
-  '44761312': Iban(
-    bic: 'GENODEM1MEN',
+  '44761312': Bic(
+    value: 'GENODEM1MEN',
     bankName: 'Mendener Bank (Gf P2)',
     bankShortName: 'Mendener Bank',
     bankPostcode: '58708',
     bankLocation: 'Menden (Sauerland)',
   ),
-  '44761534': Iban(
-    bic: 'GENODEM1NRD',
+  '44761534': Bic(
+    value: 'GENODEM1NRD',
     bankName: 'Volksbank in Südwestfalen (Gf P2)',
     bankShortName: 'VB in Südwestfalen',
     bankPostcode: '57072',
     bankLocation: 'Siegen',
   ),
-  '45000000': Iban(
-    bic: 'MARKDEF1450',
+  '45000000': Bic(
+    value: 'MARKDEF1450',
     bankName: 'Bundesbank eh Hagen',
     bankShortName: 'BBk eh Hagen',
     bankPostcode: '58042',
     bankLocation: 'Hagen',
   ),
-  '45040042': Iban(
-    bic: 'COBADEFFXXX',
+  '45040042': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Herdecke Ruhr',
     bankShortName: 'Commerzbank',
     bankPostcode: '58302',
     bankLocation: 'Herdecke',
   ),
-  '45050001': Iban(
-    bic: 'WELADE3HXXX',
+  '45050001': Bic(
+    value: 'WELADE3HXXX',
     bankName: 'Sparkasse HagenHerdecke',
     bankShortName: 'Sparkasse HagenHerdecke',
     bankPostcode: '58042',
     bankLocation: 'Hagen',
   ),
-  '45051485': Iban(
-    bic: 'WELADED1HER',
+  '45051485': Bic(
+    value: 'WELADED1HER',
     bankName: 'Stadtsparkasse Herdecke -alt-',
     bankShortName: 'St Spk Herdecke -alt-',
     bankPostcode: '58311',
     bankLocation: 'Herdecke',
   ),
-  '45060009': Iban(
-    bic: 'GENODEM1HGN',
+  '45060009': Bic(
+    value: 'GENODEM1HGN',
     bankName: 'Volksbank Menden Zndl der Märkischen Bank',
     bankShortName: 'Volksbank Menden',
     bankPostcode: '58689',
     bankLocation: 'Menden (Sauerland)',
   ),
-  '45061524': Iban(
-    bic: 'GENODEM1HLH',
+  '45061524': Bic(
+    value: 'GENODEM1HLH',
     bankName: 'Volksbank Hohenlimburg Zw',
     bankShortName: 'Volksbank Hohenlimburg',
     bankPostcode: '58769',
     bankLocation: 'Nachrodt-Wiblingwerde',
   ),
-  '45070002': Iban(
-    bic: 'DEUTDEDW451',
+  '45070002': Bic(
+    value: 'DEUTDEDW451',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '58507',
     bankLocation: 'Lüdenscheid',
   ),
-  '45070024': Iban(
-    bic: 'DEUTDEDB451',
+  '45070024': Bic(
+    value: 'DEUTDEDB451',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '58507',
     bankLocation: 'Lüdenscheid',
   ),
-  '45080060': Iban(
-    bic: 'DRESDEFF450',
+  '45080060': Bic(
+    value: 'DRESDEFF450',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Lüdenscheid',
     bankPostcode: '58464',
     bankLocation: 'Lüdenscheid',
   ),
-  '45240056': Iban(
-    bic: 'COBADEFFXXX',
+  '45240056': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Witten',
     bankShortName: 'Commerzbank',
     bankPostcode: '58452',
     bankLocation: 'Witten',
   ),
-  '45250035': Iban(
-    bic: 'WELADED1WTN',
+  '45250035': Bic(
+    value: 'WELADED1WTN',
     bankName: 'Sparkasse Witten',
     bankShortName: 'Sparkasse Witten',
     bankPostcode: '58449',
     bankLocation: 'Witten',
   ),
-  '45251480': Iban(
-    bic: 'WELADED1WET',
+  '45251480': Bic(
+    value: 'WELADED1WET',
     bankName: 'Stadtsparkasse Wetter -alt-',
     bankShortName: 'St Spk Wetter Ruhr -alt-',
     bankPostcode: '58300',
     bankLocation: 'Wetter (Ruhr)',
   ),
-  '45251515': Iban(
-    bic: 'SPSHDE31XXX',
+  '45251515': Bic(
+    value: 'SPSHDE31XXX',
     bankName: 'Stadtsparkasse Sprockhövel -alt-',
     bankShortName: 'St Spk Sprockhövel -alt-',
     bankPostcode: '45536',
     bankLocation: 'Sprockhövel',
   ),
-  '45260041': Iban(
-    bic: 'GENODEM1WTN',
+  '45260041': Bic(
+    value: 'GENODEM1WTN',
     bankName: 'Volksbank Witten -alt-',
     bankShortName: 'Volksbank Witten -alt-',
     bankPostcode: '58414',
     bankLocation: 'Witten',
   ),
-  '45260475': Iban(
-    bic: 'GENODEM1BFG',
+  '45260475': Bic(
+    value: 'GENODEM1BFG',
     bankName: 'Spar- u Kreditbank d Bundes Fr ev Gemeinden (Gf P2)',
     bankShortName: 'Spar- und Kreditbank',
     bankPostcode: '58426',
     bankLocation: 'Witten',
   ),
-  '45261547': Iban(
-    bic: 'GENODEM1SPO',
+  '45261547': Bic(
+    value: 'GENODEM1SPO',
     bankName: 'Volksbank Sprockhövel (Gf P2)',
     bankShortName: 'Volksbank Sprockhövel',
     bankPostcode: '45538',
     bankLocation: 'Sprockhövel',
   ),
-  '45450050': Iban(
-    bic: 'WELADED1GEV',
+  '45450050': Bic(
+    value: 'WELADED1GEV',
     bankName: 'Sparkasse an Ennepe und Ruhr',
     bankShortName: 'Spk an Ennepe und Ruhr',
     bankPostcode: '58265',
     bankLocation: 'Gevelsberg',
   ),
-  '45451060': Iban(
-    bic: 'WELADED1ENE',
+  '45451060': Bic(
+    value: 'WELADED1ENE',
     bankName: 'Sparkasse Ennepetal-Breckerfeld',
     bankShortName: 'Spk Ennepetal-Breckerfeld',
     bankPostcode: '58244',
     bankLocation: 'Ennepetal',
   ),
-  '45451555': Iban(
-    bic: 'WELADED1SLM',
+  '45451555': Bic(
+    value: 'WELADED1SLM',
     bankName: 'Sparkasse Schwelm-Sprockhövel',
     bankShortName: 'Spk Schwelm-Sprockhövel',
     bankPostcode: '58332',
     bankLocation: 'Schwelm',
   ),
-  '45660029': Iban(
-    bic: 'GENODEM1ALA',
+  '45660029': Bic(
+    value: 'GENODEM1ALA',
     bankName: 'Volksbank Altena -alt-',
     bankShortName: 'Volksbank Altena -alt-',
     bankPostcode: '58754',
     bankLocation: 'Altena',
   ),
-  '45840026': Iban(
-    bic: 'COBADEFFXXX',
+  '45840026': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Werdohl',
     bankShortName: 'Commerzbank',
     bankPostcode: '58771',
     bankLocation: 'Werdohl',
   ),
-  '45841031': Iban(
-    bic: 'COBADEFFXXX',
+  '45841031': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Plettenberg',
     bankShortName: 'Commerzbank',
     bankPostcode: '58811',
     bankLocation: 'Plettenberg',
   ),
-  '45850005': Iban(
-    bic: 'WELADED1LSD',
+  '45850005': Bic(
+    value: 'WELADED1LSD',
     bankName: 'Sparkasse Lüdenscheid',
     bankShortName: 'Spk Lüdenscheid',
     bankPostcode: '58553',
     bankLocation: 'Halver',
   ),
-  '45851020': Iban(
-    bic: 'WELADED1PLB',
+  '45851020': Bic(
+    value: 'WELADED1PLB',
     bankName: 'Vereinigte Sparkasse im Märkischen Kreis',
     bankShortName: 'Ver Spk Nachrodt',
     bankPostcode: '58769',
     bankLocation: 'Nachrodt-Wiblingwerde',
   ),
-  '45851665': Iban(
-    bic: 'WELADED1KMZ',
+  '45851665': Bic(
+    value: 'WELADED1KMZ',
     bankName: 'Sparkasse Kierspe-Meinerzhagen',
     bankShortName: 'Spk Kierspe-Meinerzhagen',
     bankPostcode: '58555',
     bankLocation: 'Kierspe',
   ),
-  '45860033': Iban(
-    bic: 'GENODEM1LHA',
+  '45860033': Bic(
+    value: 'GENODEM1LHA',
     bankName: 'Volksbank Lüdenscheid -alt- (Gf P2)',
     bankShortName: 'Volksbank Lüdenscheid -alt-',
     bankPostcode: '58478',
     bankLocation: 'Lüdenscheid',
   ),
-  '45861434': Iban(
-    bic: 'GENODEM1KIE',
+  '45861434': Bic(
+    value: 'GENODEM1KIE',
     bankName: 'Volksbank Kierspe (Gf P2)',
     bankShortName: 'Volksbank Kierspe',
     bankPostcode: '58556',
     bankLocation: 'Kierspe',
   ),
-  '45861617': Iban(
-    bic: 'GENODEM1MOM',
+  '45861617': Bic(
+    value: 'GENODEM1MOM',
     bankName: 'Volksbank Meinerzhagen -alt- (Gf P2)',
     bankShortName: 'VB Meinerzhagen -alt-',
     bankPostcode: '58531',
     bankLocation: 'Meinerzhagen',
   ),
-  '46040033': Iban(
-    bic: 'COBADEFFXXX',
+  '46040033': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Marienbg',
     bankShortName: 'Commerzbank',
     bankPostcode: '56464',
     bankLocation: 'Bad Marienberg (Westerwald)',
   ),
-  '46050001': Iban(
-    bic: 'WELADED1SIE',
+  '46050001': Bic(
+    value: 'WELADED1SIE',
     bankName: 'Sparkasse Siegen',
     bankShortName: 'Spk Siegen',
     bankPostcode: '57009',
     bankLocation: 'Siegen',
   ),
-  '46051240': Iban(
-    bic: 'WELADED1BUB',
+  '46051240': Bic(
+    value: 'WELADED1BUB',
     bankName: 'Sparkasse Burbach-Neunkirchen',
     bankShortName: 'Spk Burbach-Neunkirchen',
     bankPostcode: '57290',
     bankLocation: 'Neunkirchen',
   ),
-  '46051733': Iban(
-    bic: 'WELADED1FRE',
+  '46051733': Bic(
+    value: 'WELADED1FRE',
     bankName: 'Stadtsparkasse Freudenberg -alt-',
     bankShortName: 'St Spk Freudenberg -alt-',
     bankPostcode: '57251',
     bankLocation: 'Freudenberg',
   ),
-  '46051875': Iban(
-    bic: 'WELADED1HIL',
+  '46051875': Bic(
+    value: 'WELADED1HIL',
     bankName: 'Stadtsparkasse Hilchenbach -alt-',
     bankShortName: 'St Spk Hilchenbach -alt-',
     bankPostcode: '57271',
     bankLocation: 'Hilchenbach',
   ),
-  '46052855': Iban(
-    bic: 'WELADED1SMB',
+  '46052855': Bic(
+    value: 'WELADED1SMB',
     bankName: 'Stadtsparkasse Schmallenberg -alt-',
     bankShortName: 'St Spk Schmallenberg -alt-',
     bankPostcode: '57376',
     bankLocation: 'Schmallenberg',
   ),
-  '46053480': Iban(
-    bic: 'WELADED1BEB',
+  '46053480': Bic(
+    value: 'WELADED1BEB',
     bankName: 'Sparkasse Wittgenstein',
     bankShortName: 'Sparkasse Wittgenstein',
     bankPostcode: '57334',
     bankLocation: 'Bad Laasphe',
   ),
-  '46060040': Iban(
-    bic: 'GENODEM1SNS',
+  '46060040': Bic(
+    value: 'GENODEM1SNS',
     bankName: 'Volksbank Siegerland (Gf P2)',
     bankShortName: 'Volksbank Siegerland Siegen',
     bankPostcode: '57011',
     bankLocation: 'Siegen',
   ),
-  '46061724': Iban(
-    bic: 'GENODEM1FRF',
+  '46061724': Bic(
+    value: 'GENODEM1FRF',
     bankName: 'VR-Bank Freudenberg-Niederfischbach (Gf P2)',
     bankShortName: 'VR-Bank Freudenb.-Niederfi.',
     bankPostcode: '57258',
     bankLocation: 'Freudenberg',
   ),
-  '46062817': Iban(
-    bic: 'GENODEM1SMA',
+  '46062817': Bic(
+    value: 'GENODEM1SMA',
     bankName: 'Volksbank Bigge-Lenne (Gf P2)',
     bankShortName: 'Volksbank Bigge-Lenne',
     bankPostcode: '57392',
     bankLocation: 'Schmallenberg',
   ),
-  '46063405': Iban(
-    bic: 'GENODEM1BB1',
+  '46063405': Bic(
+    value: 'GENODEM1BB1',
     bankName: 'Volksbank Wittgenstein Zw',
     bankShortName: 'Volksbank Wittgenstein',
     bankPostcode: '57339',
     bankLocation: 'Erndtebrück',
   ),
-  '46070024': Iban(
-    bic: 'DEUTDEDB464',
+  '46070024': Bic(
+    value: 'DEUTDEDB464',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '57537',
     bankLocation: 'Wissen',
   ),
-  '46070090': Iban(
-    bic: 'DEUTDEDK472',
+  '46070090': Bic(
+    value: 'DEUTDEDK472',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '57368',
     bankLocation: 'Lennestadt',
   ),
-  '46080010': Iban(
-    bic: 'DRESDEFF460',
+  '46080010': Bic(
+    value: 'DRESDEFF460',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bad Marienbg',
     bankPostcode: '56464',
     bankLocation: 'Bad Marienberg (Westerwald)',
   ),
-  '46240016': Iban(
-    bic: 'COBADEFFXXX',
+  '46240016': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Olpe Biggesee',
     bankShortName: 'Commerzbank',
     bankPostcode: '57462',
     bankLocation: 'Olpe',
   ),
-  '46250049': Iban(
-    bic: 'WELADED1OPE',
+  '46250049': Bic(
+    value: 'WELADED1OPE',
     bankName: 'Sparkasse Olpe-Drolshagen-Wenden',
     bankShortName: 'Spk Olpe-Drolshagen-Wenden',
     bankPostcode: '57482',
     bankLocation: 'Wenden',
   ),
-  '46251590': Iban(
-    bic: 'WELADED1FTR',
+  '46251590': Bic(
+    value: 'WELADED1FTR',
     bankName: 'Sparkasse Finnentrop -alt-',
     bankShortName: 'Spk Finnentrop -alt-',
     bankPostcode: '57401',
     bankLocation: 'Finnentrop',
   ),
-  '46251630': Iban(
-    bic: 'WELADED1ALK',
+  '46251630': Bic(
+    value: 'WELADED1ALK',
     bankName: 'Sparkasse Attendorn-Lennestadt-Kirchhundem',
     bankShortName: 'Spk Attend-Lennest-Kirchhdm',
     bankPostcode: '57368',
     bankLocation: 'Lennestadt',
   ),
-  '46260023': Iban(
-    bic: 'GENODEM1OLP',
+  '46260023': Bic(
+    value: 'GENODEM1OLP',
     bankName: 'Volksbank Olpe (Gf P2)',
     bankShortName: 'Volksbank Olpe',
     bankPostcode: '57450',
     bankLocation: 'Olpe',
   ),
-  '46261607': Iban(
-    bic: 'GENODEM1GLG',
+  '46261607': Bic(
+    value: 'GENODEM1GLG',
     bankName: 'Volksbank Grevenbrück (Gf P2)',
     bankShortName: 'Volksbank Grevenbrück',
     bankPostcode: '57368',
     bankLocation: 'Lennestadt',
   ),
-  '46261822': Iban(
-    bic: 'GENODEM1WDD',
+  '46261822': Bic(
+    value: 'GENODEM1WDD',
     bankName: 'Volksbank Wenden-Drolshagen',
     bankShortName: 'Volksbank Wenden-Drolshagen',
     bankPostcode: '57485',
     bankLocation: 'Drolshagen',
   ),
-  '46262456': Iban(
-    bic: 'GENODEM1HUL',
+  '46262456': Bic(
+    value: 'GENODEM1HUL',
     bankName: 'Volksbank Bigge-Lenne (Gf P2)',
     bankShortName: 'Volksbank Bigge-Lenne',
     bankPostcode: '57368',
     bankLocation: 'Lennestadt',
   ),
-  '46441003': Iban(
-    bic: 'COBADEFFXXX',
+  '46441003': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Meschede',
     bankShortName: 'Commerzbank',
     bankPostcode: '59851',
     bankLocation: 'Meschede',
   ),
-  '46451012': Iban(
-    bic: 'WELADED1MES',
+  '46451012': Bic(
+    value: 'WELADED1MES',
     bankName: 'Sparkasse Mitten im Sauerland',
     bankShortName: 'Spk Mitten im Sauerland',
     bankPostcode: '59856',
     bankLocation: 'Meschede',
   ),
-  '46451250': Iban(
-    bic: 'WELADED1BST',
+  '46451250': Bic(
+    value: 'WELADED1BST',
     bankName: 'Sparkasse Bestwig -alt-',
     bankShortName: 'Spk Bestwig -alt-',
     bankPostcode: '59909',
     bankLocation: 'Bestwig',
   ),
-  '46461126': Iban(
-    bic: 'GENODEM1SRL',
+  '46461126': Bic(
+    value: 'GENODEM1SRL',
     bankName: 'Volksbank Sauerland (Gf P2)',
     bankShortName: 'Volksbank Sauerland',
     bankPostcode: '59857',
     bankLocation: 'Meschede',
   ),
-  '46462271': Iban(
-    bic: 'GENODEM1ANO',
+  '46462271': Bic(
+    value: 'GENODEM1ANO',
     bankName: 'Spar- und Darlehnskasse Oeventrop (Gf P2)',
     bankShortName: 'SpDK Oeventrop',
     bankPostcode: '59810',
     bankLocation: 'Arnsberg',
   ),
-  '46464453': Iban(
-    bic: 'GENODEM1RET',
+  '46464453': Bic(
+    value: 'GENODEM1RET',
     bankName: 'Volksbank Reiste-Eslohe (Gf P2)',
     bankShortName: 'Volksbank Reiste-Eslohe',
     bankPostcode: '59884',
     bankLocation: 'Eslohe (Sauerland)',
   ),
-  '46640018': Iban(
-    bic: 'COBADEFFXXX',
+  '46640018': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Arnsberg-Neheim',
     bankShortName: 'Commerzbank',
     bankPostcode: '59704',
     bankLocation: 'Arnsberg',
   ),
-  '46650005': Iban(
-    bic: 'WELADED1ARN',
+  '46650005': Bic(
+    value: 'WELADED1ARN',
     bankName: 'Sparkasse Arnsberg-Sundern',
     bankShortName: 'Spk Arnsberg-Sundern',
     bankPostcode: '59846',
     bankLocation: 'Sundern (Sauerland)',
   ),
-  '46660022': Iban(
-    bic: 'GENODEM1NEH',
+  '46660022': Bic(
+    value: 'GENODEM1NEH',
     bankName: 'Volksbank Sauerland (Gf P2)',
     bankShortName: 'Volksbank Sauerland',
     bankPostcode: '59738',
     bankLocation: 'Arnsberg',
   ),
-  '46670007': Iban(
-    bic: 'DEUTDEDW468',
+  '46670007': Bic(
+    value: 'DEUTDEDW468',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59852',
     bankLocation: 'Meschede',
   ),
-  '46670024': Iban(
-    bic: 'DEUTDEDB467',
+  '46670024': Bic(
+    value: 'DEUTDEDB467',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59831',
     bankLocation: 'Sundern (Sauerland)',
   ),
-  '46670204': Iban(
-    bic: 'DEUTDEDWP03',
+  '46670204': Bic(
+    value: 'DEUTDEDWP03',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '59755',
     bankLocation: 'Arnsberg',
   ),
-  '46670224': Iban(
-    bic: 'DEUTDEDBP03',
+  '46670224': Bic(
+    value: 'DEUTDEDBP03',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '59755',
     bankLocation: 'Arnsberg',
   ),
-  '47000000': Iban(
-    bic: 'MARKDEF1470',
+  '47000000': Bic(
+    value: 'MARKDEF1470',
     bankName: 'Bundesbank Dortmund',
     bankShortName: 'BBk Dortmund',
     bankPostcode: '44025',
     bankLocation: 'Dortmund',
   ),
-  '47240047': Iban(
-    bic: 'COBADEFFXXX',
+  '47240047': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Driburg Wes',
     bankShortName: 'Commerzbank',
     bankPostcode: '33014',
     bankLocation: 'Bad Driburg',
   ),
-  '47250101': Iban(
-    bic: 'WELADED1PBN',
+  '47250101': Bic(
+    value: 'WELADED1PBN',
     bankName: 'Sparkasse Paderborn -alt-',
     bankShortName: 'Sparkasse Paderborn -alt-',
     bankPostcode: '33054',
     bankLocation: 'Paderborn',
   ),
-  '47251550': Iban(
-    bic: 'WELADED1HXB',
+  '47251550': Bic(
+    value: 'WELADED1HXB',
     bankName: 'Spk Höxter Willebadessen',
     bankShortName: 'Sparkasse Höxter',
     bankPostcode: '34439',
     bankLocation: 'Willebadessen',
   ),
-  '47251740': Iban(
-    bic: 'WELADED1DEL',
+  '47251740': Bic(
+    value: 'WELADED1DEL',
     bankName: 'Stadtsparkasse Delbrück',
     bankShortName: 'St Spk Delbrück',
     bankPostcode: '33129',
     bankLocation: 'Delbrück',
   ),
-  '47260121': Iban(
-    bic: 'DGPBDE3MEPW',
+  '47260121': Bic(
+    value: 'DGPBDE3MEPW',
     bankName: 'VerbundVolksbank OWL (Gf P2)',
     bankShortName: 'VerbundVolksbank OWL',
     bankPostcode: '33057',
     bankLocation: 'Paderborn',
   ),
-  '47260234': Iban(
-    bic: 'GENODEM1EWB',
+  '47260234': Bic(
+    value: 'GENODEM1EWB',
     bankName: 'Volksbank Elsen-Wewer-Borchen (Gf P2)',
     bankShortName: 'VB Elsen-Wewer-Borchen',
     bankPostcode: '33075',
     bankLocation: 'Paderborn',
   ),
-  '47260307': Iban(
-    bic: 'GENODEM1BKC',
+  '47260307': Bic(
+    value: 'GENODEM1BKC',
     bankName: 'Bank für Kirche und Caritas (Gf P2)',
     bankShortName: 'Bank für Kirche und Caritas',
     bankPostcode: '33044',
     bankLocation: 'Paderborn',
   ),
-  '47261429': Iban(
-    bic: 'GENODEM1WNH',
+  '47261429': Bic(
+    value: 'GENODEM1WNH',
     bankName: 'Volksbank Haaren -alt-',
     bankShortName: 'Volksbank Haaren -alt-',
     bankPostcode: '33181',
     bankLocation: 'Bad Wünnenberg',
   ),
-  '47261603': Iban(
-    bic: 'GENODEM1BUS',
+  '47261603': Bic(
+    value: 'GENODEM1BUS',
     bankName: 'Volksbank Brilon-Büren-Salzkotten (Gf P2)',
     bankShortName: 'VB Brilon-Büren-Salzkotten',
     bankPostcode: '33146',
     bankLocation: 'Salzkotten',
   ),
-  '47262626': Iban(
-    bic: 'GENODEM1WDE',
+  '47262626': Bic(
+    value: 'GENODEM1WDE',
     bankName: 'Volksbank Westenholz (Gf P2)',
     bankShortName: 'Volksbank Westenholz',
     bankPostcode: '33129',
     bankLocation: 'Delbrück',
   ),
-  '47262703': Iban(
-    bic: 'GENODEM1DLB',
+  '47262703': Bic(
+    value: 'GENODEM1DLB',
     bankName: 'Volksbank Delbrück-Hövelhof (Gf P2)',
     bankShortName: 'VB Delbrück-Hövelhof',
     bankPostcode: '33129',
     bankLocation: 'Delbrück',
   ),
-  '47264367': Iban(
-    bic: 'GENODEM1STM',
+  '47264367': Bic(
+    value: 'GENODEM1STM',
     bankName: 'Vereinigte Volksbank (Gf P2)',
     bankShortName: 'Vereinigte Volksbank',
     bankPostcode: '33029',
     bankLocation: 'Brakel',
   ),
-  '47265383': Iban(
-    bic: 'GENODEM1WAH',
+  '47265383': Bic(
+    value: 'GENODEM1WAH',
     bankName: 'Volksbank Wewelsburg-Ahden (Gf P2)',
     bankShortName: 'VB Wewelsburg-Ahden',
     bankPostcode: '33142',
     bankLocation: 'Büren',
   ),
-  '47267216': Iban(
-    bic: 'GENODEM1BOT',
+  '47267216': Bic(
+    value: 'GENODEM1BOT',
     bankName: 'Volksbank Borgentreich -alt-',
     bankShortName: 'Volksbank Borgentreich-alt-',
     bankPostcode: '34432',
     bankLocation: 'Borgentreich',
   ),
-  '47270024': Iban(
-    bic: 'DEUTDEDB958',
+  '47270024': Bic(
+    value: 'DEUTDEDB958',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '37652',
     bankLocation: 'Höxter',
   ),
-  '47270029': Iban(
-    bic: 'DEUTDE3B474',
+  '47270029': Bic(
+    value: 'DEUTDE3B474',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '33166',
     bankLocation: 'Bad Lippspringe',
   ),
-  '47460028': Iban(
-    bic: 'GENODEM1WBG',
+  '47460028': Bic(
+    value: 'GENODEM1WBG',
     bankName: 'Volksbank Warburger Land (Gf P2)',
     bankShortName: 'Volksbank Warburger Land',
     bankPostcode: '34405',
     bankLocation: 'Warburg',
   ),
-  '47640051': Iban(
-    bic: 'COBADEFFXXX',
+  '47640051': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Pyrmont',
     bankShortName: 'Commerzbank',
     bankPostcode: '31795',
     bankLocation: 'Bad Pyrmont',
   ),
-  '47650130': Iban(
-    bic: 'WELADE3LXXX',
+  '47650130': Bic(
+    value: 'WELADE3LXXX',
     bankName: 'Sparkasse Paderborn-Detmold',
     bankShortName: 'Spk Paderborn-Detmold',
     bankPostcode: '33142',
     bankLocation: 'Büren',
   ),
-  '47651225': Iban(
-    bic: 'WELADED1BLO',
+  '47651225': Bic(
+    value: 'WELADED1BLO',
     bankName: 'Stadtsparkasse Blomberg -alt-',
     bankShortName: 'St Spk Blomberg -alt-',
     bankPostcode: '32820',
     bankLocation: 'Blomberg',
   ),
-  '47670023': Iban(
-    bic: 'DEUTDE3B452',
+  '47670023': Bic(
+    value: 'DEUTDE3B452',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '32792',
     bankLocation: 'Horn-Bad Meinberg',
   ),
-  '47670024': Iban(
-    bic: 'DEUTDEDB478',
+  '47670024': Bic(
+    value: 'DEUTDEDB478',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '32632',
     bankLocation: 'Lemgo',
   ),
-  '47670205': Iban(
-    bic: 'DEUTDE3BP04',
+  '47670205': Bic(
+    value: 'DEUTDE3BP04',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '32756',
     bankLocation: 'Detmold',
   ),
-  '47670224': Iban(
-    bic: 'DEUTDEDBP04',
+  '47670224': Bic(
+    value: 'DEUTDEDBP04',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '32756',
     bankLocation: 'Detmold',
   ),
-  '47691200': Iban(
-    bic: 'GENODEM1OLB',
+  '47691200': Bic(
+    value: 'GENODEM1OLB',
     bankName: 'Volksbank Ostlippe Zndl. Schieder-Schwalenberg',
     bankShortName: 'VB Schieder-Schwalenberg',
     bankPostcode: '32816',
     bankLocation: 'Schieder-Schwalenberg',
   ),
-  '47840065': Iban(
-    bic: 'COBADEFFXXX',
+  '47840065': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Oelde',
     bankShortName: 'Commerzbank',
     bankPostcode: '59280',
     bankLocation: 'Oelde',
   ),
-  '47840080': Iban(
-    bic: 'COBADEFFXXX',
+  '47840080': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Zw 80',
     bankShortName: 'Commerzbank Zw 80',
     bankPostcode: '33244',
     bankLocation: 'Gütersloh',
   ),
-  '47850065': Iban(
-    bic: 'WELADED1GTL',
+  '47850065': Bic(
+    value: 'WELADED1GTL',
     bankName: 'Sparkasse Gütersloh-Rietberg-Versmold',
     bankShortName: 'Spk Harsewinkel Gütersloh',
     bankPostcode: '33428',
     bankLocation: 'Harsewinkel',
   ),
-  '47852760': Iban(
-    bic: 'WELADED1RTG',
+  '47852760': Bic(
+    value: 'WELADED1RTG',
     bankName: 'Sparkasse Rietberg -alt-',
     bankShortName: 'Spk Rietberg -alt-',
     bankPostcode: '33381',
     bankLocation: 'Rietberg',
   ),
-  '47853355': Iban(
-    bic: 'WELADED1VSM',
+  '47853355': Bic(
+    value: 'WELADED1VSM',
     bankName: 'Stadtsparkasse Versmold -alt-',
     bankShortName: 'St Spk Versmold -alt-',
     bankPostcode: '33762',
     bankLocation: 'Versmold',
   ),
-  '47853520': Iban(
-    bic: 'WELADED1WDB',
+  '47853520': Bic(
+    value: 'WELADED1WDB',
     bankName: 'Kreissparkasse Wiedenbrück',
     bankShortName: 'Kreissparkasse Wiedenbrück',
     bankPostcode: '33758',
     bankLocation: 'Schloß Holte-Stukenbrock',
   ),
-  '47860125': Iban(
-    bic: 'VBGTDE3MXXX',
+  '47860125': Bic(
+    value: 'VBGTDE3MXXX',
     bankName: 'Volksbank Bielefeld-Gütersloh Zndl',
     bankShortName: 'VB Bielefeld-Gütersloh',
     bankPostcode: '33758',
     bankLocation: 'Schloß Holte-Stukenbrock',
   ),
-  '47861317': Iban(
-    bic: 'GENODEM1CLL',
+  '47861317': Bic(
+    value: 'GENODEM1CLL',
     bankName: 'Volksbank im Ostmünsterland -alt-',
     bankShortName: 'VB im Ostmünsterland -alt-',
     bankPostcode: '33419',
     bankLocation: 'Harsewinkel',
   ),
-  '47861518': Iban(
-    bic: 'GENODEM1HWI',
+  '47861518': Bic(
+    value: 'GENODEM1HWI',
     bankName: 'Volksbank Harsewinkel -alt-',
     bankShortName: 'Volksbank Harsewinkel -alt-',
     bankPostcode: '33419',
     bankLocation: 'Harsewinkel',
   ),
-  '47862261': Iban(
-    bic: 'GENODEM1MFD',
+  '47862261': Bic(
+    value: 'GENODEM1MFD',
     bankName: 'Volksbank Marienfeld -alt-',
     bankShortName: 'Volksbank Marienfeld -alt-',
     bankPostcode: '33429',
     bankLocation: 'Marienfeld',
   ),
-  '47862447': Iban(
-    bic: 'GENODEM1RNE',
+  '47862447': Bic(
+    value: 'GENODEM1RNE',
     bankName: 'Volksbank Rietberg (Gf P2)',
     bankShortName: 'Volksbank Rietberg',
     bankPostcode: '33383',
     bankLocation: 'Rietberg',
   ),
-  '47863373': Iban(
-    bic: 'GENODEM1VMD',
+  '47863373': Bic(
+    value: 'GENODEM1VMD',
     bankName: 'Volksbank Versmold (Gf P2)',
     bankShortName: 'Volksbank Versmold',
     bankPostcode: '33762',
     bankLocation: 'Versmold',
   ),
-  '47880031': Iban(
-    bic: 'DRESDEFF478',
+  '47880031': Bic(
+    value: 'DRESDEFF478',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Rheda-Wiedenb',
     bankPostcode: '33341',
     bankLocation: 'Rheda-Wiedenbrück',
   ),
-  '48000000': Iban(
-    bic: 'MARKDEF1480',
+  '48000000': Bic(
+    value: 'MARKDEF1480',
     bankName: 'BBk Bielefeld',
     bankShortName: 'Bundesbank',
     bankPostcode: '33518',
     bankLocation: 'Bielefeld',
   ),
-  '48020086': Iban(
-    bic: 'HYVEDEMM344',
+  '48020086': Bic(
+    value: 'HYVEDEMM344',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '33505',
     bankLocation: 'Bielefeld',
   ),
-  '48020151': Iban(
-    bic: 'LAMPDEDDXXX',
+  '48020151': Bic(
+    value: 'LAMPDEDDXXX',
     bankName: 'Hauck Aufhäuser Lampe Privatbank',
     bankShortName: 'Hauck Aufhäuser Lampe',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '48021900': Iban(
-    bic: 'DGPBDE3MBVW',
+  '48021900': Bic(
+    value: 'DGPBDE3MBVW',
     bankName: 'Bankverein Werther Zw Ndl der VerbundVolksbank OWL',
     bankShortName: 'Bankv.Werther ZwNdl VV OWL',
     bankPostcode: '33824',
     bankLocation: 'Werther (Westf.)',
   ),
-  '48040035': Iban(
-    bic: 'COBADEFFXXX',
+  '48040035': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Marsberg',
     bankShortName: 'Commerzbank',
     bankPostcode: '34421',
     bankLocation: 'Marsberg',
   ),
-  '48040060': Iban(
-    bic: 'COBADEFFXXX',
+  '48040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Bielefeld',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '33605',
     bankLocation: 'Bielefeld',
   ),
-  '48040061': Iban(
-    bic: 'COBADEFFXXX',
+  '48040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Bielefeld',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '33605',
     bankLocation: 'Bielefeld',
   ),
-  '48050161': Iban(
-    bic: 'SPBIDE3BXXX',
+  '48050161': Bic(
+    value: 'SPBIDE3BXXX',
     bankName: 'Sparkasse Bielefeld',
     bankShortName: 'Spk Bielefeld',
     bankPostcode: '33526',
     bankLocation: 'Bielefeld',
   ),
-  '48051580': Iban(
-    bic: 'WELADED1HAW',
+  '48051580': Bic(
+    value: 'WELADED1HAW',
     bankName: 'Kreissparkasse Halle',
     bankShortName: 'Kreissparkasse Halle',
     bankPostcode: '33829',
     bankLocation: 'Borgholzhausen',
   ),
-  '48060036': Iban(
-    bic: 'GENODEM1BIE',
+  '48060036': Bic(
+    value: 'GENODEM1BIE',
     bankName: 'Bielefelder Volksbank (Gf P2)',
     bankShortName: 'Bielefelder Volksbank',
     bankPostcode: '33529',
     bankLocation: 'Bielefeld',
   ),
-  '48062051': Iban(
-    bic: 'GENODEM1HLW',
+  '48062051': Bic(
+    value: 'GENODEM1HLW',
     bankName: 'Volksbank Halle/Westf (Gf P2)',
     bankShortName: 'Volksbank Halle/Westf',
     bankPostcode: '33781',
     bankLocation: 'Halle (Westf.)',
   ),
-  '48062466': Iban(
-    bic: 'GENODEM1SHS',
+  '48062466': Bic(
+    value: 'GENODEM1SHS',
     bankName: 'Spar-u Darlehnskasse Schloß Holte-Stukenbrock (Gf P2)',
     bankShortName: 'Spar-u Darlehnskasse',
     bankPostcode: '33751',
     bankLocation: 'Schloß Holte-Stukenbrock',
   ),
-  '48070020': Iban(
-    bic: 'DEUTDE3B486',
+  '48070020': Bic(
+    value: 'DEUTDE3B486',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '33804',
     bankLocation: 'Oerlinghausen',
   ),
-  '48070024': Iban(
-    bic: 'DEUTDEDB488',
+  '48070024': Bic(
+    value: 'DEUTDEDB488',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '32131',
     bankLocation: 'Spenge',
   ),
-  '48070040': Iban(
-    bic: 'DEUTDE3B480',
+  '48070040': Bic(
+    value: 'DEUTDE3B480',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '33244',
     bankLocation: 'Gütersloh',
   ),
-  '48070042': Iban(
-    bic: 'DEUTDE3B484',
+  '48070042': Bic(
+    value: 'DEUTDE3B484',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '33416',
     bankLocation: 'Harsewinkel',
   ),
-  '48070043': Iban(
-    bic: 'DEUTDE3B489',
+  '48070043': Bic(
+    value: 'DEUTDE3B489',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '33398',
     bankLocation: 'Verl',
   ),
-  '48070044': Iban(
-    bic: 'DEUTDE3B487',
+  '48070044': Bic(
+    value: 'DEUTDE3B487',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '33341',
     bankLocation: 'Rheda-Wiedenbrück',
   ),
-  '48070045': Iban(
-    bic: 'DEUTDE3B413',
+  '48070045': Bic(
+    value: 'DEUTDE3B413',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '59243',
     bankLocation: 'Beckum',
   ),
-  '48070050': Iban(
-    bic: 'DEUTDE3B481',
+  '48070050': Bic(
+    value: 'DEUTDE3B481',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '32004',
     bankLocation: 'Herford',
   ),
-  '48070052': Iban(
-    bic: 'DEUTDE3B492',
+  '48070052': Bic(
+    value: 'DEUTDE3B492',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '32215',
     bankLocation: 'Bünde',
   ),
-  '48080020': Iban(
-    bic: 'DRESDEFF480',
+  '48080020': Bic(
+    value: 'DRESDEFF480',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bad Salzufeln',
     bankPostcode: '32064',
     bankLocation: 'Bad Salzuflen',
   ),
-  '48089350': Iban(
-    bic: 'DRESDEFFI19',
+  '48089350': Bic(
+    value: 'DRESDEFFI19',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbk ITGK Bielefeld',
     bankPostcode: '33502',
     bankLocation: 'Bielefeld',
   ),
-  '48250110': Iban(
-    bic: 'WELADED1LEM',
+  '48250110': Bic(
+    value: 'WELADED1LEM',
     bankName: 'Sparkasse Lemgo',
     bankShortName: 'Sparkasse Lemgo',
     bankPostcode: '32102',
     bankLocation: 'Bad Salzuflen',
   ),
-  '48291490': Iban(
-    bic: 'GENODEM1BSU',
+  '48291490': Bic(
+    value: 'GENODEM1BSU',
     bankName: 'Volksbank Kalletal Ndl d VB Bad Salzuflen',
     bankShortName: 'Volksbank Kalletal',
     bankPostcode: '32689',
     bankLocation: 'Kalletal',
   ),
-  '49040043': Iban(
-    bic: 'COBADEFFXXX',
+  '49040043': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Minden Westf',
     bankShortName: 'Commerzbank',
     bankPostcode: '32423',
     bankLocation: 'Minden',
   ),
-  '49050101': Iban(
-    bic: 'WELADED1MIN',
+  '49050101': Bic(
+    value: 'WELADED1MIN',
     bankName: 'Sparkasse Minden-Lübbecke',
     bankShortName: 'Sparkasse Minden-Lübbecke',
     bankPostcode: '32361',
     bankLocation: 'Preußisch Oldendorf',
   ),
-  '49051065': Iban(
-    bic: 'WELADED1RHD',
+  '49051065': Bic(
+    value: 'WELADED1RHD',
     bankName: 'Stadtsparkasse Rahden',
     bankShortName: 'Stadtsparkasse Rahden',
     bankPostcode: '32362',
     bankLocation: 'Rahden',
   ),
-  '49051285': Iban(
-    bic: 'WELADED1OEH',
+  '49051285': Bic(
+    value: 'WELADED1OEH',
     bankName: 'Sparkasse Bad Oeynhausen-Porta Westfalica',
     bankShortName: 'Spk Bad Oeynh.-Porta Westf.',
     bankPostcode: '32543',
     bankLocation: 'Bad Oeynhausen',
   ),
-  '49051990': Iban(
-    bic: 'WELADED1PWF',
+  '49051990': Bic(
+    value: 'WELADED1PWF',
     bankName: 'Stadtsparkasse Porta Westfalica -alt-',
     bankShortName: 'St Spk Porta Westfalica-alt',
     bankPostcode: '32457',
     bankLocation: 'Porta Westfalica',
   ),
-  '49060127': Iban(
-    bic: 'GENODEM1MPW',
+  '49060127': Bic(
+    value: 'GENODEM1MPW',
     bankName: 'Volksbank Mindener Land (Gf P2)',
     bankShortName: 'Volksbank Mindener Land',
     bankPostcode: '32387',
     bankLocation: 'Minden',
   ),
-  '49060392': Iban(
-    bic: 'GENODEM1MND',
+  '49060392': Bic(
+    value: 'GENODEM1MND',
     bankName: 'Volksbank Minden (Gf P2)',
     bankShortName: 'Volksbank Minden',
     bankPostcode: '32389',
     bankLocation: 'Minden',
   ),
-  '49061470': Iban(
-    bic: 'GENODEM1STR',
+  '49061470': Bic(
+    value: 'GENODEM1STR',
     bankName: 'Volksbank Stemweder Berg -alt-',
     bankShortName: 'VB Stemweder Berg -alt-',
     bankPostcode: '32369',
     bankLocation: 'Rahden',
   ),
-  '49061510': Iban(
-    bic: 'GENODEM1EPW',
+  '49061510': Bic(
+    value: 'GENODEM1EPW',
     bankName: 'Volksbank Eisbergen (Gf P2)',
     bankShortName: 'Volksbank Eisbergen',
     bankPostcode: '32457',
     bankLocation: 'Porta Westfalica',
   ),
-  '49070024': Iban(
-    bic: 'DEUTDEDB495',
+  '49070024': Bic(
+    value: 'DEUTDEDB495',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '32292',
     bankLocation: 'Lübbecke',
   ),
-  '49070028': Iban(
-    bic: 'DEUTDE3B495',
+  '49070028': Bic(
+    value: 'DEUTDE3B495',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '32292',
     bankLocation: 'Lübbecke',
   ),
-  '49080025': Iban(
-    bic: 'DRESDEFF491',
+  '49080025': Bic(
+    value: 'DRESDEFF491',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Lübbecke',
     bankPostcode: '32292',
     bankLocation: 'Lübbecke',
   ),
-  '49092650': Iban(
-    bic: 'GENODEM1LUB',
+  '49092650': Bic(
+    value: 'GENODEM1LUB',
     bankName: 'Volksbank Lübbecker Land (Gf P2)',
     bankShortName: 'Volksbank Lübbecker Land',
     bankPostcode: '32295',
     bankLocation: 'Lübbecke',
   ),
-  '49240096': Iban(
-    bic: 'COBADEFFXXX',
+  '49240096': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Lübbecke Westf',
     bankShortName: 'Commerzbank',
     bankPostcode: '32291',
     bankLocation: 'Lübbecke',
   ),
-  '49262364': Iban(
-    bic: 'GENODEM1SNA',
+  '49262364': Bic(
+    value: 'GENODEM1SNA',
     bankName: 'Volksbank Schnathorst (Gf P2)',
     bankShortName: 'Volksbank Schnathorst',
     bankPostcode: '32606',
     bankLocation: 'Hüllhorst',
   ),
-  '49440043': Iban(
-    bic: 'COBADEFFXXX',
+  '49440043': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Oeynhausen',
     bankShortName: 'Commerzbank',
     bankPostcode: '32502',
     bankLocation: 'Bad Oeynhausen',
   ),
-  '49450120': Iban(
-    bic: 'WLAHDE44XXX',
+  '49450120': Bic(
+    value: 'WLAHDE44XXX',
     bankName: 'Sparkasse Herford',
     bankShortName: 'Sparkasse Herford',
     bankPostcode: '32556',
     bankLocation: 'Löhne',
   ),
-  '49490070': Iban(
-    bic: 'GENODEM1HFV',
+  '49490070': Bic(
+    value: 'GENODEM1HFV',
     bankName: 'Volksbank Herford-Mindener Land (Gf P2)',
     bankShortName: 'VB Herford-Mindener Land',
     bankPostcode: '32049',
     bankLocation: 'Herford',
   ),
-  '50000000': Iban(
-    bic: 'MARKDEF1500',
+  '50000000': Bic(
+    value: 'MARKDEF1500',
     bankName: 'BBk Filiale Frankfurt Main',
     bankShortName: 'Bundesbank',
     bankPostcode: '60047',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50010060': Iban(
-    bic: 'PBNKDEFFXXX',
+  '50010060': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '60288',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50010200': Iban(
-    bic: 'AKBKDEFFXXX',
+  '50010200': Bic(
+    value: 'AKBKDEFFXXX',
     bankName: 'AKBANK',
     bankShortName: 'AKBANK',
     bankPostcode: '65760',
     bankLocation: 'Eschborn',
   ),
-  '50010300': Iban(
-    bic: 'FCBKDEFFXXX',
+  '50010300': Bic(
+    value: 'FCBKDEFFXXX',
     bankName: 'First Commercial Bank, Frankfurt Branch',
     bankShortName: 'First Commercial Bank, FFM',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50010424': Iban(
-    bic: 'AARBDE5W500',
+  '50010424': Bic(
+    value: 'AARBDE5W500',
     bankName: 'Aareal Bank ehem. Filiale Frankfurt',
     bankShortName: 'Aareal Bank Wiesbaden',
     bankPostcode: '65189',
     bankLocation: 'Wiesbaden',
   ),
-  '50010517': Iban(
-    bic: 'INGDDEFFXXX',
+  '50010517': Bic(
+    value: 'INGDDEFFXXX',
     bankName: 'ING-DiBa Frankfurt am Main',
     bankShortName: 'ING-DiBa',
     bankPostcode: '60628',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50010700': Iban(
-    bic: 'DEGUDEFFXXX',
+  '50010700': Bic(
+    value: 'DEGUDEFFXXX',
     bankName: 'Degussa Bank Merseburg',
     bankShortName: 'Degussa Bank',
     bankPostcode: '06201',
     bankLocation: 'Merseburg',
   ),
-  '50010900': Iban(
-    bic: 'BOFADEFXXXX',
+  '50010900': Bic(
+    value: 'BOFADEFXXXX',
     bankName: 'Bank of America Europe, Frankfurt Branch',
     bankShortName: 'Bank of America Europe',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50010910': Iban(
-    bic: 'BOFADEFXVAM',
+  '50010910': Bic(
+    value: 'BOFADEFXVAM',
     bankName: 'Bank of America Europe, Frankfurt Branch',
     bankShortName: 'Bank of America Europe',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50012800': Iban(
-    bic: 'ALTEDEFAXXX',
+  '50012800': Bic(
+    value: 'ALTEDEFAXXX',
     bankName: 'ALTE LEIPZIGER Bauspar',
     bankShortName: 'ALTE LEIPZIGER Bauspar',
     bankPostcode: '61440',
     bankLocation: 'Oberursel (Taunus)',
   ),
-  '50016600': Iban(
-    bic: 'WUIDDEF1XXX',
+  '50016600': Bic(
+    value: 'WUIDDEF1XXX',
     bankName: 'Western Union Intl. Bank Niederlassung Deutschland',
     bankShortName: 'WUIB - Branch Germany',
     bankPostcode: '60486',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50020000': Iban(
-    bic: 'SEZDDEF1XXX',
+  '50020000': Bic(
+    value: 'SEZDDEF1XXX',
     bankName: 'SÜDWESTBANK - BAWAG Niederlassung Deutschland',
     bankShortName: 'SÜDWESTBANK-BAWAG NL DE',
     bankPostcode: '70178',
     bankLocation: 'Stuttgart',
   ),
-  '50020200': Iban(
-    bic: 'BHFBDEFF500',
+  '50020200': Bic(
+    value: 'BHFBDEFF500',
     bankName: 'ODDO BHF Frankfurt Main',
     bankShortName: 'ODDO BHF',
     bankPostcode: '60323',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50020400': Iban(
-    bic: 'KFWIDEFFXXX',
+  '50020400': Bic(
+    value: 'KFWIDEFFXXX',
     bankName: 'KfW Kreditanstalt für Wiederaufbau Frankfurt',
     bankShortName: 'KfW Frankfurt',
     bankPostcode: '60046',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50020500': Iban(
-    bic: 'LAREDEFFXXX',
+  '50020500': Bic(
+    value: 'LAREDEFFXXX',
     bankName: 'Landwirtschaftliche Rentenbank',
     bankShortName: 'Landwirtschaftl Rentenbank',
     bankPostcode: '60014',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50020700': Iban(
-    bic: 'FBHLDEFFXXX',
+  '50020700': Bic(
+    value: 'FBHLDEFFXXX',
     bankName: 'Credit Europe Bank Ndl. Deutschland',
     bankShortName: 'Credit Europe Bank Ffm',
     bankPostcode: '60050',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50020800': Iban(
-    bic: 'BCITDEFFXXX',
+  '50020800': Bic(
+    value: 'BCITDEFFXXX',
     bankName: 'Intesa Sanpaolo Frankfurt',
     bankShortName: 'Intesa Sanpaolo Frankfurt',
     bankPostcode: '60011',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50021000': Iban(
-    bic: 'INGBDEFFXXX',
+  '50021000': Bic(
+    value: 'INGBDEFFXXX',
     bankName: 'ING Bank, Frankfurt',
     bankShortName: 'ING Bank',
     bankPostcode: '60486',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50021100': Iban(
-    bic: 'FFBKDEFFKRN',
+  '50021100': Bic(
+    value: 'FFBKDEFFKRN',
     bankName: 'FIL Fondsbank Frankfurt',
     bankShortName: 'FIL Fondsbank',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50021120': Iban(
-    bic: 'FFBKDEFFTHK',
+  '50021120': Bic(
+    value: 'FFBKDEFFTHK',
     bankName: 'FIL Fondsbank Kronberg',
     bankShortName: 'FIL Fondsbank',
     bankPostcode: '61476',
     bankLocation: 'Kronberg im Taunus',
   ),
-  '50022200': Iban(
-    bic: 'HCSEDEF1XXX',
+  '50022200': Bic(
+    value: 'HCSEDEF1XXX',
     bankName: 'Hyundai Capital Bank Europe',
     bankShortName: 'HCBE Frankfurt am Main',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50024024': Iban(
-    bic: 'DEFFDEFFXXX',
+  '50024024': Bic(
+    value: 'DEFFDEFFXXX',
     bankName: 'C24 Bank',
     bankShortName: 'C24 Bank',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50025000': Iban(
-    bic: 'GMGGDE51XXX',
+  '50025000': Bic(
+    value: 'GMGGDE51XXX',
     bankName: 'Opel Bank, Niederlassung Deutschland',
     bankShortName: 'Opel Bank',
     bankPostcode: '65428',
     bankLocation: 'Rüsselsheim am Main',
   ),
-  '50030000': Iban(
-    bic: 'PSADDEF1XXX',
+  '50030000': Bic(
+    value: 'PSADDEF1XXX',
     bankName: 'PSA Bank Neu-Isenburg',
     bankShortName: 'PSA Bank Deutschland',
     bankPostcode: '63263',
     bankLocation: 'Neu-Isenburg',
   ),
-  '50030010': Iban(
-    bic: 'BPNDDE52XXX',
+  '50030010': Bic(
+    value: 'BPNDDE52XXX',
     bankName: 'PSA Bank Neu-Isenburg',
     bankShortName: 'PSA Bank Deutschland',
     bankPostcode: '63263',
     bankLocation: 'Neu-Isenburg',
   ),
-  '50030100': Iban(
-    bic: 'HKBBDEF1FRA',
+  '50030100': Bic(
+    value: 'HKBBDEF1FRA',
     bankName: 'HKB Bank Frankfurt am Main',
     bankShortName: 'HKB Bank Frankfurt',
     bankPostcode: '60528',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50030500': Iban(
-    bic: 'PARBDEFFXXX',
+  '50030500': Bic(
+    value: 'PARBDEFFXXX',
     bankName: 'BNP PARIBAS Securities Services',
     bankShortName: 'BNP PARIBAS Sec Serv',
     bankPostcode: '60003',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50030600': Iban(
-    bic: 'DWPBDEFFXXX',
+  '50030600': Bic(
+    value: 'DWPBDEFFXXX',
     bankName: 'Deutsche WertpapierService Bank',
     bankShortName: 'dwpbank',
     bankPostcode: '60487',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50030700': Iban(
-    bic: 'ESBKDEFFXXX',
+  '50030700': Bic(
+    value: 'ESBKDEFFXXX',
     bankName: 'DenizBank (Wien) Zw Frankfurt',
     bankShortName: 'DenizBank Frankfurt',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50031000': Iban(
-    bic: 'TRODDEF1XXX',
+  '50031000': Bic(
+    value: 'TRODDEF1XXX',
     bankName: 'Triodos Bank Deutschland (Gf P2)',
     bankShortName: 'Triodos Bank Deutschland',
     bankPostcode: '60326',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50033300': Iban(
-    bic: 'SCFBDE33XXX',
+  '50033300': Bic(
+    value: 'SCFBDE33XXX',
     bankName: 'Santander Bank Frankfurt',
     bankShortName: 'Santander Consumer Bank',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50038800': Iban(
-    bic: 'ABOCDEFFXXX',
+  '50038800': Bic(
+    value: 'ABOCDEFFXXX',
     bankName: 'Agricultural Bank of China, Frankfurt Branch',
     bankShortName: 'Agricultural Bank China FRA',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040000': Iban(
-    bic: 'COBADEFFXXX',
+  '50040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Idstein Taunus',
     bankShortName: 'Commerzbank',
     bankPostcode: '65503',
     bankLocation: 'Idstein',
   ),
-  '50040005': Iban(
-    bic: 'COBADEFFXXX',
+  '50040005': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank, Filiale Frankfurt 2',
     bankShortName: 'Commerzbank Fil. FFM 2',
     bankPostcode: '60005',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040010': Iban(
-    bic: 'COBADEFFPAR',
+  '50040010': Bic(
+    value: 'COBADEFFPAR',
     bankName: 'Commerzbank (IPC PARIS)FFM',
     bankShortName: 'Commerzbank (IPC PARIS)',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040011': Iban(
-    bic: 'COBADEFFVIE',
+  '50040011': Bic(
+    value: 'COBADEFFVIE',
     bankName: 'Commerzbank (IPC VIENNA)FFM',
     bankShortName: 'Commerzbank (IPC VIENNA)',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040012': Iban(
-    bic: 'COBADEFFMIL',
+  '50040012': Bic(
+    value: 'COBADEFFMIL',
     bankName: 'Commerzbank (IPC MILANO)FFM',
     bankShortName: 'Commerzbank (IPC MILANO)',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040013': Iban(
-    bic: 'COBADEFFAMS',
+  '50040013': Bic(
+    value: 'COBADEFFAMS',
     bankName: 'Commerzbank (IPC AMSTERDAM)',
     bankShortName: 'Commerzbank(AMSTERDAM)FFM',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040014': Iban(
-    bic: 'COBADEFFBRU',
+  '50040014': Bic(
+    value: 'COBADEFFBRU',
     bankName: 'Commerzbank(IPC BRUSSEL)FFM',
     bankShortName: 'Commerzbank (IPC BRUSSEL)',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040015': Iban(
-    bic: 'COBADEFFMAD',
+  '50040015': Bic(
+    value: 'COBADEFFMAD',
     bankName: 'Commerzbank (IPC MADRID)FFM',
     bankShortName: 'Commerzbank (IPC MADRID)',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040016': Iban(
-    bic: 'COBADEFFNYC',
+  '50040016': Bic(
+    value: 'COBADEFFNYC',
     bankName: 'Commerzbank (CLB New York) FFM',
     bankShortName: 'Commerzbank(CLB New YorkFFM',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040017': Iban(
-    bic: 'COBADEFFSGP',
+  '50040017': Bic(
+    value: 'COBADEFFSGP',
     bankName: 'Commerzbank (CLB Singapore) Frankfurt',
     bankShortName: 'CommerzbankCLB SingaporeFFM',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040018': Iban(
-    bic: 'COBADEFFLDN',
+  '50040018': Bic(
+    value: 'COBADEFFLDN',
     bankName: 'Commerzbank (CLB London)FFM',
     bankShortName: 'Commerzbank (CLB London)',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040019': Iban(
-    bic: 'COBADEFFZUR',
+  '50040019': Bic(
+    value: 'COBADEFFZUR',
     bankName: 'Commerzbank (CLB Zürich)FFM',
     bankShortName: 'Commerzbank (CLB Zürich)',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040020': Iban(
-    bic: 'COBADEFFPRA',
+  '50040020': Bic(
+    value: 'COBADEFFPRA',
     bankName: 'Commerzbank (CLB Prag) FFM',
     bankShortName: 'Commerzbank (CLB Prag)',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040021': Iban(
-    bic: 'COBADEFFMOS',
+  '50040021': Bic(
+    value: 'COBADEFFMOS',
     bankName: 'Commerzbank (CLB Moskau)FFM',
     bankShortName: 'Commerzbank (CLB Moskau)',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040022': Iban(
-    bic: 'COBADEFFHBG',
+  '50040022': Bic(
+    value: 'COBADEFFHBG',
     bankName: 'Commerzbank(CLB Hamburg)FFM',
     bankShortName: 'Commerzbank (CLB Hamburg)',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040033': Iban(
-    bic: 'COBADEF1BRS',
+  '50040033': Bic(
+    value: 'COBADEF1BRS',
     bankName: 'Commerzbank Gf BRS Ffm',
     bankShortName: 'Commerzbank Gf BRS',
     bankPostcode: '60005',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040038': Iban(
-    bic: 'COBADEFFXXX',
+  '50040038': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank MBP, Frankfurt',
     bankShortName: 'Commerzbank, MBP',
     bankPostcode: '60005',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040040': Iban(
-    bic: 'COBADEFFXXX',
+  '50040040': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank ZRK Frankfurt',
     bankShortName: 'Commerzbank Gf ZRK',
     bankPostcode: '60005',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040048': Iban(
-    bic: 'COBADEFFXXX',
+  '50040048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Schwalbach',
     bankShortName: 'Commerzbank',
     bankPostcode: '65818',
     bankLocation: 'Schwalbach am Taunus',
   ),
-  '50040050': Iban(
-    bic: 'COBADEFFXXX',
+  '50040050': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC SP, Ffm',
     bankShortName: 'Commerzbank, CC SP',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040051': Iban(
-    bic: 'COBADEFFXXX',
+  '50040051': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Center Dresdner Bank Frankfurt',
     bankShortName: 'Commerzbank FFM GM-F A 51',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040052': Iban(
-    bic: 'COBADEFFXXX',
+  '50040052': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Service - BZ Frankfurt',
     bankShortName: 'Commerzbank Service - BZ',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040060': Iban(
-    bic: 'COBADEFFXXX',
+  '50040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf 460 Ffm',
     bankShortName: 'Commerzbank Gf 460',
     bankPostcode: '60005',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040061': Iban(
-    bic: 'COBADEFFXXX',
+  '50040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf 461 Ffm',
     bankShortName: 'Commerzbank Gf 461',
     bankPostcode: '60005',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040062': Iban(
-    bic: 'COBADEFFXXX',
+  '50040062': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Ffm',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040063': Iban(
-    bic: 'COBADEFFXXX',
+  '50040063': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Ffm',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040075': Iban(
-    bic: 'COBADEFFXXX',
+  '50040075': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf ZCM Ffm',
     bankShortName: 'Commerzbank Gf ZCM',
     bankPostcode: '60005',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040084': Iban(
-    bic: 'COBADEFFXXX',
+  '50040084': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank, GF Web-K CMTS2',
     bankShortName: 'Commerzbank, GF Web-K CMTS2',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040085': Iban(
-    bic: 'COBADEFFXXX',
+  '50040085': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf WK, Ffm',
     bankShortName: 'Commerzbank, Gf Web-K',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040086': Iban(
-    bic: 'COBADEFFXXX',
+  '50040086': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank GF WK CMTS, FFM',
     bankShortName: 'Commerzbank, GF Web-K CMTS',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040087': Iban(
-    bic: 'COBADEFFXXX',
+  '50040087': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank, Gf Web-K CMTS3',
     bankShortName: 'Commerzbank, Gf Web-K CMTS3',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040088': Iban(
-    bic: 'COBADEFFXXX',
+  '50040088': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank INT 1 Ffm',
     bankShortName: 'Commerzbank, INT 1',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50040099': Iban(
-    bic: 'COBADEFFXXX',
+  '50040099': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank INT Ffm',
     bankShortName: 'Commerzbank INT',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50042500': Iban(
-    bic: 'COBADEFFXXX',
+  '50042500': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Zw 425 - keine Auslandsbanken',
     bankShortName: 'Commerzbank Frankfurt',
     bankPostcode: '60005',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50044444': Iban(
-    bic: 'COBADEFFXXX',
+  '50044444': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Vermögensverwaltung',
     bankShortName: 'Commerzbank Vermverw Ffm',
     bankPostcode: '60005',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50047010': Iban(
-    bic: 'COBADEFFXXX',
+  '50047010': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Service - BZ',
     bankShortName: 'Commerzbank Service - BZ',
     bankPostcode: '60261',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50050000': Iban(
-    bic: 'HELADEFFXXX',
+  '50050000': Bic(
+    value: 'HELADEFFXXX',
     bankName: 'Landesbank Hessen-Thür Girozentrale',
     bankShortName: 'Ld Bk Hess-Thür Gz Ffm',
     bankPostcode: '60297',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50050201': Iban(
-    bic: 'HELADEF1822',
+  '50050201': Bic(
+    value: 'HELADEF1822',
     bankName: 'Frankfurter Sparkasse Sprendlingen',
     bankShortName: 'Frankfurter Spk Dreieich',
     bankPostcode: '63303',
     bankLocation: 'Dreieich',
   ),
-  '50050222': Iban(
-    bic: 'HELADEF1822',
+  '50050222': Bic(
+    value: 'HELADEF1822',
     bankName: 'Frankfurter Sparkasse GF 1822direkt',
     bankShortName: 'Frankfurter Spk 1822direkt',
     bankPostcode: '60255',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50050999': Iban(
-    bic: 'DGZFDEFFXXX',
+  '50050999': Bic(
+    value: 'DGZFDEFFXXX',
     bankName: 'DekaBank Frankfurt',
     bankShortName: 'DekaBank Frankfurt',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060000': Iban(
-    bic: 'GENODE55XXX',
+  '50060000': Bic(
+    value: 'GENODE55XXX',
     bankName: 'DZ Bank',
     bankShortName: 'DZ Bank',
     bankPostcode: '60274',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060400': Iban(
-    bic: 'GENODEFFXXX',
+  '50060400': Bic(
+    value: 'GENODEFFXXX',
     bankName: 'DZ BANK (Gf P2)',
     bankShortName: 'DZ BANK',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060412': Iban(
-    bic: 'GENODEF1VK1',
+  '50060412': Bic(
+    value: 'GENODEF1VK1',
     bankName: 'DZ BANK GF DZH',
     bankShortName: 'DZ BANK GF DZH',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060413': Iban(
-    bic: 'GENODEF1VK2',
+  '50060413': Bic(
+    value: 'GENODEF1VK2',
     bankName: 'DZ BANK GF ODA',
     bankShortName: 'DZ BANK GF ODA',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060414': Iban(
-    bic: 'GENODEF1VK3',
+  '50060414': Bic(
+    value: 'GENODEF1VK3',
     bankName: 'DZ BANK für Bausparkasse Schwäbisch Hall',
     bankShortName: 'DZ BANK für BSH',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060415': Iban(
-    bic: 'GENODEF1VK4',
+  '50060415': Bic(
+    value: 'GENODEF1VK4',
     bankName: 'DZ BANK für Bausparkasse Schwäbisch Hall',
     bankShortName: 'DZ BANK für BSH',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060416': Iban(
-    bic: 'GENODEF1VK6',
+  '50060416': Bic(
+    value: 'GENODEF1VK6',
     bankName: 'DZ BANK GF TSG',
     bankShortName: 'DZ BANK GF TSG',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060417': Iban(
-    bic: 'GENODEF1VK7',
+  '50060417': Bic(
+    value: 'GENODEF1VK7',
     bankName: 'DZ BANK GF BMT',
     bankShortName: 'DZ BANK GF BMT',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060418': Iban(
-    bic: 'GENODEF1VK8',
+  '50060418': Bic(
+    value: 'GENODEF1VK8',
     bankName: 'DZ BANK GF BMT',
     bankShortName: 'DZ BANK GF BMT',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060419': Iban(
-    bic: 'GENODEF1VK9',
+  '50060419': Bic(
+    value: 'GENODEF1VK9',
     bankName: 'DZ BANK GF VRF',
     bankShortName: 'DZ BANK GF VRF',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060420': Iban(
-    bic: 'GENODEF1V20',
+  '50060420': Bic(
+    value: 'GENODEF1V20',
     bankName: 'DZ BANK GF BSH',
     bankShortName: 'DZ BANK GF BSH',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060421': Iban(
-    bic: 'GENODEF1V21',
+  '50060421': Bic(
+    value: 'GENODEF1V21',
     bankName: 'DZ BANK GF BSH',
     bankShortName: 'DZ BANK GF BSH',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060422': Iban(
-    bic: 'GENODEF1V22',
+  '50060422': Bic(
+    value: 'GENODEF1V22',
     bankName: 'DZ BANK GF GRX',
     bankShortName: 'DZ BANK GF GRX',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060423': Iban(
-    bic: 'GENODEF1V23',
+  '50060423': Bic(
+    value: 'GENODEF1V23',
     bankName: 'DZ BANK GF GRX',
     bankShortName: 'DZ BANK GF GRX',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060424': Iban(
-    bic: 'GENODEF1V24',
+  '50060424': Bic(
+    value: 'GENODEF1V24',
     bankName: 'DZ BANK GF DEV',
     bankShortName: 'DZ BANK GF DEV',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060425': Iban(
-    bic: 'GENODEF1V25',
+  '50060425': Bic(
+    value: 'GENODEF1V25',
     bankName: 'DZ BANK GF BSH',
     bankShortName: 'DZ BANK GF BSH',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50060474': Iban(
-    bic: 'GENODEFFBRO',
+  '50060474': Bic(
+    value: 'GENODEFFBRO',
     bankName: 'DZ BANK, Deutsche Zentral-Genossenschaftsbank',
     bankShortName: 'DZ BANK',
     bankPostcode: '60265',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50061741': Iban(
-    bic: 'GENODE51OBU',
+  '50061741': Bic(
+    value: 'GENODE51OBU',
     bankName: 'Raiffeisenbank im Hochtaunus (Gf P2)',
     bankShortName: 'RB im Hochtaunus Bad Hom',
     bankPostcode: '61352',
     bankLocation: 'Bad Homburg',
   ),
-  '50069126': Iban(
-    bic: 'GENODE51ABO',
+  '50069126': Bic(
+    value: 'GENODE51ABO',
     bankName: 'VR Bank Alzey-Land-Schwabenheim (Gf P2)',
     bankShortName: 'VRB Alzey-Land-Schwabenheim',
     bankPostcode: '55270',
     bankLocation: 'Schwabenheim an der Selz',
   ),
-  '50069146': Iban(
-    bic: 'GENODE51GRC',
+  '50069146': Bic(
+    value: 'GENODE51GRC',
     bankName: 'Volksbank Grebenhain (Gf P2)',
     bankShortName: 'Volksbank Grebenhain',
     bankPostcode: '36352',
     bankLocation: 'Grebenhain',
   ),
-  '50069187': Iban(
-    bic: 'GENODE51EGE',
+  '50069187': Bic(
+    value: 'GENODE51EGE',
     bankName: 'Volksbank Egelsbach -alt-',
     bankShortName: 'Volksbank Egelsbach -alt-',
     bankPostcode: '63323',
     bankLocation: 'Egelsbach',
   ),
-  '50069241': Iban(
-    bic: 'GENODE51ERB',
+  '50069241': Bic(
+    value: 'GENODE51ERB',
     bankName: 'Raiffeisenkasse Erbes-Büdesheim und Umgebung (Gf P2)',
     bankShortName: 'Raiffeisenkasse',
     bankPostcode: '55234',
     bankLocation: 'Erbes-Büdesheim',
   ),
-  '50069345': Iban(
-    bic: 'GENODE51GWB',
+  '50069345': Bic(
+    value: 'GENODE51GWB',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '61279',
     bankLocation: 'Grävenwiesbach',
   ),
-  '50069455': Iban(
-    bic: 'GENODE51HUT',
+  '50069455': Bic(
+    value: 'GENODE51HUT',
     bankName: 'Hüttenberger Bk Hüttenberg',
     bankShortName: 'Hüttenberger Bank (Gf P2)',
     bankPostcode: '35625',
     bankLocation: 'Hüttenberg',
   ),
-  '50069477': Iban(
-    bic: 'GENODE51KIF',
+  '50069477': Bic(
+    value: 'GENODE51KIF',
     bankName: 'Raiffeisenbank Kirtorf (Gf P2)',
     bankShortName: 'Raiffeisenbank Kirtorf',
     bankPostcode: '36320',
     bankLocation: 'Kirtorf',
   ),
-  '50069693': Iban(
-    bic: 'GENODE51BH1',
+  '50069693': Bic(
+    value: 'GENODE51BH1',
     bankName: 'Raiffeisenbank Bad Homburg Ndl d FrankfurterVB',
     bankShortName: 'Raiffeisenbank Bad Homburg',
     bankPostcode: '61352',
     bankLocation: 'Bad Homburg',
   ),
-  '50069842': Iban(
-    bic: 'GENODE51SWB',
+  '50069842': Bic(
+    value: 'GENODE51SWB',
     bankName: 'Raiffeisen Volksbank (Gf P2)',
     bankShortName: 'Raiffeisen-VB Schwabenheim',
     bankPostcode: '55270',
     bankLocation: 'Schwabenheim an der Selz',
   ),
-  '50069976': Iban(
-    bic: 'GENODE51WWI',
+  '50069976': Bic(
+    value: 'GENODE51WWI',
     bankName: 'Volksbank Wißmar (Gf P2)',
     bankShortName: 'Volksbank Wißmar',
     bankPostcode: '35432',
     bankLocation: 'Wettenberg',
   ),
-  '50070010': Iban(
-    bic: 'DEUTDEFF540',
+  '50070010': Bic(
+    value: 'DEUTDEFF540',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65843',
     bankLocation: 'Sulzbach (Taunus)',
   ),
-  '50070011': Iban(
-    bic: 'DEUTDEFFSIP',
+  '50070011': Bic(
+    value: 'DEUTDEFFSIP',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50070024': Iban(
-    bic: 'DEUTDEDB504',
+  '50070024': Bic(
+    value: 'DEUTDEDB504',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65843',
     bankLocation: 'Sulzbach (Taunus)',
   ),
-  '50070324': Iban(
-    bic: 'DEUTDEDBP25',
+  '50070324': Bic(
+    value: 'DEUTDEDBP25',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '61348',
     bankLocation: 'Bad Homburg',
   ),
-  '50070371': Iban(
-    bic: 'DEUTDEFFS25',
+  '50070371': Bic(
+    value: 'DEUTDEFFS25',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '61348',
     bankLocation: 'Bad Homburg',
   ),
-  '50070435': Iban(
-    bic: 'DEUTDEDBEW1',
+  '50070435': Bic(
+    value: 'DEUTDEDBEW1',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65812',
     bankLocation: 'Bad Soden am Taunus',
   ),
-  '50070436': Iban(
-    bic: 'DEUTDEDBEW2',
+  '50070436': Bic(
+    value: 'DEUTDEDBEW2',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65812',
     bankLocation: 'Bad Soden am Taunus',
   ),
-  '50070437': Iban(
-    bic: 'DEUTDEDBEW3',
+  '50070437': Bic(
+    value: 'DEUTDEDBEW3',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65812',
     bankLocation: 'Bad Soden am Taunus',
   ),
-  '50070438': Iban(
-    bic: 'DEUTDEDBEW4',
+  '50070438': Bic(
+    value: 'DEUTDEDBEW4',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65812',
     bankLocation: 'Bad Soden am Taunus',
   ),
-  '50070439': Iban(
-    bic: 'DEUTDEDBEW5',
+  '50070439': Bic(
+    value: 'DEUTDEDBEW5',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65812',
     bankLocation: 'Bad Soden am Taunus',
   ),
-  '50073019': Iban(
-    bic: 'DEUTDEFF543',
+  '50073019': Bic(
+    value: 'DEUTDEFF543',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65479',
     bankLocation: 'Raunheim',
   ),
-  '50073024': Iban(
-    bic: 'DEUTDEDB537',
+  '50073024': Bic(
+    value: 'DEUTDEDB537',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65479',
     bankLocation: 'Raunheim',
   ),
-  '50073081': Iban(
-    bic: 'DEUTDE5XXXX',
+  '50073081': Bic(
+    value: 'DEUTDE5XXXX',
     bankName: 'Deutsche Bank Europe',
     bankShortName: 'Deutsche Bank Europe',
     bankPostcode: '60486',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080000': Iban(
-    bic: 'DRESDEFFXXX',
+  '50080000': Bic(
+    value: 'DRESDEFFXXX',
     bankName: 'Commerzbank vormals Dresdner Bank Fil Limesstadt',
     bankShortName: 'Commerzbank Schwalbach',
     bankPostcode: '65818',
     bankLocation: 'Schwalbach am Taunus',
   ),
-  '50080015': Iban(
-    bic: 'DRESDEFFI39',
+  '50080015': Bic(
+    value: 'DRESDEFFI39',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 15',
     bankShortName: 'Commerzbank Zw 15 Ffm',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080025': Iban(
-    bic: 'DRESDEFFXXX',
+  '50080025': Bic(
+    value: 'DRESDEFFXXX',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 25',
     bankShortName: 'Commerzbank Zw 25 Ffm',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080035': Iban(
-    bic: 'DRESDEFFI40',
+  '50080035': Bic(
+    value: 'DRESDEFFI40',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 35',
     bankShortName: 'Commerzbank Zw 35 Ffm',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080055': Iban(
-    bic: 'DRESDEFF516',
+  '50080055': Bic(
+    value: 'DRESDEFF516',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 55',
     bankShortName: 'Commerzbk Zw 55 Frankfurt',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080057': Iban(
-    bic: 'DRESDEFF522',
+  '50080057': Bic(
+    value: 'DRESDEFF522',
     bankName: 'Commerzbank vormals Dresdner Bank Gf ZW 57',
     bankShortName: 'Commerzbk ZW 57 Frankfurt',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080060': Iban(
-    bic: 'DRESDEFFXXX',
+  '50080060': Bic(
+    value: 'DRESDEFFXXX',
     bankName: 'Commerzbank vormals Dresdner Bank Gf DrKW',
     bankShortName: 'Commerzbank Gf DrKW Ffm',
     bankPostcode: '60301',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080061': Iban(
-    bic: 'DRESDEFFLDG',
+  '50080061': Bic(
+    value: 'DRESDEFFLDG',
     bankName: 'Commerzbank vormals Dresdner Bank Gf DrKWSL',
     bankShortName: 'Commerzbank Gf DrKWSL Ffm',
     bankPostcode: '60301',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080077': Iban(
-    bic: 'DRESDEFFBSP',
+  '50080077': Bic(
+    value: 'DRESDEFFBSP',
     bankName: 'Commerzbank, GF Wüstenrot BSPK',
     bankShortName: 'Commerzbk WBSPK, Frankfurt',
     bankPostcode: '61116',
     bankLocation: 'Bad Vilbel',
   ),
-  '50080079': Iban(
-    bic: 'DRESDEFFXXX',
+  '50080079': Bic(
+    value: 'DRESDEFFXXX',
     bankName: 'Commerzbank vormals Dresdner Bank ESOP',
     bankShortName: 'Commerzbank ESOP, Frankfurt',
     bankPostcode: '60301',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080080': Iban(
-    bic: 'DRESDEFFI41',
+  '50080080': Bic(
+    value: 'DRESDEFFI41',
     bankName: 'Commerzbank vormals Dresdner Bank Bs 80',
     bankShortName: 'Commerzbank Bs 80 Ffm',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080082': Iban(
-    bic: 'DRESDEFFAVB',
+  '50080082': Bic(
+    value: 'DRESDEFFAVB',
     bankName: 'Commerzbank vormals Dresdner Bank Gf AVB',
     bankShortName: 'Commerzbk Gf AVB Ffm',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080086': Iban(
-    bic: 'DRESDEFFI49',
+  '50080086': Bic(
+    value: 'DRESDEFFI49',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK 3',
     bankShortName: 'Commerzbk ITGK Frankfurt',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080087': Iban(
-    bic: 'DRESDEFFJ08',
+  '50080087': Bic(
+    value: 'DRESDEFFJ08',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 4',
     bankShortName: 'Commerzbank ITGK4 FFM',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080088': Iban(
-    bic: 'DRESDEFFJ09',
+  '50080088': Bic(
+    value: 'DRESDEFFJ09',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 5',
     bankShortName: 'Commerzbank ITGK5 FFM',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080089': Iban(
-    bic: 'DRESDEFFJ10',
+  '50080089': Bic(
+    value: 'DRESDEFFJ10',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 6',
     bankShortName: 'Commerzbank ITGK6 FFM',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080091': Iban(
-    bic: 'DRESDEFFJ11',
+  '50080091': Bic(
+    value: 'DRESDEFFJ11',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 7',
     bankShortName: 'Commerzbank ITGK7 FFM',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080092': Iban(
-    bic: 'DRESDEFFFCO',
+  '50080092': Bic(
+    value: 'DRESDEFFFCO',
     bankName: 'Commerzbank vormals Dresdner Bank Finance and Controlling',
     bankShortName: 'Commerzbk FCO Frankfurt',
     bankPostcode: '60301',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080099': Iban(
-    bic: 'DRESDEFFI42',
+  '50080099': Bic(
+    value: 'DRESDEFFI42',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 99',
     bankShortName: 'Commerzbk Zw 99 Frankfurt',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50080300': Iban(
-    bic: 'DRESDEFF500',
+  '50080300': Bic(
+    value: 'DRESDEFF500',
     bankName: 'Commerzbank vormals Dresdner Bank Private Banking Inland',
     bankShortName: 'Commerzbank Priv Banking',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50083007': Iban(
-    bic: 'DRESDEFF502',
+  '50083007': Bic(
+    value: 'DRESDEFF502',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Rüsselsheim',
     bankPostcode: '65402',
     bankLocation: 'Rüsselsheim am Main',
   ),
-  '50083838': Iban(
-    bic: 'DRESDEFFMBP',
+  '50083838': Bic(
+    value: 'DRESDEFFMBP',
     bankName: 'Commerzbank vormals Dresdner Bank in Frankfurt MBP',
     bankShortName: 'Commerzbank Ffm MBP',
     bankPostcode: '60301',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50089400': Iban(
-    bic: 'DRESDEFFI01',
+  '50089400': Bic(
+    value: 'DRESDEFFI01',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank Ffm ITGK',
     bankPostcode: '60613',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50090500': Iban(
-    bic: 'GENODEF1S12',
+  '50090500': Bic(
+    value: 'GENODEF1S12',
     bankName: 'Sparda-Bank Hessen',
     bankShortName: 'Sparda-Bank Hessen',
     bankPostcode: '35576',
     bankLocation: 'Wetzlar',
   ),
-  '50090900': Iban(
-    bic: 'GENODEF1P06',
+  '50090900': Bic(
+    value: 'GENODEF1P06',
     bankName: 'PSD Bank Hessen-Thüringen Beratungscenter Erfurt',
     bankShortName: 'PSD Bank HT BC Erfurt',
     bankPostcode: '99084',
     bankLocation: 'Erfurt',
   ),
-  '50092100': Iban(
-    bic: 'GENODE51BH2',
+  '50092100': Bic(
+    value: 'GENODE51BH2',
     bankName: 'Spar- u Kreditbank ev-freikirchl Gemeinden (Gf P2)',
     bankShortName: 'Spar- u Kreditbk Bad Hombg',
     bankPostcode: '61282',
     bankLocation: 'Bad Homburg',
   ),
-  '50092200': Iban(
-    bic: 'GENODE51KEL',
+  '50092200': Bic(
+    value: 'GENODE51KEL',
     bankName: 'Volksbank Main-Taunus (Gf P2)',
     bankShortName: 'Volksbank Main-Taunus Kelkh',
     bankPostcode: '65766',
     bankLocation: 'Kelkheim (Taunus)',
   ),
-  '50092900': Iban(
-    bic: 'GENODE51USI',
+  '50092900': Bic(
+    value: 'GENODE51USI',
     bankName: 'Volksbank Usinger Land Ndl d Frankfurter VB',
     bankShortName: 'Volksbank Usinger Land',
     bankPostcode: '61241',
     bankLocation: 'Usingen',
   ),
-  '50093000': Iban(
-    bic: 'GENODE51RUS',
+  '50093000': Bic(
+    value: 'GENODE51RUS',
     bankName: 'Rüsselsheimer Volksbank Ndl Raunheim',
     bankShortName: 'Rüsselsheimer Volksbank',
     bankPostcode: '65479',
     bankLocation: 'Raunheim',
   ),
-  '50093010': Iban(
-    bic: 'GENODE51GAA',
+  '50093010': Bic(
+    value: 'GENODE51GAA',
     bankName: 'Rüsselsheimer Volksbank GAA',
     bankShortName: 'VB Rüsselsheim GAA',
     bankPostcode: '65407',
     bankLocation: 'Rüsselsheim am Main',
   ),
-  '50093400': Iban(
-    bic: 'GENODE51KBH',
+  '50093400': Bic(
+    value: 'GENODE51KBH',
     bankName: 'Volksbank Kelsterbach Ndl d Frankfurter VB',
     bankShortName: 'Volksbank Kelsterbach',
     bankPostcode: '65444',
     bankLocation: 'Kelsterbach',
   ),
-  '50110200': Iban(
-    bic: 'ICBKDEFFXXX',
+  '50110200': Bic(
+    value: 'ICBKDEFFXXX',
     bankName: 'Industrial and Commercial Bank of China',
     bankShortName: 'ICBC Frankfurt, Main',
     bankPostcode: '60322',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50110300': Iban(
-    bic: 'DVKBDEFFXXX',
+  '50110300': Bic(
+    value: 'DVKBDEFFXXX',
     bankName: 'DVB Frankfurt Main',
     bankShortName: 'DVB Bank (Gf P2)',
     bankPostcode: '60040',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50110400': Iban(
-    bic: 'AUSKDEFFXXX',
+  '50110400': Bic(
+    value: 'AUSKDEFFXXX',
     bankName: 'AKA Ausfuhrkredit Frankfurt',
     bankShortName: 'AKA Ausfuhrkredit GmbH',
     bankPostcode: '60001',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50110500': Iban(
-    bic: 'NATXDEFFXXX',
+  '50110500': Bic(
+    value: 'NATXDEFFXXX',
     bankName: 'NATIXIS Zweigniederlassung Deutschland',
     bankShortName: 'NATIXIS Frankfurt am Main',
     bankPostcode: '60322',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50110636': Iban(
-    bic: 'SCBLDEFXXXX',
+  '50110636': Bic(
+    value: 'SCBLDEFXXXX',
     bankName: 'Standard Chartered Bank',
     bankShortName: 'SCB FFM',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50110700': Iban(
-    bic: 'FBGADEF1XXX',
+  '50110700': Bic(
+    value: 'FBGADEF1XXX',
     bankName: 'Frankfurter Bankgesellschaft (Deutschland)',
     bankShortName: 'FBG (D)',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50110800': Iban(
-    bic: 'CHASDEFXXXX',
+  '50110800': Bic(
+    value: 'CHASDEFXXXX',
     bankName: 'J.P. Morgan Frankfurt',
     bankShortName: 'J.P. Morgan',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50110801': Iban(
-    bic: 'CHASDEFXVR1',
+  '50110801': Bic(
+    value: 'CHASDEFXVR1',
     bankName: 'J.P. Morgan, Internal Reference',
     bankShortName: 'J.P. Morgan, IR, Ffm',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50110855': Iban(
-    bic: 'JPMGDEFFXXX',
+  '50110855': Bic(
+    value: 'JPMGDEFFXXX',
     bankName: 'JPMSE Frankfurt',
     bankShortName: 'J.P. Morgan',
     bankPostcode: '60310',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50110900': Iban(
-    bic: 'MNBIDEF1XXX',
+  '50110900': Bic(
+    value: 'MNBIDEF1XXX',
     bankName: 'Bank of America N.A. Military Bank',
     bankShortName: 'Bank of America N.A. Mil Bk',
     bankPostcode: '65208',
     bankLocation: 'Wiesbaden',
   ),
-  '50120000': Iban(
-    bic: 'MAIFDEFFXXX',
+  '50120000': Bic(
+    value: 'MAIFDEFFXXX',
     bankName: 'Stifel Europe Bank',
     bankShortName: 'Stifel Europe Bank',
     bankPostcode: '60596',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50120100': Iban(
-    bic: 'ICICDEFFXXX',
+  '50120100': Bic(
+    value: 'ICICDEFFXXX',
     bankName: 'ICICI Bank UK, Germany Branch',
     bankShortName: 'ICICI Bank Eschborn',
     bankPostcode: '65760',
     bankLocation: 'Eschborn',
   ),
-  '50120383': Iban(
-    bic: 'DELBDE33XXX',
+  '50120383': Bic(
+    value: 'DELBDE33XXX',
     bankName: 'Bethmann Bank',
     bankShortName: 'Bethmann Bank',
     bankPostcode: '42105',
     bankLocation: 'Wuppertal',
   ),
-  '50120500': Iban(
-    bic: 'CRESDE55XXX',
+  '50120500': Bic(
+    value: 'CRESDE55XXX',
     bankName: 'Credit Suisse (Deutschland)',
     bankShortName: 'CSD Frankfurt Main',
     bankPostcode: '60310',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50120600': Iban(
-    bic: 'COMMDEFFXXX',
+  '50120600': Bic(
+    value: 'COMMDEFFXXX',
     bankName: 'Bank of Communications Frankfurt branch',
     bankShortName: 'Bank of Communications',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50120800': Iban(
-    bic: 'BMPBDEF2XXX',
+  '50120800': Bic(
+    value: 'BMPBDEF2XXX',
     bankName: 'AION Bank German Branch',
     bankShortName: 'AION Bank Frankfurt',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50120900': Iban(
-    bic: 'TVBADEFFXXX',
+  '50120900': Bic(
+    value: 'TVBADEFFXXX',
     bankName: 'VakifBank International Wien Zndl Deutschland',
     bankShortName: 'VakifBank Köln',
     bankPostcode: '50667',
     bankLocation: 'Köln',
   ),
-  '50123400': Iban(
-    bic: 'DOBADEF1XXX',
+  '50123400': Bic(
+    value: 'DOBADEF1XXX',
     bankName: 'VTB Bank (Europe) Zndl Frankfurt am Main (Direktbank)',
     bankShortName: 'VTB Direktbank',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50127000': Iban(
-    bic: 'BPKODEFFXXX',
+  '50127000': Bic(
+    value: 'BPKODEFFXXX',
     bankName: 'PKO Bank Polski Niederlassung Deutschland',
     bankShortName: 'PKO Bank Polski Frankfurt',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50130000': Iban(
-    bic: 'NBPADEFFXXX',
+  '50130000': Bic(
+    value: 'NBPADEFFXXX',
     bankName: 'National Bank of Pakistan Zndl Frankfurt',
     bankShortName: 'Naba Frankfurt Main',
     bankPostcode: '60313',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50130400': Iban(
-    bic: 'MEFIDEMM501',
+  '50130400': Bic(
+    value: 'MEFIDEMM501',
     bankName: 'Merck Finck A Quintet Private Bank',
     bankShortName: 'Merck Finck',
     bankPostcode: '60015',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50130600': Iban(
-    bic: 'UBSWDEFFXXX',
+  '50130600': Bic(
+    value: 'UBSWDEFFXXX',
     bankName: 'UBS Europe',
     bankShortName: 'UBS Europe',
     bankPostcode: '60079',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50131000': Iban(
-    bic: 'ICBVDEFFXXX',
+  '50131000': Bic(
+    value: 'ICBVDEFFXXX',
     bankName: 'Vietnam Joint Stock Commercial Bk f.Industry a. T. (Gf P2)',
     bankShortName: 'Vietinbank',
     bankPostcode: '60322',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50190000': Iban(
-    bic: 'FFVBDEFFXXX',
+  '50190000': Bic(
+    value: 'FFVBDEFFXXX',
     bankName: 'Frankfurter Volksbank (Gf P2)',
     bankShortName: 'Frankfurter Volksbank',
     bankPostcode: '60008',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50190300': Iban(
-    bic: 'GENODE51FHC',
+  '50190300': Bic(
+    value: 'GENODE51FHC',
     bankName: 'Volksbank Höchst a.M., ZwNdl. der Frankfurter VB (Gf P2)',
     bankShortName: 'Volksbank Höchst',
     bankPostcode: '65908',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50190400': Iban(
-    bic: 'GENODE51FGH',
+  '50190400': Bic(
+    value: 'GENODE51FGH',
     bankName: 'Volksbank Griesheim (Gf P2)',
     bankShortName: 'Volksbank Griesheim Ffm',
     bankPostcode: '65933',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50210200': Iban(
-    bic: 'RABODEFFTAR',
+  '50210200': Bic(
+    value: 'RABODEFFTAR',
     bankName: 'Rabobank International Frankfurt Branch',
     bankShortName: 'Rabobank Frankfurt Main',
     bankPostcode: '60486',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50210212': Iban(
-    bic: 'RABODEFFDIR',
+  '50210212': Bic(
+    value: 'RABODEFFDIR',
     bankName: 'RaboDirect Frankfurt Main',
     bankShortName: 'RaboDirect',
     bankPostcode: '60486',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50210295': Iban(
-    bic: 'RABODEFFXXX',
+  '50210295': Bic(
+    value: 'RABODEFFXXX',
     bankName: 'Rabobank International Frankfurt Branch',
     bankShortName: 'Rabobank International CMS',
     bankPostcode: '60486',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50210800': Iban(
-    bic: 'PRCBDEFFXXX',
+  '50210800': Bic(
+    value: 'PRCBDEFFXXX',
     bankName: 'ProCredit Bank, Frankfurt am Main',
     bankShortName: 'ProCredit Bank, Frankfurt',
     bankPostcode: '60486',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50210900': Iban(
-    bic: 'CITIDEFFXXX',
+  '50210900': Bic(
+    value: 'CITIDEFFXXX',
     bankName: 'Citibank Europe Germany Branch',
     bankShortName: 'CEP Germany Branch',
     bankPostcode: '60038',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50220085': Iban(
-    bic: 'SMHBDEFFXXX',
+  '50220085': Bic(
+    value: 'SMHBDEFFXXX',
     bankName: 'UBS Europe',
     bankShortName: 'UBS Europe',
     bankPostcode: '60020',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50220101': Iban(
-    bic: 'INVODEF2XXX',
+  '50220101': Bic(
+    value: 'INVODEF2XXX',
     bankName: 'Kommunalkredit Austria, Zweigstelle Deutschland',
     bankShortName: 'Kommunalkredit Deutschland',
     bankPostcode: '60313',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50220300': Iban(
-    bic: 'HVBKDEFFXXX',
+  '50220300': Bic(
+    value: 'HVBKDEFFXXX',
     bankName: 'WOORI BANK EUROPE',
     bankShortName: 'WOORI BANK',
     bankPostcode: '60308',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50220500': Iban(
-    bic: 'BOFSDEF1XXX',
+  '50220500': Bic(
+    value: 'BOFSDEF1XXX',
     bankName: 'Lloyds Bank',
     bankShortName: 'Lloyds Bank',
     bankPostcode: '10178',
     bankLocation: 'Berlin',
   ),
-  '50220707': Iban(
-    bic: 'CAIXDEFFXXX',
+  '50220707': Bic(
+    value: 'CAIXDEFFXXX',
     bankName: 'CAIXABANK Zweigniederlassung Deutschland',
     bankShortName: 'CAIXABANK Zndl Frankfurt',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50220900': Iban(
-    bic: 'HAUKDEFFXXX',
+  '50220900': Bic(
+    value: 'HAUKDEFFXXX',
     bankName: 'Hauck Aufhäuser Lampe Privatbank',
     bankShortName: 'Hauck Aufhäuser Lampe Mün.',
     bankPostcode: '80076',
     bankLocation: 'München',
   ),
-  '50230000': Iban(
-    bic: 'ABCADEFFXXX',
+  '50230000': Bic(
+    value: 'ABCADEFFXXX',
     bankName: 'Arab Banking Corporation Zweigniederlassung Frankfurt',
     bankShortName: 'ABC ZNL Frankfurt',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50230600': Iban(
-    bic: 'ISBKDEFXXXX',
+  '50230600': Bic(
+    value: 'ISBKDEFXXXX',
     bankName: 'Isbank Frankfurt Main',
     bankShortName: 'Isbank',
     bankPostcode: '60022',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50230700': Iban(
-    bic: 'METZDEFFXXX',
+  '50230700': Bic(
+    value: 'METZDEFFXXX',
     bankName: 'Metzler, B. - seel Sohn & Co',
     bankShortName: 'Bankhaus Metzler Frankfurt',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50230800': Iban(
-    bic: 'PLFGDE5AXXX',
+  '50230800': Bic(
+    value: 'PLFGDE5AXXX',
     bankName: 'Ikano Wiesbaden',
     bankShortName: 'Ikano Bank',
     bankPostcode: '65205',
     bankLocation: 'Wiesbaden',
   ),
-  '50230888': Iban(
-    bic: 'PLFGDE5AIKB',
+  '50230888': Bic(
+    value: 'PLFGDE5AIKB',
     bankName: 'Ikano Wiesbaden',
     bankShortName: 'Ikano Bank',
     bankPostcode: '65205',
     bankLocation: 'Wiesbaden',
   ),
-  '50234500': Iban(
-    bic: 'KTAGDEFFXXX',
+  '50234500': Bic(
+    value: 'KTAGDEFFXXX',
     bankName: 'KT Bank Frankfurt',
     bankShortName: 'KT Bank',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50250200': Iban(
-    bic: 'DLFGDE51XXX',
+  '50250200': Bic(
+    value: 'DLFGDE51XXX',
     bankName: 'Deutsche Leasing Finance',
     bankShortName: 'DL Finance Bad Homburg',
     bankPostcode: '61283',
     bankLocation: 'Bad Homburg',
   ),
-  '50310400': Iban(
-    bic: 'BARCDEFFXXX',
+  '50310400': Bic(
+    value: 'BARCDEFFXXX',
     bankName: 'Barclays Bank Ireland Frankfurt Branch',
     bankShortName: 'Barclays Bank IE, Frankfurt',
     bankPostcode: '60310',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50310900': Iban(
-    bic: 'PCBCDEFFXXX',
+  '50310900': Bic(
+    value: 'PCBCDEFFXXX',
     bankName: 'China Construction Bank Ndl Frankfurt',
     bankShortName: 'CCB Frankfurt',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50320000': Iban(
-    bic: 'OWHBDEFFXXX',
+  '50320000': Bic(
+    value: 'OWHBDEFFXXX',
     bankName: 'VTB Bank (Europe) Ffm',
     bankShortName: 'VTB Bank (Europe)',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50320191': Iban(
-    bic: 'HYVEDEMM430',
+  '50320191': Bic(
+    value: 'HYVEDEMM430',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '61282',
     bankLocation: 'Bad Homburg',
   ),
-  '50320500': Iban(
-    bic: 'BSCHDEFFXXX',
+  '50320500': Bic(
+    value: 'BSCHDEFFXXX',
     bankName: 'Banco Santander Filiale Frankfurt',
     bankShortName: 'Banco Santander Ffm',
     bankPostcode: '60003',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50320600': Iban(
-    bic: 'BCMADEFFXXX',
+  '50320600': Bic(
+    value: 'BCMADEFFXXX',
     bankName: 'Attijariwafa bank Europa ZNdl. Frankfurt',
     bankShortName: 'Attijariwafa bank Frankfurt',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50320900': Iban(
-    bic: 'PICTDEFFXXX',
+  '50320900': Bic(
+    value: 'PICTDEFFXXX',
     bankName: 'Pictet & Cie (Europe) Ndl Deutschland',
     bankShortName: 'Pictet & Cie Europe Ffm',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50324000': Iban(
-    bic: 'FTSBDEFAXXX',
+  '50324000': Bic(
+    value: 'FTSBDEFAXXX',
     bankName: 'ABN AMRO Bank, Frankfurt Branch',
     bankShortName: 'ABN AMRO Bank',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50330000': Iban(
-    bic: 'SBINDEFFXXX',
+  '50330000': Bic(
+    value: 'SBINDEFFXXX',
     bankName: 'State Bk of India Frankfurt',
     bankShortName: 'State Bank of India',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50330200': Iban(
-    bic: 'MHBFDEFFXXX',
+  '50330200': Bic(
+    value: 'MHBFDEFFXXX',
     bankName: 'Raisin Bank Frankfurt',
     bankShortName: 'Raisin Bank',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50330201': Iban(
-    bic: 'RAISDEFFXXX',
+  '50330201': Bic(
+    value: 'RAISDEFFXXX',
     bankName: 'Raisin Bank',
     bankShortName: 'Raisin Bank',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50330300': Iban(
-    bic: 'IRVTDEFXXXX',
+  '50330300': Bic(
+    value: 'IRVTDEFXXXX',
     bankName: 'The Bank of New York Mellon',
     bankShortName: 'The Bank of New York Mellon',
     bankPostcode: '60077',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50330500': Iban(
-    bic: 'BCDMDEF1XXX',
+  '50330500': Bic(
+    value: 'BCDMDEF1XXX',
     bankName: 'BANQUE CHAABI DU MAROC Agentur Frankfurt Ndl. Deutschland',
     bankShortName: 'CHAABI BANK FRANKFURT',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50330600': Iban(
-    bic: 'SEPBDEFFXXX',
+  '50330600': Bic(
+    value: 'SEPBDEFFXXX',
     bankName: 'Bank Sepah Frankfurt, Main',
     bankShortName: 'Bank Sepah-Iran',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50334400': Iban(
-    bic: 'BNYMDEF1XXX',
+  '50334400': Bic(
+    value: 'BNYMDEF1XXX',
     bankName: 'The Bank of New York Mellon NL Frankfurt',
     bankShortName: 'BNY Mellon NL FFM',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50339900': Iban(
-    bic: 'PANXDEF2XXX',
+  '50339900': Bic(
+    value: 'PANXDEF2XXX',
     bankName: 'German branch of Unifiedpost Payments',
     bankShortName: 'Unifiedpost Payments',
     bankPostcode: '60314',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50400000': Iban(
-    bic: 'MARKDEFFXXX',
+  '50400000': Bic(
+    value: 'MARKDEFFXXX',
     bankName: 'BBk Zentrale Frankfurt Main',
     bankShortName: 'Bundesbank Zentrale',
     bankPostcode: '60006',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50510300': Iban(
-    bic: 'SMBCDEFFXXX',
+  '50510300': Bic(
+    value: 'SMBCDEFFXXX',
     bankName: 'SMBC Bank EU - FFM a.M.',
     bankShortName: 'SMBC Bank EU',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50520190': Iban(
-    bic: 'HYVEDEMM467',
+  '50520190': Bic(
+    value: 'HYVEDEMM467',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '63085',
     bankLocation: 'Rodgau',
   ),
-  '50522222': Iban(
-    bic: 'FDDODEMMXXX',
+  '50522222': Bic(
+    value: 'FDDODEMMXXX',
     bankName: 'FIDOR Bank Zndl Frankfurt am Main',
     bankShortName: 'FIDOR Bank Frankfurt',
     bankPostcode: '60596',
     bankLocation: 'Frankfurt am Main',
   ),
-  '50530000': Iban(
-    bic: 'GENODE51CRO',
+  '50530000': Bic(
+    value: 'GENODE51CRO',
     bankName: 'Cronbank (Gf P2)',
     bankShortName: 'Cronbank',
     bankPostcode: '63303',
     bankLocation: 'Dreieich',
   ),
-  '50540028': Iban(
-    bic: 'COBADEFFXXX',
+  '50540028': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Dietzenbach',
     bankShortName: 'Commerzbank',
     bankPostcode: '63112',
     bankLocation: 'Dietzenbach',
   ),
-  '50550020': Iban(
-    bic: 'HELADEF1OFF',
+  '50550020': Bic(
+    value: 'HELADEF1OFF',
     bankName: 'Städtische Sparkasse Offenbach a.M.',
     bankShortName: 'Städtische Spk Offenbach',
     bankPostcode: '63019',
     bankLocation: 'Offenbach am Main',
   ),
-  '50560102': Iban(
-    bic: 'GENODE51OF2',
+  '50560102': Bic(
+    value: 'GENODE51OF2',
     bankName: 'Raiffeisenbank Offenbach/M.-Bieber (Gf P2)',
     bankShortName: 'Raiffbk Offenbach',
     bankPostcode: '63033',
     bankLocation: 'Offenbach am Main',
   ),
-  '50561315': Iban(
-    bic: 'GENODE51OBH',
+  '50561315': Bic(
+    value: 'GENODE51OBH',
     bankName: 'Vereinigte Volksbank Maingau (Gf P2)',
     bankShortName: 'Ver VB Maingau',
     bankPostcode: '63171',
     bankLocation: 'Obertshausen',
   ),
-  '50570018': Iban(
-    bic: 'DEUTDEFF550',
+  '50570018': Bic(
+    value: 'DEUTDEFF550',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '63088',
     bankLocation: 'Rodgau',
   ),
-  '50570024': Iban(
-    bic: 'DEUTDEDB525',
+  '50570024': Bic(
+    value: 'DEUTDEDB525',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '63088',
     bankLocation: 'Rodgau',
   ),
-  '50580005': Iban(
-    bic: 'DRESDEFF505',
+  '50580005': Bic(
+    value: 'DRESDEFF505',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Dietzenbach',
     bankPostcode: '63112',
     bankLocation: 'Dietzenbach',
   ),
-  '50580085': Iban(
-    bic: 'DRESDEFFJ12',
+  '50580085': Bic(
+    value: 'DRESDEFFJ12',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Offenbc',
     bankPostcode: '63034',
     bankLocation: 'Offenbach am Main',
   ),
-  '50590000': Iban(
-    bic: 'GENODE51OF1',
+  '50590000': Bic(
+    value: 'GENODE51OF1',
     bankName: 'Offenbacher Volksbank -alt-',
     bankShortName: 'Offenbacher Volksbank -alt-',
     bankPostcode: '63014',
     bankLocation: 'Offenbach am Main',
   ),
-  '50592200': Iban(
-    bic: 'GENODE51DRE',
+  '50592200': Bic(
+    value: 'GENODE51DRE',
     bankName: 'Volksbank Dreieich Zw Egelsbach',
     bankShortName: 'VB Dreieich Egelsbach',
     bankPostcode: '63329',
     bankLocation: 'Egelsbach',
   ),
-  '50640015': Iban(
-    bic: 'COBADEFFXXX',
+  '50640015': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Hanau Main',
     bankShortName: 'Commerzbank',
     bankPostcode: '63402',
     bankLocation: 'Hanau',
   ),
-  '50650023': Iban(
-    bic: 'HELADEF1HAN',
+  '50650023': Bic(
+    value: 'HELADEF1HAN',
     bankName: 'SPARKASSE HANAU',
     bankShortName: 'SPARKASSE HANAU',
     bankPostcode: '63549',
     bankLocation: 'Ronneburg',
   ),
-  '50652124': Iban(
-    bic: 'HELADEF1SLS',
+  '50652124': Bic(
+    value: 'HELADEF1SLS',
     bankName: 'Sparkasse Langen-Seligenstadt',
     bankShortName: 'Spk Langen-Seligenstadt',
     bankPostcode: '63150',
     bankLocation: 'Heusenstamm',
   ),
-  '50661639': Iban(
-    bic: 'GENODEF1LSR',
+  '50661639': Bic(
+    value: 'GENODEF1LSR',
     bankName: 'VR Bank Main-Kinzig-Büdingen (Gf P2)',
     bankShortName: 'VR Bk Main-Kinzig-Büdingen',
     bankPostcode: '63654',
     bankLocation: 'Büdingen',
   ),
-  '50661816': Iban(
-    bic: 'GENODE51NIH',
+  '50661816': Bic(
+    value: 'GENODE51NIH',
     bankName: 'Volksbank Heldenbergen Ndl d Frankfurter VB',
     bankShortName: 'Volksbank Heldenbergen',
     bankPostcode: '61123',
     bankLocation: 'Nidderau',
   ),
-  '50662299': Iban(
-    bic: 'GENODEF1BKO',
+  '50662299': Bic(
+    value: 'GENODEF1BKO',
     bankName: 'Raiffeisenbank Bruchköbel',
     bankShortName: 'Raiffeisenbank Zw',
     bankPostcode: '61137',
     bankLocation: 'Schöneck',
   ),
-  '50662669': Iban(
-    bic: 'RBMFDEF1XXX',
+  '50662669': Bic(
+    value: 'RBMFDEF1XXX',
     bankName: 'Raiffeisenbank Maintal Ndl d Frankfurter VB',
     bankShortName: 'Frankfurter Volksbank',
     bankPostcode: '63477',
     bankLocation: 'Maintal',
   ),
-  '50663699': Iban(
-    bic: 'GENODEF1RDB',
+  '50663699': Bic(
+    value: 'GENODEF1RDB',
     bankName: 'Raiffbk Rodenbach Hanau',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '63514',
     bankLocation: 'Rodenbach',
   ),
-  '50670009': Iban(
-    bic: 'DEUTDEFF506',
+  '50670009': Bic(
+    value: 'DEUTDEFF506',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '63603',
     bankLocation: 'Wächtersbach',
   ),
-  '50670024': Iban(
-    bic: 'DEUTDEDB506',
+  '50670024': Bic(
+    value: 'DEUTDEDB506',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '63603',
     bankLocation: 'Wächtersbach',
   ),
-  '50680002': Iban(
-    bic: 'DRESDEFF506',
+  '50680002': Bic(
+    value: 'DRESDEFF506',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Hanau Main',
     bankPostcode: '63403',
     bankLocation: 'Hanau',
   ),
-  '50680085': Iban(
-    bic: 'DRESDEFFJ13',
+  '50680085': Bic(
+    value: 'DRESDEFFJ13',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Hanau',
     bankPostcode: '63402',
     bankLocation: 'Hanau',
   ),
-  '50690000': Iban(
-    bic: 'GENODEF1HUV',
+  '50690000': Bic(
+    value: 'GENODEF1HUV',
     bankName: 'Volksbank Raiffeisenbank Hanau Ndl d Frankf VB',
     bankShortName: 'Frankfurter Volksbank',
     bankPostcode: '63412',
     bankLocation: 'Hanau',
   ),
-  '50691300': Iban(
-    bic: 'DZBMDEF1XXX',
+  '50691300': Bic(
+    value: 'DZBMDEF1XXX',
     bankName: 'DZB BANK Mainhausen',
     bankShortName: 'DZB Bank (Gf P2)',
     bankPostcode: '63533',
     bankLocation: 'Mainhausen',
   ),
-  '50692100': Iban(
-    bic: 'GENODE51SEL',
+  '50692100': Bic(
+    value: 'GENODE51SEL',
     bankName: 'Volksbank Seligenstadt (Gf P2)',
     bankShortName: 'Volksbank Seligenstadt',
     bankPostcode: '63490',
     bankLocation: 'Seligenstadt',
   ),
-  '50740048': Iban(
-    bic: 'COBADEFFXXX',
+  '50740048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank GH F-G48',
     bankShortName: 'Commerzbank',
     bankPostcode: '63571',
     bankLocation: 'Gelnhausen',
   ),
-  '50750094': Iban(
-    bic: 'HELADEF1GEL',
+  '50750094': Bic(
+    value: 'HELADEF1GEL',
     bankName: 'Kreissparkasse Gelnhausen',
     bankShortName: 'Kreissparkasse Gelnhausen',
     bankPostcode: '63599',
     bankLocation: 'Biebergemünd',
   ),
-  '50761333': Iban(
-    bic: 'GENODE51BUE',
+  '50761333': Bic(
+    value: 'GENODE51BUE',
     bankName: 'Volksbank Büdingen',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '63654',
     bankLocation: 'Büdingen',
   ),
-  '50763319': Iban(
-    bic: 'GENODEF1BIR',
+  '50763319': Bic(
+    value: 'GENODEF1BIR',
     bankName: 'Raiffeisenbank Vogelsberg Zw Kefenrod',
     bankShortName: 'Raiffbk Vogelsbg Kefenrod',
     bankPostcode: '63699',
     bankLocation: 'Kefenrod',
   ),
-  '50780006': Iban(
-    bic: 'DRESDEFF524',
+  '50780006': Bic(
+    value: 'DRESDEFF524',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Gelnhausen',
     bankPostcode: '63552',
     bankLocation: 'Gelnhausen',
   ),
-  '50790000': Iban(
-    bic: 'GENODE51GEL',
+  '50790000': Bic(
+    value: 'GENODE51GEL',
     bankName: 'VR Bank Bad Orb-Gelnhausen (Gf P2)',
     bankShortName: 'VR Bank Bad Orb-Gelnhausen',
     bankPostcode: '63571',
     bankLocation: 'Gelnhausen',
   ),
-  '50793300': Iban(
-    bic: 'GENODE51BIV',
+  '50793300': Bic(
+    value: 'GENODE51BIV',
     bankName: 'Birsteiner Volksbank (Gf P2)',
     bankShortName: 'Birsteiner Volksbank',
     bankPostcode: '63633',
     bankLocation: 'Birstein',
   ),
-  '50794300': Iban(
-    bic: 'GENODE51WBH',
+  '50794300': Bic(
+    value: 'GENODE51WBH',
     bankName: 'VR Bank Wächtersbach/Bad Soden-Salmünster -alt',
     bankShortName: 'VR Bank Wächtersbach -alt-',
     bankPostcode: '63607',
     bankLocation: 'Wächtersbach',
   ),
-  '50810900': Iban(
-    bic: 'BBSPDE6KXXX',
+  '50810900': Bic(
+    value: 'BBSPDE6KXXX',
     bankName: 'Deutsche Bausparkasse Badenia (ehem. DBS Bausparkasse)',
     bankShortName: 'DBS Badenia eh. DBS Bauspar',
     bankPostcode: '76114',
     bankLocation: 'Karlsruhe',
   ),
-  '50820292': Iban(
-    bic: 'HYVEDEMM487',
+  '50820292': Bic(
+    value: 'HYVEDEMM487',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '64217',
     bankLocation: 'Darmstadt',
   ),
-  '50835800': Iban(
-    bic: 'MKGMDE51XXX',
+  '50835800': Bic(
+    value: 'MKGMDE51XXX',
     bankName: 'MCE Bank Flörsheim',
     bankShortName: 'MCE Bank',
     bankPostcode: '65439',
     bankLocation: 'Flörsheim am Main',
   ),
-  '50840005': Iban(
-    bic: 'COBADEFFXXX',
+  '50840005': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Michelstadt',
     bankShortName: 'Commerzbank',
     bankPostcode: '64720',
     bankLocation: 'Michelstadt',
   ),
-  '50850049': Iban(
-    bic: 'HELADEFF508',
+  '50850049': Bic(
+    value: 'HELADEFF508',
     bankName: 'Landesbank Hessen-Thür Girozentrale',
     bankShortName: 'LdBk Hess-Thür Gz Darmstadt',
     bankPostcode: '64222',
     bankLocation: 'Darmstadt',
   ),
-  '50850150': Iban(
-    bic: 'HELADEF1DAS',
+  '50850150': Bic(
+    value: 'HELADEF1DAS',
     bankName: 'Stadt- und Kreis-Sparkasse Darmstadt',
     bankShortName: 'St u Kr Spk Darmstadt',
     bankPostcode: '64409',
     bankLocation: 'Messel',
   ),
-  '50851952': Iban(
-    bic: 'HELADEF1ERB',
+  '50851952': Bic(
+    value: 'HELADEF1ERB',
     bankName: 'Sparkasse Odenwaldkreis',
     bankShortName: 'Spk Odenw Brombachtal',
     bankPostcode: '64753',
     bankLocation: 'Brombachtal',
   ),
-  '50852553': Iban(
-    bic: 'HELADEF1GRG',
+  '50852553': Bic(
+    value: 'HELADEF1GRG',
     bankName: 'Kreissparkasse Groß-Gerau',
     bankShortName: 'Kr Spk Groß-Gerau',
     bankPostcode: '65451',
     bankLocation: 'Kelsterbach',
   ),
-  '50852651': Iban(
-    bic: 'HELADEF1DIE',
+  '50852651': Bic(
+    value: 'HELADEF1DIE',
     bankName: 'Sparkasse Dieburg',
     bankShortName: 'Sparkasse Dieburg',
     bankPostcode: '63110',
     bankLocation: 'Rodgau',
   ),
-  '50861393': Iban(
-    bic: 'GENODE51BKZ',
+  '50861393': Bic(
+    value: 'GENODE51BKZ',
     bankName: 'Spar- und Darlehnskasse Zell -alt-',
     bankShortName: 'SpDK Zell -alt-',
     bankPostcode: '64732',
     bankLocation: 'Bad König',
   ),
-  '50861501': Iban(
-    bic: 'GENODE51ABH',
+  '50861501': Bic(
+    value: 'GENODE51ABH',
     bankName: 'Raiffeisenbank Nördliche Bergstraße (Gf P2)',
     bankShortName: 'Raiffbk Nördliche Bergstr',
     bankPostcode: '64659',
     bankLocation: 'Alsbach-Hähnlein',
   ),
-  '50862311': Iban(
-    bic: 'GENODE51WGH',
+  '50862311': Bic(
+    value: 'GENODE51WGH',
     bankName: 'Volksbank Gräfenhausen (Gf P2)',
     bankShortName: 'Volksbank Gräfenhausen',
     bankPostcode: '64324',
     bankLocation: 'Weiterstadt',
   ),
-  '50862408': Iban(
-    bic: 'GENODE51GRI',
+  '50862408': Bic(
+    value: 'GENODE51GRI',
     bankName: 'Vereinigte Volksbank Griesheim-Weiterstadt (Gf P2)',
     bankShortName: 'Ver Volksbank Griesh-Weiter',
     bankPostcode: '64344',
     bankLocation: 'Griesheim',
   ),
-  '50862703': Iban(
-    bic: 'GENODE51REI',
+  '50862703': Bic(
+    value: 'GENODE51REI',
     bankName: 'Volksbank Gersprenztal-Otzberg',
     bankShortName: 'VB Gersprenztal-Otzberg',
     bankPostcode: '64354',
     bankLocation: 'Reinheim',
   ),
-  '50862835': Iban(
-    bic: 'GENODE51SHM',
+  '50862835': Bic(
+    value: 'GENODE51SHM',
     bankName: 'Raiffeisenbank Schaafheim (Gf P2)',
     bankShortName: 'Raiffeisenbank Schaafheim',
     bankPostcode: '64847',
     bankLocation: 'Schaafheim',
   ),
-  '50862903': Iban(
-    bic: 'GENODE51GIN',
+  '50862903': Bic(
+    value: 'GENODE51GIN',
     bankName: 'Volksbank Mainspitze (Gf P2)',
     bankShortName: 'Volksbank Mainspitze',
     bankPostcode: '65462',
     bankLocation: 'Ginsheim-Gustavsburg',
   ),
-  '50863513': Iban(
-    bic: 'GENODE51MIC',
+  '50863513': Bic(
+    value: 'GENODE51MIC',
     bankName: 'Vereinigte Volksbank Raiffeisenbank (Gf P2)',
     bankShortName: 'Vereinigte VB RB',
     bankPostcode: '64354',
     bankLocation: 'Reinheim',
   ),
-  '50865224': Iban(
-    bic: 'GENODE51MWA',
+  '50865224': Bic(
+    value: 'GENODE51MWA',
     bankName: 'VB Mörfelden-Walldorf Ndl d Frankfurter VB',
     bankShortName: 'Volksbank Mörfelden-Walldf',
     bankPostcode: '64532',
     bankLocation: 'Mörfelden-Walldorf',
   ),
-  '50865503': Iban(
-    bic: 'GENODE51EPT',
+  '50865503': Bic(
+    value: 'GENODE51EPT',
     bankName: 'Volksbank (Gf P2)',
     bankShortName: 'VB Eppertshausen',
     bankPostcode: '64859',
     bankLocation: 'Eppertshausen',
   ),
-  '50870005': Iban(
-    bic: 'DEUTDEFF552',
+  '50870005': Bic(
+    value: 'DEUTDEFF552',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '64720',
     bankLocation: 'Michelstadt',
   ),
-  '50870024': Iban(
-    bic: 'DEUTDEDB555',
+  '50870024': Bic(
+    value: 'DEUTDEDB555',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '64720',
     bankLocation: 'Michelstadt',
   ),
-  '50870324': Iban(
-    bic: 'DEUTDEDBP26',
+  '50870324': Bic(
+    value: 'DEUTDEDBP26',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '64293',
     bankLocation: 'Darmstadt',
   ),
-  '50870393': Iban(
-    bic: 'DEUTDEFFS26',
+  '50870393': Bic(
+    value: 'DEUTDEFFS26',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '64293',
     bankLocation: 'Darmstadt',
   ),
-  '50880050': Iban(
-    bic: 'DRESDEFF508',
+  '50880050': Bic(
+    value: 'DRESDEFF508',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Pfungstadt',
     bankPostcode: '64319',
     bankLocation: 'Pfungstadt',
   ),
-  '50880085': Iban(
-    bic: 'DRESDEFFJ14',
+  '50880085': Bic(
+    value: 'DRESDEFFJ14',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Darmstd',
     bankPostcode: '64207',
     bankLocation: 'Darmstadt',
   ),
-  '50880086': Iban(
-    bic: 'DRESDEFFJ15',
+  '50880086': Bic(
+    value: 'DRESDEFFJ15',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITGK2 Darmstd',
     bankPostcode: '64202',
     bankLocation: 'Darmstadt',
   ),
-  '50890000': Iban(
-    bic: 'GENODEF1VBD',
+  '50890000': Bic(
+    value: 'GENODEF1VBD',
     bankName: 'Volksbank Darmstadt - Südhessen (Gf P2)',
     bankShortName: 'VB Darmstadt - Südhessen',
     bankPostcode: '64218',
     bankLocation: 'Darmstadt',
   ),
-  '50950068': Iban(
-    bic: 'HELADEF1BEN',
+  '50950068': Bic(
+    value: 'HELADEF1BEN',
     bankName: 'Sparkasse Bensheim',
     bankShortName: 'Sparkasse Bensheim',
     bankPostcode: '64653',
     bankLocation: 'Lorsch',
   ),
-  '50951469': Iban(
-    bic: 'HELADEF1HEP',
+  '50951469': Bic(
+    value: 'HELADEF1HEP',
     bankName: 'Sparkasse Starkenburg',
     bankShortName: 'Sparkasse Starkenburg',
     bankPostcode: '69434',
     bankLocation: 'Hirschhorn (Neckar)',
   ),
-  '50961206': Iban(
-    bic: 'GENODE51RBU',
+  '50961206': Bic(
+    value: 'GENODE51RBU',
     bankName: 'Raiffeisenbank Ried Bürstadt',
     bankShortName: 'Raiffeisenbank Bürstadt',
     bankPostcode: '68623',
     bankLocation: 'Lampertheim',
   ),
-  '50961312': Iban(
-    bic: 'GENODE51GRM',
+  '50961312': Bic(
+    value: 'GENODE51GRM',
     bankName: 'Raiffeisenbank Groß-Rohrheim (Gf P2)',
     bankShortName: 'Raiffbk Groß-Rohrheim',
     bankPostcode: '68649',
     bankLocation: 'Groß-Rohrheim',
   ),
-  '50961592': Iban(
-    bic: 'GENODE51FHO',
+  '50961592': Bic(
+    value: 'GENODE51FHO',
     bankName: 'Volksbank Weschnitztal (Gf P2)',
     bankShortName: 'Volksbank Weschnitztal',
     bankPostcode: '64668',
     bankLocation: 'Rimbach',
   ),
-  '50961685': Iban(
-    bic: 'GENODE51ABT',
+  '50961685': Bic(
+    value: 'GENODE51ABT',
     bankName: 'Volksbank Überwald-Gorxheimertal (Gf P2)',
     bankShortName: 'Volksbank Überwald-Gorxheim',
     bankPostcode: '69518',
     bankLocation: 'Abtsteinach',
   ),
-  '50970004': Iban(
-    bic: 'DEUTDEFF519',
+  '50970004': Bic(
+    value: 'DEUTDEFF519',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '64631',
     bankLocation: 'Heppenheim (Bergstraße)',
   ),
-  '50970024': Iban(
-    bic: 'DEUTDEDB519',
+  '50970024': Bic(
+    value: 'DEUTDEDB519',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '64631',
     bankLocation: 'Heppenheim (Bergstraße)',
   ),
-  '51010400': Iban(
-    bic: 'AARBDE5WXXX',
+  '51010400': Bic(
+    value: 'AARBDE5WXXX',
     bankName: 'Aareal Bank',
     bankShortName: 'Aareal Bank',
     bankPostcode: '65011',
     bankLocation: 'Wiesbaden',
   ),
-  '51020000': Iban(
-    bic: 'BHFBDEFF510',
+  '51020000': Bic(
+    value: 'BHFBDEFF510',
     bankName: 'BHF-BANK Wiesbaden',
     bankShortName: 'BHF-BANK',
     bankPostcode: '65185',
     bankLocation: 'Wiesbaden',
   ),
-  '51020186': Iban(
-    bic: 'HYVEDEMM478',
+  '51020186': Bic(
+    value: 'HYVEDEMM478',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '65004',
     bankLocation: 'Wiesbaden',
   ),
-  '51040038': Iban(
-    bic: 'COBADEFFXXX',
+  '51040038': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Taunusstein',
     bankShortName: 'Commerzbank',
     bankPostcode: '65232',
     bankLocation: 'Taunusstein',
   ),
-  '51050015': Iban(
-    bic: 'NASSDE55XXX',
+  '51050015': Bic(
+    value: 'NASSDE55XXX',
     bankName: 'Nassauische Sparkasse',
     bankShortName: 'Nass Spk Frankfurt',
     bankPostcode: '60313',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51051000': Iban(
-    bic: 'PULSDE5WXXX',
+  '51051000': Bic(
+    value: 'PULSDE5WXXX',
     bankName: 'S Broker Wiesbaden',
     bankShortName: 'S Broker Wiesbaden',
     bankPostcode: '65203',
     bankLocation: 'Wiesbaden',
   ),
-  '51070021': Iban(
-    bic: 'DEUTDEFF514',
+  '51070021': Bic(
+    value: 'DEUTDEFF514',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65232',
     bankLocation: 'Taunusstein',
   ),
-  '51070024': Iban(
-    bic: 'DEUTDEDB514',
+  '51070024': Bic(
+    value: 'DEUTDEDB514',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65232',
     bankLocation: 'Taunusstein',
   ),
-  '51080060': Iban(
-    bic: 'DRESDEFF510',
+  '51080060': Bic(
+    value: 'DRESDEFF510',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Taunusstein',
     bankPostcode: '65232',
     bankLocation: 'Taunusstein',
   ),
-  '51080085': Iban(
-    bic: 'DRESDEFFJ16',
+  '51080085': Bic(
+    value: 'DRESDEFFJ16',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Wiesbdn',
     bankPostcode: '65004',
     bankLocation: 'Wiesbaden',
   ),
-  '51080086': Iban(
-    bic: 'DRESDEFFJ17',
+  '51080086': Bic(
+    value: 'DRESDEFFJ17',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK2',
     bankShortName: 'Commerzbank ITGK2 Wiesbdn',
     bankPostcode: '65004',
     bankLocation: 'Wiesbaden',
   ),
-  '51089410': Iban(
-    bic: 'DRESDEFFI20',
+  '51089410': Bic(
+    value: 'DRESDEFFI20',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank Wiesbad. ITGK',
     bankPostcode: '65012',
     bankLocation: 'Wiesbaden',
   ),
-  '51090000': Iban(
-    bic: 'WIBADE5WXXX',
+  '51090000': Bic(
+    value: 'WIBADE5WXXX',
     bankName: 'Wiesbadener Volksbank (Gf P2)',
     bankShortName: 'Wiesbadener Volksbank',
     bankPostcode: '65050',
     bankLocation: 'Wiesbaden',
   ),
-  '51091500': Iban(
-    bic: 'GENODE51RGG',
+  '51091500': Bic(
+    value: 'GENODE51RGG',
     bankName: 'Rheingauer Volksbank (Gf P2)',
     bankShortName: 'Rheingauer Volksbank',
     bankPostcode: '65359',
     bankLocation: 'Geisenheim',
   ),
-  '51091501': Iban(
-    bic: 'GENODE51RGG',
+  '51091501': Bic(
+    value: 'GENODE51RGG',
     bankName: 'Rheingauer Volksbank (Gf GAA)',
     bankShortName: 'Rheingauer Voba (Gf GAA)',
     bankPostcode: '65366',
     bankLocation: 'Geisenheim',
   ),
-  '51091700': Iban(
-    bic: 'VRBUDE51XXX',
+  '51091700': Bic(
+    value: 'VRBUDE51XXX',
     bankName: 'vr bank Untertaunus (Gf P2)',
     bankShortName: 'vr bank Untertaunus',
     bankPostcode: '65501',
     bankLocation: 'Idstein',
   ),
-  '51091711': Iban(
-    bic: 'VRBUDE51XXX',
+  '51091711': Bic(
+    value: 'VRBUDE51XXX',
     bankName: 'vr bank Untertaunus (Gf P2)',
     bankShortName: 'vr bank Untertaunus',
     bankPostcode: '65501',
     bankLocation: 'Idstein',
   ),
-  '51140029': Iban(
-    bic: 'COBADEFFXXX',
+  '51140029': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Diez Lahn',
     bankShortName: 'Commerzbank',
     bankPostcode: '65582',
     bankLocation: 'Diez',
   ),
-  '51150018': Iban(
-    bic: 'HELADEF1LIM',
+  '51150018': Bic(
+    value: 'HELADEF1LIM',
     bankName: 'Kreissparkasse Limburg',
     bankShortName: 'Kr Spk Limburg',
     bankPostcode: '65618',
     bankLocation: 'Selters (Taunus)',
   ),
-  '51151919': Iban(
-    bic: 'HELADEF1WEI',
+  '51151919': Bic(
+    value: 'HELADEF1WEI',
     bankName: 'Kreissparkasse Weilburg',
     bankShortName: 'Kr Spk Weilburg',
     bankPostcode: '65614',
     bankLocation: 'Beselich',
   ),
-  '51161606': Iban(
-    bic: 'GENODE51LDD',
+  '51161606': Bic(
+    value: 'GENODE51LDD',
     bankName: 'Volksbank Langendernbach (Gf P2)',
     bankShortName: 'Volksbank Langendernbach',
     bankPostcode: '65599',
     bankLocation: 'Dornburg',
   ),
-  '51170010': Iban(
-    bic: 'DEUTDEFF511',
+  '51170010': Bic(
+    value: 'DEUTDEFF511',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65549',
     bankLocation: 'Limburg',
   ),
-  '51170024': Iban(
-    bic: 'DEUTDEDB511',
+  '51170024': Bic(
+    value: 'DEUTDEDB511',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '65549',
     bankLocation: 'Limburg',
   ),
-  '51180041': Iban(
-    bic: 'DRESDEFF511',
+  '51180041': Bic(
+    value: 'DRESDEFF511',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Limburg Lahn',
     bankPostcode: '65534',
     bankLocation: 'Limburg',
   ),
-  '51190000': Iban(
-    bic: 'GENODE51LIM',
+  '51190000': Bic(
+    value: 'GENODE51LIM',
     bankName: 'Vereinigte Volksbank Limburg (Gf P2)',
     bankShortName: 'Ver Volksbank Limburg',
     bankPostcode: '65532',
     bankLocation: 'Limburg',
   ),
-  '51191800': Iban(
-    bic: 'GENODE51SBH',
+  '51191800': Bic(
+    value: 'GENODE51SBH',
     bankName: 'Volksbank Schupbach (Gf P2)',
     bankShortName: 'Volksbank Schupbach',
     bankPostcode: '65614',
     bankLocation: 'Beselich',
   ),
-  '51192200': Iban(
-    bic: 'GENODE51WEM',
+  '51192200': Bic(
+    value: 'GENODE51WEM',
     bankName: 'Volks- und Raiffeisenbank Weilmünster -alt-',
     bankShortName: 'VuR-Bank Weilmünster -alt-',
     bankPostcode: '35786',
     bankLocation: 'Weilmünster',
   ),
-  '51210600': Iban(
-    bic: 'BNPADEFFXXX',
+  '51210600': Bic(
+    value: 'BNPADEFFXXX',
     bankName: 'BNP Paribas Niederlassung Deutschland',
     bankShortName: 'BNP PARIBAS Ndl Deutschland',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51210606': Iban(
-    bic: 'BNPADEFFXXX',
+  '51210606': Bic(
+    value: 'BNPADEFFXXX',
     bankName: 'BNP Paribas Niederlassung Deutschland',
     bankShortName: 'BNP PARIBAS Frankfurt',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51210699': Iban(
-    bic: 'BNPADEFFXXX',
+  '51210699': Bic(
+    value: 'BNPADEFFXXX',
     bankName: 'BNP Paribas Niederlassung Deutschland',
     bankShortName: 'BNP PARIBAS Ndl Deutschland',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51210700': Iban(
-    bic: 'NZFMDEF1XXX',
+  '51210700': Bic(
+    value: 'NZFMDEF1XXX',
     bankName: 'NIBC Bank Zndl Frankfurt am Main',
     bankShortName: 'NIBC Bank Frankfurt am Main',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51210800': Iban(
-    bic: 'SOGEDEFFXXX',
+  '51210800': Bic(
+    value: 'SOGEDEFFXXX',
     bankName: 'SOGEBANK Frankfurt Main',
     bankShortName: 'Societe Generale',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51210801': Iban(
-    bic: 'SOGEDEFFXXX',
+  '51210801': Bic(
+    value: 'SOGEDEFFXXX',
     bankName: 'Societe Generale',
     bankShortName: 'Societe Generale',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51210802': Iban(
-    bic: 'SOGEDEFFXXX',
+  '51210802': Bic(
+    value: 'SOGEDEFFXXX',
     bankName: 'Societe Generale',
     bankShortName: 'Societe Generale',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51210803': Iban(
-    bic: 'SOGEDEFFXXX',
+  '51210803': Bic(
+    value: 'SOGEDEFFXXX',
     bankName: 'Societe Generale',
     bankShortName: 'Societe Generale',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51211000': Iban(
-    bic: 'NATXDEFPXXX',
+  '51211000': Bic(
+    value: 'NATXDEFPXXX',
     bankName: 'NATIXIS Pfandbriefbank Ffm',
     bankShortName: 'NATIXIS Pfandbriefbank',
     bankPostcode: '60322',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51220200': Iban(
-    bic: 'ESSEDEFFXXX',
+  '51220200': Bic(
+    value: 'ESSEDEFFXXX',
     bankName: 'Skandinaviska Enskilda Banken (publ) Frankfurt Branch',
     bankShortName: 'SEB, Frankfurt',
     bankPostcode: '60313',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51220400': Iban(
-    bic: 'SIHRDEH1FFM',
+  '51220400': Bic(
+    value: 'SIHRDEH1FFM',
     bankName: 'Bank Saderat Iran Frankfurt',
     bankShortName: 'Bank Saderat Iran',
     bankPostcode: '60064',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51220700': Iban(
-    bic: 'TCZBDEFFXXX',
+  '51220700': Bic(
+    value: 'TCZBDEFFXXX',
     bankName: 'ZIRAAT BANK International',
     bankShortName: 'ZIRAAT BANK',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51220800': Iban(
-    bic: 'BRASDEFFXXX',
+  '51220800': Bic(
+    value: 'BRASDEFFXXX',
     bankName: 'Banco do Brasil Frankfurt',
     bankShortName: 'Banco do Brasil',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51220900': Iban(
-    bic: 'MSFFDEFPXXX',
+  '51220900': Bic(
+    value: 'MSFFDEFPXXX',
     bankName: 'Morgan Stanley Bank',
     bankShortName: 'Morgan Stanley Bank',
     bankPostcode: '60016',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51220910': Iban(
-    bic: 'MSFFDEFXCND',
+  '51220910': Bic(
+    value: 'MSFFDEFXCND',
     bankName: 'Morgan Stanley Bank',
     bankShortName: 'Morgan Stanley Bank',
     bankPostcode: '60311',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51230500': Iban(
-    bic: 'SCBLDEFXXXX',
+  '51230500': Bic(
+    value: 'SCBLDEFXXXX',
     bankName: 'Standard Chartered Bank',
     bankShortName: 'SCB Ffm',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51230502': Iban(
-    bic: 'SCBLDEFXXXX',
+  '51230502': Bic(
+    value: 'SCBLDEFXXXX',
     bankName: 'Standard Chartered Bank',
     bankShortName: 'SCB FFM',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51230555': Iban(
-    bic: 'PLFGDE5AIKB',
+  '51230555': Bic(
+    value: 'PLFGDE5AIKB',
     bankName: 'Ikano Wiesbaden',
     bankShortName: 'Ikano Bank',
     bankPostcode: '65205',
     bankLocation: 'Wiesbaden',
   ),
-  '51230600': Iban(
-    bic: 'ARABDEFFXXX',
+  '51230600': Bic(
+    value: 'ARABDEFFXXX',
     bankName: 'Europe ARAB Bank Frankfurt',
     bankShortName: 'Europe ARAB Bank',
     bankPostcode: '60323',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51250000': Iban(
-    bic: 'HELADEF1TSK',
+  '51250000': Bic(
+    value: 'HELADEF1TSK',
     bankName: 'Taunus Sparkasse Frankfurt',
     bankShortName: 'Taunus-Sparkasse',
     bankPostcode: '65929',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51300000': Iban(
-    bic: 'MARKDEF1513',
+  '51300000': Bic(
+    value: 'MARKDEF1513',
     bankName: 'BBk Frankfurt eh Gießen',
     bankShortName: 'Bundesbank eh Gießen',
     bankPostcode: '60047',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51340013': Iban(
-    bic: 'COBADEFFXXX',
+  '51340013': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Nauheim',
     bankShortName: 'Commerzbank',
     bankPostcode: '61217',
     bankLocation: 'Bad Nauheim',
   ),
-  '51343224': Iban(
-    bic: 'COBADEFFXXX',
+  '51343224': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Alsfeld',
     bankShortName: 'Commerzbank',
     bankPostcode: '36291',
     bankLocation: 'Alsfeld',
   ),
-  '51350025': Iban(
-    bic: 'SKGIDE5FXXX',
+  '51350025': Bic(
+    value: 'SKGIDE5FXXX',
     bankName: 'Sparkasse Gießen',
     bankShortName: 'Sparkasse Gießen',
     bankPostcode: '35452',
     bankLocation: 'Heuchelheim',
   ),
-  '51351526': Iban(
-    bic: 'HELADEF1GRU',
+  '51351526': Bic(
+    value: 'HELADEF1GRU',
     bankName: 'Sparkasse Grünberg Rabenau',
     bankShortName: 'Sparkasse Grünberg',
     bankPostcode: '35466',
     bankLocation: 'Rabenau',
   ),
-  '51352227': Iban(
-    bic: 'HELADEF1LAU',
+  '51352227': Bic(
+    value: 'HELADEF1LAU',
     bankName: 'Sparkasse Laubach-Hungen',
     bankShortName: 'Sparkasse Laubach-Hungen',
     bankPostcode: '35410',
     bankLocation: 'Hungen',
   ),
-  '51361021': Iban(
-    bic: 'GENODE51HHE',
+  '51361021': Bic(
+    value: 'GENODE51HHE',
     bankName: 'Volksbank Heuchelheim (Gf P2)',
     bankShortName: 'Volksbank Heuchelheim',
     bankPostcode: '35452',
     bankLocation: 'Heuchelheim',
   ),
-  '51370008': Iban(
-    bic: 'DEUTDEFF513',
+  '51370008': Bic(
+    value: 'DEUTDEFF513',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '35348',
     bankLocation: 'Gießen',
   ),
-  '51370024': Iban(
-    bic: 'DEUTDEDB513',
+  '51370024': Bic(
+    value: 'DEUTDEDB513',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '35348',
     bankLocation: 'Gießen',
   ),
-  '51380040': Iban(
-    bic: 'DRESDEFF513',
+  '51380040': Bic(
+    value: 'DRESDEFF513',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bad Nauheim',
     bankPostcode: '61217',
     bankLocation: 'Bad Nauheim',
   ),
-  '51380085': Iban(
-    bic: 'DRESDEFFJ18',
+  '51380085': Bic(
+    value: 'DRESDEFFJ18',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Gießen',
     bankPostcode: '35400',
     bankLocation: 'Gießen',
   ),
-  '51390000': Iban(
-    bic: 'VBMHDE5FXXX',
+  '51390000': Bic(
+    value: 'VBMHDE5FXXX',
     bankName: 'Volksbank Mittelhessen (Gf P2)',
     bankShortName: 'VB Mittelhessen',
     bankPostcode: '35340',
     bankLocation: 'Gießen',
   ),
-  '51410600': Iban(
-    bic: 'BOFADEFFXXX',
+  '51410600': Bic(
+    value: 'BOFADEFFXXX',
     bankName: 'Bank of America Frankfurt',
     bankShortName: 'Bank of America',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51410700': Iban(
-    bic: 'BKCHDEFFXXX',
+  '51410700': Bic(
+    value: 'BKCHDEFFXXX',
     bankName: 'Bank of China Frankfurt',
     bankShortName: 'Bank of China',
     bankPostcode: '60075',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51410800': Iban(
-    bic: 'BOURDEFFXXX',
+  '51410800': Bic(
+    value: 'BOURDEFFXXX',
     bankName: 'Commerzbank - GF onvista',
     bankShortName: 'Commerzbank - GF onvista',
     bankPostcode: '60008',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51420200': Iban(
-    bic: 'MIBEDEFFXXX',
+  '51420200': Bic(
+    value: 'MIBEDEFFXXX',
     bankName: 'Misr Bank-Europe Ffm',
     bankShortName: 'Misr Bank-Europe',
     bankPostcode: '60015',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51420300': Iban(
-    bic: 'BAERDEF1XXX',
+  '51420300': Bic(
+    value: 'BAERDEF1XXX',
     bankName: 'Bank Julius Bär Deutschland',
     bankShortName: 'Bank Julius Bär Frankfurt',
     bankPostcode: '60322',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51430400': Iban(
-    bic: 'GOLDDEFFXXX',
+  '51430400': Bic(
+    value: 'GOLDDEFFXXX',
     bankName: 'Goldman Sachs Frankfurt',
     bankShortName: 'Goldman Sachs',
     bankPostcode: '60308',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51430410': Iban(
-    bic: 'GOLDDEFBXXX',
+  '51430410': Bic(
+    value: 'GOLDDEFBXXX',
     bankName: 'Goldman Sachs Frankfurt',
     bankShortName: 'Goldman Sachs',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51432100': Iban(
-    bic: 'SABCDEFFXXX',
+  '51432100': Bic(
+    value: 'SABCDEFFXXX',
     bankName: 'Saman Bank Niederlassung Frankfurt',
     bankShortName: 'Saman Bank Frankfurt',
     bankPostcode: '60323',
     bankLocation: 'Frankfurt am Main',
   ),
-  '51540037': Iban(
-    bic: 'COBADEFFXXX',
+  '51540037': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Butzbach',
     bankShortName: 'Commerzbank',
     bankPostcode: '35503',
     bankLocation: 'Butzbach',
   ),
-  '51550035': Iban(
-    bic: 'HELADEF1WET',
+  '51550035': Bic(
+    value: 'HELADEF1WET',
     bankName: 'Sparkasse Wetzlar',
     bankShortName: 'Sparkasse Wetzlar',
     bankPostcode: '35753',
     bankLocation: 'Greifenstein',
   ),
-  '51570008': Iban(
-    bic: 'DEUTDEFF515',
+  '51570008': Bic(
+    value: 'DEUTDEFF515',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '35524',
     bankLocation: 'Wetzlar',
   ),
-  '51570024': Iban(
-    bic: 'DEUTDEDB515',
+  '51570024': Bic(
+    value: 'DEUTDEDB515',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '35524',
     bankLocation: 'Wetzlar',
   ),
-  '51580044': Iban(
-    bic: 'DRESDEFF515',
+  '51580044': Bic(
+    value: 'DRESDEFF515',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Wetzlar',
     bankPostcode: '35524',
     bankLocation: 'Wetzlar',
   ),
-  '51591300': Iban(
-    bic: 'GENODE51WBO',
+  '51591300': Bic(
+    value: 'GENODE51WBO',
     bankName: 'Volksbank Brandoberndorf (Gf P2)',
     bankShortName: 'Volksbank Brandoberndorf',
     bankPostcode: '35647',
     bankLocation: 'Waldsolms',
   ),
-  '51640043': Iban(
-    bic: 'COBADEFFXXX',
+  '51640043': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Dillenburg',
     bankShortName: 'Commerzbank',
     bankPostcode: '35662',
     bankLocation: 'Dillenburg',
   ),
-  '51650045': Iban(
-    bic: 'HELADEF1DIL',
+  '51650045': Bic(
+    value: 'HELADEF1DIL',
     bankName: 'Sparkasse Dillenburg',
     bankShortName: 'Spk Dillenburg',
     bankPostcode: '35756',
     bankLocation: 'Mittenaar',
   ),
-  '51690000': Iban(
-    bic: 'GENODE51DIL',
+  '51690000': Bic(
+    value: 'GENODE51DIL',
     bankName: 'Volksbank Dill (Gf P2)',
     bankShortName: 'Volksbank Dill',
     bankPostcode: '35668',
     bankLocation: 'Dillenburg',
   ),
-  '51691500': Iban(
-    bic: 'GENODE51HER',
+  '51691500': Bic(
+    value: 'GENODE51HER',
     bankName: 'Volksbank Herborn-Eschenburg Zw Sinn',
     bankShortName: 'Volksbank Herborn-Eschenbg',
     bankPostcode: '35764',
     bankLocation: 'Sinn',
   ),
-  '51752267': Iban(
-    bic: 'HELADEF1BAT',
+  '51752267': Bic(
+    value: 'HELADEF1BAT',
     bankName: 'Sparkasse Battenberg',
     bankShortName: 'Sparkasse Battenberg',
     bankPostcode: '35116',
     bankLocation: 'Hatzfeld (Eder)',
   ),
-  '51762434': Iban(
-    bic: 'GENODE51BIK',
+  '51762434': Bic(
+    value: 'GENODE51BIK',
     bankName: 'VR Bank Lahn-Dill (Gf P2)',
     bankShortName: 'VR Bank Lahn-Dill',
     bankPostcode: '35683',
     bankLocation: 'Dillenburg',
   ),
-  '51850079': Iban(
-    bic: 'HELADEF1FRI',
+  '51850079': Bic(
+    value: 'HELADEF1FRI',
     bankName: 'Sparkasse Oberhessen',
     bankShortName: 'Spk Oberhessen',
     bankPostcode: '61167',
     bankLocation: 'Friedberg (Hessen)',
   ),
-  '51861325': Iban(
-    bic: 'GENODEF1BVB',
+  '51861325': Bic(
+    value: 'GENODEF1BVB',
     bankName: 'BVB Volksbank Ndl d Frankfurter Volksbank',
     bankShortName: 'BVB Volksbank',
     bankPostcode: '61101',
     bankLocation: 'Bad Vilbel',
   ),
-  '51861403': Iban(
-    bic: 'GENODE51BUT',
+  '51861403': Bic(
+    value: 'GENODE51BUT',
     bankName: 'Volksbank Butzbach (Gf P2)',
     bankShortName: 'Volksbank Butzbach',
     bankPostcode: '35501',
     bankLocation: 'Butzbach',
   ),
-  '51861616': Iban(
-    bic: 'GENODE51REW',
+  '51861616': Bic(
+    value: 'GENODE51REW',
     bankName: 'Landbank Horlofftal (Gf P2)',
     bankShortName: 'Landbank Horlofftal (Gf P2)',
     bankPostcode: '61201',
     bankLocation: 'Reichelsheim (Wetterau)',
   ),
-  '51861806': Iban(
-    bic: 'GENODE51OBM',
+  '51861806': Bic(
+    value: 'GENODE51OBM',
     bankName: 'Volksbank Ober-Mörlen (Gf P2)',
     bankShortName: 'Volksbank Ober-Mörlen',
     bankPostcode: '61239',
     bankLocation: 'Ober-Mörlen',
   ),
-  '51961023': Iban(
-    bic: 'GENODE51ULR',
+  '51961023': Bic(
+    value: 'GENODE51ULR',
     bankName: 'Volksbank Ulrichstein',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '35327',
     bankLocation: 'Ulrichstein',
   ),
-  '51961515': Iban(
-    bic: 'GENODE51HSH',
+  '51961515': Bic(
+    value: 'GENODE51HSH',
     bankName: 'Spar- und Darlehnskasse Stockhausen (Gf P2)',
     bankShortName: 'Spar-u Darlehnskasse',
     bankPostcode: '36358',
     bankLocation: 'Herbstein',
   ),
-  '51961801': Iban(
-    bic: 'GENODE51FEL',
+  '51961801': Bic(
+    value: 'GENODE51FEL',
     bankName: 'Volksbank Feldatal (Gf P2)',
     bankShortName: 'Volksbank Feldatal',
     bankPostcode: '36325',
     bankLocation: 'Feldatal',
   ),
-  '51990000': Iban(
-    bic: 'GENODE51LB1',
+  '51990000': Bic(
+    value: 'GENODE51LB1',
     bankName: 'Volksbank Lauterbach-Schlitz (Gf P2)',
     bankShortName: 'Volksbank Lauterbach-Schl',
     bankPostcode: '36332',
     bankLocation: 'Lauterbach (Hessen)',
   ),
-  '52040021': Iban(
-    bic: 'COBADEFFXXX',
+  '52040021': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Hann Münden',
     bankShortName: 'Commerzbank',
     bankPostcode: '34331',
     bankLocation: 'Hann. Münden',
   ),
-  '52050000': Iban(
-    bic: 'HELADEFF520',
+  '52050000': Bic(
+    value: 'HELADEFF520',
     bankName: 'Landeskreditkasse Kassel',
     bankShortName: 'Landeskreditkasse Kassel',
     bankPostcode: '34112',
     bankLocation: 'Kassel',
   ),
-  '52050353': Iban(
-    bic: 'HELADEF1KAS',
+  '52050353': Bic(
+    value: 'HELADEF1KAS',
     bankName: 'Kasseler Sparkasse',
     bankShortName: 'Kasseler Sparkasse',
     bankPostcode: '34379',
     bankLocation: 'Calden',
   ),
-  '52051373': Iban(
-    bic: 'HELADEF1BOR',
+  '52051373': Bic(
+    value: 'HELADEF1BOR',
     bankName: 'Stadtsparkasse Borken (Hessen)',
     bankShortName: 'St Spk Borken',
     bankPostcode: '34582',
     bankLocation: 'Borken (Hessen)',
   ),
-  '52051555': Iban(
-    bic: 'HELADEF1FEL',
+  '52051555': Bic(
+    value: 'HELADEF1FEL',
     bankName: 'Stadtsparkasse Felsberg -alt-',
     bankShortName: 'St Spk Felsberg -alt-',
     bankPostcode: '34587',
     bankLocation: 'Felsberg',
   ),
-  '52051877': Iban(
-    bic: 'HELADEF1GRE',
+  '52051877': Bic(
+    value: 'HELADEF1GRE',
     bankName: 'Stadtsparkasse Grebenstein',
     bankShortName: 'St Spk Grebenstein',
     bankPostcode: '34376',
     bankLocation: 'Immenhausen',
   ),
-  '52052154': Iban(
-    bic: 'HELADEF1MEG',
+  '52052154': Bic(
+    value: 'HELADEF1MEG',
     bankName: 'Kreissparkasse Schwalm-Eder',
     bankShortName: 'Kreissparkasse Schwalm-Eder',
     bankPostcode: '34576',
     bankLocation: 'Homberg',
   ),
-  '52053458': Iban(
-    bic: 'HELADEF1SWA',
+  '52053458': Bic(
+    value: 'HELADEF1SWA',
     bankName: 'Stadtsparkasse Schwalmstadt',
     bankShortName: 'St Spk Schwalmstadt',
     bankPostcode: '34602',
     bankLocation: 'Schwalmstadt',
   ),
-  '52060000': Iban(
-    bic: 'GENODEFF520',
+  '52060000': Bic(
+    value: 'GENODEFF520',
     bankName: 'DZ BANK',
     bankShortName: 'DZ BANK',
     bankPostcode: '34009',
     bankLocation: 'Kassel',
   ),
-  '52060208': Iban(
-    bic: 'GENODEF1KS2',
+  '52060208': Bic(
+    value: 'GENODEF1KS2',
     bankName: 'Kurhessische Landbank (Gf P2)',
     bankShortName: 'Kurhessische Landbk Kassel',
     bankPostcode: '34023',
     bankLocation: 'Kassel',
   ),
-  '52060410': Iban(
-    bic: 'GENODEF1EK1',
+  '52060410': Bic(
+    value: 'GENODEF1EK1',
     bankName: 'Evangelische Bank Filiale Stuttgart',
     bankShortName: 'Evangelische Bank Stuttgart',
     bankPostcode: '70173',
     bankLocation: 'Stuttgart',
   ),
-  '52060420': Iban(
-    bic: 'GENODEF1EK1',
+  '52060420': Bic(
+    value: 'GENODEF1EK1',
     bankName: 'Evangelische Bank (Gf GAA)',
     bankShortName: 'Evangelische Bank',
     bankPostcode: '34117',
     bankLocation: 'Kassel',
   ),
-  '52061303': Iban(
-    bic: 'GENODEF1BOR',
+  '52061303': Bic(
+    value: 'GENODEF1BOR',
     bankName: 'Raiffeisenbank Borken Nordhessen (Gf P2)',
     bankShortName: 'Raiffbk Borken Nordhessen',
     bankPostcode: '34582',
     bankLocation: 'Borken (Hessen)',
   ),
-  '52062200': Iban(
-    bic: 'GENODEF1GUB',
+  '52062200': Bic(
+    value: 'GENODEF1GUB',
     bankName: 'VR-Bank Chattengau (Gf P2)',
     bankShortName: 'VR-Bank Chattengau',
     bankPostcode: '34281',
     bankLocation: 'Gudensberg',
   ),
-  '52062601': Iban(
-    bic: 'GENODEF1HRV',
+  '52062601': Bic(
+    value: 'GENODEF1HRV',
     bankName: 'VR PartnerBank Chattengau-Schwalm-Eder (Gf P2)',
     bankShortName: 'VR PartnerBank',
     bankPostcode: '34212',
     bankLocation: 'Melsungen',
   ),
-  '52063369': Iban(
-    bic: 'GENODEF1SPB',
+  '52063369': Bic(
+    value: 'GENODEF1SPB',
     bankName: 'VR-Bank Spangenberg-Morschen (Gf P2)',
     bankShortName: 'VR-Bank Spangenbg-Morschen',
     bankPostcode: '34286',
     bankLocation: 'Spangenberg',
   ),
-  '52063550': Iban(
-    bic: 'GENODEF1WOH',
+  '52063550': Bic(
+    value: 'GENODEF1WOH',
     bankName: 'Raiffeisenbank HessenNord (Gf P2)',
     bankShortName: 'Raiffeisenbank HessenNord',
     bankPostcode: '34466',
     bankLocation: 'Wolfhagen',
   ),
-  '52064156': Iban(
-    bic: 'GENODEF1BTA',
+  '52064156': Bic(
+    value: 'GENODEF1BTA',
     bankName: 'Raiffeisenbank Zw Schauenburg',
     bankShortName: 'Raiffeisenbank Baunatal',
     bankPostcode: '34270',
     bankLocation: 'Schauenburg',
   ),
-  '52069013': Iban(
-    bic: 'GENODEF1BHN',
+  '52069013': Bic(
+    value: 'GENODEF1BHN',
     bankName: 'Raiffeisenbank Burghaun (Gf P2)',
     bankShortName: 'Raiffeisenbank Burghaun',
     bankPostcode: '36151',
     bankLocation: 'Burghaun',
   ),
-  '52069029': Iban(
-    bic: 'GENODEF1GMD',
+  '52069029': Bic(
+    value: 'GENODEF1GMD',
     bankName: 'Spar-u. Kredit-Bank (Gf P2)',
     bankShortName: 'Spar-u. Kredit-Bank (Gf P2)',
     bankPostcode: '35283',
     bankLocation: 'Gemünden (Wohra)',
   ),
-  '52069065': Iban(
-    bic: 'GENODEF1BUR',
+  '52069065': Bic(
+    value: 'GENODEF1BUR',
     bankName: 'Raiffeisenbank Langenschwarz (Gf P2)',
     bankShortName: 'Raiffbk Langenschw. Burghau',
     bankPostcode: '36151',
     bankLocation: 'Burghaun',
   ),
-  '52069149': Iban(
-    bic: 'GENODEF1VLM',
+  '52069149': Bic(
+    value: 'GENODEF1VLM',
     bankName: 'Raiffeisenbank Volkmarsen Zw',
     bankShortName: 'Raiffbk Volkmarsen Arolsen',
     bankPostcode: '34454',
     bankLocation: 'Bad Arolsen',
   ),
-  '52069519': Iban(
-    bic: 'GENODEF1FBK',
+  '52069519': Bic(
+    value: 'GENODEF1FBK',
     bankName: 'Frankenberger Bank Raiffeisenbank (Gf P2)',
     bankShortName: 'Frankenberger Bank',
     bankPostcode: '35066',
     bankLocation: 'Frankenberg',
   ),
-  '52070012': Iban(
-    bic: 'DEUTDEFF524',
+  '52070012': Bic(
+    value: 'DEUTDEFF524',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '34331',
     bankLocation: 'Hann. Münden',
   ),
-  '52070024': Iban(
-    bic: 'DEUTDEDB524',
+  '52070024': Bic(
+    value: 'DEUTDEDB524',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '34331',
     bankLocation: 'Hann. Münden',
   ),
-  '52071212': Iban(
-    bic: 'DEUTDEFF521',
+  '52071212': Bic(
+    value: 'DEUTDEFF521',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '34535',
     bankLocation: 'Bad Wildungen',
   ),
-  '52071224': Iban(
-    bic: 'DEUTDEDB521',
+  '52071224': Bic(
+    value: 'DEUTDEDB521',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '34535',
     bankLocation: 'Bad Wildungen',
   ),
-  '52080080': Iban(
-    bic: 'DRESDEFF520',
+  '52080080': Bic(
+    value: 'DRESDEFF520',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Hann Münden',
     bankPostcode: '34331',
     bankLocation: 'Hann. Münden',
   ),
-  '52080085': Iban(
-    bic: 'DRESDEFFJ19',
+  '52080085': Bic(
+    value: 'DRESDEFFJ19',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK1',
     bankShortName: 'Commerzbank ITGK1 Kassel',
     bankPostcode: '34001',
     bankLocation: 'Kassel',
   ),
-  '52090000': Iban(
-    bic: 'GENODE51KS1',
+  '52090000': Bic(
+    value: 'GENODE51KS1',
     bankName: 'Volksbank Kassel Göttingen (Gf P2)',
     bankShortName: 'VB Kassel Göttingen',
     bankPostcode: '34117',
     bankLocation: 'Kassel',
   ),
-  '52240006': Iban(
-    bic: 'COBADEFFXXX',
+  '52240006': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Eschwege',
     bankShortName: 'Commerzbank',
     bankPostcode: '37252',
     bankLocation: 'Eschwege',
   ),
-  '52250030': Iban(
-    bic: 'HELADEF1ESW',
+  '52250030': Bic(
+    value: 'HELADEF1ESW',
     bankName: 'Sparkasse Werra-Meißner',
     bankShortName: 'Sparkasse Werra-Meißner',
     bankPostcode: '37254',
     bankLocation: 'Eschwege',
   ),
-  '52260385': Iban(
-    bic: 'GENODEF1ESW',
+  '52260385': Bic(
+    value: 'GENODEF1ESW',
     bankName: 'VR-Bank Mitte (Gf P2)',
     bankShortName: 'VR-Bank Mitte',
     bankPostcode: '37115',
     bankLocation: 'Duderstadt',
   ),
-  '52270012': Iban(
-    bic: 'DEUTDEFF522',
+  '52270012': Bic(
+    value: 'DEUTDEFF522',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '37252',
     bankLocation: 'Eschwege',
   ),
-  '52270024': Iban(
-    bic: 'DEUTDEDB522',
+  '52270024': Bic(
+    value: 'DEUTDEDB522',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '37252',
     bankLocation: 'Eschwege',
   ),
-  '52350005': Iban(
-    bic: 'HELADEF1KOR',
+  '52350005': Bic(
+    value: 'HELADEF1KOR',
     bankName: 'Sparkasse Waldeck-Frankenberg',
     bankShortName: 'Spk Waldeck-Frankenberg',
     bankPostcode: '34474',
     bankLocation: 'Diemelstadt',
   ),
-  '52360059': Iban(
-    bic: 'GENODEF1KBW',
+  '52360059': Bic(
+    value: 'GENODEF1KBW',
     bankName: 'Waldecker Bk Diemelstadt',
     bankShortName: 'Waldecker Bank Zw',
     bankPostcode: '34474',
     bankLocation: 'Diemelstadt',
   ),
-  '52410300': Iban(
-    bic: 'RBAGDEF1XXX',
+  '52410300': Bic(
+    value: 'RBAGDEF1XXX',
     bankName: 'ReiseBank Frankfurt am Main',
     bankShortName: 'ReiseBank',
     bankPostcode: '60489',
     bankLocation: 'Frankfurt am Main',
   ),
-  '52410310': Iban(
-    bic: 'RBAGDEF1CMI',
+  '52410310': Bic(
+    value: 'RBAGDEF1CMI',
     bankName: 'ReiseBank Gf2 Frankfurt',
     bankShortName: 'ReiseBank Gf2',
     bankPostcode: '60489',
     bankLocation: 'Frankfurt am Main',
   ),
-  '52410400': Iban(
-    bic: 'KOEXDEFAXXX',
+  '52410400': Bic(
+    value: 'KOEXDEFAXXX',
     bankName: 'KEB Hana Bank (Deutschland)',
     bankShortName: 'KEB Hana Bank (Deutschland)',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '52411000': Iban(
-    bic: 'RBAGDEF1CMI',
+  '52411000': Bic(
+    value: 'RBAGDEF1CMI',
     bankName: 'ReiseBank Gf3 vormals Cash Express',
     bankShortName: 'ReiseBank vorm.Cash Express',
     bankPostcode: '60489',
     bankLocation: 'Frankfurt am Main',
   ),
-  '52411010': Iban(
-    bic: 'RBAGDEF1CMI',
+  '52411010': Bic(
+    value: 'RBAGDEF1CMI',
     bankName: 'ReiseBank Gf4 vormals Cash Express',
     bankShortName: 'ReiseBank vorm.Cash Express',
     bankPostcode: '60489',
     bankLocation: 'Frankfurt am Main',
   ),
-  '52420000': Iban(
-    bic: 'BSUIDEFFXXX',
+  '52420000': Bic(
+    value: 'BSUIDEFFXXX',
     bankName: 'Credit Agricole CIB Deutschland',
     bankShortName: 'Credit Agricole Deutschland',
     bankPostcode: '60325',
     bankLocation: 'Frankfurt am Main',
   ),
-  '52420300': Iban(
-    bic: 'SHBKDEFFXXX',
+  '52420300': Bic(
+    value: 'SHBKDEFFXXX',
     bankName: 'SHINHAN BANK EUROPE Ffm',
     bankShortName: 'SHINHAN BANK EUROPE',
     bankPostcode: '60322',
     bankLocation: 'Frankfurt am Main',
   ),
-  '52420600': Iban(
-    bic: 'ABGRDEFFXXX',
+  '52420600': Bic(
+    value: 'ABGRDEFFXXX',
     bankName: 'Piraeus Bank Frankfurt Branch',
     bankShortName: 'Piraeus Bank Frankfurt',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '52420700': Iban(
-    bic: 'SECGDEFFXXX',
+  '52420700': Bic(
+    value: 'SECGDEFFXXX',
     bankName: 'SECB Swiss Euro Clearing Bank',
     bankShortName: 'SECB Frankfurt Main',
     bankPostcode: '60486',
     bankLocation: 'Frankfurt am Main',
   ),
-  '52430000': Iban(
-    bic: 'CMCIDEF1XXX',
+  '52430000': Bic(
+    value: 'CMCIDEF1XXX',
     bankName: 'Credit Mutuel - BECM - Ndl Deutschland',
     bankShortName: 'Credit Mutuel - BECM',
     bankPostcode: '60329',
     bankLocation: 'Frankfurt am Main',
   ),
-  '53040012': Iban(
-    bic: 'COBADEFFXXX',
+  '53040012': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Schlüchtern',
     bankShortName: 'Commerzbank',
     bankPostcode: '36381',
     bankLocation: 'Schlüchtern',
   ),
-  '53050180': Iban(
-    bic: 'HELADEF1FDS',
+  '53050180': Bic(
+    value: 'HELADEF1FDS',
     bankName: 'Sparkasse Fulda',
     bankShortName: 'Sparkasse Fulda',
     bankPostcode: '36035',
     bankLocation: 'Fulda',
   ),
-  '53051396': Iban(
-    bic: 'HELADEF1SLU',
+  '53051396': Bic(
+    value: 'HELADEF1SLU',
     bankName: 'Kreissparkasse Schlüchtern',
     bankShortName: 'Kreissparkasse Schlüchtern',
     bankPostcode: '63628',
     bankLocation: 'Bad Soden-Salmünster',
   ),
-  '53060180': Iban(
-    bic: 'GENODE51FUL',
+  '53060180': Bic(
+    value: 'GENODE51FUL',
     bankName: 'VR Bank Fulda (Gf P2)',
     bankShortName: 'VR Bank Fulda',
     bankPostcode: '36037',
     bankLocation: 'Fulda',
   ),
-  '53061230': Iban(
-    bic: 'GENODEF1HUE',
+  '53061230': Bic(
+    value: 'GENODEF1HUE',
     bankName: 'VR-Bank NordRhön (Gf P2)',
     bankShortName: 'VR-Bank NordRhön (Gf P2)',
     bankPostcode: '36081',
     bankLocation: 'Hünfeld',
   ),
-  '53061313': Iban(
-    bic: 'GENODE51SLU',
+  '53061313': Bic(
+    value: 'GENODE51SLU',
     bankName: 'VR Bank Schlüchtern-Birstein (Gf P2)',
     bankShortName: 'VR Bk Schlüchtern-Birstein',
     bankPostcode: '36381',
     bankLocation: 'Schlüchtern',
   ),
-  '53062035': Iban(
-    bic: 'GENODEF1GLU',
+  '53062035': Bic(
+    value: 'GENODEF1GLU',
     bankName: 'Raiffeisenbank im Fuldaer Land Zw Hosenfeld',
     bankShortName: 'RB im Fuldaer Land Hos.',
     bankPostcode: '36154',
     bankLocation: 'Hosenfeld',
   ),
-  '53062350': Iban(
-    bic: 'GENODEF1PBG',
+  '53062350': Bic(
+    value: 'GENODEF1PBG',
     bankName: 'Raiffeisenbank Biebergrund-Petersberg Zw',
     bankShortName: 'Raiffbk Biebergrd-Petersbg',
     bankPostcode: '36145',
     bankLocation: 'Hofbieber',
   ),
-  '53064023': Iban(
-    bic: 'GENODEF1FLN',
+  '53064023': Bic(
+    value: 'GENODEF1FLN',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '36101',
     bankLocation: 'Flieden',
   ),
-  '53070007': Iban(
-    bic: 'DEUTDEFF534',
+  '53070007': Bic(
+    value: 'DEUTDEFF534',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '36333',
     bankLocation: 'Lauterbach (Hessen)',
   ),
-  '53070024': Iban(
-    bic: 'DEUTDEDB534',
+  '53070024': Bic(
+    value: 'DEUTDEDB534',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '36333',
     bankLocation: 'Lauterbach (Hessen)',
   ),
-  '53070324': Iban(
-    bic: 'DEUTDEDBP27',
+  '53070324': Bic(
+    value: 'DEUTDEDBP27',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '36037',
     bankLocation: 'Fulda',
   ),
-  '53070394': Iban(
-    bic: 'DEUTDEFFS27',
+  '53070394': Bic(
+    value: 'DEUTDEFFS27',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '36037',
     bankLocation: 'Fulda',
   ),
-  '53080030': Iban(
-    bic: 'DRESDEFF530',
+  '53080030': Bic(
+    value: 'DRESDEFF530',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Schlüchtern',
     bankPostcode: '36381',
     bankLocation: 'Schlüchtern',
   ),
-  '53093200': Iban(
-    bic: 'GENODE51ALS',
+  '53093200': Bic(
+    value: 'GENODE51ALS',
     bankName: 'VR Bank HessenLand (Gf P2)',
     bankShortName: 'VR Bank HessenLand',
     bankPostcode: '36295',
     bankLocation: 'Alsfeld',
   ),
-  '53093255': Iban(
-    bic: 'GENODE51AGR',
+  '53093255': Bic(
+    value: 'GENODE51AGR',
     bankName: 'AgrarBank Alsfeld',
     bankShortName: 'AgrarBank',
     bankPostcode: '36295',
     bankLocation: 'Alsfeld',
   ),
-  '53240048': Iban(
-    bic: 'COBADEFFXXX',
+  '53240048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Hersfeld',
     bankShortName: 'Commerzbank',
     bankPostcode: '36222',
     bankLocation: 'Bad Hersfeld',
   ),
-  '53250000': Iban(
-    bic: 'HELADEF1HER',
+  '53250000': Bic(
+    value: 'HELADEF1HER',
     bankName: 'Sparkasse Bad Hersfeld-Rotenburg',
     bankShortName: 'Spk Bad Hersfeld-Rotenburg',
     bankPostcode: '36286',
     bankLocation: 'Neuenstein',
   ),
-  '53260145': Iban(
-    bic: 'GENODEF1HFA',
+  '53260145': Bic(
+    value: 'GENODEF1HFA',
     bankName: 'Raiffeisenbank Asbach-Sorga (Gf P2)',
     bankShortName: 'Raiffeisenbank Asbach-Sorga',
     bankPostcode: '36251',
     bankLocation: 'Bad Hersfeld',
   ),
-  '53261202': Iban(
-    bic: 'GENODEF1BEB',
+  '53261202': Bic(
+    value: 'GENODEF1BEB',
     bankName: 'Bankverein Bebra (Gf P2)',
     bankShortName: 'Bankverein Bebra',
     bankPostcode: '36179',
     bankLocation: 'Bebra',
   ),
-  '53261342': Iban(
-    bic: 'GENODEF1RAW',
+  '53261342': Bic(
+    value: 'GENODEF1RAW',
     bankName: 'Raiffeisenbank Werratal-Landeck (Gf P2)',
     bankShortName: 'Raiffbk Werratal-Landeck',
     bankPostcode: '36266',
     bankLocation: 'Heringen (Werra)',
   ),
-  '53262073': Iban(
-    bic: 'GENODEF1HNT',
+  '53262073': Bic(
+    value: 'GENODEF1HNT',
     bankName: 'Raiffeisenbank Haunetal Zw',
     bankShortName: 'Raiffbk Haunetal Hauneck',
     bankPostcode: '36282',
     bankLocation: 'Hauneck',
   ),
-  '53262455': Iban(
-    bic: 'GENODEF1ROH',
+  '53262455': Bic(
+    value: 'GENODEF1ROH',
     bankName: 'Raiffeisenbank Ronshausen-Marksuhl (Gf P2)',
     bankShortName: 'Raiffeisenbank Ronshausen',
     bankPostcode: '36217',
     bankLocation: 'Ronshausen',
   ),
-  '53270012': Iban(
-    bic: 'DEUTDEFF532',
+  '53270012': Bic(
+    value: 'DEUTDEFF532',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '36223',
     bankLocation: 'Bad Hersfeld',
   ),
-  '53270024': Iban(
-    bic: 'DEUTDEDB518',
+  '53270024': Bic(
+    value: 'DEUTDEDB518',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '36223',
     bankLocation: 'Bad Hersfeld',
   ),
-  '53280081': Iban(
-    bic: 'DRESDEFF532',
+  '53280081': Bic(
+    value: 'DRESDEFF532',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bad Hersfeld',
     bankPostcode: '36251',
     bankLocation: 'Bad Hersfeld',
   ),
-  '53290000': Iban(
-    bic: 'GENODE51BHE',
+  '53290000': Bic(
+    value: 'GENODE51BHE',
     bankName: 'VR-Bankverein Bad Hersfeld-Rotenburg (Gf P2)',
     bankShortName: 'VR-Bankverein Bad Hersfeld',
     bankPostcode: '36251',
     bankLocation: 'Bad Hersfeld',
   ),
-  '53340024': Iban(
-    bic: 'COBADEFFXXX',
+  '53340024': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Stadtallendorf',
     bankShortName: 'Commerzbank',
     bankPostcode: '35251',
     bankLocation: 'Stadtallendorf',
   ),
-  '53350000': Iban(
-    bic: 'HELADEF1MAR',
+  '53350000': Bic(
+    value: 'HELADEF1MAR',
     bankName: 'Sparkasse Marburg-Biedenkopf',
     bankShortName: 'Spk Marburg-Biedenkopf',
     bankPostcode: '35083',
     bankLocation: 'Wetter (Hessen)',
   ),
-  '53361724': Iban(
-    bic: 'GENODEF1EBG',
+  '53361724': Bic(
+    value: 'GENODEF1EBG',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '35085',
     bankLocation: 'Ebsdorfergrund',
   ),
-  '53370008': Iban(
-    bic: 'DEUTDEFF533',
+  '53370008': Bic(
+    value: 'DEUTDEFF533',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '35017',
     bankLocation: 'Marburg',
   ),
-  '53370024': Iban(
-    bic: 'DEUTDEDB533',
+  '53370024': Bic(
+    value: 'DEUTDEDB533',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '35017',
     bankLocation: 'Marburg',
   ),
-  '53380042': Iban(
-    bic: 'DRESDEFF533',
+  '53380042': Bic(
+    value: 'DRESDEFF533',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Marburg Lahn',
     bankPostcode: '35003',
     bankLocation: 'Marburg',
   ),
-  '53381843': Iban(
-    bic: 'DRESDEFF568',
+  '53381843': Bic(
+    value: 'DRESDEFF568',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Stadtallendf',
     bankPostcode: '35251',
     bankLocation: 'Stadtallendorf',
   ),
-  '54020090': Iban(
-    bic: 'HYVEDEMM482',
+  '54020090': Bic(
+    value: 'HYVEDEMM482',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '67608',
     bankLocation: 'Kaiserslautern',
   ),
-  '54030011': Iban(
-    bic: 'SCRUDE51XXX',
+  '54030011': Bic(
+    value: 'SCRUDE51XXX',
     bankName: 'Service Credit Union Overseas Headquarters',
     bankShortName: 'Service Credit Union',
     bankPostcode: '67681',
     bankLocation: 'Sembach',
   ),
-  '54040042': Iban(
-    bic: 'COBADEFFXXX',
+  '54040042': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Kaiserslautern',
     bankShortName: 'Commerzbank',
     bankPostcode: '67611',
     bankLocation: 'Kaiserslautern',
   ),
-  '54050110': Iban(
-    bic: 'MALADE51KLS',
+  '54050110': Bic(
+    value: 'MALADE51KLS',
     bankName: 'Stadtsparkasse Kaiserslautern -alt-',
     bankShortName: 'St Spk Kaiserslautern -alt-',
     bankPostcode: '67653',
     bankLocation: 'Kaiserslautern',
   ),
-  '54050220': Iban(
-    bic: 'MALADE51KLK',
+  '54050220': Bic(
+    value: 'MALADE51KLK',
     bankName: 'Sparkasse Kaiserslautern',
     bankShortName: 'Spk Kaiserslautern',
     bankPostcode: '66851',
     bankLocation: 'Hauptstuhl',
   ),
-  '54051550': Iban(
-    bic: 'MALADE51KUS',
+  '54051550': Bic(
+    value: 'MALADE51KUS',
     bankName: 'Kreissparkasse Kusel',
     bankShortName: 'Kr Spk Kusel',
     bankPostcode: '66901',
     bankLocation: 'Schönenberg-Kübelberg',
   ),
-  '54051660': Iban(
-    bic: 'MALADE51LAS',
+  '54051660': Bic(
+    value: 'MALADE51LAS',
     bankName: 'Stadtsparkasse Landstuhl -alt-',
     bankShortName: 'St Spk Landstuhl -alt-',
     bankPostcode: '66849',
     bankLocation: 'Landstuhl',
   ),
-  '54051990': Iban(
-    bic: 'MALADE51ROK',
+  '54051990': Bic(
+    value: 'MALADE51ROK',
     bankName: 'Sparkasse Donnersberg',
     bankShortName: 'Sparkasse Donnersberg',
     bankPostcode: '67821',
     bankLocation: 'Alsenz',
   ),
-  '54061650': Iban(
-    bic: 'GENODE61LAN',
+  '54061650': Bic(
+    value: 'GENODE61LAN',
     bankName: 'VR-Bank Westpfalz (Gf P2)',
     bankShortName: 'VR-Bank Westpfalz',
     bankPostcode: '66849',
     bankLocation: 'Landstuhl',
   ),
-  '54062027': Iban(
-    bic: 'GENODE61ALB',
+  '54062027': Bic(
+    value: 'GENODE61ALB',
     bankName: 'Raiffeisenbank Donnersberg (Gf P2)',
     bankShortName: 'Raiffeisenbank Albisheim',
     bankPostcode: '67308',
     bankLocation: 'Albisheim (Pfrimm)',
   ),
-  '54070024': Iban(
-    bic: 'DEUTDEDB541',
+  '54070024': Bic(
+    value: 'DEUTDEDB541',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '66841',
     bankLocation: 'Landstuhl',
   ),
-  '54070092': Iban(
-    bic: 'DEUTDESM541',
+  '54070092': Bic(
+    value: 'DEUTDESM541',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '66841',
     bankLocation: 'Landstuhl',
   ),
-  '54080021': Iban(
-    bic: 'DRESDEFF540',
+  '54080021': Bic(
+    value: 'DRESDEFF540',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbk Kaiserslautern',
     bankPostcode: '67611',
     bankLocation: 'Kaiserslautern',
   ),
-  '54090000': Iban(
-    bic: 'GENODE61KL1',
+  '54090000': Bic(
+    value: 'GENODE61KL1',
     bankName: 'Volksbank Kaiserslautern-Nordwestpfalz (Gf P2)',
     bankShortName: 'VB Kaisersl.-Nordwestpfalz',
     bankPostcode: '67653',
     bankLocation: 'Kaiserslautern',
   ),
-  '54091700': Iban(
-    bic: 'GENODE61LEK',
+  '54091700': Bic(
+    value: 'GENODE61LEK',
     bankName: 'Volksbank Lauterecken (Gf P2)',
     bankShortName: 'Volksbank Lauterecken',
     bankPostcode: '67742',
     bankLocation: 'Lauterecken',
   ),
-  '54091800': Iban(
-    bic: 'GENODE61OB1',
+  '54091800': Bic(
+    value: 'GENODE61OB1',
     bankName: 'VR Bank Nordwestpfalz -alt-',
     bankShortName: 'VR Bank Nordwestpfalz -alt-',
     bankPostcode: '67806',
     bankLocation: 'Rockenhausen',
   ),
-  '54092400': Iban(
-    bic: 'GENODE61GLM',
+  '54092400': Bic(
+    value: 'GENODE61GLM',
     bankName: 'Volksbank Glan-Münchweiler Zw Steinwenden',
     bankShortName: 'Volksbank Glan-Münchweiler',
     bankPostcode: '66879',
     bankLocation: 'Steinwenden',
   ),
-  '54220091': Iban(
-    bic: 'HYVEDEMM485',
+  '54220091': Bic(
+    value: 'HYVEDEMM485',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '66923',
     bankLocation: 'Pirmasens',
   ),
-  '54240032': Iban(
-    bic: 'COBADEFFXXX',
+  '54240032': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Pirmasens',
     bankShortName: 'Commerzbank',
     bankPostcode: '66953',
     bankLocation: 'Pirmasens',
   ),
-  '54250010': Iban(
-    bic: 'MALADE51SWP',
+  '54250010': Bic(
+    value: 'MALADE51SWP',
     bankName: 'Spk Südwestpfalz Vinningen',
     bankShortName: 'Sparkasse Südwestpfalz',
     bankPostcode: '66957',
     bankLocation: 'Vinningen',
   ),
-  '54261700': Iban(
-    bic: 'GENODE61ROA',
+  '54261700': Bic(
+    value: 'GENODE61ROA',
     bankName: 'VR-Bank Südwestpfalz Pirmasens-Zweibrücken (Gf P2)',
     bankShortName: 'VR-Bank Südwestpfalz',
     bankPostcode: '66953',
     bankLocation: 'Pirmasens',
   ),
-  '54270024': Iban(
-    bic: 'DEUTDEDB543',
+  '54270024': Bic(
+    value: 'DEUTDEDB543',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '66462',
     bankLocation: 'Zweibrücken',
   ),
-  '54270096': Iban(
-    bic: 'DEUTDESM543',
+  '54270096': Bic(
+    value: 'DEUTDESM543',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '66462',
     bankLocation: 'Zweibrücken',
   ),
-  '54280023': Iban(
-    bic: 'DRESDEFF542',
+  '54280023': Bic(
+    value: 'DRESDEFF542',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Pirmasens',
     bankPostcode: '66923',
     bankLocation: 'Pirmasens',
   ),
-  '54290000': Iban(
-    bic: 'GENODE61PS1',
+  '54290000': Bic(
+    value: 'GENODE61PS1',
     bankName: 'VR-Bank Pirmasens (Gf P2)',
     bankShortName: 'VR-Bank Pirmasens',
     bankPostcode: '66934',
     bankLocation: 'Pirmasens',
   ),
-  '54291200': Iban(
-    bic: 'GENODE61DAH',
+  '54291200': Bic(
+    value: 'GENODE61DAH',
     bankName: 'Raiffeisen- u Volksbank Dahn (Gf P2)',
     bankShortName: 'Raiffeisen u Volksbank Dahn',
     bankPostcode: '66991',
     bankLocation: 'Dahn',
   ),
-  '54500000': Iban(
-    bic: 'MARKDEF1545',
+  '54500000': Bic(
+    value: 'MARKDEF1545',
     bankName: 'BBk Ludwigshafen am Rhein',
     bankShortName: 'Bundesbank',
     bankPostcode: '67008',
     bankLocation: 'Ludwigshafen am Rhein',
   ),
-  '54510067': Iban(
-    bic: 'PBNKDEFFXXX',
+  '54510067': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '67057',
     bankLocation: 'Ludwigshafen am Rhein',
   ),
-  '54520194': Iban(
-    bic: 'HYVEDEMM483',
+  '54520194': Bic(
+    value: 'HYVEDEMM483',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '76801',
     bankLocation: 'Landau in der Pfalz',
   ),
-  '54540033': Iban(
-    bic: 'COBADEFFXXX',
+  '54540033': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Dürkheim',
     bankShortName: 'Commerzbank',
     bankPostcode: '67098',
     bankLocation: 'Bad Dürkheim',
   ),
-  '54550010': Iban(
-    bic: 'LUHSDE6AXXX',
+  '54550010': Bic(
+    value: 'LUHSDE6AXXX',
     bankName: 'Sparkasse Vorderpfalz',
     bankShortName: 'Sparkasse Vorderpfalz',
     bankPostcode: '67059',
     bankLocation: 'Ludwigshafen am Rhein',
   ),
-  '54550120': Iban(
-    bic: 'MALADE51LUH',
+  '54550120': Bic(
+    value: 'MALADE51LUH',
     bankName: 'Kreissparkasse Rhein-Pfalz',
     bankShortName: 'Kreissparkasse Rhein-Pfalz',
     bankPostcode: '67071',
     bankLocation: 'Ludwigshafen am Rhein',
   ),
-  '54561310': Iban(
-    bic: 'GENODE61LBS',
+  '54561310': Bic(
+    value: 'GENODE61LBS',
     bankName: 'RV Bank Rhein-Haardt (Gf P2)',
     bankShortName: 'RV Bank Rhein-Haardt',
     bankPostcode: '67241',
     bankLocation: 'Lambsheim',
   ),
-  '54570024': Iban(
-    bic: 'DEUTDEDB553',
+  '54570024': Bic(
+    value: 'DEUTDEDB553',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '67547',
     bankLocation: 'Worms',
   ),
-  '54570094': Iban(
-    bic: 'DEUTDESM553',
+  '54570094': Bic(
+    value: 'DEUTDESM553',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '67547',
     bankLocation: 'Worms',
   ),
-  '54580020': Iban(
-    bic: 'DRESDEFF545',
+  '54580020': Bic(
+    value: 'DRESDEFF545',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Ludwigshafen',
     bankPostcode: '67003',
     bankLocation: 'Ludwigshafen am Rhein',
   ),
-  '54620093': Iban(
-    bic: 'HYVEDEMM620',
+  '54620093': Bic(
+    value: 'HYVEDEMM620',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '67402',
     bankLocation: 'Neustadt an der Weinstraße',
   ),
-  '54640035': Iban(
-    bic: 'COBADEFFXXX',
+  '54640035': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Neustadt Weinst',
     bankShortName: 'Commerzbank',
     bankPostcode: '67403',
     bankLocation: 'Neustadt an der Weinstraße',
   ),
-  '54651240': Iban(
-    bic: 'MALADE51DKH',
+  '54651240': Bic(
+    value: 'MALADE51DKH',
     bankName: 'Sparkasse Rhein-Haardt',
     bankShortName: 'Spk Rhein-Haardt',
     bankPostcode: '67273',
     bankLocation: 'Weisenheim am Berg',
   ),
-  '54661800': Iban(
-    bic: 'GENODE61FSH',
+  '54661800': Bic(
+    value: 'GENODE61FSH',
     bankName: 'Raiffeisenbank Freinsheim (Gf P2)',
     bankShortName: 'Raiffeisenbank Freinsheim',
     bankPostcode: '67248',
     bankLocation: 'Freinsheim',
   ),
-  '54663270': Iban(
-    bic: 'GENODE61FHR',
+  '54663270': Bic(
+    value: 'GENODE61FHR',
     bankName: 'Raiffeisenbank Friedelsheim-Rödersheim (Gf P2)',
     bankShortName: 'Raiffbk Friedelsheim',
     bankPostcode: '67159',
     bankLocation: 'Friedelsheim',
   ),
-  '54670024': Iban(
-    bic: 'DEUTDEDB548',
+  '54670024': Bic(
+    value: 'DEUTDEDB548',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '76829',
     bankLocation: 'Landau in der Pfalz',
   ),
-  '54670095': Iban(
-    bic: 'DEUTDESM548',
+  '54670095': Bic(
+    value: 'DEUTDESM548',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '76829',
     bankLocation: 'Landau in der Pfalz',
   ),
-  '54680022': Iban(
-    bic: 'DRESDEFF546',
+  '54680022': Bic(
+    value: 'DRESDEFF546',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Neustadt',
     bankPostcode: '67403',
     bankLocation: 'Neustadt an der Weinstraße',
   ),
-  '54691200': Iban(
-    bic: 'GENODE61DUW',
+  '54691200': Bic(
+    value: 'GENODE61DUW',
     bankName: 'VR Bank Mittelhaardt (Gf P2)',
     bankShortName: 'VR Bank Mittelhaardt',
     bankPostcode: '67098',
     bankLocation: 'Bad Dürkheim',
   ),
-  '54750010': Iban(
-    bic: 'MALADE51SPY',
+  '54750010': Bic(
+    value: 'MALADE51SPY',
     bankName: 'Kreis- und Stadtsparkasse Speyer',
     bankShortName: 'Kr u St Spk Speyer',
     bankPostcode: '67343',
     bankLocation: 'Speyer',
   ),
-  '54790000': Iban(
-    bic: 'GENODE61SPE',
+  '54790000': Bic(
+    value: 'GENODE61SPE',
     bankName: 'Vereinigte VR Bank Kur- und Rheinpfalz (Gf P2)',
     bankShortName: 'VerVR Bank Kur-u Rheinpfalz',
     bankPostcode: '67346',
     bankLocation: 'Speyer',
   ),
-  '54850010': Iban(
-    bic: 'SOLADES1SUW',
+  '54850010': Bic(
+    value: 'SOLADES1SUW',
     bankName: 'Sparkasse Südpfalz',
     bankShortName: 'Sparkasse Südpfalz',
     bankPostcode: '76833',
     bankLocation: 'Siebeldingen',
   ),
-  '54851440': Iban(
-    bic: 'MALADE51KAD',
+  '54851440': Bic(
+    value: 'MALADE51KAD',
     bankName: 'Sparkasse Germersheim-Kandel',
     bankShortName: 'Spk Kuhardt',
     bankPostcode: '76773',
     bankLocation: 'Kuhardt',
   ),
-  '54861190': Iban(
-    bic: 'GENODE61EDH',
+  '54861190': Bic(
+    value: 'GENODE61EDH',
     bankName: 'Raiffeisenbank Oberhaardt-Gäu (Gf P2)',
     bankShortName: 'Raiffbk Oberhaardt-Gäu',
     bankPostcode: '67483',
     bankLocation: 'Edesheim',
   ),
-  '54862390': Iban(
-    bic: 'GENODE61HXH',
+  '54862390': Bic(
+    value: 'GENODE61HXH',
     bankName: 'Raiffeisenbank Herxheim',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '76858',
     bankLocation: 'Herxheim',
   ),
-  '54862500': Iban(
-    bic: 'GENODE61SUW',
+  '54862500': Bic(
+    value: 'GENODE61SUW',
     bankName: 'VR Bank Südpfalz (Gf P2)',
     bankShortName: 'VR Bank Südpfalz',
     bankPostcode: '76829',
     bankLocation: 'Landau in der Pfalz',
   ),
-  '54891300': Iban(
-    bic: 'GENODE61BZA',
+  '54891300': Bic(
+    value: 'GENODE61BZA',
     bankName: 'VR Bank Südliche Weinstraße-Wasgau (Gf P2)',
     bankShortName: 'VR Bank Südl Weinstr-Wasgau',
     bankPostcode: '76887',
     bankLocation: 'Bad Bergzabern',
   ),
-  '55000000': Iban(
-    bic: 'MARKDEF1550',
+  '55000000': Bic(
+    value: 'MARKDEF1550',
     bankName: 'Bundesbank',
     bankShortName: 'BBk Mainz',
     bankPostcode: '55020',
     bankLocation: 'Mainz',
   ),
-  '55010400': Iban(
-    bic: 'AARBDE5WDOM',
+  '55010400': Bic(
+    value: 'AARBDE5WDOM',
     bankName: 'Aareal Bank GF - BK01 -',
     bankShortName: 'Aareal Bank GF - BK01 -',
     bankPostcode: '65189',
     bankLocation: 'Wiesbaden',
   ),
-  '55010424': Iban(
-    bic: 'AARBDE5W550',
+  '55010424': Bic(
+    value: 'AARBDE5W550',
     bankName: 'Aareal Bank ehem. Filiale Mainz',
     bankShortName: 'Aareal Bank Wiesbaden',
     bankPostcode: '65189',
     bankLocation: 'Wiesbaden',
   ),
-  '55010625': Iban(
-    bic: 'AARBDE5WCLE',
+  '55010625': Bic(
+    value: 'AARBDE5WCLE',
     bankName: 'Aareal Bank Clearing Wiesbaden',
     bankShortName: 'Aareal Clearing Wiesbaden',
     bankPostcode: '65189',
     bankLocation: 'Wiesbaden',
   ),
-  '55010800': Iban(
-    bic: 'ISBRDE55XXX',
+  '55010800': Bic(
+    value: 'ISBRDE55XXX',
     bankName: 'Investitions- und Strukturbank RP',
     bankShortName: 'ISB RP',
     bankPostcode: '55020',
     bankLocation: 'Mainz',
   ),
-  '55020000': Iban(
-    bic: 'BHFBDEFF550',
+  '55020000': Bic(
+    value: 'BHFBDEFF550',
     bankName: 'BHF-BANK Mainz',
     bankShortName: 'BHF-BANK',
     bankPostcode: '55116',
     bankLocation: 'Mainz',
   ),
-  '55020100': Iban(
-    bic: 'BKMZDE51XXX',
+  '55020100': Bic(
+    value: 'BKMZDE51XXX',
     bankName: 'Bausparkasse Mainz',
     bankShortName: 'Bausparkasse Mainz',
     bankPostcode: '55004',
     bankLocation: 'Mainz',
   ),
-  '55020486': Iban(
-    bic: 'HYVEDEMM486',
+  '55020486': Bic(
+    value: 'HYVEDEMM486',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '55005',
     bankLocation: 'Mainz',
   ),
-  '55020500': Iban(
-    bic: 'BFSWDE33MNZ',
+  '55020500': Bic(
+    value: 'BFSWDE33MNZ',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Bank für Sozialwirtschaft',
     bankPostcode: '34117',
     bankLocation: 'Kassel',
   ),
-  '55020555': Iban(
-    bic: 'BFSWDE33MNZ',
+  '55020555': Bic(
+    value: 'BFSWDE33MNZ',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Sozialbank Mainz',
     bankPostcode: '34117',
     bankLocation: 'Kassel',
   ),
-  '55020600': Iban(
-    bic: 'IMMODE5MXXX',
+  '55020600': Bic(
+    value: 'IMMODE5MXXX',
     bankName: 'Aareal Bank (formerly Westdeutsche ImmobilienBank)',
     bankShortName: 'Aareal Bank',
     bankPostcode: '65189',
     bankLocation: 'Wiesbaden',
   ),
-  '55020700': Iban(
-    bic: 'SUFGDE51XXX',
+  '55020700': Bic(
+    value: 'SUFGDE51XXX',
     bankName: 'Süd-West-Kreditbank Finanzierung',
     bankShortName: 'SWK-Bank Bingen',
     bankPostcode: '55387',
     bankLocation: 'Bingen am Rhein',
   ),
-  '55030500': Iban(
-    bic: 'CPLADE55XXX',
+  '55030500': Bic(
+    value: 'CPLADE55XXX',
     bankName: 'TARGOBANK Gf FG',
     bankShortName: 'TARGOBANK Gf FG',
     bankPostcode: '55014',
     bankLocation: 'Mainz',
   ),
-  '55033300': Iban(
-    bic: 'SCFBDE33XXX',
+  '55033300': Bic(
+    value: 'SCFBDE33XXX',
     bankName: 'Santander Consumer Bank',
     bankShortName: 'Santander Bank Mainz',
     bankPostcode: '55116',
     bankLocation: 'Mainz',
   ),
-  '55040022': Iban(
-    bic: 'COBADEFFXXX',
+  '55040022': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Ingelheim Rhein',
     bankShortName: 'Commerzbank',
     bankPostcode: '55204',
     bankLocation: 'Ingelheim am Rhein',
   ),
-  '55040060': Iban(
-    bic: 'COBADEFFXXX',
+  '55040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Mainz',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '55116',
     bankLocation: 'Mainz',
   ),
-  '55040061': Iban(
-    bic: 'COBADEFFXXX',
+  '55040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Mainz',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '55116',
     bankLocation: 'Mainz',
   ),
-  '55050000': Iban(
-    bic: 'SOLADEST550',
+  '55050000': Bic(
+    value: 'SOLADEST550',
     bankName: 'ZV Landesbank Baden-Württemberg',
     bankShortName: 'ZV LBBW Mainz',
     bankPostcode: '55098',
     bankLocation: 'Mainz',
   ),
-  '55050120': Iban(
-    bic: 'MALADE51MNZ',
+  '55050120': Bic(
+    value: 'MALADE51MNZ',
     bankName: 'Sparkasse Mainz -alt-',
     bankShortName: 'Sparkasse Mainz -alt-',
     bankPostcode: '55028',
     bankLocation: 'Mainz',
   ),
-  '55060321': Iban(
-    bic: 'GENODE51MZ4',
+  '55060321': Bic(
+    value: 'GENODE51MZ4',
     bankName: 'VR-Bank Mainz -alt-',
     bankShortName: 'VR-Bank Mainz -alt-',
     bankPostcode: '55052',
     bankLocation: 'Mainz',
   ),
-  '55060417': Iban(
-    bic: 'GENODE51MZ2',
+  '55060417': Bic(
+    value: 'GENODE51MZ2',
     bankName: 'VR-Bank Mainz (Gf P2)',
     bankShortName: 'VR-Bank Mainz',
     bankPostcode: '55052',
     bankLocation: 'Mainz',
   ),
-  '55060611': Iban(
-    bic: 'GENODE51MZ6',
+  '55060611': Bic(
+    value: 'GENODE51MZ6',
     bankName: 'Genobank Mainz (Gf P2)',
     bankShortName: 'Genobank Mainz',
     bankPostcode: '55054',
     bankLocation: 'Mainz',
   ),
-  '55061303': Iban(
-    bic: 'GENODE51BUD',
+  '55061303': Bic(
+    value: 'GENODE51BUD',
     bankName: 'Budenheimer Volksbank (Gf P2)',
     bankShortName: 'Budenheimer Volksbank',
     bankPostcode: '55254',
     bankLocation: 'Budenheim',
   ),
-  '55061507': Iban(
-    bic: 'GENODE51HDS',
+  '55061507': Bic(
+    value: 'GENODE51HDS',
     bankName: 'VR-Bank Mainz -alt-',
     bankShortName: 'VR-Bank Mainz -alt-',
     bankPostcode: '55052',
     bankLocation: 'Mainz',
   ),
-  '55061907': Iban(
-    bic: 'GENODE51NIS',
+  '55061907': Bic(
+    value: 'GENODE51NIS',
     bankName: 'Volksbank Rhein-Selz (Gf P2)',
     bankShortName: 'Volksbank Rhein-Selz',
     bankPostcode: '55280',
     bankLocation: 'Nierstein',
   ),
-  '55070024': Iban(
-    bic: 'DEUTDEDB551',
+  '55070024': Bic(
+    value: 'DEUTDEDB551',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '55204',
     bankLocation: 'Ingelheim am Rhein',
   ),
-  '55070040': Iban(
-    bic: 'DEUTDE5M551',
+  '55070040': Bic(
+    value: 'DEUTDE5M551',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '55204',
     bankLocation: 'Ingelheim am Rhein',
   ),
-  '55070324': Iban(
-    bic: 'DEUTDEDBP29',
+  '55070324': Bic(
+    value: 'DEUTDEDBP29',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '55116',
     bankLocation: 'Mainz',
   ),
-  '55070396': Iban(
-    bic: 'DEUTDE5MP29',
+  '55070396': Bic(
+    value: 'DEUTDE5MP29',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '55116',
     bankLocation: 'Mainz',
   ),
-  '55080044': Iban(
-    bic: 'COBADEFFXXX',
+  '55080044': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'CommerzBk TF MZ 1, Mainz',
     bankShortName: 'Commerzbank, TF MZ 1',
     bankPostcode: '55006',
     bankLocation: 'Mainz',
   ),
-  '55080065': Iban(
-    bic: 'DRESDEFF550',
+  '55080065': Bic(
+    value: 'DRESDEFF550',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Mainz',
     bankPostcode: '55006',
     bankLocation: 'Mainz',
   ),
-  '55080085': Iban(
-    bic: 'DRESDEFFJ20',
+  '55080085': Bic(
+    value: 'DRESDEFFJ20',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Mainz',
     bankPostcode: '55002',
     bankLocation: 'Mainz',
   ),
-  '55080086': Iban(
-    bic: 'DRESDEFFJ21',
+  '55080086': Bic(
+    value: 'DRESDEFFJ21',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITGK2 Mainz',
     bankPostcode: '55002',
     bankLocation: 'Mainz',
   ),
-  '55080088': Iban(
-    bic: 'DRESDEFF555',
+  '55080088': Bic(
+    value: 'DRESDEFF555',
     bankName: 'CommerzBk TF MZ 2, Mainz',
     bankShortName: 'Commerzbank, TF MZ 2',
     bankPostcode: '55006',
     bankLocation: 'Mainz',
   ),
-  '55090500': Iban(
-    bic: 'GENODEF1S01',
+  '55090500': Bic(
+    value: 'GENODEF1S01',
     bankName: 'Sparda-Bank Südwest (Gf P2)',
     bankShortName: 'Sparda-Bank Südwest',
     bankPostcode: '55118',
     bankLocation: 'Mainz',
   ),
-  '55091200': Iban(
-    bic: 'GENODE61AZY',
+  '55091200': Bic(
+    value: 'GENODE61AZY',
     bankName: 'Volksbank Alzey-Worms (Gf P2)',
     bankShortName: 'Volksbank Alzey-Worms',
     bankPostcode: '67547',
     bankLocation: 'Worms',
   ),
-  '55150098': Iban(
-    bic: 'MALADE51EMZ',
+  '55150098': Bic(
+    value: 'MALADE51EMZ',
     bankName: 'Clearingkonto LRP-SI',
     bankShortName: 'Clearingkonto LRP-SI',
     bankPostcode: '55098',
     bankLocation: 'Mainz',
   ),
-  '55160195': Iban(
-    bic: 'GENODED1PA4',
+  '55160195': Bic(
+    value: 'GENODED1PA4',
     bankName: 'Pax-Bank Mainz',
     bankShortName: 'Pax-Bank',
     bankPostcode: '55023',
     bankLocation: 'Mainz',
   ),
-  '55190000': Iban(
-    bic: 'MVBMDE55XXX',
+  '55190000': Bic(
+    value: 'MVBMDE55XXX',
     bankName: 'Mainzer Volksbank (Gf P2)',
     bankShortName: 'Mainzer Volksbank Mainz',
     bankPostcode: '55020',
     bankLocation: 'Mainz',
   ),
-  '55340041': Iban(
-    bic: 'COBADEFFXXX',
+  '55340041': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Worms',
     bankShortName: 'Commerzbank',
     bankPostcode: '67501',
     bankLocation: 'Worms',
   ),
-  '55350010': Iban(
-    bic: 'MALADE51WOR',
+  '55350010': Bic(
+    value: 'MALADE51WOR',
     bankName: 'Rheinhessen Sparkasse',
     bankShortName: 'Rheinhessen Sparkasse',
     bankPostcode: '67545',
     bankLocation: 'Worms',
   ),
-  '55361202': Iban(
-    bic: 'GENODE51AHM',
+  '55361202': Bic(
+    value: 'GENODE51AHM',
     bankName: 'VR Bank (Gf P2)',
     bankShortName: 'VR Bank',
     bankPostcode: '67577',
     bankLocation: 'Alsheim',
   ),
-  '55362071': Iban(
-    bic: 'GENODE51BEC',
+  '55362071': Bic(
+    value: 'GENODE51BEC',
     bankName: 'Volksbank Bechtheim (Gf P2)',
     bankShortName: 'Volksbank Bechtheim',
     bankPostcode: '67595',
     bankLocation: 'Bechtheim',
   ),
-  '55390000': Iban(
-    bic: 'GENODE61WO1',
+  '55390000': Bic(
+    value: 'GENODE61WO1',
     bankName: 'Volksbank Worms-Wonnegau (Gf P2)',
     bankShortName: 'Volksbank Worms-Wonnegau',
     bankPostcode: '67512',
     bankLocation: 'Worms',
   ),
-  '56020086': Iban(
-    bic: 'HYVEDEMM515',
+  '56020086': Bic(
+    value: 'HYVEDEMM515',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '55501',
     bankLocation: 'Bad Kreuznach',
   ),
-  '56050180': Iban(
-    bic: 'MALADE51KRE',
+  '56050180': Bic(
+    value: 'MALADE51KRE',
     bankName: 'Sparkasse Rhein-Nahe',
     bankShortName: 'Sparkasse Rhein-Nahe',
     bankPostcode: '55546',
     bankLocation: 'Fürfeld',
   ),
-  '56051790': Iban(
-    bic: 'MALADE51SIM',
+  '56051790': Bic(
+    value: 'MALADE51SIM',
     bankName: 'Kreissparkasse Rhein-Hunsrück',
     bankShortName: 'Kr Spk Rhein-Hunsrück',
     bankPostcode: '55494',
     bankLocation: 'Rheinböllen',
   ),
-  '56061151': Iban(
-    bic: 'GENODED1KSL',
+  '56061151': Bic(
+    value: 'GENODED1KSL',
     bankName: 'Raiffeisenbank Kastellaun Zw',
     bankShortName: 'Raiffeisenbank Kastellaun',
     bankPostcode: '56290',
     bankLocation: 'Beltheim',
   ),
-  '56061472': Iban(
-    bic: 'GENODED1KHK',
+  '56061472': Bic(
+    value: 'GENODED1KHK',
     bankName: 'Vereinigte Volksbank Raiffeisenbank (Gf P2)',
     bankShortName: 'VVR-Bank Simmern',
     bankPostcode: '55469',
     bankLocation: 'Simmern',
   ),
-  '56062227': Iban(
-    bic: 'GENODED1RBO',
+  '56062227': Bic(
+    value: 'GENODED1RBO',
     bankName: 'Volksbank Rheinböllen',
     bankShortName: 'Volksbank Rheinböllen',
     bankPostcode: '56291',
     bankLocation: 'Pfalzfeld',
   ),
-  '56070024': Iban(
-    bic: 'DEUTDEDB560',
+  '56070024': Bic(
+    value: 'DEUTDEDB560',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '55504',
     bankLocation: 'Bad Kreuznach',
   ),
-  '56070040': Iban(
-    bic: 'DEUTDE5M560',
+  '56070040': Bic(
+    value: 'DEUTDE5M560',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '55504',
     bankLocation: 'Bad Kreuznach',
   ),
-  '56090000': Iban(
-    bic: 'GENODE51KRE',
+  '56090000': Bic(
+    value: 'GENODE51KRE',
     bankName: 'Volksbank Rhein-Nahe-Hunsrück (Gf P2)',
     bankShortName: 'VB Rhein-Nahe-Hunsrück',
     bankPostcode: '55543',
     bankLocation: 'Bad Kreuznach',
   ),
-  '56240050': Iban(
-    bic: 'COBADEFFXXX',
+  '56240050': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Kirn Nahe',
     bankShortName: 'Commerzbank',
     bankPostcode: '55601',
     bankLocation: 'Kirn',
   ),
-  '56250030': Iban(
-    bic: 'BILADE55XXX',
+  '56250030': Bic(
+    value: 'BILADE55XXX',
     bankName: 'Kreissparkasse Birkenfeld',
     bankShortName: 'Kr Spk Birkenfeld',
     bankPostcode: '55624',
     bankLocation: 'Rhaunen',
   ),
-  '56261735': Iban(
-    bic: 'GENODED1FIN',
+  '56261735': Bic(
+    value: 'GENODED1FIN',
     bankName: 'Raiffeisenbank Nahe (Gf P2)',
     bankShortName: 'Raiffeisenbank Nahe',
     bankPostcode: '55743',
     bankLocation: 'Fischbach',
   ),
-  '56270024': Iban(
-    bic: 'DEUTDEDB562',
+  '56270024': Bic(
+    value: 'DEUTDEDB562',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '55743',
     bankLocation: 'Idar-Oberstein',
   ),
-  '56270044': Iban(
-    bic: 'DEUTDE5M562',
+  '56270044': Bic(
+    value: 'DEUTDE5M562',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '55743',
     bankLocation: 'Idar-Oberstein',
   ),
-  '56290000': Iban(
-    bic: 'GENODE51IDO',
+  '56290000': Bic(
+    value: 'GENODE51IDO',
     bankName: 'Volksbank-Raiffeisenbank Naheland -alt-',
     bankShortName: 'VB-Raiffbk Naheland -alt-',
     bankPostcode: '55743',
     bankLocation: 'Idar-Oberstein',
   ),
-  '57000000': Iban(
-    bic: 'MARKDEF1570',
+  '57000000': Bic(
+    value: 'MARKDEF1570',
     bankName: 'BBk Koblenz',
     bankShortName: 'Bundesbank',
     bankPostcode: '56010',
     bankLocation: 'Koblenz',
   ),
-  '57020086': Iban(
-    bic: 'HYVEDEMM401',
+  '57020086': Bic(
+    value: 'HYVEDEMM401',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '56003',
     bankLocation: 'Koblenz',
   ),
-  '57020301': Iban(
-    bic: 'MKBKDE51XXX',
+  '57020301': Bic(
+    value: 'MKBKDE51XXX',
     bankName: 'MMV Bank Koblenz',
     bankShortName: 'MMV Bank',
     bankPostcode: '56073',
     bankLocation: 'Koblenz',
   ),
-  '57020500': Iban(
-    bic: 'OYAKDE5KXXX',
+  '57020500': Bic(
+    value: 'OYAKDE5KXXX',
     bankName: 'Oyak Anker Bank',
     bankShortName: 'Oyak Anker Bank',
     bankPostcode: '60528',
     bankLocation: 'Frankfurt am Main',
   ),
-  '57020600': Iban(
-    bic: 'DEBKDE51XXX',
+  '57020600': Bic(
+    value: 'DEBKDE51XXX',
     bankName: 'Debeka Bauspk Koblenz',
     bankShortName: 'Debeka Bausparkasse',
     bankPostcode: '56054',
     bankLocation: 'Koblenz',
   ),
-  '57040044': Iban(
-    bic: 'COBADEFFXXX',
+  '57040044': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Ems',
     bankShortName: 'Commerzbank',
     bankPostcode: '56118',
     bankLocation: 'Bad Ems',
   ),
-  '57050120': Iban(
-    bic: 'MALADE51KOB',
+  '57050120': Bic(
+    value: 'MALADE51KOB',
     bankName: 'Sparkasse Koblenz',
     bankShortName: 'Sparkasse Koblenz',
     bankPostcode: '56332',
     bankLocation: 'Dieblich',
   ),
-  '57051001': Iban(
-    bic: 'MALADE51BMB',
+  '57051001': Bic(
+    value: 'MALADE51BMB',
     bankName: 'Kreissparkasse Westerwald -alt-',
     bankShortName: 'Kr Spk Westerwald Montabaur',
     bankPostcode: '56410',
     bankLocation: 'Montabaur',
   ),
-  '57051870': Iban(
-    bic: 'MALADE51COC',
+  '57051870': Bic(
+    value: 'MALADE51COC',
     bankName: 'Kreissparkasse Cochem-Zell -alt-',
     bankShortName: 'Kr Spk Cochem-Zell -alt-',
     bankPostcode: '56812',
     bankLocation: 'Cochem',
   ),
-  '57060000': Iban(
-    bic: 'GENODEDD570',
+  '57060000': Bic(
+    value: 'GENODEDD570',
     bankName: 'DZ BANK Koblenz',
     bankShortName: 'DZ BANK',
     bankPostcode: '56016',
     bankLocation: 'Koblenz',
   ),
-  '57062675': Iban(
-    bic: 'GENODE51NWA',
+  '57062675': Bic(
+    value: 'GENODE51NWA',
     bankName: 'Raiffeisenbank Niederwallmenach',
     bankShortName: 'Raiffbk Niederwallmenach',
     bankPostcode: '56357',
     bankLocation: 'Nochern',
   ),
-  '57064221': Iban(
-    bic: 'GENODED1MKA',
+  '57064221': Bic(
+    value: 'GENODED1MKA',
     bankName: 'Volksbank Mülheim-Kärlich (Gf P2)',
     bankShortName: 'Volksbank Mülheim-Kärlich',
     bankPostcode: '56218',
     bankLocation: 'Mülheim-Kärlich',
   ),
-  '57069067': Iban(
-    bic: 'GENODED1LUH',
+  '57069067': Bic(
+    value: 'GENODED1LUH',
     bankName: 'Raiffeisenbank Lutzerather Höhe (Gf P2)',
     bankShortName: 'Raiffbk Lutzerather-Höhe',
     bankPostcode: '56826',
     bankLocation: 'Lutzerath',
   ),
-  '57069081': Iban(
-    bic: 'GENODED1MOK',
+  '57069081': Bic(
+    value: 'GENODED1MOK',
     bankName: 'Raiffeisenbank Moselkrampen Zw',
     bankShortName: 'Raiffeisenbank Moselkrampen',
     bankPostcode: '56814',
     bankLocation: 'Ediger-Eller',
   ),
-  '57069144': Iban(
-    bic: 'GENODED1KAI',
+  '57069144': Bic(
+    value: 'GENODED1KAI',
     bankName: 'Raiffeisenbank Eifeltor (Gf P2)',
     bankShortName: 'Raiffbk Eifeltor',
     bankPostcode: '56759',
     bankLocation: 'Kaisersesch',
   ),
-  '57069238': Iban(
-    bic: 'GENODED1ASN',
+  '57069238': Bic(
+    value: 'GENODED1ASN',
     bankName: 'Raiffeisenbank Neustadt (Gf P2)',
     bankShortName: 'Raiffbk Neustadt',
     bankPostcode: '53573',
     bankLocation: 'Neustadt (Wied)',
   ),
-  '57069257': Iban(
-    bic: 'GENODED1UMO',
+  '57069257': Bic(
+    value: 'GENODED1UMO',
     bankName: 'Raiffeisenbank Untermosel -alt-',
     bankShortName: 'Raiffbk Untermosel -alt-',
     bankPostcode: '56253',
     bankLocation: 'Treis-Karden',
   ),
-  '57069315': Iban(
-    bic: 'GENODED1SRH',
+  '57069315': Bic(
+    value: 'GENODED1SRH',
     bankName: 'Raiffeisenbank Straßenhaus -alt-',
     bankShortName: 'Raiffbk Straßenhaus -alt-',
     bankPostcode: '56585',
     bankLocation: 'Straßenhaus',
   ),
-  '57069361': Iban(
-    bic: 'GENODED1WLG',
+  '57069361': Bic(
+    value: 'GENODED1WLG',
     bankName: 'Raiffeisenbank Welling (Gf P2)',
     bankShortName: 'Raiffeisenbank Welling',
     bankPostcode: '56753',
     bankLocation: 'Welling',
   ),
-  '57069727': Iban(
-    bic: 'GENODED1IRR',
+  '57069727': Bic(
+    value: 'GENODED1IRR',
     bankName: 'Raiffeisenbank Irrel Zw',
     bankShortName: 'Raiffeisenbank Irrel',
     bankPostcode: '54668',
     bankLocation: 'Ferschweiler',
   ),
-  '57069806': Iban(
-    bic: 'GENODED1MBA',
+  '57069806': Bic(
+    value: 'GENODED1MBA',
     bankName: 'VR-Bank Hunsrück-Mosel (Gf P2)',
     bankShortName: 'VR-Bank Hunsrück-Mosel',
     bankPostcode: '54494',
     bankLocation: 'Morbach',
   ),
-  '57070024': Iban(
-    bic: 'DEUTDEDB578',
+  '57070024': Bic(
+    value: 'DEUTDEDB578',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '56404',
     bankLocation: 'Montabaur',
   ),
-  '57070045': Iban(
-    bic: 'DEUTDE5M578',
+  '57070045': Bic(
+    value: 'DEUTDE5M578',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '56404',
     bankLocation: 'Montabaur',
   ),
-  '57070324': Iban(
-    bic: 'DEUTDEDBP28',
+  '57070324': Bic(
+    value: 'DEUTDEDBP28',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '56068',
     bankLocation: 'Koblenz',
   ),
-  '57070395': Iban(
-    bic: 'DEUTDE5MP28',
+  '57070395': Bic(
+    value: 'DEUTDE5MP28',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '56068',
     bankLocation: 'Koblenz',
   ),
-  '57080070': Iban(
-    bic: 'DRESDEFF570',
+  '57080070': Bic(
+    value: 'DRESDEFF570',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Andernach',
     bankPostcode: '56601',
     bankLocation: 'Andernach',
   ),
-  '57090000': Iban(
-    bic: 'GENODE51KOB',
+  '57090000': Bic(
+    value: 'GENODE51KOB',
     bankName: 'Volksbank Koblenz Mittelrhein (Gf P2)',
     bankShortName: 'VB Koblenz Mittelrhein',
     bankPostcode: '56009',
     bankLocation: 'Koblenz',
   ),
-  '57090010': Iban(
-    bic: 'GENODE51KOB',
+  '57090010': Bic(
+    value: 'GENODE51KOB',
     bankName: 'Volksbank Koblenz Mittelrhein GAA -alt-',
     bankShortName: 'VB Koblenz Mittelrhein-alt-',
     bankPostcode: '56068',
     bankLocation: 'Koblenz',
   ),
-  '57090900': Iban(
-    bic: 'GENODEF1P12',
+  '57090900': Bic(
+    value: 'GENODEF1P12',
     bankName: 'PSD Bank Koblenz (Gf P2)',
     bankShortName: 'PSD Bank Koblenz',
     bankPostcode: '56068',
     bankLocation: 'Koblenz',
   ),
-  '57091000': Iban(
-    bic: 'GENODE51MON',
+  '57091000': Bic(
+    value: 'GENODE51MON',
     bankName: 'Volksbank Montabaur-Höhr-Grenzhausen (Gf P2)',
     bankShortName: 'VB Montabaur - Höhr-GrH',
     bankPostcode: '56404',
     bankLocation: 'Montabaur',
   ),
-  '57091100': Iban(
-    bic: 'GENODE51HGR',
+  '57091100': Bic(
+    value: 'GENODE51HGR',
     bankName: 'Volksbank Höhr-Grenzhausen -alt-',
     bankShortName: 'VB Höhr-Grenzhausen -alt-',
     bankPostcode: '56195',
     bankLocation: 'Höhr-Grenzhausen',
   ),
-  '57092800': Iban(
-    bic: 'GENODE51DIE',
+  '57092800': Bic(
+    value: 'GENODE51DIE',
     bankName: 'Volksbank Rhein-Lahn-Limburg (Gf P2)',
     bankShortName: 'VB Rhein-Lahn-Limburg',
     bankPostcode: '65571',
     bankLocation: 'Diez',
   ),
-  '57263015': Iban(
-    bic: 'GENODE51ARZ',
+  '57263015': Bic(
+    value: 'GENODE51ARZ',
     bankName: 'Raiffeisenbank Unterwesterwald Zw',
     bankShortName: 'Raiffeisenbank Arzbach',
     bankPostcode: '56204',
     bankLocation: 'Hillscheid',
   ),
-  '57351030': Iban(
-    bic: 'MALADE51AKI',
+  '57351030': Bic(
+    value: 'MALADE51AKI',
     bankName: 'Sparkasse Westerwald-Sieg',
     bankShortName: 'Sparkasse Westerwald-Sieg',
     bankPostcode: '56470',
     bankLocation: 'Bad Marienberg (Westerwald)',
   ),
-  '57361476': Iban(
-    bic: 'GENODED1GBS',
+  '57361476': Bic(
+    value: 'GENODED1GBS',
     bankName: 'Volksbank Gebhardshain (Gf P2)',
     bankShortName: 'Volksbank Gebhardshain',
     bankPostcode: '57580',
     bankLocation: 'Gebhardshain',
   ),
-  '57363243': Iban(
-    bic: 'GENODED1NFB',
+  '57363243': Bic(
+    value: 'GENODED1NFB',
     bankName: 'Raiffeisenbank Niederfischbach (Gf P2)',
     bankShortName: 'Raiffbk Niederfischbach',
     bankPostcode: '57572',
     bankLocation: 'Niederfischbach',
   ),
-  '57391200': Iban(
-    bic: 'GENODE51DAA',
+  '57391200': Bic(
+    value: 'GENODE51DAA',
     bankName: 'Volksbank Daaden Zw Weitefeld',
     bankShortName: 'VB Daaden Weitefeld',
     bankPostcode: '57586',
     bankLocation: 'Weitefeld',
   ),
-  '57391500': Iban(
-    bic: 'GENODE51HAM',
+  '57391500': Bic(
+    value: 'GENODE51HAM',
     bankName: 'Volksbank Hamm/Sieg Zweigstelle Windeck-Rosbach',
     bankShortName: 'VB Hamm/Sieg Windeck-Rosba.',
     bankPostcode: '51570',
     bankLocation: 'Windeck',
   ),
-  '57391800': Iban(
-    bic: 'GENODE51WW1',
+  '57391800': Bic(
+    value: 'GENODE51WW1',
     bankName: 'Westerwald Bank (Gf P2)',
     bankShortName: 'Westerwald Bank',
     bankPostcode: '56410',
     bankLocation: 'Montabaur',
   ),
-  '57450120': Iban(
-    bic: 'MALADE51NWD',
+  '57450120': Bic(
+    value: 'MALADE51NWD',
     bankName: 'Sparkasse Neuwied',
     bankShortName: 'Sparkasse Neuwied',
     bankPostcode: '53542',
     bankLocation: 'Linz',
   ),
-  '57460117': Iban(
-    bic: 'GENODED1NWD',
+  '57460117': Bic(
+    value: 'GENODED1NWD',
     bankName: 'VR Bank Rhein-Mosel (Gf P2)',
     bankShortName: 'VR Bank Rhein-Mosel',
     bankPostcode: '56564',
     bankLocation: 'Neuwied',
   ),
-  '57461759': Iban(
-    bic: 'GENODED1MRW',
+  '57461759': Bic(
+    value: 'GENODED1MRW',
     bankName: 'Raiffeisenbank Mittelrhein (Gf P2)',
     bankShortName: 'Raiffbk Mittelrhein',
     bankPostcode: '56572',
     bankLocation: 'Weißenthurm',
   ),
-  '57470024': Iban(
-    bic: 'DEUTDEDB579',
+  '57470024': Bic(
+    value: 'DEUTDEDB579',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '56572',
     bankLocation: 'Weißenthurm',
   ),
-  '57470047': Iban(
-    bic: 'DEUTDE5M579',
+  '57470047': Bic(
+    value: 'DEUTDE5M579',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '56572',
     bankLocation: 'Weißenthurm',
   ),
-  '57650010': Iban(
-    bic: 'MALADE51MYN',
+  '57650010': Bic(
+    value: 'MALADE51MYN',
     bankName: 'Kreissparkasse Mayen',
     bankShortName: 'Kr Spk Mayen',
     bankPostcode: '56705',
     bankLocation: 'Mayen',
   ),
-  '57661253': Iban(
-    bic: 'GENODED1KEH',
+  '57661253': Bic(
+    value: 'GENODED1KEH',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank Kehrig',
     bankPostcode: '56729',
     bankLocation: 'Kehrig',
   ),
-  '57662263': Iban(
-    bic: 'GENODED1MPO',
+  '57662263': Bic(
+    value: 'GENODED1MPO',
     bankName: 'VR Bank Rhein-Mosel (Gf P2)',
     bankShortName: 'VR Bank Rhein-Mosel',
     bankPostcode: '56299',
     bankLocation: 'Ochtendung',
   ),
-  '57751310': Iban(
-    bic: 'MALADE51AHR',
+  '57751310': Bic(
+    value: 'MALADE51AHR',
     bankName: 'Kreissparkasse Ahrweiler',
     bankShortName: 'Kr Spk Ahrweiler',
     bankPostcode: '53520',
     bankLocation: 'Insul',
   ),
-  '57761591': Iban(
-    bic: 'GENODED1BNA',
+  '57761591': Bic(
+    value: 'GENODED1BNA',
     bankName: 'Volksbank RheinAhrEifel (Gf P2)',
     bankShortName: 'VB RheinAhrEifel',
     bankPostcode: '56068',
     bankLocation: 'Koblenz',
   ),
-  '57761599': Iban(
-    bic: 'GENODED1BNA',
+  '57761599': Bic(
+    value: 'GENODED1BNA',
     bankName: 'Volksbank RheinAhrEifel (Gf GAA)',
     bankShortName: 'Voba RheinAhrEifel GAA',
     bankPostcode: '56068',
     bankLocation: 'Koblenz',
   ),
-  '57762265': Iban(
-    bic: 'GENODED1GRO',
+  '57762265': Bic(
+    value: 'GENODED1GRO',
     bankName: 'Raiffeisenbank Grafschaft-Wachtberg (Gf P2)',
     bankShortName: 'Raiffbk Grafschaft-Wachtbg',
     bankPostcode: '53501',
     bankLocation: 'Grafschaft',
   ),
-  '58520086': Iban(
-    bic: 'HYVEDEMM437',
+  '58520086': Bic(
+    value: 'HYVEDEMM437',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '54203',
     bankLocation: 'Trier',
   ),
-  '58540035': Iban(
-    bic: 'COBADEFFXXX',
+  '58540035': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Wittlich',
     bankShortName: 'Commerzbank',
     bankPostcode: '54502',
     bankLocation: 'Wittlich',
   ),
-  '58550130': Iban(
-    bic: 'TRISDE55XXX',
+  '58550130': Bic(
+    value: 'TRISDE55XXX',
     bankName: 'Sparkasse Trier',
     bankShortName: 'Sparkasse Trier',
     bankPostcode: '54344',
     bankLocation: 'Kenn',
   ),
-  '58560103': Iban(
-    bic: 'GENODED1TVB',
+  '58560103': Bic(
+    value: 'GENODED1TVB',
     bankName: 'Volksbank Trier (Gf P2)',
     bankShortName: 'Volksbank Trier',
     bankPostcode: '54228',
     bankLocation: 'Trier',
   ),
-  '58560294': Iban(
-    bic: 'GENODED1PA3',
+  '58560294': Bic(
+    value: 'GENODED1PA3',
     bankName: 'Pax-Bank Trier',
     bankShortName: 'Pax-Bank',
     bankPostcode: '54220',
     bankLocation: 'Trier',
   ),
-  '58561626': Iban(
-    bic: 'GENODED1SRB',
+  '58561626': Bic(
+    value: 'GENODED1SRB',
     bankName: 'Volksbank Saarburg (Gf P2)',
     bankShortName: 'Volksbank Saarburg',
     bankPostcode: '54439',
     bankLocation: 'Saarburg',
   ),
-  '58561771': Iban(
-    bic: 'GENODED1MLW',
+  '58561771': Bic(
+    value: 'GENODED1MLW',
     bankName: 'Raiffeisenbank Mehring-Leiwen (Gf P2)',
     bankShortName: 'Raiffbk Mehring-Leiwen',
     bankPostcode: '54340',
     bankLocation: 'Leiwen',
   ),
-  '58564788': Iban(
-    bic: 'GENODED1HWM',
+  '58564788': Bic(
+    value: 'GENODED1HWM',
     bankName: 'Volksbank Hochwald-Saarburg (Gf P2)',
     bankShortName: 'VB Hochwald-Saarburg',
     bankPostcode: '54439',
     bankLocation: 'Saarburg',
   ),
-  '58570024': Iban(
-    bic: 'DEUTDEDB586',
+  '58570024': Bic(
+    value: 'DEUTDEDB586',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '54501',
     bankLocation: 'Wittlich',
   ),
-  '58570048': Iban(
-    bic: 'DEUTDE5M586',
+  '58570048': Bic(
+    value: 'DEUTDE5M586',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '54501',
     bankLocation: 'Wittlich',
   ),
-  '58580074': Iban(
-    bic: 'DRESDEFF585',
+  '58580074': Bic(
+    value: 'DRESDEFF585',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Wittlich',
     bankPostcode: '54502',
     bankLocation: 'Wittlich',
   ),
-  '58590900': Iban(
-    bic: 'GENODEF1P21',
+  '58590900': Bic(
+    value: 'GENODEF1P21',
     bankName: 'PSD Bank Trier Ndl der PSD Bank West',
     bankShortName: 'PSD Bank Trier',
     bankPostcode: '54290',
     bankLocation: 'Trier',
   ),
-  '58650030': Iban(
-    bic: 'MALADE51BIT',
+  '58650030': Bic(
+    value: 'MALADE51BIT',
     bankName: 'Kreissparkasse Bitburg-Prüm',
     bankShortName: 'Kr Spk Bitburg-Prüm',
     bankPostcode: '54623',
     bankLocation: 'Bitburg',
   ),
-  '58651240': Iban(
-    bic: 'MALADE51DAU',
+  '58651240': Bic(
+    value: 'MALADE51DAU',
     bankName: 'Kreissparkasse Vulkaneifel',
     bankShortName: 'Kreissparkasse Vulkaneifel',
     bankPostcode: '53539',
     bankLocation: 'Kelberg',
   ),
-  '58660101': Iban(
-    bic: 'GENODED1BIT',
+  '58660101': Bic(
+    value: 'GENODED1BIT',
     bankName: 'Volksbank Eifel (Gf P2)',
     bankShortName: 'Volksbank Eifel',
     bankPostcode: '54626',
     bankLocation: 'Bitburg',
   ),
-  '58661901': Iban(
-    bic: 'GENODED1WSC',
+  '58661901': Bic(
+    value: 'GENODED1WSC',
     bankName: 'Raiffeisenbank Westeifel (Gf P2)',
     bankShortName: 'Raiffeisenbank Westeifel',
     bankPostcode: '54687',
     bankLocation: 'Arzfeld',
   ),
-  '58662653': Iban(
-    bic: 'GENODED1OSE',
+  '58662653': Bic(
+    value: 'GENODED1OSE',
     bankName: 'Raiffeisenbank östl Südeifel (Gf P2)',
     bankShortName: 'Raiffbk östl Südeifel',
     bankPostcode: '54647',
     bankLocation: 'Dudeldorf',
   ),
-  '58668818': Iban(
-    bic: 'GENODED1NBL',
+  '58668818': Bic(
+    value: 'GENODED1NBL',
     bankName: 'Raiffeisenbank Neuerburg-Land -alt-',
     bankShortName: 'Raiffbk Neuerburg-Land -alt',
     bankPostcode: '54671',
     bankLocation: 'Neuerburg',
   ),
-  '58691500': Iban(
-    bic: 'GENODED1PRU',
+  '58691500': Bic(
+    value: 'GENODED1PRU',
     bankName: 'Volksbank Eifel Mitte (Gf P2)',
     bankShortName: 'Volksbank Eifel Mitte',
     bankPostcode: '54591',
     bankLocation: 'Prüm',
   ),
-  '58751230': Iban(
-    bic: 'MALADE51BKS',
+  '58751230': Bic(
+    value: 'MALADE51BKS',
     bankName: 'Sparkasse Mittelmosel-Eifel Mosel Hunsrück',
     bankShortName: 'Spk Mittelmosel EMH',
     bankPostcode: '54469',
     bankLocation: 'Bernkastel-Kues',
   ),
-  '58760954': Iban(
-    bic: 'GENODED1WTL',
+  '58760954': Bic(
+    value: 'GENODED1WTL',
     bankName: 'Vereinigte Volksbank Raiffeisenbank (Gf P2)',
     bankShortName: 'VVR-Bank Wittlich',
     bankPostcode: '54505',
     bankLocation: 'Wittlich',
   ),
-  '58761343': Iban(
-    bic: 'GENODED1BPU',
+  '58761343': Bic(
+    value: 'GENODED1BPU',
     bankName: 'Raiffeisenbank Zeller Land (Gf P2)',
     bankShortName: 'Raiffbk Zeller Land',
     bankPostcode: '56867',
     bankLocation: 'Briedel',
   ),
-  '58771224': Iban(
-    bic: 'DEUTDEDB588',
+  '58771224': Bic(
+    value: 'DEUTDEDB588',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '56851',
     bankLocation: 'Zell (Mosel)',
   ),
-  '58771242': Iban(
-    bic: 'DEUTDE5M588',
+  '58771242': Bic(
+    value: 'DEUTDE5M588',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '56851',
     bankLocation: 'Zell (Mosel)',
   ),
-  '59000000': Iban(
-    bic: 'MARKDEF1590',
+  '59000000': Bic(
+    value: 'MARKDEF1590',
     bankName: 'BBk Saarbrücken',
     bankShortName: 'Bundesbank',
     bankPostcode: '66018',
     bankLocation: 'Saarbrücken',
   ),
-  '59010011': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010011': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 11 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK11 Postbank Ndl DB',
     bankPostcode: '66386',
     bankLocation: 'St. Ingbert',
   ),
-  '59010012': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010012': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 12 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK12 Postbank Ndl DB',
     bankPostcode: '66538',
     bankLocation: 'Neunkirchen',
   ),
-  '59010013': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010013': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 13 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK13 Postbank Ndl DB',
     bankPostcode: '66763',
     bankLocation: 'Dillingen',
   ),
-  '59010014': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010014': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 14 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK14 Postbank Ndl DB',
     bankPostcode: '66333',
     bankLocation: 'Völklingen',
   ),
-  '59010015': Iban(
-    bic: 'PBNKDEFF015',
+  '59010015': Bic(
+    value: 'PBNKDEFF015',
     bankName: 'ZVC FK 15 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK15 Postbank Ndl DB',
     bankPostcode: '52062',
     bankLocation: 'Aachen',
   ),
-  '59010016': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010016': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 16 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK16 Postbank Ndl DB',
     bankPostcode: '76646',
     bankLocation: 'Bruchsal',
   ),
-  '59010017': Iban(
-    bic: 'PBNKDEFF017',
+  '59010017': Bic(
+    value: 'PBNKDEFF017',
     bankName: 'ZVC FK 17 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK17 Postbank Ndl DB',
     bankPostcode: '37073',
     bankLocation: 'Göttingen',
   ),
-  '59010018': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010018': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 18 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK18 Postbank Ndl DB',
     bankPostcode: '22880',
     bankLocation: 'Wedel',
   ),
-  '59010019': Iban(
-    bic: 'PBNKDEFF019',
+  '59010019': Bic(
+    value: 'PBNKDEFF019',
     bankName: 'ZVC FK 19 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK19 Postbank Ndl DB',
     bankPostcode: '59755',
     bankLocation: 'Arnsberg',
   ),
-  '59010021': Iban(
-    bic: 'PBNKDEFF021',
+  '59010021': Bic(
+    value: 'PBNKDEFF021',
     bankName: 'ZVC FK 21 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK21 Postbank Ndl DB',
     bankPostcode: '63739',
     bankLocation: 'Aschaffenburg',
   ),
-  '59010022': Iban(
-    bic: 'PBNKDEFF022',
+  '59010022': Bic(
+    value: 'PBNKDEFF022',
     bankName: 'ZVC FK 22 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK22 Postbank Ndl DB',
     bankPostcode: '36037',
     bankLocation: 'Fulda',
   ),
-  '59010023': Iban(
-    bic: 'PBNKDEFF023',
+  '59010023': Bic(
+    value: 'PBNKDEFF023',
     bankName: 'ZVC FK 23 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK23 Postbank Ndl DB',
     bankPostcode: '61348',
     bankLocation: 'Bad Homburg',
   ),
-  '59010024': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010024': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 24 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK24 Postbank Ndl DB',
     bankPostcode: '50321',
     bankLocation: 'Brühl',
   ),
-  '59010025': Iban(
-    bic: 'PBNKDEFF025',
+  '59010025': Bic(
+    value: 'PBNKDEFF025',
     bankName: 'ZVC FK 25 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK25 Postbank Ndl DB',
     bankPostcode: '34117',
     bankLocation: 'Kassel',
   ),
-  '59010026': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010026': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 26 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK26 Postbank Ndl DB',
     bankPostcode: '87600',
     bankLocation: 'Kaufbeuren',
   ),
-  '59010027': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010027': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 27 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK27 Postbank Ndl DB',
     bankPostcode: '25421',
     bankLocation: 'Pinneberg',
   ),
-  '59010028': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010028': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 28 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK28 Postbank Ndl DB',
     bankPostcode: '55232',
     bankLocation: 'Alzey',
   ),
-  '59010029': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010029': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 29 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK29 Postbank Ndl DB',
     bankPostcode: '61118',
     bankLocation: 'Bad Vilbel',
   ),
-  '59010031': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010031': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 31 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK31 Postbank Ndl DB',
     bankPostcode: '75015',
     bankLocation: 'Bretten',
   ),
-  '59010032': Iban(
-    bic: 'PBNKDEFF032',
+  '59010032': Bic(
+    value: 'PBNKDEFF032',
     bankName: 'ZVC FK 32 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK32 Postbank Ndl DB',
     bankPostcode: '18439',
     bankLocation: 'Stralsund',
   ),
-  '59010033': Iban(
-    bic: 'PBNKDEFF033',
+  '59010033': Bic(
+    value: 'PBNKDEFF033',
     bankName: 'ZVC FK 33 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK33 Postbank Ndl DB',
     bankPostcode: '95444',
     bankLocation: 'Bayreuth',
   ),
-  '59010034': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010034': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 34 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK34 Postbank Ndl DB',
     bankPostcode: '29614',
     bankLocation: 'Soltau',
   ),
-  '59010035': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010035': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 35 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK35 Postbank Ndl DB',
     bankPostcode: '27755',
     bankLocation: 'Delmenhorst',
   ),
-  '59010036': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010036': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 36 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK36 Postbank Ndl DB',
     bankPostcode: '93413',
     bankLocation: 'Cham',
   ),
-  '59010037': Iban(
-    bic: 'PBNKDEFF037',
+  '59010037': Bic(
+    value: 'PBNKDEFF037',
     bankName: 'ZVC FK 37 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK37 Postbank Ndl DB',
     bankPostcode: '50126',
     bankLocation: 'Bergheim',
   ),
-  '59010038': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010038': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 38 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK38 Postbank Ndl DB',
     bankPostcode: '86551',
     bankLocation: 'Aichach',
   ),
-  '59010039': Iban(
-    bic: 'PBNKDEFF039',
+  '59010039': Bic(
+    value: 'PBNKDEFF039',
     bankName: 'ZVC FK 39 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK39 Postbank Ndl DB',
     bankPostcode: '51465',
     bankLocation: 'Bergisch Gladbach',
   ),
-  '59010040': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010040': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 40 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK40 Postbank Ndl DB',
     bankPostcode: '71229',
     bankLocation: 'Leonberg',
   ),
-  '59010041': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010041': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 41 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK41 Postbank Ndl DB',
     bankPostcode: '76726',
     bankLocation: 'Germersheim',
   ),
-  '59010042': Iban(
-    bic: 'PBNKDEFF042',
+  '59010042': Bic(
+    value: 'PBNKDEFF042',
     bankName: 'ZVC FK 42 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK42 Postbank Ndl DB',
     bankPostcode: '46397',
     bankLocation: 'Bocholt',
   ),
-  '59010044': Iban(
-    bic: 'PBNKDEFF044',
+  '59010044': Bic(
+    value: 'PBNKDEFF044',
     bankName: 'ZVC FK 44 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK44 Postbank Ndl DB',
     bankPostcode: '44787',
     bankLocation: 'Bochum',
   ),
-  '59010045': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010045': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 45 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK45 Postbank Ndl DB',
     bankPostcode: '63477',
     bankLocation: 'Maintal',
   ),
-  '59010047': Iban(
-    bic: 'PBNKDEFF047',
+  '59010047': Bic(
+    value: 'PBNKDEFF047',
     bankName: 'ZVC FK 47 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK47 Postbank Ndl DB',
     bankPostcode: '40721',
     bankLocation: 'Hilden',
   ),
-  '59010048': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010048': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 48 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK48 Postbank Ndl DB',
     bankPostcode: '50226',
     bankLocation: 'Frechen',
   ),
-  '59010049': Iban(
-    bic: 'PBNKDEFF049',
+  '59010049': Bic(
+    value: 'PBNKDEFF049',
     bankName: 'ZVC FK 49 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK49 Postbank Ndl DB',
     bankPostcode: '38440',
     bankLocation: 'Wolfsburg',
   ),
-  '59010051': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010051': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 51 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK51 Postbank Ndl DB',
     bankPostcode: '49377',
     bankLocation: 'Vechta',
   ),
-  '59010052': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010052': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 52 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK52 Postbank Ndl DB',
     bankPostcode: '29439',
     bankLocation: 'Lüchow (Wendland)',
   ),
-  '59010053': Iban(
-    bic: 'PBNKDEFF053',
+  '59010053': Bic(
+    value: 'PBNKDEFF053',
     bankName: 'ZVC FK 53 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK53 Postbank Ndl DB',
     bankPostcode: '38102',
     bankLocation: 'Braunschweig',
   ),
-  '59010054': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010054': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 54 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK54 Postbank Ndl DB',
     bankPostcode: '49565',
     bankLocation: 'Bramsche',
   ),
-  '59010055': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010055': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 55 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK55 Postbank Ndl DB',
     bankPostcode: '38350',
     bankLocation: 'Helmstedt',
   ),
-  '59010056': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010056': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 56 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK56 Postbank Ndl DB',
     bankPostcode: '14712',
     bankLocation: 'Rathenow',
   ),
-  '59010057': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010057': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 57 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK57 Postbank Ndl DB',
     bankPostcode: '33602',
     bankLocation: 'Bielefeld',
   ),
-  '59010058': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010058': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 58 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK58 Postbank Ndl DB',
     bankPostcode: '38300',
     bankLocation: 'Wolfenbüttel',
   ),
-  '59010059': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010059': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 59 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK59 Postbank Ndl DB',
     bankPostcode: '14974',
     bankLocation: 'Ludwigsfelde',
   ),
-  '59010061': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010061': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 61 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK61 Postbank Ndl DB',
     bankPostcode: '59494',
     bankLocation: 'Soest',
   ),
-  '59010062': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010062': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 62 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK62 Postbank Ndl DB',
     bankPostcode: '99867',
     bankLocation: 'Gotha',
   ),
-  '59010063': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010063': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 63 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK63 Postbank Ndl DB',
     bankPostcode: '02977',
     bankLocation: 'Hoyerswerda',
   ),
-  '59010064': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010064': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 64 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK64 Postbank Ndl DB',
     bankPostcode: '56727',
     bankLocation: 'Mayen',
   ),
-  '59010065': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010065': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 65 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK65 Postbank Ndl DB',
     bankPostcode: '63571',
     bankLocation: 'Gelnhausen',
   ),
-  '59010066': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010066': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '66111',
     bankLocation: 'Saarbrücken',
   ),
-  '59010068': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010068': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 68 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK68 Postbank Ndl DB',
     bankPostcode: '95028',
     bankLocation: 'Hof',
   ),
-  '59010069': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010069': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 69 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK69 Postbank Ndl DB',
     bankPostcode: '67098',
     bankLocation: 'Bad Dürkheim',
   ),
-  '59010071': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010071': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 71 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK71 Postbank Ndl DB',
     bankPostcode: '91413',
     bankLocation: 'Neustadt a.d.Aisch',
   ),
-  '59010072': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010072': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 72 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK72 Postbank Ndl DB',
     bankPostcode: '72072',
     bankLocation: 'Tübingen',
   ),
-  '59010073': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010073': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 73 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK73 Postbank Ndl DB',
     bankPostcode: '85435',
     bankLocation: 'Erding',
   ),
-  '59010074': Iban(
-    bic: 'PBNKDEFFXXX',
+  '59010074': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'ZVC FK 74 Postbank Ndl der Deutsche Bank',
     bankShortName: 'ZVCFK74 Postbank Ndl DB',
     bankPostcode: '92224',
     bankLocation: 'Amberg',
   ),
-  '59010400': Iban(
-    bic: 'SIKBDE55XXX',
+  '59010400': Bic(
+    value: 'SIKBDE55XXX',
     bankName: 'Saarl Investitionskreditbank',
     bankShortName: 'SIKB Saarbrücken',
     bankPostcode: '66027',
     bankLocation: 'Saarbrücken',
   ),
-  '59020090': Iban(
-    bic: 'HYVEDEMM432',
+  '59020090': Bic(
+    value: 'HYVEDEMM432',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '66513',
     bankLocation: 'Neunkirchen',
   ),
-  '59020400': Iban(
-    bic: 'MEGHDE81XXX',
+  '59020400': Bic(
+    value: 'MEGHDE81XXX',
     bankName: 'mediserv Bank Saarbrücken',
     bankShortName: 'mediserv Bank',
     bankPostcode: '66121',
     bankLocation: 'Saarbrücken',
   ),
-  '59040000': Iban(
-    bic: 'COBADEFFXXX',
+  '59040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Sankt Ingbert',
     bankShortName: 'Commerzbank',
     bankPostcode: '66386',
     bankLocation: 'St. Ingbert',
   ),
-  '59050000': Iban(
-    bic: 'SALADE55XXX',
+  '59050000': Bic(
+    value: 'SALADE55XXX',
     bankName: 'Landesbank Saar Saarbrücken',
     bankShortName: 'Landesbank Saar',
     bankPostcode: '66104',
     bankLocation: 'Saarbrücken',
   ),
-  '59050101': Iban(
-    bic: 'SAKSDE55XXX',
+  '59050101': Bic(
+    value: 'SAKSDE55XXX',
     bankName: 'Sparkasse Saarbrücken',
     bankShortName: 'Sparkasse Saarbrücken',
     bankPostcode: '66280',
     bankLocation: 'Sulzbach',
   ),
-  '59051090': Iban(
-    bic: 'SALADE51VKS',
+  '59051090': Bic(
+    value: 'SALADE51VKS',
     bankName: 'Stadtsparkasse Völklingen -alt-',
     bankShortName: 'St Spk Völklingen -alt-',
     bankPostcode: '66310',
     bankLocation: 'Völklingen',
   ),
-  '59070000': Iban(
-    bic: 'DEUTDE5M555',
+  '59070000': Bic(
+    value: 'DEUTDE5M555',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '66006',
     bankLocation: 'Saarbrücken',
   ),
-  '59070070': Iban(
-    bic: 'DEUTDEDB590',
+  '59070070': Bic(
+    value: 'DEUTDEDB590',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '66333',
     bankLocation: 'Völklingen',
   ),
-  '59080090': Iban(
-    bic: 'DRESDEFF590',
+  '59080090': Bic(
+    value: 'DRESDEFF590',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank',
     bankPostcode: '66424',
     bankLocation: 'Homburg',
   ),
-  '59090900': Iban(
-    bic: 'GENODEF1P19',
+  '59090900': Bic(
+    value: 'GENODEF1P19',
     bankName: 'PSD Bank RheinNeckarSaar',
     bankShortName: 'PSD Bank RheinNeckarSaar',
     bankPostcode: '66023',
     bankLocation: 'Saarbrücken',
   ),
-  '59092000': Iban(
-    bic: 'GENODE51SB2',
+  '59092000': Bic(
+    value: 'GENODE51SB2',
     bankName: 'Vereinigte Volksbank Saarlouis-Losheim-Sulzbach/Saar',
     bankShortName: 'Vereinigte Volksbank',
     bankPostcode: '66280',
     bankLocation: 'Sulzbach',
   ),
-  '59099550': Iban(
-    bic: 'GENODE51NOH',
+  '59099550': Bic(
+    value: 'GENODE51NOH',
     bankName: 'Volksbank Nahe-Schaumberg (Gf P2)',
     bankShortName: 'Volksbank Nahe-Schaumberg',
     bankPostcode: '66625',
     bankLocation: 'Nohfelden',
   ),
-  '59190000': Iban(
-    bic: 'SABADE5SXXX',
+  '59190000': Bic(
+    value: 'SABADE5SXXX',
     bankName: 'Bank 1 Saar (Gf P2)',
     bankShortName: 'Bank 1 Saar',
     bankPostcode: '66026',
     bankLocation: 'Saarbrücken',
   ),
-  '59190200': Iban(
-    bic: 'GENODE51SLS',
+  '59190200': Bic(
+    value: 'GENODE51SLS',
     bankName: 'Volksbank Westliche Saar plus (Gf P2)',
     bankShortName: 'Volksbank Westliche Saar',
     bankPostcode: '66724',
     bankLocation: 'Saarlouis',
   ),
-  '59251020': Iban(
-    bic: 'SALADE51WND',
+  '59251020': Bic(
+    value: 'SALADE51WND',
     bankName: 'Kreissparkasse St. Wendel',
     bankShortName: 'Kr Spk St. Wendel',
     bankPostcode: '66629',
     bankLocation: 'Freisen',
   ),
-  '59252046': Iban(
-    bic: 'SALADE51NKS',
+  '59252046': Bic(
+    value: 'SALADE51NKS',
     bankName: 'Sparkasse Neunkirchen',
     bankShortName: 'Sparkasse Neunkirchen',
     bankPostcode: '66583',
     bankLocation: 'Spiesen-Elversberg',
   ),
-  '59291000': Iban(
-    bic: 'GENODE51WEN',
+  '59291000': Bic(
+    value: 'GENODE51WEN',
     bankName: 'Unsere Volksbank St. Wendeler Land (Gf P2)',
     bankShortName: 'Unsere Volksbank St. Wendel',
     bankPostcode: '66606',
     bankLocation: 'St. Wendel',
   ),
-  '59291200': Iban(
-    bic: 'GENODE51BEX',
+  '59291200': Bic(
+    value: 'GENODE51BEX',
     bankName: 'Volks- und Raiffeisenbank Saarpfalz (Gf P2)',
     bankShortName: 'Volks- u. Raiffbk Saarpfalz',
     bankPostcode: '66424',
     bankLocation: 'Homburg',
   ),
-  '59320087': Iban(
-    bic: 'HYVEDEMM838',
+  '59320087': Bic(
+    value: 'HYVEDEMM838',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '66714',
     bankLocation: 'Saarlouis',
   ),
-  '59350110': Iban(
-    bic: 'KRSADE55XXX',
+  '59350110': Bic(
+    value: 'KRSADE55XXX',
     bankName: 'Kreissparkasse Saarlouis',
     bankShortName: 'Kreissparkasse Saarlouis',
     bankPostcode: '66359',
     bankLocation: 'Bous',
   ),
-  '59351040': Iban(
-    bic: 'MERZDE55XXX',
+  '59351040': Bic(
+    value: 'MERZDE55XXX',
     bankName: 'Sparkasse Merzig-Wadern',
     bankShortName: 'Spk Merzig-Wadern',
     bankPostcode: '66709',
     bankLocation: 'Weiskirchen',
   ),
-  '59390100': Iban(
-    bic: 'GENODE51SLF',
+  '59390100': Bic(
+    value: 'GENODE51SLF',
     bankName: 'Volksbank Saarlouis (Gf P2)',
     bankShortName: 'Volksbank Saarlouis',
     bankPostcode: '66724',
     bankLocation: 'Saarlouis',
   ),
-  '59391200': Iban(
-    bic: 'GENODE51UBH',
+  '59391200': Bic(
+    value: 'GENODE51UBH',
     bankName: 'Volksbank Überherrn',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '66799',
     bankLocation: 'Überherrn',
   ),
-  '59392000': Iban(
-    bic: 'GENODE51DSA',
+  '59392000': Bic(
+    value: 'GENODE51DSA',
     bankName: 'Volksbank Dillingen (Gf P2)',
     bankShortName: 'Volksbank Dillingen',
     bankPostcode: '66763',
     bankLocation: 'Dillingen',
   ),
-  '59392200': Iban(
-    bic: 'GENODE51LOS',
+  '59392200': Bic(
+    value: 'GENODE51LOS',
     bankName: 'Volksbank Untere Saar (Gf P2)',
     bankShortName: 'Volksbank Untere Saar',
     bankPostcode: '66674',
     bankLocation: 'Losheim am See',
   ),
-  '59393000': Iban(
-    bic: 'GENODE51LEB',
+  '59393000': Bic(
+    value: 'GENODE51LEB',
     bankName: 'levoBank (Gf P2)',
     bankShortName: 'levoBank',
     bankPostcode: '66822',
     bankLocation: 'Lebach',
   ),
-  '59450010': Iban(
-    bic: 'SALADE51HOM',
+  '59450010': Bic(
+    value: 'SALADE51HOM',
     bankName: 'Kreissparkasse Saarpfalz',
     bankShortName: 'Kreissparkasse Saarpfalz',
     bankPostcode: '66399',
     bankLocation: 'Mandelbachtal',
   ),
-  '59491300': Iban(
-    bic: 'GENODE51MBT',
+  '59491300': Bic(
+    value: 'GENODE51MBT',
     bankName: 'VR Bank Saarpfalz (Gf P2)',
     bankShortName: 'VR Bank Saarpfalz',
     bankPostcode: '66424',
     bankLocation: 'Homburg',
   ),
-  '60000000': Iban(
-    bic: 'MARKDEF1600',
+  '60000000': Bic(
+    value: 'MARKDEF1600',
     bankName: 'BBk Stuttgart',
     bankShortName: 'Bundesbank',
     bankPostcode: '70049',
     bankLocation: 'Stuttgart',
   ),
-  '60010070': Iban(
-    bic: 'PBNKDEFFXXX',
+  '60010070': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '70148',
     bankLocation: 'Stuttgart',
   ),
-  '60010424': Iban(
-    bic: 'AARBDE5W600',
+  '60010424': Bic(
+    value: 'AARBDE5W600',
     bankName: 'Aareal Bank ehem. Filiale Stuttgart',
     bankShortName: 'Aareal Bank Wiesbaden',
     bankPostcode: '65189',
     bankLocation: 'Wiesbaden',
   ),
-  '60010700': Iban(
-    bic: 'LKBWDE6K600',
+  '60010700': Bic(
+    value: 'LKBWDE6K600',
     bankName: 'Landeskreditbank Baden-Württemberg Förderbank -alt-',
     bankShortName: 'L-Bank Stuttgart -alt-',
     bankPostcode: '76113',
     bankLocation: 'Karlsruhe',
   ),
-  '60020030': Iban(
-    bic: 'SOLADEST601',
+  '60020030': Bic(
+    value: 'SOLADEST601',
     bankName: 'Baden-Württembergische Bank',
     bankShortName: 'BW Bank Stuttgart',
     bankPostcode: '70049',
     bankLocation: 'Stuttgart',
   ),
-  '60020100': Iban(
-    bic: 'SCHWDESSXXX',
+  '60020100': Bic(
+    value: 'SCHWDESSXXX',
     bankName: 'M.M. Warburg & Co (vormals Schwäbische Bank)',
     bankShortName: 'M.M. Warburg (Schwäb. Bk.)',
     bankPostcode: '20095',
     bankLocation: 'Hamburg',
   ),
-  '60020290': Iban(
-    bic: 'HYVEDEMM473',
+  '60020290': Bic(
+    value: 'HYVEDEMM473',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '88002',
     bankLocation: 'Friedrichshafen',
   ),
-  '60030000': Iban(
-    bic: 'MEBEDE6SDCB',
+  '60030000': Bic(
+    value: 'MEBEDE6SDCB',
     bankName: 'Mercedes-Benz Bank',
     bankShortName: 'Mercedes-Benz Bank',
     bankPostcode: '70320',
     bankLocation: 'Stuttgart',
   ),
-  '60030100': Iban(
-    bic: 'BHBADES1XXX',
+  '60030100': Bic(
+    value: 'BHBADES1XXX',
     bankName: 'Bankhaus Bauer, Essen',
     bankShortName: 'Bankhaus Bauer, Essen',
     bankPostcode: '45149',
     bankLocation: 'Essen',
   ),
-  '60030200': Iban(
-    bic: 'ELGEDES1XXX',
+  '60030200': Bic(
+    value: 'ELGEDES1XXX',
     bankName: 'Bankhaus Ellwanger & Geiger',
     bankShortName: 'Ellwabank Stuttgart',
     bankPostcode: '70174',
     bankLocation: 'Stuttgart',
   ),
-  '60030600': Iban(
-    bic: 'CPLUDES1XXX',
+  '60030600': Bic(
+    value: 'CPLUDES1XXX',
     bankName: 'CreditPlus Bank',
     bankShortName: 'CreditPlus Bank',
     bankPostcode: '01067',
     bankLocation: 'Dresden',
   ),
-  '60030666': Iban(
-    bic: 'CPLUDES1666',
+  '60030666': Bic(
+    value: 'CPLUDES1666',
     bankName: 'CreditPlus Bank',
     bankShortName: 'CreditPlus Bank',
     bankPostcode: '70178',
     bankLocation: 'Stuttgart',
   ),
-  '60030700': Iban(
-    bic: 'AKBADES1XXX',
+  '60030700': Bic(
+    value: 'AKBADES1XXX',
     bankName: 'AKTIVBANK Pforzheim',
     bankShortName: 'AKTIVBANK (Gf P2)',
     bankPostcode: '60528',
     bankLocation: 'Frankfurt am Main',
   ),
-  '60030900': Iban(
-    bic: 'ISBKDEFXSTU',
+  '60030900': Bic(
+    value: 'ISBKDEFXSTU',
     bankName: 'Isbank Fil Stuttgart',
     bankShortName: 'Isbank Stuttgart',
     bankPostcode: '70174',
     bankLocation: 'Stuttgart',
   ),
-  '60031000': Iban(
-    bic: 'TRUFDE66XXX',
+  '60031000': Bic(
+    value: 'TRUFDE66XXX',
     bankName: 'TRUMPF Financial Ditzingen',
     bankShortName: 'TRUMPF Financial Services',
     bankPostcode: '71254',
     bankLocation: 'Ditzingen',
   ),
-  '60033000': Iban(
-    bic: 'BSWLDE61XXX',
+  '60033000': Bic(
+    value: 'BSWLDE61XXX',
     bankName: 'Wüstenrot Bausparkasse',
     bankShortName: 'Wüstenrot Bausparkasse',
     bankPostcode: '71630',
     bankLocation: 'Ludwigsburg',
   ),
-  '60035810': Iban(
-    bic: 'IBKBDES1XXX',
+  '60035810': Bic(
+    value: 'IBKBDES1XXX',
     bankName: 'IBM Deutschland Kreditbank',
     bankShortName: 'IBM Kreditbank Ehningen',
     bankPostcode: '71139',
     bankLocation: 'Ehningen',
   ),
-  '60040060': Iban(
-    bic: 'COBADEFFXXX',
+  '60040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Stuttgart',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '70173',
     bankLocation: 'Stuttgart',
   ),
-  '60040061': Iban(
-    bic: 'COBADEFFXXX',
+  '60040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Stuttgart',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '70173',
     bankLocation: 'Stuttgart',
   ),
-  '60040071': Iban(
-    bic: 'COBADEFFXXX',
+  '60040071': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Leinf-Echterd',
     bankShortName: 'Commerzbank',
     bankPostcode: '70750',
     bankLocation: 'Leinfelden-Echterdingen',
   ),
-  '60040075': Iban(
-    bic: 'COBADEFFXXX',
+  '60040075': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank, Filiale Stuttgart 2',
     bankShortName: 'Commerzbank Fil. Stuttgart2',
     bankPostcode: '70049',
     bankLocation: 'Stuttgart',
   ),
-  '60050000': Iban(
-    bic: 'SOLADESTXXX',
+  '60050000': Bic(
+    value: 'SOLADESTXXX',
     bankName: 'Landesbank Baden-Württemberg',
     bankShortName: 'Landesbank Baden-Württ',
     bankPostcode: '70144',
     bankLocation: 'Stuttgart',
   ),
-  '60050009': Iban(
-    bic: 'SOLADESTXXX',
+  '60050009': Bic(
+    value: 'SOLADESTXXX',
     bankName: 'ZV Landesbank Baden-Württemberg ISE',
     bankShortName: 'ZV LBBW ISE Stuttgart',
     bankPostcode: '70144',
     bankLocation: 'Stuttgart',
   ),
-  '60050101': Iban(
-    bic: 'SOLADEST428',
+  '60050101': Bic(
+    value: 'SOLADEST428',
     bankName: 'Landesbank Baden-Württemberg/RLP Bank',
     bankShortName: 'LBBW/RLP Bank Koblenz',
     bankPostcode: '56010',
     bankLocation: 'Koblenz',
   ),
-  '60060000': Iban(
-    bic: 'GENODESGXXX',
+  '60060000': Bic(
+    value: 'GENODESGXXX',
     bankName: 'DZ BANK',
     bankShortName: 'DZ BANK',
     bankPostcode: '70049',
     bankLocation: 'Stuttgart',
   ),
-  '60060202': Iban(
-    bic: 'GENODESTXXX',
+  '60060202': Bic(
+    value: 'GENODESTXXX',
     bankName: 'DZ PRIVATBANK Ndl. Stuttgart',
     bankShortName: 'DZ PRIVATBANK Ndl Stuttgart',
     bankPostcode: '70191',
     bankLocation: 'Stuttgart',
   ),
-  '60060396': Iban(
-    bic: 'GENODES1UTV',
+  '60060396': Bic(
+    value: 'GENODES1UTV',
     bankName: 'Volksbank am Württemberg (Gf P2)',
     bankShortName: 'Volksbank am Württemberg',
     bankPostcode: '70703',
     bankLocation: 'Fellbach',
   ),
-  '60062775': Iban(
-    bic: 'GENODES1ECH',
+  '60062775': Bic(
+    value: 'GENODES1ECH',
     bankName: 'Echterdinger Bank (Gf P2)',
     bankShortName: 'Echterdinger Bank',
     bankPostcode: '70750',
     bankLocation: 'Leinfelden-Echterdingen',
   ),
-  '60062909': Iban(
-    bic: 'GENODES1MCH',
+  '60062909': Bic(
+    value: 'GENODES1MCH',
     bankName: 'Volksbank Strohgäu (Gf P2)',
     bankShortName: 'Volksbank Strohgäu',
     bankPostcode: '70813',
     bankLocation: 'Korntal-Münchingen',
   ),
-  '60069017': Iban(
-    bic: 'GENODES1DMS',
+  '60069017': Bic(
+    value: 'GENODES1DMS',
     bankName: 'Raiffeisenbank Dellmensingen Zw Stetten',
     bankShortName: 'Raiffbk Dellmensingen',
     bankPostcode: '88480',
     bankLocation: 'Achstetten',
   ),
-  '60069066': Iban(
-    bic: 'GENODES1RBA',
+  '60069066': Bic(
+    value: 'GENODES1RBA',
     bankName: 'Raiffeisenbank Niedere Alb (Gf P2)',
     bankShortName: 'Raiffeisenbank Niedere Alb',
     bankPostcode: '89129',
     bankLocation: 'Langenau',
   ),
-  '60069075': Iban(
-    bic: 'GENODES1RVG',
+  '60069075': Bic(
+    value: 'GENODES1RVG',
     bankName: 'Raiffeisenbank Bühlertal (Gf P2)',
     bankShortName: 'Raiffbk Bühlertal',
     bankPostcode: '74541',
     bankLocation: 'Vellberg',
   ),
-  '60069147': Iban(
-    bic: 'GENODES1RSF',
+  '60069147': Bic(
+    value: 'GENODES1RSF',
     bankName: 'Raiffeisenbank Sondelfingen (Gf P2)',
     bankShortName: 'Raiffbk Sondelfingen',
     bankPostcode: '72740',
     bankLocation: 'Reutlingen',
   ),
-  '60069158': Iban(
-    bic: 'GENODES1SAA',
+  '60069158': Bic(
+    value: 'GENODES1SAA',
     bankName: 'Raiffeisenbank Steinheim (Gf P2)',
     bankShortName: 'Raiffbk Steinheim',
     bankPostcode: '89555',
     bankLocation: 'Steinheim am Albuch',
   ),
-  '60069206': Iban(
-    bic: 'GENODES1AID',
+  '60069206': Bic(
+    value: 'GENODES1AID',
     bankName: 'Raiffeisenbank Aidlingen (Gf P2)',
     bankShortName: 'Raiffeisenbank Aidlingen',
     bankPostcode: '71134',
     bankLocation: 'Aidlingen',
   ),
-  '60069224': Iban(
-    bic: 'GENODES1GWS',
+  '60069224': Bic(
+    value: 'GENODES1GWS',
     bankName: 'Genossenschaftsbank Weil im Schönbuch (Gf P2)',
     bankShortName: 'Genossenschaftsbank Weil',
     bankPostcode: '71093',
     bankLocation: 'Weil im Schönbuch',
   ),
-  '60069239': Iban(
-    bic: 'GENODES1BPF',
+  '60069239': Bic(
+    value: 'GENODES1BPF',
     bankName: 'Bopfinger Bank Sechta-Ries (Gf P2)',
     bankShortName: 'Bopfinger Bank Sechta-Ries',
     bankPostcode: '73441',
     bankLocation: 'Bopfingen',
   ),
-  '60069242': Iban(
-    bic: 'GENODES1RGR',
+  '60069242': Bic(
+    value: 'GENODES1RGR',
     bankName: 'Raiffeisenbank Gruibingen (Gf P2)',
     bankShortName: 'Raiffbk Gruibingen',
     bankPostcode: '73344',
     bankLocation: 'Gruibingen',
   ),
-  '60069245': Iban(
-    bic: 'GENODES1RVG',
+  '60069245': Bic(
+    value: 'GENODES1RVG',
     bankName: 'Raiffeisenbank Bühlertal Bühlerzell',
     bankShortName: 'Raiffbk Bühlertal',
     bankPostcode: '74426',
     bankLocation: 'Bühlerzell',
   ),
-  '60069251': Iban(
-    bic: 'GENODES1RDI',
+  '60069251': Bic(
+    value: 'GENODES1RDI',
     bankName: 'Raiffeisenbank Donau-Iller (Gf P2)',
     bankShortName: 'Raiffbk Donau-Iller',
     bankPostcode: '89155',
     bankLocation: 'Erbach',
   ),
-  '60069302': Iban(
-    bic: 'GENODES1ERM',
+  '60069302': Bic(
+    value: 'GENODES1ERM',
     bankName: 'Raiffeisenbank Erlenmoos (Gf P2)',
     bankShortName: 'Raiffeisenbank Erlenmoos',
     bankPostcode: '88416',
     bankLocation: 'Erlenmoos',
   ),
-  '60069303': Iban(
-    bic: 'GENODES1RBS',
+  '60069303': Bic(
+    value: 'GENODES1RBS',
     bankName: 'Raiffeisenbank Bad Schussenried-Aulendorf (Gf P2)',
     bankShortName: 'Raiffbk Bad Schussenried-Au',
     bankPostcode: '88427',
     bankLocation: 'Bad Schussenried',
   ),
-  '60069308': Iban(
-    bic: 'GENODES1RIN',
+  '60069308': Bic(
+    value: 'GENODES1RIN',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffbk Ingoldingen',
     bankPostcode: '88456',
     bankLocation: 'Ingoldingen',
   ),
-  '60069315': Iban(
-    bic: 'GENODES1MDH',
+  '60069315': Bic(
+    value: 'GENODES1MDH',
     bankName: 'Volksbank Freiberg und Umgebung -alt-',
     bankShortName: 'VB Freiberg und Umgebung',
     bankPostcode: '74395',
     bankLocation: 'Mundelsheim',
   ),
-  '60069336': Iban(
-    bic: 'GENODES1RMA',
+  '60069336': Bic(
+    value: 'GENODES1RMA',
     bankName: 'Raiffeisenbank Maitis (Gf P2)',
     bankShortName: 'Raiffbk Maitis',
     bankPostcode: '73037',
     bankLocation: 'Göppingen',
   ),
-  '60069343': Iban(
-    bic: 'GENODES1RRI',
+  '60069343': Bic(
+    value: 'GENODES1RRI',
     bankName: 'Raiffeisenbank Rißtal -alt-',
     bankShortName: 'Raiffeisenbank Rißtal -alt-',
     bankPostcode: '88471',
     bankLocation: 'Laupheim',
   ),
-  '60069346': Iban(
-    bic: 'GENODES1REH',
+  '60069346': Bic(
+    value: 'GENODES1REH',
     bankName: 'VR-Bank Alb-Blau-Donau (Gf P2)',
     bankShortName: 'VR-Bank Alb-Blau-Donau',
     bankPostcode: '89584',
     bankLocation: 'Ehingen (Donau)',
   ),
-  '60069350': Iban(
-    bic: 'GENODES1RRG',
+  '60069350': Bic(
+    value: 'GENODES1RRG',
     bankName: 'Raiffeisenbank Reute-Gaisbeuren (Gf P2)',
     bankShortName: 'Raiffbk Reute-Gaisbeuren',
     bankPostcode: '88339',
     bankLocation: 'Bad Waldsee',
   ),
-  '60069355': Iban(
-    bic: 'GENODES1EHN',
+  '60069355': Bic(
+    value: 'GENODES1EHN',
     bankName: 'VR-Bank Ehningen-Nufringen (Gf P2)',
     bankShortName: 'VR-Bank Ehningen-Nufringen',
     bankPostcode: '71139',
     bankLocation: 'Ehningen',
   ),
-  '60069378': Iban(
-    bic: 'GENODES1DEH',
+  '60069378': Bic(
+    value: 'GENODES1DEH',
     bankName: 'Volksbank Dettenhausen (Gf P2)',
     bankShortName: 'VB Dettenhausen',
     bankPostcode: '72135',
     bankLocation: 'Dettenhausen',
   ),
-  '60069387': Iban(
-    bic: 'GENODES1DBE',
+  '60069387': Bic(
+    value: 'GENODES1DBE',
     bankName: 'Dettinger Bank (Gf P2)',
     bankShortName: 'Dettinger Bank',
     bankPostcode: '72581',
     bankLocation: 'Dettingen an der Erms',
   ),
-  '60069417': Iban(
-    bic: 'GENODES1KIB',
+  '60069417': Bic(
+    value: 'GENODES1KIB',
     bankName: 'Raiffeisenbank Kirchheim-Walheim (Gf P2)',
     bankShortName: 'Raiffbk Kirchheim-Walheim',
     bankPostcode: '74364',
     bankLocation: 'Kirchheim am Neckar',
   ),
-  '60069419': Iban(
-    bic: 'GENODES1UHL',
+  '60069419': Bic(
+    value: 'GENODES1UHL',
     bankName: 'Uhlbacher Bank (Gf P2)',
     bankShortName: 'Uhlbacher Bank',
     bankPostcode: '70310',
     bankLocation: 'Stuttgart',
   ),
-  '60069420': Iban(
-    bic: 'GENODES1MBI',
+  '60069420': Bic(
+    value: 'GENODES1MBI',
     bankName: 'Raiffeisenbank Mittelbiberach -alt-',
     bankShortName: 'Raiffbk Mittelbiberach -alt',
     bankPostcode: '88441',
     bankLocation: 'Mittelbiberach',
   ),
-  '60069431': Iban(
-    bic: 'GENODES1OED',
+  '60069431': Bic(
+    value: 'GENODES1OED',
     bankName: 'Raiffeisenbank Oberessendorf (Gf P2)',
     bankShortName: 'Raiffbk Oberessendorf',
     bankPostcode: '88436',
     bankLocation: 'Eberhardzell',
   ),
-  '60069442': Iban(
-    bic: 'GENODES1RFS',
+  '60069442': Bic(
+    value: 'GENODES1RFS',
     bankName: 'Raiffeisenbank Frankenhardt-Stimpfach (Gf P2)',
     bankShortName: 'Raiffbk Frankenh-Stimpfach',
     bankPostcode: '74597',
     bankLocation: 'Stimpfach',
   ),
-  '60069455': Iban(
-    bic: 'GENODES1RVS',
+  '60069455': Bic(
+    value: 'GENODES1RVS',
     bankName: 'Raiffeisenbank Vordersteinenberg (Gf P2)',
     bankShortName: 'Raiffbk Vordersteinenberg',
     bankPostcode: '73553',
     bankLocation: 'Alfdorf',
   ),
-  '60069457': Iban(
-    bic: 'GENODES1OTT',
+  '60069457': Bic(
+    value: 'GENODES1OTT',
     bankName: 'Raiffeisenbank Ottenbach (Gf P2)',
     bankShortName: 'Raiffeisenbank Ottenbach',
     bankPostcode: '73113',
     bankLocation: 'Ottenbach',
   ),
-  '60069461': Iban(
-    bic: 'GENODES1RRE',
+  '60069461': Bic(
+    value: 'GENODES1RRE',
     bankName: 'Raiffeisenbank Rottumtal (Gf P2)',
     bankShortName: 'Raiffbk Rottumtal',
     bankPostcode: '88416',
     bankLocation: 'Ochsenhausen',
   ),
-  '60069462': Iban(
-    bic: 'GENODES1WBB',
+  '60069462': Bic(
+    value: 'GENODES1WBB',
     bankName: 'Winterbacher Bank (Gf P2)',
     bankShortName: 'Winterbacher Bank',
     bankPostcode: '73650',
     bankLocation: 'Winterbach',
   ),
-  '60069463': Iban(
-    bic: 'GENODES1RKH',
+  '60069463': Bic(
+    value: 'GENODES1RKH',
     bankName: 'Raiffeisenbank Geislingen-Rosenfeld',
     bankShortName: 'Raiffbk Geislingen-Rosenf',
     bankPostcode: '72348',
     bankLocation: 'Rosenfeld',
   ),
-  '60069476': Iban(
-    bic: 'GENODES1DEA',
+  '60069476': Bic(
+    value: 'GENODES1DEA',
     bankName: 'Raiffeisenbank Heidenheimer Alb (Gf P2)',
     bankShortName: 'Raiffbk Heidenheimer Alb',
     bankPostcode: '89547',
     bankLocation: 'Gerstetten',
   ),
-  '60069485': Iban(
-    bic: 'GENODES1ROW',
+  '60069485': Bic(
+    value: 'GENODES1ROW',
     bankName: 'Raiffeisenbank Oberer Wald (Gf P2)',
     bankShortName: 'Raiffbk ob Wald Simmersfeld',
     bankPostcode: '72226',
     bankLocation: 'Simmersfeld',
   ),
-  '60069505': Iban(
-    bic: 'GENODES1VMT',
+  '60069505': Bic(
+    value: 'GENODES1VMT',
     bankName: 'Volksbank Murgtal Baiersbr-Klosterreichenbach (Gf P2)',
     bankShortName: 'Volksbank Murgtal',
     bankPostcode: '72270',
     bankLocation: 'Baiersbronn',
   ),
-  '60069517': Iban(
-    bic: 'GENODES1SCA',
+  '60069517': Bic(
+    value: 'GENODES1SCA',
     bankName: 'Scharnhauser Bank (Gf P2)',
     bankShortName: 'Scharnhauser Bank',
     bankPostcode: '73760',
     bankLocation: 'Ostfildern',
   ),
-  '60069527': Iban(
-    bic: 'GENODES1RNS',
+  '60069527': Bic(
+    value: 'GENODES1RNS',
     bankName: 'Volksbank Brenztal (Gf P2)',
     bankShortName: 'Volksbank Brenztal',
     bankPostcode: '89537',
     bankLocation: 'Giengen an der Brenz',
   ),
-  '60069538': Iban(
-    bic: 'GENODES1LOC',
+  '60069538': Bic(
+    value: 'GENODES1LOC',
     bankName: 'Löchgauer Bank Gs',
     bankShortName: 'Löchgauer Bank',
     bankPostcode: '74392',
     bankLocation: 'Freudental',
   ),
-  '60069544': Iban(
-    bic: 'GENODES1RWN',
+  '60069544': Bic(
+    value: 'GENODES1RWN',
     bankName: 'Raiffeisenbank Westhausen (Gf P2)',
     bankShortName: 'Raiffeisenbank Westhausen',
     bankPostcode: '73461',
     bankLocation: 'Westhausen',
   ),
-  '60069545': Iban(
-    bic: 'GENODES1NUF',
+  '60069545': Bic(
+    value: 'GENODES1NUF',
     bankName: 'Nufringer Bank -Raiffeisen- (Gf P2)',
     bankShortName: 'Nufringer Bank',
     bankPostcode: '71150',
     bankLocation: 'Nufringen',
   ),
-  '60069553': Iban(
-    bic: 'GENODES1HAR',
+  '60069553': Bic(
+    value: 'GENODES1HAR',
     bankName: 'Raiffeisenbank Aichhalden-Hardt-Sulgen (Gf P2)',
     bankShortName: 'Raiffbk Aichh-Hardt-Sulgen',
     bankPostcode: '78739',
     bankLocation: 'Hardt',
   ),
-  '60069564': Iban(
-    bic: 'GENODES1RVA',
+  '60069564': Bic(
+    value: 'GENODES1RVA',
     bankName: 'Raiffeisenbank Vordere Alb (Gf P2)',
     bankShortName: 'Raiffbk Vordere Alb',
     bankPostcode: '72584',
     bankLocation: 'Hülben',
   ),
-  '60069595': Iban(
-    bic: 'GENODES1SBB',
+  '60069595': Bic(
+    value: 'GENODES1SBB',
     bankName: 'Raiffeisenbank Schrozberg-Rot am See (Gf P2)',
     bankShortName: 'Raiffbk Schrozberg-Rot',
     bankPostcode: '74573',
     bankLocation: 'Schrozberg',
   ),
-  '60069639': Iban(
-    bic: 'GENODES1RIH',
+  '60069639': Bic(
+    value: 'GENODES1RIH',
     bankName: 'Raiffeisenbank Ingersheim (Gf P2)',
     bankShortName: 'Raiffbk Ingersheim',
     bankPostcode: '74377',
     bankLocation: 'Ingersheim',
   ),
-  '60069648': Iban(
-    bic: 'GENODES1EHZ',
+  '60069648': Bic(
+    value: 'GENODES1EHZ',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank',
     bankPostcode: '88444',
     bankLocation: 'Ummendorf',
   ),
-  '60069669': Iban(
-    bic: 'GENODES1EHB',
+  '60069669': Bic(
+    value: 'GENODES1EHB',
     bankName: 'Erligheimer Bank -alt-',
     bankShortName: 'Erligheimer Bank -alt-',
     bankPostcode: '74391',
     bankLocation: 'Erligheim',
   ),
-  '60069673': Iban(
-    bic: 'GENODES1ABR',
+  '60069673': Bic(
+    value: 'GENODES1ABR',
     bankName: 'Fachsenfelder Bank',
     bankShortName: 'Fachsenfelder Bank',
     bankPostcode: '73434',
     bankLocation: 'Aalen',
   ),
-  '60069680': Iban(
-    bic: 'GENODES1BRZ',
+  '60069680': Bic(
+    value: 'GENODES1BRZ',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffbk Bretzfeld',
     bankPostcode: '74626',
     bankLocation: 'Bretzfeld',
   ),
-  '60069685': Iban(
-    bic: 'GENODES1RWA',
+  '60069685': Bic(
+    value: 'GENODES1RWA',
     bankName: 'Raiffeisenbank Wangen',
     bankShortName: 'Raiffeisenbank Wangen',
     bankPostcode: '73098',
     bankLocation: 'Rechberghausen',
   ),
-  '60069705': Iban(
-    bic: 'GENODES1SLA',
+  '60069705': Bic(
+    value: 'GENODES1SLA',
     bankName: 'Raiffeisenbank Schlat -alt-',
     bankShortName: 'Raiffeisenbank Schlat -alt-',
     bankPostcode: '73114',
     bankLocation: 'Schlat',
   ),
-  '60069706': Iban(
-    bic: 'GENODES1MEH',
+  '60069706': Bic(
+    value: 'GENODES1MEH',
     bankName: 'Raiffeisenbank Mehrstetten',
     bankShortName: 'Raiffbk Mehrstetten',
     bankPostcode: '72525',
     bankLocation: 'Münsingen',
   ),
-  '60069710': Iban(
-    bic: 'GENODES1RGF',
+  '60069710': Bic(
+    value: 'GENODES1RGF',
     bankName: 'Raiffeisenbank Gammesfeld (Gf P2)',
     bankShortName: 'Raiffbk Gammesfeld',
     bankPostcode: '74572',
     bankLocation: 'Blaufelden',
   ),
-  '60069714': Iban(
-    bic: 'GENODES1IBR',
+  '60069714': Bic(
+    value: 'GENODES1IBR',
     bankName: 'Raiffeisenbank Hohenloher Land (Gf P2)',
     bankShortName: 'Raiffbk Hohenloher Land',
     bankPostcode: '74665',
     bankLocation: 'Ingelfingen',
   ),
-  '60069727': Iban(
-    bic: 'GENODES1ROF',
+  '60069727': Bic(
+    value: 'GENODES1ROF',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffbk Oberstenfeld',
     bankPostcode: '71718',
     bankLocation: 'Oberstenfeld',
   ),
-  '60069738': Iban(
-    bic: 'GENODES1FAN',
+  '60069738': Bic(
+    value: 'GENODES1FAN',
     bankName: 'Volksbank Freiberg und Umgebung -alt-',
     bankShortName: 'VB Freiberg und Umgebung',
     bankPostcode: '71687',
     bankLocation: 'Freiberg am Neckar',
   ),
-  '60069766': Iban(
-    bic: 'GENODES1BBO',
+  '60069766': Bic(
+    value: 'GENODES1BBO',
     bankName: 'Volks- und Raiffeisenbank Boll -alt-',
     bankShortName: 'Volks- u Raiffbk Boll -alt-',
     bankPostcode: '73085',
     bankLocation: 'Bad Boll',
   ),
-  '60069795': Iban(
-    bic: 'GENODES1HHB',
+  '60069795': Bic(
+    value: 'GENODES1HHB',
     bankName: 'Volksbank Freiberg und Umgebung -alt-',
     bankShortName: 'VB Freiberg und Umgebung',
     bankPostcode: '74394',
     bankLocation: 'Hessigheim',
   ),
-  '60069798': Iban(
-    bic: 'GENODES1RHB',
+  '60069798': Bic(
+    value: 'GENODES1RHB',
     bankName: 'Raiffeisenbank Horb Gs Börstingen',
     bankShortName: 'Raiffeisenbank Horb',
     bankPostcode: '72181',
     bankLocation: 'Starzach',
   ),
-  '60069817': Iban(
-    bic: 'GENODES1RMO',
+  '60069817': Bic(
+    value: 'GENODES1RMO',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffbk Mötzingen',
     bankPostcode: '71159',
     bankLocation: 'Mötzingen',
   ),
-  '60069832': Iban(
-    bic: 'GENODES1URB',
+  '60069832': Bic(
+    value: 'GENODES1URB',
     bankName: 'Raiffeisenbank Urbach (Gf P2)',
     bankShortName: 'Raiffbk Urbach',
     bankPostcode: '73656',
     bankLocation: 'Urbach',
   ),
-  '60069842': Iban(
-    bic: 'GENODES1DHB',
+  '60069842': Bic(
+    value: 'GENODES1DHB',
     bankName: 'Darmsheimer Bank (Gf P2)',
     bankShortName: 'Darmsheimer Bank',
     bankPostcode: '71069',
     bankLocation: 'Sindelfingen',
   ),
-  '60069858': Iban(
-    bic: 'GENODES1VAI',
+  '60069858': Bic(
+    value: 'GENODES1VAI',
     bankName: 'Enztalbank -alt-',
     bankShortName: 'Enztalbank -alt-',
     bankPostcode: '71656',
     bankLocation: 'Vaihingen an der Enz',
   ),
-  '60069860': Iban(
-    bic: 'GENODES1FED',
+  '60069860': Bic(
+    value: 'GENODES1FED',
     bankName: 'Federseebank (Gf P2)',
     bankShortName: 'Federseebank',
     bankPostcode: '88422',
     bankLocation: 'Bad Buchau',
   ),
-  '60069876': Iban(
-    bic: 'GENODES1ROG',
+  '60069876': Bic(
+    value: 'GENODES1ROG',
     bankName: 'Raiffeisenbank Oberes Gäu Ergenzingen (Gf P2)',
     bankShortName: 'Raiffeisenbank Oberes Gäu',
     bankPostcode: '72108',
     bankLocation: 'Rottenburg am Neckar',
   ),
-  '60069896': Iban(
-    bic: 'GENODES1PLE',
+  '60069896': Bic(
+    value: 'GENODES1PLE',
     bankName: 'Volksbank Freiberg und Umgebung -alt-',
     bankShortName: 'VB Freiberg und Umgebung',
     bankPostcode: '74385',
     bankLocation: 'Pleidelsheim',
   ),
-  '60069904': Iban(
-    bic: 'GENODES1RUW',
+  '60069904': Bic(
+    value: 'GENODES1RUW',
     bankName: 'VR-Bank Alb (Gf P2)',
     bankShortName: 'VR-Bank Alb',
     bankPostcode: '72820',
     bankLocation: 'Sonnenbühl',
   ),
-  '60069905': Iban(
-    bic: 'GENODES1REM',
+  '60069905': Bic(
+    value: 'GENODES1REM',
     bankName: 'Volksbank Remseck (Gf P2)',
     bankShortName: 'Volksbank Remseck',
     bankPostcode: '71680',
     bankLocation: 'Remseck am Neckar',
   ),
-  '60069911': Iban(
-    bic: 'GENODES1ERL',
+  '60069911': Bic(
+    value: 'GENODES1ERL',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffbk Erlenbach',
     bankPostcode: '74233',
     bankLocation: 'Erlenbach',
   ),
-  '60069926': Iban(
-    bic: 'GENODES1VBG',
+  '60069926': Bic(
+    value: 'GENODES1VBG',
     bankName: 'Volksbank Glatten-Wittendorf (Gf P2)',
     bankShortName: 'VB Glatten-Wittendorf',
     bankPostcode: '72293',
     bankLocation: 'Glatten',
   ),
-  '60069927': Iban(
-    bic: 'GENODES1BHB',
+  '60069927': Bic(
+    value: 'GENODES1BHB',
     bankName: 'Berkheimer Bank (Gf P2)',
     bankShortName: 'Berkheimer Bank',
     bankPostcode: '73734',
     bankLocation: 'Esslingen am Neckar',
   ),
-  '60069931': Iban(
-    bic: 'GENODES1BGH',
+  '60069931': Bic(
+    value: 'GENODES1BGH',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffbk Berghülen',
     bankPostcode: '89180',
     bankLocation: 'Berghülen',
   ),
-  '60069950': Iban(
-    bic: 'GENODES1TUN',
+  '60069950': Bic(
+    value: 'GENODES1TUN',
     bankName: 'Raiffeisenbank Tüngental (Gf P2)',
     bankShortName: 'Raiffbk Tüngental',
     bankPostcode: '74523',
     bankLocation: 'Schwäbisch Hall',
   ),
-  '60069976': Iban(
-    bic: 'GENODES1BOE',
+  '60069976': Bic(
+    value: 'GENODES1BOE',
     bankName: 'Raiffeisenbank Böllingertal (Gf P2)',
     bankShortName: 'Raiffbk Böllingertal',
     bankPostcode: '74078',
     bankLocation: 'Heilbronn',
   ),
-  '60069980': Iban(
-    bic: 'GENODES1RMH',
+  '60069980': Bic(
+    value: 'GENODES1RMH',
     bankName: 'Raiffeisenbank Maselheim-Äpfingen -alt-',
     bankShortName: 'Raiffbk Maselheim-Äpfingen',
     bankPostcode: '88437',
     bankLocation: 'Maselheim',
   ),
-  '60070024': Iban(
-    bic: 'DEUTDEDB605',
+  '60070024': Bic(
+    value: 'DEUTDEDB605',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '71045',
     bankLocation: 'Sindelfingen',
   ),
-  '60070070': Iban(
-    bic: 'DEUTDESS647',
+  '60070070': Bic(
+    value: 'DEUTDESS647',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '70826',
     bankLocation: 'Gerlingen',
   ),
-  '60070214': Iban(
-    bic: 'DEUTDESSP13',
+  '60070214': Bic(
+    value: 'DEUTDESSP13',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '70173',
     bankLocation: 'Stuttgart',
   ),
-  '60070224': Iban(
-    bic: 'DEUTDEDBP13',
+  '60070224': Bic(
+    value: 'DEUTDEDBP13',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '70173',
     bankLocation: 'Stuttgart',
   ),
-  '60080000': Iban(
-    bic: 'DRESDEFF600',
+  '60080000': Bic(
+    value: 'DRESDEFF600',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Backnang',
     bankPostcode: '71502',
     bankLocation: 'Backnang',
   ),
-  '60080055': Iban(
-    bic: 'DRESDEFF608',
+  '60080055': Bic(
+    value: 'DRESDEFF608',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 55',
     bankShortName: 'Commerzbk Zw 55 Stuttgart',
     bankPostcode: '70049',
     bankLocation: 'Stuttgart',
   ),
-  '60080057': Iban(
-    bic: 'DRESDEFF609',
+  '60080057': Bic(
+    value: 'DRESDEFF609',
     bankName: 'Commerzbank vormals Dresdner Bank Gf Zw 57',
     bankShortName: 'Commerzbk Zw 57 Stuttgart',
     bankPostcode: '70049',
     bankLocation: 'Stuttgart',
   ),
-  '60080085': Iban(
-    bic: 'DRESDEFFI50',
+  '60080085': Bic(
+    value: 'DRESDEFFI50',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK 2',
     bankShortName: 'Commerzbk ITGK Stuttgart',
     bankPostcode: '70049',
     bankLocation: 'Stuttgart',
   ),
-  '60080086': Iban(
-    bic: 'DRESDEFFI54',
+  '60080086': Bic(
+    value: 'DRESDEFFI54',
     bankName: 'Commerzbank vormals Dresdner Bank Gf PCC-ITGK 3',
     bankShortName: 'Commerzbank ITKG3 Stutt.',
     bankPostcode: '70140',
     bankLocation: 'Stuttgart',
   ),
-  '60080087': Iban(
-    bic: 'DRESDEFFI57',
+  '60080087': Bic(
+    value: 'DRESDEFFI57',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DC-ITGK 4',
     bankShortName: 'Commerzbank ITGK4 Sttgrt',
     bankPostcode: '70140',
     bankLocation: 'Stuttgart',
   ),
-  '60080088': Iban(
-    bic: 'DRESDEFFI58',
+  '60080088': Bic(
+    value: 'DRESDEFFI58',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DC-ITGK 5',
     bankShortName: 'Commerzbank ITGK5 Sttgrt',
     bankPostcode: '70140',
     bankLocation: 'Stuttgart',
   ),
-  '60089450': Iban(
-    bic: 'DRESDEFFI21',
+  '60089450': Bic(
+    value: 'DRESDEFFI21',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Stgt',
     bankPostcode: '70049',
     bankLocation: 'Stuttgart',
   ),
-  '60090100': Iban(
-    bic: 'VOBADESSXXX',
+  '60090100': Bic(
+    value: 'VOBADESSXXX',
     bankName: 'Volksbank Stuttgart (Gf P2)',
     bankShortName: 'Volksbank Stuttgart',
     bankPostcode: '70039',
     bankLocation: 'Stuttgart',
   ),
-  '60090133': Iban(
-    bic: 'VOBADESSXXX',
+  '60090133': Bic(
+    value: 'VOBADESSXXX',
     bankName: 'Volksbank Stuttgart GAA',
     bankShortName: 'Volksbank Stuttgart GAA',
     bankPostcode: '70174',
     bankLocation: 'Stuttgart',
   ),
-  '60090300': Iban(
-    bic: 'GENODES1ZUF',
+  '60090300': Bic(
+    value: 'GENODES1ZUF',
     bankName: 'Volksbank Zuffenhausen m Zndl Stammheimer VB (Gf P2)',
     bankShortName: 'VB Zuffenhausen',
     bankPostcode: '70432',
     bankLocation: 'Stuttgart',
   ),
-  '60090700': Iban(
-    bic: 'SWBSDESSXXX',
+  '60090700': Bic(
+    value: 'SWBSDESSXXX',
     bankName: 'Südwestbank Stuttgart',
     bankShortName: 'Südwestbank (Gf P2)',
     bankPostcode: '70178',
     bankLocation: 'Stuttgart',
   ),
-  '60090800': Iban(
-    bic: 'GENODEF1S02',
+  '60090800': Bic(
+    value: 'GENODEF1S02',
     bankName: 'Sparda-Bank Baden-Württemberg',
     bankShortName: 'Sparda-Bank Baden-Württemb',
     bankPostcode: '70191',
     bankLocation: 'Stuttgart',
   ),
-  '60090900': Iban(
-    bic: 'GENODEF1P20',
+  '60090900': Bic(
+    value: 'GENODEF1P20',
     bankName: 'PSD Bank RheinNeckarSaar (Gf P2)',
     bankShortName: 'PSD Bank RheinNeckarSaar',
     bankPostcode: '70369',
     bankLocation: 'Stuttgart',
   ),
-  '60120200': Iban(
-    bic: 'BHFBDEFF600',
+  '60120200': Bic(
+    value: 'BHFBDEFF600',
     bankName: 'BHF-BANK Stuttgart',
     bankShortName: 'BHF-BANK',
     bankPostcode: '70173',
     bankLocation: 'Stuttgart',
   ),
-  '60120500': Iban(
-    bic: 'BFSWDE33STG',
+  '60120500': Bic(
+    value: 'BFSWDE33STG',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Bank für Sozialwirtschaft',
     bankPostcode: '70173',
     bankLocation: 'Stuttgart',
   ),
-  '60133300': Iban(
-    bic: 'SCFBDE33XXX',
+  '60133300': Bic(
+    value: 'SCFBDE33XXX',
     bankName: 'Santander Bank Stuttgart',
     bankShortName: 'Santander Consumer Bank',
     bankPostcode: '70173',
     bankLocation: 'Stuttgart',
   ),
-  '60241074': Iban(
-    bic: 'COBADEFFXXX',
+  '60241074': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Backnang',
     bankShortName: 'Commerzbank',
     bankPostcode: '71522',
     bankLocation: 'Backnang',
   ),
-  '60250010': Iban(
-    bic: 'SOLADES1WBN',
+  '60250010': Bic(
+    value: 'SOLADES1WBN',
     bankName: 'Kreissparkasse Waiblingen',
     bankShortName: 'Kr Spk Waiblingen',
     bankPostcode: '73553',
     bankLocation: 'Alfdorf',
   ),
-  '60261329': Iban(
-    bic: 'GENODES1FBB',
+  '60261329': Bic(
+    value: 'GENODES1FBB',
     bankName: 'Fellbacher Bank (Gf P2)',
     bankShortName: 'Fellbacher Bank',
     bankPostcode: '70703',
     bankLocation: 'Fellbach',
   ),
-  '60261622': Iban(
-    bic: 'GENODES1WNS',
+  '60261622': Bic(
+    value: 'GENODES1WNS',
     bankName: 'VR-Bank Weinstadt (Gf P2)',
     bankShortName: 'VR-Bank Weinstadt',
     bankPostcode: '71384',
     bankLocation: 'Weinstadt',
   ),
-  '60261818': Iban(
-    bic: 'GENODES1RWT',
+  '60261818': Bic(
+    value: 'GENODES1RWT',
     bankName: 'Raiffeisenbank Weissacher Tal Gs Cottenweiler',
     bankShortName: 'Raiffbk Weissacher Tal',
     bankPostcode: '71554',
     bankLocation: 'Weissach im Tal',
   ),
-  '60262063': Iban(
-    bic: 'GENODES1KOR',
+  '60262063': Bic(
+    value: 'GENODES1KOR',
     bankName: 'Korber Bank (Gf P2)',
     bankShortName: 'Korber Bank',
     bankPostcode: '71398',
     bankLocation: 'Korb',
   ),
-  '60262693': Iban(
-    bic: 'GENODES1KRN',
+  '60262693': Bic(
+    value: 'GENODES1KRN',
     bankName: 'Kerner Volksbank (Gf P2)',
     bankShortName: 'Kerner Volksbank',
     bankPostcode: '71394',
     bankLocation: 'Kernen im Remstal',
   ),
-  '60270024': Iban(
-    bic: 'DEUTDEDB606',
+  '60270024': Bic(
+    value: 'DEUTDEDB606',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '71332',
     bankLocation: 'Waiblingen',
   ),
-  '60270073': Iban(
-    bic: 'DEUTDESS606',
+  '60270073': Bic(
+    value: 'DEUTDESS606',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '71332',
     bankLocation: 'Waiblingen',
   ),
-  '60290110': Iban(
-    bic: 'GENODES1VWN',
+  '60290110': Bic(
+    value: 'GENODES1VWN',
     bankName: 'Volksbank Rems (Gf P2)',
     bankShortName: 'Volksbank Rems',
     bankPostcode: '71307',
     bankLocation: 'Waiblingen',
   ),
-  '60291120': Iban(
-    bic: 'GENODES1VBK',
+  '60291120': Bic(
+    value: 'GENODES1VBK',
     bankName: 'Volksbank Backnang Zw Weissach',
     bankShortName: 'Volksbank Backnang',
     bankPostcode: '71554',
     bankLocation: 'Weissach im Tal',
   ),
-  '60320291': Iban(
-    bic: 'HYVEDEMM858',
+  '60320291': Bic(
+    value: 'HYVEDEMM858',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '71001',
     bankLocation: 'Böblingen',
   ),
-  '60340071': Iban(
-    bic: 'COBADEFFXXX',
+  '60340071': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Herrenberg',
     bankShortName: 'Commerzbank',
     bankPostcode: '71077',
     bankLocation: 'Herrenberg',
   ),
-  '60350130': Iban(
-    bic: 'BBKRDE6BXXX',
+  '60350130': Bic(
+    value: 'BBKRDE6BXXX',
     bankName: 'Kreissparkasse Böblingen',
     bankShortName: 'Kr Spk Böblingen',
     bankPostcode: '75392',
     bankLocation: 'Deckenpfronn',
   ),
-  '60361923': Iban(
-    bic: 'GENODES1WES',
+  '60361923': Bic(
+    value: 'GENODES1WES',
     bankName: 'Raiffeisenbank Weissach (Gf P2)',
     bankShortName: 'Raiffeisenbank Weissach',
     bankPostcode: '71287',
     bankLocation: 'Weissach',
   ),
-  '60380002': Iban(
-    bic: 'DRESDEFF601',
+  '60380002': Bic(
+    value: 'DRESDEFF601',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Herrenberg',
     bankPostcode: '71077',
     bankLocation: 'Herrenberg',
   ),
-  '60390000': Iban(
-    bic: 'GENODES1BBV',
+  '60390000': Bic(
+    value: 'GENODES1BBV',
     bankName: 'Vereinigte Volksbanken (Gf P2)',
     bankShortName: 'Vereinigte Volksbanken',
     bankPostcode: '71063',
     bankLocation: 'Sindelfingen',
   ),
-  '60390300': Iban(
-    bic: 'GENODES1LEO',
+  '60390300': Bic(
+    value: 'GENODES1LEO',
     bankName: 'Volksbank Leonberg-Strohgäu (Gf P2)',
     bankShortName: 'Volksbank Leonberg-Strohgäu',
     bankPostcode: '71226',
     bankLocation: 'Leonberg',
   ),
-  '60391310': Iban(
-    bic: 'GENODES1VBH',
+  '60391310': Bic(
+    value: 'GENODES1VBH',
     bankName: 'Volksbank Herrenberg-Nagold-Rottenburg (Gf P2)',
     bankShortName: 'VB Herrenbg-Nagold-Rottenbg',
     bankPostcode: '71077',
     bankLocation: 'Herrenberg',
   ),
-  '60391420': Iban(
-    bic: 'GENODES1MAG',
+  '60391420': Bic(
+    value: 'GENODES1MAG',
     bankName: 'VR-Bank Magstadt-Weissach (Gf P2)',
     bankShortName: 'VR-Bank Magstadt-Weissach',
     bankPostcode: '71102',
     bankLocation: 'Magstadt',
   ),
-  '60420000': Iban(
-    bic: 'WBAGDE61XXX',
+  '60420000': Bic(
+    value: 'WBAGDE61XXX',
     bankName: 'Oldenburgische Landesbank',
     bankShortName: 'OLB',
     bankPostcode: '48143',
     bankLocation: 'Münster',
   ),
-  '60420020': Iban(
-    bic: 'WBAGDEA1XXX',
+  '60420020': Bic(
+    value: 'WBAGDEA1XXX',
     bankName: 'Oldenburgische Landesbank',
     bankShortName: 'OLB',
     bankPostcode: '26122',
     bankLocation: 'Oldenburg',
   ),
-  '60420021': Iban(
-    bic: 'WBAGDEA1XXX',
+  '60420021': Bic(
+    value: 'WBAGDEA1XXX',
     bankName: 'Oldenburgische Landesbank',
     bankShortName: 'OLB',
     bankPostcode: '26122',
     bankLocation: 'Oldenburg',
   ),
-  '60420186': Iban(
-    bic: 'HYVEDEMM860',
+  '60420186': Bic(
+    value: 'HYVEDEMM860',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '71604',
     bankLocation: 'Ludwigsburg',
   ),
-  '60422000': Iban(
-    bic: 'SABUDES1XXX',
+  '60422000': Bic(
+    value: 'SABUDES1XXX',
     bankName: 'RSB Retail+Service Bank',
     bankShortName: 'RSB-Bank Kornwestheim',
     bankPostcode: '70806',
     bankLocation: 'Kornwestheim',
   ),
-  '60440073': Iban(
-    bic: 'COBADEFFXXX',
+  '60440073': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bietigheim-Biss',
     bankShortName: 'Commerzbank',
     bankPostcode: '74302',
     bankLocation: 'Bietigheim-Bissingen',
   ),
-  '60450050': Iban(
-    bic: 'SOLADES1LBG',
+  '60450050': Bic(
+    value: 'SOLADES1LBG',
     bankName: 'Kreissparkasse Ludwigsburg',
     bankShortName: 'Kreissparkasse Ludwigsburg',
     bankPostcode: '71665',
     bankLocation: 'Vaihingen an der Enz',
   ),
-  '60460142': Iban(
-    bic: 'GENODES1EGL',
+  '60460142': Bic(
+    value: 'GENODES1EGL',
     bankName: 'Volksbank Freiberg und Umgebung -alt-',
     bankShortName: 'VB Freiberg und Umgebung',
     bankPostcode: '71603',
     bankLocation: 'Ludwigsburg',
   ),
-  '60462808': Iban(
-    bic: 'GENODES1AMT',
+  '60462808': Bic(
+    value: 'GENODES1AMT',
     bankName: 'VR-Bank Asperg-Markgröningen (Gf P2)',
     bankShortName: 'VR-Bank Asperg-Markgröning',
     bankPostcode: '71696',
     bankLocation: 'Möglingen',
   ),
-  '60470024': Iban(
-    bic: 'DEUTDEDB648',
+  '60470024': Bic(
+    value: 'DEUTDEDB648',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '71665',
     bankLocation: 'Vaihingen an der Enz',
   ),
-  '60470082': Iban(
-    bic: 'DEUTDESS648',
+  '60470082': Bic(
+    value: 'DEUTDESS648',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '71665',
     bankLocation: 'Vaihingen an der Enz',
   ),
-  '60480008': Iban(
-    bic: 'DRESDEFF604',
+  '60480008': Bic(
+    value: 'DRESDEFF604',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bietigheim-Bi',
     bankPostcode: '74302',
     bankLocation: 'Bietigheim-Bissingen',
   ),
-  '60490150': Iban(
-    bic: 'GENODES1LBG',
+  '60490150': Bic(
+    value: 'GENODES1LBG',
     bankName: 'Volksbank Ludwigsburg (Gf P2)',
     bankShortName: 'Volksbank Ludwigsburg',
     bankPostcode: '71610',
     bankLocation: 'Ludwigsburg',
   ),
-  '60491430': Iban(
-    bic: 'GENODES1GHB',
+  '60491430': Bic(
+    value: 'GENODES1GHB',
     bankName: 'VR-Bank Ludwigsburg (Gf P2)',
     bankShortName: 'VR-Bank Ludwigsburg',
     bankPostcode: '71636',
     bankLocation: 'Ludwigsburg',
   ),
-  '60661906': Iban(
-    bic: 'GENODES1WIM',
+  '60661906': Bic(
+    value: 'GENODES1WIM',
     bankName: 'Raiffeisenbank Wimsheim-Mönsheim (Gf P2)',
     bankShortName: 'Raiffbk Wimsheim-Mönsheim',
     bankPostcode: '71299',
     bankLocation: 'Wimsheim',
   ),
-  '60663084': Iban(
-    bic: 'GENODES1RCW',
+  '60663084': Bic(
+    value: 'GENODES1RCW',
     bankName: 'Raiffeisenbank im Kreis Calw (Gf P2)',
     bankShortName: 'Raiffbk Calw',
     bankPostcode: '75387',
     bankLocation: 'Neubulach',
   ),
-  '60670024': Iban(
-    bic: 'DEUTDEDB659',
+  '60670024': Bic(
+    value: 'DEUTDEDB659',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '70546',
     bankLocation: 'Stuttgart',
   ),
-  '60670070': Iban(
-    bic: 'DEUTDESS659',
+  '60670070': Bic(
+    value: 'DEUTDESS659',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '70546',
     bankLocation: 'Stuttgart',
   ),
-  '61030000': Iban(
-    bic: 'MARBDE6GXXX',
+  '61030000': Bic(
+    value: 'MARBDE6GXXX',
     bankName: 'Bankhaus Gebr. Martin',
     bankShortName: 'Martinbank Göppingen',
     bankPostcode: '73033',
     bankLocation: 'Göppingen',
   ),
-  '61040014': Iban(
-    bic: 'COBADEFFXXX',
+  '61040014': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Geislingen Stei',
     bankShortName: 'Commerzbank',
     bankPostcode: '73301',
     bankLocation: 'Geislingen an der Steige',
   ),
-  '61050000': Iban(
-    bic: 'GOPSDE6G612',
+  '61050000': Bic(
+    value: 'GOPSDE6G612',
     bankName: 'Kreissparkasse Göppingen',
     bankShortName: 'Kr Spk Göppingen',
     bankPostcode: '73079',
     bankLocation: 'Süßen',
   ),
-  '61060500': Iban(
-    bic: 'GENODES1VGP',
+  '61060500': Bic(
+    value: 'GENODES1VGP',
     bankName: 'Volksbank Göppingen (Gf P2)',
     bankShortName: 'Volksbank Göppingen',
     bankPostcode: '73013',
     bankLocation: 'Göppingen',
   ),
-  '61070024': Iban(
-    bic: 'DEUTDEDB618',
+  '61070024': Bic(
+    value: 'DEUTDEDB618',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '73301',
     bankLocation: 'Geislingen an der Steige',
   ),
-  '61070078': Iban(
-    bic: 'DEUTDESS627',
+  '61070078': Bic(
+    value: 'DEUTDESS627',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '73048',
     bankLocation: 'Eislingen/Fils',
   ),
-  '61080006': Iban(
-    bic: 'DRESDEFF610',
+  '61080006': Bic(
+    value: 'DRESDEFF610',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Göppingen',
     bankPostcode: '73003',
     bankLocation: 'Göppingen',
   ),
-  '61091200': Iban(
-    bic: 'GENODES1DGG',
+  '61091200': Bic(
+    value: 'GENODES1DGG',
     bankName: 'Volksbank-Raiffeisenbank Deggingen (Gf P2)',
     bankShortName: 'VB-Raiffbk Deggingen',
     bankPostcode: '73324',
     bankLocation: 'Deggingen',
   ),
-  '61120286': Iban(
-    bic: 'HYVEDEMM859',
+  '61120286': Bic(
+    value: 'HYVEDEMM859',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '73709',
     bankLocation: 'Esslingen am Neckar',
   ),
-  '61140071': Iban(
-    bic: 'COBADEFFXXX',
+  '61140071': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Plochingen',
     bankShortName: 'Commerzbank',
     bankPostcode: '73201',
     bankLocation: 'Plochingen',
   ),
-  '61150020': Iban(
-    bic: 'ESSLDE66XXX',
+  '61150020': Bic(
+    value: 'ESSLDE66XXX',
     bankName: 'Kreissparkasse Esslingen-Nürtingen',
     bankShortName: 'Kr Spk Esslingen-Nürtingen',
     bankPostcode: '72649',
     bankLocation: 'Wolfschlugen',
   ),
-  '61161696': Iban(
-    bic: 'GENODES1NHB',
+  '61161696': Bic(
+    value: 'GENODES1NHB',
     bankName: 'Volksbank Filder (Gf P2)',
     bankShortName: 'VB Filder',
     bankPostcode: '73761',
     bankLocation: 'Neuhausen auf den Fildern',
   ),
-  '61170024': Iban(
-    bic: 'DEUTDEDB626',
+  '61170024': Bic(
+    value: 'DEUTDEDB626',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '73201',
     bankLocation: 'Plochingen',
   ),
-  '61170076': Iban(
-    bic: 'DEUTDESS626',
+  '61170076': Bic(
+    value: 'DEUTDESS626',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '73201',
     bankLocation: 'Plochingen',
   ),
-  '61180004': Iban(
-    bic: 'DRESDEFF611',
+  '61180004': Bic(
+    value: 'DRESDEFF611',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Plochingen',
     bankPostcode: '73201',
     bankLocation: 'Plochingen',
   ),
-  '61190110': Iban(
-    bic: 'GENODES1ESS',
+  '61190110': Bic(
+    value: 'GENODES1ESS',
     bankName: 'Volksbank Esslingen (Gf P2)',
     bankShortName: 'Volksbank Esslingen',
     bankPostcode: '73704',
     bankLocation: 'Esslingen am Neckar',
   ),
-  '61191310': Iban(
-    bic: 'GENODES1VBP',
+  '61191310': Bic(
+    value: 'GENODES1VBP',
     bankName: 'Zeller Bank Ndl d Volksbank Plochingen',
     bankShortName: 'VB Plochingen',
     bankPostcode: '73730',
     bankLocation: 'Esslingen am Neckar',
   ),
-  '61240048': Iban(
-    bic: 'COBADEFFXXX',
+  '61240048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank NT F-N48',
     bankShortName: 'Commerzbank',
     bankPostcode: '72622',
     bankLocation: 'Nürtingen',
   ),
-  '61261213': Iban(
-    bic: 'GENODES1TEC',
+  '61261213': Bic(
+    value: 'GENODES1TEC',
     bankName: 'Raiffeisenbank Teck (Gf P2)',
     bankShortName: 'Raiffeisenbank Teck',
     bankPostcode: '73277',
     bankLocation: 'Owen',
   ),
-  '61261339': Iban(
-    bic: 'GENODES1HON',
+  '61261339': Bic(
+    value: 'GENODES1HON',
     bankName: 'VR Bank Hohenneuffen-Teck (Gf P2)',
     bankShortName: 'VR Bank Hohenneuffen-Teck',
     bankPostcode: '72633',
     bankLocation: 'Frickenhausen',
   ),
-  '61262258': Iban(
-    bic: 'GENODES1WLF',
+  '61262258': Bic(
+    value: 'GENODES1WLF',
     bankName: 'Genossenschaftsbank Wolfschlugen (Gf P2)',
     bankShortName: 'Genossenschaftsbank',
     bankPostcode: '72645',
     bankLocation: 'Wolfschlugen',
   ),
-  '61262345': Iban(
-    bic: 'GENODES1BBF',
+  '61262345': Bic(
+    value: 'GENODES1BBF',
     bankName: 'Bernhauser Bank (Gf P2)',
     bankShortName: 'Bernhauser Bank',
     bankPostcode: '70772',
     bankLocation: 'Filderstadt',
   ),
-  '61281007': Iban(
-    bic: 'DRESDEFF612',
+  '61281007': Bic(
+    value: 'DRESDEFF612',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Nürtingen',
     bankPostcode: '72602',
     bankLocation: 'Nürtingen',
   ),
-  '61290120': Iban(
-    bic: 'GENODES1NUE',
+  '61290120': Bic(
+    value: 'GENODES1NUE',
     bankName: 'Volksbank Mittlerer Neckar (Gf P2)',
     bankShortName: 'Volksbank Mittlerer Neckar',
     bankPostcode: '73728',
     bankLocation: 'Esslingen am Neckar',
   ),
-  '61340079': Iban(
-    bic: 'COBADEFFXXX',
+  '61340079': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Schwäb Gmünd',
     bankShortName: 'Commerzbank',
     bankPostcode: '73502',
     bankLocation: 'Schwäbisch Gmünd',
   ),
-  '61361722': Iban(
-    bic: 'GENODES1HEU',
+  '61361722': Bic(
+    value: 'GENODES1HEU',
     bankName: 'Raiffeisenbank Rosenstein (Gf P2)',
     bankShortName: 'Raiffeisenbank Rosenstein',
     bankPostcode: '73534',
     bankLocation: 'Heubach',
   ),
-  '61361975': Iban(
-    bic: 'GENODES1RML',
+  '61361975': Bic(
+    value: 'GENODES1RML',
     bankName: 'Raiffeisenbank Mutlangen Ndl Großdeinbach',
     bankShortName: 'Raiffeisenbank Mutlangen',
     bankPostcode: '73527',
     bankLocation: 'Schwäbisch Gmünd',
   ),
-  '61370024': Iban(
-    bic: 'DEUTDEDB616',
+  '61370024': Bic(
+    value: 'DEUTDEDB616',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '73602',
     bankLocation: 'Schorndorf',
   ),
-  '61370086': Iban(
-    bic: 'DEUTDESS633',
+  '61370086': Bic(
+    value: 'DEUTDESS633',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '86711',
     bankLocation: 'Nördlingen',
   ),
-  '61390140': Iban(
-    bic: 'GENODES1VGD',
+  '61390140': Bic(
+    value: 'GENODES1VGD',
     bankName: 'Volksbank Schwäbisch Gmünd (Gf P2)',
     bankShortName: 'Volksbank Schwäbisch Gmünd',
     bankPostcode: '73525',
     bankLocation: 'Schwäbisch Gmünd',
   ),
-  '61391410': Iban(
-    bic: 'GENODES1WEL',
+  '61391410': Bic(
+    value: 'GENODES1WEL',
     bankName: 'Volksbank Welzheim (Gf P2)',
     bankShortName: 'Volksbank Welzheim',
     bankPostcode: '73638',
     bankLocation: 'Welzheim',
   ),
-  '61420086': Iban(
-    bic: 'HYVEDEMM272',
+  '61420086': Bic(
+    value: 'HYVEDEMM272',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '73401',
     bankLocation: 'Aalen',
   ),
-  '61440086': Iban(
-    bic: 'COBADEFFXXX',
+  '61440086': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Aalen Württ',
     bankShortName: 'Commerzbank',
     bankPostcode: '73401',
     bankLocation: 'Aalen',
   ),
-  '61450050': Iban(
-    bic: 'OASPDE6AXXX',
+  '61450050': Bic(
+    value: 'OASPDE6AXXX',
     bankName: 'Kreissparkasse Ostalb',
     bankShortName: 'Kreissparkasse Ostalb',
     bankPostcode: '73463',
     bankLocation: 'Westhausen',
   ),
-  '61480001': Iban(
-    bic: 'DRESDEFF614',
+  '61480001': Bic(
+    value: 'DRESDEFF614',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Aalen Württ',
     bankPostcode: '73402',
     bankLocation: 'Aalen',
   ),
-  '61490150': Iban(
-    bic: 'GENODES1AAV',
+  '61490150': Bic(
+    value: 'GENODES1AAV',
     bankName: 'VR-Bank Ostalb (Gf P2)',
     bankShortName: 'VR-Bank Ostalb',
     bankPostcode: '73407',
     bankLocation: 'Aalen',
   ),
-  '61491010': Iban(
-    bic: 'GENODES1ELL',
+  '61491010': Bic(
+    value: 'GENODES1ELL',
     bankName: 'VR-Bank Ellwangen (Gf P2)',
     bankShortName: 'VR-Bank Ellwangen',
     bankPostcode: '73471',
     bankLocation: 'Ellwangen (Jagst)',
   ),
-  '62020000': Iban(
-    bic: 'HOEBDE61XXX',
+  '62020000': Bic(
+    value: 'HOEBDE61XXX',
     bankName: 'Hoerner-Bank Heilbronn',
     bankShortName: 'Hoerner-Bank',
     bankPostcode: '74072',
     bankLocation: 'Heilbronn',
   ),
-  '62020100': Iban(
-    bic: 'FBHNDE61XXX',
+  '62020100': Bic(
+    value: 'FBHNDE61XXX',
     bankName: 'FCA Bank Heilbronn Neckar',
     bankShortName: 'FCA Bank Deutschland',
     bankPostcode: '74066',
     bankLocation: 'Heilbronn',
   ),
-  '62040060': Iban(
-    bic: 'COBADEFFXXX',
+  '62040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Neckarsulm',
     bankShortName: 'Commerzbank',
     bankPostcode: '74148',
     bankLocation: 'Neckarsulm',
   ),
-  '62050000': Iban(
-    bic: 'HEISDE66XXX',
+  '62050000': Bic(
+    value: 'HEISDE66XXX',
     bankName: 'Kreissparkasse Heilbronn',
     bankShortName: 'Kr Spk Heilbronn',
     bankPostcode: '74014',
     bankLocation: 'Heilbronn',
   ),
-  '62061991': Iban(
-    bic: 'GENODES1VOS',
+  '62061991': Bic(
+    value: 'GENODES1VOS',
     bankName: 'Volksbank Sulmtal (Gf P2)',
     bankShortName: 'Volksbank Sulmtal',
     bankPostcode: '74182',
     bankLocation: 'Obersulm',
   ),
-  '62062215': Iban(
-    bic: 'GENODES1BIA',
+  '62062215': Bic(
+    value: 'GENODES1BIA',
     bankName: 'Volksbank Beilstein-Ilsfeld-Abstatt Zw Gronau',
     bankShortName: 'VB Beilstein-Ilsfeld-Abstat',
     bankPostcode: '71720',
     bankLocation: 'Oberstenfeld',
   ),
-  '62062643': Iban(
-    bic: 'GENODES1VFT',
+  '62062643': Bic(
+    value: 'GENODES1VFT',
     bankName: 'Volksbank Flein-Talheim (Gf P2)',
     bankShortName: 'Volksbank Flein-Talheim',
     bankPostcode: '74223',
     bankLocation: 'Flein',
   ),
-  '62063263': Iban(
-    bic: 'GENODES1VLS',
+  '62063263': Bic(
+    value: 'GENODES1VLS',
     bankName: 'VBU Volksbank im Unterland (Gf P2)',
     bankShortName: 'VBU Volksbank im Unterland',
     bankPostcode: '74336',
     bankLocation: 'Brackenheim',
   ),
-  '62070024': Iban(
-    bic: 'DEUTDEDB622',
+  '62070024': Bic(
+    value: 'DEUTDEDB622',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '74501',
     bankLocation: 'Schwäbisch Hall',
   ),
-  '62070081': Iban(
-    bic: 'DEUTDESS628',
+  '62070081': Bic(
+    value: 'DEUTDESS628',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '74641',
     bankLocation: 'Künzelsau',
   ),
-  '62080012': Iban(
-    bic: 'DRESDEFF620',
+  '62080012': Bic(
+    value: 'DRESDEFF620',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Neckarsulm',
     bankPostcode: '74148',
     bankLocation: 'Neckarsulm',
   ),
-  '62090100': Iban(
-    bic: 'GENODES1VHN',
+  '62090100': Bic(
+    value: 'GENODES1VHN',
     bankName: 'Volksbank Heilbronn (Gf P2)',
     bankShortName: 'Volksbank Heilbronn',
     bankPostcode: '74026',
     bankLocation: 'Heilbronn',
   ),
-  '62091400': Iban(
-    bic: 'GENODES1VBR',
+  '62091400': Bic(
+    value: 'GENODES1VBR',
     bankName: 'Volksbank Brackenheim-Güglingen (Gf P2)',
     bankShortName: 'VB Brackenheim-Güglingen',
     bankPostcode: '74334',
     bankLocation: 'Brackenheim',
   ),
-  '62091600': Iban(
-    bic: 'GENODES1VMN',
+  '62091600': Bic(
+    value: 'GENODES1VMN',
     bankName: 'Volksbank Möckmühl (Gf P2)',
     bankShortName: 'Volksbank Möckmühl',
     bankPostcode: '74219',
     bankLocation: 'Möckmühl',
   ),
-  '62091800': Iban(
-    bic: 'GENODES1VHL',
+  '62091800': Bic(
+    value: 'GENODES1VHL',
     bankName: 'Volksbank Hohenlohe Gs Weißbach',
     bankShortName: 'Volksbank Hohenlohe',
     bankPostcode: '74679',
     bankLocation: 'Weißbach',
   ),
-  '62220000': Iban(
-    bic: 'BSHHDE61XXX',
+  '62220000': Bic(
+    value: 'BSHHDE61XXX',
     bankName: 'Bausparkasse Schwäbisch Hall',
     bankShortName: 'Bauspk Schwäbisch Hall',
     bankPostcode: '74501',
     bankLocation: 'Schwäbisch Hall',
   ),
-  '62240048': Iban(
-    bic: 'COBADEFFXXX',
+  '62240048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank SH F-S48',
     bankShortName: 'Commerzbank',
     bankPostcode: '74523',
     bankLocation: 'Schwäbisch Hall',
   ),
-  '62250030': Iban(
-    bic: 'SOLADES1SHA',
+  '62250030': Bic(
+    value: 'SOLADES1SHA',
     bankName: 'Sparkasse Schwäbisch Hall-Crailsheim',
     bankShortName: 'Sparkasse Schwäbisch Hall',
     bankPostcode: '74541',
     bankLocation: 'Vellberg',
   ),
-  '62251550': Iban(
-    bic: 'SOLADES1KUN',
+  '62251550': Bic(
+    value: 'SOLADES1KUN',
     bankName: 'Sparkasse Hohenlohekreis',
     bankShortName: 'Sparkasse Hohenlohekreis',
     bankPostcode: '74639',
     bankLocation: 'Zweiflingen',
   ),
-  '62280012': Iban(
-    bic: 'DRESDEFF622',
+  '62280012': Bic(
+    value: 'DRESDEFF622',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Schwäb Hall',
     bankPostcode: '74501',
     bankLocation: 'Schwäbisch Hall',
   ),
-  '62290110': Iban(
-    bic: 'GENODES1SHA',
+  '62290110': Bic(
+    value: 'GENODES1SHA',
     bankName: 'VR Bank Heilbronn Schwäbisch Hall (Gf P2)',
     bankShortName: 'VR Bk Heilbronn Schwäb.Hall',
     bankPostcode: '74523',
     bankLocation: 'Schwäbisch Hall',
   ),
-  '62291020': Iban(
-    bic: 'GENODES1CRV',
+  '62291020': Bic(
+    value: 'GENODES1CRV',
     bankName: 'Crailsheimer Volksbank (Gf P2)',
     bankShortName: 'Crailsheimer Volksbank',
     bankPostcode: '74551',
     bankLocation: 'Crailsheim',
   ),
-  '62391420': Iban(
-    bic: 'GENODES1VVT',
+  '62391420': Bic(
+    value: 'GENODES1VVT',
     bankName: 'Volksbank Vorbach-Tauber (Gf P2)',
     bankShortName: 'Volksbank Vorbach-Tauber',
     bankPostcode: '97990',
     bankLocation: 'Weikersheim',
   ),
-  '63000000': Iban(
-    bic: 'MARKDEF1630',
+  '63000000': Bic(
+    value: 'MARKDEF1630',
     bankName: 'BBk Ulm, Donau',
     bankShortName: 'Bundesbank',
     bankPostcode: '89018',
     bankLocation: 'Ulm',
   ),
-  '63020086': Iban(
-    bic: 'HYVEDEMM461',
+  '63020086': Bic(
+    value: 'HYVEDEMM461',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '89251',
     bankLocation: 'Illertissen',
   ),
-  '63040053': Iban(
-    bic: 'COBADEFFXXX',
+  '63040053': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Ehingen Donau',
     bankShortName: 'Commerzbank',
     bankPostcode: '89584',
     bankLocation: 'Ehingen (Donau)',
   ),
-  '63050000': Iban(
-    bic: 'SOLADES1ULM',
+  '63050000': Bic(
+    value: 'SOLADES1ULM',
     bankName: 'Sparkasse Ulm',
     bankShortName: 'Sparkasse Ulm',
     bankPostcode: '88481',
     bankLocation: 'Balzheim',
   ),
-  '63061486': Iban(
-    bic: 'GENODES1LBK',
+  '63061486': Bic(
+    value: 'GENODES1LBK',
     bankName: 'VR-Bank Langenau-Ulmer Alb (Gf P2)',
     bankShortName: 'VR-Bank Langenau-Ulmer Alb',
     bankPostcode: '89121',
     bankLocation: 'Langenau',
   ),
-  '63070024': Iban(
-    bic: 'DEUTDEDB632',
+  '63070024': Bic(
+    value: 'DEUTDEDB632',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '89231',
     bankLocation: 'Neu-Ulm',
   ),
-  '63070088': Iban(
-    bic: 'DEUTDESS632',
+  '63070088': Bic(
+    value: 'DEUTDESS632',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '89231',
     bankLocation: 'Neu-Ulm',
   ),
-  '63080015': Iban(
-    bic: 'DRESDEFF630',
+  '63080015': Bic(
+    value: 'DRESDEFF630',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Biberach Riß',
     bankPostcode: '88382',
     bankLocation: 'Biberach an der Riß',
   ),
-  '63080085': Iban(
-    bic: 'DRESDEFFI59',
+  '63080085': Bic(
+    value: 'DRESDEFFI59',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Ulm',
     bankPostcode: '70140',
     bankLocation: 'Stuttgart',
   ),
-  '63090100': Iban(
-    bic: 'ULMVDE66XXX',
+  '63090100': Bic(
+    value: 'ULMVDE66XXX',
     bankName: 'Volksbank Ulm-Biberach (Gf P2)',
     bankShortName: 'Volksbank Ulm-Biberach',
     bankPostcode: '89070',
     bankLocation: 'Ulm',
   ),
-  '63091010': Iban(
-    bic: 'GENODES1EHI',
+  '63091010': Bic(
+    value: 'GENODES1EHI',
     bankName: 'Donau-Iller Bank (Gf P2)',
     bankShortName: 'Donau-Iller Bank',
     bankPostcode: '89574',
     bankLocation: 'Ehingen (Donau)',
   ),
-  '63091200': Iban(
-    bic: 'GENODES1BLA',
+  '63091200': Bic(
+    value: 'GENODES1BLA',
     bankName: 'Volksbank Blaubeuren (Gf P2)',
     bankShortName: 'Volksbank Blaubeuren',
     bankPostcode: '89143',
     bankLocation: 'Blaubeuren',
   ),
-  '63091300': Iban(
-    bic: 'GENODES1LAI',
+  '63091300': Bic(
+    value: 'GENODES1LAI',
     bankName: 'Volksbank Laichinger Alb (Gf P2)',
     bankShortName: 'Volksbank Laichinger Alb',
     bankPostcode: '89150',
     bankLocation: 'Laichingen',
   ),
-  '63220090': Iban(
-    bic: 'HYVEDEMM271',
+  '63220090': Bic(
+    value: 'HYVEDEMM271',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '89501',
     bankLocation: 'Heidenheim an der Brenz',
   ),
-  '63240016': Iban(
-    bic: 'COBADEFFXXX',
+  '63240016': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Heidenheim',
     bankShortName: 'Commerzbank',
     bankPostcode: '89502',
     bankLocation: 'Heidenheim an der Brenz',
   ),
-  '63250030': Iban(
-    bic: 'SOLADES1HDH',
+  '63250030': Bic(
+    value: 'SOLADES1HDH',
     bankName: 'Kreissparkasse Heidenheim',
     bankShortName: 'Kr Spk Heidenheim',
     bankPostcode: '89555',
     bankLocation: 'Steinheim am Albuch',
   ),
-  '63290110': Iban(
-    bic: 'GENODES1HDH',
+  '63290110': Bic(
+    value: 'GENODES1HDH',
     bankName: 'Heidenheimer Volksbank Zw Steinheim',
     bankShortName: 'Heidenheimer Volksbank',
     bankPostcode: '89555',
     bankLocation: 'Steinheim am Albuch',
   ),
-  '64000000': Iban(
-    bic: 'MARKDEF1640',
+  '64000000': Bic(
+    value: 'MARKDEF1640',
     bankName: 'BBk Reutlingen',
     bankShortName: 'Bundesbank',
     bankPostcode: '72711',
     bankLocation: 'Reutlingen',
   ),
-  '64020186': Iban(
-    bic: 'HYVEDEMM374',
+  '64020186': Bic(
+    value: 'HYVEDEMM374',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '72702',
     bankLocation: 'Reutlingen',
   ),
-  '64040033': Iban(
-    bic: 'COBADEFFXXX',
+  '64040033': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Reutlingen',
     bankShortName: 'Commerzbank',
     bankPostcode: '72701',
     bankLocation: 'Reutlingen',
   ),
-  '64040045': Iban(
-    bic: 'COBADEFFXXX',
+  '64040045': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Metzingen Würt',
     bankShortName: 'Commerzbank',
     bankPostcode: '72555',
     bankLocation: 'Metzingen',
   ),
-  '64050000': Iban(
-    bic: 'SOLADES1REU',
+  '64050000': Bic(
+    value: 'SOLADES1REU',
     bankName: 'Kreissparkasse Reutlingen',
     bankShortName: 'Kr Spk Reutlingen',
     bankPostcode: '72818',
     bankLocation: 'Trochtelfingen',
   ),
-  '64061854': Iban(
-    bic: 'GENODES1STW',
+  '64061854': Bic(
+    value: 'GENODES1STW',
     bankName: 'VR Bank Tübingen (Gf P2)',
     bankShortName: 'VR Bank Tübingen',
     bankPostcode: '72070',
     bankLocation: 'Tübingen',
   ),
-  '64070024': Iban(
-    bic: 'DEUTDEDB641',
+  '64070024': Bic(
+    value: 'DEUTDEDB641',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '72003',
     bankLocation: 'Tübingen',
   ),
-  '64070085': Iban(
-    bic: 'DEUTDESS646',
+  '64070085': Bic(
+    value: 'DEUTDESS646',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '72231',
     bankLocation: 'Freudenstadt',
   ),
-  '64070215': Iban(
-    bic: 'DEUTDESSP14',
+  '64070215': Bic(
+    value: 'DEUTDESSP14',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '72072',
     bankLocation: 'Tübingen',
   ),
-  '64070224': Iban(
-    bic: 'DEUTDEDBP14',
+  '64070224': Bic(
+    value: 'DEUTDEDBP14',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '72072',
     bankLocation: 'Tübingen',
   ),
-  '64080014': Iban(
-    bic: 'DRESDEFF640',
+  '64080014': Bic(
+    value: 'DRESDEFF640',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Reutlingen',
     bankPostcode: '72704',
     bankLocation: 'Reutlingen',
   ),
-  '64090100': Iban(
-    bic: 'VBRTDE6RXXX',
+  '64090100': Bic(
+    value: 'VBRTDE6RXXX',
     bankName: 'Volksbank Reutlingen (Gf P2)',
     bankShortName: 'Volksbank Reutlingen',
     bankPostcode: '72774',
     bankLocation: 'Reutlingen',
   ),
-  '64091200': Iban(
-    bic: 'GENODES1MTZ',
+  '64091200': Bic(
+    value: 'GENODES1MTZ',
     bankName: 'Volksbank Ermstal-Alb (Gf P2)',
     bankShortName: 'Volksbank Ermstal-Alb',
     bankPostcode: '72555',
     bankLocation: 'Metzingen',
   ),
-  '64091300': Iban(
-    bic: 'GENODES1MUN',
+  '64091300': Bic(
+    value: 'GENODES1MUN',
     bankName: 'Volksbank Münsingen (Gf P2)',
     bankShortName: 'Volksbank Münsingen',
     bankPostcode: '72525',
     bankLocation: 'Münsingen',
   ),
-  '64140036': Iban(
-    bic: 'COBADEFFXXX',
+  '64140036': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Tübingen',
     bankShortName: 'Commerzbank Tübingen',
     bankPostcode: '72002',
     bankLocation: 'Tübingen',
   ),
-  '64150020': Iban(
-    bic: 'SOLADES1TUB',
+  '64150020': Bic(
+    value: 'SOLADES1TUB',
     bankName: 'Kreissparkasse Tübingen',
     bankShortName: 'Kr Spk Tübingen',
     bankPostcode: '72131',
     bankLocation: 'Ofterdingen',
   ),
-  '64161397': Iban(
-    bic: 'GENODES1AMM',
+  '64161397': Bic(
+    value: 'GENODES1AMM',
     bankName: 'Volksbank Ammerbuch Zw',
     bankShortName: 'Volksbank Ammerbuch',
     bankPostcode: '72070',
     bankLocation: 'Tübingen',
   ),
-  '64161608': Iban(
-    bic: 'GENODES1RHK',
+  '64161608': Bic(
+    value: 'GENODES1RHK',
     bankName: 'Raiffeisenbank Härten (Gf P2)',
     bankShortName: 'Raiffbk Härten',
     bankPostcode: '72127',
     bankLocation: 'Kusterdingen',
   ),
-  '64161956': Iban(
-    bic: 'GENODES1VMO',
+  '64161956': Bic(
+    value: 'GENODES1VMO',
     bankName: 'Volksbank Mössingen',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '72110',
     bankLocation: 'Mössingen',
   ),
-  '64163225': Iban(
-    bic: 'GENODES1VHZ',
+  '64163225': Bic(
+    value: 'GENODES1VHZ',
     bankName: 'Volksbank Hohenzollern-Balingen (Gf P2)',
     bankShortName: 'VB Hohenzollern-Balingen',
     bankPostcode: '72336',
     bankLocation: 'Balingen',
   ),
-  '64180014': Iban(
-    bic: 'DRESDEFF641',
+  '64180014': Bic(
+    value: 'DRESDEFF641',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Tübingen',
     bankPostcode: '72003',
     bankLocation: 'Tübingen',
   ),
-  '64190110': Iban(
-    bic: 'GENODES1TUE',
+  '64190110': Bic(
+    value: 'GENODES1TUE',
     bankName: 'Volksbank Tübingen (Gf P2)',
     bankShortName: 'Volksbank Tübingen',
     bankPostcode: '72016',
     bankLocation: 'Tübingen',
   ),
-  '64191030': Iban(
-    bic: 'GENODES1NAG',
+  '64191030': Bic(
+    value: 'GENODES1NAG',
     bankName: 'Volksbank Nagoldtal (Gf P2)',
     bankShortName: 'Volksbank Nagoldtal',
     bankPostcode: '72202',
     bankLocation: 'Nagold',
   ),
-  '64191700': Iban(
-    bic: 'GENODES1HOR',
+  '64191700': Bic(
+    value: 'GENODES1HOR',
     bankName: 'Volksbank Horb (Gf P2)',
     bankShortName: 'Volksbank Horb',
     bankPostcode: '72151',
     bankLocation: 'Horb am Neckar',
   ),
-  '64240048': Iban(
-    bic: 'COBADEFFXXX',
+  '64240048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank TR F-T48',
     bankShortName: 'Commerzbank',
     bankPostcode: '78647',
     bankLocation: 'Trossingen',
   ),
-  '64240071': Iban(
-    bic: 'COBADEFFXXX',
+  '64240071': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Rottweil',
     bankShortName: 'Commerzbank',
     bankPostcode: '78628',
     bankLocation: 'Rottweil',
   ),
-  '64250040': Iban(
-    bic: 'SOLADES1RWL',
+  '64250040': Bic(
+    value: 'SOLADES1RWL',
     bankName: 'Kreissparkasse Rottweil',
     bankShortName: 'Kr Spk Rottweil',
     bankPostcode: '78713',
     bankLocation: 'Schramberg',
   ),
-  '64251060': Iban(
-    bic: 'SOLADES1FDS',
+  '64251060': Bic(
+    value: 'SOLADES1FDS',
     bankName: 'Kreissparkasse Freudenstadt',
     bankShortName: 'Kr Spk Freudenstadt',
     bankPostcode: '72235',
     bankLocation: 'Freudenstadt',
   ),
-  '64261363': Iban(
-    bic: 'GENODES1BAI',
+  '64261363': Bic(
+    value: 'GENODES1BAI',
     bankName: 'Volksbank Baiersbronn Murgtal (Gf P2)',
     bankShortName: 'VB Baiersbronn Murgtal',
     bankPostcode: '72270',
     bankLocation: 'Baiersbronn',
   ),
-  '64261626': Iban(
-    bic: 'GENODES1MMO',
+  '64261626': Bic(
+    value: 'GENODES1MMO',
     bankName: 'Murgtalbank Mitteltal - Obertal -alt-',
     bankShortName: 'Murgtalbank -alt-',
     bankPostcode: '72270',
     bankLocation: 'Baiersbronn',
   ),
-  '64261853': Iban(
-    bic: 'GENODES1PGW',
+  '64261853': Bic(
+    value: 'GENODES1PGW',
     bankName: 'Volksbank Nordschwarzwald (Gf P2)',
     bankShortName: 'Volksbank Nordschwarzwald',
     bankPostcode: '72285',
     bankLocation: 'Pfalzgrafenweiler',
   ),
-  '64262408': Iban(
-    bic: 'GENODES1VDS',
+  '64262408': Bic(
+    value: 'GENODES1VDS',
     bankName: 'VR-Bank Dornstetten-Horb (Gf P3)',
     bankShortName: 'VR-Bank Dornstetten-Horb',
     bankPostcode: '72277',
     bankLocation: 'Dornstetten',
   ),
-  '64290120': Iban(
-    bic: 'GENODES1VRW',
+  '64290120': Bic(
+    value: 'GENODES1VRW',
     bankName: 'Volksbank Rottweil (Gf P2)',
     bankShortName: 'Volksbank Rottweil',
     bankPostcode: '78618',
     bankLocation: 'Rottweil',
   ),
-  '64291010': Iban(
-    bic: 'GENODES1FDS',
+  '64291010': Bic(
+    value: 'GENODES1FDS',
     bankName: 'Volksbank im Kreis Freudenstadt (Gf P2)',
     bankShortName: 'VB im Kreis Freudenstadt',
     bankPostcode: '72239',
     bankLocation: 'Freudenstadt',
   ),
-  '64291420': Iban(
-    bic: 'GENODES1VDL',
+  '64291420': Bic(
+    value: 'GENODES1VDL',
     bankName: 'Volksbank Deisslingen (Gf P2)',
     bankShortName: 'Volksbank Deisslingen',
     bankPostcode: '78652',
     bankLocation: 'Deißlingen',
   ),
-  '64292020': Iban(
-    bic: 'GENODES1SBG',
+  '64292020': Bic(
+    value: 'GENODES1SBG',
     bankName: 'Volksbank Schwarzwald-Neckar (Gf P2)',
     bankShortName: 'VB Schwarzwald-Neckar',
     bankPostcode: '78713',
     bankLocation: 'Schramberg',
   ),
-  '64292310': Iban(
-    bic: 'GENODES1TRO',
+  '64292310': Bic(
+    value: 'GENODES1TRO',
     bankName: 'Volksbank Trossingen (Gf P2)',
     bankShortName: 'Volksbank Trossingen',
     bankPostcode: '78640',
     bankLocation: 'Trossingen',
   ),
-  '64350070': Iban(
-    bic: 'SOLADES1TUT',
+  '64350070': Bic(
+    value: 'SOLADES1TUT',
     bankName: 'Kreissparkasse Tuttlingen',
     bankShortName: 'Kr Spk Tuttlingen',
     bankPostcode: '78502',
     bankLocation: 'Tuttlingen',
   ),
-  '64361359': Iban(
-    bic: 'GENODES1RDH',
+  '64361359': Bic(
+    value: 'GENODES1RDH',
     bankName: 'Raiffeisenbank Donau-Heuberg (Gf P2)',
     bankShortName: 'Raiffbk Donau-Heuberg',
     bankPostcode: '78568',
     bankLocation: 'Mühlheim an der Donau',
   ),
-  '64380011': Iban(
-    bic: 'DRESDEFF643',
+  '64380011': Bic(
+    value: 'DRESDEFF643',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Trossingen',
     bankPostcode: '78635',
     bankLocation: 'Trossingen',
   ),
-  '64390130': Iban(
-    bic: 'GENODES1TUT',
+  '64390130': Bic(
+    value: 'GENODES1TUT',
     bankName: 'Volksbank Schwarzwald-Donau-Neckar (Gf P2)',
     bankShortName: 'VB Schwarzwald-Donau-Neckar',
     bankPostcode: '78513',
     bankLocation: 'Tuttlingen',
   ),
-  '65020186': Iban(
-    bic: 'HYVEDEMM588',
+  '65020186': Bic(
+    value: 'HYVEDEMM588',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '88181',
     bankLocation: 'Ravensburg',
   ),
-  '65040073': Iban(
-    bic: 'COBADEFFXXX',
+  '65040073': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Isny',
     bankShortName: 'Commerzbank',
     bankPostcode: '88305',
     bankLocation: 'Isny im Allgäu',
   ),
-  '65050110': Iban(
-    bic: 'SOLADES1RVB',
+  '65050110': Bic(
+    value: 'SOLADES1RVB',
     bankName: 'Kreissparkasse Ravensburg',
     bankShortName: 'Kr Spk Ravensburg',
     bankPostcode: '88255',
     bankLocation: 'Baindt',
   ),
-  '65061219': Iban(
-    bic: 'GENODES1AUL',
+  '65061219': Bic(
+    value: 'GENODES1AUL',
     bankName: 'Raiffeisenbank Aulendorf (Gf P2)',
     bankShortName: 'Raiffbk Aulendorf',
     bankPostcode: '88326',
     bankLocation: 'Aulendorf',
   ),
-  '65062577': Iban(
-    bic: 'GENODES1RRV',
+  '65062577': Bic(
+    value: 'GENODES1RRV',
     bankName: 'VR Bank Ravensburg-Weingarten (Gf P2)',
     bankShortName: 'VR Bank Ravensburg-Weing.',
     bankPostcode: '88214',
     bankLocation: 'Ravensburg',
   ),
-  '65063086': Iban(
-    bic: 'GENODES1SAG',
+  '65063086': Bic(
+    value: 'GENODES1SAG',
     bankName: 'Raiffeisenbank Bad Saulgau (Gf P2)',
     bankShortName: 'Raiffeisenbank Bad Saulgau',
     bankPostcode: '88343',
     bankLocation: 'Bad Saulgau',
   ),
-  '65070024': Iban(
-    bic: 'DEUTDEDB658',
+  '65070024': Bic(
+    value: 'DEUTDEDB658',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '88250',
     bankLocation: 'Weingarten',
   ),
-  '65070084': Iban(
-    bic: 'DEUTDESS649',
+  '65070084': Bic(
+    value: 'DEUTDESS649',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '88060',
     bankLocation: 'Tettnang',
   ),
-  '65080009': Iban(
-    bic: 'DRESDEFF650',
+  '65080009': Bic(
+    value: 'DRESDEFF650',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Isny',
     bankPostcode: '88305',
     bankLocation: 'Isny im Allgäu',
   ),
-  '65090100': Iban(
-    bic: 'ULMVDE66XXX',
+  '65090100': Bic(
+    value: 'ULMVDE66XXX',
     bankName: 'Volksbank Ulm-Biberach -alt-',
     bankShortName: 'Volksbank Ravensburg -alt-',
     bankPostcode: '88193',
     bankLocation: 'Ravensburg',
   ),
-  '65091040': Iban(
-    bic: 'GENODES1LEU',
+  '65091040': Bic(
+    value: 'GENODES1LEU',
     bankName: 'Volksbank Allgäu-Oberschwaben (Gf P2)',
     bankShortName: 'Voba Allgäu-Oberschwaben',
     bankPostcode: '88299',
     bankLocation: 'Leutkirch im Allgäu',
   ),
-  '65091300': Iban(
-    bic: 'GENODES1BWB',
+  '65091300': Bic(
+    value: 'GENODES1BWB',
     bankName: 'Bad Waldseer Bank (Gf P2)',
     bankShortName: 'Bad Waldseer Bank',
     bankPostcode: '88330',
     bankLocation: 'Bad Waldsee',
   ),
-  '65091600': Iban(
-    bic: 'GENODES1VWG',
+  '65091600': Bic(
+    value: 'GENODES1VWG',
     bankName: 'Volksbank Weingarten (Gf P2)',
     bankShortName: 'Volksbank Weingarten',
     bankPostcode: '88250',
     bankLocation: 'Weingarten',
   ),
-  '65092010': Iban(
-    bic: 'GENODES1WAN',
+  '65092010': Bic(
+    value: 'GENODES1WAN',
     bankName: 'Volksbank Allgäu-West (Gf P2)',
     bankShortName: 'VB Allgäu-West',
     bankPostcode: '88239',
     bankLocation: 'Wangen im Allgäu',
   ),
-  '65092200': Iban(
-    bic: 'GENODES1VAH',
+  '65092200': Bic(
+    value: 'GENODES1VAH',
     bankName: 'Volksbank Altshausen (Gf P2)',
     bankShortName: 'Volksbank Altshausen',
     bankPostcode: '88361',
     bankLocation: 'Altshausen',
   ),
-  '65093020': Iban(
-    bic: 'GENODES1SLG',
+  '65093020': Bic(
+    value: 'GENODES1SLG',
     bankName: 'Volksbank Bad Saulgau (Gf P2)',
     bankShortName: 'VB Bad Saulgau',
     bankPostcode: '88344',
     bankLocation: 'Bad Saulgau',
   ),
-  '65110200': Iban(
-    bic: 'IBBFDE81XXX',
+  '65110200': Bic(
+    value: 'IBBFDE81XXX',
     bankName: 'Internationales Bankhaus Bodensee',
     bankShortName: 'Int Bkhaus Bodensee',
     bankPostcode: '88045',
     bankLocation: 'Friedrichshafen',
   ),
-  '65140072': Iban(
-    bic: 'COBADEFFXXX',
+  '65140072': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Lindau',
     bankShortName: 'Commerzbank',
     bankPostcode: '88111',
     bankLocation: 'Lindau (Bodensee)',
   ),
-  '65161497': Iban(
-    bic: 'GENODES1GMB',
+  '65161497': Bic(
+    value: 'GENODES1GMB',
     bankName: 'Genossenschaftsbank Meckenbeuren (Gf P2)',
     bankShortName: 'Genossenschaftsbank',
     bankPostcode: '88074',
     bankLocation: 'Meckenbeuren',
   ),
-  '65162832': Iban(
-    bic: 'GENODES1OTE',
+  '65162832': Bic(
+    value: 'GENODES1OTE',
     bankName: 'Raiffeisenbank Oberteuringen-Meckenbeuren (Gf P2)',
     bankShortName: 'RB Oberteuringen-Meckenb.',
     bankPostcode: '88094',
     bankLocation: 'Oberteuringen',
   ),
-  '65180005': Iban(
-    bic: 'DRESDEFF651',
+  '65180005': Bic(
+    value: 'DRESDEFF651',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Lindau',
     bankPostcode: '88111',
     bankLocation: 'Lindau (Bodensee)',
   ),
-  '65190110': Iban(
-    bic: 'GENODES1VFN',
+  '65190110': Bic(
+    value: 'GENODES1VFN',
     bankName: 'Volksbank Friedrichshafen Ndl Langenargen',
     bankShortName: 'Volksbank Friedrichshafen',
     bankPostcode: '88085',
     bankLocation: 'Langenargen',
   ),
-  '65191500': Iban(
-    bic: 'GENODES1TET',
+  '65191500': Bic(
+    value: 'GENODES1TET',
     bankName: 'Volksbank Friedrichshafen-Tettnang (Gf P2)',
     bankShortName: 'Volksbank FN-TT',
     bankPostcode: '88064',
     bankLocation: 'Tettnang',
   ),
-  '65340004': Iban(
-    bic: 'COBADEFFXXX',
+  '65340004': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Sigmaringen',
     bankShortName: 'Commerzbank',
     bankPostcode: '72482',
     bankLocation: 'Sigmaringen',
   ),
-  '65341204': Iban(
-    bic: 'COBADEFFXXX',
+  '65341204': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Balingen',
     bankShortName: 'Commerzbank',
     bankPostcode: '72302',
     bankLocation: 'Balingen',
   ),
-  '65351050': Iban(
-    bic: 'SOLADES1SIG',
+  '65351050': Bic(
+    value: 'SOLADES1SIG',
     bankName: 'Hohenz Landesbank Kreissparkasse Sigmaringen',
     bankShortName: 'Ld Bk Kr Spk Sigmaringen',
     bankPostcode: '72510',
     bankLocation: 'Stetten am kalten Markt',
   ),
-  '65351260': Iban(
-    bic: 'SOLADES1BAL',
+  '65351260': Bic(
+    value: 'SOLADES1BAL',
     bankName: 'Sparkasse Zollernalb',
     bankShortName: 'Spk Zollernalb',
     bankPostcode: '72474',
     bankLocation: 'Winterlingen',
   ),
-  '65361469': Iban(
-    bic: 'GENODES1HBM',
+  '65361469': Bic(
+    value: 'GENODES1HBM',
     bankName: 'Volksbank Heuberg (Gf P2)',
     bankShortName: 'Volksbank Heuberg',
     bankPostcode: '72466',
     bankLocation: 'Meßstetten',
   ),
-  '65361898': Iban(
-    bic: 'GENODES1WLB',
+  '65361898': Bic(
+    value: 'GENODES1WLB',
     bankName: 'VR Bank Heuberg-Winterlingen (Gf P2)',
     bankShortName: 'VR Bk Heuberg-Winterlingen',
     bankPostcode: '72469',
     bankLocation: 'Meßstetten',
   ),
-  '65361989': Iban(
-    bic: 'GENODES1ONS',
+  '65361989': Bic(
+    value: 'GENODES1ONS',
     bankName: 'Onstmettinger Bank (Gf P2)',
     bankShortName: 'Onstmettinger Bank',
     bankPostcode: '72461',
     bankLocation: 'Albstadt',
   ),
-  '65362499': Iban(
-    bic: 'GENODES1GEI',
+  '65362499': Bic(
+    value: 'GENODES1GEI',
     bankName: 'Raiffeisenbank Geislingen-Rosenfeld (Gf P2)',
     bankShortName: 'Raiffbk Geislingen-Rosenf',
     bankPostcode: '72349',
     bankLocation: 'Geislingen',
   ),
-  '65370024': Iban(
-    bic: 'DEUTDEDB603',
+  '65370024': Bic(
+    value: 'DEUTDEDB603',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '78506',
     bankLocation: 'Tuttlingen',
   ),
-  '65370075': Iban(
-    bic: 'DEUTDESS603',
+  '65370075': Bic(
+    value: 'DEUTDESS603',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '78506',
     bankLocation: 'Tuttlingen',
   ),
-  '65380003': Iban(
-    bic: 'DRESDEFF653',
+  '65380003': Bic(
+    value: 'DRESDEFF653',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Albstadt',
     bankPostcode: '72421',
     bankLocation: 'Albstadt',
   ),
-  '65390120': Iban(
-    bic: 'GENODES1EBI',
+  '65390120': Bic(
+    value: 'GENODES1EBI',
     bankName: 'Volksbank Albstadt (Gf P2)',
     bankShortName: 'Volksbank Albstadt',
     bankPostcode: '72424',
     bankLocation: 'Albstadt',
   ),
-  '65391210': Iban(
-    bic: 'GENODES1BAL',
+  '65391210': Bic(
+    value: 'GENODES1BAL',
     bankName: 'Volksbank Balingen (Gf P2)',
     bankShortName: 'Volksbank Balingen',
     bankPostcode: '72311',
     bankLocation: 'Balingen',
   ),
-  '65392030': Iban(
-    bic: 'GENODES1TAI',
+  '65392030': Bic(
+    value: 'GENODES1TAI',
     bankName: 'Volksbank Tailfingen (Gf P2)',
     bankShortName: 'Volksbank Tailfingen',
     bankPostcode: '72440',
     bankLocation: 'Albstadt',
   ),
-  '65440087': Iban(
-    bic: 'COBADEFFXXX',
+  '65440087': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Biberach Riß',
     bankShortName: 'Commerzbank',
     bankPostcode: '88400',
     bankLocation: 'Biberach an der Riß',
   ),
-  '65450070': Iban(
-    bic: 'SBCRDE66XXX',
+  '65450070': Bic(
+    value: 'SBCRDE66XXX',
     bankName: 'Kreissparkasse Biberach',
     bankShortName: 'Kr Spk Biberach',
     bankPostcode: '88451',
     bankLocation: 'Dettingen an der Iller',
   ),
-  '65461878': Iban(
-    bic: 'GENODES1WAR',
+  '65461878': Bic(
+    value: 'GENODES1WAR',
     bankName: 'Raiffeisenbank Biberach (Gf P2)',
     bankShortName: 'Raiffeisenbank Biberach',
     bankPostcode: '88444',
     bankLocation: 'Ummendorf',
   ),
-  '65462231': Iban(
-    bic: 'GENODES1ERO',
+  '65462231': Bic(
+    value: 'GENODES1ERO',
     bankName: 'Raiffeisenbank Illertal (Gf P2)',
     bankShortName: 'Raiffeisenbank Illertal',
     bankPostcode: '88453',
     bankLocation: 'Erolzheim',
   ),
-  '65491320': Iban(
-    bic: 'GENODES1VBL',
+  '65491320': Bic(
+    value: 'GENODES1VBL',
     bankName: 'Volksbank Raiffeisenbank Laupheim-Illertal (Gf P2)',
     bankShortName: 'VR Laupheim-Illertal',
     bankPostcode: '88471',
     bankLocation: 'Laupheim',
   ),
-  '65491510': Iban(
-    bic: 'GENODES1VRR',
+  '65491510': Bic(
+    value: 'GENODES1VRR',
     bankName: 'VR Bank Riedlingen-Federsee GS Uttenweiler',
     bankShortName: 'VR Bank Riedlingen-Federsee',
     bankPostcode: '88524',
     bankLocation: 'Uttenweiler',
   ),
-  '66000000': Iban(
-    bic: 'MARKDEF1660',
+  '66000000': Bic(
+    value: 'MARKDEF1660',
     bankName: 'BBk Karlsruhe',
     bankShortName: 'Bundesbank',
     bankPostcode: '76231',
     bankLocation: 'Karlsruhe',
   ),
-  '66010075': Iban(
-    bic: 'PBNKDEFFXXX',
+  '66010075': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '76127',
     bankLocation: 'Karlsruhe',
   ),
-  '66010200': Iban(
-    bic: 'BBSPDE6KXXX',
+  '66010200': Bic(
+    value: 'BBSPDE6KXXX',
     bankName: 'Deutsche Bausparkasse Badenia',
     bankShortName: 'Deutsche Bauspk Badenia',
     bankPostcode: '76114',
     bankLocation: 'Karlsruhe',
   ),
-  '66010700': Iban(
-    bic: 'LKBWDE6KXXX',
+  '66010700': Bic(
+    value: 'LKBWDE6KXXX',
     bankName: 'Landeskreditbank Baden-Württemberg Förderbank',
     bankShortName: 'L-Bank',
     bankPostcode: '70025',
     bankLocation: 'Stuttgart',
   ),
-  '66020020': Iban(
-    bic: 'SOLADEST663',
+  '66020020': Bic(
+    value: 'SOLADEST663',
     bankName: 'Baden-Württembergische Bank',
     bankShortName: 'BW Bank Karlsruhe',
     bankPostcode: '76005',
     bankLocation: 'Karlsruhe',
   ),
-  '66020286': Iban(
-    bic: 'HYVEDEMM475',
+  '66020286': Bic(
+    value: 'HYVEDEMM475',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '76481',
     bankLocation: 'Baden-Baden',
   ),
-  '66020500': Iban(
-    bic: 'BFSWDE33KRL',
+  '66020500': Bic(
+    value: 'BFSWDE33KRL',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Bank für Sozialwirtschaft',
     bankPostcode: '76003',
     bankLocation: 'Karlsruhe',
   ),
-  '66020566': Iban(
-    bic: 'BFSWDE33KRL',
+  '66020566': Bic(
+    value: 'BFSWDE33KRL',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Sozialbank Karlsruhe',
     bankPostcode: '76131',
     bankLocation: 'Karlsruhe',
   ),
-  '66030600': Iban(
-    bic: 'ISBKDEFXXXX',
+  '66030600': Bic(
+    value: 'ISBKDEFXXXX',
     bankName: 'Isbank eh Filiale Mannheim',
     bankShortName: 'Isbank eh Filiale Mannheim',
     bankPostcode: '60022',
     bankLocation: 'Frankfurt am Main',
   ),
-  '66040018': Iban(
-    bic: 'COBADEFFXXX',
+  '66040018': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Rastatt',
     bankShortName: 'Commerzbank',
     bankPostcode: '76403',
     bankLocation: 'Rastatt',
   ),
-  '66040026': Iban(
-    bic: 'COBADEFFXXX',
+  '66040026': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank/Kreditcenter Badenia',
     bankShortName: 'Commerzbank Karlsruhe',
     bankPostcode: '76007',
     bankLocation: 'Karlsruhe',
   ),
-  '66050000': Iban(
-    bic: 'SOLADEST660',
+  '66050000': Bic(
+    value: 'SOLADEST660',
     bankName: 'Landesbank Baden-Württemberg',
     bankShortName: 'Landesbank Baden-Württ',
     bankPostcode: '76133',
     bankLocation: 'Karlsruhe',
   ),
-  '66050101': Iban(
-    bic: 'KARSDE66XXX',
+  '66050101': Bic(
+    value: 'KARSDE66XXX',
     bankName: 'Sparkasse Karlsruhe',
     bankShortName: 'Spk Karlsruhe',
     bankPostcode: '76041',
     bankLocation: 'Karlsruhe',
   ),
-  '66051220': Iban(
-    bic: 'SOLADES1ETT',
+  '66051220': Bic(
+    value: 'SOLADES1ETT',
     bankName: 'Sparkasse Ettlingen -alt-',
     bankShortName: 'Sparkasse Ettlingen -alt-',
     bankPostcode: '76255',
     bankLocation: 'Ettlingen',
   ),
-  '66060000': Iban(
-    bic: 'GENODE6KXXX',
+  '66060000': Bic(
+    value: 'GENODE6KXXX',
     bankName: 'DZ BANK (Gf P2)',
     bankShortName: 'DZ BANK',
     bankPostcode: '76049',
     bankLocation: 'Karlsruhe',
   ),
-  '66060300': Iban(
-    bic: 'GENODE61KA3',
+  '66060300': Bic(
+    value: 'GENODE61KA3',
     bankName: 'Spar- und Kreditbank (Gf P2)',
     bankShortName: 'Spar- und Kreditbank',
     bankPostcode: '76036',
     bankLocation: 'Karlsruhe',
   ),
-  '66061407': Iban(
-    bic: 'GENODE61RH2',
+  '66061407': Bic(
+    value: 'GENODE61RH2',
     bankName: 'Spar- und Kreditbank (Gf P2)',
     bankShortName: 'Spar- u Kreditbk Rheinstett',
     bankPostcode: '76287',
     bankLocation: 'Rheinstetten',
   ),
-  '66061724': Iban(
-    bic: 'GENODE61WGA',
+  '66061724': Bic(
+    value: 'GENODE61WGA',
     bankName: 'Volksbank Stutensee-Weingarten (Gf P2)',
     bankShortName: 'VB Stutensee-Weingarten',
     bankPostcode: '76353',
     bankLocation: 'Weingarten (Baden)',
   ),
-  '66062138': Iban(
-    bic: 'GENODE61EGG',
+  '66062138': Bic(
+    value: 'GENODE61EGG',
     bankName: 'Spar- und Kreditbank Hardt (Gf P2)',
     bankShortName: 'Spar- u Kreditbank Hardt',
     bankPostcode: '76344',
     bankLocation: 'Eggenstein-Leopoldshafen',
   ),
-  '66062366': Iban(
-    bic: 'GENODE61DET',
+  '66062366': Bic(
+    value: 'GENODE61DET',
     bankName: 'Raiffeisenbank Hardt-Bruhrain (Gf P2)',
     bankShortName: 'Raiffbk Hardt-Bruhrain',
     bankPostcode: '76704',
     bankLocation: 'Dettenheim',
   ),
-  '66069103': Iban(
-    bic: 'GENODE61ELZ',
+  '66069103': Bic(
+    value: 'GENODE61ELZ',
     bankName: 'Raiffeisenbank Elztal (Gf P2)',
     bankShortName: 'Raiffeisenbank Elztal',
     bankPostcode: '74832',
     bankLocation: 'Elztal',
   ),
-  '66069104': Iban(
-    bic: 'GENODE61DAC',
+  '66069104': Bic(
+    value: 'GENODE61DAC',
     bankName: 'Spar- und Kreditbank (Gf P2)',
     bankShortName: 'Spar- u Kreditbk Dauchingen',
     bankPostcode: '78083',
     bankLocation: 'Dauchingen',
   ),
-  '66069342': Iban(
-    bic: 'GENODE61KTH',
+  '66069342': Bic(
+    value: 'GENODE61KTH',
     bankName: 'Volksbank Krautheim (Gf P2)',
     bankShortName: 'Volksbank Krautheim',
     bankPostcode: '74238',
     bankLocation: 'Krautheim',
   ),
-  '66070004': Iban(
-    bic: 'DEUTDESM664',
+  '66070004': Bic(
+    value: 'DEUTDESM664',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '76256',
     bankLocation: 'Ettlingen',
   ),
-  '66070024': Iban(
-    bic: 'DEUTDEDB664',
+  '66070024': Bic(
+    value: 'DEUTDEDB664',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '76256',
     bankLocation: 'Ettlingen',
   ),
-  '66070213': Iban(
-    bic: 'DEUTDESMP12',
+  '66070213': Bic(
+    value: 'DEUTDESMP12',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '76137',
     bankLocation: 'Karlsruhe',
   ),
-  '66070224': Iban(
-    bic: 'DEUTDEDBP12',
+  '66070224': Bic(
+    value: 'DEUTDEDBP12',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '76137',
     bankLocation: 'Karlsruhe',
   ),
-  '66080052': Iban(
-    bic: 'DRESDEFF660',
+  '66080052': Bic(
+    value: 'DRESDEFF660',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bruchsal',
     bankPostcode: '76646',
     bankLocation: 'Bruchsal',
   ),
-  '66090800': Iban(
-    bic: 'GENODE61BBB',
+  '66090800': Bic(
+    value: 'GENODE61BBB',
     bankName: 'BBBank Karlsruhe',
     bankShortName: 'BBBank (Gf P2)',
     bankPostcode: '76119',
     bankLocation: 'Karlsruhe',
   ),
-  '66090900': Iban(
-    bic: 'GENODEF1P10',
+  '66090900': Bic(
+    value: 'GENODEF1P10',
     bankName: 'PSD Bank Karlsruhe-Neustadt (Gf P2)',
     bankShortName: 'PSD Bank Karlsruhe-Neustadt',
     bankPostcode: '76033',
     bankLocation: 'Karlsruhe',
   ),
-  '66091200': Iban(
-    bic: 'GENODE61ETT',
+  '66091200': Bic(
+    value: 'GENODE61ETT',
     bankName: 'Volksbank Ettlingen Zw Reichenbach',
     bankShortName: 'Volksbank Ettlingen',
     bankPostcode: '76337',
     bankLocation: 'Waldbronn',
   ),
-  '66190000': Iban(
-    bic: 'GENODE61KA1',
+  '66190000': Bic(
+    value: 'GENODE61KA1',
     bankName: 'Volksbank Karlsruhe Baden-Baden (Gf P2)',
     bankShortName: 'VB Karlsruhe Baden-Baden',
     bankPostcode: '76045',
     bankLocation: 'Karlsruhe',
   ),
-  '66240002': Iban(
-    bic: 'COBADEFFXXX',
+  '66240002': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bühl Baden',
     bankShortName: 'Commerzbank',
     bankPostcode: '77815',
     bankLocation: 'Bühl',
   ),
-  '66250030': Iban(
-    bic: 'SOLADES1BAD',
+  '66250030': Bic(
+    value: 'SOLADES1BAD',
     bankName: 'Sparkasse Baden-Baden Gaggenau',
     bankShortName: 'Spk Baden-Baden Gaggenau',
     bankPostcode: '76476',
     bankLocation: 'Bischweier',
   ),
-  '66251434': Iban(
-    bic: 'SOLADES1BHL',
+  '66251434': Bic(
+    value: 'SOLADES1BHL',
     bankName: 'Sparkasse Bühl',
     bankShortName: 'Sparkasse Bühl',
     bankPostcode: '76547',
     bankLocation: 'Sinzheim',
   ),
-  '66261092': Iban(
-    bic: 'GENODE61BHT',
+  '66261092': Bic(
+    value: 'GENODE61BHT',
     bankName: 'Spar- und Kreditbank (Gf P2)',
     bankShortName: 'Spar-u Kreditbank Bühlertal',
     bankPostcode: '77830',
     bankLocation: 'Bühlertal',
   ),
-  '66261416': Iban(
-    bic: 'GENODE61ALR',
+  '66261416': Bic(
+    value: 'GENODE61ALR',
     bankName: 'Raiffeisenbank Altschweier (Gf P2)',
     bankShortName: 'Raiffeisenbank Altschweier',
     bankPostcode: '77804',
     bankLocation: 'Bühl',
   ),
-  '66270001': Iban(
-    bic: 'DEUTDESM669',
+  '66270001': Bic(
+    value: 'DEUTDESM669',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '77801',
     bankLocation: 'Bühl',
   ),
-  '66270024': Iban(
-    bic: 'DEUTDEDB665',
+  '66270024': Bic(
+    value: 'DEUTDEDB665',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '76404',
     bankLocation: 'Rastatt',
   ),
-  '66280053': Iban(
-    bic: 'DRESDEFF662',
+  '66280053': Bic(
+    value: 'DRESDEFF662',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bühl Baden',
     bankPostcode: '77815',
     bankLocation: 'Bühl',
   ),
-  '66290000': Iban(
-    bic: 'VBRADE6KXXX',
+  '66290000': Bic(
+    value: 'VBRADE6KXXX',
     bankName: 'Volksbank Baden-Baden Rastatt (Gf P2)',
     bankShortName: 'Volksbank Baden-Bdn Rastatt',
     bankPostcode: '76437',
     bankLocation: 'Rastatt',
   ),
-  '66291300': Iban(
-    bic: 'GENODE61ACH',
+  '66291300': Bic(
+    value: 'GENODE61ACH',
     bankName: 'Volksbank Achern (Gf P2)',
     bankShortName: 'Volksbank Achern',
     bankPostcode: '77846',
     bankLocation: 'Achern',
   ),
-  '66291400': Iban(
-    bic: 'GENODE61BHL',
+  '66291400': Bic(
+    value: 'GENODE61BHL',
     bankName: 'Volksbank Bühl Zw Steinbach',
     bankShortName: 'Volksbank Bühl',
     bankPostcode: '76534',
     bankLocation: 'Baden-Baden',
   ),
-  '66340018': Iban(
-    bic: 'COBADEFFXXX',
+  '66340018': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bruchsal',
     bankShortName: 'Commerzbank',
     bankPostcode: '76643',
     bankLocation: 'Bruchsal',
   ),
-  '66350036': Iban(
-    bic: 'BRUSDE66XXX',
+  '66350036': Bic(
+    value: 'BRUSDE66XXX',
     bankName: 'Sparkasse Kraichgau Bruchsal-Bretten-Sinsheim',
     bankShortName: 'Sparkasse Kraichgau',
     bankPostcode: '74927',
     bankLocation: 'Eschelbronn',
   ),
-  '66391200': Iban(
-    bic: 'GENODE61BTT',
+  '66391200': Bic(
+    value: 'GENODE61BTT',
     bankName: 'Volksbank Bruchsal-Bretten (Gf P2)',
     bankShortName: 'VB Bruchsal-Bretten',
     bankPostcode: '75015',
     bankLocation: 'Bretten',
   ),
-  '66391600': Iban(
-    bic: 'GENODE61ORH',
+  '66391600': Bic(
+    value: 'GENODE61ORH',
     bankName: 'Volksbank Bruhrain-Kraich-Hardt (Gf P2)',
     bankShortName: 'VB Bruhrain-Kraich-Hardt',
     bankPostcode: '68790',
     bankLocation: 'Oberhausen-Rheinhausen',
   ),
-  '66432700': Iban(
-    bic: 'FAITDE66XXX',
+  '66432700': Bic(
+    value: 'FAITDE66XXX',
     bankName: 'Bankhaus J. Faißt',
     bankShortName: 'Bankhaus J. Faißt',
     bankPostcode: '77706',
     bankLocation: 'Wolfach',
   ),
-  '66440084': Iban(
-    bic: 'COBADEFFXXX',
+  '66440084': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Offenburg',
     bankShortName: 'Commerzbank',
     bankPostcode: '77603',
     bankLocation: 'Offenburg',
   ),
-  '66450050': Iban(
-    bic: 'SOLADES1OFG',
+  '66450050': Bic(
+    value: 'SOLADES1OFG',
     bankName: 'Sparkasse Offenburg/Ortenau',
     bankShortName: 'Sparkasse Offenburg/Ortenau',
     bankPostcode: '77933',
     bankLocation: 'Lahr',
   ),
-  '66451346': Iban(
-    bic: 'SOLADES1GEB',
+  '66451346': Bic(
+    value: 'SOLADES1GEB',
     bankName: 'Sparkasse Gengenbach -alt-',
     bankShortName: 'Spk Gengenbach -alt-',
     bankPostcode: '77723',
     bankLocation: 'Gengenbach',
   ),
-  '66451548': Iban(
-    bic: 'SOLADES1HAL',
+  '66451548': Bic(
+    value: 'SOLADES1HAL',
     bankName: 'Sparkasse Kinzigtal',
     bankShortName: 'Spk Kinzigtal',
     bankPostcode: '77716',
     bankLocation: 'Haslach im Kinzigtal',
   ),
-  '66451862': Iban(
-    bic: 'SOLADES1KEL',
+  '66451862': Bic(
+    value: 'SOLADES1KEL',
     bankName: 'Sparkasse Hanauerland',
     bankShortName: 'Spk Hanauerland',
     bankPostcode: '77839',
     bankLocation: 'Lichtenau',
   ),
-  '66452776': Iban(
-    bic: 'SOLADES1WOF',
+  '66452776': Bic(
+    value: 'SOLADES1WOF',
     bankName: 'Sparkasse Wolfach',
     bankShortName: 'Spk Wolfach',
     bankPostcode: '77761',
     bankLocation: 'Schiltach',
   ),
-  '66470024': Iban(
-    bic: 'DEUTDEDB971',
+  '66470024': Bic(
+    value: 'DEUTDEDB971',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '77695',
     bankLocation: 'Oberkirch',
   ),
-  '66470035': Iban(
-    bic: 'DEUTDE6F667',
+  '66470035': Bic(
+    value: 'DEUTDE6F667',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '77695',
     bankLocation: 'Oberkirch',
   ),
-  '66490000': Iban(
-    bic: 'GENODE61OG1',
+  '66490000': Bic(
+    value: 'GENODE61OG1',
     bankName: 'Volksbank (Gf P2)',
     bankShortName: 'Volksbank',
     bankPostcode: '77615',
     bankLocation: 'Offenburg',
   ),
-  '66491800': Iban(
-    bic: 'GENODE61BHL',
+  '66491800': Bic(
+    value: 'GENODE61BHL',
     bankName: 'Volksbank Bühl Zw Willstätt',
     bankShortName: 'Volksbank Bühl Fil Kehl',
     bankPostcode: '77731',
     bankLocation: 'Willstätt',
   ),
-  '66492600': Iban(
-    bic: 'GENODE61APP',
+  '66492600': Bic(
+    value: 'GENODE61APP',
     bankName: 'Volksbank Appenweier-Urloffen Appenweier -alt-',
     bankShortName: 'VB Appenweier -alt-',
     bankPostcode: '77762',
     bankLocation: 'Appenweier',
   ),
-  '66492700': Iban(
-    bic: 'GENODE61KZT',
+  '66492700': Bic(
+    value: 'GENODE61KZT',
     bankName: 'Volksbank Mittlerer Schwarzwald (Gf P2)',
     bankShortName: 'VB Mittlerer Schwarzwald',
     bankPostcode: '77706',
     bankLocation: 'Wolfach',
   ),
-  '66550070': Iban(
-    bic: 'SOLADES1RAS',
+  '66550070': Bic(
+    value: 'SOLADES1RAS',
     bankName: 'Sparkasse Rastatt-Gernsbach',
     bankShortName: 'Sparkasse Rastatt-Gernsbach',
     bankPostcode: '76473',
     bankLocation: 'Iffezheim',
   ),
-  '66562053': Iban(
-    bic: 'GENODE61DUR',
+  '66562053': Bic(
+    value: 'GENODE61DUR',
     bankName: 'Raiffeisenbank Südhardt Durmersheim (Gf P2)',
     bankShortName: 'Rb Südhardt Durmersheim',
     bankPostcode: '76448',
     bankLocation: 'Durmersheim',
   ),
-  '66562300': Iban(
-    bic: 'GENODE61IFF',
+  '66562300': Bic(
+    value: 'GENODE61IFF',
     bankName: 'VR-Bank in Mittelbaden (Gf P2)',
     bankShortName: 'VR-Bank Mittelb Iffezheim',
     bankPostcode: '76473',
     bankLocation: 'Iffezheim',
   ),
-  '66640035': Iban(
-    bic: 'COBADEFFXXX',
+  '66640035': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Mühlacker',
     bankShortName: 'Commerzbank',
     bankPostcode: '75405',
     bankLocation: 'Mühlacker',
   ),
-  '66650085': Iban(
-    bic: 'PZHSDE66XXX',
+  '66650085': Bic(
+    value: 'PZHSDE66XXX',
     bankName: 'Sparkasse Pforzheim Calw',
     bankShortName: 'Sparkasse Pforzheim Calw',
     bankPostcode: '75172',
     bankLocation: 'Pforzheim',
   ),
-  '66661244': Iban(
-    bic: 'GENODE61NBT',
+  '66661244': Bic(
+    value: 'GENODE61NBT',
     bankName: 'Raiffeisenbank Bauschlott (Gf P2)',
     bankShortName: 'Raiffeisenbank Bauschlott',
     bankPostcode: '75245',
     bankLocation: 'Neulingen',
   ),
-  '66661329': Iban(
-    bic: 'GENODE61KBR',
+  '66661329': Bic(
+    value: 'GENODE61KBR',
     bankName: 'Raiffeisenbank Kieselbronn (Gf P2)',
     bankShortName: 'Raiffeisenbank Kieselbronn',
     bankPostcode: '75249',
     bankLocation: 'Kieselbronn',
   ),
-  '66661454': Iban(
-    bic: 'GENODE61NFO',
+  '66661454': Bic(
+    value: 'GENODE61NFO',
     bankName: 'VR Bank im Enzkreis (Gf P2)',
     bankShortName: 'VR Bank im Enzkreis',
     bankPostcode: '75219',
     bankLocation: 'Niefern-Öschelbronn',
   ),
-  '66662155': Iban(
-    bic: 'GENODE61ERS',
+  '66662155': Bic(
+    value: 'GENODE61ERS',
     bankName: 'Raiffeisenbank Ersingen (Gf P2)',
     bankShortName: 'Raiffeisenbank Ersingen',
     bankPostcode: '75234',
     bankLocation: 'Kämpfelbach',
   ),
-  '66662220': Iban(
-    bic: 'GENODE61KBS',
+  '66662220': Bic(
+    value: 'GENODE61KBS',
     bankName: 'Volksbank Stein Eisingen (Gf P2)',
     bankShortName: 'Volksbank Stein Eisingen',
     bankPostcode: '75203',
     bankLocation: 'Königsbach-Stein',
   ),
-  '66670006': Iban(
-    bic: 'DEUTDESM677',
+  '66670006': Bic(
+    value: 'DEUTDESM677',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '75401',
     bankLocation: 'Mühlacker',
   ),
-  '66670024': Iban(
-    bic: 'DEUTDEDB677',
+  '66670024': Bic(
+    value: 'DEUTDEDB677',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '75401',
     bankLocation: 'Mühlacker',
   ),
-  '66680013': Iban(
-    bic: 'DRESDEFF666',
+  '66680013': Bic(
+    value: 'DRESDEFF666',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Mühlacker',
     bankPostcode: '75405',
     bankLocation: 'Mühlacker',
   ),
-  '66690000': Iban(
-    bic: 'VBPFDE66XXX',
+  '66690000': Bic(
+    value: 'VBPFDE66XXX',
     bankName: 'Volksbank Pforzheim Zw Wildbad',
     bankShortName: 'Volksbank Pforzheim',
     bankPostcode: '75323',
     bankLocation: 'Bad Wildbad',
   ),
-  '66692300': Iban(
-    bic: 'GENODE61WIR',
+  '66692300': Bic(
+    value: 'GENODE61WIR',
     bankName: 'VR Bank Enz plus (Gf P2)',
     bankShortName: 'VR Bank Enz plus',
     bankPostcode: '75196',
     bankLocation: 'Remchingen',
   ),
-  '66762332': Iban(
-    bic: 'GENODE61KIR',
+  '66762332': Bic(
+    value: 'GENODE61KIR',
     bankName: 'Raiffeisenbank Kraichgau (Gf P2)',
     bankShortName: 'Raiffbk Kraichgau',
     bankPostcode: '74912',
     bankLocation: 'Kirchardt',
   ),
-  '66762433': Iban(
-    bic: 'GENODE61NEU',
+  '66762433': Bic(
+    value: 'GENODE61NEU',
     bankName: 'Raiffeisenbank Neudenau-Stein-Herbolzheim (Gf P2)',
     bankShortName: 'Raiffeisenbank Neudenau',
     bankPostcode: '74861',
     bankLocation: 'Neudenau',
   ),
-  '67020190': Iban(
-    bic: 'HYVEDEMM489',
+  '67020190': Bic(
+    value: 'HYVEDEMM489',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '68159',
     bankLocation: 'Mannheim',
   ),
-  '67040031': Iban(
-    bic: 'COBADEFFXXX',
+  '67040031': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Grünstadt',
     bankShortName: 'Commerzbank',
     bankPostcode: '67269',
     bankLocation: 'Grünstadt',
   ),
-  '67040060': Iban(
-    bic: 'COBADEFFXXX',
+  '67040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Mannheim',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '68161',
     bankLocation: 'Mannheim',
   ),
-  '67040061': Iban(
-    bic: 'COBADEFFXXX',
+  '67040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Mannheim',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '68161',
     bankLocation: 'Mannheim',
   ),
-  '67040085': Iban(
-    bic: 'COBADEFFXXX',
+  '67040085': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf WK, Mannheim',
     bankShortName: 'Commerzbank, Gf Web-K',
     bankPostcode: '68006',
     bankLocation: 'Mannheim',
   ),
-  '67050505': Iban(
-    bic: 'MANSDE66XXX',
+  '67050505': Bic(
+    value: 'MANSDE66XXX',
     bankName: 'Sparkasse Rhein Neckar Nord',
     bankShortName: 'Spk Rhein Neckar Nord',
     bankPostcode: '69198',
     bankLocation: 'Schriesheim',
   ),
-  '67051203': Iban(
-    bic: 'SOLADES1HOC',
+  '67051203': Bic(
+    value: 'SOLADES1HOC',
     bankName: 'Sparkasse Hockenheim',
     bankShortName: 'Spk Hockenheim',
     bankPostcode: '68799',
     bankLocation: 'Reilingen',
   ),
-  '67060031': Iban(
-    bic: 'GENODE61MA3',
+  '67060031': Bic(
+    value: 'GENODE61MA3',
     bankName: 'Volksbank Sandhofen (Gf P2)',
     bankShortName: 'Volksbank Ma-Sandhofen',
     bankPostcode: '68273',
     bankLocation: 'Mannheim',
   ),
-  '67070010': Iban(
-    bic: 'DEUTDESM670',
+  '67070010': Bic(
+    value: 'DEUTDESM670',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '69442',
     bankLocation: 'Weinheim',
   ),
-  '67070024': Iban(
-    bic: 'DEUTDEDB670',
+  '67070024': Bic(
+    value: 'DEUTDEDB670',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '69442',
     bankLocation: 'Weinheim',
   ),
-  '67080050': Iban(
-    bic: 'DRESDEFF670',
+  '67080050': Bic(
+    value: 'DRESDEFF670',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Mosbach Baden',
     bankPostcode: '74821',
     bankLocation: 'Mosbach',
   ),
-  '67080085': Iban(
-    bic: 'DRESDEFFI60',
+  '67080085': Bic(
+    value: 'DRESDEFFI60',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITGK2 Mannh',
     bankPostcode: '68134',
     bankLocation: 'Mannheim',
   ),
-  '67080086': Iban(
-    bic: 'DRESDEFFI61',
+  '67080086': Bic(
+    value: 'DRESDEFFI61',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 3',
     bankShortName: 'Commerzbank ITGK3 Mannh',
     bankPostcode: '68134',
     bankLocation: 'Mannheim',
   ),
-  '67089440': Iban(
-    bic: 'DRESDEFFI22',
+  '67089440': Bic(
+    value: 'DRESDEFFI22',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Mannheim',
     bankPostcode: '70049',
     bankLocation: 'Stuttgart',
   ),
-  '67090000': Iban(
-    bic: 'GENODE61MA2',
+  '67090000': Bic(
+    value: 'GENODE61MA2',
     bankName: 'VR Bank Rhein-Neckar (Gf P2)',
     bankShortName: 'VR Bank Rhein-Neckar',
     bankPostcode: '68165',
     bankLocation: 'Mannheim',
   ),
-  '67092300': Iban(
-    bic: 'GENODE61WNM',
+  '67092300': Bic(
+    value: 'GENODE61WNM',
     bankName: 'Volksbank Kurpfalz (Gf P2)',
     bankShortName: 'Volksbank Kurpfalz',
     bankPostcode: '69018',
     bankLocation: 'Heidelberg',
   ),
-  '67220286': Iban(
-    bic: 'HYVEDEMM479',
+  '67220286': Bic(
+    value: 'HYVEDEMM479',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '69004',
     bankLocation: 'Heidelberg',
   ),
-  '67230000': Iban(
-    bic: 'MLPBDE61XXX',
+  '67230000': Bic(
+    value: 'MLPBDE61XXX',
     bankName: 'MLP Banking',
     bankShortName: 'MLP Bank',
     bankPostcode: '69168',
     bankLocation: 'Wiesloch',
   ),
-  '67230001': Iban(
-    bic: 'MLPBDE61001',
+  '67230001': Bic(
+    value: 'MLPBDE61001',
     bankName: 'MLP Banking Zw CS (Gf P2)',
     bankShortName: 'MLP Banking Zw CS',
     bankPostcode: '69168',
     bankLocation: 'Wiesloch',
   ),
-  '67240039': Iban(
-    bic: 'COBADEFFXXX',
+  '67240039': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Eppelheim',
     bankShortName: 'Commerzbank',
     bankPostcode: '69214',
     bankLocation: 'Eppelheim',
   ),
-  '67250020': Iban(
-    bic: 'SOLADES1HDB',
+  '67250020': Bic(
+    value: 'SOLADES1HDB',
     bankName: 'Sparkasse Heidelberg',
     bankShortName: 'Spk Heidelberg',
     bankPostcode: '69251',
     bankLocation: 'Gaiberg',
   ),
-  '67262243': Iban(
-    bic: 'GENODE61WIB',
+  '67262243': Bic(
+    value: 'GENODE61WIB',
     bankName: 'Raiffeisenbank Baiertal (Gf P2)',
     bankShortName: 'Raiffeisenbank Baiertal',
     bankPostcode: '69168',
     bankLocation: 'Wiesloch',
   ),
-  '67262550': Iban(
-    bic: 'GENODE61LRO',
+  '67262550': Bic(
+    value: 'GENODE61LRO',
     bankName: 'Volksbank Rot St Leon-Rot',
     bankShortName: 'Volksbank Rot (Gf P2)',
     bankPostcode: '68789',
     bankLocation: 'St. Leon-Rot',
   ),
-  '67270003': Iban(
-    bic: 'DEUTDESM678',
+  '67270003': Bic(
+    value: 'DEUTDESM678',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '69152',
     bankLocation: 'Wiesloch',
   ),
-  '67270024': Iban(
-    bic: 'DEUTDEDB678',
+  '67270024': Bic(
+    value: 'DEUTDEDB678',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '69152',
     bankLocation: 'Wiesloch',
   ),
-  '67280051': Iban(
-    bic: 'DRESDEFF672',
+  '67280051': Bic(
+    value: 'DRESDEFF672',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Eppelheim',
     bankPostcode: '69214',
     bankLocation: 'Eppelheim',
   ),
-  '67290000': Iban(
-    bic: 'GENODE61HD1',
+  '67290000': Bic(
+    value: 'GENODE61HD1',
     bankName: 'Heidelberger Volksbank (Gf P2)',
     bankShortName: 'Heidelberger Volksbank',
     bankPostcode: '69018',
     bankLocation: 'Heidelberg',
   ),
-  '67290100': Iban(
-    bic: 'GENODE61HD3',
+  '67290100': Bic(
+    value: 'GENODE61HD3',
     bankName: 'Volksbank Kurpfalz (Gf P2)',
     bankShortName: 'Volksbank Kurpfalz',
     bankPostcode: '69018',
     bankLocation: 'Heidelberg',
   ),
-  '67291700': Iban(
-    bic: 'GENODE61NGD',
+  '67291700': Bic(
+    value: 'GENODE61NGD',
     bankName: 'Volksbank Neckartal (Gf P2)',
     bankShortName: 'Volksbank Neckartal',
     bankPostcode: '69401',
     bankLocation: 'Eberbach',
   ),
-  '67291900': Iban(
-    bic: 'GENODE61SSH',
+  '67291900': Bic(
+    value: 'GENODE61SSH',
     bankName: 'Volksbank Kraichgau (Gf P2)',
     bankShortName: 'Volksbank Kraichgau',
     bankPostcode: '74889',
     bankLocation: 'Sinsheim',
   ),
-  '67292200': Iban(
-    bic: 'GENODE61WIE',
+  '67292200': Bic(
+    value: 'GENODE61WIE',
     bankName: 'Volksbank Kraichgau (Gf P2)',
     bankShortName: 'Volksbank Kraichgau (Gf P2)',
     bankPostcode: '69157',
     bankLocation: 'Wiesloch',
   ),
-  '67352565': Iban(
-    bic: 'SOLADES1TBB',
+  '67352565': Bic(
+    value: 'SOLADES1TBB',
     bankName: 'Sparkasse Tauberfranken',
     bankShortName: 'Sparkasse Tauberfranken',
     bankPostcode: '97990',
     bankLocation: 'Weikersheim',
   ),
-  '67390000': Iban(
-    bic: 'GENODE61WTH',
+  '67390000': Bic(
+    value: 'GENODE61WTH',
     bankName: 'Volksbank Main-Tauber (Gf P2)',
     bankShortName: 'VB Main-Tauber',
     bankPostcode: '97866',
     bankLocation: 'Wertheim',
   ),
-  '67450048': Iban(
-    bic: 'SOLADES1MOS',
+  '67450048': Bic(
+    value: 'SOLADES1MOS',
     bankName: 'Sparkasse Neckartal-Odenwald',
     bankShortName: 'Spk Neckartal-Odenwald',
     bankPostcode: '74740',
     bankLocation: 'Adelsheim',
   ),
-  '67460041': Iban(
-    bic: 'GENODE61MOS',
+  '67460041': Bic(
+    value: 'GENODE61MOS',
     bankName: 'Volksbank Mosbach Zw',
     bankShortName: 'Volksbank Mosbach',
     bankPostcode: '74842',
     bankLocation: 'Billigheim',
   ),
-  '67461424': Iban(
-    bic: 'GENODE61BUC',
+  '67461424': Bic(
+    value: 'GENODE61BUC',
     bankName: 'Volksbank Franken Buchen',
     bankShortName: 'Volksbank Franken Zw',
     bankPostcode: '74706',
     bankLocation: 'Osterburken',
   ),
-  '67461733': Iban(
-    bic: 'GENODE61RNG',
+  '67461733': Bic(
+    value: 'GENODE61RNG',
     bankName: 'Volksbank Kirnau (Gf P2)',
     bankShortName: 'Volksbank Kirnau',
     bankPostcode: '74749',
     bankLocation: 'Rosenberg',
   ),
-  '67462368': Iban(
-    bic: 'GENODE61LMB',
+  '67462368': Bic(
+    value: 'GENODE61LMB',
     bankName: 'Volksbank Limbach (Gf P2)',
     bankShortName: 'Volksbank Limbach',
     bankPostcode: '74835',
     bankLocation: 'Limbach',
   ),
-  '68000000': Iban(
-    bic: 'MARKDEF1680',
+  '68000000': Bic(
+    value: 'MARKDEF1680',
     bankName: 'BBk Freiburg im Breisgau',
     bankShortName: 'Bundesbank',
     bankPostcode: '79010',
     bankLocation: 'Freiburg im Breisgau',
   ),
-  '68020186': Iban(
-    bic: 'HYVEDEMM357',
+  '68020186': Bic(
+    value: 'HYVEDEMM357',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '77652',
     bankLocation: 'Offenburg',
   ),
-  '68030000': Iban(
-    bic: 'BKMADE61XXX',
+  '68030000': Bic(
+    value: 'BKMADE61XXX',
     bankName: 'Bankhaus E Mayer Freiburg B',
     bankShortName: 'Bankhaus E. Mayer',
     bankPostcode: '79002',
     bankLocation: 'Freiburg im Breisgau',
   ),
-  '68040007': Iban(
-    bic: 'COBADEFFXXX',
+  '68040007': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Säckingen',
     bankShortName: 'Commerzbank',
     bankPostcode: '79713',
     bankLocation: 'Bad Säckingen',
   ),
-  '68050101': Iban(
-    bic: 'FRSPDE66XXX',
+  '68050101': Bic(
+    value: 'FRSPDE66XXX',
     bankName: 'Sparkasse Freiburg-Nördlicher Breisgau',
     bankShortName: 'Spk Freiburg-Nördl.Breisgau',
     bankPostcode: '79341',
     bankLocation: 'Kenzingen',
   ),
-  '68051004': Iban(
-    bic: 'SOLADES1HSW',
+  '68051004': Bic(
+    value: 'SOLADES1HSW',
     bankName: 'Spk Hochschwarzwald Kirchza',
     bankShortName: 'Sparkasse Hochschwarzwald',
     bankPostcode: '79199',
     bankLocation: 'Kirchzarten',
   ),
-  '68051207': Iban(
-    bic: 'SOLADES1BND',
+  '68051207': Bic(
+    value: 'SOLADES1BND',
     bankName: 'Sparkasse Bonndorf-Stühlingen',
     bankShortName: 'Spk Bonndorf-Stühlingen',
     bankPostcode: '79805',
     bankLocation: 'Eggingen',
   ),
-  '68052230': Iban(
-    bic: 'SOLADES1STB',
+  '68052230': Bic(
+    value: 'SOLADES1STB',
     bankName: 'Sparkasse St. Blasien',
     bankShortName: 'Spk St. Blasien',
     bankPostcode: '79875',
     bankLocation: 'Dachsberg (Südschwarzwald)',
   ),
-  '68052328': Iban(
-    bic: 'SOLADES1STF',
+  '68052328': Bic(
+    value: 'SOLADES1STF',
     bankName: 'Sparkasse Staufen-Breisach',
     bankShortName: 'Spk Staufen-Breisach',
     bankPostcode: '79206',
     bankLocation: 'Breisach am Rhein',
   ),
-  '68052863': Iban(
-    bic: 'SOLADES1SCH',
+  '68052863': Bic(
+    value: 'SOLADES1SCH',
     bankName: 'Sparkasse Schönau-Todtnau',
     bankShortName: 'Spk Schönau-Todtnau',
     bankPostcode: '79677',
     bankLocation: 'Schönau im Schwarzwald',
   ),
-  '68061505': Iban(
-    bic: 'GENODE61IHR',
+  '68061505': Bic(
+    value: 'GENODE61IHR',
     bankName: 'Volksbank Breisgau-Markgräflerland (Gf P2)',
     bankShortName: 'VB Breisgau-Markgräflerland',
     bankPostcode: '79427',
     bankLocation: 'Eschbach',
   ),
-  '68062105': Iban(
-    bic: 'GENODE61DEN',
+  '68062105': Bic(
+    value: 'GENODE61DEN',
     bankName: 'Raiffeisenbank Denzlingen-Sexau (Gf P2)',
     bankShortName: 'Raiffbk Denzlingen-Sexau',
     bankPostcode: '79211',
     bankLocation: 'Denzlingen',
   ),
-  '68062730': Iban(
-    bic: 'GENODE61WYH',
+  '68062730': Bic(
+    value: 'GENODE61WYH',
     bankName: 'Raiffeisenbank Wyhl (Gf P2)',
     bankShortName: 'Raiffbk Wyhl Kaiserstuhl',
     bankPostcode: '79369',
     bankLocation: 'Wyhl am Kaiserstuhl',
   ),
-  '68063479': Iban(
-    bic: 'GENODE61VOK',
+  '68063479': Bic(
+    value: 'GENODE61VOK',
     bankName: 'Raiffeisenbank Kaiserstuhl Vogtsburg Zw',
     bankShortName: 'Raiffeisenbank Kaiserstuhl',
     bankPostcode: '79361',
     bankLocation: 'Sasbach am Kaiserstuhl',
   ),
-  '68064222': Iban(
-    bic: 'GENODE61GUN',
+  '68064222': Bic(
+    value: 'GENODE61GUN',
     bankName: 'Raiffeisenbank im Breisgau (Gf P2)',
     bankShortName: 'Raiffeisenbank im Breisgau',
     bankPostcode: '79194',
     bankLocation: 'Gundelfingen',
   ),
-  '68070024': Iban(
-    bic: 'DEUTDEDB687',
+  '68070024': Bic(
+    value: 'DEUTDEDB687',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '79175',
     bankLocation: 'Waldkirch',
   ),
-  '68070030': Iban(
-    bic: 'DEUTDE6F689',
+  '68070030': Bic(
+    value: 'DEUTDE6F689',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '79812',
     bankLocation: 'Titisee-Neustadt',
   ),
-  '68070212': Iban(
-    bic: 'DEUTDE6FP11',
+  '68070212': Bic(
+    value: 'DEUTDE6FP11',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '79098',
     bankLocation: 'Freiburg im Breisgau',
   ),
-  '68070224': Iban(
-    bic: 'DEUTDEDBP11',
+  '68070224': Bic(
+    value: 'DEUTDEDBP11',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '79098',
     bankLocation: 'Freiburg im Breisgau',
   ),
-  '68080030': Iban(
-    bic: 'DRESDEFF680',
+  '68080030': Bic(
+    value: 'DRESDEFF680',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bad Säckingen',
     bankPostcode: '79713',
     bankLocation: 'Bad Säckingen',
   ),
-  '68080031': Iban(
-    bic: 'DRESDEFFI44',
+  '68080031': Bic(
+    value: 'DRESDEFFI44',
     bankName: 'Commerzbank vormals Dresdner Bank Zw Münsterstraße',
     bankShortName: 'Commerzbank Zw Ms Freibg',
     bankPostcode: '79003',
     bankLocation: 'Freiburg im Breisgau',
   ),
-  '68080085': Iban(
-    bic: 'DRESDEFFI62',
+  '68080085': Bic(
+    value: 'DRESDEFFI62',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Freibrg',
     bankPostcode: '79042',
     bankLocation: 'Freiburg im Breisgau',
   ),
-  '68080086': Iban(
-    bic: 'DRESDEFFJ22',
+  '68080086': Bic(
+    value: 'DRESDEFFJ22',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITGK2 Freibrg',
     bankPostcode: '79001',
     bankLocation: 'Freiburg im Breisgau',
   ),
-  '68090000': Iban(
-    bic: 'GENODE61FR1',
+  '68090000': Bic(
+    value: 'GENODE61FR1',
     bankName: 'Volksbank Todtnau Zndl d Volksbank Freiburg',
     bankShortName: 'Volksbank Todtnau',
     bankPostcode: '79674',
     bankLocation: 'Todtnau',
   ),
-  '68090900': Iban(
-    bic: 'GENODEF1P07',
+  '68090900': Bic(
+    value: 'GENODEF1P07',
     bankName: 'PSD Bank RheinNeckarSaar',
     bankShortName: 'PSD Bank RheinNeckarSaar',
     bankPostcode: '79120',
     bankLocation: 'Freiburg im Breisgau',
   ),
-  '68091900': Iban(
-    bic: 'GENODE61MHL',
+  '68091900': Bic(
+    value: 'GENODE61MHL',
     bankName: 'Volksbank Müllheim (Gf P2)',
     bankShortName: 'Volksbank Müllheim',
     bankPostcode: '79371',
     bankLocation: 'Müllheim',
   ),
-  '68092000': Iban(
-    bic: 'GENODE61EMM',
+  '68092000': Bic(
+    value: 'GENODE61EMM',
     bankName: 'Volksbank Breisgau Nord (Gf P2)',
     bankShortName: 'VB Breisgau Nord',
     bankPostcode: '79304',
     bankLocation: 'Emmendingen',
   ),
-  '68092300': Iban(
-    bic: 'GENODE61STF',
+  '68092300': Bic(
+    value: 'GENODE61STF',
     bankName: 'Volksbank Staufen Zw Sulzburg',
     bankShortName: 'Volksbank Staufen',
     bankPostcode: '79295',
     bankLocation: 'Sulzburg',
   ),
-  '68270024': Iban(
-    bic: 'DEUTDEDB682',
+  '68270024': Bic(
+    value: 'DEUTDEDB682',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '77902',
     bankLocation: 'Lahr',
   ),
-  '68270033': Iban(
-    bic: 'DEUTDE6F682',
+  '68270033': Bic(
+    value: 'DEUTDE6F682',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '77902',
     bankLocation: 'Lahr',
   ),
-  '68290000': Iban(
-    bic: 'GENODE61LAH',
+  '68290000': Bic(
+    value: 'GENODE61LAH',
     bankName: 'Volksbank Lahr (Gf P2)',
     bankShortName: 'Volksbank Lahr',
     bankPostcode: '77912',
     bankLocation: 'Lahr',
   ),
-  '68340058': Iban(
-    bic: 'COBADEFFXXX',
+  '68340058': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Waldshut',
     bankShortName: 'Commerzbank',
     bankPostcode: '79741',
     bankLocation: 'Waldshut-Tiengen',
   ),
-  '68350048': Iban(
-    bic: 'SKLODE66XXX',
+  '68350048': Bic(
+    value: 'SKLODE66XXX',
     bankName: 'Sparkasse Lörrach-Rheinfelden',
     bankShortName: 'Sparkasse Lörrach-Rheinfeld',
     bankPostcode: '79602',
     bankLocation: 'Rheinfelden (Baden)',
   ),
-  '68351557': Iban(
-    bic: 'SOLADES1SFH',
+  '68351557': Bic(
+    value: 'SOLADES1SFH',
     bankName: 'Sparkasse Wiesental',
     bankShortName: 'Sparkasse Wiesental',
     bankPostcode: '79674',
     bankLocation: 'Todtnau',
   ),
-  '68351865': Iban(
-    bic: 'SOLADES1MGL',
+  '68351865': Bic(
+    value: 'SOLADES1MGL',
     bankName: 'Sparkasse Markgräflerland',
     bankShortName: 'Sparkasse Markgräflerland',
     bankPostcode: '79552',
     bankLocation: 'Weil am Rhein',
   ),
-  '68370024': Iban(
-    bic: 'DEUTDEDB679',
+  '68370024': Bic(
+    value: 'DEUTDEDB679',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '79547',
     bankLocation: 'Weil am Rhein',
   ),
-  '68370034': Iban(
-    bic: 'DEUTDE6F678',
+  '68370034': Bic(
+    value: 'DEUTDE6F678',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '79656',
     bankLocation: 'Wehr',
   ),
-  '68390000': Iban(
-    bic: 'VOLODE66XXX',
+  '68390000': Bic(
+    value: 'VOLODE66XXX',
     bankName: 'Volksbank Dreiländereck (Gf P2)',
     bankShortName: 'VB Dreiländereck Lörrach',
     bankPostcode: '79537',
     bankLocation: 'Lörrach',
   ),
-  '68391500': Iban(
-    bic: 'GENODE61SPF',
+  '68391500': Bic(
+    value: 'GENODE61SPF',
     bankName: 'VR Bank (Gf P2)',
     bankShortName: 'VR Bank',
     bankPostcode: '79642',
     bankLocation: 'Schopfheim',
   ),
-  '68452290': Iban(
-    bic: 'SKHRDE6WXXX',
+  '68452290': Bic(
+    value: 'SKHRDE6WXXX',
     bankName: 'Sparkasse Hochrhein',
     bankShortName: 'Sparkasse Hochrhein',
     bankPostcode: '79790',
     bankLocation: 'Küssaberg',
   ),
-  '68462427': Iban(
-    bic: 'GENODE61WUT',
+  '68462427': Bic(
+    value: 'GENODE61WUT',
     bankName: 'Volksbank Klettgau-Wutöschingen (Gf P2)',
     bankShortName: 'VB Klettgau-Wutöschingen',
     bankPostcode: '79793',
     bankLocation: 'Wutöschingen',
   ),
-  '68490000': Iban(
-    bic: 'GENODE61BSK',
+  '68490000': Bic(
+    value: 'GENODE61BSK',
     bankName: 'Volksbank Rhein-Wehra (Gf P2)',
     bankShortName: 'Volksbank Rhein-Wehra',
     bankPostcode: '79702',
     bankLocation: 'Bad Säckingen',
   ),
-  '68492200': Iban(
-    bic: 'GENODE61WT1',
+  '68492200': Bic(
+    value: 'GENODE61WT1',
     bankName: 'Volksbank Hochrhein Zw',
     bankShortName: 'Volksbank Hochrhein',
     bankPostcode: '79859',
     bankLocation: 'Schluchsee',
   ),
-  '69020190': Iban(
-    bic: 'HYVEDEMM591',
+  '69020190': Bic(
+    value: 'HYVEDEMM591',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '78402',
     bankLocation: 'Konstanz',
   ),
-  '69040045': Iban(
-    bic: 'COBADEFFXXX',
+  '69040045': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Konstanz',
     bankShortName: 'Commerzbank',
     bankPostcode: '78401',
     bankLocation: 'Konstanz',
   ),
-  '69050001': Iban(
-    bic: 'SOLADES1KNZ',
+  '69050001': Bic(
+    value: 'SOLADES1KNZ',
     bankName: 'Sparkasse Bodensee',
     bankShortName: 'Sparkasse Bodensee',
     bankPostcode: '88069',
     bankLocation: 'Tettnang',
   ),
-  '69051410': Iban(
-    bic: 'SOLADES1REN',
+  '69051410': Bic(
+    value: 'SOLADES1REN',
     bankName: 'Bezirkssparkasse Reichenau',
     bankShortName: 'Bez Spk Reichenau',
     bankPostcode: '78476',
     bankLocation: 'Allensbach',
   ),
-  '69051620': Iban(
-    bic: 'SOLADES1PFD',
+  '69051620': Bic(
+    value: 'SOLADES1PFD',
     bankName: 'Sparkasse Pfullendorf-Meßkirch',
     bankShortName: 'Spk Pfullendorf-Meßkirch',
     bankPostcode: '72510',
     bankLocation: 'Stetten am kalten Markt',
   ),
-  '69051725': Iban(
-    bic: 'SOLADES1SAL',
+  '69051725': Bic(
+    value: 'SOLADES1SAL',
     bankName: 'Sparkasse Salem-Heiligenberg',
     bankShortName: 'Spk Salem-Heiligenberg',
     bankPostcode: '88693',
     bankLocation: 'Deggenhausertal',
   ),
-  '69061800': Iban(
-    bic: 'GENODE61UBE',
+  '69061800': Bic(
+    value: 'GENODE61UBE',
     bankName: 'Volksbank Überlingen (Gf P2)',
     bankShortName: 'Volksbank Überlingen',
     bankPostcode: '88662',
     bankLocation: 'Überlingen',
   ),
-  '69070024': Iban(
-    bic: 'DEUTDEDB691',
+  '69070024': Bic(
+    value: 'DEUTDEDB691',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '88662',
     bankLocation: 'Überlingen',
   ),
-  '69070032': Iban(
-    bic: 'DEUTDE6F691',
+  '69070032': Bic(
+    value: 'DEUTDE6F691',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '88662',
     bankLocation: 'Überlingen',
   ),
-  '69091200': Iban(
-    bic: 'GENODE61HAG',
+  '69091200': Bic(
+    value: 'GENODE61HAG',
     bankName: 'Hagnauer Volksbank Zw Immenstaad',
     bankShortName: 'Hagnauer Volksbank Immenstd',
     bankPostcode: '88090',
     bankLocation: 'Immenstaad am Bodensee',
   ),
-  '69091600': Iban(
-    bic: 'GENODE61PFD',
+  '69091600': Bic(
+    value: 'GENODE61PFD',
     bankName: 'Volksbank Pfullendorf Fil',
     bankShortName: 'Volksbank Pfullendorf',
     bankPostcode: '88633',
     bankLocation: 'Heiligenberg',
   ),
-  '69220186': Iban(
-    bic: 'HYVEDEMM590',
+  '69220186': Bic(
+    value: 'HYVEDEMM590',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '78210',
     bankLocation: 'Singen (Hohentwiel)',
   ),
-  '69240075': Iban(
-    bic: 'COBADEFFXXX',
+  '69240075': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Donaueschingen',
     bankShortName: 'Commerzbank',
     bankPostcode: '78166',
     bankLocation: 'Donaueschingen',
   ),
-  '69250035': Iban(
-    bic: 'SOLADES1SNG',
+  '69250035': Bic(
+    value: 'SOLADES1SNG',
     bankName: 'Sparkasse Hegau-Bodensee',
     bankShortName: 'Sparkasse Hegau-Bodensee',
     bankPostcode: '78256',
     bankLocation: 'Steißlingen',
   ),
-  '69251445': Iban(
-    bic: 'SOLADES1ENG',
+  '69251445': Bic(
+    value: 'SOLADES1ENG',
     bankName: 'Sparkasse Engen-Gottmadingen',
     bankShortName: 'Spk Engen-Gottmadingen',
     bankPostcode: '78247',
     bankLocation: 'Hilzingen',
   ),
-  '69251755': Iban(
-    bic: 'SOLADES1STO',
+  '69251755': Bic(
+    value: 'SOLADES1STO',
     bankName: 'Sparkasse Stockach',
     bankShortName: 'Sparkasse Stockach',
     bankPostcode: '78359',
     bankLocation: 'Orsingen-Nenzingen',
   ),
-  '69270024': Iban(
-    bic: 'DEUTDEDB696',
+  '69270024': Bic(
+    value: 'DEUTDEDB696',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '78302',
     bankLocation: 'Radolfzell am Bodensee',
   ),
-  '69270038': Iban(
-    bic: 'DEUTDE6F696',
+  '69270038': Bic(
+    value: 'DEUTDE6F696',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '78302',
     bankLocation: 'Radolfzell am Bodensee',
   ),
-  '69280035': Iban(
-    bic: 'DRESDEFF692',
+  '69280035': Bic(
+    value: 'DRESDEFF692',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Donauesching',
     bankPostcode: '78166',
     bankLocation: 'Donaueschingen',
   ),
-  '69290000': Iban(
-    bic: 'GENODE61SIN',
+  '69290000': Bic(
+    value: 'GENODE61SIN',
     bankName: 'Volksbank Hegau (Gf P2)',
     bankShortName: 'Volksbank Hegau',
     bankPostcode: '78224',
     bankLocation: 'Singen (Hohentwiel)',
   ),
-  '69291000': Iban(
-    bic: 'GENODE61RAD',
+  '69291000': Bic(
+    value: 'GENODE61RAD',
     bankName: 'Volksbank Konstanz',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '78462',
     bankLocation: 'Konstanz',
   ),
-  '69291099': Iban(
-    bic: 'GENODE61RAD',
+  '69291099': Bic(
+    value: 'GENODE61RAD',
     bankName: 'Volksbank Konstanz Gf GA',
     bankShortName: 'Volksbank Gf GA',
     bankPostcode: '78462',
     bankLocation: 'Konstanz',
   ),
-  '69362032': Iban(
-    bic: 'GENODE61MES',
+  '69362032': Bic(
+    value: 'GENODE61MES',
     bankName: 'Volksbank Meßkirch Raiffeisenbank (Gf P2)',
     bankShortName: 'Volksbank Meßkirch Raiffbk',
     bankPostcode: '88601',
     bankLocation: 'Meßkirch',
   ),
-  '69400000': Iban(
-    bic: 'MARKDEF1694',
+  '69400000': Bic(
+    value: 'MARKDEF1694',
     bankName: 'BBk Villingen-Schwenningen',
     bankShortName: 'Bundesbank',
     bankPostcode: '78006',
     bankLocation: 'Villingen-Schwenningen',
   ),
-  '69440007': Iban(
-    bic: 'COBADEFFXXX',
+  '69440007': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Dürrheim',
     bankShortName: 'Commerzbank',
     bankPostcode: '78073',
     bankLocation: 'Bad Dürrheim',
   ),
-  '69440060': Iban(
-    bic: 'COBADEFFXXX',
+  '69440060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Villingen',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '78002',
     bankLocation: 'Villingen-Schwenningen',
   ),
-  '69450065': Iban(
-    bic: 'SOLADES1VSS',
+  '69450065': Bic(
+    value: 'SOLADES1VSS',
     bankName: 'Sparkasse Schwarzwald-Baar',
     bankShortName: 'Spk Schwarzwald-Baar',
     bankPostcode: '78176',
     bankLocation: 'Blumberg',
   ),
-  '69470024': Iban(
-    bic: 'DEUTDEDB697',
+  '69470024': Bic(
+    value: 'DEUTDEDB697',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '78091',
     bankLocation: 'Triberg im Schwarzwald',
   ),
-  '69470039': Iban(
-    bic: 'DEUTDE6F698',
+  '69470039': Bic(
+    value: 'DEUTDE6F698',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '78153',
     bankLocation: 'Donaueschingen',
   ),
-  '69490000': Iban(
-    bic: 'GENODE61VS1',
+  '69490000': Bic(
+    value: 'GENODE61VS1',
     bankName: 'Volksbank Schwarzwald Baar Hegau (Gf P2)',
     bankShortName: 'VB Schwarzwald Baar Hegau',
     bankPostcode: '78045',
     bankLocation: 'Villingen-Schwenningen',
   ),
-  '69491700': Iban(
-    bic: 'GENODE61TRI',
+  '69491700': Bic(
+    value: 'GENODE61TRI',
     bankName: 'Volksbank Triberg (Gf P2)',
     bankShortName: 'Volksbank Triberg',
     bankPostcode: '78094',
     bankLocation: 'Triberg im Schwarzwald',
   ),
-  '70000000': Iban(
-    bic: 'MARKDEF1700',
+  '70000000': Bic(
+    value: 'MARKDEF1700',
     bankName: 'BBk München',
     bankShortName: 'Bundesbank',
     bankPostcode: '80711',
     bankLocation: 'München',
   ),
-  '70010080': Iban(
-    bic: 'PBNKDEFFXXX',
+  '70010080': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '80318',
     bankLocation: 'München',
   ),
-  '70010424': Iban(
-    bic: 'AARBDE5W700',
+  '70010424': Bic(
+    value: 'AARBDE5W700',
     bankName: 'Aareal Bank ehem. Filiale München',
     bankShortName: 'Aareal Bank Wiesbaden',
     bankPostcode: '65189',
     bankLocation: 'Wiesbaden',
   ),
-  '70010500': Iban(
-    bic: 'REBMDEMMXXX',
+  '70010500': Bic(
+    value: 'REBMDEMMXXX',
     bankName: 'Deutsche Pfandbriefbank',
     bankShortName: 'pbb, Garching',
     bankPostcode: '85748',
     bankLocation: 'Garching b. München',
   ),
-  '70010555': Iban(
-    bic: 'REBMDEMM555',
+  '70010555': Bic(
+    value: 'REBMDEMM555',
     bankName: 'Deutsche Pfandbriefbank',
     bankShortName: 'pbb, Garching',
     bankPostcode: '85748',
     bankLocation: 'Garching b. München',
   ),
-  '70010570': Iban(
-    bic: 'REBMDE7CXXX',
+  '70010570': Bic(
+    value: 'REBMDE7CXXX',
     bankName: 'Deutsche Pfandbriefbank',
     bankShortName: 'pbb, Garching',
     bankPostcode: '85748',
     bankLocation: 'Garching b. München',
   ),
-  '70010800': Iban(
-    bic: 'KHMIDEMMXXX',
+  '70010800': Bic(
+    value: 'KHMIDEMMXXX',
     bankName: 'Middle East Bank, Munich Branch',
     bankShortName: 'Middle East Bank, München',
     bankPostcode: '81241',
     bankLocation: 'München',
   ),
-  '70011100': Iban(
-    bic: 'DEKTDE7GXXX',
+  '70011100': Bic(
+    value: 'DEKTDE7GXXX',
     bankName: 'Deutsche Handelsbank',
     bankShortName: 'Deutsche Handelsbank',
     bankPostcode: '80687',
     bankLocation: 'München',
   ),
-  '70011110': Iban(
-    bic: 'DEKTDE7GXXX',
+  '70011110': Bic(
+    value: 'DEKTDE7GXXX',
     bankName: 'Deutsche Handelsbank',
     bankShortName: 'Deutsche Handelsbank',
     bankPostcode: '80687',
     bankLocation: 'München',
   ),
-  '70011200': Iban(
-    bic: 'VONTDEM1XXX',
+  '70011200': Bic(
+    value: 'VONTDEM1XXX',
     bankName: 'Bank Vontobel Europe',
     bankShortName: 'Bank Vontobel Europe',
     bankPostcode: '80331',
     bankLocation: 'München',
   ),
-  '70011300': Iban(
-    bic: 'AUZDDEM1XXX',
+  '70011300': Bic(
+    value: 'AUZDDEM1XXX',
     bankName: 'Autobank Oberhaching',
     bankShortName: 'Autobank',
     bankPostcode: '82041',
     bankLocation: 'Oberhaching',
   ),
-  '70011400': Iban(
-    bic: 'BFWODE71XXX',
+  '70011400': Bic(
+    value: 'BFWODE71XXX',
     bankName: 'BfW - Bank für Wohnungswirtschaft',
     bankShortName: 'BfW-Bank',
     bankPostcode: '68161',
     bankLocation: 'Mannheim',
   ),
-  '70011500': Iban(
-    bic: 'SIBADEMMXXX',
+  '70011500': Bic(
+    value: 'SIBADEMMXXX',
     bankName: 'SIEMENS BANK',
     bankShortName: 'SIEMENS BANK',
     bankPostcode: '81739',
     bankLocation: 'München',
   ),
-  '70011600': Iban(
-    bic: 'WEGBDE77XXX',
+  '70011600': Bic(
+    value: 'WEGBDE77XXX',
     bankName: 'TEN31 Bank',
     bankShortName: 'TEN31 Bank',
     bankPostcode: '85521',
     bankLocation: 'Ottobrunn',
   ),
-  '70011700': Iban(
-    bic: 'BVDHDEMMXXX',
+  '70011700': Bic(
+    value: 'BVDHDEMMXXX',
     bankName: 'Bankhaus von der Heydt',
     bankShortName: 'Bankhaus von der Heydt',
     bankPostcode: '80538',
     bankLocation: 'München',
   ),
-  '70011900': Iban(
-    bic: 'ICRDDE71XXX',
+  '70011900': Bic(
+    value: 'ICRDDE71XXX',
     bankName: 'InterCard Taufkirchen',
     bankShortName: 'InterCard',
     bankPostcode: '82018',
     bankLocation: 'Taufkirchen',
   ),
-  '70012000': Iban(
-    bic: 'CLABDEM1XXX',
+  '70012000': Bic(
+    value: 'CLABDEM1XXX',
     bankName: 'UniCredit Family Financing Bank, Ndl der UniCredit',
     bankShortName: 'UCFIN MUENCHEN',
     bankPostcode: '81675',
     bankLocation: 'München',
   ),
-  '70012300': Iban(
-    bic: 'VBANDEMMXXX',
+  '70012300': Bic(
+    value: 'VBANDEMMXXX',
     bankName: 'V-Bank München',
     bankShortName: 'V-Bank',
     bankPostcode: '80335',
     bankLocation: 'München',
   ),
-  '70012400': Iban(
-    bic: 'FLGMDE77XXX',
+  '70012400': Bic(
+    value: 'FLGMDE77XXX',
     bankName: 'Bankhaus Obotritia München',
     bankShortName: 'Bankhaus Obotritia',
     bankPostcode: '80687',
     bankLocation: 'München',
   ),
-  '70012600': Iban(
-    bic: 'SUSKDEM1XXX',
+  '70012600': Bic(
+    value: 'SUSKDEM1XXX',
     bankName: 'Südtiroler Sparkasse Niederlassung München',
     bankShortName: 'Südt. Sparkasse München',
     bankPostcode: '81371',
     bankLocation: 'München',
   ),
-  '70012700': Iban(
-    bic: 'DEPDDEMMXXX',
+  '70012700': Bic(
+    value: 'DEPDDEMMXXX',
     bankName: 'VZ Depotbank Deutschland',
     bankShortName: 'VZDB DE München',
     bankPostcode: '80333',
     bankLocation: 'München',
   ),
-  '70012900': Iban(
-    bic: 'FXBBDEM2XXX',
+  '70012900': Bic(
+    value: 'FXBBDEM2XXX',
     bankName: 'IBAN FIRST, Zweigniederlassung München',
     bankShortName: 'IBAN FIRST, München',
     bankPostcode: '80339',
     bankLocation: 'München',
   ),
-  '70013000': Iban(
-    bic: 'EBSGDEMXXXX',
+  '70013000': Bic(
+    value: 'EBSGDEMXXXX',
     bankName: 'European Bank for Financial Services',
     bankShortName: 'ebase Aschheim',
     bankPostcode: '85609',
     bankLocation: 'Aschheim',
   ),
-  '70013010': Iban(
-    bic: 'EFSGDEM1XXX',
+  '70013010': Bic(
+    value: 'EFSGDEM1XXX',
     bankName: 'European Bank for Financial Services',
     bankShortName: 'Ebase Aschheim',
     bankPostcode: '85609',
     bankLocation: 'Aschheim',
   ),
-  '70013400': Iban(
-    bic: 'CSHHDE71XXX',
+  '70013400': Bic(
+    value: 'CSHHDE71XXX',
     bankName: 'IC Cash, Taufkirchen',
     bankShortName: 'IC Cash Services',
     bankPostcode: '82024',
     bankLocation: 'Taufkirchen',
   ),
-  '70013500': Iban(
-    bic: 'HERZDEM1XXX',
+  '70013500': Bic(
+    value: 'HERZDEM1XXX',
     bankName: 'Bankhaus Herzogpark München',
     bankShortName: 'Bankhaus Herzogpark',
     bankPostcode: '81679',
     bankLocation: 'München',
   ),
-  '70015000': Iban(
-    bic: 'TEZGDEB1XXX',
+  '70015000': Bic(
+    value: 'TEZGDEB1XXX',
     bankName: 'transact Elektronische Zahlungssysteme',
     bankShortName: 'Transact Berlin',
     bankPostcode: '82152',
     bankLocation: 'Planegg',
   ),
-  '70015015': Iban(
-    bic: 'TEZGDEB1001',
+  '70015015': Bic(
+    value: 'TEZGDEB1001',
     bankName: 'transact Elektronische Zahlungssysteme',
     bankShortName: 'transact Berlin 001',
     bankPostcode: '82152',
     bankLocation: 'Planegg',
   ),
-  '70015025': Iban(
-    bic: 'TEZGDEB1002',
+  '70015025': Bic(
+    value: 'TEZGDEB1002',
     bankName: 'transact Elektronische Zahlungssysteme',
     bankShortName: 'transact Berlin 002',
     bankPostcode: '82152',
     bankLocation: 'Planegg',
   ),
-  '70015035': Iban(
-    bic: 'TEZGDEB1003',
+  '70015035': Bic(
+    value: 'TEZGDEB1003',
     bankName: 'transact Elektronische Zahlungssysteme',
     bankShortName: 'transact Berlin 003',
     bankPostcode: '82152',
     bankLocation: 'Planegg',
   ),
-  '70017000': Iban(
-    bic: 'PAGMDEM1XXX',
+  '70017000': Bic(
+    value: 'PAGMDEM1XXX',
     bankName: 'PayCenter Freising',
     bankShortName: 'PayCenter',
     bankPostcode: '85356',
     bankLocation: 'Freising',
   ),
-  '70020270': Iban(
-    bic: 'HYVEDEMMXXX',
+  '70020270': Bic(
+    value: 'HYVEDEMMXXX',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '85521',
     bankLocation: 'Ottobrunn',
   ),
-  '70020300': Iban(
-    bic: 'WKVBDEM1XXX',
+  '70020300': Bic(
+    value: 'WKVBDEM1XXX',
     bankName: 'BNP Paribas NL Deutschland (Gf P3)',
     bankShortName: 'BNPParibas ex Commerzfinanz',
     bankPostcode: '80336',
     bankLocation: 'München',
   ),
-  '70020500': Iban(
-    bic: 'BFSWDE33MUE',
+  '70020500': Bic(
+    value: 'BFSWDE33MUE',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Bank für Sozialwirtschaft',
     bankPostcode: '90489',
     bankLocation: 'Nürnberg',
   ),
-  '70020570': Iban(
-    bic: 'BFSWDE33MUE',
+  '70020570': Bic(
+    value: 'BFSWDE33MUE',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Sozialbank München',
     bankPostcode: '80335',
     bankLocation: 'München',
   ),
-  '70020800': Iban(
-    bic: 'BCITDEFFMUC',
+  '70020800': Bic(
+    value: 'BCITDEFFMUC',
     bankName: 'INTESA SANPAOLO München',
     bankShortName: 'INTESA SANPAOLO',
     bankPostcode: '80335',
     bankLocation: 'München',
   ),
-  '70021180': Iban(
-    bic: 'HYVEDEMM418',
+  '70021180': Bic(
+    value: 'HYVEDEMM418',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '85354',
     bankLocation: 'Freising',
   ),
-  '70022200': Iban(
-    bic: 'FDDODEMMXXX',
+  '70022200': Bic(
+    value: 'FDDODEMMXXX',
     bankName: 'Fidor Bank München',
     bankShortName: 'Fidor Bank',
     bankPostcode: '80335',
     bankLocation: 'München',
   ),
-  '70025175': Iban(
-    bic: 'HYVEDEMM643',
+  '70025175': Bic(
+    value: 'HYVEDEMM643',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '82377',
     bankLocation: 'Penzberg',
   ),
-  '70030014': Iban(
-    bic: 'FUBKDE71MUC',
+  '70030014': Bic(
+    value: 'FUBKDE71MUC',
     bankName: 'Fürst Fugger Privatbank',
     bankShortName: 'Fuggerbank Augsburg',
     bankPostcode: '86150',
     bankLocation: 'Augsburg',
   ),
-  '70030300': Iban(
-    bic: 'CHDBDEHHXXX',
+  '70030300': Bic(
+    value: 'CHDBDEHHXXX',
     bankName: 'Bankhaus Reuschel & Co -alt-',
     bankShortName: 'Bankhaus Reuschel & Co -alt',
     bankPostcode: '80285',
     bankLocation: 'München',
   ),
-  '70030400': Iban(
-    bic: 'MEFIDEMMXXX',
+  '70030400': Bic(
+    value: 'MEFIDEMMXXX',
     bankName: 'Merck Finck A Quintet Private Bank',
     bankShortName: 'Merck Finck',
     bankPostcode: '80333',
     bankLocation: 'München',
   ),
-  '70031000': Iban(
-    bic: 'BHLSDEM1XXX',
+  '70031000': Bic(
+    value: 'BHLSDEM1XXX',
     bankName: 'Bankhaus Sperrer Freising',
     bankShortName: 'Bankhaus Ludwig Sperrer',
     bankPostcode: '85317',
     bankLocation: 'Freising',
   ),
-  '70032500': Iban(
-    bic: 'GAKDDEM1XXX',
+  '70032500': Bic(
+    value: 'GAKDDEM1XXX',
     bankName: 'St.Galler Kantonalbank Deutschland',
     bankShortName: 'SGKB Deutschland, München',
     bankPostcode: '80333',
     bankLocation: 'München',
   ),
-  '70033100': Iban(
-    bic: 'BDWBDEMMXXX',
+  '70033100': Bic(
+    value: 'BDWBDEMMXXX',
     bankName: 'Baaderbank Unterschleißheim',
     bankShortName: 'Baader Bank',
     bankPostcode: '85716',
     bankLocation: 'Unterschleißheim',
   ),
-  '70035000': Iban(
-    bic: 'OLBODEH2700',
+  '70035000': Bic(
+    value: 'OLBODEH2700',
     bankName: 'Oldenburgische Landesbank',
     bankShortName: 'OLB, Oldenburg',
     bankPostcode: '26030',
     bankLocation: 'Oldenburg',
   ),
-  '70040041': Iban(
-    bic: 'COBADEFFXXX',
+  '70040041': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Fürstenfeldbruc',
     bankShortName: 'Commerzbank',
     bankPostcode: '82256',
     bankLocation: 'Fürstenfeldbruck',
   ),
-  '70040045': Iban(
-    bic: 'COBADEFFXXX',
+  '70040045': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank, Filiale München 2',
     bankShortName: 'Commerzbank Fil. München 2',
     bankPostcode: '80704',
     bankLocation: 'München',
   ),
-  '70040048': Iban(
-    bic: 'COBADEFFXXX',
+  '70040048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Germering',
     bankShortName: 'Commerzbank',
     bankPostcode: '82110',
     bankLocation: 'Germering',
   ),
-  '70040060': Iban(
-    bic: 'COBADEFFXXX',
+  '70040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf 860 München',
     bankShortName: 'Commerzbank Gf 860',
     bankPostcode: '80804',
     bankLocation: 'München',
   ),
-  '70040061': Iban(
-    bic: 'COBADEFFXXX',
+  '70040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf 861 München',
     bankShortName: 'Commerzbank Gf 861',
     bankPostcode: '80804',
     bankLocation: 'München',
   ),
-  '70040062': Iban(
-    bic: 'COBADEFFXXX',
+  '70040062': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC München',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '80807',
     bankLocation: 'München',
   ),
-  '70040063': Iban(
-    bic: 'COBADEFFXXX',
+  '70040063': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC München',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '80807',
     bankLocation: 'München',
   ),
-  '70040070': Iban(
-    bic: 'COBADEFFXXX',
+  '70040070': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC SP, München',
     bankShortName: 'Commerzbank, CC SP',
     bankPostcode: '80273',
     bankLocation: 'München',
   ),
-  '70045050': Iban(
-    bic: 'COBADEFFXXX',
+  '70045050': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Service-BZ',
     bankShortName: 'Commerzbank Service-BZ',
     bankPostcode: '80804',
     bankLocation: 'München',
   ),
-  '70050000': Iban(
-    bic: 'BYLADEMMXXX',
+  '70050000': Bic(
+    value: 'BYLADEMMXXX',
     bankName: 'Bayerische Landesbank',
     bankShortName: 'BayernLB München',
     bankPostcode: '80277',
     bankLocation: 'München',
   ),
-  '70051003': Iban(
-    bic: 'BYLADEM1FSI',
+  '70051003': Bic(
+    value: 'BYLADEM1FSI',
     bankName: 'Sparkasse Freising Moosburg',
     bankShortName: 'Sparkasse Freising Moosburg',
     bankPostcode: '85399',
     bankLocation: 'Hallbergmoos',
   ),
-  '70051540': Iban(
-    bic: 'BYLADEM1DAH',
+  '70051540': Bic(
+    value: 'BYLADEM1DAH',
     bankName: 'Sparkasse Dachau',
     bankShortName: 'Sparkasse Dachau',
     bankPostcode: '85241',
     bankLocation: 'Hebertshausen',
   ),
-  '70051995': Iban(
-    bic: 'BYLADEM1ERD',
+  '70051995': Bic(
+    value: 'BYLADEM1ERD',
     bankName: 'Kreis- und Stadtsparkasse Erding-Dorfen',
     bankShortName: 'Spk Erding-Dorfen',
     bankPostcode: '84405',
     bankLocation: 'Dorfen',
   ),
-  '70052060': Iban(
-    bic: 'BYLADEM1LLD',
+  '70052060': Bic(
+    value: 'BYLADEM1LLD',
     bankName: 'Sparkasse Landsberg-Dießen',
     bankShortName: 'Spk Landsberg-Dießen',
     bankPostcode: '86896',
     bankLocation: 'Landsberg am Lech',
   ),
-  '70053070': Iban(
-    bic: 'BYLADEM1FFB',
+  '70053070': Bic(
+    value: 'BYLADEM1FFB',
     bankName: 'Sparkasse Fürstenfeldbruck',
     bankShortName: 'Spk Fürstenfeldbruck',
     bankPostcode: '82278',
     bankLocation: 'Althegnenberg',
   ),
-  '70054306': Iban(
-    bic: 'BYLADEM1WOR',
+  '70054306': Bic(
+    value: 'BYLADEM1WOR',
     bankName: 'Sparkasse Bad Tölz-Wolfratshausen',
     bankShortName: 'Spk Bad Tölz-Wolfratshausen',
     bankPostcode: '82515',
     bankLocation: 'Wolfratshausen',
   ),
-  '70070010': Iban(
-    bic: 'DEUTDEMM717',
+  '70070010': Bic(
+    value: 'DEUTDEMM717',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '82205',
     bankLocation: 'Gilching',
   ),
-  '70070024': Iban(
-    bic: 'DEUTDEDB711',
+  '70070024': Bic(
+    value: 'DEUTDEDB711',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '82205',
     bankLocation: 'Gilching',
   ),
-  '70070324': Iban(
-    bic: 'DEUTDEDBP16',
+  '70070324': Bic(
+    value: 'DEUTDEDBP16',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '80331',
     bankLocation: 'München',
   ),
-  '70070362': Iban(
-    bic: 'DEUTDEMMP16',
+  '70070362': Bic(
+    value: 'DEUTDEMMP16',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '80331',
     bankLocation: 'München',
   ),
-  '70080000': Iban(
-    bic: 'DRESDEFF700',
+  '70080000': Bic(
+    value: 'DRESDEFF700',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Germering',
     bankPostcode: '82110',
     bankLocation: 'Germering',
   ),
-  '70080056': Iban(
-    bic: 'DRESDEFF714',
+  '70080056': Bic(
+    value: 'DRESDEFF714',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 56',
     bankShortName: 'Commerzbank Zw 56',
     bankPostcode: '80273',
     bankLocation: 'München',
   ),
-  '70080057': Iban(
-    bic: 'DRESDEFF724',
+  '70080057': Bic(
+    value: 'DRESDEFF724',
     bankName: 'Commerzbank vormals Dresdner Bank Gf ZW 57',
     bankShortName: 'Commerzbk ZW 57 München',
     bankPostcode: '80273',
     bankLocation: 'München',
   ),
-  '70080085': Iban(
-    bic: 'DRESDEFFI55',
+  '70080085': Bic(
+    value: 'DRESDEFFI55',
     bankName: 'Commerzbank vormals Dresdner Bank Gf PCC DCC-ITGK 3',
     bankShortName: 'Commerzbank ITKG3 München',
     bankPostcode: '80273',
     bankLocation: 'München',
   ),
-  '70080086': Iban(
-    bic: 'DRESDEFFJ23',
+  '70080086': Bic(
+    value: 'DRESDEFFJ23',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 4',
     bankShortName: 'Commerzbank ITGK4 München',
     bankPostcode: '80273',
     bankLocation: 'München',
   ),
-  '70080087': Iban(
-    bic: 'DRESDEFFJ24',
+  '70080087': Bic(
+    value: 'DRESDEFFJ24',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 5',
     bankShortName: 'Commerzbank ITGK5 München',
     bankPostcode: '80273',
     bankLocation: 'München',
   ),
-  '70080088': Iban(
-    bic: 'DRESDEFFJ25',
+  '70080088': Bic(
+    value: 'DRESDEFFJ25',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 6',
     bankShortName: 'Commerzbank ITGK6 München',
     bankPostcode: '80273',
     bankLocation: 'München',
   ),
-  '70089470': Iban(
-    bic: 'DRESDEFFI23',
+  '70089470': Bic(
+    value: 'DRESDEFFI23',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK München',
     bankPostcode: '80273',
     bankLocation: 'München',
   ),
-  '70089472': Iban(
-    bic: 'DRESDEFFI45',
+  '70089472': Bic(
+    value: 'DRESDEFFI45',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK München2',
     bankPostcode: '80273',
     bankLocation: 'München',
   ),
-  '70090100': Iban(
-    bic: 'GENODEF1M04',
+  '70090100': Bic(
+    value: 'GENODEF1M04',
     bankName: 'Hausbank München (Gf P2)',
     bankShortName: 'Hausbank München',
     bankPostcode: '80331',
     bankLocation: 'München',
   ),
-  '70090124': Iban(
-    bic: 'GENODEF1MU4',
+  '70090124': Bic(
+    value: 'GENODEF1MU4',
     bankName: 'Hausbank München Gf Wohnung',
     bankShortName: 'Hausbank München',
     bankPostcode: '80331',
     bankLocation: 'München',
   ),
-  '70090500': Iban(
-    bic: 'GENODEF1S04',
+  '70090500': Bic(
+    value: 'GENODEF1S04',
     bankName: 'Sparda-Bank München',
     bankShortName: 'Sparda-Bank München',
     bankPostcode: '80018',
     bankLocation: 'München',
   ),
-  '70091500': Iban(
-    bic: 'GENODEF1DCA',
+  '70091500': Bic(
+    value: 'GENODEF1DCA',
     bankName: 'Volksbank Raiffeisenbank Dachau (Gf P2)',
     bankShortName: 'VB Raiffbk Dachau',
     bankPostcode: '85209',
     bankLocation: 'Dachau',
   ),
-  '70091510': Iban(
-    bic: 'GENODEF1DCA',
+  '70091510': Bic(
+    value: 'GENODEF1DCA',
     bankName: 'Volksbank Raiffeisenbank Dachau (Gf GAA)',
     bankShortName: 'VR-Dachau',
     bankPostcode: '85221',
     bankLocation: 'Dachau',
   ),
-  '70091600': Iban(
-    bic: 'GENODEF1DSS',
+  '70091600': Bic(
+    value: 'GENODEF1DSS',
     bankName: 'VR-Bank Landsberg-Ammersee (Gf P2)',
     bankShortName: 'VR-Bank Landsberg-Ammersee',
     bankPostcode: '86899',
     bankLocation: 'Landsberg am Lech',
   ),
-  '70091900': Iban(
-    bic: 'GENODEF1EDV',
+  '70091900': Bic(
+    value: 'GENODEF1EDV',
     bankName: 'VR-Bank Erding (Gf P2)',
     bankShortName: 'VR-Bank Erding',
     bankPostcode: '85435',
     bankLocation: 'Erding',
   ),
-  '70093200': Iban(
-    bic: 'GENODEF1STH',
+  '70093200': Bic(
+    value: 'GENODEF1STH',
     bankName: 'VR-Bank Starnberg-Herrsching-Landsberg (Gf P2)',
     bankShortName: 'VR-Bank Starnberg-Hg-Lbg',
     bankPostcode: '82306',
     bankLocation: 'Starnberg',
   ),
-  '70093400': Iban(
-    bic: 'GENODEF1ISV',
+  '70093400': Bic(
+    value: 'GENODEF1ISV',
     bankName: 'VR-Bank Ismaning Hallbergmoos Neufahrn (Gf P2)',
     bankShortName: 'VR-Bank Ismaning Hallb Neuf',
     bankPostcode: '85731',
     bankLocation: 'Ismaning',
   ),
-  '70110088': Iban(
-    bic: 'PBNKDEFFXXX',
+  '70110088': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '80317',
     bankLocation: 'München',
   ),
-  '70110500': Iban(
-    bic: 'MHYPDEMMXXX',
+  '70110500': Bic(
+    value: 'MHYPDEMMXXX',
     bankName: 'Münch Hypoth Bank München',
     bankShortName: 'Münchener Hypothekenbank',
     bankPostcode: '80503',
     bankLocation: 'München',
   ),
-  '70120100': Iban(
-    bic: 'SBOSDEMXXXX',
+  '70120100': Bic(
+    value: 'SBOSDEMXXXX',
     bankName: 'State Street Bank International',
     bankShortName: 'State Street Bk Int.München',
     bankPostcode: '80019',
     bankLocation: 'München',
   ),
-  '70120400': Iban(
-    bic: 'DABBDEMMXXX',
+  '70120400': Bic(
+    value: 'DABBDEMMXXX',
     bankName: 'BNP Paribas Niederlassung Deutschland',
     bankShortName: 'BNP Paribas Deutschland',
     bankPostcode: '90402',
     bankLocation: 'Nürnberg',
   ),
-  '70120500': Iban(
-    bic: 'FMBKDEMMXXX',
+  '70120500': Bic(
+    value: 'FMBKDEMMXXX',
     bankName: 'CACEIS Bank, Germany Branch',
     bankShortName: 'CACEIS Bank, München',
     bankPostcode: '80939',
     bankLocation: 'München',
   ),
-  '70120600': Iban(
-    bic: 'AGBMDEMMXXX',
+  '70120600': Bic(
+    value: 'AGBMDEMMXXX',
     bankName: 'Airbus Bank',
     bankShortName: 'Airbus Bank',
     bankPostcode: '80333',
     bankLocation: 'München',
   ),
-  '70120700': Iban(
-    bic: 'OBKLDEMXXXX',
+  '70120700': Bic(
+    value: 'OBKLDEMXXXX',
     bankName: 'Oberbank Ndl Deutschland',
     bankShortName: 'Oberbank Cottbus',
     bankPostcode: '03046',
     bankLocation: 'Cottbus',
   ),
-  '70130700': Iban(
-    bic: 'LENZDEM1XXX',
+  '70130700': Bic(
+    value: 'LENZDEM1XXX',
     bankName: 'Bankhaus August Lenz & Co',
     bankShortName: 'Lenz Bank München',
     bankPostcode: '81679',
     bankLocation: 'München',
   ),
-  '70130799': Iban(
-    bic: 'LENZDEM1XXX',
+  '70130799': Bic(
+    value: 'LENZDEM1XXX',
     bankName: 'Bankhaus August Lenz & Co Gf GAA',
     bankShortName: 'Lenz Bank München Gf GAA',
     bankPostcode: '81679',
     bankLocation: 'München',
   ),
-  '70130800': Iban(
-    bic: 'GENODEF1M06',
+  '70130800': Bic(
+    value: 'GENODEF1M06',
     bankName: 'MERKUR PRIVATBANK München',
     bankShortName: 'MERKUR PRIVATBANK',
     bankPostcode: '80014',
     bankLocation: 'München',
   ),
-  '70133300': Iban(
-    bic: 'SCFBDE33XXX',
+  '70133300': Bic(
+    value: 'SCFBDE33XXX',
     bankName: 'Santander Consumer Bank',
     bankShortName: 'Santander Bank München',
     bankPostcode: '80331',
     bankLocation: 'München',
   ),
-  '70150000': Iban(
-    bic: 'SSKMDEMMXXX',
+  '70150000': Bic(
+    value: 'SSKMDEMMXXX',
     bankName: 'Stadtsparkasse München',
     bankShortName: 'Stadtsparkasse München',
     bankPostcode: '80791',
     bankLocation: 'München',
   ),
-  '70160000': Iban(
-    bic: 'GENODEFF701',
+  '70160000': Bic(
+    value: 'GENODEFF701',
     bankName: 'DZ BANK München',
     bankShortName: 'DZ BANK',
     bankPostcode: '80268',
     bankLocation: 'München',
   ),
-  '70163370': Iban(
-    bic: 'GENODEF1FFB',
+  '70163370': Bic(
+    value: 'GENODEF1FFB',
     bankName: 'Volksbank Raiffeisenbank Fürstenfeldbruck (Gf P2)',
     bankShortName: 'VR-Bank Fürstenfeldbruck',
     bankPostcode: '82256',
     bankLocation: 'Fürstenfeldbruck',
   ),
-  '70166486': Iban(
-    bic: 'GENODEF1OHC',
+  '70166486': Bic(
+    value: 'GENODEF1OHC',
     bankName: 'VR Bank München Land (Gf P2)',
     bankShortName: 'VR Bank München Land',
     bankPostcode: '82041',
     bankLocation: 'Deisenhofen',
   ),
-  '70169132': Iban(
-    bic: 'GENODEF1HFG',
+  '70169132': Bic(
+    value: 'GENODEF1HFG',
     bankName: 'Raiffeisenbank Griesstätt-Halfing (Gf P2)',
     bankShortName: 'Raiffbk Griesstätt-Halfing',
     bankPostcode: '83128',
     bankLocation: 'Halfing',
   ),
-  '70169165': Iban(
-    bic: 'GENODEF1SBC',
+  '70169165': Bic(
+    value: 'GENODEF1SBC',
     bankName: 'Raiffeisenbank Chiemgau-Nord - Obing (Gf P2)',
     bankShortName: 'Raiffbk Chiemgau-Nord-Obing',
     bankPostcode: '83119',
     bankLocation: 'Obing',
   ),
-  '70169168': Iban(
-    bic: 'GENODEF1RIW',
+  '70169168': Bic(
+    value: 'GENODEF1RIW',
     bankName: 'VR-Bank Chiemgau-Süd -alt-',
     bankShortName: 'VR-Bank Chiemgau-Süd -alt-',
     bankPostcode: '83321',
     bankLocation: 'Ruhpolding',
   ),
-  '70169186': Iban(
-    bic: 'GENODEF1ODZ',
+  '70169186': Bic(
+    value: 'GENODEF1ODZ',
     bankName: 'Raiffeisenbank Pfaffenhofen a d Glonn (Gf P2)',
     bankShortName: 'Raiffbk Pfaffenhofen Glonn',
     bankPostcode: '85235',
     bankLocation: 'Odelzhausen',
   ),
-  '70169190': Iban(
-    bic: 'GENODEF1GKT',
+  '70169190': Bic(
+    value: 'GENODEF1GKT',
     bankName: 'Raiffeisenbank Tattenh-Großkarolinenf (Gf P2)',
     bankShortName: 'Raiffbk Tattenh Großkarol',
     bankPostcode: '83109',
     bankLocation: 'Großkarolinenfeld',
   ),
-  '70169191': Iban(
-    bic: 'GENODEF1TEI',
+  '70169191': Bic(
+    value: 'GENODEF1TEI',
     bankName: 'Raiffeisenbank Rupertiwinkel (Gf P2)',
     bankShortName: 'Raiffbk Rupertiwinkel',
     bankPostcode: '83315',
     bankLocation: 'Teisendorf',
   ),
-  '70169195': Iban(
-    bic: 'GENODEF1TRU',
+  '70169195': Bic(
+    value: 'GENODEF1TRU',
     bankName: 'Raiffeisenbank Trostberg-Traunreut (Gf P2)',
     bankShortName: 'Raiffbk Trostberg-Traunreut',
     bankPostcode: '83301',
     bankLocation: 'Traunreut',
   ),
-  '70169310': Iban(
-    bic: 'GENODEF1ALX',
+  '70169310': Bic(
+    value: 'GENODEF1ALX',
     bankName: 'Alxing-Brucker Genossenschaftsbank (Gf P2)',
     bankShortName: 'Alxinger Bank',
     bankPostcode: '85567',
     bankLocation: 'Bruck',
   ),
-  '70169331': Iban(
-    bic: 'GENODEF1SSB',
+  '70169331': Bic(
+    value: 'GENODEF1SSB',
     bankName: 'Raiffeisenbank südöstl. Starnberger See (Gf P2)',
     bankShortName: 'Raiffbk sö Starnberger See',
     bankPostcode: '82402',
     bankLocation: 'Seeshaupt',
   ),
-  '70169333': Iban(
-    bic: 'GENODEF1EUR',
+  '70169333': Bic(
+    value: 'GENODEF1EUR',
     bankName: 'Raiffeisenbank Beuerberg-Eurasburg (Gf P2)',
     bankShortName: 'Raiffbk Beuerberg-Eurasburg',
     bankPostcode: '82547',
     bankLocation: 'Eurasburg',
   ),
-  '70169351': Iban(
-    bic: 'GENODEF1ELB',
+  '70169351': Bic(
+    value: 'GENODEF1ELB',
     bankName: 'Raiffeisenbank Nordkreis Landsberg (Gf P2)',
     bankShortName: 'Raiffbk Nordkreis Landsberg',
     bankPostcode: '86492',
     bankLocation: 'Egling a.d.Paar',
   ),
-  '70169356': Iban(
-    bic: 'GENODEF1EDR',
+  '70169356': Bic(
+    value: 'GENODEF1EDR',
     bankName: 'Raiffeisenbank Erding Zw',
     bankShortName: 'Raiffeisenbank Erding',
     bankPostcode: '85465',
     bankLocation: 'Langenpreising',
   ),
-  '70169382': Iban(
-    bic: 'GENODEF1GIL',
+  '70169382': Bic(
+    value: 'GENODEF1GIL',
     bankName: 'Raiffeisenbank Gilching',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '82205',
     bankLocation: 'Gilching',
   ),
-  '70169383': Iban(
-    bic: 'GENODEF1GMU',
+  '70169383': Bic(
+    value: 'GENODEF1GMU',
     bankName: 'Raiffeisenbank Gmund am Tegernsee (Gf P2)',
     bankShortName: 'Raiffeisenbank Gmund am Teg',
     bankPostcode: '83703',
     bankLocation: 'Gmund a. Tegernsee',
   ),
-  '70169388': Iban(
-    bic: 'GENODEF1HMA',
+  '70169388': Bic(
+    value: 'GENODEF1HMA',
     bankName: 'Raiffeisenbank Haag-Gars-Maitenbeth (Gf P2)',
     bankShortName: 'Raiffbk Haag-Gars-Maitenb',
     bankPostcode: '83523',
     bankLocation: 'Haag i.OB',
   ),
-  '70169402': Iban(
-    bic: 'GENODEF1HHK',
+  '70169402': Bic(
+    value: 'GENODEF1HHK',
     bankName: 'Raiffeisenbank Höhenkirchen und Umgebung (Gf P2)',
     bankShortName: 'Raiffbk Höhenkirchen u U',
     bankPostcode: '85631',
     bankLocation: 'Höhenkirchen-Siegertsbrunn',
   ),
-  '70169410': Iban(
-    bic: 'GENODEF1HZO',
+  '70169410': Bic(
+    value: 'GENODEF1HZO',
     bankName: 'Raiffeisenbank Holzkirchen-Otterfing (Gf P2)',
     bankShortName: 'Raiffbk Holzkirchen-Otterf',
     bankPostcode: '83607',
     bankLocation: 'Holzkirchen',
   ),
-  '70169413': Iban(
-    bic: 'GENODEF1HUA',
+  '70169413': Bic(
+    value: 'GENODEF1HUA',
     bankName: 'Raiffeisenbank Singoldtal (Gf P2)',
     bankShortName: 'Raiffbk Singoldtal',
     bankPostcode: '86857',
     bankLocation: 'Hurlach',
   ),
-  '70169450': Iban(
-    bic: 'GENODEF1ASG',
+  '70169450': Bic(
+    value: 'GENODEF1ASG',
     bankName: 'Raiffeisen-Volksbank Ebersberg (Gf P2)',
     bankShortName: 'Raiff-VB Ebersberg',
     bankPostcode: '85567',
     bankLocation: 'Grafing b. München',
   ),
-  '70169459': Iban(
-    bic: 'GENODEF1MTW',
+  '70169459': Bic(
+    value: 'GENODEF1MTW',
     bankName: 'Raiffeisenbank Mittenwald',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '82481',
     bankLocation: 'Mittenwald',
   ),
-  '70169460': Iban(
-    bic: 'GENODEF1MOO',
+  '70169460': Bic(
+    value: 'GENODEF1MOO',
     bankName: 'Raiffeisenbank Westkreis Fürstenfeldbruck Zw',
     bankShortName: 'Raiffbk Westkreis',
     bankPostcode: '82297',
     bankLocation: 'Steindorf',
   ),
-  '70169464': Iban(
-    bic: 'GENODEF1M07',
+  '70169464': Bic(
+    value: 'GENODEF1M07',
     bankName: 'Genossenschaftsbank München (Gf P2)',
     bankShortName: 'Genossenschaftsbank',
     bankPostcode: '81218',
     bankLocation: 'München',
   ),
-  '70169465': Iban(
-    bic: 'GENODEF1M08',
+  '70169465': Bic(
+    value: 'GENODEF1M08',
     bankName: 'Raiffeisenbank München-Nord (Gf P2)',
     bankShortName: 'Raiffbk München-Nord',
     bankPostcode: '85704',
     bankLocation: 'Unterschleißheim',
   ),
-  '70169466': Iban(
-    bic: 'GENODEF1M03',
+  '70169466': Bic(
+    value: 'GENODEF1M03',
     bankName: 'Raiffeisenbank München-Süd (Gf P2)',
     bankShortName: 'Raiffeisenbank München-Süd',
     bankPostcode: '81457',
     bankLocation: 'München',
   ),
-  '70169470': Iban(
-    bic: 'GENODEF1GAA',
+  '70169470': Bic(
+    value: 'GENODEF1GAA',
     bankName: 'Raiffeisenbank München-Süd Gf GA',
     bankShortName: 'Raiffeisenbank München-Süd',
     bankPostcode: '81476',
     bankLocation: 'München',
   ),
-  '70169474': Iban(
-    bic: 'GENODEF1NSV',
+  '70169474': Bic(
+    value: 'GENODEF1NSV',
     bankName: 'Raiffbk Neumarkt-St. Veit - Niederbergkirchen (Gf P2)',
     bankShortName: 'Raiffbk NSV-NBK',
     bankPostcode: '84494',
     bankLocation: 'Neumarkt-Sankt Veit',
   ),
-  '70169476': Iban(
-    bic: 'GENODEF1NBK',
+  '70169476': Bic(
+    value: 'GENODEF1NBK',
     bankName: 'Raiffeisenbank -alt-',
     bankShortName: 'Raiffbk -alt-',
     bankPostcode: '84494',
     bankLocation: 'Niederbergkirchen',
   ),
-  '70169509': Iban(
-    bic: 'GENODEF1PEI',
+  '70169509': Bic(
+    value: 'GENODEF1PEI',
     bankName: 'Raiffeisenbank Pfaffenwinkel (Gf P2)',
     bankShortName: 'Raiffbk Pfaffenwinkel',
     bankPostcode: '86971',
     bankLocation: 'Peiting',
   ),
-  '70169521': Iban(
-    bic: 'GENODEF1RIG',
+  '70169521': Bic(
+    value: 'GENODEF1RIG',
     bankName: 'Raiffeisenbank Raisting (Gf P2)',
     bankShortName: 'Raiffeisenbank Raisting',
     bankPostcode: '82399',
     bankLocation: 'Raisting',
   ),
-  '70169524': Iban(
-    bic: 'GENODEF1RME',
+  '70169524': Bic(
+    value: 'GENODEF1RME',
     bankName: 'Bankhaus RSA (Gf P2)',
     bankShortName: 'Bankhaus RSA',
     bankPostcode: '83562',
     bankLocation: 'Rechtmehring',
   ),
-  '70169530': Iban(
-    bic: 'GENODEF1RWZ',
+  '70169530': Bic(
+    value: 'GENODEF1RWZ',
     bankName: 'Raiffeisenbank Neumarkt-St. Veit - Reischach (Gf P2)',
     bankShortName: 'Raiffbk Neumarkt-Reischach',
     bankPostcode: '84571',
     bankLocation: 'Reischach',
   ),
-  '70169538': Iban(
-    bic: 'GENODEF1SWO',
+  '70169538': Bic(
+    value: 'GENODEF1SWO',
     bankName: 'Raiffeisenbank St. Wolfgang-Schwindkirchen (Gf P2)',
     bankShortName: 'Raiffbk St Wolfgang-Schwind',
     bankPostcode: '84425',
     bankLocation: 'Sankt Wolfgang',
   ),
-  '70169541': Iban(
-    bic: 'GENODEF1THG',
+  '70169541': Bic(
+    value: 'GENODEF1THG',
     bankName: 'Raiffeisenbank Lech-Ammersee (Gf P2)',
     bankShortName: 'Raiffbk Lech-Ammersee',
     bankPostcode: '86946',
     bankLocation: 'Vilgertshofen',
   ),
-  '70169543': Iban(
-    bic: 'GENODEF1HHS',
+  '70169543': Bic(
+    value: 'GENODEF1HHS',
     bankName: 'Raiffeisenbank Isar-Loisachtal (Gf P2)',
     bankShortName: 'Raiffbk Isar-Loisachtal',
     bankPostcode: '82504',
     bankLocation: 'Wolfratshausen',
   ),
-  '70169558': Iban(
-    bic: 'GENODEF1SGA',
+  '70169558': Bic(
+    value: 'GENODEF1SGA',
     bankName: 'Raiffeisenbank Steingaden',
     bankShortName: 'Raiffeisenbank Steingaden',
     bankPostcode: '86983',
     bankLocation: 'Lechbruck am See',
   ),
-  '70169566': Iban(
-    bic: 'GENODEF1TAV',
+  '70169566': Bic(
+    value: 'GENODEF1TAV',
     bankName: 'VR-Bank Taufkirchen-Dorfen (Gf P2)',
     bankShortName: 'VR-Bank Taufkirchen-Dorfen',
     bankPostcode: '84413',
     bankLocation: 'Taufkirchen (Vils)',
   ),
-  '70169568': Iban(
-    bic: 'GENODEF1TAE',
+  '70169568': Bic(
+    value: 'GENODEF1TAE',
     bankName: 'Raiffeisenbank Taufkirchen-Oberneukirchen (Gf P2)',
     bankShortName: 'Raiffbk Taufk-Oberneukirch',
     bankPostcode: '84565',
     bankLocation: 'Oberneukirchen',
   ),
-  '70169571': Iban(
-    bic: 'GENODEF1DTZ',
+  '70169571': Bic(
+    value: 'GENODEF1DTZ',
     bankName: 'Raiffeisenbank Tölzer Land (Gf P2)',
     bankShortName: 'Raiffbk Tölzer Land',
     bankPostcode: '83646',
     bankLocation: 'Bad Tölz',
   ),
-  '70169575': Iban(
-    bic: 'GENODEF1TRH',
+  '70169575': Bic(
+    value: 'GENODEF1TRH',
     bankName: 'Raiffeisenbank Wiedergelt Ndl d Rbk Türkheim',
     bankShortName: 'Raiffeisenbank Türkheim',
     bankPostcode: '86879',
     bankLocation: 'Wiedergeltingen',
   ),
-  '70169576': Iban(
-    bic: 'GENODEF1TUS',
+  '70169576': Bic(
+    value: 'GENODEF1TUS',
     bankName: 'Raiffeisen-Volksbank Tüßling-Unterneukirchen',
     bankShortName: 'Raiff-Volksbank Tüßling',
     bankPostcode: '84579',
     bankLocation: 'Unterneukirchen',
   ),
-  '70169585': Iban(
-    bic: 'GENODEF1UNS',
+  '70169585': Bic(
+    value: 'GENODEF1UNS',
     bankName: 'Raiffeisenbank Unterschleißheim-Haimhn -alt-',
     bankShortName: 'Raiffbk Unterschleißh-H-alt',
     bankPostcode: '85704',
     bankLocation: 'Unterschleißheim',
   ),
-  '70169598': Iban(
-    bic: 'GENODEF1MIB',
+  '70169598': Bic(
+    value: 'GENODEF1MIB',
     bankName: 'Raiffeisenbank im Oberland (Gf P2)',
     bankShortName: 'Raiffbk im Oberland',
     bankPostcode: '83646',
     bankLocation: 'Bad Tölz',
   ),
-  '70169599': Iban(
-    bic: 'GENODEF1WEI',
+  '70169599': Bic(
+    value: 'GENODEF1WEI',
     bankName: 'Raiffeisenbank Weil u Umgebung (Gf P2)',
     bankShortName: 'Raiffeisenbank Weil u Umgeb',
     bankPostcode: '86947',
     bankLocation: 'Weil',
   ),
-  '70169602': Iban(
-    bic: 'GENODEF1WM1',
+  '70169602': Bic(
+    value: 'GENODEF1WM1',
     bankName: 'Raiffeisenbank Weilheim und Volksbank Bavaria',
     bankShortName: 'Raiffbk Weilhm u VB Bavaria',
     bankPostcode: '82380',
     bankLocation: 'Peißenberg',
   ),
-  '70169605': Iban(
-    bic: 'GENODEF1ISE',
+  '70169605': Bic(
+    value: 'GENODEF1ISE',
     bankName: 'VR-Bank Erding (Gf P2)',
     bankShortName: 'VR-Bank Erding',
     bankPostcode: '85435',
     bankLocation: 'Erding',
   ),
-  '70169614': Iban(
-    bic: 'GENODEF1FSR',
+  '70169614': Bic(
+    value: 'GENODEF1FSR',
     bankName: 'Freisinger Bank Volksbank-Raiffeisenbank (Gf P2)',
     bankShortName: 'Freisinger Bank VB-Raiffbk',
     bankPostcode: '85354',
     bankLocation: 'Freising',
   ),
-  '70169619': Iban(
-    bic: 'GENODEF1ZOR',
+  '70169619': Bic(
+    value: 'GENODEF1ZOR',
     bankName: 'Raiffeisenbank Zorneding (Gf P2)',
     bankShortName: 'Raiffeisenbank Zorneding',
     bankPostcode: '85604',
     bankLocation: 'Zorneding',
   ),
-  '70169653': Iban(
-    bic: 'GENODEF1AIG',
+  '70169653': Bic(
+    value: 'GENODEF1AIG',
     bankName: 'Raiffeisenbank Aiglsbach (Gf P2)',
     bankShortName: 'Raiffeisenbank Aiglsbach',
     bankPostcode: '84089',
     bankLocation: 'Aiglsbach',
   ),
-  '70169693': Iban(
-    bic: 'GENODEF1RHT',
+  '70169693': Bic(
+    value: 'GENODEF1RHT',
     bankName: 'Raiffeisenbank Hallertau (Gf P2)',
     bankShortName: 'Raiffeisenbank Hallertau',
     bankPostcode: '84104',
     bankLocation: 'Rudelzhausen',
   ),
-  '70190000': Iban(
-    bic: 'GENODEF1M01',
+  '70190000': Bic(
+    value: 'GENODEF1M01',
     bankName: 'Münchner Bank, Zndl Raiffeisenbank Oberschleißheim',
     bankShortName: 'Münchner Bank',
     bankPostcode: '85758',
     bankLocation: 'Oberschleißheim',
   ),
-  '70190010': Iban(
-    bic: 'GENODEF1M1Y',
+  '70190010': Bic(
+    value: 'GENODEF1M1Y',
     bankName: 'Münchner Bank',
     bankShortName: 'Münchner Bank',
     bankPostcode: '81679',
     bankLocation: 'München',
   ),
-  '70220000': Iban(
-    bic: 'LFFBDEMMXXX',
+  '70220000': Bic(
+    value: 'LFFBDEMMXXX',
     bankName: 'LfA Förderbank München',
     bankShortName: 'LfA Förderbank Bayern',
     bankPostcode: '80535',
     bankLocation: 'München',
   ),
-  '70220200': Iban(
-    bic: 'BHFBDEFF700',
+  '70220200': Bic(
+    value: 'BHFBDEFF700',
     bankName: 'BHF-BANK München',
     bankShortName: 'BHF-BANK',
     bankPostcode: '80333',
     bankLocation: 'München',
   ),
-  '70220300': Iban(
-    bic: 'BMWBDEMUXXX',
+  '70220300': Bic(
+    value: 'BMWBDEMUXXX',
     bankName: 'BMW Bank München',
     bankShortName: 'BMW Bank',
     bankPostcode: '80788',
     bankLocation: 'München',
   ),
-  '70220800': Iban(
-    bic: 'BMWBDEMUXXX',
+  '70220800': Bic(
+    value: 'BMWBDEMUXXX',
     bankName: 'Vereinsbank Victoria Bauspar',
     bankShortName: 'VVB München',
     bankPostcode: '80306',
     bankLocation: 'München',
   ),
-  '70220900': Iban(
-    bic: 'DRESDEFFBFC',
+  '70220900': Bic(
+    value: 'DRESDEFFBFC',
     bankName: 'Wüstenrot Bausparkasse',
     bankShortName: 'Wüstenrot Bausparkasse',
     bankPostcode: '80615',
     bankLocation: 'München',
   ),
-  '70230600': Iban(
-    bic: 'ISBKDEFXMUN',
+  '70230600': Bic(
+    value: 'ISBKDEFXMUN',
     bankName: 'Isbank Fil München',
     bankShortName: 'Isbank München',
     bankPostcode: '80336',
     bankLocation: 'München',
   ),
-  '70250150': Iban(
-    bic: 'BYLADEM1KMS',
+  '70250150': Bic(
+    value: 'BYLADEM1KMS',
     bankName: 'Kreissparkasse München Starnberg Ebersberg',
     bankShortName: 'Kr Spk München Starnbg Ebbg',
     bankPostcode: '82319',
     bankLocation: 'Starnberg',
   ),
-  '70320090': Iban(
-    bic: 'HYVEDEMM654',
+  '70320090': Bic(
+    value: 'HYVEDEMM654',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '82452',
     bankLocation: 'Garmisch-Partenkirchen',
   ),
-  '70321194': Iban(
-    bic: 'HYVEDEMM466',
+  '70321194': Bic(
+    value: 'HYVEDEMM466',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '82351',
     bankLocation: 'Weilheim i. OB',
   ),
-  '70322192': Iban(
-    bic: 'HYVEDEMM664',
+  '70322192': Bic(
+    value: 'HYVEDEMM664',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '82411',
     bankLocation: 'Murnau a. Staffelsee',
   ),
-  '70350000': Iban(
-    bic: 'BYLADEM1GAP',
+  '70350000': Bic(
+    value: 'BYLADEM1GAP',
     bankName: 'Kreissparkasse Garmisch-Partenkirchen',
     bankShortName: 'Kr Spk Garmisch-Partenkirch',
     bankPostcode: '82433',
     bankLocation: 'Bad Kohlgrub',
   ),
-  '70351030': Iban(
-    bic: 'BYLADEM1WHM',
+  '70351030': Bic(
+    value: 'BYLADEM1WHM',
     bankName: 'Sparkasse Oberland',
     bankShortName: 'Sparkasse Oberland',
     bankPostcode: '82362',
     bankLocation: 'Weilheim i. OB',
   ),
-  '70362595': Iban(
-    bic: 'GENODEF1WAK',
+  '70362595': Bic(
+    value: 'GENODEF1WAK',
     bankName: 'Raiffeisenbank Wallgau-Krün (Gf P2)',
     bankShortName: 'Raiffbk Wallgau-Krün',
     bankPostcode: '82499',
     bankLocation: 'Wallgau',
   ),
-  '70380006': Iban(
-    bic: 'DRESDEFF703',
+  '70380006': Bic(
+    value: 'DRESDEFF703',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Garmisch-Par',
     bankPostcode: '82467',
     bankLocation: 'Garmisch-Partenkirchen',
   ),
-  '70390000': Iban(
-    bic: 'GENODEF1GAP',
+  '70390000': Bic(
+    value: 'GENODEF1GAP',
     bankName: 'VR-Bank Werdenfels (Gf P2)',
     bankShortName: 'VR-Bank Werdenfels',
     bankPostcode: '82459',
     bankLocation: 'Garmisch-Partenkirchen',
   ),
-  '70390010': Iban(
-    bic: 'GENODEF1GAP',
+  '70390010': Bic(
+    value: 'GENODEF1GAP',
     bankName: 'VR-Bank Werdenfels',
     bankShortName: 'VR-Bank Werdenfels',
     bankPostcode: '82467',
     bankLocation: 'Garmisch-Partenkirchen',
   ),
-  '70391800': Iban(
-    bic: 'GENODEF1PZB',
+  '70391800': Bic(
+    value: 'GENODEF1PZB',
     bankName: 'Volksbank-Raiffeisenbank Penzberg (Gf P2)',
     bankShortName: 'VB-Raiffbk Penzberg',
     bankPostcode: '82377',
     bankLocation: 'Penzberg',
   ),
-  '71020072': Iban(
-    bic: 'HYVEDEMM410',
+  '71020072': Bic(
+    value: 'HYVEDEMM410',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '83461',
     bankLocation: 'Berchtesgaden',
   ),
-  '71021270': Iban(
-    bic: 'HYVEDEMM629',
+  '71021270': Bic(
+    value: 'HYVEDEMM629',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '84307',
     bankLocation: 'Eggenfelden',
   ),
-  '71022182': Iban(
-    bic: 'HYVEDEMM453',
+  '71022182': Bic(
+    value: 'HYVEDEMM453',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '83291',
     bankLocation: 'Traunreut',
   ),
-  '71023173': Iban(
-    bic: 'HYVEDEMM632',
+  '71023173': Bic(
+    value: 'HYVEDEMM632',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '84479',
     bankLocation: 'Burghausen',
   ),
-  '71050000': Iban(
-    bic: 'BYLADEM1BGL',
+  '71050000': Bic(
+    value: 'BYLADEM1BGL',
     bankName: 'Sparkasse Berchtesgadener Land',
     bankShortName: 'Spk Berchtesgadener Land',
     bankPostcode: '83416',
     bankLocation: 'Saaldorf-Surheim',
   ),
-  '71051010': Iban(
-    bic: 'BYLADEM1AOE',
+  '71051010': Bic(
+    value: 'BYLADEM1AOE',
     bankName: 'Kreissparkasse Altötting-Burghausen -alt-',
     bankShortName: 'Kr Spk Altötting-Burgh-alt-',
     bankPostcode: '84497',
     bankLocation: 'Altötting',
   ),
-  '71052050': Iban(
-    bic: 'BYLADEM1TST',
+  '71052050': Bic(
+    value: 'BYLADEM1TST',
     bankName: 'Kreissparkasse Traunstein-Trostberg',
     bankShortName: 'Kr Spk Traunstein-Trostberg',
     bankPostcode: '83355',
     bankLocation: 'Grabenstätt',
   ),
-  '71061009': Iban(
-    bic: 'GENODEF1AOE',
+  '71061009': Bic(
+    value: 'GENODEF1AOE',
     bankName: 'VR meine Raiffeisenbank (Gf P2)',
     bankShortName: 'VR meine Raiffeisenbank',
     bankPostcode: '84496',
     bankLocation: 'Altötting',
   ),
-  '71062802': Iban(
-    bic: 'GENODEF1AGE',
+  '71062802': Bic(
+    value: 'GENODEF1AGE',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank Anger',
     bankPostcode: '83454',
     bankLocation: 'Anger',
   ),
-  '71090000': Iban(
-    bic: 'GENODEF1BGL',
+  '71090000': Bic(
+    value: 'GENODEF1BGL',
     bankName: 'Volksbank Raiffeisenbank Oberbayern Südost (Gf P2)',
     bankShortName: 'VB RB Oberbayern Südost',
     bankPostcode: '83423',
     bankLocation: 'Bad Reichenhall',
   ),
-  '71120077': Iban(
-    bic: 'HYVEDEMM448',
+  '71120077': Bic(
+    value: 'HYVEDEMM448',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '83503',
     bankLocation: 'Wasserburg a. Inn',
   ),
-  '71120078': Iban(
-    bic: 'HYVEDEMM644',
+  '71120078': Bic(
+    value: 'HYVEDEMM644',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '83701',
     bankLocation: 'Gmund a. Tegernsee',
   ),
-  '71121176': Iban(
-    bic: 'HYVEDEMM438',
+  '71121176': Bic(
+    value: 'HYVEDEMM438',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '84445',
     bankLocation: 'Mühldorf a. Inn',
   ),
-  '71122183': Iban(
-    bic: 'HYVEDEMM457',
+  '71122183': Bic(
+    value: 'HYVEDEMM457',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '84465',
     bankLocation: 'Waldkraiburg',
   ),
-  '71140041': Iban(
-    bic: 'COBADEFFXXX',
+  '71140041': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Rosenheim',
     bankShortName: 'Commerzbank Rosenheim',
     bankPostcode: '83022',
     bankLocation: 'Rosenheim',
   ),
-  '71141041': Iban(
-    bic: 'COBADEFFXXX',
+  '71141041': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Mühldorf Inn',
     bankShortName: 'Commerzbank',
     bankPostcode: '84453',
     bankLocation: 'Mühldorf a. Inn',
   ),
-  '71142041': Iban(
-    bic: 'COBADEFFXXX',
+  '71142041': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Waldkraiburg',
     bankShortName: 'Commerzbank',
     bankPostcode: '84465',
     bankLocation: 'Waldkraiburg',
   ),
-  '71150000': Iban(
-    bic: 'BYLADEM1ROS',
+  '71150000': Bic(
+    value: 'BYLADEM1ROS',
     bankName: 'Sparkasse Rosenheim-Bad Aibling',
     bankShortName: 'Spk Rosenheim-Bad Aibling',
     bankPostcode: '83052',
     bankLocation: 'Bruckmühl',
   ),
-  '71151020': Iban(
-    bic: 'BYLADEM1MDF',
+  '71151020': Bic(
+    value: 'BYLADEM1MDF',
     bankName: 'Sparkasse Altötting-Mühldorf',
     bankShortName: 'Spk Altötting-Mühldorf',
     bankPostcode: '84445',
     bankLocation: 'Mühldorf a. Inn',
   ),
-  '71152570': Iban(
-    bic: 'BYLADEM1MIB',
+  '71152570': Bic(
+    value: 'BYLADEM1MIB',
     bankName: 'Kreissparkasse Miesbach-Tegernsee',
     bankShortName: 'Kr Spk Miesbach-Tegernsee',
     bankPostcode: '83624',
     bankLocation: 'Otterfing',
   ),
-  '71152680': Iban(
-    bic: 'BYLADEM1WSB',
+  '71152680': Bic(
+    value: 'BYLADEM1WSB',
     bankName: 'Kreis- und Stadtsparkasse Wasserburg',
     bankShortName: 'Kr u St Spk Wasserburg',
     bankPostcode: '83549',
     bankLocation: 'Eiselfing',
   ),
-  '71160000': Iban(
-    bic: 'GENODEF1VRR',
+  '71160000': Bic(
+    value: 'GENODEF1VRR',
     bankName: 'meine Volksbank Raiffeisenbank (Gf P2)',
     bankShortName: 'meine Volksbank Raiffbk',
     bankPostcode: '83022',
     bankLocation: 'Rosenheim',
   ),
-  '71160161': Iban(
-    bic: 'GENODEF1ROR',
+  '71160161': Bic(
+    value: 'GENODEF1ROR',
     bankName: 'VR Bank Rosenheim-Chiemsee (Gf P2)',
     bankShortName: 'VR Bank Rosenheim-Chiemsee',
     bankPostcode: '83006',
     bankLocation: 'Rosenheim',
   ),
-  '71161964': Iban(
-    bic: 'GENODEF1PRV',
+  '71161964': Bic(
+    value: 'GENODEF1PRV',
     bankName: 'Volksbank-Raiffeisenbank Chiemsee -alt- (Gf P2)',
     bankShortName: 'VB-Raiffbk Chiemsee -alt-',
     bankPostcode: '83209',
     bankLocation: 'Prien a. Chiemsee',
   ),
-  '71162355': Iban(
-    bic: 'GENODEF1OBD',
+  '71162355': Bic(
+    value: 'GENODEF1OBD',
     bankName: 'Raiffeisenbank Oberaudorf (Gf P2)',
     bankShortName: 'Raiffeisenbank Oberaudorf',
     bankPostcode: '83080',
     bankLocation: 'Oberaudorf',
   ),
-  '71162804': Iban(
-    bic: 'GENODEF1ASU',
+  '71162804': Bic(
+    value: 'GENODEF1ASU',
     bankName: 'Raiffeisenbank Aschau-Samerberg (Gf P2)',
     bankShortName: 'Raiffbk Aschau-Samerberg',
     bankPostcode: '83226',
     bankLocation: 'Aschau i. Chiemgau',
   ),
-  '71165150': Iban(
-    bic: 'GENODEF1AIB',
+  '71165150': Bic(
+    value: 'GENODEF1AIB',
     bankName: 'Raiffeisenbank Mangfalltal -alt-',
     bankShortName: 'Raiffeisenbank Mangfal-alt-',
     bankPostcode: '83043',
     bankLocation: 'Bad Aibling',
   ),
-  '71180005': Iban(
-    bic: 'DRESDEFF711',
+  '71180005': Bic(
+    value: 'DRESDEFF711',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Rosenheim',
     bankPostcode: '83011',
     bankLocation: 'Rosenheim',
   ),
-  '71190000': Iban(
-    bic: 'GENODEF1ROV',
+  '71190000': Bic(
+    value: 'GENODEF1ROV',
     bankName: 'Volksbank Rosenheim -alt-',
     bankShortName: 'Volksbank Rosenheim -alt-',
     bankPostcode: '83022',
     bankLocation: 'Rosenheim',
   ),
-  '71191000': Iban(
-    bic: 'GENODEF1MUL',
+  '71191000': Bic(
+    value: 'GENODEF1MUL',
     bankName: 'VR-Bank Burghausen-Mühldorf (Gf P2)',
     bankShortName: 'VR-Bank Burghausen-Mühldorf',
     bankPostcode: '84453',
     bankLocation: 'Mühldorf a. Inn',
   ),
-  '72000000': Iban(
-    bic: 'MARKDEF1720',
+  '72000000': Bic(
+    value: 'MARKDEF1720',
     bankName: 'BBk Augsburg',
     bankShortName: 'Bundesbank',
     bankPostcode: '86136',
     bankLocation: 'Augsburg',
   ),
-  '72012300': Iban(
-    bic: 'BTVADE61XXX',
+  '72012300': Bic(
+    value: 'BTVADE61XXX',
     bankName: 'Bank für Tirol und Vorarlberg Deutschland',
     bankShortName: 'BTV Zndl Deutschland',
     bankPostcode: '80331',
     bankLocation: 'München',
   ),
-  '72020070': Iban(
-    bic: 'HYVEDEMM408',
+  '72020070': Bic(
+    value: 'HYVEDEMM408',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '86899',
     bankLocation: 'Landsberg am Lech',
   ),
-  '72020700': Iban(
-    bic: 'AUGBDE77XXX',
+  '72020700': Bic(
+    value: 'AUGBDE77XXX',
     bankName: 'Augsburger Aktienbank',
     bankShortName: 'Augsburger Aktienbank',
     bankPostcode: '86150',
     bankLocation: 'Augsburg',
   ),
-  '72021271': Iban(
-    bic: 'HYVEDEMM236',
+  '72021271': Bic(
+    value: 'HYVEDEMM236',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '86543',
     bankLocation: 'Aichach',
   ),
-  '72021876': Iban(
-    bic: 'HYVEDEMM259',
+  '72021876': Bic(
+    value: 'HYVEDEMM259',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '89312',
     bankLocation: 'Günzburg',
   ),
-  '72030014': Iban(
-    bic: 'FUBKDE71XXX',
+  '72030014': Bic(
+    value: 'FUBKDE71XXX',
     bankName: 'Fürst Fugger Privatbk Augsb',
     bankShortName: 'Fürst Fugger Privatbank',
     bankPostcode: '86006',
     bankLocation: 'Augsburg',
   ),
-  '72030227': Iban(
-    bic: 'ANHODE77XXX',
+  '72030227': Bic(
+    value: 'ANHODE77XXX',
     bankName: 'Bankhaus Anton Hafner (Gf P2)',
     bankShortName: 'Bankhaus Anton Hafner',
     bankPostcode: '86150',
     bankLocation: 'Augsburg',
   ),
-  '72030260': Iban(
-    bic: 'ANHODE7AXXX',
+  '72030260': Bic(
+    value: 'ANHODE7AXXX',
     bankName: 'Bankhaus Anton Hafner (Gf PayCenter)',
     bankShortName: 'Bankhaus Anton Hafner',
     bankPostcode: '86150',
     bankLocation: 'Augsburg',
   ),
-  '72040046': Iban(
-    bic: 'COBADEFFXXX',
+  '72040046': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gersthofen',
     bankShortName: 'Commerzbank',
     bankPostcode: '86368',
     bankLocation: 'Gersthofen',
   ),
-  '72050000': Iban(
-    bic: 'AUGSDE77XXX',
+  '72050000': Bic(
+    value: 'AUGSDE77XXX',
     bankName: 'Stadtsparkasse Augsburg',
     bankShortName: 'St Spk Augsburg',
     bankPostcode: '86135',
     bankLocation: 'Augsburg',
   ),
-  '72050101': Iban(
-    bic: 'BYLADEM1AUG',
+  '72050101': Bic(
+    value: 'BYLADEM1AUG',
     bankName: 'Kreissparkasse Augsburg',
     bankShortName: 'Kr Spk Augsburg',
     bankPostcode: '86399',
     bankLocation: 'Bobingen',
   ),
-  '72051210': Iban(
-    bic: 'BYLADEM1AIC',
+  '72051210': Bic(
+    value: 'BYLADEM1AIC',
     bankName: 'Sparkasse Aichach-Schrobenhausen',
     bankShortName: 'Spk Aichach-Schrobenhausen',
     bankPostcode: '86561',
     bankLocation: 'Aresing',
   ),
-  '72051840': Iban(
-    bic: 'BYLADEM1GZK',
+  '72051840': Bic(
+    value: 'BYLADEM1GZK',
     bankName: 'Sparkasse Günzburg-Krumbach',
     bankShortName: 'Spk Günzburg-Krumbach',
     bankPostcode: '86473',
     bankLocation: 'Ziemetshausen',
   ),
-  '72062152': Iban(
-    bic: 'GENODEF1MTG',
+  '72062152': Bic(
+    value: 'GENODEF1MTG',
     bankName: 'VR-Bank Handels- und Gewerbebank (Gf P2)',
     bankShortName: 'VR-Bank HG-Bank',
     bankPostcode: '86358',
     bankLocation: 'Gersthofen',
   ),
-  '72069002': Iban(
-    bic: 'GENODEF1ADZ',
+  '72069002': Bic(
+    value: 'GENODEF1ADZ',
     bankName: 'Raiffeisenbank Adelzhausen-Sielenbach (Gf P2)',
     bankShortName: 'Raiffbk Adelzhausen-Sielenb',
     bankPostcode: '86559',
     bankLocation: 'Adelzhausen',
   ),
-  '72069005': Iban(
-    bic: 'GENODEF1AIL',
+  '72069005': Bic(
+    value: 'GENODEF1AIL',
     bankName: 'Raiffeisenbank Aindling Zw Alsmoos-Petersdorf',
     bankShortName: 'Raiffeisenbank Aindling',
     bankPostcode: '86574',
     bankLocation: 'Petersdorf',
   ),
-  '72069034': Iban(
-    bic: 'GENODEF1BSI',
+  '72069034': Bic(
+    value: 'GENODEF1BSI',
     bankName: 'Raiffeisenbank Bissingen',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '86657',
     bankLocation: 'Bissingen',
   ),
-  '72069036': Iban(
-    bic: 'GENODEF1BOI',
+  '72069036': Bic(
+    value: 'GENODEF1BOI',
     bankName: 'Raiffeisenbank Bobingen (Gf P2)',
     bankShortName: 'Raiffeisenbank Bobingen',
     bankPostcode: '86394',
     bankLocation: 'Bobingen',
   ),
-  '72069043': Iban(
-    bic: 'GENODEF1GZ2',
+  '72069043': Bic(
+    value: 'GENODEF1GZ2',
     bankName: 'VR-Bank Donau-Mindel (Gf P2)',
     bankShortName: 'VR-Bank Donau-Mindel',
     bankPostcode: '89407',
     bankLocation: 'Dillingen a.d.Donau',
   ),
-  '72069105': Iban(
-    bic: 'GENODEF1HTF',
+  '72069105': Bic(
+    value: 'GENODEF1HTF',
     bankName: 'Raiffeisenbank Hiltenfingen zgl f Ndl Gennach',
     bankShortName: 'Raiffeisenbank Hiltenfingen',
     bankPostcode: '86853',
     bankLocation: 'Langerringen',
   ),
-  '72069113': Iban(
-    bic: 'GENODEF1HZH',
+  '72069113': Bic(
+    value: 'GENODEF1HZH',
     bankName: 'Raiffeisenbank Aschberg (Gf P2)',
     bankShortName: 'Raiffeisenbank Aschberg',
     bankPostcode: '89438',
     bankLocation: 'Holzheim',
   ),
-  '72069114': Iban(
-    bic: 'GENODEF1HZR',
+  '72069114': Bic(
+    value: 'GENODEF1HZR',
     bankName: 'Raiffeisenbank Holzheim',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '89291',
     bankLocation: 'Holzheim',
   ),
-  '72069119': Iban(
-    bic: 'GENODEF1ICH',
+  '72069119': Bic(
+    value: 'GENODEF1ICH',
     bankName: 'Raiffeisenbank Ichenhausen',
     bankShortName: 'Raiffeisenbank Ichenhausen',
     bankPostcode: '89352',
     bankLocation: 'Ellzee',
   ),
-  '72069123': Iban(
-    bic: 'GENODEF1JET',
+  '72069123': Bic(
+    value: 'GENODEF1JET',
     bankName: 'Raiffeisenbank Jettingen-Scheppach (Gf P2)',
     bankShortName: 'Raiffbk Jettingen-Schep',
     bankPostcode: '89343',
     bankLocation: 'Jettingen-Scheppach',
   ),
-  '72069126': Iban(
-    bic: 'GENODEF1BBT',
+  '72069126': Bic(
+    value: 'GENODEF1BBT',
     bankName: 'Raiffeisenbank Mittelschwaben (Gf P2)',
     bankShortName: 'Raiffbk Mittelschwaben',
     bankPostcode: '89297',
     bankLocation: 'Roggenburg',
   ),
-  '72069132': Iban(
-    bic: 'GENODEF1KRR',
+  '72069132': Bic(
+    value: 'GENODEF1KRR',
     bankName: 'Raiffeisenbank Krumbach/Schwaben (Gf P2)',
     bankShortName: 'Raiffbk Krumbach/Schwaben',
     bankPostcode: '86370',
     bankLocation: 'Krumbach (Schwaben)',
   ),
-  '72069135': Iban(
-    bic: 'GENODEF1LST',
+  '72069135': Bic(
+    value: 'GENODEF1LST',
     bankName: 'Raiffeisenbank Stauden (Gf P2)',
     bankShortName: 'Raiffbk Stauden Langenneufn',
     bankPostcode: '86863',
     bankLocation: 'Langenneufnach',
   ),
-  '72069155': Iban(
-    bic: 'GENODEF1MRI',
+  '72069155': Bic(
+    value: 'GENODEF1MRI',
     bankName: 'Raiffeisenbank Wittelsbacher Land (Gf P2)',
     bankShortName: 'RB Wittelsb. Land, Mering',
     bankPostcode: '86415',
     bankLocation: 'Mering',
   ),
-  '72069179': Iban(
-    bic: 'GENODEF1BWI',
+  '72069179': Bic(
+    value: 'GENODEF1BWI',
     bankName: 'Raiffeisenbank Unteres Zusamtal (Gf P2)',
     bankShortName: 'Raiffbk Unteres Zusamtal',
     bankPostcode: '86647',
     bankLocation: 'Buttenwiesen',
   ),
-  '72069181': Iban(
-    bic: 'GENODEF1OFF',
+  '72069181': Bic(
+    value: 'GENODEF1OFF',
     bankName: 'Raiffeisenbank Offingen',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '89362',
     bankLocation: 'Offingen',
   ),
-  '72069193': Iban(
-    bic: 'GENODEF1RLI',
+  '72069193': Bic(
+    value: 'GENODEF1RLI',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '86508',
     bankLocation: 'Rehling',
   ),
-  '72069209': Iban(
-    bic: 'GENODEF1RGB',
+  '72069209': Bic(
+    value: 'GENODEF1RGB',
     bankName: 'Raiffeisenbank Roggenburg',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '89297',
     bankLocation: 'Roggenburg',
   ),
-  '72069220': Iban(
-    bic: 'GENODEF1SMU',
+  '72069220': Bic(
+    value: 'GENODEF1SMU',
     bankName: 'Raiffeisenbank Schwabmünchen',
     bankShortName: 'Raiffbk Schwabmünchen',
     bankPostcode: '86836',
     bankLocation: 'Obermeitingen',
   ),
-  '72069235': Iban(
-    bic: 'GENODEF1THS',
+  '72069235': Bic(
+    value: 'GENODEF1THS',
     bankName: 'Raiffeisenbank Thannhausen',
     bankShortName: 'Raiffeisenbank Thannhausen',
     bankPostcode: '86513',
     bankLocation: 'Ursberg',
   ),
-  '72069263': Iban(
-    bic: 'GENODEF1WTS',
+  '72069263': Bic(
+    value: 'GENODEF1WTS',
     bankName: 'Raiffeisenbank Wittislingen (Gf P2)',
     bankShortName: 'Raiffeisenbank Wittislingen',
     bankPostcode: '89424',
     bankLocation: 'Wittislingen',
   ),
-  '72069274': Iban(
-    bic: 'GENODEF1ZUS',
+  '72069274': Bic(
+    value: 'GENODEF1ZUS',
     bankName: 'Raiffeisenbank Augsburger Land West (Gf P2)',
     bankShortName: 'Raiffbk Augsburger Ld West',
     bankPostcode: '86441',
     bankLocation: 'Zusmarshausen',
   ),
-  '72069308': Iban(
-    bic: 'GENODEF1WDN',
+  '72069308': Bic(
+    value: 'GENODEF1WDN',
     bankName: 'Raiffeisen-Volksbank Wemding (Gf P2)',
     bankShortName: 'RVB Wemding',
     bankPostcode: '86650',
     bankLocation: 'Wemding',
   ),
-  '72069329': Iban(
-    bic: 'GENODEF1NOE',
+  '72069329': Bic(
+    value: 'GENODEF1NOE',
     bankName: 'Raiffeisen-Volksbank Ries (Gf P2)',
     bankShortName: 'Raiffeisen-Volksbank Ries',
     bankPostcode: '86715',
     bankLocation: 'Nördlingen',
   ),
-  '72069736': Iban(
-    bic: 'GENODEF1BLT',
+  '72069736': Bic(
+    value: 'GENODEF1BLT',
     bankName: 'Raiffeisenbank Schwaben Mitte (Gf P2)',
     bankShortName: 'Raiffbk Schwaben Mitte',
     bankPostcode: '86370',
     bankLocation: 'Krumbach (Schwaben)',
   ),
-  '72069789': Iban(
-    bic: 'GENODEF1PFA',
+  '72069789': Bic(
+    value: 'GENODEF1PFA',
     bankName: 'Raiffeisenbank Pfaffenhausen (Gf P2)',
     bankShortName: 'Raiffbk Pfaffenhausen',
     bankPostcode: '87772',
     bankLocation: 'Pfaffenhausen',
   ),
-  '72070001': Iban(
-    bic: 'DEUTDEMM724',
+  '72070001': Bic(
+    value: 'DEUTDEMM724',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '86601',
     bankLocation: 'Donauwörth',
   ),
-  '72070024': Iban(
-    bic: 'DEUTDEDB727',
+  '72070024': Bic(
+    value: 'DEUTDEDB727',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '86329',
     bankLocation: 'Königsbrunn',
   ),
-  '72070324': Iban(
-    bic: 'DEUTDEDBP19',
+  '72070324': Bic(
+    value: 'DEUTDEDBP19',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '86150',
     bankLocation: 'Augsburg',
   ),
-  '72070365': Iban(
-    bic: 'DEUTDEMMP19',
+  '72070365': Bic(
+    value: 'DEUTDEMMP19',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '86150',
     bankLocation: 'Augsburg',
   ),
-  '72080001': Iban(
-    bic: 'DRESDEFF720',
+  '72080001': Bic(
+    value: 'DRESDEFF720',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Gersthofen',
     bankPostcode: '86368',
     bankLocation: 'Gersthofen',
   ),
-  '72090000': Iban(
-    bic: 'GENODEF1AUB',
+  '72090000': Bic(
+    value: 'GENODEF1AUB',
     bankName: 'VR Bank Augsburg-Ostallgäu (Gf P2)',
     bankShortName: 'VR Bank Augsburg-Ostallgäu',
     bankPostcode: '86012',
     bankLocation: 'Augsburg',
   ),
-  '72090500': Iban(
-    bic: 'GENODEF1S03',
+  '72090500': Bic(
+    value: 'GENODEF1S03',
     bankName: 'Sparda-Bank Augsburg',
     bankShortName: 'Sparda-Bank Augsburg',
     bankPostcode: '86013',
     bankLocation: 'Augsburg',
   ),
-  '72090900': Iban(
-    bic: 'GENODEF1P14',
+  '72090900': Bic(
+    value: 'GENODEF1P14',
     bankName: 'PSD Bank München-Augsburg',
     bankShortName: 'PSD Bank München (Gf P2)',
     bankPostcode: '86135',
     bankLocation: 'Augsburg',
   ),
-  '72091800': Iban(
-    bic: 'GENODEF1GZ1',
+  '72091800': Bic(
+    value: 'GENODEF1GZ1',
     bankName: 'Volksbank Günzburg (Gf P2)',
     bankShortName: 'Volksbank Günzburg',
     bankPostcode: '89312',
     bankLocation: 'Günzburg',
   ),
-  '72120078': Iban(
-    bic: 'HYVEDEMM426',
+  '72120078': Bic(
+    value: 'HYVEDEMM426',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '86521',
     bankLocation: 'Schrobenhausen',
   ),
-  '72122181': Iban(
-    bic: 'HYVEDEMM665',
+  '72122181': Bic(
+    value: 'HYVEDEMM665',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '86616',
     bankLocation: 'Neuburg a.d.Donau',
   ),
-  '72140052': Iban(
-    bic: 'COBADEFFXXX',
+  '72140052': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Ingolstadt',
     bankShortName: 'Commerzbank',
     bankPostcode: '85018',
     bankLocation: 'Ingolstadt',
   ),
-  '72150000': Iban(
-    bic: 'BYLADEM1ING',
+  '72150000': Bic(
+    value: 'BYLADEM1ING',
     bankName: 'Sparkasse Ingolstadt Eichstätt',
     bankShortName: 'Spk Ingolstadt Eichstätt',
     bankPostcode: '85023',
     bankLocation: 'Ingolstadt',
   ),
-  '72151340': Iban(
-    bic: 'BYLADEM1EIS',
+  '72151340': Bic(
+    value: 'BYLADEM1EIS',
     bankName: 'Sparkasse Eichstätt -alt-',
     bankShortName: 'Sparkasse Eichstätt -alt-',
     bankPostcode: '85067',
     bankLocation: 'Eichstätt',
   ),
-  '72151650': Iban(
-    bic: 'BYLADEM1PAF',
+  '72151650': Bic(
+    value: 'BYLADEM1PAF',
     bankName: 'Sparkassen Pfaffenhofen',
     bankShortName: 'Spk Pfaffenhofen',
     bankPostcode: '85293',
     bankLocation: 'Reichertshausen',
   ),
-  '72151880': Iban(
-    bic: 'BYLADEM1SSH',
+  '72151880': Bic(
+    value: 'BYLADEM1SSH',
     bankName: 'Sparkasse Aichach-Schrobenhausen -alt-',
     bankShortName: 'Spk Aichach-Schrobenhausen',
     bankPostcode: '86542',
     bankLocation: 'Aichach',
   ),
-  '72152070': Iban(
-    bic: 'BYLADEM1NEB',
+  '72152070': Bic(
+    value: 'BYLADEM1NEB',
     bankName: 'Sparkasse Neuburg-Rain',
     bankShortName: 'Spk Neuburg-Rain',
     bankPostcode: '86692',
     bankLocation: 'Münster',
   ),
-  '72160818': Iban(
-    bic: 'GENODEF1INP',
+  '72160818': Bic(
+    value: 'GENODEF1INP',
     bankName: 'Volksbank Raiffeisenbank Bayern Mitte (Gf P2)',
     bankShortName: 'VR Bank Bayern Mitte',
     bankPostcode: '85023',
     bankLocation: 'Ingolstadt',
   ),
-  '72169013': Iban(
-    bic: 'GENODEF1ARH',
+  '72169013': Bic(
+    value: 'GENODEF1ARH',
     bankName: 'Raiffeisenbank Aresing-Hörzhausen-Schiltberg (Gf P2)',
     bankShortName: 'Raiffbk Aresing-Hörz-Schilt',
     bankPostcode: '86561',
     bankLocation: 'Aresing',
   ),
-  '72169080': Iban(
-    bic: 'GENODEF1GSB',
+  '72169080': Bic(
+    value: 'GENODEF1GSB',
     bankName: 'Raiffeisenbank Aresing-Gerolsbach (GF P2)',
     bankShortName: 'Raiffbk Aresing-Gerolsbach',
     bankPostcode: '85302',
     bankLocation: 'Gerolsbach',
   ),
-  '72169218': Iban(
-    bic: 'GENODEF1SBN',
+  '72169218': Bic(
+    value: 'GENODEF1SBN',
     bankName: 'Schrobenhausener Bank (Gf P2)',
     bankShortName: 'Schrobenhausener Bank',
     bankPostcode: '86529',
     bankLocation: 'Schrobenhausen',
   ),
-  '72169246': Iban(
-    bic: 'GENODEF1WFN',
+  '72169246': Bic(
+    value: 'GENODEF1WFN',
     bankName: 'Raiffeisenbank Schrobenhausener Land (Gf P2)',
     bankShortName: 'Raiffbk Schrobenhausener Ld',
     bankPostcode: '86571',
     bankLocation: 'Langenmosen',
   ),
-  '72169380': Iban(
-    bic: 'GENODEF1BLN',
+  '72169380': Bic(
+    value: 'GENODEF1BLN',
     bankName: 'Raiffeisenbank Beilngries (Gf P2)',
     bankShortName: 'Raiffeisenbank Beilngries',
     bankPostcode: '92339',
     bankLocation: 'Beilngries',
   ),
-  '72169745': Iban(
-    bic: 'GENODEF1WDF',
+  '72169745': Bic(
+    value: 'GENODEF1WDF',
     bankName: 'Raiffeisenbank Ehekirchen-Weidorf (Gf P2)',
     bankShortName: 'Raiffbk Ehekirchen-Weidorf',
     bankPostcode: '86676',
     bankLocation: 'Ehekirchen',
   ),
-  '72169756': Iban(
-    bic: 'GENODEF1ND2',
+  '72169756': Bic(
+    value: 'GENODEF1ND2',
     bankName: 'VR Bank Neuburg-Rain (Gf P2)',
     bankShortName: 'VR Bank Neuburg-Rain',
     bankPostcode: '86621',
     bankLocation: 'Neuburg a.d.Donau',
   ),
-  '72169764': Iban(
-    bic: 'GENODEF1WRI',
+  '72169764': Bic(
+    value: 'GENODEF1WRI',
     bankName: 'Raiffeisenbank Donaumooser Land (Gf P2)',
     bankShortName: 'Raiffbk Donaumooser Land',
     bankPostcode: '86668',
     bankLocation: 'Karlshuld',
   ),
-  '72169812': Iban(
-    bic: 'GENODEF1GAH',
+  '72169812': Bic(
+    value: 'GENODEF1GAH',
     bankName: 'Raiffeisenbank im Donautal (Gf P2)',
     bankShortName: 'Raiffbk im Donautal',
     bankPostcode: '85080',
     bankLocation: 'Gaimersheim',
   ),
-  '72169831': Iban(
-    bic: 'GENODEF1RBL',
+  '72169831': Bic(
+    value: 'GENODEF1RBL',
     bankName: 'Raiffeisenbank Riedenburg-Lobsing (Gf P2)',
     bankShortName: 'Raiffbk Riedenburg-Lobs',
     bankPostcode: '93339',
     bankLocation: 'Riedenburg',
   ),
-  '72170007': Iban(
-    bic: 'DEUTDEMM728',
+  '72170007': Bic(
+    value: 'DEUTDEMM728',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '85276',
     bankLocation: 'Pfaffenhofen a.d.Ilm',
   ),
-  '72170024': Iban(
-    bic: 'DEUTDEDB729',
+  '72170024': Bic(
+    value: 'DEUTDEDB729',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '85085',
     bankLocation: 'Vohburg a.d.Donau',
   ),
-  '72170324': Iban(
-    bic: 'DEUTDEDBP17',
+  '72170324': Bic(
+    value: 'DEUTDEDBP17',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '85051',
     bankLocation: 'Ingolstadt',
   ),
-  '72170363': Iban(
-    bic: 'DEUTDEMMP17',
+  '72170363': Bic(
+    value: 'DEUTDEMMP17',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '85051',
     bankLocation: 'Ingolstadt',
   ),
-  '72180002': Iban(
-    bic: 'DRESDEFF721',
+  '72180002': Bic(
+    value: 'DRESDEFF721',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Ingolstadt',
     bankPostcode: '85018',
     bankLocation: 'Ingolstadt',
   ),
-  '72191600': Iban(
-    bic: 'GENODEF1PFI',
+  '72191600': Bic(
+    value: 'GENODEF1PFI',
     bankName: 'Hallertauer Volksbank (Gf P2)',
     bankShortName: 'Hallertauer Volksbank',
     bankPostcode: '85276',
     bankLocation: 'Pfaffenhofen a.d.Ilm',
   ),
-  '72220074': Iban(
-    bic: 'HYVEDEMM255',
+  '72220074': Bic(
+    value: 'HYVEDEMM255',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '86609',
     bankLocation: 'Donauwörth',
   ),
-  '72223182': Iban(
-    bic: 'HYVEDEMM263',
+  '72223182': Bic(
+    value: 'HYVEDEMM263',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '86715',
     bankLocation: 'Nördlingen',
   ),
-  '72250000': Iban(
-    bic: 'BYLADEM1NLG',
+  '72250000': Bic(
+    value: 'BYLADEM1NLG',
     bankName: 'Sparkasse Nördlingen -alt-',
     bankShortName: 'Sparkasse Nördlingen -alt-',
     bankPostcode: '86715',
     bankLocation: 'Nördlingen',
   ),
-  '72250160': Iban(
-    bic: 'BYLADEM1DON',
+  '72250160': Bic(
+    value: 'BYLADEM1DON',
     bankName: 'Sparkasse Donauwörth',
     bankShortName: 'Spk Donauwörth',
     bankPostcode: '86698',
     bankLocation: 'Oberndorf a. Lech',
   ),
-  '72251520': Iban(
-    bic: 'BYLADEM1DLG',
+  '72251520': Bic(
+    value: 'BYLADEM1DLG',
     bankName: 'Sparkasse Dillingen-Nördlingen',
     bankShortName: 'Spk Dillingen-Nördlingen',
     bankPostcode: '86751',
     bankLocation: 'Mönchsdeggingen',
   ),
-  '72261754': Iban(
-    bic: 'GENODEF1RLH',
+  '72261754': Bic(
+    value: 'GENODEF1RLH',
     bankName: 'Raiffeisenbank Rain am Lech (Gf P2)',
     bankShortName: 'Raiffeisenbank Rain am Lech',
     bankPostcode: '86641',
     bankLocation: 'Rain',
   ),
-  '72262401': Iban(
-    bic: 'GENODEF1DLG',
+  '72262401': Bic(
+    value: 'GENODEF1DLG',
     bankName: 'Raiffeisen-Volksbank Dillingen (Gf P2)',
     bankShortName: 'Raiff-VB Dillingen',
     bankPostcode: '89407',
     bankLocation: 'Dillingen a.d.Donau',
   ),
-  '72290100': Iban(
-    bic: 'GENODEF1DON',
+  '72290100': Bic(
+    value: 'GENODEF1DON',
     bankName: 'Raiffeisen-Volksbank Donauwörth (Gf P2)',
     bankShortName: 'Raiff-VB Donauwörth',
     bankPostcode: '86604',
     bankLocation: 'Donauwörth',
   ),
-  '73050000': Iban(
-    bic: 'BYLADEM1NUL',
+  '73050000': Bic(
+    value: 'BYLADEM1NUL',
     bankName: 'Sparkasse Neu-Ulm-Illertissen',
     bankShortName: 'Spk Vöhringen',
     bankPostcode: '89269',
     bankLocation: 'Vöhringen',
   ),
-  '73061191': Iban(
-    bic: 'GENODEF1NU1',
+  '73061191': Bic(
+    value: 'GENODEF1NU1',
     bankName: 'VR-Bank Neu-Ulm (Gf P2)',
     bankShortName: 'VR-Bank Neu-Ulm',
     bankPostcode: '89212',
     bankLocation: 'Neu-Ulm',
   ),
-  '73090000': Iban(
-    bic: 'GENODEF1NUV',
+  '73090000': Bic(
+    value: 'GENODEF1NUV',
     bankName: 'Volksbank Neu-Ulm (Gf P2)',
     bankShortName: 'Volksbank Neu-Ulm',
     bankPostcode: '89212',
     bankLocation: 'Neu-Ulm',
   ),
-  '73120075': Iban(
-    bic: 'HYVEDEMM436',
+  '73120075': Bic(
+    value: 'HYVEDEMM436',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '87719',
     bankLocation: 'Mindelheim',
   ),
-  '73140046': Iban(
-    bic: 'COBADEFFXXX',
+  '73140046': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Memmingen',
     bankShortName: 'Commerzbank Memmingen',
     bankPostcode: '87700',
     bankLocation: 'Memmingen',
   ),
-  '73150000': Iban(
-    bic: 'BYLADEM1MLM',
+  '73150000': Bic(
+    value: 'BYLADEM1MLM',
     bankName: 'Sparkasse Schwaben-Bodensee',
     bankShortName: 'Spk Schwaben-Bodensee',
     bankPostcode: '87751',
     bankLocation: 'Heimertingen',
   ),
-  '73160000': Iban(
-    bic: 'GENODEF1MIR',
+  '73160000': Bic(
+    value: 'GENODEF1MIR',
     bankName: 'Genossenschaftsbank Unterallgäu (Gf P2)',
     bankShortName: 'Genobank Unterallgäu',
     bankPostcode: '87719',
     bankLocation: 'Mindelheim',
   ),
-  '73180011': Iban(
-    bic: 'DRESDEFF731',
+  '73180011': Bic(
+    value: 'DRESDEFF731',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Memmingen',
     bankPostcode: '87681',
     bankLocation: 'Memmingen',
   ),
-  '73190000': Iban(
-    bic: 'GENODEF1MM1',
+  '73190000': Bic(
+    value: 'GENODEF1MM1',
     bankName: 'VR-Bank Memmingen (Gf P2)',
     bankShortName: 'VR-Bank Memmingen',
     bankPostcode: '87689',
     bankLocation: 'Memmingen',
   ),
-  '73191500': Iban(
-    bic: 'ULMVDE66XXX',
+  '73191500': Bic(
+    value: 'ULMVDE66XXX',
     bankName: 'Volksbank Ulm-Biberach -alt-',
     bankShortName: 'Illertisser Bank -alt-',
     bankPostcode: '89257',
     bankLocation: 'Illertissen',
   ),
-  '73311600': Iban(
-    bic: 'ULMVDE66XXX',
+  '73311600': Bic(
+    value: 'ULMVDE66XXX',
     bankName: 'Hypo Vorarlberg Bank',
     bankShortName: 'Hypo-Landesbk',
     bankPostcode: '87567',
     bankLocation: 'Riezlern',
   ),
-  '73320073': Iban(
-    bic: 'HYVEDEMM428',
+  '73320073': Bic(
+    value: 'HYVEDEMM428',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '87620',
     bankLocation: 'Füssen',
   ),
-  '73321177': Iban(
-    bic: 'HYVEDEMM567',
+  '73321177': Bic(
+    value: 'HYVEDEMM567',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '87552',
     bankLocation: 'Oberstdorf',
   ),
-  '73322380': Iban(
-    bic: 'HYVEDEMM570',
+  '73322380': Bic(
+    value: 'HYVEDEMM570',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '87459',
     bankLocation: 'Pfronten',
   ),
-  '73331700': Iban(
-    bic: 'GABLDE71XXX',
+  '73331700': Bic(
+    value: 'GABLDE71XXX',
     bankName: 'Gabler Saliter Bankgeschäft (GF P3)',
     bankShortName: 'Saliter-Bank Obergünzburg',
     bankPostcode: '87634',
     bankLocation: 'Obergünzburg',
   ),
-  '73340046': Iban(
-    bic: 'COBADEFFXXX',
+  '73340046': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Kempten Allgäu',
     bankShortName: 'Commerzbank Kempten Allgäu',
     bankPostcode: '87435',
     bankLocation: 'Kempten (Allgäu)',
   ),
-  '73350000': Iban(
-    bic: 'BYLADEM1ALG',
+  '73350000': Bic(
+    value: 'BYLADEM1ALG',
     bankName: 'Sparkasse Allgäu',
     bankShortName: 'Sparkasse Allgäu',
     bankPostcode: '87448',
     bankLocation: 'Waltenhofen',
   ),
-  '73369264': Iban(
-    bic: 'GENODEF1DTA',
+  '73369264': Bic(
+    value: 'GENODEF1DTA',
     bankName: 'Raiffeisenbank im Allgäuer Land (Gf P2)',
     bankShortName: 'Raiffbk im Allg Land',
     bankPostcode: '87463',
     bankLocation: 'Dietmannsried',
   ),
-  '73369821': Iban(
-    bic: 'GENODEF1LBB',
+  '73369821': Bic(
+    value: 'GENODEF1LBB',
     bankName: 'BodenseeBank (Gf P2)',
     bankShortName: 'BodenseeBank',
     bankPostcode: '88115',
     bankLocation: 'Lindau (Bodensee)',
   ),
-  '73369823': Iban(
-    bic: 'GENODEF1WWA',
+  '73369823': Bic(
+    value: 'GENODEF1WWA',
     bankName: 'Raiffeisenbank Westallgäu (Gf P2)',
     bankShortName: 'Raiffeisenbank Westallgäu',
     bankPostcode: '88167',
     bankLocation: 'Gestratz',
   ),
-  '73369826': Iban(
-    bic: 'GENODEF1LIA',
+  '73369826': Bic(
+    value: 'GENODEF1LIA',
     bankName: 'Volksbank Lindenberg',
     bankShortName: 'Volksbank Lindenberg',
     bankPostcode: '88172',
     bankLocation: 'Scheidegg',
   ),
-  '73369851': Iban(
-    bic: 'GENODEF1AIT',
+  '73369851': Bic(
+    value: 'GENODEF1AIT',
     bankName: 'Raiffeisenbank Aitrang-Ruderatshofen (Gf P2)',
     bankShortName: 'Raiffbk Aitrang-Ruderatshfn',
     bankPostcode: '87648',
     bankLocation: 'Aitrang',
   ),
-  '73369854': Iban(
-    bic: 'GENODEF1FCH',
+  '73369854': Bic(
+    value: 'GENODEF1FCH',
     bankName: 'Raiffeisenbank Fuchstal-Denklingen (Gf P2)',
     bankShortName: 'Raiffbk Fuchstal-Denklingen',
     bankPostcode: '86925',
     bankLocation: 'Fuchstal',
   ),
-  '73369859': Iban(
-    bic: 'GENODEF1BIN',
+  '73369859': Bic(
+    value: 'GENODEF1BIN',
     bankName: 'Raiffeisenbank Bidingen (Gf P2)',
     bankShortName: 'Raiffeisenbank Bidingen',
     bankPostcode: '87651',
     bankLocation: 'Bidingen',
   ),
-  '73369871': Iban(
-    bic: 'GENODEF1EGB',
+  '73369871': Bic(
+    value: 'GENODEF1EGB',
     bankName: 'Raiffeisenbank Baisweil-Eggenthal-Friesenried (Gf P2)',
     bankShortName: 'Raiffbk Baisweil-Eggent-Fr',
     bankPostcode: '87653',
     bankLocation: 'Eggenthal',
   ),
-  '73369881': Iban(
-    bic: 'GENODEF1HWG',
+  '73369881': Bic(
+    value: 'GENODEF1HWG',
     bankName: 'Raiffeisenbank Haldenwang (Gf P2)',
     bankShortName: 'Raiffeisenbank Haldenwang',
     bankPostcode: '87490',
     bankLocation: 'Haldenwang',
   ),
-  '73369902': Iban(
-    bic: 'GENODEF1KM1',
+  '73369902': Bic(
+    value: 'GENODEF1KM1',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '87412',
     bankLocation: 'Kempten (Allgäu)',
   ),
-  '73369918': Iban(
-    bic: 'GENODEF1OKI',
+  '73369918': Bic(
+    value: 'GENODEF1OKI',
     bankName: 'Raiffeisenbank Kirchweihtal (Gf P2)',
     bankShortName: 'Raiffeisenbank Kirchweihtal',
     bankPostcode: '87666',
     bankLocation: 'Pforzen',
   ),
-  '73369920': Iban(
-    bic: 'GENODEF1SFO',
+  '73369920': Bic(
+    value: 'GENODEF1SFO',
     bankName: 'Raiffeisenbank Kempten-Oberallgäu (Gf P2)',
     bankShortName: 'Raiffbk Kempten-Oberallgäu',
     bankPostcode: '87527',
     bankLocation: 'Sonthofen',
   ),
-  '73369933': Iban(
-    bic: 'GENODEF1RHP',
+  '73369933': Bic(
+    value: 'GENODEF1RHP',
     bankName: 'Raiffeisenbank Südliches Ostallgäu (Gf P2)',
     bankShortName: 'Raiffbk Südliches Ostallgäu',
     bankPostcode: '87637',
     bankLocation: 'Seeg',
   ),
-  '73369936': Iban(
-    bic: 'GENODEF1SER',
+  '73369936': Bic(
+    value: 'GENODEF1SER',
     bankName: 'Raiffeisenbank Seeg -alt-',
     bankShortName: 'Raiffeisenbank Seeg -alt-',
     bankPostcode: '87637',
     bankLocation: 'Seeg',
   ),
-  '73369954': Iban(
-    bic: 'GENODEF1WGO',
+  '73369954': Bic(
+    value: 'GENODEF1WGO',
     bankName: 'Raiffeisenbank Wald-Görisried (Gf P2)',
     bankShortName: 'Raiffbk Wald-Görisried',
     bankPostcode: '87616',
     bankLocation: 'Wald',
   ),
-  '73370008': Iban(
-    bic: 'DEUTDEMM737',
+  '73370008': Bic(
+    value: 'DEUTDEMM737',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '82538',
     bankLocation: 'Geretsried',
   ),
-  '73370024': Iban(
-    bic: 'DEUTDEDB735',
+  '73370024': Bic(
+    value: 'DEUTDEDB735',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '82538',
     bankLocation: 'Geretsried',
   ),
-  '73380004': Iban(
-    bic: 'DRESDEFF733',
+  '73380004': Bic(
+    value: 'DRESDEFF733',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Kempten',
     bankPostcode: '87404',
     bankLocation: 'Kempten (Allgäu)',
   ),
-  '73390000': Iban(
-    bic: 'GENODEF1KEV',
+  '73390000': Bic(
+    value: 'GENODEF1KEV',
     bankName: 'Allgäuer Volksbank Kempten-Sonthofen Zw',
     bankShortName: 'Allgäuer Volksbank',
     bankPostcode: '87551',
     bankLocation: 'Oberstdorf',
   ),
-  '73392000': Iban(
-    bic: 'GENODEF1IMV',
+  '73392000': Bic(
+    value: 'GENODEF1IMV',
     bankName: 'Volksbank Immenstadt (Gf P2)',
     bankShortName: 'Volksbank Immenstadt',
     bankPostcode: '87509',
     bankLocation: 'Immenstadt i. Allgäu',
   ),
-  '73420071': Iban(
-    bic: 'HYVEDEMM427',
+  '73420071': Bic(
+    value: 'HYVEDEMM427',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '87609',
     bankLocation: 'Marktoberdorf',
   ),
-  '73421478': Iban(
-    bic: 'HYVEDEMM666',
+  '73421478': Bic(
+    value: 'HYVEDEMM666',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '86951',
     bankLocation: 'Schongau',
   ),
-  '73440048': Iban(
-    bic: 'COBADEFFXXX',
+  '73440048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank KB F-K48',
     bankShortName: 'Commerzbank',
     bankPostcode: '87600',
     bankLocation: 'Kaufbeuren',
   ),
-  '73450000': Iban(
-    bic: 'BYLADEM1KFB',
+  '73450000': Bic(
+    value: 'BYLADEM1KFB',
     bankName: 'Kreis- und Stadtsparkasse Kaufbeuren',
     bankShortName: 'Kr u St Spk Kaufbeuren',
     bankPostcode: '87679',
     bankLocation: 'Westendorf',
   ),
-  '73451450': Iban(
-    bic: 'BYLADEM1SOG',
+  '73451450': Bic(
+    value: 'BYLADEM1SOG',
     bankName: 'Kreissparkasse Schongau -alt-',
     bankShortName: 'Kr Spk Schongau -alt-',
     bankPostcode: '82362',
     bankLocation: 'Weilheim i. OB',
   ),
-  '73460046': Iban(
-    bic: 'GENODEF1KFB',
+  '73460046': Bic(
+    value: 'GENODEF1KFB',
     bankName: 'VR Bank Augsburg-Ostallgäu (Gf P2)',
     bankShortName: 'VR Bank Augsburg-Ostallgäu',
     bankPostcode: '87600',
     bankLocation: 'Kaufbeuren',
   ),
-  '73480013': Iban(
-    bic: 'DRESDEFF734',
+  '73480013': Bic(
+    value: 'DRESDEFF734',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Kaufbeuren',
     bankPostcode: '87572',
     bankLocation: 'Kaufbeuren',
   ),
-  '74020074': Iban(
-    bic: 'HYVEDEMM445',
+  '74020074': Bic(
+    value: 'HYVEDEMM445',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '94052',
     bankLocation: 'Pocking',
   ),
-  '74020100': Iban(
-    bic: 'RZOODE77XXX',
+  '74020100': Bic(
+    value: 'RZOODE77XXX',
     bankName: 'Raiffeisenlandesbank OÖ Zndl Süddeutschland',
     bankShortName: 'RLB OÖ Zndl Süddeutschland',
     bankPostcode: '80333',
     bankLocation: 'München',
   ),
-  '74020150': Iban(
-    bic: 'RZOODE77050',
+  '74020150': Bic(
+    value: 'RZOODE77050',
     bankName: 'Raiffeisenlandesbank OÖ Zndl Südde - für interne Zwecke',
     bankShortName: 'RLB OÖ Zndl Süddeutschland',
     bankPostcode: '80333',
     bankLocation: 'München',
   ),
-  '74040082': Iban(
-    bic: 'COBADEFFXXX',
+  '74040082': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Passau',
     bankShortName: 'Commerzbank Passau',
     bankPostcode: '94032',
     bankLocation: 'Passau',
   ),
-  '74050000': Iban(
-    bic: 'BYLADEM1PAS',
+  '74050000': Bic(
+    value: 'BYLADEM1PAS',
     bankName: 'Sparkasse Passau',
     bankShortName: 'Spk Passau',
     bankPostcode: '94113',
     bankLocation: 'Tiefenbach',
   ),
-  '74051230': Iban(
-    bic: 'BYLADEM1FRG',
+  '74051230': Bic(
+    value: 'BYLADEM1FRG',
     bankName: 'Sparkasse Freyung-Grafenau',
     bankShortName: 'Spk Freyung-Grafenau',
     bankPostcode: '94146',
     bankLocation: 'Hinterschmiding',
   ),
-  '74061101': Iban(
-    bic: 'GENODEF1RGS',
+  '74061101': Bic(
+    value: 'GENODEF1RGS',
     bankName: 'Raiffeisenbank Am Goldenen Steig Gs Haus, Wald',
     bankShortName: 'Raiffbk Am Goldenen Steig',
     bankPostcode: '94481',
     bankLocation: 'Grafenau',
   ),
-  '74061564': Iban(
-    bic: 'GENODEF1NUI',
+  '74061564': Bic(
+    value: 'GENODEF1NUI',
     bankName: 'Raiffeisenbank Unteres Inntal Zw Würding',
     bankShortName: 'Raiffbk Unteres Inntal',
     bankPostcode: '94072',
     bankLocation: 'Bad Füssing',
   ),
-  '74061670': Iban(
-    bic: 'GENODEF1ORT',
+  '74061670': Bic(
+    value: 'GENODEF1ORT',
     bankName: 'Raiffeisenbank Ortenburg Zw Sandbach',
     bankShortName: 'Raiffbk Ortenburg',
     bankPostcode: '94474',
     bankLocation: 'Vilshofen an der Donau',
   ),
-  '74061813': Iban(
-    bic: 'GENODEF1PFK',
+  '74061813': Bic(
+    value: 'GENODEF1PFK',
     bankName: 'VR-Bank Rottal-Inn (Gf P2)',
     bankShortName: 'VR-Bank Rottal-Inn',
     bankPostcode: '84347',
     bankLocation: 'Pfarrkirchen',
   ),
-  '74061814': Iban(
-    bic: 'GENODEF1PFK',
+  '74061814': Bic(
+    value: 'GENODEF1PFK',
     bankName: 'VR-Bank Rottal-Inn Gf GAA',
     bankShortName: 'VR Rottal-Inn Gf GAA',
     bankPostcode: '84347',
     bankLocation: 'Pfarrkirchen',
   ),
-  '74062490': Iban(
-    bic: 'GENODEF1VIR',
+  '74062490': Bic(
+    value: 'GENODEF1VIR',
     bankName: 'Volksbank - Raiffeisenbank Vilshofen (GF P2)',
     bankShortName: 'VR Vilshofen',
     bankPostcode: '94474',
     bankLocation: 'Vilshofen an der Donau',
   ),
-  '74062786': Iban(
-    bic: 'GENODEF1TIE',
+  '74062786': Bic(
+    value: 'GENODEF1TIE',
     bankName: 'Raiffeisenbank i Lkr Passau-Nord (Gf P2)',
     bankShortName: 'Raiffbk i Lkr Passau-Nord',
     bankPostcode: '94113',
     bankLocation: 'Tiefenbach',
   ),
-  '74064593': Iban(
-    bic: 'GENODEF1WSD',
+  '74064593': Bic(
+    value: 'GENODEF1WSD',
     bankName: 'Raiffeisenbank Wegscheid',
     bankShortName: 'Raiffeisenbank Wegscheid',
     bankPostcode: '94139',
     bankLocation: 'Breitenberg',
   ),
-  '74065782': Iban(
-    bic: 'GENODEF1SZT',
+  '74065782': Bic(
+    value: 'GENODEF1SZT',
     bankName: 'Raiffeisenbank Salzweg-Thyrnau (Gf P2)',
     bankShortName: 'Raiffbk Salzweg-Thyrnau',
     bankPostcode: '94119',
     bankLocation: 'Salzweg',
   ),
-  '74066749': Iban(
-    bic: 'GENODEF1HZN',
+  '74066749': Bic(
+    value: 'GENODEF1HZN',
     bankName: 'Raiffeisenbank Südl. Bayerischer Wald (Gf P2)',
     bankShortName: 'Raiffbk Südl Bayer Wald',
     bankPostcode: '94051',
     bankLocation: 'Hauzenberg',
   ),
-  '74067000': Iban(
-    bic: 'GENODEF1POC',
+  '74067000': Bic(
+    value: 'GENODEF1POC',
     bankName: 'Rottaler Raiffeisenbank (Gf P2)',
     bankShortName: 'Rottaler Raiffbk',
     bankPostcode: '94060',
     bankLocation: 'Pocking',
   ),
-  '74069744': Iban(
-    bic: 'GENODEF1GRT',
+  '74069744': Bic(
+    value: 'GENODEF1GRT',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '94143',
     bankLocation: 'Grainet',
   ),
-  '74069752': Iban(
-    bic: 'GENODEF1HHU',
+  '74069752': Bic(
+    value: 'GENODEF1HHU',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '94545',
     bankLocation: 'Hohenau',
   ),
-  '74069758': Iban(
-    bic: 'GENODEF1TKI',
+  '74069758': Bic(
+    value: 'GENODEF1TKI',
     bankName: 'Raiffeisenbk Kirchbg v Wald Zw Passau-Schaldg',
     bankShortName: 'Raiffbk Kirchberg',
     bankPostcode: '94034',
     bankLocation: 'Passau',
   ),
-  '74069768': Iban(
-    bic: 'GENODEF1NHD',
+  '74069768': Bic(
+    value: 'GENODEF1NHD',
     bankName: 'Raiffeisenbank am Dreisessel (Gf P2)',
     bankShortName: 'Raiffbk am Dreisessel',
     bankPostcode: '94089',
     bankLocation: 'Neureichenau',
   ),
-  '74090000': Iban(
-    bic: 'GENODEF1PA1',
+  '74090000': Bic(
+    value: 'GENODEF1PA1',
     bankName: 'VR-Bank Passau (Gf P2)',
     bankShortName: 'VR-Bank Passau',
     bankPostcode: '94015',
     bankLocation: 'Passau',
   ),
-  '74092400': Iban(
-    bic: 'GENODEF1VIV',
+  '74092400': Bic(
+    value: 'GENODEF1VIV',
     bankName: 'Volksbank Vilshofen (Gf P2)',
     bankShortName: 'Volksbank Vilshofen',
     bankPostcode: '94470',
     bankLocation: 'Vilshofen an der Donau',
   ),
-  '74120071': Iban(
-    bic: 'HYVEDEMM415',
+  '74120071': Bic(
+    value: 'HYVEDEMM415',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '94460',
     bankLocation: 'Deggendorf',
   ),
-  '74131000': Iban(
-    bic: 'TEKRDE71XXX',
+  '74131000': Bic(
+    value: 'TEKRDE71XXX',
     bankName: 'TEBA Kreditbank',
     bankShortName: 'TEBA Kreditbank',
     bankPostcode: '94405',
     bankLocation: 'Landau a.d.Isar',
   ),
-  '74140048': Iban(
-    bic: 'COBADEFFXXX',
+  '74140048': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank DE F-D48',
     bankShortName: 'Commerzbank',
     bankPostcode: '94469',
     bankLocation: 'Deggendorf',
   ),
-  '74150000': Iban(
-    bic: 'BYLADEM1DEG',
+  '74150000': Bic(
+    value: 'BYLADEM1DEG',
     bankName: 'Sparkasse Deggendorf',
     bankShortName: 'Spk Deggendorf',
     bankPostcode: '94547',
     bankLocation: 'Iggensbach',
   ),
-  '74151450': Iban(
-    bic: 'BYLADEM1REG',
+  '74151450': Bic(
+    value: 'BYLADEM1REG',
     bankName: 'Sparkasse Regen-Viechtach',
     bankShortName: 'Sparkasse Regen-Viechtach',
     bankPostcode: '94261',
     bankLocation: 'Kirchdorf i.Wald',
   ),
-  '74160025': Iban(
-    bic: 'GENODEF1DEG',
+  '74160025': Bic(
+    value: 'GENODEF1DEG',
     bankName: 'Raiffeisenbank Deggendorf-Plattling-Sonnenwald (Gf P2)',
     bankShortName: 'Raiba Deg.-Pla.-Sonnenw.',
     bankPostcode: '94457',
     bankLocation: 'Deggendorf',
   ),
-  '74161608': Iban(
-    bic: 'GENODEF1HBW',
+  '74161608': Bic(
+    value: 'GENODEF1HBW',
     bankName: 'Raiffeisenbank Hengersberg-Schöllnach (Gf P2)',
     bankShortName: 'Raiffbk Hengersb-Schöllnach',
     bankPostcode: '94488',
     bankLocation: 'Hengersberg',
   ),
-  '74164149': Iban(
-    bic: 'GENODEF1RGE',
+  '74164149': Bic(
+    value: 'GENODEF1RGE',
     bankName: 'VR-Bank (Gf P2)',
     bankShortName: 'VR-Bank',
     bankPostcode: '94209',
     bankLocation: 'Regen',
   ),
-  '74165013': Iban(
-    bic: 'GENODEF1AUS',
+  '74165013': Bic(
+    value: 'GENODEF1AUS',
     bankName: 'Raiffeisenbank Sonnenwald (Gf P2)',
     bankShortName: 'Raiffeisenbank Sonnenwald',
     bankPostcode: '94530',
     bankLocation: 'Auerbach',
   ),
-  '74180009': Iban(
-    bic: 'DRESDEFF741',
+  '74180009': Bic(
+    value: 'DRESDEFF741',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Deggendorf',
     bankPostcode: '94451',
     bankLocation: 'Deggendorf',
   ),
-  '74190000': Iban(
-    bic: 'GENODEF1DGV',
+  '74190000': Bic(
+    value: 'GENODEF1DGV',
     bankName: 'VR GenoBank DonauWald (Gf P2)',
     bankShortName: 'VR GenoBank DonauWald',
     bankPostcode: '94234',
     bankLocation: 'Viechtach',
   ),
-  '74191000': Iban(
-    bic: 'GENODEF1LND',
+  '74191000': Bic(
+    value: 'GENODEF1LND',
     bankName: 'VR-Bank Landau-Mengkofen (Gf P2)',
     bankShortName: 'VR-Bank Landau-Mengkofen',
     bankPostcode: '94405',
     bankLocation: 'Landau a.d.Isar',
   ),
-  '74220075': Iban(
-    bic: 'HYVEDEMM452',
+  '74220075': Bic(
+    value: 'HYVEDEMM452',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '94304',
     bankLocation: 'Straubing',
   ),
-  '74221170': Iban(
-    bic: 'HYVEDEMM675',
+  '74221170': Bic(
+    value: 'HYVEDEMM675',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '93413',
     bankLocation: 'Cham',
   ),
-  '74240062': Iban(
-    bic: 'COBADEFFXXX',
+  '74240062': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Straubing',
     bankShortName: 'Commerzbank Straubing',
     bankPostcode: '94315',
     bankLocation: 'Straubing',
   ),
-  '74250000': Iban(
-    bic: 'BYLADEM1SRG',
+  '74250000': Bic(
+    value: 'BYLADEM1SRG',
     bankName: 'Sparkasse Niederbayern-Mitte',
     bankShortName: 'Spk Niederbayern-Mitte',
     bankPostcode: '94522',
     bankLocation: 'Wallersdorf',
   ),
-  '74251020': Iban(
-    bic: 'BYLADEM1CHM',
+  '74251020': Bic(
+    value: 'BYLADEM1CHM',
     bankName: 'Sparkasse im Landkreis Cham',
     bankShortName: 'Spk im Landkreis Cham',
     bankPostcode: '93192',
     bankLocation: 'Wald',
   ),
-  '74260110': Iban(
-    bic: 'GENODEF1SR2',
+  '74260110': Bic(
+    value: 'GENODEF1SR2',
     bankName: 'Raiffeisenbank Straubing (Gf P2)',
     bankShortName: 'Raiffeisenbank Straubing',
     bankPostcode: '94315',
     bankLocation: 'Straubing',
   ),
-  '74261024': Iban(
-    bic: 'GENODEF1CHA',
+  '74261024': Bic(
+    value: 'GENODEF1CHA',
     bankName: 'Raiffeisenbank Chamer Land (Gf P2)',
     bankShortName: 'Raiffeisenbank Chamer Land',
     bankPostcode: '93404',
     bankLocation: 'Cham',
   ),
-  '74290000': Iban(
-    bic: 'GENODEF1SR1',
+  '74290000': Bic(
+    value: 'GENODEF1SR1',
     bankName: 'VR-Bank Ostbayern-Mitte (Gf P2)',
     bankShortName: 'VR-Bank Ostbayern-Mitte',
     bankPostcode: '94315',
     bankLocation: 'Straubing',
   ),
-  '74290100': Iban(
-    bic: 'CBSRDE71XXX',
+  '74290100': Bic(
+    value: 'CBSRDE71XXX',
     bankName: 'CB Bank Straubing',
     bankShortName: 'CB Bank',
     bankPostcode: '94306',
     bankLocation: 'Straubing',
   ),
-  '74320073': Iban(
-    bic: 'HYVEDEMM433',
+  '74320073': Bic(
+    value: 'HYVEDEMM433',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '84133',
     bankLocation: 'Vilsbiburg',
   ),
-  '74340077': Iban(
-    bic: 'COBADEFFXXX',
+  '74340077': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Landshut',
     bankShortName: 'Commerzbank',
     bankPostcode: '84028',
     bankLocation: 'Landshut',
   ),
-  '74350000': Iban(
-    bic: 'BYLADEM1LAH',
+  '74350000': Bic(
+    value: 'BYLADEM1LAH',
     bankName: 'Sparkasse Landshut',
     bankShortName: 'Spk Landshut',
     bankPostcode: '84169',
     bankLocation: 'Altfraunhofen',
   ),
-  '74351430': Iban(
-    bic: 'BYLADEM1EGF',
+  '74351430': Bic(
+    value: 'BYLADEM1EGF',
     bankName: 'Spk Rottal-Inn Eggenfelden',
     bankShortName: 'Sparkasse Rottal-Inn',
     bankPostcode: '94424',
     bankLocation: 'Arnstorf',
   ),
-  '74351740': Iban(
-    bic: 'BYLADEM1MSB',
+  '74351740': Bic(
+    value: 'BYLADEM1MSB',
     bankName: 'Stadt- und Kreissparkasse Moosburg',
     bankShortName: 'St u Kr Spk Moosburg',
     bankPostcode: '85410',
     bankLocation: 'Haag a.d.Amper',
   ),
-  '74361211': Iban(
-    bic: 'GENODEF1ARF',
+  '74361211': Bic(
+    value: 'GENODEF1ARF',
     bankName: 'Raiffeisenbank Arnstorf (Gf P2)',
     bankShortName: 'Raiffeisenbank Arnstorf',
     bankPostcode: '94424',
     bankLocation: 'Arnstorf',
   ),
-  '74362663': Iban(
-    bic: 'GENODEF1ERG',
+  '74362663': Bic(
+    value: 'GENODEF1ERG',
     bankName: 'Raiffeisenbank Altdorf-Ergolding (Gf P2)',
     bankShortName: 'Raiffbk Altdorf-Ergolding',
     bankPostcode: '84030',
     bankLocation: 'Ergolding',
   ),
-  '74364689': Iban(
-    bic: 'GENODEF1PFF',
+  '74364689': Bic(
+    value: 'GENODEF1PFF',
     bankName: 'Raiffeisenbank Pfeffenhausen-Rottenburg-Wildenberg (Gf P2)',
     bankShortName: 'Raiffbk Pfeffenhausen',
     bankPostcode: '84073',
     bankLocation: 'Pfeffenhausen',
   ),
-  '74366666': Iban(
-    bic: 'GENODEF1GSH',
+  '74366666': Bic(
+    value: 'GENODEF1GSH',
     bankName: 'Raiffeisenbank Geisenhausen (Gf P2)',
     bankShortName: 'Raiffeisenbank Geisenhausen',
     bankPostcode: '84141',
     bankLocation: 'Geisenhausen',
   ),
-  '74369068': Iban(
-    bic: 'GENODEF1LWE',
+  '74369068': Bic(
+    value: 'GENODEF1LWE',
     bankName: 'Raiffeisenbank Hofkirchen-Bayerbach (Gf P2)',
     bankShortName: 'Raiffbk Hofkirchen-Bayerbch',
     bankPostcode: '84082',
     bankLocation: 'Laberweinting',
   ),
-  '74369088': Iban(
-    bic: 'GENODEF1GPF',
+  '74369088': Bic(
+    value: 'GENODEF1GPF',
     bankName: 'Raiffeisenbank Geiselhöring-Pfaffenberg (Gf P2)',
     bankShortName: 'Raiffbk Geiselhöring-Pfabg',
     bankPostcode: '94333',
     bankLocation: 'Geiselhöring',
   ),
-  '74369130': Iban(
-    bic: 'GENODEF1PST',
+  '74369130': Bic(
+    value: 'GENODEF1PST',
     bankName: 'Raiffeisenbank Parkstetten',
     bankShortName: 'Raiffeisenbank Parkstetten',
     bankPostcode: '94360',
     bankLocation: 'Mitterfels',
   ),
-  '74369146': Iban(
-    bic: 'GENODEF1RZK',
+  '74369146': Bic(
+    value: 'GENODEF1RZK',
     bankName: 'Raiffeisenbank Rattiszell-Konzell (Gf P2)',
     bankShortName: 'Raiffbk Rattiszell-Konzell',
     bankPostcode: '94372',
     bankLocation: 'Rattiszell',
   ),
-  '74369656': Iban(
-    bic: 'GENODEF1ENA',
+  '74369656': Bic(
+    value: 'GENODEF1ENA',
     bankName: 'Raiffeisenbank Essenbach (Gf P2)',
     bankShortName: 'Raiffeisenbank Essenbach',
     bankPostcode: '84051',
     bankLocation: 'Essenbach',
   ),
-  '74369662': Iban(
-    bic: 'GENODEF1EBV',
+  '74369662': Bic(
+    value: 'GENODEF1EBV',
     bankName: 'Raiffeisenbank Buch-Eching (Gf P2)',
     bankShortName: 'Raiffbk Buch-Eching',
     bankPostcode: '84174',
     bankLocation: 'Eching',
   ),
-  '74369704': Iban(
-    bic: 'GENODEF1MKO',
+  '74369704': Bic(
+    value: 'GENODEF1MKO',
     bankName: 'Raiffeisenbank Mengkofen-Loiching (Gf P2)',
     bankShortName: 'Raiffbk Mengkofen-Loiching',
     bankPostcode: '84150',
     bankLocation: 'Mengkofen',
   ),
-  '74380007': Iban(
-    bic: 'DRESDEFF743',
+  '74380007': Bic(
+    value: 'DRESDEFF743',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Landshut',
     bankPostcode: '84008',
     bankLocation: 'Landshut',
   ),
-  '74390000': Iban(
-    bic: 'GENODEF1LH1',
+  '74390000': Bic(
+    value: 'GENODEF1LH1',
     bankName: 'VR-Bank Landshut (Gf P2)',
     bankShortName: 'VR-Bank Landshut',
     bankPostcode: '84037',
     bankLocation: 'Landshut',
   ),
-  '74391300': Iban(
-    bic: 'GENODEF1DGF',
+  '74391300': Bic(
+    value: 'GENODEF1DGF',
     bankName: 'Volksbank-Raiffeisenbank Dingolfing (Gf P2)',
     bankShortName: 'VB-Raiffbk Dingolfing',
     bankPostcode: '84130',
     bankLocation: 'Dingolfing',
   ),
-  '74391400': Iban(
-    bic: 'GENODEF1EGR',
+  '74391400': Bic(
+    value: 'GENODEF1EGR',
     bankName: 'VR-Bank Rottal-Inn (Gf P2)',
     bankShortName: 'VR-Bank Rottal-Inn',
     bankPostcode: '84301',
     bankLocation: 'Eggenfelden',
   ),
-  '74392300': Iban(
-    bic: 'GENODEF1VBV',
+  '74392300': Bic(
+    value: 'GENODEF1VBV',
     bankName: 'VR-Bk Isar-Vils Vilsbiburg',
     bankShortName: 'VR-Bank Isar-Vils (Gf P2)',
     bankPostcode: '84131',
     bankLocation: 'Vilsbiburg',
   ),
-  '75000000': Iban(
-    bic: 'MARKDEF1750',
+  '75000000': Bic(
+    value: 'MARKDEF1750',
     bankName: 'BBk Regensburg',
     bankShortName: 'Bundesbank',
     bankPostcode: '93006',
     bankLocation: 'Regensburg',
   ),
-  '75020073': Iban(
-    bic: 'HYVEDEMM447',
+  '75020073': Bic(
+    value: 'HYVEDEMM447',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '93176',
     bankLocation: 'Beratzhausen',
   ),
-  '75021174': Iban(
-    bic: 'HYVEDEMM804',
+  '75021174': Bic(
+    value: 'HYVEDEMM804',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '92402',
     bankLocation: 'Schwandorf',
   ),
-  '75040062': Iban(
-    bic: 'COBADEFFXXX',
+  '75040062': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Regensburg',
     bankShortName: 'Commerzbank Regensburg',
     bankPostcode: '93047',
     bankLocation: 'Regensburg',
   ),
-  '75050000': Iban(
-    bic: 'BYLADEM1RBG',
+  '75050000': Bic(
+    value: 'BYLADEM1RBG',
     bankName: 'Sparkasse Regensburg',
     bankShortName: 'Spk Regensburg',
     bankPostcode: '93186',
     bankLocation: 'Pettendorf',
   ),
-  '75051040': Iban(
-    bic: 'BYLADEM1SAD',
+  '75051040': Bic(
+    value: 'BYLADEM1SAD',
     bankName: 'Sparkasse im Landkreis Schwandorf',
     bankShortName: 'Spk im Landkreis Schwandorf',
     bankPostcode: '92436',
     bankLocation: 'Bruck i.d.OPf.',
   ),
-  '75051565': Iban(
-    bic: 'BYLADEM1KEH',
+  '75051565': Bic(
+    value: 'BYLADEM1KEH',
     bankName: 'Kreissparkasse Kelheim',
     bankShortName: 'Kreissparkasse Kelheim',
     bankPostcode: '84072',
     bankLocation: 'Au i.d.Hallertau',
   ),
-  '75060150': Iban(
-    bic: 'GENODEF1R02',
+  '75060150': Bic(
+    value: 'GENODEF1R02',
     bankName: 'Raiffeisenbank Regensburg-Wenzenbach (Gf P2)',
     bankShortName: 'Raiffbk Regensburg-Wenzenb',
     bankPostcode: '93018',
     bankLocation: 'Regensburg',
   ),
-  '75061168': Iban(
-    bic: 'GENODEF1SWN',
+  '75061168': Bic(
+    value: 'GENODEF1SWN',
     bankName: 'Raiffeisenbank Schwandorf-Nittenau (Gf P2)',
     bankShortName: 'Raiffbk Schwandorf-Nittenau',
     bankPostcode: '92408',
     bankLocation: 'Schwandorf',
   ),
-  '75061851': Iban(
-    bic: 'GENODEF1REF',
+  '75061851': Bic(
+    value: 'GENODEF1REF',
     bankName: 'Raiffeisenbank Regenstauf',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '93122',
     bankLocation: 'Regenstauf',
   ),
-  '75062026': Iban(
-    bic: 'GENODEF1DST',
+  '75062026': Bic(
+    value: 'GENODEF1DST',
     bankName: 'Raiffeisenbank Oberpfalz Süd (Gf P2)',
     bankShortName: 'Raiffbk Oberpfalz Süd',
     bankPostcode: '93093',
     bankLocation: 'Donaustauf',
   ),
-  '75069014': Iban(
-    bic: 'GENODEF1ABS',
+  '75069014': Bic(
+    value: 'GENODEF1ABS',
     bankName: 'Raiffeisenbank Kreis Kelheim (Gf P2)',
     bankShortName: 'Raiffbk Kreis Kelheim',
     bankPostcode: '93077',
     bankLocation: 'Bad Abbach',
   ),
-  '75069015': Iban(
-    bic: 'GENODEF1NGG',
+  '75069015': Bic(
+    value: 'GENODEF1NGG',
     bankName: 'Raiffeisenbank Bad Gögging (Gf P2)',
     bankShortName: 'Raiffbk Bad Gögging',
     bankPostcode: '93333',
     bankLocation: 'Neustadt a.d.Donau',
   ),
-  '75069020': Iban(
-    bic: 'GENODEF1BUK',
+  '75069020': Bic(
+    value: 'GENODEF1BUK',
     bankName: 'Raiffeisenbank Bruck (Gf P2)',
     bankShortName: 'Raiffeisenbank Bruck',
     bankPostcode: '92436',
     bankLocation: 'Bruck i.d.OPf.',
   ),
-  '75069038': Iban(
-    bic: 'GENODEF1FKS',
+  '75069038': Bic(
+    value: 'GENODEF1FKS',
     bankName: 'Raiffeisenbank Falkenstein-Wörth Zw Süssenbach',
     bankShortName: 'Raiffbk Falkenstein-Wörth',
     bankPostcode: '93192',
     bankLocation: 'Wald',
   ),
-  '75069050': Iban(
-    bic: 'GENODEF1GRW',
+  '75069050': Bic(
+    value: 'GENODEF1GRW',
     bankName: 'Raiffeisenbank Grafenwöhr-Kirchenthumbach (Gf P2)',
     bankShortName: 'Raiffbk Grafenwöhr-Kirchent',
     bankPostcode: '92655',
     bankLocation: 'Grafenwöhr',
   ),
-  '75069055': Iban(
-    bic: 'GENODEF1HGA',
+  '75069055': Bic(
+    value: 'GENODEF1HGA',
     bankName: 'Raiffeisenbank Alteglofsheim-Hagelstadt (Gf P2)',
     bankShortName: 'Raiffbk Alteglofshm-Hagelst',
     bankPostcode: '93095',
     bankLocation: 'Hagelstadt',
   ),
-  '75069061': Iban(
-    bic: 'GENODEF1HEM',
+  '75069061': Bic(
+    value: 'GENODEF1HEM',
     bankName: 'Raiffeisenbank im Oberpfälzer Jura (Gf P2)',
     bankShortName: 'Raiffbk im Oberpf. Jura',
     bankPostcode: '92331',
     bankLocation: 'Parsberg',
   ),
-  '75069078': Iban(
-    bic: 'GENODEF1SZV',
+  '75069078': Bic(
+    value: 'GENODEF1SZV',
     bankName: 'Raiffeisenbank Sinzing Gs Gundelshausen',
     bankShortName: 'Raiffeisenbank Sinzing',
     bankPostcode: '93309',
     bankLocation: 'Kelheim',
   ),
-  '75069081': Iban(
-    bic: 'GENODEF1KTZ',
+  '75069081': Bic(
+    value: 'GENODEF1KTZ',
     bankName: 'Raiffeisenbank Bad Kötzting (Gf P2)',
     bankShortName: 'Raiffeisenbank Bad Kötzting',
     bankPostcode: '93444',
     bankLocation: 'Bad Kötzting',
   ),
-  '75069094': Iban(
-    bic: 'GENODEF1PAR',
+  '75069094': Bic(
+    value: 'GENODEF1PAR',
     bankName: 'Raiffeisenbank Parsberg-Velburg (Gf P2)',
     bankShortName: 'Raiffbk Parsberg-Velburg',
     bankPostcode: '92327',
     bankLocation: 'Parsberg',
   ),
-  '75069110': Iban(
-    bic: 'GENODEF1NKN',
+  '75069110': Bic(
+    value: 'GENODEF1NKN',
     bankName: 'Raiffeisenbank Eschlkam-Lam-Lohberg-Neukirchen b Hl Blut',
     bankShortName: 'RB Eschlk-Lam-Lohb-Neukirch',
     bankPostcode: '93470',
     bankLocation: 'Lohberg',
   ),
-  '75069171': Iban(
-    bic: 'GENODEF1SWD',
+  '75069171': Bic(
+    value: 'GENODEF1SWD',
     bankName: 'VR Bank Mittlere Oberpfalz (Gf P2)',
     bankShortName: 'VR Bank Mittlere Oberpfalz',
     bankPostcode: '92507',
     bankLocation: 'Nabburg',
   ),
-  '75070013': Iban(
-    bic: 'DEUTDEMM752',
+  '75070013': Bic(
+    value: 'DEUTDEMM752',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '94003',
     bankLocation: 'Passau',
   ),
-  '75070024': Iban(
-    bic: 'DEUTDEDB751',
+  '75070024': Bic(
+    value: 'DEUTDEDB751',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '94301',
     bankLocation: 'Straubing',
   ),
-  '75080003': Iban(
-    bic: 'DRESDEFF750',
+  '75080003': Bic(
+    value: 'DRESDEFF750',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Regensburg',
     bankPostcode: '93015',
     bankLocation: 'Regensburg',
   ),
-  '75090000': Iban(
-    bic: 'GENODEF1R01',
+  '75090000': Bic(
+    value: 'GENODEF1R01',
     bankName: 'Volksbank Raiffeisenbank Regensburg-Schwandorf (Gf P2)',
     bankShortName: 'VB RB Regensburg-Schwandorf',
     bankPostcode: '93047',
     bankLocation: 'Regensburg',
   ),
-  '75090300': Iban(
-    bic: 'GENODEF1M05',
+  '75090300': Bic(
+    value: 'GENODEF1M05',
     bankName: 'LIGA Bank Regensburg',
     bankShortName: 'LIGA Bank (Gf P2)',
     bankPostcode: '93006',
     bankLocation: 'Regensburg',
   ),
-  '75090500': Iban(
-    bic: 'GENODEF1S05',
+  '75090500': Bic(
+    value: 'GENODEF1S05',
     bankName: 'Sparda-Bank Ostbayern',
     bankShortName: 'Sparda-Bank Ostbayern',
     bankPostcode: '84028',
     bankLocation: 'Landshut',
   ),
-  '75090900': Iban(
-    bic: 'GENODEF1P18',
+  '75090900': Bic(
+    value: 'GENODEF1P18',
     bankName: 'VR Bank Niederbayern-Oberpfalz (Gf P2)',
     bankShortName: 'VR Bank Niederbayern-Oberpf',
     bankPostcode: '93047',
     bankLocation: 'Regensburg',
   ),
-  '75091400': Iban(
-    bic: 'GENODEF1BLF',
+  '75091400': Bic(
+    value: 'GENODEF1BLF',
     bankName: 'VR Bank Burglengenfeld (Gf P2)',
     bankShortName: 'VR Bank Burglengenfeld',
     bankPostcode: '93133',
     bankLocation: 'Burglengenfeld',
   ),
-  '75220070': Iban(
-    bic: 'HYVEDEMM405',
+  '75220070': Bic(
+    value: 'HYVEDEMM405',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '92229',
     bankLocation: 'Sulzbach-Rosenberg',
   ),
-  '75240000': Iban(
-    bic: 'COBADEFFXXX',
+  '75240000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Sulzbach-Rosenb',
     bankShortName: 'Commerzbank',
     bankPostcode: '92237',
     bankLocation: 'Sulzbach-Rosenberg',
   ),
-  '75250000': Iban(
-    bic: 'BYLADEM1ABG',
+  '75250000': Bic(
+    value: 'BYLADEM1ABG',
     bankName: 'Sparkasse Amberg-Sulzbach',
     bankShortName: 'Sparkasse Amberg-Sulzbach',
     bankPostcode: '92278',
     bankLocation: 'Illschwang',
   ),
-  '75261700': Iban(
-    bic: 'GENODEF1SZH',
+  '75261700': Bic(
+    value: 'GENODEF1SZH',
     bankName: 'Raiffeisenbank Sulzbach-Rosenberg (Gf P2)',
     bankShortName: 'Raiffbk Sulzbach-Rosenberg',
     bankPostcode: '92237',
     bankLocation: 'Sulzbach-Rosenberg',
   ),
-  '75290000': Iban(
-    bic: 'GENODEF1AMV',
+  '75290000': Bic(
+    value: 'GENODEF1AMV',
     bankName: 'Volksbank-Raiffeisenbank Amberg (Gf P2)',
     bankShortName: 'VB-Raiffbk Amberg',
     bankPostcode: '92212',
     bankLocation: 'Amberg',
   ),
-  '75320075': Iban(
-    bic: 'HYVEDEMM454',
+  '75320075': Bic(
+    value: 'HYVEDEMM454',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '92612',
     bankLocation: 'Weiden i.d.OPf.',
   ),
-  '75340090': Iban(
-    bic: 'COBADEFFXXX',
+  '75340090': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Grafenwöhr',
     bankShortName: 'Commerzbank',
     bankPostcode: '92655',
     bankLocation: 'Grafenwöhr',
   ),
-  '75350000': Iban(
-    bic: 'BYLADEM1WEN',
+  '75350000': Bic(
+    value: 'BYLADEM1WEN',
     bankName: 'Sparkasse Oberpfalz Nord',
     bankShortName: 'Spk Oberpfalz Nord',
     bankPostcode: '95643',
     bankLocation: 'Tirschenreuth',
   ),
-  '75351960': Iban(
-    bic: 'BYLADEM1ESB',
+  '75351960': Bic(
+    value: 'BYLADEM1ESB',
     bankName: 'Vereinigte Sparkassen Eschenbach i d Opf',
     bankShortName: 'Ver Spk Eschenbach',
     bankPostcode: '91275',
     bankLocation: 'Auerbach i.d.OPf.',
   ),
-  '75360011': Iban(
-    bic: 'GENODEF1WEO',
+  '75360011': Bic(
+    value: 'GENODEF1WEO',
     bankName: 'Raiffeisenbank Weiden (Gf P2)',
     bankShortName: 'Raiffeisenbank Weiden',
     bankPostcode: '92637',
     bankLocation: 'Weiden i.d.OPf.',
   ),
-  '75362039': Iban(
-    bic: 'GENODEF1FLS',
+  '75362039': Bic(
+    value: 'GENODEF1FLS',
     bankName: 'Raiffeisenbank Floß (Gf P2)',
     bankShortName: 'Raiffeisenbank Floß',
     bankPostcode: '92685',
     bankLocation: 'Floß',
   ),
-  '75363189': Iban(
-    bic: 'GENODEF1NEW',
+  '75363189': Bic(
+    value: 'GENODEF1NEW',
     bankName: 'Raiffeisenbank Neustadt-Vohenstrauß (Gf P2)',
     bankShortName: 'Raiffbk Neustadt-Vohenstr',
     bankPostcode: '92648',
     bankLocation: 'Vohenstrauß',
   ),
-  '75390000': Iban(
-    bic: 'GENODEF1WEV',
+  '75390000': Bic(
+    value: 'GENODEF1WEV',
     bankName: 'Volksbank Raiffeisenbank Nordoberpfalz (Gf P2)',
     bankShortName: 'VR Nordoberpfalz',
     bankPostcode: '92637',
     bankLocation: 'Weiden i.d.OPf.',
   ),
-  '76000000': Iban(
-    bic: 'MARKDEF1760',
+  '76000000': Bic(
+    value: 'MARKDEF1760',
     bankName: 'BBk Nürnberg',
     bankShortName: 'Bundesbank',
     bankPostcode: '90327',
     bankLocation: 'Nürnberg',
   ),
-  '76010085': Iban(
-    bic: 'PBNKDEFFXXX',
+  '76010085': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '90322',
     bankLocation: 'Nürnberg',
   ),
-  '76020070': Iban(
-    bic: 'HYVEDEMM460',
+  '76020070': Bic(
+    value: 'HYVEDEMM460',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '90514',
     bankLocation: 'Altdorf b. Nürnberg',
   ),
-  '76020099': Iban(
-    bic: 'HYVEDEMMCAR',
+  '76020099': Bic(
+    value: 'HYVEDEMMCAR',
     bankName: 'UniCredit Bank - HypoVereinsbank Prepaid Card',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '90327',
     bankLocation: 'Nürnberg',
   ),
-  '76026000': Iban(
-    bic: 'NORSDE71XXX',
+  '76026000': Bic(
+    value: 'NORSDE71XXX',
     bankName: 'norisbank Berlin',
     bankShortName: 'norisbank Gf P2',
     bankPostcode: '10625',
     bankLocation: 'Berlin',
   ),
-  '76030080': Iban(
-    bic: 'CSDBDE71XXX',
+  '76030080': Bic(
+    value: 'CSDBDE71XXX',
     bankName: 'BNP Paribas Niederlassung Deutschland',
     bankShortName: 'BNP Paribas Deutschland',
     bankPostcode: '90402',
     bankLocation: 'Nürnberg',
   ),
-  '76030600': Iban(
-    bic: 'ISBKDEFXNUR',
+  '76030600': Bic(
+    value: 'ISBKDEFXNUR',
     bankName: 'Isbank Fil Nürnberg',
     bankShortName: 'Isbank Nürnberg',
     bankPostcode: '90429',
     bankLocation: 'Nürnberg',
   ),
-  '76030800': Iban(
-    bic: 'BIWBDE33760',
+  '76030800': Bic(
+    value: 'BIWBDE33760',
     bankName: 'flatex Bank, Frankfurt',
     bankShortName: 'flatexDEGIRO Bank',
     bankPostcode: '60327',
     bankLocation: 'Frankfurt am Main',
   ),
-  '76032000': Iban(
-    bic: 'TEAMDE71XXX',
+  '76032000': Bic(
+    value: 'TEAMDE71XXX',
     bankName: 'TeamBank Nürnberg',
     bankShortName: 'TeamBank Nürnberg',
     bankPostcode: '90471',
     bankLocation: 'Nürnberg',
   ),
-  '76032001': Iban(
-    bic: 'TEAMDE71TAT',
+  '76032001': Bic(
+    value: 'TEAMDE71TAT',
     bankName: 'TeamBank Nürnberg GF Austria',
     bankShortName: 'TeamBank Nürnberg GF -AT-',
     bankPostcode: '90471',
     bankLocation: 'Nürnberg',
   ),
-  '76035000': Iban(
-    bic: 'UMWEDE7NXXX',
+  '76035000': Bic(
+    value: 'UMWEDE7NXXX',
     bankName: 'UmweltBank Nürnberg',
     bankShortName: 'UmweltBank',
     bankPostcode: '90489',
     bankLocation: 'Nürnberg',
   ),
-  '76040060': Iban(
-    bic: 'COBADEFFXXX',
+  '76040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Nürnberg',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '90402',
     bankLocation: 'Nürnberg',
   ),
-  '76040061': Iban(
-    bic: 'COBADEFFXXX',
+  '76040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Roth',
     bankShortName: 'Commerzbank',
     bankPostcode: '91139',
     bankLocation: 'Roth',
   ),
-  '76040062': Iban(
-    bic: 'COBADEFFXXX',
+  '76040062': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Nürnberg',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '90402',
     bankLocation: 'Nürnberg',
   ),
-  '76040065': Iban(
-    bic: 'COBADEFFXXX',
+  '76040065': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank, Filiale Nürnberg 2',
     bankShortName: 'Commerzbank Fil. Nürnberg 2',
     bankPostcode: '90006',
     bankLocation: 'Nürnberg',
   ),
-  '76050000': Iban(
-    bic: 'BYLADEMMXXX',
+  '76050000': Bic(
+    value: 'BYLADEMMXXX',
     bankName: 'Bayerische Landesbank',
     bankShortName: 'BayernLB Nürnberg',
     bankPostcode: '90041',
     bankLocation: 'Nürnberg',
   ),
-  '76050101': Iban(
-    bic: 'SSKNDE77XXX',
+  '76050101': Bic(
+    value: 'SSKNDE77XXX',
     bankName: 'Sparkasse Nürnberg',
     bankShortName: 'Sparkasse Nürnberg',
     bankPostcode: '90327',
     bankLocation: 'Nürnberg',
   ),
-  '76052080': Iban(
-    bic: 'BYLADEM1NMA',
+  '76052080': Bic(
+    value: 'BYLADEM1NMA',
     bankName: 'Sparkasse Neumarkt i d OPf-Parsberg',
     bankShortName: 'Spk Neumarkt i d OPf-Parsbg',
     bankPostcode: '92369',
     bankLocation: 'Sengenthal',
   ),
-  '76060000': Iban(
-    bic: 'GENODEFF760',
+  '76060000': Bic(
+    value: 'GENODEFF760',
     bankName: 'DZ BANK',
     bankShortName: 'DZ BANK',
     bankPostcode: '90002',
     bankLocation: 'Nürnberg',
   ),
-  '76060618': Iban(
-    bic: 'GENODEF1N02',
+  '76060618': Bic(
+    value: 'GENODEF1N02',
     bankName: 'Volksbank Raiffeisenbank (Gf P2)',
     bankShortName: 'VR Bank Nürnberg',
     bankPostcode: '90019',
     bankLocation: 'Nürnberg',
   ),
-  '76060620': Iban(
-    bic: 'GENODEF1N02',
+  '76060620': Bic(
+    value: 'GENODEF1N02',
     bankName: 'Volksbank Raiffeisenbank Nürnberg (Gf GAA)',
     bankShortName: 'VR Bank Nbg (Gf GAA)',
     bankPostcode: '90402',
     bankLocation: 'Nürnberg',
   ),
-  '76061025': Iban(
-    bic: 'GENODEF1LAU',
+  '76061025': Bic(
+    value: 'GENODEF1LAU',
     bankName: 'Raiffeisen Spar+Kreditbank Zw Schnaittach',
     bankShortName: 'Raiffbk Spar+Kreditbk Lauf',
     bankPostcode: '91220',
     bankLocation: 'Schnaittach',
   ),
-  '76061482': Iban(
-    bic: 'GENODEF1HSB',
+  '76061482': Bic(
+    value: 'GENODEF1HSB',
     bankName: 'Raiffeisenbank im Nürnberger Land (Gf P2)',
     bankShortName: 'Raiffbk im Nürnberger Land',
     bankPostcode: '90532',
     bankLocation: 'Feucht',
   ),
-  '76069369': Iban(
-    bic: 'GENODEF1AUO',
+  '76069369': Bic(
+    value: 'GENODEF1AUO',
     bankName: 'Raiffeisenbank Auerbach-Freihung (Gf P2)',
     bankShortName: 'Raiffbk Auerbach-Freihung',
     bankPostcode: '91275',
     bankLocation: 'Auerbach i.d.OPf.',
   ),
-  '76069372': Iban(
-    bic: 'GENODEF1WDS',
+  '76069372': Bic(
+    value: 'GENODEF1WDS',
     bankName: 'Raiffeisenbank Bad Windsheim (Gf P2)',
     bankShortName: 'Raiffbk Bad Windsheim',
     bankPostcode: '91438',
     bankLocation: 'Bad Windsheim',
   ),
-  '76069378': Iban(
-    bic: 'GENODEF1BEH',
+  '76069378': Bic(
+    value: 'GENODEF1BEH',
     bankName: 'Raiffeisenbank Bechhofen',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '91572',
     bankLocation: 'Bechhofen',
   ),
-  '76069404': Iban(
-    bic: 'GENODEF1DSB',
+  '76069404': Bic(
+    value: 'GENODEF1DSB',
     bankName: 'Raiffeisenbank Uehlfeld-Dachsbach (Gf P2)',
     bankShortName: 'Raiffbk Uehlfeld-Dachsbach',
     bankPostcode: '91462',
     bankLocation: 'Dachsbach',
   ),
-  '76069409': Iban(
-    bic: 'GENODEF1DIH',
+  '76069409': Bic(
+    value: 'GENODEF1DIH',
     bankName: 'Raiffeisenbank Dietenhofen',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '90597',
     bankLocation: 'Dietenhofen',
   ),
-  '76069410': Iban(
-    bic: 'GENODEF1DIM',
+  '76069410': Bic(
+    value: 'GENODEF1DIM',
     bankName: 'Raiffeisenbank Dietersheim und Umgebung (Gf P2)',
     bankShortName: 'Raiffeisenbank Dietersheim',
     bankPostcode: '91463',
     bankLocation: 'Dietersheim',
   ),
-  '76069440': Iban(
-    bic: 'GENODEF1FEC',
+  '76069440': Bic(
+    value: 'GENODEF1FEC',
     bankName: 'Raiffeisenbank Altdorf-Feucht (Gf P2)',
     bankShortName: 'Raiffbk Altdorf-Feucht',
     bankPostcode: '90537',
     bankLocation: 'Feucht',
   ),
-  '76069441': Iban(
-    bic: 'GENODEF1FEW',
+  '76069441': Bic(
+    value: 'GENODEF1FEW',
     bankName: 'VR-Bank Feuchtwangen-Limes (Gf P2)',
     bankShortName: 'VR-Bank Feuchtwangen-Limes',
     bankPostcode: '91551',
     bankLocation: 'Feuchtwangen',
   ),
-  '76069448': Iban(
-    bic: 'GENODEF1FRD',
+  '76069448': Bic(
+    value: 'GENODEF1FRD',
     bankName: 'Raiffbk Freudenberg -alt-',
     bankShortName: 'Raiffeisenbank -alt-',
     bankPostcode: '92272',
     bankLocation: 'Freudenberg',
   ),
-  '76069449': Iban(
-    bic: 'GENODEF1FYS',
+  '76069449': Bic(
+    value: 'GENODEF1FYS',
     bankName: 'Raiffeisen - meine Bank (Gf P2)',
     bankShortName: 'Raiffeisen - meine Bank',
     bankPostcode: '91161',
     bankLocation: 'Hilpoltstein',
   ),
-  '76069462': Iban(
-    bic: 'GENODEF1GDG',
+  '76069462': Bic(
+    value: 'GENODEF1GDG',
     bankName: 'Raiffeisenbank Greding - Thalmässing (Gf P2)',
     bankShortName: 'Raiffbk Greding-Thalmässing',
     bankPostcode: '91171',
     bankLocation: 'Greding',
   ),
-  '76069468': Iban(
-    bic: 'GENODEF1GU1',
+  '76069468': Bic(
+    value: 'GENODEF1GU1',
     bankName: 'Raiffeisenbank Weißenburg-Gunzenhausen (Gf P2)',
     bankShortName: 'Raiffbk Weißenburg-Gunzenh',
     bankPostcode: '91781',
     bankLocation: 'Weißenburg i.Bay.',
   ),
-  '76069486': Iban(
-    bic: 'GENODEF1HSC',
+  '76069486': Bic(
+    value: 'GENODEF1HSC',
     bankName: 'Raiffeisenbank Hirschau (Gf P2)',
     bankShortName: 'Raiffbk Hirschau',
     bankPostcode: '92242',
     bankLocation: 'Hirschau',
   ),
-  '76069512': Iban(
-    bic: 'GENODEF1N08',
+  '76069512': Bic(
+    value: 'GENODEF1N08',
     bankName: 'Raiffeisenbank Knoblauchsland Nürnberg-Buch (Gf P2)',
     bankShortName: 'Raiffbk Knoblauchsland',
     bankPostcode: '90427',
     bankLocation: 'Nürnberg',
   ),
-  '76069553': Iban(
-    bic: 'GENODEF1NM1',
+  '76069553': Bic(
+    value: 'GENODEF1NM1',
     bankName: 'Raiffeisenbank Neumarkt Zw Trautmannshofen',
     bankShortName: 'Raiffeisenbank Neumarkt',
     bankPostcode: '92283',
     bankLocation: 'Lauterhofen',
   ),
-  '76069559': Iban(
-    bic: 'GENODEF1NEA',
+  '76069559': Bic(
+    value: 'GENODEF1NEA',
     bankName: 'VR Bank Metropolregion Nürnberg (Gf P2)',
     bankShortName: 'VR Bank Metropolregion Nbg',
     bankPostcode: '91413',
     bankLocation: 'Neustadt a.d.Aisch',
   ),
-  '76069564': Iban(
-    bic: 'GENODEF1BTO',
+  '76069564': Bic(
+    value: 'GENODEF1BTO',
     bankName: 'Raiffeisenbank Oberferrieden-Burgthann (Gf P2)',
     bankShortName: 'Raiffbk Oberferrieden-Burgt',
     bankPostcode: '90559',
     bankLocation: 'Burgthann',
   ),
-  '76069576': Iban(
-    bic: 'GENODEF1BPL',
+  '76069576': Bic(
+    value: 'GENODEF1BPL',
     bankName: 'Raiffeisenbank Plankstetten (Gf P2)',
     bankShortName: 'Raiffeisenbank Plankstetten',
     bankPostcode: '92334',
     bankLocation: 'Berching',
   ),
-  '76069598': Iban(
-    bic: 'GENODEF1RSS',
+  '76069598': Bic(
+    value: 'GENODEF1RSS',
     bankName: 'Raiffeisenbank Großhabersdorf-Roßtal (Gf P2)',
     bankShortName: 'Raiffeisenbank Roßtal',
     bankPostcode: '90572',
     bankLocation: 'Roßtal',
   ),
-  '76069602': Iban(
-    bic: 'GENODEF1HSE',
+  '76069602': Bic(
+    value: 'GENODEF1HSE',
     bankName: 'Raiffeisenbank Seebachgrund (Gf P2)',
     bankShortName: 'Raiffbk Seebachgrund-Heßdf',
     bankPostcode: '91093',
     bankLocation: 'Heßdorf',
   ),
-  '76069611': Iban(
-    bic: 'GENODEF1SDM',
+  '76069611': Bic(
+    value: 'GENODEF1SDM',
     bankName: 'Raiffeisenbank Unteres Vilstal (Gf P2)',
     bankShortName: 'Raiffbk Unteres Vilstal',
     bankPostcode: '92287',
     bankLocation: 'Schmidmühlen',
   ),
-  '76069635': Iban(
-    bic: 'GENODEF1URS',
+  '76069635': Bic(
+    value: 'GENODEF1URS',
     bankName: 'Raiffeisenbank Ursensollen-Ammerthal-Hohenburg -alt-',
     bankShortName: 'RB Ursens-Ammerth-Hohen alt',
     bankPostcode: '92289',
     bankLocation: 'Ursensollen',
   ),
-  '76069663': Iban(
-    bic: 'GENODEF1WBA',
+  '76069663': Bic(
+    value: 'GENODEF1WBA',
     bankName: 'Raiffeisenbank Heilsbronn-Windsbach (Gf P2)',
     bankShortName: 'Raiffbk Heilsbr-Windsbach',
     bankPostcode: '91575',
     bankLocation: 'Windsbach',
   ),
-  '76069669': Iban(
-    bic: 'GENODEF1ZIR',
+  '76069669': Bic(
+    value: 'GENODEF1ZIR',
     bankName: 'Raiffeisenbank Bibertgrund (Gf P2)',
     bankShortName: 'Raiffeisenbank Bibertgrund',
     bankPostcode: '90505',
     bankLocation: 'Zirndorf',
   ),
-  '76070012': Iban(
-    bic: 'DEUTDEMM771',
+  '76070012': Bic(
+    value: 'DEUTDEMM771',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '91103',
     bankLocation: 'Schwabach',
   ),
-  '76070024': Iban(
-    bic: 'DEUTDEDB769',
+  '76070024': Bic(
+    value: 'DEUTDEDB769',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '90505',
     bankLocation: 'Zirndorf',
   ),
-  '76070324': Iban(
-    bic: 'DEUTDEDBP15',
+  '76070324': Bic(
+    value: 'DEUTDEDBP15',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '91052',
     bankLocation: 'Erlangen',
   ),
-  '76070361': Iban(
-    bic: 'DEUTDEMMP15',
+  '76070361': Bic(
+    value: 'DEUTDEMMP15',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '91052',
     bankLocation: 'Erlangen',
   ),
-  '76080040': Iban(
-    bic: 'DRESDEFF760',
+  '76080040': Bic(
+    value: 'DRESDEFF760',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Ansbach',
     bankPostcode: '91503',
     bankLocation: 'Ansbach',
   ),
-  '76080053': Iban(
-    bic: 'DRESDEFFAGI',
+  '76080053': Bic(
+    value: 'DRESDEFFAGI',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 53',
     bankShortName: 'Commerzbank Zw 53',
     bankPostcode: '95011',
     bankLocation: 'Hof',
   ),
-  '76080055': Iban(
-    bic: 'DRESDEFFI25',
+  '76080055': Bic(
+    value: 'DRESDEFFI25',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 55',
     bankShortName: 'Commerzbank Zw 55',
     bankPostcode: '95011',
     bankLocation: 'Hof',
   ),
-  '76080085': Iban(
-    bic: 'DRESDEFFJ26',
+  '76080085': Bic(
+    value: 'DRESDEFFJ26',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Nürnbrg',
     bankPostcode: '90001',
     bankLocation: 'Nürnberg',
   ),
-  '76080086': Iban(
-    bic: 'DRESDEFFJ27',
+  '76080086': Bic(
+    value: 'DRESDEFFJ27',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITGK2 Nürnbrg',
     bankPostcode: '90001',
     bankLocation: 'Nürnberg',
   ),
-  '76089480': Iban(
-    bic: 'DRESDEFFI24',
+  '76089480': Bic(
+    value: 'DRESDEFFI24',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Nürnberg',
     bankPostcode: '90327',
     bankLocation: 'Nürnberg',
   ),
-  '76089482': Iban(
-    bic: 'DRESDEFFI46',
+  '76089482': Bic(
+    value: 'DRESDEFFI46',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Nürnb. 2',
     bankPostcode: '90403',
     bankLocation: 'Nürnberg',
   ),
-  '76090400': Iban(
-    bic: 'GENODEF1N03',
+  '76090400': Bic(
+    value: 'GENODEF1N03',
     bankName: 'Evenord-Bank Nürnberg',
     bankShortName: 'Evenord-Bank (Gf P2)',
     bankPostcode: '90439',
     bankLocation: 'Nürnberg',
   ),
-  '76090500': Iban(
-    bic: 'GENODEF1S06',
+  '76090500': Bic(
+    value: 'GENODEF1S06',
     bankName: 'Sparda-Bank Nürnberg',
     bankShortName: 'Sparda-Bank Nürnberg',
     bankPostcode: '96215',
     bankLocation: 'Lichtenfels',
   ),
-  '76090900': Iban(
-    bic: 'GENODEF1P17',
+  '76090900': Bic(
+    value: 'GENODEF1P17',
     bankName: 'PSD Bank Nürnberg',
     bankShortName: 'PSD Bank (Gf P2)',
     bankPostcode: '90328',
     bankLocation: 'Nürnberg',
   ),
-  '76211900': Iban(
-    bic: 'GENODEF1WHD',
+  '76211900': Bic(
+    value: 'GENODEF1WHD',
     bankName: 'CVW-Privatbank (Gf P2)',
     bankShortName: 'CVW-Privatbank Wdf.',
     bankPostcode: '91452',
     bankLocation: 'Wilhermsdorf',
   ),
-  '76220073': Iban(
-    bic: 'HYVEDEMM419',
+  '76220073': Bic(
+    value: 'HYVEDEMM419',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '90505',
     bankLocation: 'Zirndorf',
   ),
-  '76230000': Iban(
-    bic: 'QUBADE71XXX',
+  '76230000': Bic(
+    value: 'QUBADE71XXX',
     bankName: 'BSQ Bauspar Nürnberg',
     bankShortName: 'BSQ Bauspar',
     bankPostcode: '90347',
     bankLocation: 'Nürnberg',
   ),
-  '76240011': Iban(
-    bic: 'COBADEFFXXX',
+  '76240011': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Zirndorf',
     bankShortName: 'Commerzbank',
     bankPostcode: '90513',
     bankLocation: 'Zirndorf',
   ),
-  '76250000': Iban(
-    bic: 'BYLADEM1SFU',
+  '76250000': Bic(
+    value: 'BYLADEM1SFU',
     bankName: 'Sparkasse Fürth',
     bankShortName: 'Spk Fürth',
     bankPostcode: '90762',
     bankLocation: 'Fürth',
   ),
-  '76251020': Iban(
-    bic: 'BYLADEM1NEA',
+  '76251020': Bic(
+    value: 'BYLADEM1NEA',
     bankName: 'Sparkasse im Landkreis Neustadt a.d. Aisch - Bad Windsheim',
     bankShortName: 'Sparkasse i. Lkr. NEA-BWI',
     bankPostcode: '91444',
     bankLocation: 'Emskirchen',
   ),
-  '76260451': Iban(
-    bic: 'GENODEF1FUE',
+  '76260451': Bic(
+    value: 'GENODEF1FUE',
     bankName: 'Raiffeisen-Volksbank Fürth (Gf P2)',
     bankShortName: 'Raiffeisen-Volksbank Fürth',
     bankPostcode: '90763',
     bankLocation: 'Fürth',
   ),
-  '76320072': Iban(
-    bic: 'HYVEDEMM417',
+  '76320072': Bic(
+    value: 'HYVEDEMM417',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '91065',
     bankLocation: 'Herzogenaurach',
   ),
-  '76340061': Iban(
-    bic: 'COBADEFFXXX',
+  '76340061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Erlangen',
     bankShortName: 'Commerzbank Erlangen',
     bankPostcode: '91052',
     bankLocation: 'Erlangen',
   ),
-  '76350000': Iban(
-    bic: 'BYLADEM1ERH',
+  '76350000': Bic(
+    value: 'BYLADEM1ERH',
     bankName: 'Stadt- u. Kreissparkasse Erlangen Höchstadt Herzogenaurach',
     bankShortName: 'St u Kr Spk Erlangen',
     bankPostcode: '91080',
     bankLocation: 'Marloffstein',
   ),
-  '76351040': Iban(
-    bic: 'BYLADEM1FOR',
+  '76351040': Bic(
+    value: 'BYLADEM1FOR',
     bankName: 'Sparkasse Forchheim',
     bankShortName: 'Sparkasse Forchheim',
     bankPostcode: '91338',
     bankLocation: 'Igensdorf',
   ),
-  '76351560': Iban(
-    bic: 'BYLADEM1HOS',
+  '76351560': Bic(
+    value: 'BYLADEM1HOS',
     bankName: 'Kreissparkasse Höchstadt',
     bankShortName: 'Kr Spk Höchstadt',
     bankPostcode: '91350',
     bankLocation: 'Gremsdorf',
   ),
-  '76360033': Iban(
-    bic: 'GENODEF1ER1',
+  '76360033': Bic(
+    value: 'GENODEF1ER1',
     bankName: 'VR-Bank Erlangen-Höchstadt-Herzogenaurach (Gf P2)',
     bankShortName: 'VR-Bank EHH',
     bankPostcode: '91052',
     bankLocation: 'Erlangen',
   ),
-  '76391000': Iban(
-    bic: 'GENODEF1FOH',
+  '76391000': Bic(
+    value: 'GENODEF1FOH',
     bankName: 'VR Bank Bamberg-Forchheim Volks- Raiffeisenbank (Gf P2)',
     bankShortName: 'VR Bank Bamberg-Forchheim',
     bankPostcode: '96014',
     bankLocation: 'Bamberg',
   ),
-  '76420080': Iban(
-    bic: 'HYVEDEMM065',
+  '76420080': Bic(
+    value: 'HYVEDEMM065',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '91139',
     bankLocation: 'Roth',
   ),
-  '76450000': Iban(
-    bic: 'BYLADEM1SRS',
+  '76450000': Bic(
+    value: 'BYLADEM1SRS',
     bankName: 'Sparkasse Mittelfranken-Süd',
     bankShortName: 'Spk Mittelfranken-Süd',
     bankPostcode: '91807',
     bankLocation: 'Solnhofen',
   ),
-  '76460015': Iban(
-    bic: 'GENODEF1SWR',
+  '76460015': Bic(
+    value: 'GENODEF1SWR',
     bankName: 'Raiffeisenbank Roth-Schwabach (Gf P2)',
     bankShortName: 'Raiffbk Roth-Schwabach',
     bankPostcode: '91154',
     bankLocation: 'Roth',
   ),
-  '76461485': Iban(
-    bic: 'GENODEF1HPN',
+  '76461485': Bic(
+    value: 'GENODEF1HPN',
     bankName: 'Raiffeisenbank am Rothsee (Gf P2)',
     bankShortName: 'Raiffbk am Rothsee',
     bankPostcode: '91161',
     bankLocation: 'Hilpoltstein',
   ),
-  '76520071': Iban(
-    bic: 'HYVEDEMM406',
+  '76520071': Bic(
+    value: 'HYVEDEMM406',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '91543',
     bankLocation: 'Dinkelsbühl',
   ),
-  '76550000': Iban(
-    bic: 'BYLADEM1ANS',
+  '76550000': Bic(
+    value: 'BYLADEM1ANS',
     bankName: 'Sparkasse Ansbach',
     bankShortName: 'Sparkasse Ansbach',
     bankPostcode: '91543',
     bankLocation: 'Dinkelsbühl',
   ),
-  '76551020': Iban(
-    bic: 'BYLADEM1DKB',
+  '76551020': Bic(
+    value: 'BYLADEM1DKB',
     bankName: 'Kreis- und Stadtsparkasse Dinkelsbühl -alt-',
     bankShortName: 'Kr u St Spk Dinkelsbühl-alt',
     bankPostcode: '91543',
     bankLocation: 'Dinkelsbühl',
   ),
-  '76551540': Iban(
-    bic: 'BYLADEM1GUN',
+  '76551540': Bic(
+    value: 'BYLADEM1GUN',
     bankName: 'Vereinigte Sparkassen Gunzenhausen',
     bankShortName: 'Ver Spk Gunzenhausen',
     bankPostcode: '91639',
     bankLocation: 'Wolframs-Eschenbach',
   ),
-  '76551860': Iban(
-    bic: 'BYLADEM1ROT',
+  '76551860': Bic(
+    value: 'BYLADEM1ROT',
     bankName: 'Stadt- und Kreissparkasse Rothenburg -alt-',
     bankShortName: 'St u Kr Spk Rothenburg -alt',
     bankPostcode: '91541',
     bankLocation: 'Rothenburg ob der Tauber',
   ),
-  '76560060': Iban(
-    bic: 'GENODEF1ANS',
+  '76560060': Bic(
+    value: 'GENODEF1ANS',
     bankName: 'VR-Bank Mittelfranken Mitte (Gf P2)',
     bankShortName: 'VR-Bank Mittelfranken Mitte',
     bankPostcode: '91522',
     bankLocation: 'Ansbach',
   ),
-  '76591000': Iban(
-    bic: 'GENODEF1DKV',
+  '76591000': Bic(
+    value: 'GENODEF1DKV',
     bankName: 'VR-Bank Feuchtwangen-Dinkelsbühl (Gf P2)',
     bankShortName: 'VR Feuchtwangen-Dinkelsbühl',
     bankPostcode: '91550',
     bankLocation: 'Dinkelsbühl',
   ),
-  '77020070': Iban(
-    bic: 'HYVEDEMM411',
+  '77020070': Bic(
+    value: 'HYVEDEMM411',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '96204',
     bankLocation: 'Lichtenfels',
   ),
-  '77040080': Iban(
-    bic: 'COBADEFFXXX',
+  '77040080': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bamberg',
     bankShortName: 'Commerzbank Bamberg',
     bankPostcode: '96047',
     bankLocation: 'Bamberg',
   ),
-  '77050000': Iban(
-    bic: 'BYLADEM1SKB',
+  '77050000': Bic(
+    value: 'BYLADEM1SKB',
     bankName: 'Sparkasse Bamberg',
     bankShortName: 'Spk Bamberg',
     bankPostcode: '96132',
     bankLocation: 'Schlüsselfeld',
   ),
-  '77060100': Iban(
-    bic: 'GENODEF1BA2',
+  '77060100': Bic(
+    value: 'GENODEF1BA2',
     bankName: 'VR Bank Bamberg Raiffeisen-Volksbank (Gf P2)',
     bankShortName: 'VR Bank Bamberg',
     bankPostcode: '96014',
     bankLocation: 'Bamberg',
   ),
-  '77061004': Iban(
-    bic: 'GENODEF1ALK',
+  '77061004': Bic(
+    value: 'GENODEF1ALK',
     bankName: 'Raiffeisenbank Obermain Nord (Gf P2)',
     bankShortName: 'Raiffbk Obermain Nord',
     bankPostcode: '96264',
     bankLocation: 'Altenkunstadt',
   ),
-  '77061425': Iban(
-    bic: 'GENODEF1EBR',
+  '77061425': Bic(
+    value: 'GENODEF1EBR',
     bankName: 'Raiffeisen-Volksbank (Gf P2)',
     bankShortName: 'Raiffeisen-Volksbank Ebern',
     bankPostcode: '96106',
     bankLocation: 'Ebern',
   ),
-  '77062014': Iban(
-    bic: 'GENODEF1BGB',
+  '77062014': Bic(
+    value: 'GENODEF1BGB',
     bankName: 'Raiffeisenbank Burgebrach-Stegaurach (Gf P2)',
     bankShortName: 'RB Burgebrach-Stegaurach',
     bankPostcode: '96138',
     bankLocation: 'Burgebrach',
   ),
-  '77062139': Iban(
-    bic: 'GENODEF1SFF',
+  '77062139': Bic(
+    value: 'GENODEF1SFF',
     bankName: 'Raiffeisen-Volksbank Bad Staffelstein (Gf P2)',
     bankShortName: 'Raiff-VB Bad Staffelstein',
     bankPostcode: '96226',
     bankLocation: 'Bad Staffelstein',
   ),
-  '77069044': Iban(
-    bic: 'GENODEF1KC2',
+  '77069044': Bic(
+    value: 'GENODEF1KC2',
     bankName: 'Raiffeisenbank Küps-Mitwitz-Stockheim (Gf P2)',
     bankShortName: 'Raiffbk Küps-Mitwitz-Stockh',
     bankPostcode: '96328',
     bankLocation: 'Küps',
   ),
-  '77069051': Iban(
-    bic: 'GENODEF1HIS',
+  '77069051': Bic(
+    value: 'GENODEF1HIS',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffbk Heiligenstadt',
     bankPostcode: '91332',
     bankLocation: 'Heiligenstadt i.OFr.',
   ),
-  '77069052': Iban(
-    bic: 'GENODEF1HOB',
+  '77069052': Bic(
+    value: 'GENODEF1HOB',
     bankName: 'Raiffeisenbank Heroldsbach',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '91336',
     bankLocation: 'Heroldsbach',
   ),
-  '77069091': Iban(
-    bic: 'GENODEF1SFD',
+  '77069091': Bic(
+    value: 'GENODEF1SFD',
     bankName: 'Raiffeisenbank Ebrachgrund (Gf P2)',
     bankShortName: 'Raiffeisenbank Ebrachgrund',
     bankPostcode: '96172',
     bankLocation: 'Mühlhausen',
   ),
-  '77069461': Iban(
-    bic: 'GENODEF1GBF',
+  '77069461': Bic(
+    value: 'GENODEF1GBF',
     bankName: 'Vereinigte Raiffeisenbanken (Gf P2)',
     bankShortName: 'Vereinigte Raiffeisenbanken',
     bankPostcode: '91321',
     bankLocation: 'Gräfenberg',
   ),
-  '77069739': Iban(
-    bic: 'GENODEF1THA',
+  '77069739': Bic(
+    value: 'GENODEF1THA',
     bankName: 'Raiffeisenbank Thurnauer Land (Gf P2)',
     bankShortName: 'Raiffbk Thurnauer Land',
     bankPostcode: '95349',
     bankLocation: 'Thurnau',
   ),
-  '77069746': Iban(
-    bic: 'GENODEF1ETB',
+  '77069746': Bic(
+    value: 'GENODEF1ETB',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffbk Emtmannsberg',
     bankPostcode: '95517',
     bankLocation: 'Emtmannsberg',
   ),
-  '77069764': Iban(
-    bic: 'GENODEF1KEM',
+  '77069764': Bic(
+    value: 'GENODEF1KEM',
     bankName: 'Raiffeisenbank Oberpfalz NordWest (Gf P2)',
     bankShortName: 'Raiffbk Oberpfalz NordWest',
     bankPostcode: '95478',
     bankLocation: 'Kemnath',
   ),
-  '77069782': Iban(
-    bic: 'GENODEF1SPK',
+  '77069782': Bic(
+    value: 'GENODEF1SPK',
     bankName: 'Raiffeisenbank am Kulm (Gf P2)',
     bankShortName: 'Raiffeisenbank am Kulm',
     bankPostcode: '95469',
     bankLocation: 'Speichersdorf',
   ),
-  '77069836': Iban(
-    bic: 'GENODEF1BGO',
+  '77069836': Bic(
+    value: 'GENODEF1BGO',
     bankName: 'Raiffeisenbank Berg-Bad Steben (Gf P2)',
     bankShortName: 'Raiffbk Berg-Bad Steben',
     bankPostcode: '95180',
     bankLocation: 'Berg',
   ),
-  '77069868': Iban(
-    bic: 'GENODEF1MGA',
+  '77069868': Bic(
+    value: 'GENODEF1MGA',
     bankName: 'Raiffeisenbank Oberland (Gf P2)',
     bankShortName: 'Raiffeisenbank Oberland',
     bankPostcode: '95352',
     bankLocation: 'Marktleugast',
   ),
-  '77069870': Iban(
-    bic: 'GENODEF1SZF',
+  '77069870': Bic(
+    value: 'GENODEF1SZF',
     bankName: 'Raiffeisenbank Hochfranken West (Gf P2)',
     bankShortName: 'Raiffbk Hochfranken West',
     bankPostcode: '95236',
     bankLocation: 'Stammbach',
   ),
-  '77069906': Iban(
-    bic: 'GENODEF1WSZ',
+  '77069906': Bic(
+    value: 'GENODEF1WSZ',
     bankName: 'Raiffeisenbank Wüstenselbitz (Gf P2)',
     bankShortName: 'Raiffbk Wüstenselbitz',
     bankPostcode: '95233',
     bankLocation: 'Helmbrechts',
   ),
-  '77069908': Iban(
-    bic: 'GENODEF1ZSP',
+  '77069908': Bic(
+    value: 'GENODEF1ZSP',
     bankName: 'Raiffeisenbank Sparneck-Stammbach-Zell (Gf P2)',
     bankShortName: 'Raiffbk Sparn-Stammb-Zell',
     bankPostcode: '95236',
     bankLocation: 'Stammbach',
   ),
-  '77091800': Iban(
-    bic: 'GENODEF1LIF',
+  '77091800': Bic(
+    value: 'GENODEF1LIF',
     bankName: 'VR-Bank Lichtenfels-Ebern (Gf P2)',
     bankShortName: 'VR-Bank Lichtenfels-Ebern',
     bankPostcode: '96215',
     bankLocation: 'Lichtenfels',
   ),
-  '77120073': Iban(
-    bic: 'HYVEDEMM289',
+  '77120073': Bic(
+    value: 'HYVEDEMM289',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '96301',
     bankLocation: 'Kronach',
   ),
-  '77140061': Iban(
-    bic: 'COBADEFFXXX',
+  '77140061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Kulmbach',
     bankShortName: 'Commerzbank',
     bankPostcode: '95326',
     bankLocation: 'Kulmbach',
   ),
-  '77150000': Iban(
-    bic: 'BYLADEM1KUB',
+  '77150000': Bic(
+    value: 'BYLADEM1KUB',
     bankName: 'Sparkasse Kulmbach-Kronach',
     bankShortName: 'Spk Kulmbach-Kronach',
     bankPostcode: '96317',
     bankLocation: 'Kronach',
   ),
-  '77190000': Iban(
-    bic: 'GENODEF1KU1',
+  '77190000': Bic(
+    value: 'GENODEF1KU1',
     bankName: 'VR Bank Oberfranken Mitte (Gf P2)',
     bankShortName: 'VR Bank Oberfranken Mitte',
     bankPostcode: '95326',
     bankLocation: 'Kulmbach',
   ),
-  '77300000': Iban(
-    bic: 'MARKDEF1773',
+  '77300000': Bic(
+    value: 'MARKDEF1773',
     bankName: 'BBk München eh Bayreuth',
     bankShortName: 'Bundesbank eh Bayreuth',
     bankPostcode: '80711',
     bankLocation: 'München',
   ),
-  '77320072': Iban(
-    bic: 'HYVEDEMM412',
+  '77320072': Bic(
+    value: 'HYVEDEMM412',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '91253',
     bankLocation: 'Pegnitz',
   ),
-  '77322200': Iban(
-    bic: 'FODBDE77XXX',
+  '77322200': Bic(
+    value: 'FODBDE77XXX',
     bankName: 'Fondsdepot Bank',
     bankShortName: 'Fondsdepot Bank',
     bankPostcode: '95030',
     bankLocation: 'Hof',
   ),
-  '77340076': Iban(
-    bic: 'COBADEFFXXX',
+  '77340076': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Weidenberg',
     bankShortName: 'Commerzbank',
     bankPostcode: '95466',
     bankLocation: 'Weidenberg',
   ),
-  '77350110': Iban(
-    bic: 'BYLADEM1SBT',
+  '77350110': Bic(
+    value: 'BYLADEM1SBT',
     bankName: 'Sparkasse Bayreuth',
     bankShortName: 'Sparkasse Bayreuth',
     bankPostcode: '95440',
     bankLocation: 'Bayreuth',
   ),
-  '77361600': Iban(
-    bic: 'GENODEF1KC1',
+  '77361600': Bic(
+    value: 'GENODEF1KC1',
     bankName: 'Raiffeisen-Volksbank Kronach-Ludwigsstadt (Gf P2)',
     bankShortName: 'Raiff-VB Kronach-Ludwigssta',
     bankPostcode: '96306',
     bankLocation: 'Kronach',
   ),
-  '77363749': Iban(
-    bic: 'GENODEF1GFS',
+  '77363749': Bic(
+    value: 'GENODEF1GFS',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '95482',
     bankLocation: 'Gefrees',
   ),
-  '77365792': Iban(
-    bic: 'GENODEF1HWA',
+  '77365792': Bic(
+    value: 'GENODEF1HWA',
     bankName: 'Raiffeisenbank Fränkische Schweiz (Gf P2)',
     bankShortName: 'RB Fränkische Schweiz',
     bankPostcode: '96142',
     bankLocation: 'Hollfeld',
   ),
-  '78020070': Iban(
-    bic: 'HYVEDEMM424',
+  '78020070': Bic(
+    value: 'HYVEDEMM424',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '95085',
     bankLocation: 'Selb',
   ),
-  '78040081': Iban(
-    bic: 'COBADEFFXXX',
+  '78040081': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Selbitz',
     bankShortName: 'Commerzbank',
     bankPostcode: '95152',
     bankLocation: 'Selbitz',
   ),
-  '78050000': Iban(
-    bic: 'BYLADEM1HOF',
+  '78050000': Bic(
+    value: 'BYLADEM1HOF',
     bankName: 'Sparkasse Hochfranken',
     bankShortName: 'Spk Hochfranken',
     bankPostcode: '95173',
     bankLocation: 'Schönwald',
   ),
-  '78055050': Iban(
-    bic: 'BYLADEM1FIG',
+  '78055050': Bic(
+    value: 'BYLADEM1FIG',
     bankName: 'Sparkasse Hochfranken -alt-',
     bankShortName: 'Spk Hochfranken -alt-',
     bankPostcode: '95089',
     bankLocation: 'Selb',
   ),
-  '78060896': Iban(
-    bic: 'GENODEF1HO1',
+  '78060896': Bic(
+    value: 'GENODEF1HO1',
     bankName: 'VR Bank Bayreuth-Hof (Gf P2)',
     bankShortName: 'VR Bank Bayreuth-Hof',
     bankPostcode: '95444',
     bankLocation: 'Bayreuth',
   ),
-  '78140000': Iban(
-    bic: 'COBADEFFXXX',
+  '78140000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Mitterteich',
     bankShortName: 'Commerzbank',
     bankPostcode: '95666',
     bankLocation: 'Mitterteich',
   ),
-  '78160069': Iban(
-    bic: 'GENODEF1MAK',
+  '78160069': Bic(
+    value: 'GENODEF1MAK',
     bankName: 'VR-Bank Fichtelgebirge-Frankenwald (Gf P2)',
     bankShortName: 'VR-Bk Fichtelgeb.-Frankenw.',
     bankPostcode: '95605',
     bankLocation: 'Marktredwitz',
   ),
-  '78161575': Iban(
-    bic: 'GENODEF1WSS',
+  '78161575': Bic(
+    value: 'GENODEF1WSS',
     bankName: 'Raiffeisenbank im Stiftland HGs Tirschenreuth',
     bankShortName: 'Raiffbk im Stiftland Walds',
     bankPostcode: '95636',
     bankLocation: 'Tirschenreuth',
   ),
-  '78320076': Iban(
-    bic: 'HYVEDEMM480',
+  '78320076': Bic(
+    value: 'HYVEDEMM480',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '96456',
     bankLocation: 'Neustadt b. Coburg',
   ),
-  '78340091': Iban(
-    bic: 'COBADEFFXXX',
+  '78340091': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Sonneberg Thür',
     bankShortName: 'Commerzbank',
     bankPostcode: '96504',
     bankLocation: 'Sonneberg',
   ),
-  '78350000': Iban(
-    bic: 'BYLADEM1COB',
+  '78350000': Bic(
+    value: 'BYLADEM1COB',
     bankName: 'Sparkasse Coburg-Lichtenfels',
     bankShortName: 'Spk Coburg-Lichtenfels',
     bankPostcode: '96204',
     bankLocation: 'Lichtenfels',
   ),
-  '78360000': Iban(
-    bic: 'GENODEF1COS',
+  '78360000': Bic(
+    value: 'GENODEF1COS',
     bankName: 'VR-Bank Coburg (Gf P2)',
     bankShortName: 'VR-Bank Coburg',
     bankPostcode: '96416',
     bankLocation: 'Coburg',
   ),
-  '79000000': Iban(
-    bic: 'MARKDEF1790',
+  '79000000': Bic(
+    value: 'MARKDEF1790',
     bankName: 'BBk Würzburg',
     bankShortName: 'Bundesbank',
     bankPostcode: '97010',
     bankLocation: 'Würzburg',
   ),
-  '79020076': Iban(
-    bic: 'HYVEDEMM455',
+  '79020076': Bic(
+    value: 'HYVEDEMM455',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '97805',
     bankLocation: 'Lohr a. Main',
   ),
-  '79030001': Iban(
-    bic: 'FUCEDE77XXX',
+  '79030001': Bic(
+    value: 'FUCEDE77XXX',
     bankName: 'Fürstlich Castellsche Bank (Gf P2)',
     bankShortName: 'Fürstl. Castellsche Bank',
     bankPostcode: '97070',
     bankLocation: 'Würzburg',
   ),
-  '79032038': Iban(
-    bic: 'BSHADE71XXX',
+  '79032038': Bic(
+    value: 'BSHADE71XXX',
     bankName: 'MERKUR PRIVATBANK(Gf P2)',
     bankShortName: 'MERKUR PRIVATBANK',
     bankPostcode: '97762',
     bankLocation: 'Hammelburg',
   ),
-  '79040047': Iban(
-    bic: 'COBADEFFXXX',
+  '79040047': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Kitzingen',
     bankShortName: 'Commerzbank',
     bankPostcode: '97307',
     bankLocation: 'Kitzingen',
   ),
-  '79050000': Iban(
-    bic: 'BYLADEM1SWU',
+  '79050000': Bic(
+    value: 'BYLADEM1SWU',
     bankName: 'Sparkasse Mainfranken Würzburg',
     bankShortName: 'Spk Mainfranken',
     bankPostcode: '97249',
     bankLocation: 'Eisingen',
   ),
-  '79063060': Iban(
-    bic: 'GENODEF1EFD',
+  '79063060': Bic(
+    value: 'GENODEF1EFD',
     bankName: 'Raiffeisenbank Estenfeld-Bergtheim (Gf P2)',
     bankShortName: 'Raiffbk Estenfeld-Bergtheim',
     bankPostcode: '97230',
     bankLocation: 'Estenfeld',
   ),
-  '79063122': Iban(
-    bic: 'GENODEF1HBG',
+  '79063122': Bic(
+    value: 'GENODEF1HBG',
     bankName: 'Raiffeisenbank Höchberg (Gf P2)',
     bankShortName: 'Raiffeisenbank Höchberg',
     bankPostcode: '97201',
     bankLocation: 'Höchberg',
   ),
-  '79065028': Iban(
-    bic: 'GENODEF1BRK',
+  '79065028': Bic(
+    value: 'GENODEF1BRK',
     bankName: 'VR-Bank Bad Kissingen (Gf P2)',
     bankShortName: 'VR-Bank Bad Kissingen',
     bankPostcode: '97688',
     bankLocation: 'Bad Kissingen',
   ),
-  '79069001': Iban(
-    bic: 'GENODEF1WED',
+  '79069001': Bic(
+    value: 'GENODEF1WED',
     bankName: 'Raiffeisenbank Mainschleife - Steigerwald (Gf P2)',
     bankShortName: 'RB Mainschleife-Steigerwald',
     bankPostcode: '97332',
     bankLocation: 'Volkach',
   ),
-  '79069010': Iban(
-    bic: 'GENODEF1ATE',
+  '79069010': Bic(
+    value: 'GENODEF1ATE',
     bankName: 'VR-Bank Schweinfurt (Gf P2)',
     bankShortName: 'VR-Bank Schweinfurt',
     bankPostcode: '97421',
     bankLocation: 'Schweinfurt',
   ),
-  '79069031': Iban(
-    bic: 'GENODEF1BHD',
+  '79069031': Bic(
+    value: 'GENODEF1BHD',
     bankName: 'Raiffeisenbank Bütthard-Gaukönigshofen (Gf P2)',
     bankShortName: 'Raiffbk Bütthard-Gaukönigsh',
     bankPostcode: '97244',
     bankLocation: 'Bütthard',
   ),
-  '79069150': Iban(
-    bic: 'GENODEF1GEM',
+  '79069150': Bic(
+    value: 'GENODEF1GEM',
     bankName: 'Raiffeisenbank Main-Spessart (Gf P2)',
     bankShortName: 'Raiffbk Main-Spessart',
     bankPostcode: '97816',
     bankLocation: 'Lohr a. Main',
   ),
-  '79069165': Iban(
-    bic: 'GENODEF1MLV',
+  '79069165': Bic(
+    value: 'GENODEF1MLV',
     bankName: 'VR-Bank Main-Rhön (Gf P2)',
     bankShortName: 'VR-Bank Main-Rhön',
     bankPostcode: '97526',
     bankLocation: 'Sennfeld',
   ),
-  '79069181': Iban(
-    bic: 'GENODEF1NDL',
+  '79069181': Bic(
+    value: 'GENODEF1NDL',
     bankName: 'Raiffeisenbank Nüdlingen',
     bankShortName: 'Raiffeisenbank (Gf P2)',
     bankPostcode: '97720',
     bankLocation: 'Nüdlingen',
   ),
-  '79069188': Iban(
-    bic: 'GENODEF1SLZ',
+  '79069188': Bic(
+    value: 'GENODEF1SLZ',
     bankName: 'Raiffeisenbank im Grabfeld (Gf P2)',
     bankShortName: 'Raiffeisenbank im Grabfeld',
     bankPostcode: '97528',
     bankLocation: 'Sulzdorf a.d.Lederhecke',
   ),
-  '79069213': Iban(
-    bic: 'GENODEF1RNM',
+  '79069213': Bic(
+    value: 'GENODEF1RNM',
     bankName: 'Raiffeisenbank Maßbach (Gf P2)',
     bankShortName: 'Raiffeisenbank Maßbach',
     bankPostcode: '97517',
     bankLocation: 'Rannungen',
   ),
-  '79070016': Iban(
-    bic: 'DEUTDEMM792',
+  '79070016': Bic(
+    value: 'DEUTDEMM792',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '97962',
     bankLocation: 'Bad Mergentheim',
   ),
-  '79070024': Iban(
-    bic: 'DEUTDEDB791',
+  '79070024': Bic(
+    value: 'DEUTDEDB791',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '97408',
     bankLocation: 'Schweinfurt',
   ),
-  '79080052': Iban(
-    bic: 'DRESDEFF790',
+  '79080052': Bic(
+    value: 'DRESDEFF790',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Wertheim',
     bankPostcode: '97862',
     bankLocation: 'Wertheim',
   ),
-  '79080085': Iban(
-    bic: 'DRESDEFFJ28',
+  '79080085': Bic(
+    value: 'DRESDEFFJ28',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Würzbrg',
     bankPostcode: '97001',
     bankLocation: 'Würzburg',
   ),
-  '79090000': Iban(
-    bic: 'GENODEF1WU1',
+  '79090000': Bic(
+    value: 'GENODEF1WU1',
     bankName: 'Volksbank Raiffeisenbank Würzburg (Gf P2)',
     bankShortName: 'VR-Bank Würzburg',
     bankPostcode: '97067',
     bankLocation: 'Würzburg',
   ),
-  '79161058': Iban(
-    bic: 'GENODEF1ERN',
+  '79161058': Bic(
+    value: 'GENODEF1ERN',
     bankName: 'Raiffeisenbank Fränkisches Weinland (Gf P2)',
     bankShortName: 'Raiffbk Fränkisches Weinla',
     bankPostcode: '97334',
     bankLocation: 'Nordheim a. Main',
   ),
-  '79161499': Iban(
-    bic: 'GENODEF1OBR',
+  '79161499': Bic(
+    value: 'GENODEF1OBR',
     bankName: 'Raiffeisenbank Kitzinger Land (Gf P2)',
     bankShortName: 'Raiffbk Kitzinger Land',
     bankPostcode: '97342',
     bankLocation: 'Obernbreit',
   ),
-  '79190000': Iban(
-    bic: 'GENODEF1KT1',
+  '79190000': Bic(
+    value: 'GENODEF1KT1',
     bankName: 'VR Bank Kitzingen (Gf P2)',
     bankShortName: 'VR Bank Kitzingen',
     bankPostcode: '97318',
     bankLocation: 'Kitzingen',
   ),
-  '79320075': Iban(
-    bic: 'HYVEDEMM451',
+  '79320075': Bic(
+    value: 'HYVEDEMM451',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '36015',
     bankLocation: 'Fulda',
   ),
-  '79330111': Iban(
-    bic: 'FLESDEMMXXX',
+  '79330111': Bic(
+    value: 'FLESDEMMXXX',
     bankName: 'Bankhaus Max Flessa (Gf P2)',
     bankShortName: 'Bankhaus Max Flessa (Gf P2)',
     bankPostcode: '97421',
     bankLocation: 'Schweinfurt',
   ),
-  '79340054': Iban(
-    bic: 'COBADEFFXXX',
+  '79340054': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Bad Kissingen',
     bankShortName: 'Commerzbank',
     bankPostcode: '97662',
     bankLocation: 'Bad Kissingen',
   ),
-  '79350000': Iban(
-    bic: 'BYLADEM1SSW',
+  '79350000': Bic(
+    value: 'BYLADEM1SSW',
     bankName: 'Städtische Sparkasse Schweinfurt -alt-',
     bankShortName: 'Städt.Spk Schweinfurt -alt-',
     bankPostcode: '97410',
     bankLocation: 'Schweinfurt',
   ),
-  '79350101': Iban(
-    bic: 'BYLADEM1KSW',
+  '79350101': Bic(
+    value: 'BYLADEM1KSW',
     bankName: 'Sparkasse Schweinfurt-Haßberge',
     bankShortName: 'Spk Schweinfurt-Haßberge',
     bankPostcode: '97529',
     bankLocation: 'Sulzheim',
   ),
-  '79351010': Iban(
-    bic: 'BYLADEM1KIS',
+  '79351010': Bic(
+    value: 'BYLADEM1KIS',
     bankName: 'Sparkasse Bad Kissingen',
     bankShortName: 'Spk Bad Kissingen',
     bankPostcode: '97708',
     bankLocation: 'Bad Bocklet',
   ),
-  '79351730': Iban(
-    bic: 'BYLADEM1HAS',
+  '79351730': Bic(
+    value: 'BYLADEM1HAS',
     bankName: 'Sparkasse Ostunterfranken',
     bankShortName: 'Spk Ostunterfranken',
     bankPostcode: '97500',
     bankLocation: 'Ebelsbach',
   ),
-  '79353090': Iban(
-    bic: 'BYLADEM1NES',
+  '79353090': Bic(
+    value: 'BYLADEM1NES',
     bankName: 'Sparkasse Bad Neustadt a d Saale',
     bankShortName: 'Spk Bad Neustadt a d Saale',
     bankPostcode: '97616',
     bankLocation: 'Salz',
   ),
-  '79362081': Iban(
-    bic: 'GENODEF1GZH',
+  '79362081': Bic(
+    value: 'GENODEF1GZH',
     bankName: 'VR-Bank Gerolzhofen (Gf P2)',
     bankShortName: 'VR-Bank Gerolzhofen',
     bankPostcode: '97447',
     bankLocation: 'Gerolzhofen',
   ),
-  '79363016': Iban(
-    bic: 'GENODEF1NDT',
+  '79363016': Bic(
+    value: 'GENODEF1NDT',
     bankName: 'Volksbank Raiffeisenbank Rhön-Grabfeld (Gf P2)',
     bankShortName: 'VR-Bank Rhön-Grabfeld',
     bankPostcode: '97607',
     bankLocation: 'Bad Neustadt a.d.Saale',
   ),
-  '79363151': Iban(
-    bic: 'GENODEF1HAS',
+  '79363151': Bic(
+    value: 'GENODEF1HAS',
     bankName: 'Raiffeisen-Volksbank Haßberge (Gf P2)',
     bankShortName: 'Raiff-VB Haßberge',
     bankPostcode: '97437',
     bankLocation: 'Haßfurt',
   ),
-  '79364069': Iban(
-    bic: 'GENODEF1FWH',
+  '79364069': Bic(
+    value: 'GENODEF1FWH',
     bankName: 'Raiffeisenbank Frankenwinheim und Umgebung (Gf P2)',
     bankShortName: 'Raiffbk Frankenwinheim uU',
     bankPostcode: '97447',
     bankLocation: 'Frankenwinheim',
   ),
-  '79380051': Iban(
-    bic: 'DRESDEFF793',
+  '79380051': Bic(
+    value: 'DRESDEFF793',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Bad Kissingen',
     bankPostcode: '97663',
     bankLocation: 'Bad Kissingen',
   ),
-  '79520070': Iban(
-    bic: 'HYVEDEMM407',
+  '79520070': Bic(
+    value: 'HYVEDEMM407',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '63882',
     bankLocation: 'Miltenberg',
   ),
-  '79540049': Iban(
-    bic: 'COBADEFFXXX',
+  '79540049': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Aschaffenburg',
     bankShortName: 'Commerzbank',
     bankPostcode: '63707',
     bankLocation: 'Aschaffenburg',
   ),
-  '79550000': Iban(
-    bic: 'BYLADEM1ASA',
+  '79550000': Bic(
+    value: 'BYLADEM1ASA',
     bankName: 'Sparkasse Aschaffenburg Alzenau',
     bankShortName: 'Spk Aschaffenburg Alzenau',
     bankPostcode: '63867',
     bankLocation: 'Johannesberg',
   ),
-  '79561348': Iban(
-    bic: 'GENODEF1BAG',
+  '79561348': Bic(
+    value: 'GENODEF1BAG',
     bankName: 'Raiffeisenbank Bachgau (Gf P2)',
     bankShortName: 'Raiffeisenbank Bachgau',
     bankPostcode: '63762',
     bankLocation: 'Großostheim',
   ),
-  '79562514': Iban(
-    bic: 'GENODEF1AB1',
+  '79562514': Bic(
+    value: 'GENODEF1AB1',
     bankName: 'Raiffeisen-Volksbank Aschaffenburg (Gf P2)',
     bankShortName: 'RV-Bank Aschaffenburg',
     bankPostcode: '63704',
     bankLocation: 'Aschaffenburg',
   ),
-  '79565568': Iban(
-    bic: 'GENODEF1WAA',
+  '79565568': Bic(
+    value: 'GENODEF1WAA',
     bankName: 'Raiffeisenbank Waldaschaff-Heigenbrücken (Gf P2)',
     bankShortName: 'Raiffeisenbank Waldaschaff',
     bankPostcode: '63857',
     bankLocation: 'Waldaschaff',
   ),
-  '79567531': Iban(
-    bic: 'GENODEF1ALZ',
+  '79567531': Bic(
+    value: 'GENODEF1ALZ',
     bankName: 'VR-Bank (Gf P2)',
     bankShortName: 'VR-Bank',
     bankPostcode: '63748',
     bankLocation: 'Alzenau',
   ),
-  '79568518': Iban(
-    bic: 'GENODEF1HAC',
+  '79568518': Bic(
+    value: 'GENODEF1HAC',
     bankName: 'Raiffeisenbank Haibach-Obernau (Gf P2)',
     bankShortName: 'Raiffbk Haibach-Obernau',
     bankPostcode: '63803',
     bankLocation: 'Haibach',
   ),
-  '79570024': Iban(
-    bic: 'DEUTDEDB796',
+  '79570024': Bic(
+    value: 'DEUTDEDB796',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '63883',
     bankLocation: 'Miltenberg',
   ),
-  '79570051': Iban(
-    bic: 'DEUTDEFF796',
+  '79570051': Bic(
+    value: 'DEUTDEFF796',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '63883',
     bankLocation: 'Miltenberg',
   ),
-  '79570324': Iban(
-    bic: 'DEUTDEDBP18',
+  '79570324': Bic(
+    value: 'DEUTDEDBP18',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '63739',
     bankLocation: 'Aschaffenburg',
   ),
-  '79570364': Iban(
-    bic: 'DEUTDEFFS18',
+  '79570364': Bic(
+    value: 'DEUTDEFFS18',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '63739',
     bankLocation: 'Aschaffenburg',
   ),
-  '79580099': Iban(
-    bic: 'DRESDEFF795',
+  '79580099': Bic(
+    value: 'DRESDEFF795',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Aschaffenburg',
     bankPostcode: '63704',
     bankLocation: 'Aschaffenburg',
   ),
-  '79589402': Iban(
-    bic: 'DRESDEFFI47',
+  '79589402': Bic(
+    value: 'DRESDEFFI47',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Aschaff.',
     bankPostcode: '63704',
     bankLocation: 'Aschaffenburg',
   ),
-  '79590000': Iban(
-    bic: 'GENODEF1AB2',
+  '79590000': Bic(
+    value: 'GENODEF1AB2',
     bankName: 'Volksbank Aschaffenburg (Gf P2)',
     bankShortName: 'Volksbank Aschaffenburg',
     bankPostcode: '63739',
     bankLocation: 'Aschaffenburg',
   ),
-  '79650000': Iban(
-    bic: 'BYLADEM1MIL',
+  '79650000': Bic(
+    value: 'BYLADEM1MIL',
     bankName: 'Sparkasse Miltenberg-Obernburg',
     bankShortName: 'Spk Miltenberg-Obernburg',
     bankPostcode: '63849',
     bankLocation: 'Leidersbach',
   ),
-  '79665540': Iban(
-    bic: 'GENODEF1EAU',
+  '79665540': Bic(
+    value: 'GENODEF1EAU',
     bankName: 'Raiffeisenbank Elsavatal (Gf P2)',
     bankShortName: 'Raiffbk Elsavatal',
     bankPostcode: '63863',
     bankLocation: 'Eschau',
   ),
-  '79666548': Iban(
-    bic: 'GENODEF1OBE',
+  '79666548': Bic(
+    value: 'GENODEF1OBE',
     bankName: 'Raiffeisenbank Großostheim-Obernburg (Gf P2)',
     bankShortName: 'Raiffbk Großostheim-Obernb.',
     bankPostcode: '63762',
     bankLocation: 'Großostheim',
   ),
-  '79668509': Iban(
-    bic: 'GENODEF1ENB',
+  '79668509': Bic(
+    value: 'GENODEF1ENB',
     bankName: 'Raiffeisenbank Eichenbühl und Umgebung (Gf P2)',
     bankShortName: 'Raiffbk Eichenbühl u U',
     bankPostcode: '63928',
     bankLocation: 'Eichenbühl',
   ),
-  '79690000': Iban(
-    bic: 'GENODEF1MIL',
+  '79690000': Bic(
+    value: 'GENODEF1MIL',
     bankName: 'Raiffeisen-Volksbank Miltenberg (Gf P2)',
     bankShortName: 'RV-Bank Miltenberg',
     bankPostcode: '63888',
     bankLocation: 'Miltenberg',
   ),
-  '80020086': Iban(
-    bic: 'HYVEDEMM440',
+  '80020086': Bic(
+    value: 'HYVEDEMM440',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '06667',
     bankLocation: 'Weißenfels',
   ),
-  '80020087': Iban(
-    bic: 'HYVEDEMM462',
+  '80020087': Bic(
+    value: 'HYVEDEMM462',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '06766',
     bankLocation: 'Bitterfeld-Wolfen',
   ),
-  '80040000': Iban(
-    bic: 'COBADEFFXXX',
+  '80040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Sangerhausen',
     bankShortName: 'Commerzbank',
     bankPostcode: '06526',
     bankLocation: 'Sangerhausen',
   ),
-  '80050500': Iban(
-    bic: 'NOLADE21MQU',
+  '80050500': Bic(
+    value: 'NOLADE21MQU',
     bankName: 'Kreissparkasse Merseburg-Querfurt -alt-',
     bankShortName: 'Kr Spk Mersebg-Querfurt alt',
     bankPostcode: '06204',
     bankLocation: 'Merseburg',
   ),
-  '80053000': Iban(
-    bic: 'NOLADE21BLK',
+  '80053000': Bic(
+    value: 'NOLADE21BLK',
     bankName: 'Sparkasse Burgenlandkreis',
     bankShortName: 'Spk Burgenlandkreis',
     bankPostcode: '06694',
     bankLocation: 'Zeitz',
   ),
-  '80053572': Iban(
-    bic: 'NOLADE21DES',
+  '80053572': Bic(
+    value: 'NOLADE21DES',
     bankName: 'Stadtsparkasse Dessau',
     bankShortName: 'St Spk Dessau',
     bankPostcode: '06814',
     bankLocation: 'Dessau-Roßlau',
   ),
-  '80053622': Iban(
-    bic: 'NOLADE21KOT',
+  '80053622': Bic(
+    value: 'NOLADE21KOT',
     bankName: 'Kreissparkasse Köthen -alt-',
     bankShortName: 'Kr Spk Köthen -alt-',
     bankPostcode: '06352',
     bankLocation: 'Köthen (Anhalt)',
   ),
-  '80053722': Iban(
-    bic: 'NOLADE21BTF',
+  '80053722': Bic(
+    value: 'NOLADE21BTF',
     bankName: 'Kreissparkasse Anhalt-Bitterfeld',
     bankShortName: 'Kr Spk Anhalt-Bitterfeld',
     bankPostcode: '06732',
     bankLocation: 'Bitterfeld-Wolfen',
   ),
-  '80053762': Iban(
-    bic: 'NOLADE21HAL',
+  '80053762': Bic(
+    value: 'NOLADE21HAL',
     bankName: 'Saalesparkasse Halle',
     bankShortName: 'Saalesparkasse',
     bankPostcode: '06093',
     bankLocation: 'Halle (Saale)',
   ),
-  '80054000': Iban(
-    bic: 'NOLADE21WSF',
+  '80054000': Bic(
+    value: 'NOLADE21WSF',
     bankName: 'Kreissparkasse Weißenfels -alt-',
     bankShortName: 'Kr Spk Weißenfels',
     bankPostcode: '06654',
     bankLocation: 'Weißenfels',
   ),
-  '80055008': Iban(
-    bic: 'NOLADE21EIL',
+  '80055008': Bic(
+    value: 'NOLADE21EIL',
     bankName: 'Sparkasse Mansfeld-Südharz',
     bankShortName: 'Sparkasse Mansfeld-Südharz',
     bankPostcode: '06283',
     bankLocation: 'Lutherstadt Eisleben',
   ),
-  '80055500': Iban(
-    bic: 'NOLADE21SES',
+  '80055500': Bic(
+    value: 'NOLADE21SES',
     bankName: 'Salzlandsparkasse Staßfurt',
     bankShortName: 'Salzlandsparkasse',
     bankPostcode: '39401',
     bankLocation: 'Staßfurt',
   ),
-  '80062608': Iban(
-    bic: 'GENODEF1JE1',
+  '80062608': Bic(
+    value: 'GENODEF1JE1',
     bankName: 'Volksbank Elsterland (Gf P2)',
     bankShortName: 'Volksbank Elsterland',
     bankPostcode: '14943',
     bankLocation: 'Luckenwalde',
   ),
-  '80063508': Iban(
-    bic: 'GENODEF1QLB',
+  '80063508': Bic(
+    value: 'GENODEF1QLB',
     bankName: 'Harzer Volksbank (Gf P2)',
     bankShortName: 'Harzer Volksbank',
     bankPostcode: '38855',
     bankLocation: 'Wernigerode',
   ),
-  '80063558': Iban(
-    bic: 'GENODEF1SGH',
+  '80063558': Bic(
+    value: 'GENODEF1SGH',
     bankName: 'Volksbank Sangerhausen',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '06526',
     bankLocation: 'Sangerhausen',
   ),
-  '80063598': Iban(
-    bic: 'GENODEF1WB1',
+  '80063598': Bic(
+    value: 'GENODEF1WB1',
     bankName: 'Volksbank Wittenberg (Gf P2)',
     bankShortName: 'Volksbank Wittenberg',
     bankPostcode: '06871',
     bankLocation: 'Lutherstadt Wittenberg',
   ),
-  '80063628': Iban(
-    bic: 'GENODEF1KOE',
+  '80063628': Bic(
+    value: 'GENODEF1KOE',
     bankName: 'Volksbank (Gf P2)',
     bankShortName: 'Volksbank Köthen',
     bankPostcode: '06351',
     bankLocation: 'Köthen (Anhalt)',
   ),
-  '80063648': Iban(
-    bic: 'GENODEF1NMB',
+  '80063648': Bic(
+    value: 'GENODEF1NMB',
     bankName: 'Volks- und Raiffeisenbank Saale-Unstrut (Gf P2)',
     bankShortName: 'Volks-Raiffbk Saale-Unstrut',
     bankPostcode: '06207',
     bankLocation: 'Merseburg',
   ),
-  '80063678': Iban(
-    bic: 'GENODEF1ZTZ',
+  '80063678': Bic(
+    value: 'GENODEF1ZTZ',
     bankName: 'VR-Bank Zeitz (Gf P2)',
     bankShortName: 'VR-Bank Zeitz',
     bankPostcode: '06712',
     bankLocation: 'Zeitz',
   ),
-  '80063718': Iban(
-    bic: 'GENODEF1EIL',
+  '80063718': Bic(
+    value: 'GENODEF1EIL',
     bankName: 'Volks- und Raiffeisenbank Eisleben (Gf P2)',
     bankShortName: 'V- u Raiffbk Eisleben',
     bankPostcode: '06281',
     bankLocation: 'Lutherstadt Eisleben',
   ),
-  '80080000': Iban(
-    bic: 'DRESDEFF800',
+  '80080000': Bic(
+    value: 'DRESDEFF800',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Wittenberg',
     bankPostcode: '06886',
     bankLocation: 'Lutherstadt Wittenberg',
   ),
-  '80093574': Iban(
-    bic: 'GENODEF1DS1',
+  '80093574': Bic(
+    value: 'GENODEF1DS1',
     bankName: 'Volksbank Dessau-Anhalt (Gf P2)',
     bankShortName: 'Volksbank Dessau-Anhalt',
     bankPostcode: '06811',
     bankLocation: 'Dessau-Roßlau',
   ),
-  '80093784': Iban(
-    bic: 'GENODEF1HAL',
+  '80093784': Bic(
+    value: 'GENODEF1HAL',
     bankName: 'Volksbank Halle, Saale (Gf P2)',
     bankShortName: 'VB Halle, Saale',
     bankPostcode: '06016',
     bankLocation: 'Halle (Saale)',
   ),
-  '80550101': Iban(
-    bic: 'NOLADE21WBL',
+  '80550101': Bic(
+    value: 'NOLADE21WBL',
     bankName: 'Spk Wittenberg Gräfenh',
     bankShortName: 'Sparkasse Wittenberg',
     bankPostcode: '06773',
     bankLocation: 'Gräfenhainichen',
   ),
-  '80550200': Iban(
-    bic: 'NOLADE21ZER',
+  '80550200': Bic(
+    value: 'NOLADE21ZER',
     bankName: 'Kreissparkasse Anhalt-Zerbst -alt-',
     bankShortName: 'Kr Spk Anhalt-Zerbst -alt-',
     bankPostcode: '39261',
     bankLocation: 'Zerbst/Anhalt',
   ),
-  '81000000': Iban(
-    bic: 'MARKDEF1810',
+  '81000000': Bic(
+    value: 'MARKDEF1810',
     bankName: 'BBk Magdeburg',
     bankShortName: 'Bundesbank',
     bankPostcode: '39003',
     bankLocation: 'Magdeburg',
   ),
-  '81020500': Iban(
-    bic: 'BFSWDE33MAG',
+  '81020500': Bic(
+    value: 'BFSWDE33MAG',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Bank für Sozialwirtschaft',
     bankPostcode: '39104',
     bankLocation: 'Magdeburg',
   ),
-  '81040000': Iban(
-    bic: 'COBADEFFXXX',
+  '81040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Haldensleben',
     bankShortName: 'Commerzbank',
     bankPostcode: '39331',
     bankLocation: 'Haldensleben',
   ),
-  '81050555': Iban(
-    bic: 'NOLADE21SDL',
+  '81050555': Bic(
+    value: 'NOLADE21SDL',
     bankName: 'Kreissparkasse Stendal',
     bankShortName: 'Kreissparkasse Stendal',
     bankPostcode: '39590',
     bankLocation: 'Tangermünde',
   ),
-  '81052000': Iban(
-    bic: 'NOLADE21HRZ',
+  '81052000': Bic(
+    value: 'NOLADE21HRZ',
     bankName: 'Harzsparkasse',
     bankShortName: 'Harzsparkasse',
     bankPostcode: '38841',
     bankLocation: 'Wernigerode',
   ),
-  '81053272': Iban(
-    bic: 'NOLADE21MDG',
+  '81053272': Bic(
+    value: 'NOLADE21MDG',
     bankName: 'Sparkasse MagdeBurg',
     bankShortName: 'Spk MDB',
     bankPostcode: '39015',
     bankLocation: 'Magdeburg',
   ),
-  '81054000': Iban(
-    bic: 'NOLADE21JEL',
+  '81054000': Bic(
+    value: 'NOLADE21JEL',
     bankName: 'Sparkasse Jerichower Land -alt-',
     bankShortName: 'Spk Jerichower Land -alt-',
     bankPostcode: '39281',
     bankLocation: 'Burg',
   ),
-  '81055000': Iban(
-    bic: 'NOLADE21HDL',
+  '81055000': Bic(
+    value: 'NOLADE21HDL',
     bankName: 'Kreissparkasse Börde',
     bankShortName: 'Kreissparkasse Börde',
     bankPostcode: '39387',
     bankLocation: 'Oschersleben (Bode)',
   ),
-  '81055555': Iban(
-    bic: 'NOLADE21SAW',
+  '81055555': Bic(
+    value: 'NOLADE21SAW',
     bankName: 'Spk Altmark West Salzwedel',
     bankShortName: 'Sparkasse Altmark West',
     bankPostcode: '29402',
     bankLocation: 'Salzwedel, Hansestadt',
   ),
-  '81063028': Iban(
-    bic: 'GENODEF1KAB',
+  '81063028': Bic(
+    value: 'GENODEF1KAB',
     bankName: 'Raiffeisenbank Kalbe-Bismark Kalbe',
     bankShortName: 'Raiffbk Kalbe-Bismark',
     bankPostcode: '39629',
     bankLocation: 'Bismark (Altmark)',
   ),
-  '81063238': Iban(
-    bic: 'GENODEF1BRG',
+  '81063238': Bic(
+    value: 'GENODEF1BRG',
     bankName: 'Volksbank Jerichower Land (Gf P2)',
     bankShortName: 'VB Jerichower Land',
     bankPostcode: '39288',
     bankLocation: 'Burg',
   ),
-  '81068106': Iban(
-    bic: 'GENODED1KDM',
+  '81068106': Bic(
+    value: 'GENODED1KDM',
     bankName: 'Bank für Kirche und Diakonie - KD-Bank Gf Sonder-BLZ',
     bankShortName: 'KD-Bank Magdeburg',
     bankPostcode: '39104',
     bankLocation: 'Magdeburg',
   ),
-  '81069052': Iban(
-    bic: 'GENODEF1WZL',
+  '81069052': Bic(
+    value: 'GENODEF1WZL',
     bankName: 'Volksbank Börde-Bernburg (Gf P2)',
     bankShortName: 'Volksbank Börde-Bernburg',
     bankPostcode: '39164',
     bankLocation: 'Wanzleben-Börde',
   ),
-  '81070000': Iban(
-    bic: 'DEUTDE8M825',
+  '81070000': Bic(
+    value: 'DEUTDE8M825',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '39261',
     bankLocation: 'Zerbst/Anhalt',
   ),
-  '81070024': Iban(
-    bic: 'DEUTDEDB806',
+  '81070024': Bic(
+    value: 'DEUTDEDB806',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '39261',
     bankLocation: 'Zerbst/Anhalt',
   ),
-  '81080000': Iban(
-    bic: 'DRESDEFF810',
+  '81080000': Bic(
+    value: 'DRESDEFF810',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Haldensleben',
     bankPostcode: '39331',
     bankLocation: 'Haldensleben',
   ),
-  '81093034': Iban(
-    bic: 'GENODEF1GA1',
+  '81093034': Bic(
+    value: 'GENODEF1GA1',
     bankName: 'Volksbank Gardelegen',
     bankShortName: 'Volksbank (Gf P2)',
     bankPostcode: '39638',
     bankLocation: 'Gardelegen',
   ),
-  '81093054': Iban(
-    bic: 'GENODEF1SDL',
+  '81093054': Bic(
+    value: 'GENODEF1SDL',
     bankName: 'Volksbank Stendal (Gf P2)',
     bankShortName: 'Volksbank Stendal',
     bankPostcode: '39576',
     bankLocation: 'Stendal',
   ),
-  '81093274': Iban(
-    bic: 'GENODEF1MD1',
+  '81093274': Bic(
+    value: 'GENODEF1MD1',
     bankName: 'Volksbank Magdeburg (Gf P2)',
     bankShortName: 'VB Magdeburg',
     bankPostcode: '39104',
     bankLocation: 'Magdeburg',
   ),
-  '82000000': Iban(
-    bic: 'MARKDEF1820',
+  '82000000': Bic(
+    value: 'MARKDEF1820',
     bankName: 'Bundesbank',
     bankShortName: 'Bundesbank',
     bankPostcode: '99107',
     bankLocation: 'Erfurt',
   ),
-  '82020086': Iban(
-    bic: 'HYVEDEMM498',
+  '82020086': Bic(
+    value: 'HYVEDEMM498',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '99084',
     bankLocation: 'Erfurt',
   ),
-  '82020087': Iban(
-    bic: 'HYVEDEMM098',
+  '82020087': Bic(
+    value: 'HYVEDEMM098',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '99402',
     bankLocation: 'Weimar',
   ),
-  '82020088': Iban(
-    bic: 'HYVEDEMM824',
+  '82020088': Bic(
+    value: 'HYVEDEMM824',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '99817',
     bankLocation: 'Eisenach',
   ),
-  '82040000': Iban(
-    bic: 'COBADEFFXXX',
+  '82040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Sömmerda',
     bankShortName: 'Commerzbank',
     bankPostcode: '99601',
     bankLocation: 'Sömmerda',
   ),
-  '82040085': Iban(
-    bic: 'COBADEFFXXX',
+  '82040085': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Gf WK, Erfurt',
     bankShortName: 'Commerzbank, Gf Web-K',
     bankPostcode: '99104',
     bankLocation: 'Erfurt',
   ),
-  '82050000': Iban(
-    bic: 'HELADEFF820',
+  '82050000': Bic(
+    value: 'HELADEFF820',
     bankName: 'Landesbank Hessen-Thür Girozentrale Erfurt',
     bankShortName: 'Ld Bk Hess-Thür Gz Erfurt',
     bankPostcode: '99084',
     bankLocation: 'Erfurt',
   ),
-  '82051000': Iban(
-    bic: 'HELADEF1WEM',
+  '82051000': Bic(
+    value: 'HELADEF1WEM',
     bankName: 'Sparkasse Mittelthüringen',
     bankShortName: 'Spk Mittelthüringen',
     bankPostcode: '99189',
     bankLocation: 'Elxleben',
   ),
-  '82052020': Iban(
-    bic: 'HELADEF1GTH',
+  '82052020': Bic(
+    value: 'HELADEF1GTH',
     bankName: 'Kreissparkasse Gotha',
     bankShortName: 'Kr Spk Gotha',
     bankPostcode: '99880',
     bankLocation: 'Waltershausen',
   ),
-  '82054052': Iban(
-    bic: 'HELADEF1NOR',
+  '82054052': Bic(
+    value: 'HELADEF1NOR',
     bankName: 'Kreissparkasse Nordhausen',
     bankShortName: 'Kr Spk Nordhausen',
     bankPostcode: '99765',
     bankLocation: 'Heringen',
   ),
-  '82055000': Iban(
-    bic: 'HELADEF1KYF',
+  '82055000': Bic(
+    value: 'HELADEF1KYF',
     bankName: 'Kyffhäuser Spk Sondershsn',
     bankShortName: 'Kyffhäusersparkasse',
     bankPostcode: '06571',
     bankLocation: 'Roßleben-Wiehe',
   ),
-  '82056060': Iban(
-    bic: 'HELADEF1MUE',
+  '82056060': Bic(
+    value: 'HELADEF1MUE',
     bankName: 'Sparkasse Unstrut-Hainich',
     bankShortName: 'Spk Unstrut-Hainich',
     bankPostcode: '99947',
     bankLocation: 'Bad Langensalza',
   ),
-  '82057070': Iban(
-    bic: 'HELADEF1EIC',
+  '82057070': Bic(
+    value: 'HELADEF1EIC',
     bankName: 'Kreissparkasse Eichsfeld',
     bankShortName: 'Kr Spk Eichsfeld',
     bankPostcode: '37339',
     bankLocation: 'Leinefelde-Worbis',
   ),
-  '82060197': Iban(
-    bic: 'GENODED1PA5',
+  '82060197': Bic(
+    value: 'GENODED1PA5',
     bankName: 'Pax-Bank Erfurt',
     bankShortName: 'Pax-Bank',
     bankPostcode: '99084',
     bankLocation: 'Erfurt',
   ),
-  '82064038': Iban(
-    bic: 'GENODEF1MU2',
+  '82064038': Bic(
+    value: 'GENODEF1MU2',
     bankName: 'VR Bank Westthüringen (Gf P2)',
     bankShortName: 'VR Bank Westthüringen',
     bankPostcode: '99974',
     bankLocation: 'Mühlhausen/Thüringen',
   ),
-  '82064088': Iban(
-    bic: 'GENODEF1ESA',
+  '82064088': Bic(
+    value: 'GENODEF1ESA',
     bankName: 'VR Bank Ihre Heimatbank (Gf P2)',
     bankShortName: 'VR Bank Ihre Heimatbank',
     bankPostcode: '99817',
     bankLocation: 'Eisenach',
   ),
-  '82064168': Iban(
-    bic: 'GENODEF1GTH',
+  '82064168': Bic(
+    value: 'GENODEF1GTH',
     bankName: 'Raiffeisenbank Gotha (Gf P2)',
     bankShortName: 'Raiffeisenbank Gotha',
     bankPostcode: '99867',
     bankLocation: 'Gotha',
   ),
-  '82064188': Iban(
-    bic: 'GENODEF1WE1',
+  '82064188': Bic(
+    value: 'GENODEF1WE1',
     bankName: 'VR Bank Weimar (Gf P2)',
     bankShortName: 'VR Bank Weimar',
     bankPostcode: '99405',
     bankLocation: 'Weimar',
   ),
-  '82064228': Iban(
-    bic: 'ERFBDE8EXXX',
+  '82064228': Bic(
+    value: 'ERFBDE8EXXX',
     bankName: 'Erfurter Bank (Gf P2)',
     bankShortName: 'Erfurter Bank',
     bankPostcode: '99084',
     bankLocation: 'Erfurt',
   ),
-  '82070000': Iban(
-    bic: 'DEUTDE8E846',
+  '82070000': Bic(
+    value: 'DEUTDE8E846',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '99885',
     bankLocation: 'Ohrdruf',
   ),
-  '82070024': Iban(
-    bic: 'DEUTDEDB836',
+  '82070024': Bic(
+    value: 'DEUTDEDB836',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '07931',
     bankLocation: 'Zeulenroda-Triebes',
   ),
-  '82070324': Iban(
-    bic: 'DEUTDEDBP20',
+  '82070324': Bic(
+    value: 'DEUTDEDBP20',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '99423',
     bankLocation: 'Weimar',
   ),
-  '82070366': Iban(
-    bic: 'DEUTDE8EP20',
+  '82070366': Bic(
+    value: 'DEUTDE8EP20',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '99423',
     bankLocation: 'Weimar',
   ),
-  '82080000': Iban(
-    bic: 'DRESDEFF827',
+  '82080000': Bic(
+    value: 'DRESDEFF827',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Sömmerda',
     bankPostcode: '99601',
     bankLocation: 'Sömmerda',
   ),
-  '82094004': Iban(
-    bic: 'GENODEF1HIG',
+  '82094004': Bic(
+    value: 'GENODEF1HIG',
     bankName: 'Volksbank Heiligenstadt (Gf P2)',
     bankShortName: 'Volksbank Heiligenstadt',
     bankPostcode: '37308',
     bankLocation: 'Heilbad Heiligenstadt',
   ),
-  '82094054': Iban(
-    bic: 'GENODEF1NDS',
+  '82094054': Bic(
+    value: 'GENODEF1NDS',
     bankName: 'Nordthüringer Volksbank (Gf P2)',
     bankShortName: 'Nordthüringer Volksbank',
     bankPostcode: '99734',
     bankLocation: 'Nordhausen',
   ),
-  '83020086': Iban(
-    bic: 'HYVEDEMM468',
+  '83020086': Bic(
+    value: 'HYVEDEMM468',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '06712',
     bankLocation: 'Zeitz',
   ),
-  '83020087': Iban(
-    bic: 'HYVEDEMM463',
+  '83020087': Bic(
+    value: 'HYVEDEMM463',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '07704',
     bankLocation: 'Jena',
   ),
-  '83020088': Iban(
-    bic: 'HYVEDEMM484',
+  '83020088': Bic(
+    value: 'HYVEDEMM484',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '07306',
     bankLocation: 'Saalfeld/Saale',
   ),
-  '83040000': Iban(
-    bic: 'COBADEFFXXX',
+  '83040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Zeulenroda',
     bankShortName: 'Commerzbank',
     bankPostcode: '07937',
     bankLocation: 'Zeulenroda-Triebes',
   ),
-  '83050000': Iban(
-    bic: 'HELADEF1GER',
+  '83050000': Bic(
+    value: 'HELADEF1GER',
     bankName: 'Sparkasse Gera-Greiz Gs',
     bankShortName: 'Spk Gera-Greiz',
     bankPostcode: '07570',
     bankLocation: 'Weida',
   ),
-  '83050200': Iban(
-    bic: 'HELADEF1ALT',
+  '83050200': Bic(
+    value: 'HELADEF1ALT',
     bankName: 'Sparkasse Altenburger Land Gs',
     bankShortName: 'Spk Altenburger Land',
     bankPostcode: '04626',
     bankLocation: 'Schmölln',
   ),
-  '83050303': Iban(
-    bic: 'HELADEF1SAR',
+  '83050303': Bic(
+    value: 'HELADEF1SAR',
     bankName: 'Kreissparkasse Saalfeld-Rudolstadt Zw',
     bankShortName: 'Kr Spk Saalfeld-Rudolstadt',
     bankPostcode: '07407',
     bankLocation: 'Rudolstadt',
   ),
-  '83050505': Iban(
-    bic: 'HELADEF1SOK',
+  '83050505': Bic(
+    value: 'HELADEF1SOK',
     bankName: 'Kreissparkasse Saale-Orla Gs',
     bankShortName: 'Kr Spk Saale-Orla',
     bankPostcode: '07373',
     bankLocation: 'Pößneck',
   ),
-  '83053030': Iban(
-    bic: 'HELADEF1JEN',
+  '83053030': Bic(
+    value: 'HELADEF1JEN',
     bankName: 'Sparkasse Jena-Saale-Holzland Gs',
     bankShortName: 'Spk Jena-Saale-Holzland',
     bankPostcode: '07646',
     bankLocation: 'Stadtroda',
   ),
-  '83064488': Iban(
-    bic: 'GENODEF1HMF',
+  '83064488': Bic(
+    value: 'GENODEF1HMF',
     bankName: 'Raiffeisen-Volksbank Hermsdorfer Kreuz Zw',
     bankShortName: 'Raiffbk-VB Hermsdorf',
     bankPostcode: '07646',
     bankLocation: 'Stadtroda',
   ),
-  '83064568': Iban(
-    bic: 'GENODEF1GEV',
+  '83064568': Bic(
+    value: 'GENODEF1GEV',
     bankName: 'Geraer Bank (Gf P2)',
     bankShortName: 'Geraer Bank',
     bankPostcode: '07507',
     bankLocation: 'Gera',
   ),
-  '83065408': Iban(
-    bic: 'GENODEF1SLR',
+  '83065408': Bic(
+    value: 'GENODEF1SLR',
     bankName: 'VR-Bank Altenburger Land / Skatbank (Gf P2)',
     bankShortName: 'VR-Bank ABG-Land / Skatbank',
     bankPostcode: '04626',
     bankLocation: 'Schmölln',
   ),
-  '83080000': Iban(
-    bic: 'DRESDEFF830',
+  '83080000': Bic(
+    value: 'DRESDEFF830',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Gera',
     bankPostcode: '07502',
     bankLocation: 'Gera',
   ),
-  '83094444': Iban(
-    bic: 'GENODEF1PN1',
+  '83094444': Bic(
+    value: 'GENODEF1PN1',
     bankName: 'Raiffeisen-Volksbank Saale-Orla (Gf P2)',
     bankShortName: 'Raiff-VB Saale-Orla',
     bankPostcode: '07381',
     bankLocation: 'Pößneck',
   ),
-  '83094454': Iban(
-    bic: 'GENODEF1RUJ',
+  '83094454': Bic(
+    value: 'GENODEF1RUJ',
     bankName: 'Volksbank Gera-Jena-Rudolstadt (Gf P2)',
     bankShortName: 'VB Gera-Jena-Rudolstadt',
     bankPostcode: '07743',
     bankLocation: 'Jena',
   ),
-  '83094494': Iban(
-    bic: 'GENODEF1ESN',
+  '83094494': Bic(
+    value: 'GENODEF1ESN',
     bankName: 'Volksbank Eisenberg Zw',
     bankShortName: 'Volksbank Eisenberg',
     bankPostcode: '07619',
     bankLocation: 'Schkölen',
   ),
-  '83094495': Iban(
-    bic: 'GENODEF1ETK',
+  '83094495': Bic(
+    value: 'GENODEF1ETK',
     bankName: 'EthikBank, Zndl der Volksbank Eisenberg (Gf P2)',
     bankShortName: 'EthikBank Zndl Vb Eisenberg',
     bankPostcode: '07607',
     bankLocation: 'Eisenberg',
   ),
-  '84020087': Iban(
-    bic: 'HYVEDEMM458',
+  '84020087': Bic(
+    value: 'HYVEDEMM458',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '98527',
     bankLocation: 'Suhl',
   ),
-  '84040000': Iban(
-    bic: 'COBADEFFXXX',
+  '84040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Meiningen',
     bankShortName: 'Commerzbank',
     bankPostcode: '98601',
     bankLocation: 'Meiningen',
   ),
-  '84050000': Iban(
-    bic: 'HELADEF1RRS',
+  '84050000': Bic(
+    value: 'HELADEF1RRS',
     bankName: 'Rhön-Rennsteig-Sparkasse',
     bankShortName: 'Rhön-Rennsteig-Sparkasse',
     bankPostcode: '98527',
     bankLocation: 'Suhl',
   ),
-  '84051010': Iban(
-    bic: 'HELADEF1ILK',
+  '84051010': Bic(
+    value: 'HELADEF1ILK',
     bankName: 'Sparkasse Arnstadt-Ilmenau',
     bankShortName: 'Sparkasse Arnstadt-Ilmenau',
     bankPostcode: '98685',
     bankLocation: 'Ilmenau',
   ),
-  '84054040': Iban(
-    bic: 'HELADEF1HIL',
+  '84054040': Bic(
+    value: 'HELADEF1HIL',
     bankName: 'Kreissparkasse Hildburghausen',
     bankShortName: 'Kr Spk Hildburghausen',
     bankPostcode: '98667',
     bankLocation: 'Schönbrunn',
   ),
-  '84054722': Iban(
-    bic: 'HELADEF1SON',
+  '84054722': Bic(
+    value: 'HELADEF1SON',
     bankName: 'Sparkasse Sonneberg',
     bankShortName: 'Sparkasse Sonneberg',
     bankPostcode: '98724',
     bankLocation: 'Neuhaus am Rennweg',
   ),
-  '84055050': Iban(
-    bic: 'HELADEF1WAK',
+  '84055050': Bic(
+    value: 'HELADEF1WAK',
     bankName: 'Wartburg-Sparkasse',
     bankShortName: 'Wartburg-Sparkasse',
     bankPostcode: '36433',
     bankLocation: 'Bad Salzungen',
   ),
-  '84064798': Iban(
-    bic: 'GENODEF1MLF',
+  '84064798': Bic(
+    value: 'GENODEF1MLF',
     bankName: 'Genobank Rhön-Grabfeld',
     bankShortName: 'Genobank Rhön-Grabfeld',
     bankPostcode: '98617',
     bankLocation: 'Meiningen',
   ),
-  '84069065': Iban(
-    bic: 'GENODEF1SSG',
+  '84069065': Bic(
+    value: 'GENODEF1SSG',
     bankName: 'Raiffeisenbank Schleusingen (Gf P2)',
     bankShortName: 'Raiffeisenbank Schleusingen',
     bankPostcode: '98553',
     bankLocation: 'Schleusingen',
   ),
-  '84080000': Iban(
-    bic: 'DRESDEFF843',
+  '84080000': Bic(
+    value: 'DRESDEFF843',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Suhl',
     bankPostcode: '98527',
     bankLocation: 'Suhl',
   ),
-  '84094754': Iban(
-    bic: 'GENODEF1SAL',
+  '84094754': Bic(
+    value: 'GENODEF1SAL',
     bankName: 'VR-Bank Bad Salzungen Schmal (Gf P2)',
     bankShortName: 'VR-Bank Salzungen Schmal',
     bankPostcode: '36433',
     bankLocation: 'Bad Salzungen',
   ),
-  '84094755': Iban(
-    bic: 'GENODEF1SAL',
+  '84094755': Bic(
+    value: 'GENODEF1SAL',
     bankName: 'VR-Bank Bad Salzungen Schmalkalden GAA',
     bankShortName: 'VR-Bank Bad Salzungen GAA',
     bankPostcode: '36433',
     bankLocation: 'Bad Salzungen',
   ),
-  '84094814': Iban(
-    bic: 'GENODEF1SHL',
+  '84094814': Bic(
+    value: 'GENODEF1SHL',
     bankName: 'Volksbank Thüringen Mitte (Gf P2)',
     bankShortName: 'VB Thür. Mitte Erfurt',
     bankPostcode: '99084',
     bankLocation: 'Erfurt',
   ),
-  '85000000': Iban(
-    bic: 'MARKDEF1850',
+  '85000000': Bic(
+    value: 'MARKDEF1850',
     bankName: 'BBk Leipzig eh Dresden',
     bankShortName: 'Bundesbank eh Dresden',
     bankPostcode: '04253',
     bankLocation: 'Leipzig',
   ),
-  '85010500': Iban(
-    bic: 'SABDDE81XXX',
+  '85010500': Bic(
+    value: 'SABDDE81XXX',
     bankName: 'Sächsische Aufbaubank -Förderbank-',
     bankShortName: 'Sächsische Aufbaubank',
     bankPostcode: '01054',
     bankLocation: 'Dresden',
   ),
-  '85020086': Iban(
-    bic: 'HYVEDEMM496',
+  '85020086': Bic(
+    value: 'HYVEDEMM496',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '01445',
     bankLocation: 'Radebeul',
   ),
-  '85020500': Iban(
-    bic: 'BFSWDE33DRE',
+  '85020500': Bic(
+    value: 'BFSWDE33DRE',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Bank für Sozialwirtschaft',
     bankPostcode: '01074',
     bankLocation: 'Dresden',
   ),
-  '85040000': Iban(
-    bic: 'COBADEFFXXX',
+  '85040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Neustadt Sachs',
     bankShortName: 'Commerzbank',
     bankPostcode: '01844',
     bankLocation: 'Neustadt in Sachsen',
   ),
-  '85040060': Iban(
-    bic: 'COBADEFFXXX',
+  '85040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Dresden',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '01067',
     bankLocation: 'Dresden',
   ),
-  '85040061': Iban(
-    bic: 'COBADEFFXXX',
+  '85040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Dresden',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '01067',
     bankLocation: 'Dresden',
   ),
-  '85050100': Iban(
-    bic: 'WELADED1GRL',
+  '85050100': Bic(
+    value: 'WELADED1GRL',
     bankName: 'Sparkasse Oberlausitz-Niederschlesien',
     bankShortName: 'Spk Oberlausitz-Niederschl.',
     bankPostcode: '02806',
     bankLocation: 'Görlitz',
   ),
-  '85050300': Iban(
-    bic: 'OSDDDE81PIR',
+  '85050300': Bic(
+    value: 'OSDDDE81PIR',
     bankName: 'Ostsächsische Sparkasse Dresden',
     bankShortName: 'Ostsächsische Spk Dresden',
     bankPostcode: '01781',
     bankLocation: 'Pirna',
   ),
-  '85055000': Iban(
-    bic: 'SOLADES1MEI',
+  '85055000': Bic(
+    value: 'SOLADES1MEI',
     bankName: 'Sparkasse Meißen',
     bankShortName: 'Spk Meißen',
     bankPostcode: '01561',
     bankLocation: 'Schönfeld',
   ),
-  '85060000': Iban(
-    bic: 'GENODEF1PR2',
+  '85060000': Bic(
+    value: 'GENODEF1PR2',
     bankName: 'Volksbank Pirna (Gf P2)',
     bankShortName: 'VB Pirna',
     bankPostcode: '01796',
     bankLocation: 'Pirna',
   ),
-  '85065028': Iban(
-    bic: 'GENODEF1SEB',
+  '85065028': Bic(
+    value: 'GENODEF1SEB',
     bankName: 'Raiffeisenbank Neustadt, Sachs (Gf P2)',
     bankShortName: 'Raiffbk Neustadt Sachs',
     bankPostcode: '01855',
     bankLocation: 'Sebnitz',
   ),
-  '85080000': Iban(
-    bic: 'DRESDEFF850',
+  '85080000': Bic(
+    value: 'DRESDEFF850',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbk Neustadt Sachs',
     bankPostcode: '01844',
     bankLocation: 'Neustadt in Sachsen',
   ),
-  '85080085': Iban(
-    bic: 'DRESDEFFJ29',
+  '85080085': Bic(
+    value: 'DRESDEFFJ29',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Dresden',
     bankPostcode: '01100',
     bankLocation: 'Dresden',
   ),
-  '85080086': Iban(
-    bic: 'DRESDEFFJ30',
+  '85080086': Bic(
+    value: 'DRESDEFFJ30',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITGK2 Dresden',
     bankPostcode: '01100',
     bankLocation: 'Dresden',
   ),
-  '85080200': Iban(
-    bic: 'DRESDEFF857',
+  '85080200': Bic(
+    value: 'DRESDEFF857',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Hoyerswerda',
     bankPostcode: '02961',
     bankLocation: 'Hoyerswerda',
   ),
-  '85089270': Iban(
-    bic: 'DRESDEFFI15',
+  '85089270': Bic(
+    value: 'DRESDEFFI15',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Dresden',
     bankPostcode: '01008',
     bankLocation: 'Dresden',
   ),
-  '85090000': Iban(
-    bic: 'GENODEF1DRS',
+  '85090000': Bic(
+    value: 'GENODEF1DRS',
     bankName: 'Volksbank Dresden-Bautzen (Gf P2)',
     bankShortName: 'VB Dresden-Bautzen',
     bankPostcode: '01097',
     bankLocation: 'Dresden',
   ),
-  '85094984': Iban(
-    bic: 'GENODEF1RIE',
+  '85094984': Bic(
+    value: 'GENODEF1RIE',
     bankName: 'Volksbank Riesa Gs',
     bankShortName: 'Volksbank Riesa',
     bankPostcode: '04758',
     bankLocation: 'Oschatz',
   ),
-  '85095004': Iban(
-    bic: 'GENODEF1MEI',
+  '85095004': Bic(
+    value: 'GENODEF1MEI',
     bankName: 'Volksbank Raiffeisenbank Meißen Großenhain (Gf P2)',
     bankShortName: 'VB Raiffbk Meißen Großenh',
     bankPostcode: '01652',
     bankLocation: 'Meißen',
   ),
-  '85550000': Iban(
-    bic: 'SOLADES1BAT',
+  '85550000': Bic(
+    value: 'SOLADES1BAT',
     bankName: 'Kreissparkasse Bautzen',
     bankShortName: 'Kreissparkasse Bautzen',
     bankPostcode: '02733',
     bankLocation: 'Cunewalde',
   ),
-  '85590000': Iban(
-    bic: 'GENODEF1BZV',
+  '85590000': Bic(
+    value: 'GENODEF1BZV',
     bankName: 'Volksbank Bautzen Zw',
     bankShortName: 'Volksbank Bautzen',
     bankPostcode: '02961',
     bankLocation: 'Hoyerswerda',
   ),
-  '85590100': Iban(
-    bic: 'GENODEF1NGS',
+  '85590100': Bic(
+    value: 'GENODEF1NGS',
     bankName: 'Volksbank Löbau-Zittau (Gf P2)',
     bankShortName: 'VB Löbau-Zittau',
     bankPostcode: '02727',
     bankLocation: 'Ebersbach-Neugersdorf',
   ),
-  '85591000': Iban(
-    bic: 'GENODEF1GR1',
+  '85591000': Bic(
+    value: 'GENODEF1GR1',
     bankName: 'Volksbank Raiffeisenbank Niederschlesien (Gf P2)',
     bankShortName: 'VB Raiffbk Niederschlesien',
     bankPostcode: '02810',
     bankLocation: 'Görlitz',
   ),
-  '86000000': Iban(
-    bic: 'MARKDEF1860',
+  '86000000': Bic(
+    value: 'MARKDEF1860',
     bankName: 'BBk Leipzig',
     bankShortName: 'Bundesbank',
     bankPostcode: '04253',
     bankLocation: 'Leipzig',
   ),
-  '86010090': Iban(
-    bic: 'PBNKDEFFXXX',
+  '86010090': Bic(
+    value: 'PBNKDEFFXXX',
     bankName: 'Postbank Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '04109',
     bankLocation: 'Leipzig',
   ),
-  '86010424': Iban(
-    bic: 'AARBDE5W860',
+  '86010424': Bic(
+    value: 'AARBDE5W860',
     bankName: 'Aareal Bank ehem. Filiale Leipzig',
     bankShortName: 'Aareal Bank Wiesbaden',
     bankPostcode: '65189',
     bankLocation: 'Wiesbaden',
   ),
-  '86020086': Iban(
-    bic: 'HYVEDEMM495',
+  '86020086': Bic(
+    value: 'HYVEDEMM495',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '04009',
     bankLocation: 'Leipzig',
   ),
-  '86020500': Iban(
-    bic: 'BFSWDE33LPZ',
+  '86020500': Bic(
+    value: 'BFSWDE33LPZ',
     bankName: 'Bank für Sozialwirtschaft',
     bankShortName: 'Bank für Sozialwirtschaft',
     bankPostcode: '99084',
     bankLocation: 'Erfurt',
   ),
-  '86033300': Iban(
-    bic: 'SCFBDE33XXX',
+  '86033300': Bic(
+    value: 'SCFBDE33XXX',
     bankName: 'Santander Consumer Bank',
     bankShortName: 'Santander Bank Leipzig',
     bankPostcode: '04105',
     bankLocation: 'Leipzig',
   ),
-  '86040000': Iban(
-    bic: 'COBADEFFXXX',
+  '86040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Torgau',
     bankShortName: 'Commerzbank',
     bankPostcode: '04860',
     bankLocation: 'Torgau',
   ),
-  '86040060': Iban(
-    bic: 'COBADEFFXXX',
+  '86040060': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Leipzig',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '04103',
     bankLocation: 'Leipzig',
   ),
-  '86040061': Iban(
-    bic: 'COBADEFFXXX',
+  '86040061': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank CC Leipzig',
     bankShortName: 'Commerzbank CC',
     bankPostcode: '04103',
     bankLocation: 'Leipzig',
   ),
-  '86050000': Iban(
-    bic: 'SOLADEST861',
+  '86050000': Bic(
+    value: 'SOLADEST861',
     bankName: 'ZV Landesbank Baden-Württemberg',
     bankShortName: 'ZV LBBW Leipzig',
     bankPostcode: '04002',
     bankLocation: 'Leipzig',
   ),
-  '86050200': Iban(
-    bic: 'SOLADES1GRM',
+  '86050200': Bic(
+    value: 'SOLADES1GRM',
     bankName: 'Sparkasse Muldental',
     bankShortName: 'Spk Muldental',
     bankPostcode: '04651',
     bankLocation: 'Bad Lausick',
   ),
-  '86050600': Iban(
-    bic: 'WELADED1TGU',
+  '86050600': Bic(
+    value: 'WELADED1TGU',
     bankName: 'Kreissparkasse Torgau-Oschatz -alt-',
     bankShortName: 'Kr Spk Torgau-Oschatz -alt-',
     bankPostcode: '04853',
     bankLocation: 'Torgau',
   ),
-  '86055002': Iban(
-    bic: 'SOLADES1DES',
+  '86055002': Bic(
+    value: 'SOLADES1DES',
     bankName: 'Sparkasse Delitzsch-Eilenburg',
     bankShortName: 'Spk Delitzsch-Eilenburg',
     bankPostcode: '04838',
     bankLocation: 'Eilenburg',
   ),
-  '86055462': Iban(
-    bic: 'SOLADES1DLN',
+  '86055462': Bic(
+    value: 'SOLADES1DLN',
     bankName: 'Kreissparkasse Döbeln',
     bankShortName: 'Kr Spk Döbeln',
     bankPostcode: '04736',
     bankLocation: 'Waldheim',
   ),
-  '86055592': Iban(
-    bic: 'WELADE8LXXX',
+  '86055592': Bic(
+    value: 'WELADE8LXXX',
     bankName: 'Stadt- und Kreissparkasse Leipzig',
     bankShortName: 'St u Kr Spk Leipzig',
     bankPostcode: '04008',
     bankLocation: 'Leipzig',
   ),
-  '86065448': Iban(
-    bic: 'GENODEF1BOA',
+  '86065448': Bic(
+    value: 'GENODEF1BOA',
     bankName: 'VR Bank Leipziger Land (Gf P2)',
     bankShortName: 'VR Bank Leipziger Land',
     bankPostcode: '04552',
     bankLocation: 'Borna',
   ),
-  '86065468': Iban(
-    bic: 'GENODEF1DL1',
+  '86065468': Bic(
+    value: 'GENODEF1DL1',
     bankName: 'VR-Bank Mittelsachsen (Gf P2)',
     bankShortName: 'VR-Bank Mittelsachsen',
     bankPostcode: '09599',
     bankLocation: 'Freiberg',
   ),
-  '86065483': Iban(
-    bic: 'GENODEF1GMR',
+  '86065483': Bic(
+    value: 'GENODEF1GMR',
     bankName: 'Raiffeisenbank Grimma (Gf P2)',
     bankShortName: 'Raiffeisenbank Grimma',
     bankPostcode: '04662',
     bankLocation: 'Grimma',
   ),
-  '86069070': Iban(
-    bic: 'GENODEF1TGB',
+  '86069070': Bic(
+    value: 'GENODEF1TGB',
     bankName: 'Raiffeisenbank (Gf P2)',
     bankShortName: 'Raiffeisenbank Torgau',
     bankPostcode: '04851',
     bankLocation: 'Torgau',
   ),
-  '86070000': Iban(
-    bic: 'DEUTDE8L882',
+  '86070000': Bic(
+    value: 'DEUTDE8L882',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '04425',
     bankLocation: 'Taucha',
   ),
-  '86070024': Iban(
-    bic: 'DEUTDEDB991',
+  '86070024': Bic(
+    value: 'DEUTDEDB991',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '06691',
     bankLocation: 'Zeitz',
   ),
-  '86070407': Iban(
-    bic: 'DEUTDE8LP37',
+  '86070407': Bic(
+    value: 'DEUTDE8LP37',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '04109',
     bankLocation: 'Leipzig',
   ),
-  '86070424': Iban(
-    bic: 'DEUTDEDBP37',
+  '86070424': Bic(
+    value: 'DEUTDEDBP37',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '04109',
     bankLocation: 'Leipzig',
   ),
-  '86080000': Iban(
-    bic: 'DRESDEFF860',
+  '86080000': Bic(
+    value: 'DRESDEFF860',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbank Zeitz',
     bankPostcode: '06712',
     bankLocation: 'Zeitz',
   ),
-  '86080055': Iban(
-    bic: 'DRESDEFF862',
+  '86080055': Bic(
+    value: 'DRESDEFF862',
     bankName: 'Commerzbank vormals Dresdner Bank Zw 55',
     bankShortName: 'Commerzbank Zw 55 Leipzig',
     bankPostcode: '04109',
     bankLocation: 'Leipzig',
   ),
-  '86080057': Iban(
-    bic: 'DRESDEFF867',
+  '86080057': Bic(
+    value: 'DRESDEFF867',
     bankName: 'Commerzbank vormals Dresdner Bank Gf ZW 57',
     bankShortName: 'Commerzbank ZW 57 Leipzig',
     bankPostcode: '04109',
     bankLocation: 'Leipzig',
   ),
-  '86080085': Iban(
-    bic: 'DRESDEFFJ31',
+  '86080085': Bic(
+    value: 'DRESDEFFJ31',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 1',
     bankShortName: 'Commerzbank ITGK1 Leipzig',
     bankPostcode: '04093',
     bankLocation: 'Leipzig',
   ),
-  '86080086': Iban(
-    bic: 'DRESDEFFJ32',
+  '86080086': Bic(
+    value: 'DRESDEFFJ32',
     bankName: 'Commerzbank vormals Dresdner Bank, PCC DCC-ITGK 2',
     bankShortName: 'Commerzbank ITGK2 Leipzig',
     bankPostcode: '04093',
     bankLocation: 'Leipzig',
   ),
-  '86089280': Iban(
-    bic: 'DRESDEFFI16',
+  '86089280': Bic(
+    value: 'DRESDEFFI16',
     bankName: 'Commerzbank vormals Dresdner Bank ITGK',
     bankShortName: 'Commerzbank ITGK Leipzig',
     bankPostcode: '04093',
     bankLocation: 'Leipzig',
   ),
-  '86095484': Iban(
-    bic: 'GENODEF1GMV',
+  '86095484': Bic(
+    value: 'GENODEF1GMV',
     bankName: 'Volks- und Raiffeisenbank Muldental (Gf P2)',
     bankShortName: 'VR-Bank Muldental Grimma',
     bankPostcode: '04662',
     bankLocation: 'Grimma',
   ),
-  '86095554': Iban(
-    bic: 'GENODEF1DZ1',
+  '86095554': Bic(
+    value: 'GENODEF1DZ1',
     bankName: 'Volksbank Delitzsch (Gf P2)',
     bankShortName: 'Volksbank Delitzsch',
     bankPostcode: '04509',
     bankLocation: 'Delitzsch',
   ),
-  '86095604': Iban(
-    bic: 'GENODEF1LVB',
+  '86095604': Bic(
+    value: 'GENODEF1LVB',
     bankName: 'Leipziger Volksbank (Gf P2)',
     bankShortName: 'Leipziger Volksbank',
     bankPostcode: '04109',
     bankLocation: 'Leipzig',
   ),
-  '87000000': Iban(
-    bic: 'MARKDEF1870',
+  '87000000': Bic(
+    value: 'MARKDEF1870',
     bankName: 'BBk Chemnitz',
     bankShortName: 'Bundesbank',
     bankPostcode: '09071',
     bankLocation: 'Chemnitz',
   ),
-  '87020086': Iban(
-    bic: 'HYVEDEMM497',
+  '87020086': Bic(
+    value: 'HYVEDEMM497',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '09005',
     bankLocation: 'Chemnitz',
   ),
-  '87020087': Iban(
-    bic: 'HYVEDEMM481',
+  '87020087': Bic(
+    value: 'HYVEDEMM481',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '08502',
     bankLocation: 'Plauen',
   ),
-  '87020088': Iban(
-    bic: 'HYVEDEMM441',
+  '87020088': Bic(
+    value: 'HYVEDEMM441',
     bankName: 'UniCredit Bank - HypoVereinsbank',
     bankShortName: 'UniCredit Bank-HypoVereinbk',
     bankPostcode: '08002',
     bankLocation: 'Zwickau',
   ),
-  '87040000': Iban(
-    bic: 'COBADEFFXXX',
+  '87040000': Bic(
+    value: 'COBADEFFXXX',
     bankName: 'Commerzbank Hohenst-Ernstth',
     bankShortName: 'Commerzbank',
     bankPostcode: '09337',
     bankLocation: 'Hohenstein-Ernstthal',
   ),
-  '87050000': Iban(
-    bic: 'CHEKDE81HOT',
+  '87050000': Bic(
+    value: 'CHEKDE81HOT',
     bankName: 'Sparkasse Chemnitz',
     bankShortName: 'Sparkasse Chemnitz',
     bankPostcode: '09332',
     bankLocation: 'Hohenstein-Ernstthal',
   ),
-  '87051000': Iban(
-    bic: 'WELADED1MTW',
+  '87051000': Bic(
+    value: 'WELADED1MTW',
     bankName: 'Sparkasse Mittelsachsen',
     bankShortName: 'Spk Mittelsachsen',
     bankPostcode: '09232',
     bankLocation: 'Hartmannsdorf',
   ),
-  '87052000': Iban(
-    bic: 'WELADED1FGX',
+  '87052000': Bic(
+    value: 'WELADED1FGX',
     bankName: 'Sparkasse Mittelsachsen',
     bankShortName: 'Spk Mittelsachsen',
     bankPostcode: '09551',
     bankLocation: 'Flöha',
   ),
-  '87054000': Iban(
-    bic: 'WELADED1STB',
+  '87054000': Bic(
+    value: 'WELADED1STB',
     bankName: 'Erzgebirgssparkassee',
     bankShortName: 'Erzgebirgssparkasse',
     bankPostcode: '09392',
     bankLocation: 'Auerbach',
   ),
-  '87055000': Iban(
-    bic: 'WELADED1ZWI',
+  '87055000': Bic(
+    value: 'WELADED1ZWI',
     bankName: 'Sparkasse Zwickau',
     bankShortName: 'Sparkasse Zwickau',
     bankPostcode: '08009',
     bankLocation: 'Zwickau',
   ),
-  '87058000': Iban(
-    bic: 'WELADED1PLX',
+  '87058000': Bic(
+    value: 'WELADED1PLX',
     bankName: 'Sparkasse Vogtland',
     bankShortName: 'Sparkasse Vogtland',
     bankPostcode: '08237',
     bankLocation: 'Steinberg',
   ),
-  '87069075': Iban(
-    bic: 'GENODEF1MBG',
+  '87069075': Bic(
+    value: 'GENODEF1MBG',
     bankName: 'Volksbank Mittleres Erzgebirge (Gf P2)',
     bankShortName: 'VB Mittl Erzgebirge',
     bankPostcode: '09526',
     bankLocation: 'Olbernhau',
   ),
-  '87069077': Iban(
-    bic: 'GENODEF1BST',
+  '87069077': Bic(
+    value: 'GENODEF1BST',
     bankName: 'Vereinigte Raiffeisenbank Burgstädt (Gf P2)',
     bankShortName: 'Ver Raiffbk Burgstädt',
     bankPostcode: '09217',
     bankLocation: 'Burgstädt',
   ),
-  '87070000': Iban(
-    bic: 'DEUTDE8C878',
+  '87070000': Bic(
+    value: 'DEUTDE8C878',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '09669',
     bankLocation: 'Frankenberg',
   ),
-  '87070024': Iban(
-    bic: 'DEUTDEDB910',
+  '87070024': Bic(
+    value: 'DEUTDEDB910',
     bankName: 'Deutsche Bank',
     bankShortName: 'Deutsche Bank',
     bankPostcode: '08001',
     bankLocation: 'Zwickau',
   ),
-  '87070406': Iban(
-    bic: 'DEUTDE8CP36',
+  '87070406': Bic(
+    value: 'DEUTDE8CP36',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '09111',
     bankLocation: 'Chemnitz',
   ),
-  '87070424': Iban(
-    bic: 'DEUTDEDBP36',
+  '87070424': Bic(
+    value: 'DEUTDEDBP36',
     bankName: 'Postbank/DSL Ndl der Deutsche Bank',
     bankShortName: 'Postbank Ndl Deutsche Bank',
     bankPostcode: '09111',
     bankLocation: 'Chemnitz',
   ),
-  '87080000': Iban(
-    bic: 'DRESDEFF870',
+  '87080000': Bic(
+    value: 'DRESDEFF870',
     bankName: 'Commerzbank vormals Dresdner Bank',
     bankShortName: 'Commerzbk Hohenst-Ernstth',
     bankPostcode: '09337',
     bankLocation: 'Hohenstein-Ernstthal',
   ),
-  '87095824': Iban(
-    bic: 'GENODEF1PL1',
+  '87095824': Bic(
+    value: 'GENODEF1PL1',
     bankName: 'Volksbank Vogtland-Saale-Orla (Gf P2)',
     bankShortName: 'VB Vogtland-Saale-Orla',
     bankPostcode: '08525',
     bankLocation: 'Plauen',
   ),
-  '87095899': Iban(
-    bic: 'GENODEF1EXT',
+  '87095899': Bic(
+    value: 'GENODEF1EXT',
     bankName: 'Volksbank Vogtland GAA',
     bankShortName: 'VB Vogtland GAA',
     bankPostcode: '08525',
     bankLocation: 'Plauen',
   ),
-  '87095934': Iban(
-    bic: 'GENODEF1Z01',
+  '87095934': Bic(
+    value: 'GENODEF1Z01',
     bankName: 'Volksbank Zwickau (Gf P2)',
     bankShortName: 'Volksbank Zwickau',
     bankPostcode: '08056',
     bankLocation: 'Zwickau',
   ),
-  '87095974': Iban(
-    bic: 'GENODEF1GC1',
+  '87095974': Bic(
+    value: 'GENODEF1GC1',
     bankName: 'Volksbank-Raiffeisenbank Glauchau (Gf P2)',
     bankShortName: 'VB-RB Glauchau',
     bankPostcode: '08371',
     bankLocation: 'Glauchau',
   ),
-  '87096124': Iban(
-    bic: 'GENODEF1MIW',
+  '87096124': Bic(
+    value: 'GENODEF1MIW',
     bankName: 'Volksbank Mittweida',
     bankShortName: 'Volksbank Mittweida',
     bankPostcode: '04736',
     bankLocation: 'Waldheim',
   ),
-  '87096214': Iban(
-    bic: 'GENODEF1CH1',
+  '87096214': Bic(
+    value: 'GENODEF1CH1',
     bankName: 'Volksbank Chemnitz (Gf P2)',
     bankShortName: 'Volksbank Chemnitz',
     bankPostcode: '09003',
