@@ -1,5 +1,6 @@
 Determines the SWIFT BIC of an IBAN. Currently supports IBANs from the following countries:
-Austria, Belgium, Germany, Luxembourg, Netherlands. Inspired by [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic).
+Austria, Belgium, Germany, Lithuania, Luxembourg, Netherlands. Inspired by 
+[sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic).
 
 ## Getting started
 
@@ -27,7 +28,10 @@ import 'package:iban_to_bic/iban_to_bic.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  print(await ibanToBic('DE64500105179423814435'));
-  // result: INGDDEFFXXX
+  final Iban iban = ibanToBic('DE64 5001 0517 9423 8144 35');
+  print('BIC: ${iban.bic}');                  // result: INGDDEFFXXX
+  print('Bank name: ${iban.bankShortName}');  // result: ING-DiBa
+  print('Postcode: ${iban.bankPostcode}');    // result: 60628
+  print('Location: ${iban.bankLocation}');    // result: Frankfurt am Main
 }
 ```
