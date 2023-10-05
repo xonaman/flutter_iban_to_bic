@@ -1,3 +1,7 @@
+## 0.0.8
+
+* added some code documentation
+
 ## 0.0.7
 
 * upgraded dependencies
