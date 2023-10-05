@@ -1,3 +1,7 @@
+## 0.0.7
+
+* upgraded dependencies
+
 ## 0.0.6
 
 * renamed Iban class to "Bic"
