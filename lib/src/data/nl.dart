@@ -21,6 +21,11 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
     bankName: 'AEGON BANK',
     bankShortName: 'AEGON BANK',
   ),
+  'AINH': Bic(
+    value: 'AINHNL22',
+    bankName: 'AIRWALLEX (NETHERLANDS) B.V.',
+    bankShortName: 'AIRWALLEX (NETHERLANDS) B.V.',
+  ),
   'ANDL': Bic(
     value: 'ANDLNL2A',
     bankName: 'ANADOLUBANK',
@@ -40,11 +45,6 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
     value: 'ASNBNL21',
     bankName: 'ASN BANK',
     bankShortName: 'ASN BANK',
-  ),
-  'ATBA': Bic(
-    value: 'ATBANL2A',
-    bankName: 'AMSTERDAM TRADE BANK * status exclusion *',
-    bankShortName: 'AMSTERDAM TRADE BANK * status exclusion *',
   ),
   'BARC': Bic(
     value: 'BARCNL22',
@@ -121,6 +121,11 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
     bankName: 'BUNQ',
     bankShortName: 'BUNQ',
   ),
+  'CCBV': Bic(
+    value: 'CCBVNL2A',
+    bankName: 'CURRENCYCLOUD B.V.',
+    bankShortName: 'CURRENCYCLOUD B.V.',
+  ),
   'CHAS': Bic(
     value: 'CHASNL2X',
     bankName: 'JPMORGAN CHASE',
@@ -141,11 +146,6 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
     bankName: 'COMMERZBANK',
     bankShortName: 'COMMERZBANK',
   ),
-  'CCBV': Bic(
-    value: 'CCBVNL2A',
-    bankName: 'Currencycloud B.V.',
-    bankShortName: 'Currencycloud B.V.',
-  ),
   'DELE': Bic(
     value: 'DELENL22',
     bankName: 'OYENS & VAN EEGHEN - part of Delen Private Bank',
@@ -160,11 +160,6 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
     value: 'DHBNNL2R',
     bankName: 'DEMIR-HALK BANK',
     bankShortName: 'DEMIR-HALK BANK',
-  ),
-  'DLBK': Bic(
-    value: 'DLBKNL2A',
-    bankName: 'DELTA LLOYD BANK',
-    bankShortName: 'DELTA LLOYD BANK',
   ),
   'DNIB': Bic(
     value: 'DNIBNL2G',
@@ -201,6 +196,11 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
     bankName: 'FRANX',
     bankShortName: 'FRANX',
   ),
+  'FROM': Bic(
+    value: 'FROMNL2A',
+    bankName: 'FROMENTY AND CUSTARD E-COMMERCE',
+    bankShortName: 'FROMENTY AND CUSTARD E-COMMERCE',
+  ),
   'FVLB': Bic(
     value: 'FVLBNL22',
     bankName: 'VAN LANSCHOT',
@@ -221,15 +221,15 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
     bankName: 'SVENSKA HANDELSBANKEN',
     bankShortName: 'SVENSKA HANDELSBANKEN',
   ),
-  'HHBA': Bic(
-    value: 'HHBANL22',
-    bankName: 'HOF HOORNEMAN BANKIERS',
-    bankShortName: 'HOF HOORNEMAN BANKIERS',
-  ),
   'HIFX': Bic(
     value: 'HIFXNL2A',
-    bankName: 'Xe Europe BV',
-    bankShortName: 'Xe Europe BV',
+    bankName: 'XE EUROPE BV',
+    bankShortName: 'XE EUROPE BV',
+  ),
+  'HUSH': Bic(
+    value: 'HUSHNL2A',
+    bankName: 'HUSHPAY',
+    bankShortName: 'HUSHPAY',
   ),
   'HSBC': Bic(
     value: 'HSBCNL2A',
@@ -301,6 +301,11 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
     bankName: 'MIZUHO BANK EUROPE NV',
     bankShortName: 'MIZUHO BANK EUROPE NV',
   ),
+  'MODR': Bic(
+    value: 'MODRNL22',
+    bankName: 'MODULR FINANCE B.V.',
+    bankShortName: 'MODULR FINANCE B.V.',
+  ),
   'NNBA': Bic(
     value: 'NNBANL2G',
     bankName: 'NATIONALE-NEDERLANDEN BANK',
@@ -311,10 +316,20 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
     bankName: 'NEDERLANDSE WATERSCHAPSBANK',
     bankShortName: 'NEDERLANDSE WATERSCHAPSBANK',
   ),
+  'PANX': Bic(
+    value: 'PANXNL22',
+    bankName: 'UNIFIEDPOST PAYMENTS',
+    bankShortName: 'UNIFIEDPOST PAYMENTS',
+  ),
   'PCBC': Bic(
     value: 'PCBCNL2A',
     bankName: 'CHINA CONSTRUCTION BANK, AMSTERDAM BRANCH',
     bankShortName: 'CHINA CONSTRUCTION BANK, AMSTERDAM BRANCH',
+  ),
+  'PNOW': Bic(
+    value: 'PNOWNL2A',
+    bankName: 'PAY NOW',
+    bankShortName: 'PAY NOW',
   ),
   'RABO': Bic(
     value: 'RABONL2U',
@@ -326,6 +341,16 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
     bankName: 'REGIOBANK',
     bankShortName: 'REGIOBANK',
   ),
+  'REVO': Bic(
+    value: 'REVONL22',
+    bankName: 'REVOLUT BANK UAB',
+    bankShortName: 'REVOLUT BANK UAB',
+  ),
+  'SBOS': Bic(
+    value: 'SBOSNL2A',
+    bankName: 'STATE STREET BANK INTERNATIONAL GbmH',
+    bankShortName: 'STATE STREET BANK INTERNATIONAL GbmH',
+  ),
   'SNSB': Bic(
     value: 'SNSBNL2A',
     bankName: 'SNS',
@@ -335,6 +360,11 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
     value: 'SOGENL2A',
     bankName: 'SOCIETE GENERALE',
     bankShortName: 'SOCIETE GENERALE',
+  ),
+  'SWNB': Bic(
+    value: 'SWNBNL22',
+    bankName: 'SWAN',
+    bankShortName: 'SWAN',
   ),
   'TRIO': Bic(
     value: 'TRIONL2U',
@@ -358,25 +388,17 @@ const Map<String, Bic> _nlBankCodes = <String, Bic>{
   ),
   'VTPS': Bic(
     value: 'VTPSNL2R',
-    bankName: 'Vitesse PSP',
-    bankShortName: 'Vitesse PSP',
+    bankName: 'VITESSE PSP',
+    bankShortName: 'VITESSE PSP',
+  ),
+  'YOUR': Bic(
+    value: 'YOURNL2A',
+    bankName: 'YOURSAFE B.V.',
+    bankShortName: 'YOURSAFE B.V.',
   ),
   'ZWLB': Bic(
     value: 'ZWLBNL21',
     bankName: 'SNS ( ex ZWITSERLEVENBANK)',
     bankShortName: 'SNS ( ex ZWITSERLEVENBANK)',
-  ),
-  'BCDM': Bic(
-    value: 'BCDMNL22',
-    bankName:
-        'BANQUE CHAABI DU MAROC * (tijdelijk) inactief sinds 31 december 2020 *',
-    bankShortName:
-        'BANQUE CHAABI DU MAROC * (tijdelijk) inactief sinds 31 december 2020 *',
-  ),
-  'BMEU': Bic(
-    value: 'BMEUNL21',
-    bankName: 'BMCE EUROSERVICES * (tijdelijk) inactief sinds 7 juni 2021 *',
-    bankShortName:
-        'BMCE EUROSERVICES * (tijdelijk) inactief sinds 7 juni 2021 *',
   ),
 };
