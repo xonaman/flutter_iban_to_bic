@@ -1,7 +1,8 @@
 part of iban_to_bic;
 
-/// Determines the SWIFT BIC the given [ibanString]. Currently supports AT, BE,
-/// DE, LT, LU and NL IBANs.
+/// Determines the SWIFT BIC the given [ibanString].
+/// Currently supports AT, BE, DE, ES, FR, LT, LU and NL IBANs.
+///
 /// Returns a [Bic] object from which you can obtain the BIC via [Bic.value],
 /// and also provides some other useful information like [Bic.bankName].
 Bic ibanToBic(String ibanString) {
@@ -17,6 +18,10 @@ Bic ibanToBic(String ibanString) {
       return _beBankCodes[ibanString.substring(4, 7)]!;
     case 'DE':
       return _deBankCodes[ibanString.substring(4, 12)]!;
+    case 'ES':
+      return _esBankCodes[ibanString.substring(4, 8)]!;
+    case 'FR':
+      return _frBankCodes[ibanString.substring(4, 9)]!;
     case 'LT':
       return _ltBankCodes[ibanString.substring(4, 9)]!;
     case 'LU':

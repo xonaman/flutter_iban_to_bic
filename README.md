@@ -1,5 +1,5 @@
 Determines the SWIFT BIC of an IBAN. Currently supports IBANs from the following countries:
-Austria, Belgium, Germany, Lithuania, Luxembourg, Netherlands. Inspired by 
+Austria, Belgium, Germany, Spain, France, Lithuania, Luxembourg, Netherlands. Inspired by 
 [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic).
 
 ## Getting started
