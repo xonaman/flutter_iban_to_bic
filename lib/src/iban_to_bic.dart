@@ -1,4 +1,4 @@
-part of iban_to_bic;
+part of '../iban_to_bic.dart';
 
 /// Determines the SWIFT BIC the given [ibanString].
 /// Currently supports AT, BE, DE, ES, FR, LT, LU and NL IBANs.

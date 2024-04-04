@@ -1,4 +1,4 @@
-part of iban_to_bic;
+part of '../../iban_to_bic.dart';
 
 const Map<String, Bic> _deBankCodes = <String, Bic>{
   '10000000': Bic(

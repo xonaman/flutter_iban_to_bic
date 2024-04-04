@@ -1,4 +1,4 @@
-part of iban_to_bic;
+part of '../../iban_to_bic.dart';
 
 const Map<String, Bic> _luBankCodes = <String, Bic>{
   '001': Bic(
