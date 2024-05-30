@@ -1,3 +1,7 @@
+## 0.1.0
+
+* Merged [PR from @davidmigloz](https://github.com/xonaman/flutter_iban_to_bic/pull/1)
+
 ## 0.0.8
 
 * added some code documentation
