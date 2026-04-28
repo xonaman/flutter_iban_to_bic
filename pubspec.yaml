@@ -1,15 +1,16 @@
 name: iban_to_bic
-description: Determines the SWIFT BIC of any AT, BE, DE, LT, LU or NL IBAN.
-version: 0.1.0
+description: Determines the SWIFT BIC of an IBAN (AT, BE, DE, ES, FR, LT, LU, NL). Zero runtime dependencies.
+version: 1.0.0
 homepage: https://github.com/xonaman/flutter_iban_to_bic
 
 environment:
-  sdk: '>=2.17.0 <4.0.0'
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  iban: ^1.0.1
 
 dev_dependencies:
+  flutter_test:
+    sdk: flutter
   flutter_lints: ^4.0.0

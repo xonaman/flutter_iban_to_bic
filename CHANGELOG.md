@@ -1,3 +1,15 @@
+## 1.0.0
+
+* **Breaking:** `ibanToBic` now returns a sealed `IbanLookupResult`
+  (`BicFound` / `InvalidIban` / `UnsupportedCountry` / `UnknownBank`) instead of
+  throwing. Pattern-match on the result.
+* Removed the `iban` package dependency; IBAN validation is now a ~30-line
+  inline mod-97 implementation.
+* Reshaped internals into a pluggable `BicResolver` + `CountrySpec` registry
+  so custom data sources can be injected via `IbanToBic(countries: …)`.
+* Replaced `part`/`part of` with proper library files and exports.
+* Bumped minimum Dart SDK to 3.0 (required for sealed/pattern matching).
+
 ## 0.1.0
 
 * Merged [PR from @davidmigloz](https://github.com/xonaman/flutter_iban_to_bic/pull/1)

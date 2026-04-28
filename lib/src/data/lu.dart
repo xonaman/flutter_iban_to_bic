@@ -1,10 +1,11 @@
-part of '../../iban_to_bic.dart';
+import '../bic.dart';
 
-const Map<String, Bic> _luBankCodes = <String, Bic>{
+const Map<String, Bic> luBankCodes = <String, Bic>{
   '001': Bic(
     value: 'BCEELULL',
     bankName: 'Banque et Caisse d\'Epargne de l\'Etat, Luxembourg (Spuerkeess)',
-    bankShortName: 'Banque et Caisse d\'Epargne de l\'Etat, Luxembourg (Spuerkeess)',
+    bankShortName:
+        'Banque et Caisse d\'Epargne de l\'Etat, Luxembourg (Spuerkeess)',
   ),
   '002': Bic(
     value: 'BILLLULL',
@@ -43,8 +44,10 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   ),
   '025': Bic(
     value: 'BMECLULL',
-    bankName: 'SUCCURSALE LUXEMBOURGEOISE DE BANQUE POPULAIRE ALSACE LORRAINE CHAMPAGNE',
-    bankShortName: 'SUCCURSALE LUXEMBOURGEOISE DE BANQUE POPULAIRE ALSACE LORRAINE CHAMPAGNE',
+    bankName:
+        'SUCCURSALE LUXEMBOURGEOISE DE BANQUE POPULAIRE ALSACE LORRAINE CHAMPAGNE',
+    bankShortName:
+        'SUCCURSALE LUXEMBOURGEOISE DE BANQUE POPULAIRE ALSACE LORRAINE CHAMPAGNE',
   ),
   '032': Bic(
     value: 'BAERLULU',
@@ -94,7 +97,8 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   '062': Bic(
     value: 'HAUKLULL',
     bankName: 'Hauck Aufhäuser Lampe Privatbank AG, Niederlassung Luxemburg',
-    bankShortName: 'Hauck Aufhäuser Lampe Privatbank AG, Niederlassung Luxemburg',
+    bankShortName:
+        'Hauck Aufhäuser Lampe Privatbank AG, Niederlassung Luxemburg',
   ),
   '064': Bic(
     value: 'ESSELULL',
@@ -114,7 +118,8 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   '077': Bic(
     value: 'MUGCLULL',
     bankName: 'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
-    bankShortName: 'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
+    bankShortName:
+        'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
   ),
   '078': Bic(
     value: 'CRESLULL',
@@ -124,7 +129,8 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   '079': Bic(
     value: 'MUGCLULLBAS',
     bankName: 'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
-    bankShortName: 'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
+    bankShortName:
+        'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
   ),
   '080': Bic(
     value: 'NIKOLULL',
@@ -169,7 +175,8 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   '131': Bic(
     value: 'SPLBLUL1',
     bankName: 'State Street Bank Luxembourg S.A. (formerly Sanpaolo Bank S.A.)',
-    bankShortName: 'State Street Bank Luxembourg S.A. (formerly Sanpaolo Bank S.A.)',
+    bankShortName:
+        'State Street Bank Luxembourg S.A. (formerly Sanpaolo Bank S.A.)',
   ),
   '133': Bic(
     value: 'BBDELULL',
@@ -179,7 +186,8 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   '134': Bic(
     value: 'BPCPLULL',
     bankName: 'Banque de Commerce et de Placements S.A., Luxembourg Branch',
-    bankShortName: 'Banque de Commerce et de Placements S.A., Luxembourg Branch',
+    bankShortName:
+        'Banque de Commerce et de Placements S.A., Luxembourg Branch',
   ),
   '135': Bic(
     value: 'DGZFLULI',
@@ -223,8 +231,10 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   ),
   '162': Bic(
     value: 'RBOSLULL',
-    bankName: 'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
-    bankShortName: 'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
+    bankName:
+        'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
+    bankShortName:
+        'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
   ),
   '164': Bic(
     value: 'HSHNLULB',
@@ -298,8 +308,10 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   ),
   '265': Bic(
     value: 'PBNKLULL',
-    bankName: 'Deutsche Bank AG, Filiale Luxemburg (formerly Postbank Luxemburg)',
-    bankShortName: 'Deutsche Bank AG, Filiale Luxemburg (formerly Postbank Luxemburg)',
+    bankName:
+        'Deutsche Bank AG, Filiale Luxemburg (formerly Postbank Luxemburg)',
+    bankShortName:
+        'Deutsche Bank AG, Filiale Luxemburg (formerly Postbank Luxemburg)',
   ),
   '281': Bic(
     value: 'FISPLU22',
@@ -344,7 +356,8 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   '316': Bic(
     value: 'ICBKLULL',
     bankName: 'Industrial and Commercial Bank of China Ltd., Luxembourg Branch',
-    bankShortName: 'Industrial and Commercial Bank of China Ltd., Luxembourg Branch',
+    bankShortName:
+        'Industrial and Commercial Bank of China Ltd., Luxembourg Branch',
   ),
   '318': Bic(
     value: 'HAVLLULL',
@@ -413,8 +426,10 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   ),
   '358': Bic(
     value: 'SBOSLULX',
-    bankName: 'State Street Bank International GmbH, Zweigniederlassung Luxemburg',
-    bankShortName: 'State Street Bank International GmbH, Zweigniederlassung Luxemburg',
+    bankName:
+        'State Street Bank International GmbH, Zweigniederlassung Luxemburg',
+    bankShortName:
+        'State Street Bank International GmbH, Zweigniederlassung Luxemburg',
   ),
   '359': Bic(
     value: 'KEYTLULL',
@@ -583,8 +598,10 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   ),
   '699': Bic(
     value: 'RBOSLULL',
-    bankName: 'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
-    bankShortName: 'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
+    bankName:
+        'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
+    bankShortName:
+        'Royal Bank of Scotland International Limited, Luxembourg Branch (The)',
   ),
   '700': Bic(
     value: 'EWUBLUL2',
@@ -619,7 +636,8 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   '777': Bic(
     value: 'MUGCLULX',
     bankName: 'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
-    bankShortName: 'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
+    bankShortName:
+        'Mitsubishi UFJ Investor Services & Banking (Luxembourg) S.A.',
   ),
   '778': Bic(
     value: 'BOFALULL',
@@ -654,7 +672,8 @@ const Map<String, Bic> _luBankCodes = <String, Bic>{
   '813': Bic(
     value: 'VPAYLUL2',
     bankName: 'Viva Payment Services Single Members S.A. - Luxembourg Branch',
-    bankShortName: 'Viva Payment Services Single Members S.A. - Luxembourg Branch',
+    bankShortName:
+        'Viva Payment Services Single Members S.A. - Luxembourg Branch',
   ),
   '815': Bic(
     value: 'VVIDLUL2',

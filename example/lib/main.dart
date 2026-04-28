@@ -3,9 +3,20 @@ import 'package:iban_to_bic/iban_to_bic.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final Bic bic = ibanToBic('DE64 5001 0517 9423 8144 35');
-  print('BIC: ${bic.value}');                // result: INGDDEFFXXX
-  print('Bank name: ${bic.bankShortName}');  // result: ING-DiBa
-  print('Postcode: ${bic.bankPostcode}');    // result: 60628
-  print('Location: ${bic.bankLocation}');    // result: Frankfurt am Main
+
+  final IbanLookupResult result = ibanToBic('DE64 5001 0517 9423 8144 35');
+
+  switch (result) {
+    case BicFound(:final Bic bic):
+      debugPrint('BIC: ${bic.value}');
+      debugPrint('Bank name: ${bic.bankShortName}');
+      debugPrint('Postcode: ${bic.bankPostcode}');
+      debugPrint('Location: ${bic.bankLocation}');
+    case InvalidIban(:final String iban):
+      debugPrint('Invalid IBAN: $iban');
+    case UnsupportedCountry(:final String countryCode):
+      debugPrint('Unsupported country: $countryCode');
+    case UnknownBank(:final String countryCode, :final String bankCode):
+      debugPrint('Unknown bank $bankCode in $countryCode');
+  }
 }

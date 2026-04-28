@@ -1,6 +1,6 @@
-part of '../../iban_to_bic.dart';
+import '../bic.dart';
 
-const Map<String, Bic> _beBankCodes = <String, Bic>{
+const Map<String, Bic> beBankCodes = <String, Bic>{
   '100': Bic(
     value: 'NBBEBEBB203',
     bankName: 'Nationale Bank van België',
@@ -228,8 +228,10 @@ const Map<String, Bic> _beBankCodes = <String, Bic>{
   ),
   '176': Bic(
     value: 'BSCHBEBBRET',
-    bankName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
-    bankShortName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankShortName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
   '185': Bic(
     value: 'BBRUBEBB',
@@ -1789,7 +1791,8 @@ const Map<String, Bic> _beBankCodes = <String, Bic>{
   '508': Bic(
     value: 'PARBBEBZMDC',
     bankName: 'BNP Paribas SA, Belgium Branch – Securities Services business',
-    bankShortName: 'BNP Paribas SA, Belgium Branch – Securities Services business',
+    bankShortName:
+        'BNP Paribas SA, Belgium Branch – Securities Services business',
   ),
   '509': Bic(
     value: 'ABNABE2AIPC',
@@ -2068,28 +2071,38 @@ const Map<String, Bic> _beBankCodes = <String, Bic>{
   ),
   '590': Bic(
     value: 'BSCHBEBB',
-    bankName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
-    bankShortName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankShortName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
   '591': Bic(
     value: 'BSCHBEBB',
-    bankName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
-    bankShortName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankShortName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
   '592': Bic(
     value: 'BSCHBEBB',
-    bankName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
-    bankShortName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankShortName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
   '593': Bic(
     value: 'BSCHBEBB',
-    bankName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
-    bankShortName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankShortName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
   '594': Bic(
     value: 'BSCHBEBB',
-    bankName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
-    bankShortName: 'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
+    bankShortName:
+        'Santander Consumer Finance – Succursale en Belgique/Bijkantoor in België',
   ),
   '595': Bic(
     value: 'CTBKBEBX',
@@ -2248,8 +2261,10 @@ const Map<String, Bic> _beBankCodes = <String, Bic>{
   ),
   '651': Bic(
     value: 'KEYTBEBB',
-    bankName: 'Arkéa Direct Bank (nom commercial / commerciële naam: Keytrade Bank)',
-    bankShortName: 'Arkéa Direct Bank (nom commercial / commerciële naam: Keytrade Bank)',
+    bankName:
+        'Arkéa Direct Bank (nom commercial / commerciële naam: Keytrade Bank)',
+    bankShortName:
+        'Arkéa Direct Bank (nom commercial / commerciële naam: Keytrade Bank)',
   ),
   '652': Bic(
     value: 'BBRUBEBB',
@@ -3434,7 +3449,8 @@ const Map<String, Bic> _beBankCodes = <String, Bic>{
   '964': Bic(
     value: 'FPEBBEB2',
     bankName: 'FINANCIERE DES PAIEMENTS ELECTRONIQUES SAS - NICKEL BELGIUM',
-    bankShortName: 'FINANCIERE DES PAIEMENTS ELECTRONIQUES SAS - NICKEL BELGIUM',
+    bankShortName:
+        'FINANCIERE DES PAIEMENTS ELECTRONIQUES SAS - NICKEL BELGIUM',
   ),
   '967': Bic(
     value: 'TRWIBEB1',

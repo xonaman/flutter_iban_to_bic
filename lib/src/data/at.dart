@@ -1,6 +1,6 @@
-part of '../../iban_to_bic.dart';
+import '../bic.dart';
 
-const Map<String, Bic> _atBankCodes = <String, Bic>{
+const Map<String, Bic> atBankCodes = <String, Bic>{
   '11000': Bic(
     value: 'BKAUATWWXXX',
     bankName: 'UniCredit Bank Austria AG',
@@ -43,32 +43,40 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '14000': Bic(
     value: 'BAWAATWWXXX',
-    bankName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
-    bankShortName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankShortName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankAddress: 'Wiedner Gürtel 11',
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
   '14200': Bic(
     value: 'BAWAATWWXXX',
-    bankName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
-    bankShortName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankShortName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankAddress: 'Wiedner Gürtel 11',
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
   '14210': Bic(
     value: 'BAWAATWWXXX',
-    bankName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
-    bankShortName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankShortName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankAddress: 'Wiedner Gürtel 11',
     bankPostcode: '1100',
     bankLocation: 'Wien',
   ),
   '14900': Bic(
     value: 'BAWAATWWXXX',
-    bankName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
-    bankShortName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankShortName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankAddress: 'Wiedner Gürtel 11',
     bankPostcode: '1100',
     bankLocation: 'Wien',
@@ -723,8 +731,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '18190': Bic(
     value: 'BAWAATWWXXX',
-    bankName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
-    bankShortName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankShortName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankAddress: 'Wiedner Gürtel 11',
     bankPostcode: '1100',
     bankLocation: 'Wien',
@@ -819,8 +829,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '19250': Bic(
     value: 'DIRAAT2SXXX',
-    bankName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
-    bankShortName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankShortName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankAddress: 'Wiedner Gürtel 11',
     bankPostcode: '1100',
     bankLocation: 'Wien',
@@ -931,8 +943,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '19540': Bic(
     value: 'BKCHATWWXXX',
-    bankName: 'Bank of China (Central and Eastern Europe) Limited Vienna Branch',
-    bankShortName: 'Bank of China (Central and Eastern Europe) Limited Vienna Branch',
+    bankName:
+        'Bank of China (Central and Eastern Europe) Limited Vienna Branch',
+    bankShortName:
+        'Bank of China (Central and Eastern Europe) Limited Vienna Branch',
     bankAddress: 'Schottenring 18',
     bankPostcode: '1010',
     bankLocation: 'Wien',
@@ -2228,7 +2242,8 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   '33054': Bic(
     value: 'RLBBAT2E116',
     bankName: 'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
-    bankShortName: 'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
+    bankShortName:
+        'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
     bankAddress: 'Amtshausgasse 2',
     bankPostcode: '7132',
     bankLocation: 'Frauenkirchen',
@@ -2292,7 +2307,8 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   '33074': Bic(
     value: 'RLBBAT2E116',
     bankName: 'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
-    bankShortName: 'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
+    bankShortName:
+        'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
     bankAddress: 'Amtshausgasse 2',
     bankPostcode: '7132',
     bankLocation: 'Frauenkirchen',
@@ -2356,7 +2372,8 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   '33116': Bic(
     value: 'RLBBAT2E116',
     bankName: 'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
-    bankShortName: 'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
+    bankShortName:
+        'Raiffeisenbank Frauenkirchen-Mönchhof-Podersdorf am See eGen',
     bankAddress: 'Amtshausgasse 2',
     bankPostcode: '7132',
     bankLocation: 'Frauenkirchen',
@@ -3355,8 +3372,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '35017': Bic(
     value: 'RVSAAT2S017',
-    bankName: 'Raiffeisenbank Golling-Scheffau-Kellau registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Golling-Scheffau-Kellau registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Golling-Scheffau-Kellau registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Golling-Scheffau-Kellau registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Markt 45',
     bankPostcode: '5440',
     bankLocation: 'Golling an der Salzach',
@@ -3435,8 +3454,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '35027': Bic(
     value: 'RVSAAT2S027',
-    bankName: 'Raiffeisenbank Hüttau-St. Martin-Niedernfritz registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Hüttau-St. Martin-Niedernfritz registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Hüttau-St. Martin-Niedernfritz registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Hüttau-St. Martin-Niedernfritz registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Hüttau Nr. 35',
     bankPostcode: '5511',
     bankLocation: 'Hüttau',
@@ -3579,8 +3600,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '35049': Bic(
     value: 'RVSAAT2S049',
-    bankName: 'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Stadtplatz 6/7',
     bankPostcode: '5550',
     bankLocation: 'Radstadt',
@@ -3883,8 +3906,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '35127': Bic(
     value: 'RVSAAT2S027',
-    bankName: 'Raiffeisenbank Hüttau-St. Martin-Niedernfritz registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Hüttau-St. Martin-Niedernfritz registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Hüttau-St. Martin-Niedernfritz registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Hüttau-St. Martin-Niedernfritz registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Hüttau Nr. 35',
     bankPostcode: '5511',
     bankLocation: 'Hüttau',
@@ -3915,8 +3940,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '35149': Bic(
     value: 'RVSAAT2S049',
-    bankName: 'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Stadtplatz 6/7',
     bankPostcode: '5550',
     bankLocation: 'Radstadt',
@@ -4067,8 +4094,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '35249': Bic(
     value: 'RVSAAT2S049',
-    bankName: 'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Radstadt-Untertauern-Filzmoos-Forstau registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Stadtplatz 6/7',
     bankPostcode: '5550',
     bankLocation: 'Radstadt',
@@ -4484,7 +4513,8 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   '36275': Bic(
     value: 'RZTIAT22285',
     bankName: 'Raiffeisenbank Neustift-Mieders-Schönberg im Stubaital eGen',
-    bankShortName: 'Raiffeisenbank Neustift-Mieders-Schönberg im Stubaital eGen',
+    bankShortName:
+        'Raiffeisenbank Neustift-Mieders-Schönberg im Stubaital eGen',
     bankAddress: 'Dorf 2',
     bankPostcode: '6167',
     bankLocation: 'Neustift im Stubaital',
@@ -4507,8 +4537,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '36281': Bic(
     value: 'RZTIAT22281',
-    bankName: 'Raiffeisenkasse für Mutters, Natters und Kreith registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenkasse für Mutters, Natters und Kreith registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenkasse für Mutters, Natters und Kreith registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenkasse für Mutters, Natters und Kreith registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Kirchplatz 10',
     bankPostcode: '6162',
     bankLocation: 'Mutters',
@@ -4524,7 +4556,8 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   '36285': Bic(
     value: 'RZTIAT22285',
     bankName: 'Raiffeisenbank Neustift-Mieders-Schönberg im Stubaital eGen',
-    bankShortName: 'Raiffeisenbank Neustift-Mieders-Schönberg im Stubaital eGen',
+    bankShortName:
+        'Raiffeisenbank Neustift-Mieders-Schönberg im Stubaital eGen',
     bankAddress: 'Dorf 2',
     bankPostcode: '6167',
     bankLocation: 'Neustift im Stubaital',
@@ -4571,8 +4604,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '36314': Bic(
     value: 'RZTIAT22314',
-    bankName: 'Raiffeisenbank Seefeld-Leutasch-Reith-Scharnitz registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Seefeld-Leutasch-Reith-Scharnitz registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Seefeld-Leutasch-Reith-Scharnitz registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Seefeld-Leutasch-Reith-Scharnitz registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Münchner Straße 38',
     bankPostcode: '6100',
     bankLocation: 'Seefeld',
@@ -4603,8 +4638,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '36320': Bic(
     value: 'RZTIAT22320',
-    bankName: 'Raiffeisenkasse Schlitters, Bruck und Straß registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenkasse Schlitters, Bruck und Straß registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenkasse Schlitters, Bruck und Straß registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenkasse Schlitters, Bruck und Straß registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Bruggenweg 2',
     bankPostcode: '6262',
     bankLocation: 'Schlitters',
@@ -4635,8 +4672,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '36332': Bic(
     value: 'RZTIAT22332',
-    bankName: 'Raiffeisenkasse Stumm, Stummerberg und Umgebung registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenkasse Stumm, Stummerberg und Umgebung registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenkasse Stumm, Stummerberg und Umgebung registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenkasse Stumm, Stummerberg und Umgebung registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Dorfstraße 17',
     bankPostcode: '6275',
     bankLocation: 'Stumm',
@@ -5180,7 +5219,8 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   '38102': Bic(
     value: 'RZSTAT2G102',
     bankName: 'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
-    bankShortName: 'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
+    bankShortName:
+        'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
     bankAddress: 'Gleinstätten 168',
     bankPostcode: '8443',
     bankLocation: 'Gleinstätten',
@@ -5236,7 +5276,8 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   '38118': Bic(
     value: 'RZSTAT2G102',
     bankName: 'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
-    bankShortName: 'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
+    bankShortName:
+        'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
     bankAddress: 'Gleinstätten 168',
     bankPostcode: '8443',
     bankLocation: 'Gleinstätten',
@@ -5444,7 +5485,8 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   '38262': Bic(
     value: 'RZSTAT2G102',
     bankName: 'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
-    bankShortName: 'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
+    bankShortName:
+        'Raiffeisenbank Gleinstätten-Leutschach-Groß St. Florian eGen',
     bankAddress: 'Gleinstätten 168',
     bankPostcode: '8443',
     bankLocation: 'Gleinstätten',
@@ -5747,8 +5789,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '39000': Bic(
     value: 'RZKTAT2KXXX',
-    bankName: 'Raiffeisenlandesbank Kärnten - Rechenzentrum und Revisionsverband, registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenlandesbank Kärnten - Rechenzentrum und Revisionsverband, registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenlandesbank Kärnten - Rechenzentrum und Revisionsverband, registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenlandesbank Kärnten - Rechenzentrum und Revisionsverband, registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
@@ -5843,16 +5887,20 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '39267': Bic(
     value: 'RZKTAT2K267',
-    bankName: 'Raiffeisen-Bezirksbank Spittal/Drau, registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisen-Bezirksbank Spittal/Drau, registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisen-Bezirksbank Spittal/Drau, registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisen-Bezirksbank Spittal/Drau, registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Burgplatz 2',
     bankPostcode: '9800',
     bankLocation: 'Spittal an der Drau',
   ),
   '39271': Bic(
     value: 'RZKTAT2K271',
-    bankName: 'Raiffeisenbank Brückl-Eberstein-Klein St. Paul-Waisenberg, registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Brückl-Eberstein-Klein St. Paul-Waisenberg, registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Brückl-Eberstein-Klein St. Paul-Waisenberg, registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Brückl-Eberstein-Klein St. Paul-Waisenberg, registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Brückl',
     bankPostcode: '9371',
     bankLocation: 'Brückl',
@@ -5867,8 +5915,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '39288': Bic(
     value: 'RZKTAT2K288',
-    bankName: 'Raiffeisenbank Eberndorf registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Eberndorf registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Eberndorf registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Eberndorf registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Bahnstraße 22',
     bankPostcode: '9141',
     bankLocation: 'Eberndorf',
@@ -5891,8 +5941,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '39320': Bic(
     value: 'RZKTAT2K320',
-    bankName: 'Raiffeisenbank Grafenstein-Magdalensberg und Umgebung, registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Grafenstein-Magdalensberg und Umgebung, registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Grafenstein-Magdalensberg und Umgebung, registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Grafenstein-Magdalensberg und Umgebung, registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Klopeiner Straße 3',
     bankPostcode: '9131',
     bankLocation: 'Grafenstein',
@@ -5923,32 +5975,40 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '39358': Bic(
     value: 'RZKTAT2KXXX',
-    bankName: 'Raiffeisenlandesbank Kärnten - Rechenzentrum und Revisionsverband, registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenlandesbank Kärnten - Rechenzentrum und Revisionsverband, registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenlandesbank Kärnten - Rechenzentrum und Revisionsverband, registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenlandesbank Kärnten - Rechenzentrum und Revisionsverband, registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Raiffeisenplatz 1',
     bankPostcode: '9020',
     bankLocation: 'Klagenfurt',
   ),
   '39364': Bic(
     value: 'RZKTAT2K364',
-    bankName: 'Raiffeisenbank Kötschach - Mauthen, registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Kötschach - Mauthen, registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Kötschach - Mauthen, registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Kötschach - Mauthen, registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Kötschach Nr. 7',
     bankPostcode: '9640',
     bankLocation: 'Kötschach-Mauthen',
   ),
   '39381': Bic(
     value: 'RZKTAT2K381',
-    bankName: 'Raiffeisenbank Landskron - Gegendtal, registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Landskron - Gegendtal, registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Landskron - Gegendtal, registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Landskron - Gegendtal, registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Ossiacher Str. 26',
     bankPostcode: '9523',
     bankLocation: 'Villach-Landskron',
   ),
   '39383': Bic(
     value: 'RZKTAT2K496',
-    bankName: 'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Nikolaig. 4',
     bankPostcode: '9500',
     bankLocation: 'Villach',
@@ -5979,8 +6039,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '39404': Bic(
     value: 'RZKTAT2K442',
-    bankName: 'Raiffeisenbank Drautal registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Drautal registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Drautal registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Drautal registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Villacher Straße 74',
     bankPostcode: '9710',
     bankLocation: 'Feistritz an der Drau',
@@ -5995,8 +6057,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '39411': Bic(
     value: 'RZKTAT2K411',
-    bankName: 'Raiffeisenbank Moosburg-Tigring, registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Moosburg-Tigring, registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Moosburg-Tigring, registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Moosburg-Tigring, registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Klagenfurter Str. 5',
     bankPostcode: '9062',
     bankLocation: 'Moosburg (Ktn.)',
@@ -6027,8 +6091,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '39442': Bic(
     value: 'RZKTAT2K442',
-    bankName: 'Raiffeisenbank Drautal registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Drautal registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Drautal registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Drautal registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Villacher Straße 74',
     bankPostcode: '9710',
     bankLocation: 'Feistritz an der Drau',
@@ -6091,32 +6157,40 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '39483': Bic(
     value: 'RZKTAT2K496',
-    bankName: 'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Nikolaig. 4',
     bankPostcode: '9500',
     bankLocation: 'Villach',
   ),
   '39487': Bic(
     value: 'RZKTAT2K487',
-    bankName: 'Raiffeisenbank Rosental, registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Rosental, registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Rosental, registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Rosental, registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Feistritz 126',
     bankPostcode: '9181',
     bankLocation: 'Feistritz im Rosental',
   ),
   '39491': Bic(
     value: 'RZKTAT2K491',
-    bankName: 'Raiffeisenbank Oberes Lavanttal registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Oberes Lavanttal registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Oberes Lavanttal registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Oberes Lavanttal registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Hauptplatz 18',
     bankPostcode: '9462',
     bankLocation: 'Bad St. Leonhard / Lavanttal',
   ),
   '39496': Bic(
     value: 'RZKTAT2K496',
-    bankName: 'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisen Bank Villach registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Nikolaig. 4',
     bankPostcode: '9500',
     bankLocation: 'Villach',
@@ -6131,8 +6205,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '39501': Bic(
     value: 'RZKTAT2K501',
-    bankName: 'Raiffeisenbank Friesach-Metnitztal, registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Friesach-Metnitztal, registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Friesach-Metnitztal, registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Friesach-Metnitztal, registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Hauptplatz 13',
     bankPostcode: '9360',
     bankLocation: 'Friesach (Ktn.)',
@@ -6179,8 +6255,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '39559': Bic(
     value: 'RZKTAT2K559',
-    bankName: 'Raiffeisenbank Wernberg, registrierte Genossenschaft mit beschränkter Haftung',
-    bankShortName: 'Raiffeisenbank Wernberg, registrierte Genossenschaft mit beschränkter Haftung',
+    bankName:
+        'Raiffeisenbank Wernberg, registrierte Genossenschaft mit beschränkter Haftung',
+    bankShortName:
+        'Raiffeisenbank Wernberg, registrierte Genossenschaft mit beschränkter Haftung',
     bankAddress: 'Wernberger Straße 1',
     bankPostcode: '9241',
     bankLocation: 'Wernberg',
@@ -6699,8 +6777,10 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   ),
   '60000': Bic(
     value: 'BAWAATWWXXX',
-    bankName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
-    bankShortName: 'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
+    bankShortName:
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und Österreichische Postsparkasse Aktiengesellschaft',
     bankAddress: 'Wiedner Gürtel 11',
     bankPostcode: '1100',
     bankLocation: 'Wien',
@@ -6732,7 +6812,8 @@ const Map<String, Bic> _atBankCodes = <String, Bic>{
   '76032': Bic(
     value: 'TEAMDE71TAT',
     bankName: 'TeamBank Österreich - Niederlassung der TeamBank AG Nürnberg',
-    bankShortName: 'TeamBank Österreich - Niederlassung der TeamBank AG Nürnberg',
+    bankShortName:
+        'TeamBank Österreich - Niederlassung der TeamBank AG Nürnberg',
     bankAddress: 'Fleischmarkt 1/6/12',
     bankPostcode: '1010',
     bankLocation: 'Wien',

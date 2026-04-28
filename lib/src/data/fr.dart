@@ -1,6 +1,6 @@
-part of '../../iban_to_bic.dart';
+import '../bic.dart';
 
-const Map<String, Bic> _frBankCodes = <String, Bic>{
+const Map<String, Bic> frBankCodes = <String, Bic>{
   '10107': Bic(
     value: 'BREDFRPPXXX',
     bankName: 'BRED - Banque populaire',
@@ -99,8 +99,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '11006': Bic(
     value: 'AGRIFRCC810',
-    bankName: 'Caisse régionale de crédit agricole mutuel de Champagne-Bourgogne',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel de Champagne-Bourgogne',
+    bankName:
+        'Caisse régionale de crédit agricole mutuel de Champagne-Bourgogne',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel de Champagne-Bourgogne',
     bankAddress: '269 FAUBOURG CRONCELS BP 502',
     bankPostcode: '10080',
     bankLocation: 'TROYES CEDEX',
@@ -116,7 +118,8 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   '11206': Bic(
     value: 'AGRIFRCC812',
     bankName: 'Caisse régionale de crédit agricole mutuel Nord Midi-Pyrénées',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel Nord Midi-Pyrénées',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel Nord Midi-Pyrénées',
     bankAddress: '219 AVENUE FRANCOIS VERDIER CS 91220',
     bankPostcode: '81022',
     bankLocation: 'ALBI CEDEX 9',
@@ -187,8 +190,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '11706': Bic(
     value: 'AGRIFRCC817',
-    bankName: 'Caisse régionale de crédit agricole mutuel Charente-Maritime Deux-Sèvres',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel Charente-Maritime Deux-Sèvres',
+    bankName:
+        'Caisse régionale de crédit agricole mutuel Charente-Maritime Deux-Sèvres',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel Charente-Maritime Deux-Sèvres',
     bankAddress: '14 RUE LOUIS TARDY',
     bankPostcode: '17140',
     bankLocation: 'LAGORD',
@@ -203,8 +208,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '11833': Bic(
     value: 'ICBKFRPPXXX',
-    bankName: 'Industrial and commercial bank of China (Europe) SA - ICBC (Europe) SA',
-    bankShortName: 'Industrial and commercial bank of China (Europe) SA - ICBC (Europe) SA',
+    bankName:
+        'Industrial and commercial bank of China (Europe) SA - ICBC (Europe) SA',
+    bankShortName:
+        'Industrial and commercial bank of China (Europe) SA - ICBC (Europe) SA',
     bankAddress: '73 BOULEVARD HAUSSMANN',
     bankPostcode: '75008',
     bankLocation: 'PARIS 08',
@@ -252,7 +259,8 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   '12206': Bic(
     value: 'AGRIFRCC822',
     bankName: "Caisse régionale de crédit agricole mutuel des Côtes-d'Armor",
-    bankShortName: "Caisse régionale de crédit agricole mutuel des Côtes-d'Armor",
+    bankShortName:
+        "Caisse régionale de crédit agricole mutuel des Côtes-d'Armor",
     bankAddress: 'LA CROIX TUAL',
     bankPostcode: '22440',
     bankLocation: 'PLOUFRAGAN',
@@ -283,8 +291,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '12406': Bic(
     value: 'AGRIFRCC824',
-    bankName: 'Caisse régionale de crédit agricole mutuel Charente-Périgord (Crédit agricole  Charente-Périgord)',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel Charente-Périgord (Crédit agricole  Charente-Périgord)',
+    bankName:
+        'Caisse régionale de crédit agricole mutuel Charente-Périgord (Crédit agricole  Charente-Périgord)',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel Charente-Périgord (Crédit agricole  Charente-Périgord)',
     bankAddress: '30 RUE D EPAGNAC CS 72424 SOYAUX',
     bankPostcode: '16024',
     bankLocation: 'ANGOULEME CEDEX',
@@ -308,7 +318,8 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   '12506': Bic(
     value: 'AGRIFRCC825',
     bankName: 'Caisse régionale de crédit agricole mutuel de Franche-Comté',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel de Franche-Comté',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel de Franche-Comté',
     bankAddress: '11 AVENUE ELISEE CUSENIER',
     bankPostcode: '25084',
     bankLocation: 'BESANCON CEDEX 9',
@@ -468,7 +479,8 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   '13606': Bic(
     value: 'AGRIFRCC836',
     bankName: "Caisse régionale de crédit agricole mutuel d'Ille-et-Vilaine",
-    bankShortName: "Caisse régionale de crédit agricole mutuel d'Ille-et-Vilaine",
+    bankShortName:
+        "Caisse régionale de crédit agricole mutuel d'Ille-et-Vilaine",
     bankAddress: '4 RUE LOUIS BRAILLE',
     bankPostcode: '35136',
     bankLocation: 'ST JACQUES DE LA LANDE',
@@ -500,7 +512,8 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   '14006': Bic(
     value: 'AGRIGPGXXXX',
     bankName: 'Caisse régionale de crédit agricole mutuel de la Guadeloupe',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel de la Guadeloupe',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel de la Guadeloupe',
     bankAddress: 'PETIT PÉROU',
     bankPostcode: '97176',
     bankLocation: 'ABYMES CEDEX',
@@ -532,7 +545,8 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   '14506': Bic(
     value: 'AGRIFRCC845',
     bankName: 'Caisse régionale de crédit agricole mutuel Loire Haute-Loire',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel Loire Haute-Loire',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel Loire Haute-Loire',
     bankAddress: '94 RUE BERGSON CS 60524',
     bankPostcode: '42007',
     bankLocation: 'ST ETIENNE Cedex 1',
@@ -580,7 +594,8 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   '14706': Bic(
     value: 'AGRIFRCC847',
     bankName: 'Caisse régionale de crédit agricole mutuel Atlantique Vendée',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel Atlantique Vendée',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel Atlantique Vendée',
     bankAddress: 'ROUTE DE PARIS',
     bankPostcode: '44949',
     bankLocation: 'NANTES CEDEX9',
@@ -645,7 +660,8 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
     value: 'VOWAFR21XXX',
     bankName: 'Volkswagen Bank GmbH',
     bankShortName: 'Volkswagen Bank GmbH',
-    bankAddress: "Paris Nord 22 avenue des Nations Paris Nor Parc d'affaires Silic,Bat.Rostan",
+    bankAddress:
+        "Paris Nord 22 avenue des Nations Paris Nor Parc d'affaires Silic,Bat.Rostan",
     bankPostcode: '93420',
     bankLocation: 'VILLEPINTE',
   ),
@@ -899,8 +915,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '16806': Bic(
     value: 'AGRIFRCC868',
-    bankName: 'Caisse régionale de crédit agricole mutuel de Centre France - Crédit agricole  Centre France (3ème du nom)',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel de Centre France - Crédit agricole  Centre France (3ème du nom)',
+    bankName:
+        'Caisse régionale de crédit agricole mutuel de Centre France - Crédit agricole  Centre France (3ème du nom)',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel de Centre France - Crédit agricole  Centre France (3ème du nom)',
     bankAddress: '1 AVENUE DE LA LIBERATION',
     bankPostcode: '63000',
     bankLocation: 'CLERMONT FERRAND',
@@ -924,7 +942,8 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   '16906': Bic(
     value: 'AGRIFRCC869',
     bankName: 'Caisse régionale de crédit agricole mutuel Pyrénées-Gascogne',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel Pyrénées-Gascogne',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel Pyrénées-Gascogne',
     bankAddress: '11 BOULEVARD PRÉSIDENT KENNEDY BP 329',
     bankPostcode: '65003',
     bankLocation: 'TARBES CEDEX',
@@ -939,8 +958,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '17106': Bic(
     value: 'AGRIFRCC871',
-    bankName: 'Caisse régionale de crédit agricole mutuel Sud-Méditerranée (Ariège et Pyrénées-Orientales)',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel Sud-Méditerranée (Ariège et Pyrénées-Orientales)',
+    bankName:
+        'Caisse régionale de crédit agricole mutuel Sud-Méditerranée (Ariège et Pyrénées-Orientales)',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel Sud-Méditerranée (Ariège et Pyrénées-Orientales)',
     bankAddress: '30 RUE PIERRE BRETONNEAU CS 39923',
     bankPostcode: '66832',
     bankLocation: 'PERPIGNAN CEDEX',
@@ -1099,8 +1120,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '17906': Bic(
     value: 'AGRIFRCC879',
-    bankName: "Caisse régionale de crédit agricole mutuel de l'Anjou et du Maine",
-    bankShortName: "Caisse régionale de crédit agricole mutuel de l'Anjou et du Maine",
+    bankName:
+        "Caisse régionale de crédit agricole mutuel de l'Anjou et du Maine",
+    bankShortName:
+        "Caisse régionale de crédit agricole mutuel de l'Anjou et du Maine",
     bankAddress: '40 RUE PRÉMARTINE',
     bankPostcode: '72083',
     bankLocation: 'LE MANS CEDEX 9',
@@ -1195,8 +1218,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '18206': Bic(
     value: 'AGRIFRCC892',
-    bankName: "Caisse régionale de crédit agricole mutuel de Paris et d'Ile-de-France",
-    bankShortName: "Caisse régionale de crédit agricole mutuel de Paris et d'Ile-de-France",
+    bankName:
+        "Caisse régionale de crédit agricole mutuel de Paris et d'Ile-de-France",
+    bankShortName:
+        "Caisse régionale de crédit agricole mutuel de Paris et d'Ile-de-France",
     bankAddress: '26 QUAI DE LA RAPEE',
     bankPostcode: '75596',
     bankLocation: 'PARIS CEDEX 12',
@@ -1339,8 +1364,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '19000': Bic(
     value: 'IVSTFRP1XXX',
-    bankName: "Société auxiliaire d'études et d'investissements mobiliers - Investimo",
-    bankShortName: "Société auxiliaire d'études et d'investissements mobiliers - Investimo",
+    bankName:
+        "Société auxiliaire d'études et d'investissements mobiliers - Investimo",
+    bankShortName:
+        "Société auxiliaire d'études et d'investissements mobiliers - Investimo",
     bankAddress: '8 RUE LOUIS ARMAND CS 71201',
     bankPostcode: '75738',
     bankLocation: 'PARIS CEDEX 15',
@@ -1355,8 +1382,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '19106': Bic(
     value: 'AGRIFRCC891',
-    bankName: "Caisse régionale de crédit agricole mutuel Provence-Côte d'Azur (Alpes de Haute-Provence-Alpes-maritimes-Var)",
-    bankShortName: "Caisse régionale de crédit agricole mutuel Provence-Côte d'Azur (Alpes de Haute-Provence-Alpes-maritimes-Var)",
+    bankName:
+        "Caisse régionale de crédit agricole mutuel Provence-Côte d'Azur (Alpes de Haute-Provence-Alpes-maritimes-Var)",
+    bankShortName:
+        "Caisse régionale de crédit agricole mutuel Provence-Côte d'Azur (Alpes de Haute-Provence-Alpes-maritimes-Var)",
     bankAddress: '"LES NÉGADIS" AVENUE PAUL ARÈNE',
     bankPostcode: '83300',
     bankLocation: 'DRAGUIGNAN',
@@ -1371,8 +1400,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '19406': Bic(
     value: 'AGRIFRCC894',
-    bankName: 'Caisse régionale de crédit agricole mutuel de la Touraine et du Poitou',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel de la Touraine et du Poitou',
+    bankName:
+        'Caisse régionale de crédit agricole mutuel de la Touraine et du Poitou',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel de la Touraine et du Poitou',
     bankAddress: '18 RUE SALVADOR ALLENDE CS 50307',
     bankPostcode: '86008',
     bankLocation: 'POITIERS CEDEX',
@@ -1427,8 +1458,10 @@ const Map<String, Bic> _frBankCodes = <String, Bic>{
   ),
   '19806': Bic(
     value: 'AGRIMQMXXXX',
-    bankName: 'Caisse régionale de crédit agricole mutuel de la Martinique et de la Guyane',
-    bankShortName: 'Caisse régionale de crédit agricole mutuel de la Martinique et de la Guyane',
+    bankName:
+        'Caisse régionale de crédit agricole mutuel de la Martinique et de la Guyane',
+    bankShortName:
+        'Caisse régionale de crédit agricole mutuel de la Martinique et de la Guyane',
     bankAddress: 'RUE CASE NÈGRE BP 370',
     bankPostcode: '97232',
     bankLocation: 'LE LAMENTIN CEDEX 2',

@@ -1,6 +1,6 @@
-part of '../../iban_to_bic.dart';
+import '../bic.dart';
 
-const Map<String, Bic> _ltBankCodes = <String, Bic>{
+const Map<String, Bic> ltBankCodes = <String, Bic>{
   '30300': Bic(
     value: 'ABLPLT21',
     bankName: 'AB Lietuvos pastas',

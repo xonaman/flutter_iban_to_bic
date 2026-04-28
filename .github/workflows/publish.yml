@@ -1,0 +1,55 @@
+name: Publish to pub.dev
+
+on:
+  push:
+    tags:
+      # Match semver tags like v1.0.0, v1.2.3-beta.1, etc.
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    # Required for pub.dev trusted-publisher OIDC.
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter (stable)
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Verify tag matches pubspec version
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          PUBSPEC_VERSION="$(grep '^version:' pubspec.yaml | awk '{print $2}')"
+          if [ "$TAG" != "$PUBSPEC_VERSION" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match pubspec version $PUBSPEC_VERSION"
+            exit 1
+          fi
+          echo "Tag and pubspec version agree: $PUBSPEC_VERSION"
+
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze
+        run: dart analyze --fatal-infos
+
+      - name: Run tests
+        run: flutter test
+
+      - name: Dry run
+        run: dart pub publish --dry-run
+
+      - name: Publish
+        # Uses OIDC — no PUB_TOKEN secret needed. Requires pub.dev trusted
+        # publisher to be configured for this repo + tag pattern.
+        run: dart pub publish --force

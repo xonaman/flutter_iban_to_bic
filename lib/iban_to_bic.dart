@@ -1,15 +1,11 @@
-library iban_to_bic;
+/// Determines the SWIFT BIC of an IBAN.
+///
+/// Currently supports AT, BE, DE, ES, FR, LT, LU and NL IBANs. Inspired by
+/// [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic).
+library;
 
-import 'dart:convert' show json;
-
-import 'package:iban/iban.dart' as ibantools;
-
-part 'src/iban_to_bic.dart';
-part 'src/data/at.dart';
-part 'src/data/be.dart';
-part 'src/data/de.dart';
-part 'src/data/es.dart';
-part 'src/data/fr.dart';
-part 'src/data/lt.dart';
-part 'src/data/lu.dart';
-part 'src/data/nl.dart';
+export 'src/bic.dart';
+export 'src/country_spec.dart';
+export 'src/iban_to_bic.dart' show IbanToBic, ibanToBic;
+export 'src/resolver.dart';
+export 'src/result.dart';
