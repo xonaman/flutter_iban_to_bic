@@ -37,3 +37,11 @@ final class UnknownBank extends IbanLookupResult {
   final String bankCode;
   const UnknownBank({required this.countryCode, required this.bankCode});
 }
+
+/// Returned by `IbanToBic.lookupSync` when the country's dataset has not
+/// been preloaded yet. Call `preload([countryCode])` and retry, or switch
+/// to the async `lookup`.
+final class NotPreloaded extends IbanLookupResult {
+  final String countryCode;
+  const NotPreloaded(this.countryCode);
+}

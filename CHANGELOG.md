@@ -1,3 +1,13 @@
+## 2.1.0
+
+* `IbanToBic.lookupSync` now returns a `NotPreloaded(countryCode)` result
+  instead of throwing `StateError` when the country's resolver is async.
+  This keeps the sealed-result discipline: every failure mode is
+  pattern-matchable and exhaustive.
+* Bundesbank BLZ parser factored into a pure `parseBundesbankBlz` function
+  and unit-tested against a synthetic fixture — the refresh pipeline no
+  longer relies exclusively on a working network for correctness checks.
+
 ## 2.0.0
 
 * **Breaking:** Bank-code datasets moved from Dart `const` maps to JSON

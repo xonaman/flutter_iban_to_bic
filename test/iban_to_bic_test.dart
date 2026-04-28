@@ -160,12 +160,12 @@ void main() {
       expect((result as BicFound).bic.value, 'INGDDEFFXXX');
     });
 
-    test('lookupSync without preload raises StateError', () {
+    test('lookupSync without preload returns NotPreloaded', () {
       final IbanToBic fresh = IbanToBic();
-      expect(
-        () => fresh.lookupSync('DE64 5001 0517 9423 8144 35'),
-        throwsA(isA<StateError>()),
-      );
+      final IbanLookupResult result =
+          fresh.lookupSync('DE64 5001 0517 9423 8144 35');
+      expect(result, isA<NotPreloaded>());
+      expect((result as NotPreloaded).countryCode, 'DE');
     });
 
     test('lookupSync works after preload', () async {
@@ -206,7 +206,7 @@ void main() {
       expect((result as BicFound).bic.value, 'ASYNCDE00');
     });
 
-    test('lookupSync throws when registered resolver is async', () {
+    test('lookupSync returns NotPreloaded when resolver is async', () {
       final IbanToBic custom = IbanToBic(countries: <String, CountrySpec>{
         'DE': const CountrySpec(
           bankCodeStart: 4,
@@ -215,8 +215,8 @@ void main() {
         ),
       });
       expect(
-        () => custom.lookupSync('DE64 5001 0517 9423 8144 35'),
-        throwsA(isA<StateError>()),
+        custom.lookupSync('DE64 5001 0517 9423 8144 35'),
+        isA<NotPreloaded>(),
       );
     });
 

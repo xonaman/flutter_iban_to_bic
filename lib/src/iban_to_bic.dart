@@ -72,20 +72,17 @@ class IbanToBic {
 
   /// Synchronous variant of [lookup].
   ///
-  /// Throws [StateError] if the country's resolver is not a
-  /// [SyncBicResolver] — for the built-in asset-backed resolvers, that
-  /// means [preload] has not yet been awaited for this country.
+  /// Returns [NotPreloaded] if the country's resolver is async (for the
+  /// built-in asset-backed resolvers, that means [preload] has not yet been
+  /// awaited). Callers that prefer to fail fast can pattern-match on the
+  /// result and throw at the call site.
   IbanLookupResult lookupSync(String rawIban) {
     final _Prelude prelude = _prelude(rawIban);
     if (prelude.earlyResult != null) return prelude.earlyResult!;
 
     final BicResolver resolver = prelude.spec!.resolver;
     if (resolver is! SyncBicResolver) {
-      throw StateError(
-        'lookupSync called for country ${prelude.countryCode} but its '
-        'resolver (${resolver.runtimeType}) has not been preloaded. '
-        'Await preload(["${prelude.countryCode}"]) first, or call lookup().',
-      );
+      return NotPreloaded(prelude.countryCode!);
     }
     final Bic? bic = resolver.resolve(prelude.bankCode!);
     if (bic == null) {

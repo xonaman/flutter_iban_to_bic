@@ -139,31 +139,38 @@ Future<Map<String, BankEntry>> fetchDe() async {
     }
     final List<int> bytes = <int>[];
     await res.forEach(bytes.addAll);
-    final String text = latin1.decode(bytes);
-
-    final Map<String, BankEntry> result = <String, BankEntry>{};
-    for (final String line in const LineSplitter().convert(text)) {
-      if (line.length < 145) continue;
-      if (line.substring(8, 9) != '1') continue; // only active rows
-
-      final String blz = line.substring(0, 8).trim();
-      final String name = line.substring(9, 67).trim();
-      final String postcode = line.substring(67, 72).trim();
-      final String city = line.substring(72, 107).trim();
-      final String shortName = line.substring(107, 134).trim();
-      final String bic = line.substring(134, 145).trim();
-
-      if (blz.isEmpty || bic.isEmpty) continue;
-      result[blz] = BankEntry(
-        bic: bic,
-        bankName: name,
-        bankShortName: shortName.isEmpty ? name : shortName,
-        bankPostcode: postcode.isEmpty ? null : postcode,
-        bankLocation: city.isEmpty ? null : city,
-      );
-    }
-    return result;
+    return parseBundesbankBlz(latin1.decode(bytes));
   } finally {
     client.close(force: true);
   }
+}
+
+/// Pure parser: turns a Bundesbank BLZ fixed-width dump (already decoded
+/// from ISO-8859-1) into the same map shape the refresh pipeline writes.
+///
+/// Exposed at top level so the parser can be unit-tested against a
+/// checked-in fixture without hitting the network.
+Map<String, BankEntry> parseBundesbankBlz(String text) {
+  final Map<String, BankEntry> result = <String, BankEntry>{};
+  for (final String line in const LineSplitter().convert(text)) {
+    if (line.length < 145) continue;
+    if (line.substring(8, 9) != '1') continue; // only active rows
+
+    final String blz = line.substring(0, 8).trim();
+    final String name = line.substring(9, 67).trim();
+    final String postcode = line.substring(67, 72).trim();
+    final String city = line.substring(72, 107).trim();
+    final String shortName = line.substring(107, 134).trim();
+    final String bic = line.substring(134, 145).trim();
+
+    if (blz.isEmpty || bic.isEmpty) continue;
+    result[blz] = BankEntry(
+      bic: bic,
+      bankName: name,
+      bankShortName: shortName.isEmpty ? name : shortName,
+      bankPostcode: postcode.isEmpty ? null : postcode,
+      bankLocation: city.isEmpty ? null : city,
+    );
+  }
+  return result;
 }

@@ -20,5 +20,8 @@ Future<void> main() async {
       debugPrint('Unsupported country: $countryCode');
     case UnknownBank(:final String countryCode, :final String bankCode):
       debugPrint('Unknown bank $bankCode in $countryCode');
+    case NotPreloaded(:final String countryCode):
+      debugPrint('Country $countryCode not preloaded (only reachable via '
+          'lookupSync).');
   }
 }
