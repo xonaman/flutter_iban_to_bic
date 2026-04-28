@@ -2,6 +2,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:iban_to_bic/iban_to_bic.dart';
 
 void main() {
+  // Sync entry points require datasets to be preloaded. Do it once for the
+  // whole suite so individual tests don't each pay the I/O.
+  setUpAll(() async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+    await preloadIbanToBic(sharedIbanToBic.supportedCountries);
+  });
+
   group('ibanToBic', () {
     test('resolves a German IBAN to the expected BIC', () {
       final IbanLookupResult result = ibanToBic('DE64 5001 0517 9423 8144 35');
@@ -141,6 +148,41 @@ void main() {
           IbanToBic(countries: const <String, CountrySpec>{});
       expect(await custom.lookup('DE64 5001 0517 9423 8144 35'),
           isA<UnsupportedCountry>());
+    });
+  });
+
+  group('asset-backed defaults', () {
+    test('async lookup works without explicit preload', () async {
+      // A fresh instance — no preload() called — still resolves via async.
+      final IbanToBic fresh = IbanToBic();
+      final IbanLookupResult result =
+          await fresh.lookup('DE64 5001 0517 9423 8144 35');
+      expect((result as BicFound).bic.value, 'INGDDEFFXXX');
+    });
+
+    test('lookupSync without preload raises StateError', () {
+      final IbanToBic fresh = IbanToBic();
+      expect(
+        () => fresh.lookupSync('DE64 5001 0517 9423 8144 35'),
+        throwsA(isA<StateError>()),
+      );
+    });
+
+    test('lookupSync works after preload', () async {
+      final IbanToBic fresh = IbanToBic();
+      await fresh.preload(<String>['DE']);
+      final IbanLookupResult result =
+          fresh.lookupSync('DE64 5001 0517 9423 8144 35');
+      expect((result as BicFound).bic.value, 'INGDDEFFXXX');
+    });
+
+    test('preload tolerates unknown country codes', () async {
+      final IbanToBic fresh = IbanToBic();
+      await fresh.preload(<String>['ZZ', 'de']); // case-insensitive + junk
+      expect(
+        fresh.lookupSync('DE64 5001 0517 9423 8144 35'),
+        isA<BicFound>(),
+      );
     });
   });
 

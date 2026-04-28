@@ -1,3 +1,16 @@
+## 2.0.0
+
+* **Breaking:** Bank-code datasets moved from Dart `const` maps to JSON
+  assets. Loading is lazy and cached.
+* **Breaking:** The synchronous `ibanToBic` now requires the target country
+  to have been preloaded. Either call
+  `await preloadIbanToBic(['DE', 'NL', ...])` during app startup, or switch
+  to `ibanToBicAsync` which needs no preload.
+* `AssetJsonResolver` is a new public resolver; register it manually if you
+  want to ship your own JSON dataset.
+* Dropped the 8 generated `lib/src/data/*.dart` files — ~1 MB less Dart
+  source compiled into every consumer.
+
 ## 1.1.0
 
 * `BicResolver.resolve` now returns `FutureOr<Bic?>`. Pure sync resolvers

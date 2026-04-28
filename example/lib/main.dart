@@ -4,7 +4,9 @@ import 'package:iban_to_bic/iban_to_bic.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  final IbanLookupResult result = ibanToBic('DE64 5001 0517 9423 8144 35');
+  // Async variant needs no preload:
+  final IbanLookupResult result =
+      await ibanToBicAsync('DE64 5001 0517 9423 8144 35');
 
   switch (result) {
     case BicFound(:final Bic bic):

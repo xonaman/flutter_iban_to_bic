@@ -44,14 +44,21 @@ void main() {
 
 ## Sync vs. async
 
-The top-level `ibanToBic` is synchronous because every built-in country ships
-a `SyncBicResolver` backed by a `const` map. If you register a custom resolver
-that hits the network, a DB, or any other async source, use `ibanToBicAsync`
-or `IbanToBic.lookup` instead:
+Bank-code datasets ship as JSON assets and are loaded lazily, so the default
+path is async. Two APIs:
 
 ```dart
+// Async — no setup required:
 final result = await ibanToBicAsync('DE64 5001 0517 9423 8144 35');
+
+// Sync — call preload first (e.g. from main()):
+await preloadIbanToBic(['DE', 'NL']);
+final result = ibanToBic('DE64 5001 0517 9423 8144 35');
 ```
+
+Calling the sync `ibanToBic` for a country that hasn't been preloaded throws
+`StateError`. If startup latency matters more than first-call latency,
+preload; otherwise just use the async variant.
 
 ## Extending with custom data
 
