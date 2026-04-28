@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Flutter (stable)
         uses: subosito/flutter-action@v2
@@ -55,7 +55,7 @@ jobs:
 
       - name: Open PR with refreshed data
         if: steps.diff.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: chore/refresh-bank-codes
           title: 'chore: refresh bank-code datasets'

@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Flutter (${{ matrix.channel }})
         uses: subosito/flutter-action@v2
@@ -42,7 +42,7 @@ jobs:
 
       - name: Upload coverage artifact
         if: matrix.channel == 'stable'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: coverage-lcov
           path: coverage/lcov.info
