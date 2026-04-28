@@ -42,6 +42,29 @@ Once saved, pushes of a tag matching the pattern will be trusted to publish.
 If the workflow fails the version-match check, delete the tag locally and
 remotely, fix `pubspec.yaml`, and retag.
 
+## Data refresh
+
+`.github/workflows/refresh-data.yml` runs every Monday 04:00 UTC (or
+manually via `workflow_dispatch`). It invokes `tool/refresh_data.dart`
+against each country's authoritative upstream, runs the test suite
+against the new data, and opens a PR with the diff if anything changed.
+
+### One-time setup
+
+- Add a repo-level variable `BUNDESBANK_BLZ_URL` pointing at the current
+  quarter's BLZ fixed-width download (the URL changes quarterly):
+  `Settings → Secrets and variables → Actions → Variables → New`.
+- When adding a new country adapter in `tool/refresh_data.dart`, register
+  any additional repo variables it needs (e.g. `OENB_BIC_URL`) the same
+  way and reference them under `env:` in the workflow.
+
+### Adding a country
+
+1. Add an adapter function in `tool/refresh_data.dart`.
+2. Register it in the `adapters` map.
+3. Make sure `assets/bank_codes/<cc>.json` is listed in `pubspec.yaml`.
+4. Add a minimal test to `test/iban_to_bic_test.dart`.
+
 ## CI
 
 Every push and PR to `main` runs `.github/workflows/ci.yml`:
