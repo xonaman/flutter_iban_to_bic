@@ -1,3 +1,15 @@
+## 1.1.0
+
+* `BicResolver.resolve` now returns `FutureOr<Bic?>`. Pure sync resolvers
+  implement the new `SyncBicResolver` marker interface; the top-level
+  `ibanToBic` stays synchronous because every built-in country ships one.
+* Added `ibanToBicAsync` and `IbanToBic.lookup` (async) for callers whose
+  resolvers hit the network/DB/etc.; `IbanToBic.lookupSync` keeps the fast path.
+* `InvalidIban` now carries a structured `reason` (`empty`, `tooShort`,
+  `tooLong`, `badShape`, `badChecksum`) so callers can render better errors.
+* `Bic` exposes ISO 9362 parts as getters: `institutionCode`, `countryCode`,
+  `locationCode`, `branchCode`, plus `isWellFormed`.
+
 ## 1.0.0
 
 * **Breaking:** `ibanToBic` now returns a sealed `IbanLookupResult`

@@ -12,8 +12,8 @@ Future<void> main() async {
       debugPrint('Bank name: ${bic.bankShortName}');
       debugPrint('Postcode: ${bic.bankPostcode}');
       debugPrint('Location: ${bic.bankLocation}');
-    case InvalidIban(:final String iban):
-      debugPrint('Invalid IBAN: $iban');
+    case InvalidIban(:final String iban, :final InvalidIbanReason reason):
+      debugPrint('Invalid IBAN ($reason): $iban');
     case UnsupportedCountry(:final String countryCode):
       debugPrint('Unsupported country: $countryCode');
     case UnknownBank(:final String countryCode, :final String bankCode):

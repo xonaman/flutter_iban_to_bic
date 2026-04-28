@@ -32,8 +32,8 @@ void main() {
       print(bic.value);           // INGDDEFFXXX
       print(bic.bankShortName);   // ING-DiBa
       print(bic.bankLocation);    // Frankfurt am Main
-    case InvalidIban(:final iban):
-      print('Checksum failed: $iban');
+    case InvalidIban(:final iban, :final reason):
+      print('Invalid ($reason): $iban');
     case UnsupportedCountry(:final countryCode):
       print('No data for: $countryCode');
     case UnknownBank(:final countryCode, :final bankCode):
@@ -42,27 +42,38 @@ void main() {
 }
 ```
 
-## Extending with custom data
+## Sync vs. async
 
-Register a custom `BicResolver` to plug in your own data source — a corporate
-registry, a remote API, or an overlay on top of the built-in maps:
+The top-level `ibanToBic` is synchronous because every built-in country ships
+a `SyncBicResolver` backed by a `const` map. If you register a custom resolver
+that hits the network, a DB, or any other async source, use `ibanToBicAsync`
+or `IbanToBic.lookup` instead:
 
 ```dart
-class MyResolver implements BicResolver {
+final result = await ibanToBicAsync('DE64 5001 0517 9423 8144 35');
+```
+
+## Extending with custom data
+
+Implement `SyncBicResolver` for in-memory data, or `BicResolver` (returns
+`FutureOr<Bic?>`) for async sources — an overlay on top of the built-in maps,
+a corporate registry, the ECB directory, etc.
+
+```dart
+class EcbResolver implements BicResolver {
   @override
-  Bic? resolve(String bankCode) => /* your lookup */;
+  Future<Bic?> resolve(String bankCode) async =>
+      await httpClient.fetchBic(bankCode);
 }
 
-final customCountries = {
+final lookup = IbanToBic(countries: {
   'DE': CountrySpec(
     bankCodeStart: 4,
     bankCodeEnd: 12,
-    resolver: MyResolver(),
+    resolver: EcbResolver(),
   ),
-};
-
-final lookup = IbanToBic(countries: customCountries);
-lookup.lookup('DE64 5001 0517 9423 8144 35');
+});
+await lookup.lookup('DE64 5001 0517 9423 8144 35');
 ```
 
 ## Supported countries

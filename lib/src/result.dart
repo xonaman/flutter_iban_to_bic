@@ -1,4 +1,5 @@
 import 'bic.dart';
+import 'iban.dart';
 
 /// Outcome of an IBAN-to-BIC lookup.
 ///
@@ -6,7 +7,7 @@ import 'bic.dart';
 /// ```dart
 /// switch (result) {
 ///   BicFound(:final bic) => print(bic.value),
-///   InvalidIban(:final iban) => print('bad checksum: $iban'),
+///   InvalidIban(:final reason) => print('invalid: $reason'),
 ///   UnsupportedCountry(:final countryCode) => print('no data for $countryCode'),
 ///   UnknownBank(:final bankCode) => print('unknown bank: $bankCode'),
 /// }
@@ -22,7 +23,8 @@ final class BicFound extends IbanLookupResult {
 
 final class InvalidIban extends IbanLookupResult {
   final String iban;
-  const InvalidIban(this.iban);
+  final InvalidIbanReason reason;
+  const InvalidIban(this.iban, this.reason);
 }
 
 final class UnsupportedCountry extends IbanLookupResult {
