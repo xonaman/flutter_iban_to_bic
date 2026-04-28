@@ -51,3 +51,10 @@ jobs:
       - name: pub publish --dry-run
         if: matrix.channel == 'stable'
         run: dart pub publish --dry-run
+
+      - name: Build example (web)
+        if: matrix.channel == 'stable'
+        working-directory: example
+        run: |
+          flutter pub get
+          flutter build web --no-tree-shake-icons
