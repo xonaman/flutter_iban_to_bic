@@ -24,6 +24,13 @@ jobs:
           channel: stable
           cache: true
 
+      # setup-dart wires the GitHub OIDC token into the pub credential
+      # file so `dart pub publish` can exchange it with pub.dev without
+      # any interactive auth. Without this step, publish falls through
+      # to the Google OAuth prompt and hangs forever.
+      - name: Set up Dart (trusted publishing)
+        uses: dart-lang/setup-dart@v1
+
       - name: Install dependencies
         run: flutter pub get
 
@@ -50,6 +57,4 @@ jobs:
         run: dart pub publish --dry-run
 
       - name: Publish
-        # Uses OIDC — no PUB_TOKEN secret needed. Requires pub.dev trusted
-        # publisher to be configured for this repo + tag pattern.
         run: dart pub publish --force
