@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:iban_to_bic/iban_to_bic.dart';
 
@@ -82,6 +85,37 @@ void main() {
       expect(a, isA<BicFound>());
       expect(b, isA<BicFound>());
       expect((a as BicFound).bic.value, (b as BicFound).bic.value);
+    });
+
+    test('tolerates non-breaking spaces (pasted from bank PDFs)', () {
+      const String nbsp = ' ';
+      final IbanLookupResult result =
+          ibanToBic('DE64${nbsp}5001${nbsp}0517${nbsp}9423${nbsp}8144${nbsp}35');
+      expect(result, isA<BicFound>());
+      expect((result as BicFound).bic.value, 'INGDDEFFXXX');
+    });
+
+    test('custom spec with an out-of-range bankCodeEnd reports badShape '
+        'instead of crashing', () async {
+      // A malicious/wrong custom spec says the bank code lives at [4,30)
+      // but the IBAN is only 20 chars long (still passes validateIban's
+      // 15..34 range + shape regex). extractBankCode must NOT throw.
+      final IbanToBic custom = IbanToBic(countries: <String, CountrySpec>{
+        'AT': const CountrySpec(
+          bankCodeStart: 4,
+          bankCodeEnd: 30, // wider than any real AT IBAN (20 chars).
+          resolver: _FixedResolver(Bic(
+            value: 'TESTAT00',
+            bankName: 'Test',
+            bankShortName: 'Test',
+          )),
+        ),
+      });
+      // AT IBAN, 20 chars, checksum valid — but length 20 < bankCodeEnd 30.
+      final String iban = _withValidChecksum('AT0011000' '00000000000');
+      final IbanLookupResult result = await custom.lookup(iban);
+      expect(result, isA<InvalidIban>());
+      expect((result as InvalidIban).reason, InvalidIbanReason.badShape);
     });
   });
 
@@ -227,6 +261,37 @@ void main() {
       );
     });
 
+    test('constructor copies the injected countries map defensively', () {
+      final Map<String, CountrySpec> external = <String, CountrySpec>{
+        'DE': const CountrySpec(
+          bankCodeStart: 4,
+          bankCodeEnd: 12,
+          resolver: _FixedResolver(Bic(
+            value: 'BEFOREXX',
+            bankName: 'Before',
+            bankShortName: 'Before',
+          )),
+        ),
+      };
+      final IbanToBic custom = IbanToBic(countries: external);
+
+      // Mutate the caller's map *after* construction — must not bleed in.
+      external['DE'] = const CountrySpec(
+        bankCodeStart: 4,
+        bankCodeEnd: 12,
+        resolver: _FixedResolver(Bic(
+          value: 'AFTERXXX',
+          bankName: 'After',
+          bankShortName: 'After',
+        )),
+      );
+      external.remove('DE');
+
+      final IbanLookupResult result =
+          custom.lookupSync('DE64 5001 0517 9423 8144 35');
+      expect((result as BicFound).bic.value, 'BEFOREXX');
+    });
+
     test('evict is a no-op for unknown, non-asset, and never-loaded countries',
         () {
       final IbanToBic fresh = IbanToBic();
@@ -251,6 +316,27 @@ void main() {
       final IbanLookupResult result =
           custom.lookupSync('DE64 5001 0517 9423 8144 35');
       expect((result as BicFound).bic.value, 'TESTDE00');
+    });
+  });
+
+  group('AssetJsonResolver error handling', () {
+    test('transient load error does not latch a rejected future', () async {
+      final _FlakyBundle bundle = _FlakyBundle();
+      final AssetJsonResolver resolver = AssetJsonResolver(
+        'fake/path.json',
+        bundle: bundle,
+      );
+
+      bundle.mode = _FlakyMode.fail;
+      await expectLater(resolver.resolve('anything'), throwsStateError);
+
+      // Without the whenComplete-style reset, this second call would
+      // re-await the same rejected future and throw the original error.
+      bundle.mode = _FlakyMode.succeed;
+      final Bic? bic = await resolver.resolve('10010010');
+      expect(bic, isNotNull);
+      expect(bic!.value, 'PBNKDEFFXXX');
+      expect(bundle.calls, 2, reason: 'should have retried the asset load');
     });
   });
 
@@ -301,6 +387,36 @@ void main() {
           custom.lookupSync('DE00 5001 0517 9423 8144 35'), isA<InvalidIban>());
     });
   });
+}
+
+enum _FlakyMode { fail, succeed }
+
+// Non-caching bundle — CachingAssetBundle would latch the first rejected
+// future, which defeats the test. We want AssetJsonResolver's own retry
+// logic to be the only thing under test.
+class _FlakyBundle extends AssetBundle {
+  _FlakyMode mode = _FlakyMode.succeed;
+  int calls = 0;
+
+  static const String _successJson =
+      '{"10010010":{"bic":"PBNKDEFFXXX","bankName":"Postbank",'
+      '"bankShortName":"Postbank"}}';
+
+  @override
+  Future<ByteData> load(String key) async {
+    calls++;
+    if (mode == _FlakyMode.fail) {
+      throw StateError('simulated asset load failure');
+    }
+    final Uint8List bytes = Uint8List.fromList(utf8.encode(_successJson));
+    return ByteData.view(bytes.buffer);
+  }
+
+  @override
+  Future<String> loadString(String key, {bool cache = true}) async {
+    final ByteData data = await load(key);
+    return utf8.decode(data.buffer.asUint8List());
+  }
 }
 
 class _AsyncResolver implements BicResolver {

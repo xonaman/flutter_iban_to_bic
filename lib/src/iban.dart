@@ -4,7 +4,9 @@
 /// package has zero runtime dependencies beyond Flutter itself.
 library;
 
-final RegExp _whitespace = RegExp(r'\s+');
+// Matches ASCII whitespace plus U+00A0 (non-breaking space), which bank
+// PDFs and some payment-form paste flows insert between IBAN groups.
+final RegExp _whitespace = RegExp(r'[\s ]+');
 final RegExp _ibanShape = RegExp(r'^[A-Z]{2}\d{2}[A-Z0-9]+$');
 
 /// Why an IBAN failed validation.

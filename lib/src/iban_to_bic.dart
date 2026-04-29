@@ -20,7 +20,9 @@ class IbanToBic {
   final Map<String, CountrySpec> _assetSpecs = <String, CountrySpec>{};
 
   IbanToBic({Map<String, CountrySpec>? countries})
-      : _countries = countries ?? _buildDefaultCountries() {
+      : _countries = countries == null
+            ? _buildDefaultCountries()
+            : Map<String, CountrySpec>.of(countries) {
     for (final MapEntry<String, CountrySpec> e in _countries.entries) {
       if (e.value.resolver is AssetJsonResolver) {
         _assetSpecs[e.key] = e.value;
@@ -135,9 +137,15 @@ class IbanToBic {
     final CountrySpec? spec = _countries[countryCode];
     if (spec == null) return _Prelude.early(UnsupportedCountry(countryCode));
 
+    final String? bankCode = spec.extractBankCode(iban);
+    if (bankCode == null) {
+      return _Prelude.early(
+          InvalidIban(iban, InvalidIbanReason.badShape));
+    }
+
     return _Prelude.resolved(
       countryCode: countryCode,
-      bankCode: spec.extractBankCode(iban),
+      bankCode: bankCode,
       spec: spec,
     );
   }

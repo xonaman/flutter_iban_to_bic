@@ -9,6 +9,15 @@
 * `preload` on an already-preloaded country is now a true no-op — no
   wrapper allocation or spec churn. Makes preload-per-keystroke patterns
   essentially free.
+* A failed `AssetJsonResolver` load no longer latches a rejected future;
+  the next `resolve` or `preload` call retries the asset read.
+* `normalizeIban` now strips non-breaking spaces (U+00A0) in addition to
+  ASCII whitespace — common when IBANs are pasted from bank PDFs.
+* `CountrySpec.extractBankCode` returns `null` (surfaced as
+  `InvalidIban(badShape)`) instead of throwing `RangeError` when a
+  custom spec's `bankCodeEnd` exceeds the IBAN length.
+* `IbanToBic(countries: …)` now defensively copies the caller's map so
+  later external mutation can't bleed into the resolver.
 
 ## 2.1.0
 

@@ -56,20 +56,27 @@ class AssetJsonResolver implements BicResolver {
   Future<Map<String, Bic>> _load() {
     final Map<String, Bic>? cached = _cache;
     if (cached != null) return Future<Map<String, Bic>>.value(cached);
-    final int gen = _generation;
-    return _inFlight ??= _bundle.loadString(assetPath).then((String raw) {
+    return _inFlight ??= _doLoad(_generation);
+  }
+
+  Future<Map<String, Bic>> _doLoad(int gen) async {
+    try {
+      final String raw = await _bundle.loadString(assetPath);
       final Map<String, dynamic> decoded =
           json.decode(raw) as Map<String, dynamic>;
       final Map<String, Bic> parsed = <String, Bic>{
         for (final MapEntry<String, dynamic> e in decoded.entries)
           e.key: _bicFromJson(e.value as Map<String, dynamic>),
       };
-      if (_generation == gen) {
-        _cache = parsed;
-        _inFlight = null;
-      }
+      if (_generation == gen) _cache = parsed;
       return parsed;
-    });
+    } finally {
+      // Always clear _inFlight on completion — success or failure —
+      // so a transient load error doesn't latch a rejected future
+      // onto every subsequent resolve call. Guarded by generation so
+      // a concurrent evict+preload doesn't see its own _inFlight wiped.
+      if (_generation == gen) _inFlight = null;
+    }
   }
 }
 
