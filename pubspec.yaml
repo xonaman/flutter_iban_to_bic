@@ -1,6 +1,6 @@
 name: iban_to_bic
 description: Determines the SWIFT BIC of an IBAN (AT, BE, DE, ES, FR, LT, LU, NL). Zero runtime dependencies.
-version: 2.1.0
+version: 2.2.0
 homepage: https://github.com/xonaman/flutter_iban_to_bic
 
 environment:

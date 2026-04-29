@@ -21,6 +21,7 @@ class AssetJsonResolver implements BicResolver {
 
   Map<String, Bic>? _cache;
   Future<Map<String, Bic>>? _inFlight;
+  int _generation = 0;
 
   AssetJsonResolver(this.assetPath, {AssetBundle? bundle})
       : _bundle = bundle ?? rootBundle;
@@ -28,6 +29,16 @@ class AssetJsonResolver implements BicResolver {
   /// Loads the asset into the cache. Idempotent + deduplicated.
   Future<void> preload() async {
     await _load();
+  }
+
+  /// Drops the in-memory cache so the next resolve re-reads the asset.
+  ///
+  /// Cheap and idempotent. Safe to call mid-load — an in-flight decode
+  /// will still fulfil its awaiters but will not repopulate the cache.
+  void evict() {
+    _generation++;
+    _cache = null;
+    _inFlight = null;
   }
 
   /// Upgrades to a [SyncBicResolver] once [preload] has completed.
@@ -45,6 +56,7 @@ class AssetJsonResolver implements BicResolver {
   Future<Map<String, Bic>> _load() {
     final Map<String, Bic>? cached = _cache;
     if (cached != null) return Future<Map<String, Bic>>.value(cached);
+    final int gen = _generation;
     return _inFlight ??= _bundle.loadString(assetPath).then((String raw) {
       final Map<String, dynamic> decoded =
           json.decode(raw) as Map<String, dynamic>;
@@ -52,8 +64,10 @@ class AssetJsonResolver implements BicResolver {
         for (final MapEntry<String, dynamic> e in decoded.entries)
           e.key: _bicFromJson(e.value as Map<String, dynamic>),
       };
-      _cache = parsed;
-      _inFlight = null;
+      if (_generation == gen) {
+        _cache = parsed;
+        _inFlight = null;
+      }
       return parsed;
     });
   }

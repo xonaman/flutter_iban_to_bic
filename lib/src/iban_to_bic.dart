@@ -15,9 +15,18 @@ import 'result.dart';
 /// [BicResolver] or override the built-in country data.
 class IbanToBic {
   final Map<String, CountrySpec> _countries;
+  // Preserves the original asset-backed spec per country so [evict] can
+  // restore it after [preload] swapped in a sync-cached variant.
+  final Map<String, CountrySpec> _assetSpecs = <String, CountrySpec>{};
 
   IbanToBic({Map<String, CountrySpec>? countries})
-      : _countries = countries ?? _buildDefaultCountries();
+      : _countries = countries ?? _buildDefaultCountries() {
+    for (final MapEntry<String, CountrySpec> e in _countries.entries) {
+      if (e.value.resolver is AssetJsonResolver) {
+        _assetSpecs[e.key] = e.value;
+      }
+    }
+  }
 
   /// Countries supported out of the box.
   Iterable<String> get supportedCountries => _countries.keys;
@@ -32,24 +41,45 @@ class IbanToBic {
     final List<Future<void>> work = <Future<void>>[];
     for (final String raw in countryCodes) {
       final String code = raw.toUpperCase();
-      final CountrySpec? spec = _countries[code];
-      final BicResolver? resolver = spec?.resolver;
-      if (resolver is AssetJsonResolver) {
-        work.add(resolver.preload().then((void _) {
-          // Swap the country's resolver for its sync-cached variant so
-          // lookupSync stops failing the SyncBicResolver check.
-          final SyncBicResolver? synced = resolver.asSync();
-          if (synced != null) {
-            _countries[code] = CountrySpec(
-              bankCodeStart: spec!.bankCodeStart,
-              bankCodeEnd: spec.bankCodeEnd,
-              resolver: synced,
-            );
-          }
-        }));
-      }
+      final CountrySpec? assetSpec = _assetSpecs[code];
+      if (assetSpec == null) continue;
+      // Already preloaded + swapped — skip the redundant allocations.
+      // Matters for call patterns like preload-per-keystroke.
+      if (_countries[code]?.resolver is SyncBicResolver) continue;
+      final AssetJsonResolver resolver =
+          assetSpec.resolver as AssetJsonResolver;
+      work.add(resolver.preload().then((void _) {
+        // Re-check after the await: a concurrent preload may have
+        // already swapped the spec, and we don't want to overwrite it
+        // with an equivalent-but-fresh wrapper.
+        if (_countries[code]?.resolver is SyncBicResolver) return;
+        final SyncBicResolver? synced = resolver.asSync();
+        if (synced != null) {
+          _countries[code] = CountrySpec(
+            bankCodeStart: assetSpec.bankCodeStart,
+            bankCodeEnd: assetSpec.bankCodeEnd,
+            resolver: synced,
+          );
+        }
+      }));
     }
     await Future.wait<void>(work);
+  }
+
+  /// Drops the cached dataset for [countryCode] so its memory can be
+  /// reclaimed. After eviction, [lookupSync] will return [NotPreloaded]
+  /// for that country until [preload] is awaited again; [lookup] keeps
+  /// working and re-reads the asset on the next call.
+  ///
+  /// No-op for countries that were never preloaded, not asset-backed, or
+  /// not registered. Country codes are case-insensitive.
+  void evict(String countryCode) {
+    final String code = countryCode.toUpperCase();
+    final CountrySpec? assetSpec = _assetSpecs[code];
+    if (assetSpec == null) return;
+    (assetSpec.resolver as AssetJsonResolver).evict();
+    // Restore the async spec so lookupSync reports NotPreloaded again.
+    _countries[code] = assetSpec;
   }
 
   /// Resolves the [rawIban] to a [Bic].
@@ -146,6 +176,11 @@ Future<IbanLookupResult> ibanToBicAsync(String iban) => _shared.lookup(iban);
 /// [ibanToBic] can serve them synchronously.
 Future<void> preloadIbanToBic(Iterable<String> countryCodes) =>
     _shared.preload(countryCodes);
+
+/// Drops a preloaded country dataset on the shared instance, freeing
+/// its memory. [ibanToBic] will report [NotPreloaded] for that country
+/// until it's preloaded again; [ibanToBicAsync] keeps working.
+void evictIbanToBic(String countryCode) => _shared.evict(countryCode);
 
 /// The shared [IbanToBic] used by the top-level convenience functions.
 IbanToBic get sharedIbanToBic => _shared;

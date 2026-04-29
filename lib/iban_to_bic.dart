@@ -14,6 +14,7 @@ export 'src/iban_to_bic.dart'
         ibanToBic,
         ibanToBicAsync,
         preloadIbanToBic,
+        evictIbanToBic,
         sharedIbanToBic;
 export 'src/resolver.dart';
 export 'src/result.dart';

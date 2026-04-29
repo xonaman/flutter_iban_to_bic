@@ -1,3 +1,15 @@
+## 2.2.0
+
+* `IbanToBic.evict(countryCode)` and top-level `evictIbanToBic(countryCode)`
+  drop a preloaded dataset so its memory can be reclaimed. The next
+  `lookupSync` for that country returns `NotPreloaded` until it's
+  preloaded again; `lookup` keeps working and re-reads the asset.
+* `AssetJsonResolver.evict()` exposes the same on a single resolver and
+  is safe to call mid-load.
+* `preload` on an already-preloaded country is now a true no-op — no
+  wrapper allocation or spec churn. Makes preload-per-keystroke patterns
+  essentially free.
+
 ## 2.1.0
 
 * `IbanToBic.lookupSync` now returns a `NotPreloaded(countryCode)` result

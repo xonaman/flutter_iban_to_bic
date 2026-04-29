@@ -184,6 +184,74 @@ void main() {
         isA<BicFound>(),
       );
     });
+
+    test('repeated preload on the same country is a cheap no-op', () async {
+      final IbanToBic fresh = IbanToBic();
+      await fresh.preload(<String>['DE']);
+      final Bic first = (fresh.lookupSync('DE64 5001 0517 9423 8144 35')
+              as BicFound)
+          .bic;
+      await fresh.preload(<String>['DE']);
+      await fresh.preload(<String>['de']); // case-insensitive dup too
+      final Bic second = (fresh.lookupSync('DE64 5001 0517 9423 8144 35')
+              as BicFound)
+          .bic;
+      // Map is reused — same Bic instance, no churn from redundant preloads.
+      expect(identical(first, second), isTrue);
+    });
+
+    test('evict drops the preloaded dataset and flips lookupSync back', () async {
+      final IbanToBic fresh = IbanToBic();
+      await fresh.preload(<String>['DE']);
+      expect(
+        fresh.lookupSync('DE64 5001 0517 9423 8144 35'),
+        isA<BicFound>(),
+      );
+
+      fresh.evict('DE');
+      final IbanLookupResult afterEvict =
+          fresh.lookupSync('DE64 5001 0517 9423 8144 35');
+      expect(afterEvict, isA<NotPreloaded>());
+      expect((afterEvict as NotPreloaded).countryCode, 'DE');
+
+      // Async path still serves it; it just re-reads the asset.
+      final IbanLookupResult asyncResult =
+          await fresh.lookup('DE64 5001 0517 9423 8144 35');
+      expect((asyncResult as BicFound).bic.value, 'INGDDEFFXXX');
+
+      // Preloading again restores the sync fast path.
+      await fresh.preload(<String>['DE']);
+      expect(
+        fresh.lookupSync('DE64 5001 0517 9423 8144 35'),
+        isA<BicFound>(),
+      );
+    });
+
+    test('evict is a no-op for unknown, non-asset, and never-loaded countries',
+        () {
+      final IbanToBic fresh = IbanToBic();
+      // Unknown country.
+      fresh.evict('ZZ');
+      // Case-insensitive + never preloaded — still a no-op, no throw.
+      fresh.evict('de');
+
+      final IbanToBic custom = IbanToBic(countries: <String, CountrySpec>{
+        'DE': const CountrySpec(
+          bankCodeStart: 4,
+          bankCodeEnd: 12,
+          resolver: _FixedResolver(Bic(
+            value: 'TESTDE00',
+            bankName: 'Test Bank',
+            bankShortName: 'Test',
+          )),
+        ),
+      });
+      // Custom sync resolver is not asset-backed — evict must leave it alone.
+      custom.evict('DE');
+      final IbanLookupResult result =
+          custom.lookupSync('DE64 5001 0517 9423 8144 35');
+      expect((result as BicFound).bic.value, 'TESTDE00');
+    });
   });
 
   group('async resolver', () {
