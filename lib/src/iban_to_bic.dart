@@ -139,8 +139,7 @@ class IbanToBic {
 
     final String? bankCode = spec.extractBankCode(iban);
     if (bankCode == null) {
-      return _Prelude.early(
-          InvalidIban(iban, InvalidIbanReason.badShape));
+      return _Prelude.early(InvalidIban(iban, InvalidIbanReason.badShape));
     }
 
     return _Prelude.resolved(

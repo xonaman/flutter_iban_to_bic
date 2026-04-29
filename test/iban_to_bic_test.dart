@@ -89,13 +89,14 @@ void main() {
 
     test('tolerates non-breaking spaces (pasted from bank PDFs)', () {
       const String nbsp = ' ';
-      final IbanLookupResult result =
-          ibanToBic('DE64${nbsp}5001${nbsp}0517${nbsp}9423${nbsp}8144${nbsp}35');
+      final IbanLookupResult result = ibanToBic(
+          'DE64${nbsp}5001${nbsp}0517${nbsp}9423${nbsp}8144${nbsp}35');
       expect(result, isA<BicFound>());
       expect((result as BicFound).bic.value, 'INGDDEFFXXX');
     });
 
-    test('custom spec with an out-of-range bankCodeEnd reports badShape '
+    test(
+        'custom spec with an out-of-range bankCodeEnd reports badShape '
         'instead of crashing', () async {
       // A malicious/wrong custom spec says the bank code lives at [4,30)
       // but the IBAN is only 20 chars long (still passes validateIban's
@@ -222,19 +223,18 @@ void main() {
     test('repeated preload on the same country is a cheap no-op', () async {
       final IbanToBic fresh = IbanToBic();
       await fresh.preload(<String>['DE']);
-      final Bic first = (fresh.lookupSync('DE64 5001 0517 9423 8144 35')
-              as BicFound)
-          .bic;
+      final Bic first =
+          (fresh.lookupSync('DE64 5001 0517 9423 8144 35') as BicFound).bic;
       await fresh.preload(<String>['DE']);
       await fresh.preload(<String>['de']); // case-insensitive dup too
-      final Bic second = (fresh.lookupSync('DE64 5001 0517 9423 8144 35')
-              as BicFound)
-          .bic;
+      final Bic second =
+          (fresh.lookupSync('DE64 5001 0517 9423 8144 35') as BicFound).bic;
       // Map is reused — same Bic instance, no churn from redundant preloads.
       expect(identical(first, second), isTrue);
     });
 
-    test('evict drops the preloaded dataset and flips lookupSync back', () async {
+    test('evict drops the preloaded dataset and flips lookupSync back',
+        () async {
       final IbanToBic fresh = IbanToBic();
       await fresh.preload(<String>['DE']);
       expect(
