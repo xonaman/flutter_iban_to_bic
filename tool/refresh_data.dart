@@ -47,6 +47,17 @@ class BankEntry {
 
 typedef CountryAdapter = Future<Map<String, BankEntry>> Function();
 
+/// Thrown by an adapter when a refresh can't proceed for a benign,
+/// configuration-level reason (e.g. an upstream URL that needs to be
+/// rotated by a maintainer). Treated as "skipped" rather than "failed"
+/// so the scheduled workflow stays green between rotations.
+class AdapterSkipped implements Exception {
+  AdapterSkipped(this.reason);
+  final String reason;
+  @override
+  String toString() => reason;
+}
+
 /// Registry of per-country adapters. `null` means "not yet implemented" and
 /// the refresh script leaves the existing JSON untouched.
 final Map<String, CountryAdapter?> adapters = <String, CountryAdapter?>{
@@ -87,6 +98,9 @@ Future<void> main(List<String> args) async {
       File(path).writeAsStringSync('${jsonEncode(asJson)}\n');
       print('[$cc] wrote $path (${entries.length} entries)');
       refreshed++;
+    } on AdapterSkipped catch (e) {
+      print('[$cc] skipped: $e');
+      skipped++;
     } catch (e, st) {
       stderr.writeln('[$cc] failed: $e\n$st');
       failed++;
@@ -123,10 +137,10 @@ Future<void> main(List<String> args) async {
 Future<Map<String, BankEntry>> fetchDe() async {
   final String? url = Platform.environment['BUNDESBANK_BLZ_URL'];
   if (url == null || url.isEmpty) {
-    throw StateError(
-      'Set BUNDESBANK_BLZ_URL to the current quarter\'s BLZ download '
-      '(see https://www.bundesbank.de/en/tasks/payment-systems/services/'
-      'bank-sort-codes/download-bank-sort-codes-626218).',
+    throw AdapterSkipped(
+      'BUNDESBANK_BLZ_URL is not set — rotate it to the current quarter\'s '
+      'download (see https://www.bundesbank.de/en/tasks/payment-systems/'
+      'services/bank-sort-codes/download-bank-sort-codes-626218).',
     );
   }
 
