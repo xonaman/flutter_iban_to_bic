@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: pub
+    directories:
+      - /
+      - /example
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 99
+    # supply-chain safety window: don't adopt freshly published releases
+    # until they have been public for a few days
+    cooldown:
+      default-days: 7
+    groups:
+      pub:
+        patterns:
+          - "*"
