@@ -5,7 +5,7 @@ updates:
       - /
       - /example
     schedule:
-      interval: weekly
+      interval: monthly
     open-pull-requests-limit: 99
     # supply-chain safety window: don't adopt freshly published releases
     # until they have been public for a few days
