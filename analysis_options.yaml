@@ -1,5 +1,18 @@
 include: package:flutter_lints/flutter.yaml
 
+# Kept in sync with the flutter tool's AnalysisOptionsMigration, which
+# rewrites this file during `flutter pub get` unless every entry is already
+# present -- and a rewritten file fails `dart pub publish --dry-run`.
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
+
 linter:
   rules:
     prefer_single_quotes: true
