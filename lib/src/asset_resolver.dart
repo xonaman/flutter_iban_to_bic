@@ -66,7 +66,8 @@ class AssetJsonResolver implements BicResolver {
           json.decode(raw) as Map<String, dynamic>;
       final Map<String, Bic> parsed = <String, Bic>{
         for (final MapEntry<String, dynamic> e in decoded.entries)
-          e.key: _bicFromJson(e.value as Map<String, dynamic>),
+          if (_bicFromJson(e.value as Map<String, dynamic>) case final Bic bic)
+            e.key: bic,
       };
       if (_generation == gen) _cache = parsed;
       return parsed;
@@ -87,11 +88,17 @@ class _CachedSyncResolver implements SyncBicResolver {
   Bic? resolve(String bankCode) => _entries[bankCode];
 }
 
-Bic _bicFromJson(Map<String, dynamic> m) => Bic(
-      value: m['bic'] as String,
-      bankName: m['bankName'] as String,
-      bankShortName: m['bankShortName'] as String,
-      bankAddress: m['bankAddress'] as String?,
-      bankPostcode: m['bankPostcode'] as String?,
-      bankLocation: m['bankLocation'] as String?,
-    );
+/// Returns `null` for rows without a BIC so lookups report `UnknownBank`
+/// instead of a `BicFound` carrying an empty value.
+Bic? _bicFromJson(Map<String, dynamic> m) {
+  final String? value = m['bic'] as String?;
+  if (value == null || value.trim().isEmpty) return null;
+  return Bic(
+    value: value,
+    bankName: m['bankName'] as String,
+    bankShortName: m['bankShortName'] as String,
+    bankAddress: m['bankAddress'] as String?,
+    bankPostcode: m['bankPostcode'] as String?,
+    bankLocation: m['bankLocation'] as String?,
+  );
+}

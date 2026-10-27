@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -26,7 +27,7 @@ void main() {
       // taken from the actual built-in datasets so the lookup must succeed.
       const List<List<Object>> cases = <List<Object>>[
         <Object>['AT', '11000', 20],
-        <Object>['BE', '539', 16],
+        <Object>['BE', '310', 16],
         <Object>['DE', '50010517', 22],
         <Object>['ES', '2100', 24],
         <Object>['FR', '20041', 27],
@@ -340,6 +341,82 @@ void main() {
     });
   });
 
+  group('AssetJsonResolver rows without a BIC', () {
+    // Mirrors the shape of real dataset rows that carry a bank name but
+    // no BIC, plus a whitespace-only BIC and one valid row as a control.
+    const String rows = '{'
+        '"50010517":{"bic":"","bankName":"ING-DiBa","bankShortName":"ING"},'
+        '"12030000":{"bic":"   ","bankName":"DKB","bankShortName":"DKB"},'
+        '"10010010":{"bic":"PBNKDEFFXXX","bankName":"Postbank",'
+        '"bankShortName":"Postbank"}'
+        '}';
+
+    IbanToBic withRows() => IbanToBic(countries: <String, CountrySpec>{
+          'DE': CountrySpec(
+            bankCodeStart: 4,
+            bankCodeEnd: 12,
+            resolver: AssetJsonResolver(
+              'fake/de.json',
+              bundle: _StringBundle(rows),
+            ),
+          ),
+        });
+
+    final String emptyBic = _buildValidIban('DE', '50010517', 22);
+    final String blankBic = _buildValidIban('DE', '12030000', 22);
+    final String validBic = _buildValidIban('DE', '10010010', 22);
+
+    test('lookup reports UnknownBank', () async {
+      final IbanToBic custom = withRows();
+      for (final String iban in <String>[emptyBic, blankBic]) {
+        final IbanLookupResult result = await custom.lookup(iban);
+        expect(result, isA<UnknownBank>(), reason: iban);
+      }
+      final IbanLookupResult control = await custom.lookup(validBic);
+      expect((control as BicFound).bic.value, 'PBNKDEFFXXX');
+    });
+
+    test('lookupSync reports UnknownBank after preload', () async {
+      final IbanToBic custom = withRows();
+      await custom.preload(<String>['DE']);
+      for (final String iban in <String>[emptyBic, blankBic]) {
+        expect(custom.lookupSync(iban), isA<UnknownBank>(), reason: iban);
+      }
+      final IbanLookupResult control = custom.lookupSync(validBic);
+      expect((control as BicFound).bic.value, 'PBNKDEFFXXX');
+    });
+  });
+
+  group('bundled datasets', () {
+    test('every entry carries a BIC', () {
+      final List<File> assets = Directory('assets/bank_codes')
+          .listSync()
+          .whereType<File>()
+          .where((File f) => f.path.endsWith('.json'))
+          .toList()
+        ..sort((File a, File b) => a.path.compareTo(b.path));
+      expect(assets, isNotEmpty);
+      // One line per offending file, so a failure names every dataset.
+      final List<String> problems = <String>[];
+      for (final File asset in assets) {
+        final Map<String, dynamic> decoded =
+            json.decode(asset.readAsStringSync()) as Map<String, dynamic>;
+        final List<String> missing = <String>[
+          for (final MapEntry<String, dynamic> e in decoded.entries)
+            if (((e.value as Map<String, dynamic>)['bic'] as String? ?? '')
+                .trim()
+                .isEmpty)
+              e.key,
+        ];
+        if (missing.isNotEmpty) {
+          problems.add('${asset.path}: ${missing.length} of ${decoded.length} '
+              'entries have no BIC (e.g. ${missing.take(5).join(', ')})');
+        }
+      }
+      expect(problems, isEmpty);
+    });
+  });
+
   group('async resolver', () {
     test('ibanToBicAsync works for built-in data', () async {
       final IbanLookupResult result =
@@ -417,6 +494,20 @@ class _FlakyBundle extends AssetBundle {
     final ByteData data = await load(key);
     return utf8.decode(data.buffer.asUint8List());
   }
+}
+
+class _StringBundle extends AssetBundle {
+  _StringBundle(this.contents);
+  final String contents;
+
+  @override
+  Future<ByteData> load(String key) async {
+    final Uint8List bytes = Uint8List.fromList(utf8.encode(contents));
+    return ByteData.view(bytes.buffer);
+  }
+
+  @override
+  Future<String> loadString(String key, {bool cache = true}) async => contents;
 }
 
 class _AsyncResolver implements BicResolver {

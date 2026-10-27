@@ -1,3 +1,9 @@
+## 2.2.1
+
+* Dataset rows with an empty or whitespace-only `bic` now resolve as
+  `UnknownBank`. Previously `lookup` and `lookupSync` returned
+  `BicFound` with an empty `Bic.value` for them.
+
 ## 2.2.0
 
 * `IbanToBic.evict(countryCode)` and top-level `evictIbanToBic(countryCode)`
