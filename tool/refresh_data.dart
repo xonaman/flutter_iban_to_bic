@@ -120,12 +120,14 @@ Future<void> main(List<String> args) async {
 // fixed-width text file in ISO-8859-1. Columns (1-indexed, 1-based bytes):
 //
 //   1-8    BLZ (bank code)
-//   9      marker '1' = actively assigned
+//   9      marker '1' = the BLZ's main record, '2' = additional branch
+//          rows sharing that BLZ
 //   10-67  full bank name
 //   68-72  postal code
 //   73-107 city
 //   108-134 short name
-//   135-145 BIC (may be blank)
+//   135-139 PAN (card institution number, may be blank)
+//   140-150 BIC (may be blank)
 //   ...
 //
 // Docs: https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes
@@ -167,15 +169,15 @@ Future<Map<String, BankEntry>> fetchDe() async {
 Map<String, BankEntry> parseBundesbankBlz(String text) {
   final Map<String, BankEntry> result = <String, BankEntry>{};
   for (final String line in const LineSplitter().convert(text)) {
-    if (line.length < 145) continue;
-    if (line.substring(8, 9) != '1') continue; // only active rows
+    if (line.length < 150) continue;
+    if (line.substring(8, 9) != '1') continue; // only main records
 
     final String blz = line.substring(0, 8).trim();
     final String name = line.substring(9, 67).trim();
     final String postcode = line.substring(67, 72).trim();
     final String city = line.substring(72, 107).trim();
     final String shortName = line.substring(107, 134).trim();
-    final String bic = line.substring(134, 145).trim();
+    final String bic = line.substring(139, 150).trim();
 
     if (blz.isEmpty || bic.isEmpty) continue;
     result[blz] = BankEntry(

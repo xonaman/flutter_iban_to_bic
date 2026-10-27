@@ -3,6 +3,9 @@
 * Dataset rows with an empty or whitespace-only `bic` now resolve as
   `UnknownBank`. Previously `lookup` and `lookupSync` returned
   `BicFound` with an empty `Bic.value` for them.
+* `tool/refresh_data.dart`: the Bundesbank BLZ parser read the BIC from
+  columns 135-145, which hold the 5-digit PAN followed by only the first
+  six BIC characters (e.g. `27100DEUTDE`). It now reads columns 140-150.
 
 ## 2.2.0
 
