@@ -6,6 +6,14 @@
 * `tool/refresh_data.dart`: the Bundesbank BLZ parser read the BIC from
   columns 135-145, which hold the 5-digit PAN followed by only the first
   six BIC characters (e.g. `27100DEUTDE`). It now reads columns 140-150.
+* German bank codes regenerated from the Bundesbank BLZ file valid
+  2026-09-07 to 2026-12-06. `de.json` now has 3,505 entries, all with a
+  BIC, postcode and city. Before, only 1,705 of its 3,544 entries had a
+  BIC, so major banks such as Deutsche Bank (50070010), Commerzbank
+  (37040044) and DKB (12030000) came back without one. 35 bank codes the
+  Bundesbank no longer lists (merged or closed institutions) now resolve
+  as `UnknownBank`.
+* Removed the 34 Belgian entries without a BIC from `be.json`.
 
 ## 2.2.0
 
