@@ -406,6 +406,106 @@ void main() {
     });
   });
 
+  group('BIC accuracy', () {
+    const Map<String, BicAccuracy> expected = <String, BicAccuracy>{
+      'AT': BicAccuracy.exact,
+      'BE': BicAccuracy.exact,
+      'DE': BicAccuracy.exact,
+      'ES': BicAccuracy.institution,
+      'FR': BicAccuracy.institution,
+      'LT': BicAccuracy.exact,
+      'LU': BicAccuracy.exact,
+      'NL': BicAccuracy.exact,
+    };
+
+    test('every built-in country declares the documented accuracy', () {
+      expect(sharedIbanToBic.supportedCountries.toSet(), expected.keys.toSet());
+    });
+
+    test('sync and async results carry the country accuracy', () async {
+      const Map<String, List<Object>> cases = <String, List<Object>>{
+        'AT': <Object>['11000', 20],
+        'BE': <Object>['310', 16],
+        'DE': <Object>['50010517', 22],
+        'ES': <Object>['2100', 24],
+        'FR': <Object>['20041', 27],
+        'LT': <Object>['30300', 20],
+        'LU': <Object>['001', 20],
+        'NL': <Object>['ABNA', 18],
+      };
+      final IbanToBic fresh = IbanToBic();
+      for (final MapEntry<String, List<Object>> c in cases.entries) {
+        final String iban = _buildValidIban(
+          c.key,
+          c.value[0] as String,
+          c.value[1] as int,
+        );
+        final BicFound viaAsync = await fresh.lookup(iban) as BicFound;
+        expect(viaAsync.accuracy, expected[c.key], reason: '${c.key} async');
+        expect(viaAsync.isExact, expected[c.key] == BicAccuracy.exact);
+
+        // preload swaps in a sync spec; accuracy must survive the swap.
+        final BicFound viaSync = ibanToBic(iban) as BicFound;
+        expect(viaSync.accuracy, expected[c.key], reason: '${c.key} sync');
+      }
+    });
+
+    test('accuracy survives evict and re-preload', () async {
+      final IbanToBic fresh = IbanToBic();
+      final String iban = _buildValidIban('FR', '20041', 27);
+      await fresh.preload(<String>['FR']);
+      fresh.evict('FR');
+      expect((await fresh.lookup(iban) as BicFound).isExact, isFalse);
+      await fresh.preload(<String>['FR']);
+      expect(
+        (fresh.lookupSync(iban) as BicFound).accuracy,
+        BicAccuracy.institution,
+      );
+    });
+
+    test('custom specs default to exact and can opt into institution', () {
+      const Bic bic = Bic(
+        value: 'TESTDE00',
+        bankName: 'Test',
+        bankShortName: 'Test',
+      );
+      const String iban = 'DE64 5001 0517 9423 8144 35';
+      final IbanToBic byDefault = IbanToBic(
+        countries: <String, CountrySpec>{
+          'DE': const CountrySpec(
+            bankCodeStart: 4,
+            bankCodeEnd: 12,
+            resolver: _FixedResolver(bic),
+          ),
+        },
+      );
+      expect((byDefault.lookupSync(iban) as BicFound).isExact, isTrue);
+
+      final IbanToBic institution = IbanToBic(
+        countries: <String, CountrySpec>{
+          'DE': const CountrySpec(
+            bankCodeStart: 4,
+            bankCodeEnd: 12,
+            resolver: _FixedResolver(bic),
+            accuracy: BicAccuracy.institution,
+          ),
+        },
+      );
+      expect(
+        (institution.lookupSync(iban) as BicFound).accuracy,
+        BicAccuracy.institution,
+      );
+    });
+
+    test('BicFound defaults to exact for source compatibility', () {
+      const BicFound found = BicFound(
+        Bic(value: 'TESTDE00', bankName: 'Test', bankShortName: 'Test'),
+      );
+      expect(found.accuracy, BicAccuracy.exact);
+      expect(found.isExact, isTrue);
+    });
+  });
+
   group('bundled datasets', () {
     test('every entry carries a BIC', () async {
       // One line per offending dataset, so a failure names every one.

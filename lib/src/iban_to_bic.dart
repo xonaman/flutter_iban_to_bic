@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'bic.dart';
+import 'bic_accuracy.dart';
 import 'country_spec.dart';
 import 'data/bank_codes.dart';
 import 'iban.dart';
@@ -62,6 +63,7 @@ class IbanToBic {
               bankCodeStart: lazySpec.bankCodeStart,
               bankCodeEnd: lazySpec.bankCodeEnd,
               resolver: synced,
+              accuracy: lazySpec.accuracy,
             );
           }
         }),
@@ -102,7 +104,7 @@ class IbanToBic {
         bankCode: prelude.bankCode!,
       );
     }
-    return BicFound(bic);
+    return BicFound(bic, accuracy: prelude.spec!.accuracy);
   }
 
   /// Synchronous variant of [lookup].
@@ -126,7 +128,7 @@ class IbanToBic {
         bankCode: prelude.bankCode!,
       );
     }
-    return BicFound(bic);
+    return BicFound(bic, accuracy: prelude.spec!.accuracy);
   }
 
   _Prelude _prelude(String rawIban) {
@@ -199,17 +201,26 @@ final IbanToBic _shared = IbanToBic();
 
 Map<String, CountrySpec> _buildDefaultCountries() {
   Map<String, CountrySpec>? mapOrNull;
-  CountrySpec spec(int start, int end, String cc) => CountrySpec(
+  CountrySpec spec(
+    int start,
+    int end,
+    String cc, {
+    BicAccuracy accuracy = BicAccuracy.exact,
+  }) => CountrySpec(
     bankCodeStart: start,
     bankCodeEnd: end,
     resolver: LazyJsonResolver(() => loadBankCodesJson(cc)),
+    accuracy: accuracy,
   );
+  // Accuracy per country is documented on [BicAccuracy] and in the
+  // README's coverage table. ES and FR IBANs carry a branch code after the
+  // bank code that this lookup ignores.
   return mapOrNull ??= <String, CountrySpec>{
     'AT': spec(4, 9, 'AT'),
     'BE': spec(4, 7, 'BE'),
     'DE': spec(4, 12, 'DE'),
-    'ES': spec(4, 8, 'ES'),
-    'FR': spec(4, 9, 'FR'),
+    'ES': spec(4, 8, 'ES', accuracy: BicAccuracy.institution),
+    'FR': spec(4, 9, 'FR', accuracy: BicAccuracy.institution),
     'LT': spec(4, 9, 'LT'),
     'LU': spec(4, 7, 'LU'),
     'NL': spec(4, 8, 'NL'),

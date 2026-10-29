@@ -5,8 +5,11 @@
 library;
 
 export 'src/bic.dart';
+export 'src/bic_accuracy.dart';
 export 'src/country_spec.dart';
 export 'src/iban.dart' show InvalidIbanReason;
+// Deprecated, kept for source compatibility until the next major release.
+// ignore: deprecated_member_use_from_same_package
 export 'src/asset_resolver.dart' show AssetJsonResolver;
 export 'src/json_resolver.dart' show LazyJsonResolver;
 export 'src/iban_to_bic.dart'
