@@ -81,7 +81,9 @@ against the new data, and opens a PR with the diff if anything changed.
 
 Every push and PR to `main` runs `.github/workflows/ci.yml`:
 
-- Dart **stable**, **beta** and **3.8.0** (the SDK floor) in parallel
+- Dart **stable** and **beta** in parallel, plus the oldest Dart version
+  `pubspec.yaml` allows (formatting is skipped there, since older formatters
+  disagree with the current one)
 - `dart format --set-exit-if-changed`
 - `dart analyze --fatal-infos`
 - `dart test` on the VM, plus Chrome (dart2js and dart2wasm) and coverage
@@ -89,3 +91,28 @@ Every push and PR to `main` runs `.github/workflows/ci.yml`:
 - `dart pub publish --dry-run` on stable — catches score/lint issues before
   a release is cut
 - a Flutter stable job that analyzes and builds the example app for the web
+
+## Raising the minimum SDK
+
+The SDK floor lives in three places that must change together, or CI stops
+testing the version the package claims to support:
+
+1. `pubspec.yaml`: `environment.sdk` (e.g. `^3.8.0`).
+2. `example/pubspec.yaml`: `environment.sdk` and `environment.flutter`
+   (e.g. `'>=3.32.0'`, the Flutter release that ships the new Dart floor;
+   see the [SDK archive](https://docs.flutter.dev/install/archive)).
+3. `.github/workflows/ci.yml`: the oldest entry in the `sdk:` matrix
+   (e.g. `3.8.0`) and the `matrix.sdk != '3.8.0'` condition that skips
+   formatting on it.
+
+Then run `dart pub get` in the root to check that the constraints still
+resolve (the root `pubspec.lock` is not committed), and `flutter pub get` in
+`example/` to update the committed `example/pubspec.lock`. Add a
+`CHANGELOG.md` line. Users on older SDKs aren't broken: pub keeps resolving
+them to the last release that allowed their SDK. Still, bump at least the
+minor version.
+
+Dev-dependency upgrades are what usually force a bump: a new `lints`, `test`
+or `analysis_options.yaml` setting can need a newer Dart than the current
+floor, and the min-version job then fails at `pub get` or `analyze`. Raise
+the floor in all three places rather than dropping or pinning the job.
