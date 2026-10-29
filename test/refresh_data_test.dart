@@ -90,11 +90,34 @@ void main() {
       final BankEntry entry = parseBundesbankBlz(text)['87654321']!;
       expect(entry.bankShortName, 'Bank With Only A Long Name');
     });
+
+    test('reads the BIC after the PAN column of a real file row', () {
+      // Row for 50070010 from the Bundesbank file valid 2026-09-07 to
+      // 2026-12-06, split at field boundaries. The PAN (27100) sits in
+      // columns 135-139, directly in front of the BIC.
+      const String row = '50070010'
+          '1'
+          'Deutsche Bank                                             '
+          '60254'
+          'Frankfurt am Main                  '
+          'Deutsche Bank              '
+          '27100'
+          'DEUTDEFFXXX'
+          '63004807U000000000';
+      expect(row.length, 168);
+
+      final BankEntry entry = parseBundesbankBlz(row)['50070010']!;
+      expect(entry.bic, 'DEUTDEFFXXX');
+      expect(entry.bankName, 'Deutsche Bank');
+      expect(entry.bankShortName, 'Deutsche Bank');
+      expect(entry.bankPostcode, '60254');
+      expect(entry.bankLocation, 'Frankfurt am Main');
+    });
   });
 }
 
-/// Constructs a 145-char Bundesbank BLZ row. See column layout in
-/// `tool/refresh_data.dart`.
+/// Constructs a Bundesbank BLZ row up to and including the BIC (150
+/// chars), with a blank PAN. See column layout in `tool/refresh_data.dart`.
 String _row({
   required String blz,
   required bool active,
@@ -112,6 +135,7 @@ String _row({
     ..write(postcode.padRight(5).substring(0, 5))
     ..write(city.padRight(35).substring(0, 35))
     ..write(shortName.padRight(27).substring(0, 27))
+    ..write(''.padRight(5)) // PAN
     ..write(bic.padRight(11).substring(0, 11));
   return sb.toString();
 }
