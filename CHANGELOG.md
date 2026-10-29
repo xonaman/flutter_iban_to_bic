@@ -1,5 +1,17 @@
 ## Unreleased
 
+* Results now say how precise the BIC is. `BicFound` gains an `accuracy`
+  field (`BicAccuracy.exact` or `BicAccuracy.institution`) and an `isExact`
+  getter. Spain and France report `institution`: their IBANs carry a branch
+  code the lookup ignores, so the returned BIC is the institution's main
+  BIC and the account may be held under a branch BIC (La Banque Postale,
+  for example). All other built-in countries report `exact`.
+* `CountrySpec` takes an optional `accuracy` (default `exact`) so custom
+  resolvers can declare theirs.
+* README: the supported-countries table now lists each country's data
+  source, BIC accuracy and whether it is refreshed automatically.
+* Non-breaking: `BicFound(bic)` still compiles and defaults to `exact`, and
+  the sealed `IbanLookupResult` hierarchy is unchanged.
 * Bundled bank-code assets use a compact, normalized format: banks that
   share every field are stored once with all their codes, and field names
   are replaced by positions. The assets shrink from 982 KB to 488 KB
