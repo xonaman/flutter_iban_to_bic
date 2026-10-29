@@ -37,6 +37,13 @@ void main() {
         final IbanRegistryEntry entry = ibanRegistry[e.key]!;
         expect(e.value.bankCodeStart, entry.bankCodeStart, reason: e.key);
         expect(e.value.bankCodeEnd, entry.bankCodeEnd, reason: e.key);
+        expect(
+          e.value.accuracy,
+          e.key == 'ES' || e.key == 'FR'
+              ? BicAccuracy.institution
+              : BicAccuracy.exact,
+          reason: e.key,
+        );
       }
       expect(IbanToBic().supportedCountries, unorderedEquals(registry.keys));
     });

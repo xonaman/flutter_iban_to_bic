@@ -13,6 +13,18 @@
   generated from the registry (`lib/src/iban_registry.g.dart`) instead of
   hand-coded offsets. The values are unchanged. Regenerate it with
   `dart run tool/generate_iban_registry.dart <iban-registry.txt>`.
+* Results now say how precise the BIC is. `BicFound` gains an `accuracy`
+  field (`BicAccuracy.exact` or `BicAccuracy.institution`) and an `isExact`
+  getter. Spain and France report `institution`: their IBANs carry a branch
+  code the lookup ignores, so the returned BIC is the institution's main
+  BIC and the account may be held under a branch BIC (La Banque Postale,
+  for example). All other built-in countries report `exact`.
+* `CountrySpec` takes an optional `accuracy` (default `exact`) so custom
+  resolvers can declare theirs.
+* README: the supported-countries table now lists each country's data
+  source, BIC accuracy and whether it is refreshed automatically.
+* Non-breaking: `BicFound(bic)` still compiles and defaults to `exact`, and
+  the sealed `IbanLookupResult` hierarchy is unchanged.
 
 ## 2.3.0
 
