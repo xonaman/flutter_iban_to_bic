@@ -28,11 +28,30 @@ void main(List<String> args) {
     }
   }
 
+  // An asset whose source was deleted or renamed would otherwise keep
+  // shipping unnoticed. Report it rather than deleting it: removing a
+  // country also means updating pubspec.yaml and the library.
+  final Set<String> sources = sourceCountries().toSet();
+  final List<String> orphaned = <String>[
+    for (final File f in Directory(assetDir).listSync().whereType<File>())
+      if (f.path.endsWith('.json') &&
+          !sources.contains(
+            f.uri.pathSegments.last.split('.').first.toUpperCase(),
+          ))
+        f.path,
+  ]..sort();
+  if (orphaned.isNotEmpty) {
+    stderr.writeln(
+      'No source in $sourceDir/ for: ${orphaned.join(', ')}\n'
+      'Restore the .jsonl source or remove the asset.',
+    );
+  }
+
   if (stale.isNotEmpty) {
     stderr.writeln(
       'Out of date: ${stale.join(', ')}\n'
       'Run `dart run tool/build_assets.dart` and commit the result.',
     );
-    exit(1);
   }
+  if (stale.isNotEmpty || orphaned.isNotEmpty) exit(1);
 }

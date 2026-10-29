@@ -22,9 +22,17 @@ const int maxSummaryLength = 60000;
 void main(List<String> args) {
   final String rev = args.isEmpty ? 'HEAD' : args.first;
   final StringBuffer out = StringBuffer();
-  for (final String cc in sourceCountries()) {
+  // Include countries whose source exists only at [rev], so a deleted
+  // dataset shows up as all of its codes removed.
+  final List<String> countries = <String>{
+    ...sourceCountries(),
+    ..._countriesAt(rev),
+  }.toList()..sort();
+  for (final String cc in countries) {
     final Map<String, BankEntry> before = _readAt(rev, sourcePath(cc));
-    final Map<String, BankEntry> after = readSource(cc);
+    final Map<String, BankEntry> after = File(sourcePath(cc)).existsSync()
+        ? readSource(cc)
+        : <String, BankEntry>{};
     final String section = summarizeCountry(cc, before, after);
     if (section.isNotEmpty) out.writeln(section);
   }
@@ -37,6 +45,21 @@ void main(List<String> args) {
         '_Summary truncated; see the diff of `$sourceDir/`._';
   }
   print(summary);
+}
+
+List<String> _countriesAt(String rev) {
+  final ProcessResult res = Process.runSync('git', <String>[
+    'ls-tree',
+    '--name-only',
+    rev,
+    '$sourceDir/',
+  ]);
+  if (res.exitCode != 0) return <String>[];
+  return <String>[
+    for (final String path in (res.stdout as String).split('\n'))
+      if (path.endsWith('.jsonl'))
+        path.split('/').last.split('.').first.toUpperCase(),
+  ];
 }
 
 Map<String, BankEntry> _readAt(String rev, String path) {

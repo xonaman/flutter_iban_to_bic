@@ -12,6 +12,8 @@
 //   3. Run the refresh for it, which creates `data/bank_codes/<cc>.jsonl`
 //      and `assets/bank_codes/<cc>.json`, and add the asset to
 //      `pubspec.yaml`'s flutter.assets list.
+//   4. Register the country and its bank-code range (the IBAN character
+//      offsets) in `_buildDefaultCountries` in `lib/src/iban_to_bic.dart`.
 //
 // To fix an entry by hand, edit `data/bank_codes/<cc>.jsonl` and run
 // `dart run tool/build_assets.dart` to regenerate the asset.
