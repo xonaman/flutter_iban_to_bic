@@ -20,9 +20,9 @@ class IbanToBic {
   final Map<String, CountrySpec> _assetSpecs = <String, CountrySpec>{};
 
   IbanToBic({Map<String, CountrySpec>? countries})
-      : _countries = countries == null
-            ? _buildDefaultCountries()
-            : Map<String, CountrySpec>.of(countries) {
+    : _countries = countries == null
+          ? _buildDefaultCountries()
+          : Map<String, CountrySpec>.of(countries) {
     for (final MapEntry<String, CountrySpec> e in _countries.entries) {
       if (e.value.resolver is AssetJsonResolver) {
         _assetSpecs[e.key] = e.value;
@@ -50,20 +50,22 @@ class IbanToBic {
       if (_countries[code]?.resolver is SyncBicResolver) continue;
       final AssetJsonResolver resolver =
           assetSpec.resolver as AssetJsonResolver;
-      work.add(resolver.preload().then((void _) {
-        // Re-check after the await: a concurrent preload may have
-        // already swapped the spec, and we don't want to overwrite it
-        // with an equivalent-but-fresh wrapper.
-        if (_countries[code]?.resolver is SyncBicResolver) return;
-        final SyncBicResolver? synced = resolver.asSync();
-        if (synced != null) {
-          _countries[code] = CountrySpec(
-            bankCodeStart: assetSpec.bankCodeStart,
-            bankCodeEnd: assetSpec.bankCodeEnd,
-            resolver: synced,
-          );
-        }
-      }));
+      work.add(
+        resolver.preload().then((void _) {
+          // Re-check after the await: a concurrent preload may have
+          // already swapped the spec, and we don't want to overwrite it
+          // with an equivalent-but-fresh wrapper.
+          if (_countries[code]?.resolver is SyncBicResolver) return;
+          final SyncBicResolver? synced = resolver.asSync();
+          if (synced != null) {
+            _countries[code] = CountrySpec(
+              bankCodeStart: assetSpec.bankCodeStart,
+              bankCodeEnd: assetSpec.bankCodeEnd,
+              resolver: synced,
+            );
+          }
+        }),
+      );
     }
     await Future.wait<void>(work);
   }
@@ -157,9 +159,9 @@ class _Prelude {
   final CountrySpec? spec;
 
   const _Prelude.early(this.earlyResult)
-      : countryCode = null,
-        bankCode = null,
-        spec = null;
+    : countryCode = null,
+      bankCode = null,
+      spec = null;
 
   const _Prelude.resolved({
     required this.countryCode,
@@ -199,10 +201,10 @@ const String _assetDir = 'packages/iban_to_bic/assets/bank_codes';
 Map<String, CountrySpec> _buildDefaultCountries() {
   Map<String, CountrySpec>? mapOrNull;
   CountrySpec spec(int start, int end, String cc) => CountrySpec(
-        bankCodeStart: start,
-        bankCodeEnd: end,
-        resolver: AssetJsonResolver('$_assetDir/${cc.toLowerCase()}.json'),
-      );
+    bankCodeStart: start,
+    bankCodeEnd: end,
+    resolver: AssetJsonResolver('$_assetDir/${cc.toLowerCase()}.json'),
+  );
   return mapOrNull ??= <String, CountrySpec>{
     'AT': spec(4, 9, 'AT'),
     'BE': spec(4, 7, 'BE'),

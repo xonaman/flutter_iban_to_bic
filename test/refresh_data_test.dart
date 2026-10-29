@@ -95,7 +95,8 @@ void main() {
       // Row for 50070010 from the Bundesbank file valid 2026-09-07 to
       // 2026-12-06, split at field boundaries. The PAN (27100) sits in
       // columns 135-139, directly in front of the BIC.
-      const String row = '50070010'
+      const String row =
+          '50070010'
           '1'
           'Deutsche Bank                                             '
           '60254'
@@ -112,6 +113,35 @@ void main() {
       expect(entry.bankShortName, 'Deutsche Bank');
       expect(entry.bankPostcode, '60254');
       expect(entry.bankLocation, 'Frankfurt am Main');
+    });
+  });
+
+  group('findBundesbankBlzTxtUrl', () {
+    test('picks the current unpacked TXT file', () {
+      const String html =
+          '<a href="https://www.bundesbank.de/resource/blob/1/a/X/blz-neu-txt-data.txt">new</a>'
+          '<a href="https://www.bundesbank.de/resource/blob/2/b/X/blz-aktuell-txt-zip-data.zip">zip</a>'
+          '<a href="https://www.bundesbank.de/resource/blob/3/c/X/blz-aktuell-txt-data.txt">txt</a>';
+      expect(
+        findBundesbankBlzTxtUrl(html),
+        'https://www.bundesbank.de/resource/blob/3/c/X/blz-aktuell-txt-data.txt',
+      );
+    });
+
+    test('resolves site-relative links', () {
+      expect(
+        findBundesbankBlzTxtUrl(
+          '<a href="/resource/blob/3/c/X/blz-aktuell-txt-data.txt">txt</a>',
+        ),
+        'https://www.bundesbank.de/resource/blob/3/c/X/blz-aktuell-txt-data.txt',
+      );
+    });
+
+    test('returns null when no current TXT link is present', () {
+      expect(
+        findBundesbankBlzTxtUrl('<a href="/blz-neu-txt-data.txt">'),
+        isNull,
+      );
     });
   });
 }

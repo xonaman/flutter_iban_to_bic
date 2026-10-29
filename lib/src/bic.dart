@@ -41,13 +41,13 @@ class Bic {
       (value.length == 8 || value.length == 11) && _bicShape.hasMatch(value);
 
   Map<String, String?> toJson() => <String, String?>{
-        'bic': value,
-        'bankName': bankName,
-        'bankShortName': bankShortName,
-        if (bankAddress != null) 'bankAddress': bankAddress,
-        if (bankPostcode != null) 'bankPostcode': bankPostcode,
-        if (bankLocation != null) 'bankLocation': bankLocation,
-      };
+    'bic': value,
+    'bankName': bankName,
+    'bankShortName': bankShortName,
+    if (bankAddress != null) 'bankAddress': bankAddress,
+    if (bankPostcode != null) 'bankPostcode': bankPostcode,
+    if (bankLocation != null) 'bankLocation': bankLocation,
+  };
 
   @override
   String toString() => 'Bic(${json.encode(toJson())})';
@@ -65,13 +65,13 @@ class Bic {
 
   @override
   int get hashCode => Object.hash(
-        value,
-        bankName,
-        bankShortName,
-        bankAddress,
-        bankPostcode,
-        bankLocation,
-      );
+    value,
+    bankName,
+    bankShortName,
+    bankAddress,
+    bankPostcode,
+    bankLocation,
+  );
 }
 
 final RegExp _bicShape = RegExp(r'^[A-Z0-9]+$');
