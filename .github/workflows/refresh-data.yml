@@ -19,6 +19,13 @@ permissions:
   # Open, update and close the tracking issue for skipped/failed refreshes.
   issues: write
 
+# Serialize runs (without cancelling queued ones) so overlapping scheduled
+# and manual runs can't open duplicate tracking issues or race on the
+# refresh PR branch.
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest

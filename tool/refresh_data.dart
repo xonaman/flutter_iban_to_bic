@@ -194,7 +194,7 @@ class RefreshSummary {
       ..writeln('| --- | --- | --- |');
     for (final CountryResult r in results) {
       final String details = r.status == RefreshStatus.refreshed
-          ? '${r.entries} entries'
+          ? '${r.entries} ${r.entries == 1 ? 'entry' : 'entries'}'
           : _escapeMarkdownCell(r.reason ?? '');
       sb.writeln('| ${r.country} | ${r.status.name} | $details |');
     }

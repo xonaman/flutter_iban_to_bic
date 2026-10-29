@@ -229,7 +229,7 @@ void main() {
         summary.toMarkdown(),
         '| Country | Status | Details |\n'
         '| --- | --- | --- |\n'
-        '| BE | refreshed | 1 entries |\n'
+        '| BE | refreshed | 1 entry |\n'
         '| DE | skipped | upstream URL needs rotating |\n'
         '| NL | failed | Bad state: GET failed: HTTP 404 more \\| detail |\n',
       );
