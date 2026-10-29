@@ -4,8 +4,14 @@ License (see LICENSE).
 
 The bank-code datasets in assets/bank_codes/ are NOT covered by the MIT
 License. They are derived from the publications listed below, and their
-publishers' terms apply. Values (bank codes, BICs, names, addresses) are
-reproduced as published; only the file format has been changed.
+publishers' terms apply. The values kept (bank codes, BICs, names,
+addresses) are reproduced as published, but the datasets are not complete
+copies of the sources. They have been:
+  - converted to JSON, one entry per bank code;
+  - reduced to the fields this package uses (other columns are dropped);
+  - filtered to the rows a bank-code-to-BIC lookup needs. For example,
+    only the Bundesbank's main records (Merkmal 1) are kept, and rows
+    without a BIC are left out.
 
 -------------------------------------------------------------------------------
 AT  assets/bank_codes/at.json
