@@ -1,3 +1,19 @@
+## Unreleased
+
+* IBANs are now validated against the SWIFT IBAN Registry: an IBAN from a
+  registered country must have exactly that country's length (e.g. 22 for
+  DE) and a BBAN in its registered format (e.g. four letters, then ten
+  digits for NL). Wrong lengths report `InvalidIbanReason.tooShort` or
+  `tooLong`, and a BBAN in the wrong format reports `badShape`. Before,
+  any 15-34 character IBAN with a valid checksum passed, so a German IBAN
+  with a digit missing could still reach the bank-code lookup. Countries
+  missing from the registry keep the old 15-34 rule. No new enum values,
+  so exhaustive `switch`es over `InvalidIbanReason` keep compiling.
+* The built-in countries' bank-code positions now come from a table
+  generated from the registry (`lib/src/iban_registry.g.dart`) instead of
+  hand-coded offsets. The values are unchanged. Regenerate it with
+  `dart run tool/generate_iban_registry.dart <iban-registry.txt>`.
+
 ## 2.3.0
 
 * Requires Dart 3.8 / Flutter 3.32 or newer (was Dart 3.0). The dev

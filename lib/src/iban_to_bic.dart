@@ -4,6 +4,7 @@ import 'asset_resolver.dart';
 import 'bic.dart';
 import 'country_spec.dart';
 import 'iban.dart';
+import 'iban_registry.dart';
 import 'resolver.dart';
 import 'result.dart';
 
@@ -21,7 +22,7 @@ class IbanToBic {
 
   IbanToBic({Map<String, CountrySpec>? countries})
     : _countries = countries == null
-          ? _buildDefaultCountries()
+          ? buildDefaultCountries()
           : Map<String, CountrySpec>.of(countries) {
     for (final MapEntry<String, CountrySpec> e in _countries.entries) {
       if (e.value.resolver is AssetJsonResolver) {
@@ -198,21 +199,28 @@ final IbanToBic _shared = IbanToBic();
 
 const String _assetDir = 'packages/iban_to_bic/assets/bank_codes';
 
-Map<String, CountrySpec> _buildDefaultCountries() {
-  Map<String, CountrySpec>? mapOrNull;
-  CountrySpec spec(int start, int end, String cc) => CountrySpec(
-    bankCodeStart: start,
-    bankCodeEnd: end,
-    resolver: AssetJsonResolver('$_assetDir/${cc.toLowerCase()}.json'),
-  );
-  return mapOrNull ??= <String, CountrySpec>{
-    'AT': spec(4, 9, 'AT'),
-    'BE': spec(4, 7, 'BE'),
-    'DE': spec(4, 12, 'DE'),
-    'ES': spec(4, 8, 'ES'),
-    'FR': spec(4, 9, 'FR'),
-    'LT': spec(4, 9, 'LT'),
-    'LU': spec(4, 7, 'LU'),
-    'NL': spec(4, 8, 'NL'),
-  };
-}
+/// Countries with bundled bank-code data.
+///
+/// Where the bank code sits comes from the SWIFT IBAN Registry
+/// ([ibanRegistry]); only the dataset per country is chosen here.
+const List<String> _bundledCountries = <String>[
+  'AT',
+  'BE',
+  'DE',
+  'ES',
+  'FR',
+  'LT',
+  'LU',
+  'NL',
+];
+
+/// The built-in country specs. Not exported from the package; public so
+/// tests can cross-check them against the registry.
+Map<String, CountrySpec> buildDefaultCountries() => <String, CountrySpec>{
+  for (final String cc in _bundledCountries)
+    cc: CountrySpec(
+      bankCodeStart: ibanRegistry[cc]!.bankCodeStart,
+      bankCodeEnd: ibanRegistry[cc]!.bankCodeEnd,
+      resolver: AssetJsonResolver('$_assetDir/${cc.toLowerCase()}.json'),
+    ),
+};
