@@ -176,10 +176,15 @@ jobs:
               gh issue comment "$issue" --repo "$GITHUB_REPOSITORY" \
                 --body-file "$RUNNER_TEMP/issue-body.md"
             else
-              gh label create data-refresh --repo "$GITHUB_REPOSITORY" \
-                --color 0E8A16 \
-                --description 'Automated bank-code data refresh' \
-                2>/dev/null || true
+              # Create the label only if it's missing, so real errors
+              # (e.g. permissions) still fail the step visibly.
+              if ! gh label list --repo "$GITHUB_REPOSITORY" \
+                --search data-refresh --json name \
+                --jq '.[].name' | grep -qx data-refresh; then
+                gh label create data-refresh --repo "$GITHUB_REPOSITORY" \
+                  --color 0E8A16 \
+                  --description 'Automated bank-code data refresh'
+              fi
               gh issue create --repo "$GITHUB_REPOSITORY" \
                 --title "$title" --label data-refresh \
                 --body-file "$RUNNER_TEMP/issue-body.md"
