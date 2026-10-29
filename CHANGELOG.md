@@ -8,8 +8,8 @@
 * Bank data now ships as generated Dart libraries
   (`lib/src/data/<cc>.g.dart`) loaded through deferred imports instead of
   Flutter assets. On the web each country is split into its own file that
-  is only downloaded on first use. `tool/refresh_data.dart` writes these
-  libraries; `assets/bank_codes/` is gone.
+  is only downloaded on first use. `tool/build_assets.dart` generates them
+  from `data/bank_codes/` (see below); `assets/bank_codes/` is gone.
 * New `LazyJsonResolver`, which loads a JSON dataset from any
   `Future<String> Function()` on first use and supports `preload`/`evict`.
 * `AssetJsonResolver` is deprecated in favour of
@@ -29,6 +29,17 @@
   source, BIC accuracy and whether it is refreshed automatically.
 * Non-breaking: `BicFound(bic)` still compiles and defaults to `exact`, and
   the sealed `IbanLookupResult` hierarchy is unchanged.
+* The bundled datasets use a compact, normalized format: banks that share
+  every field are stored once with all their codes, and field names are
+  replaced by positions. The data shrinks from 982 KB to 488 KB (gzip:
+  137 KB to 119 KB). Lookups return exactly the same results.
+  `LazyJsonResolver` (and the deprecated `AssetJsonResolver`) read both
+  this form and the previous one-object-per-code JSON, so custom datasets
+  keep working.
+* The data is maintained in `data/bank_codes/<cc>.jsonl`, one sorted code
+  per line, and the generated datasets are built from it with
+  `dart run tool/build_assets.dart`; CI fails if they are out of date.
+  Refresh pull requests now list added, removed and changed codes.
 
 ## 2.3.0
 

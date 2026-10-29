@@ -1,9 +1,7 @@
-// Refreshes `lib/src/data/<cc>.g.dart` from each country's authoritative
-// source. Run manually or via the `refresh-data` GitHub Action.
-//
-// Each generated library holds the country's bank codes as one JSON string
-// constant (one bank per line, so refresh diffs stay reviewable). The
-// package loads it through a deferred import and decodes it on first use.
+// Refreshes `data/bank_codes/<cc>.jsonl` (the reviewed source) and the
+// generated `lib/src/data/<cc>.g.dart` (the runtime dataset) from each
+// country's authoritative source. Run manually or via the `refresh-data`
+// GitHub Action. See `tool/bank_codes.dart` for both formats.
 //
 // Adding a new country:
 //   1. Register it under `adapters` below.
@@ -11,9 +9,14 @@
 //      returns `{ bankCode: BankEntry(bic, bankName, bankShortName, ...) }`.
 //      Fetch from the central bank / competent authority — no scraping of
 //      third-party aggregators.
-//   3. If the country is new, add a deferred import for its generated
-//      library to `lib/src/data/bank_codes.dart` and register its bank-code
-//      offsets in `lib/src/iban_to_bic.dart`.
+//   3. Run the refresh for it, which creates `data/bank_codes/<cc>.jsonl`
+//      and `lib/src/data/<cc>.g.dart`, and add a deferred import for the
+//      latter to `lib/src/data/bank_codes.dart`.
+//   4. Register the country and its bank-code range (the IBAN character
+//      offsets) in `_buildDefaultCountries` in `lib/src/iban_to_bic.dart`.
+//
+// To fix an entry by hand, edit `data/bank_codes/<cc>.jsonl` and run
+// `dart run tool/build_assets.dart` to regenerate the dataset.
 //
 // Run with:
 //   dart run tool/refresh_data.dart           # refresh everything
@@ -24,32 +27,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-class BankEntry {
-  final String bic;
-  final String bankName;
-  final String bankShortName;
-  final String? bankAddress;
-  final String? bankPostcode;
-  final String? bankLocation;
+import 'bank_codes.dart';
 
-  BankEntry({
-    required this.bic,
-    required this.bankName,
-    required this.bankShortName,
-    this.bankAddress,
-    this.bankPostcode,
-    this.bankLocation,
-  });
-
-  Map<String, String?> toJson() => <String, String?>{
-    'bic': bic,
-    'bankName': bankName,
-    'bankShortName': bankShortName,
-    if (bankAddress != null) 'bankAddress': bankAddress,
-    if (bankPostcode != null) 'bankPostcode': bankPostcode,
-    if (bankLocation != null) 'bankLocation': bankLocation,
-  };
-}
+export 'bank_codes.dart' show BankEntry;
 
 typedef CountryAdapter = Future<Map<String, BankEntry>> Function();
 
@@ -65,7 +45,7 @@ class AdapterSkipped implements Exception {
 }
 
 /// Registry of per-country adapters. `null` means "not yet implemented" and
-/// the refresh script leaves the existing dataset untouched.
+/// the refresh script leaves the existing data untouched.
 final Map<String, CountryAdapter?> adapters = <String, CountryAdapter?>{
   'AT': null,
   'BE': null,
@@ -96,14 +76,11 @@ Future<void> main(List<String> args) async {
     try {
       print('[$cc] fetching…');
       final Map<String, BankEntry> entries = await adapter();
-      final String path = bankCodesLibraryPath(cc);
-      final Map<String, Map<String, String?>> asJson =
-          <String, Map<String, String?>>{
-            for (final MapEntry<String, BankEntry> e in entries.entries)
-              e.key: e.value.toJson(),
-          };
-      File(path).writeAsStringSync(renderBankCodesLibrary(cc, asJson));
-      print('[$cc] wrote $path (${entries.length} entries)');
+      writeCountry(cc, entries);
+      print(
+        '[$cc] wrote ${sourcePath(cc)} and ${libraryPath(cc)} '
+        '(${entries.length} entries)',
+      );
       refreshed++;
     } on AdapterSkipped catch (e) {
       print('[$cc] skipped: $e');
@@ -117,47 +94,6 @@ Future<void> main(List<String> args) async {
   print('---');
   print('refreshed: $refreshed  skipped: $skipped  failed: $failed');
   if (failed > 0) exit(1);
-}
-
-/// Where the generated dataset library for [countryCode] lives.
-String bankCodesLibraryPath(String countryCode) =>
-    'lib/src/data/${countryCode.toLowerCase()}.g.dart';
-
-/// Renders [rows] (bank code → JSON row) as the Dart library the package
-/// loads for [countryCode].
-///
-/// The JSON is embedded verbatim in a raw string, one bank per line. That
-/// keeps the file the same size as plain JSON, needs no escaping, and
-/// keeps the Dart compilers from building a huge constant map.
-String renderBankCodesLibrary(
-  String countryCode,
-  Map<String, Map<String, String?>> rows,
-) {
-  final String cc = countryCode.toUpperCase();
-  final List<String> lines = <String>[
-    for (final MapEntry<String, Map<String, String?>> e in rows.entries)
-      '${jsonEncode(e.key)}:${jsonEncode(e.value)}',
-  ];
-  final String body = lines.join(',\n');
-  const String quotes = "'''";
-  // A raw triple-quoted string can't contain its own delimiter. jsonEncode
-  // never escapes `'`, so guard against a bank name with three in a row.
-  if (body.contains(quotes)) {
-    throw StateError("$cc dataset contains ''' and can't be embedded");
-  }
-  return <String>[
-    '// GENERATED by tool/refresh_data.dart. Do not edit by hand; run',
-    '// `dart run tool/refresh_data.dart $cc` instead.',
-    '',
-    '/// $cc bank codes as a JSON object: bank code → bank details, one per '
-        'line.',
-    'const String bankCodesJson = r$quotes',
-    '{',
-    body,
-    '}',
-    '$quotes;',
-    '',
-  ].join('\n');
 }
 
 // ---------------------------------------------------------------------------

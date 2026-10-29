@@ -70,8 +70,8 @@ against the new data, and opens a PR with the diff if anything changed.
 
 1. Add an adapter function in `tool/refresh_data.dart`.
 2. Register it in the `adapters` map.
-3. Run `dart run tool/refresh_data.dart <CC>` to generate
-   `lib/src/data/<cc>.g.dart`.
+3. Run `dart run tool/refresh_data.dart <CC>` to create the source
+   `data/bank_codes/<cc>.jsonl` and the generated `lib/src/data/<cc>.g.dart`.
 4. Add a deferred import for it to `lib/src/data/bank_codes.dart` and its
    bank-code offsets to `_buildDefaultCountries` in
    `lib/src/iban_to_bic.dart`.

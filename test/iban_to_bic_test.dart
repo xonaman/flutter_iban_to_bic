@@ -507,28 +507,14 @@ void main() {
   });
 
   group('bundled datasets', () {
-    test('every entry carries a BIC', () async {
-      // One line per offending dataset, so a failure names every one.
-      final List<String> problems = <String>[];
+    // Runs on every platform, so on the web it also exercises the deferred
+    // per-country loading. Content checks live in bank_codes_test.dart.
+    test('every supported country has a non-empty dataset', () async {
       for (final String cc in sharedIbanToBic.supportedCountries) {
         final Map<String, dynamic> decoded =
             json.decode(await loadBankCodesJson(cc)) as Map<String, dynamic>;
-        expect(decoded, isNotEmpty, reason: cc);
-        final List<String> missing = <String>[
-          for (final MapEntry<String, dynamic> e in decoded.entries)
-            if (((e.value as Map<String, dynamic>)['bic'] as String? ?? '')
-                .trim()
-                .isEmpty)
-              e.key,
-        ];
-        if (missing.isNotEmpty) {
-          problems.add(
-            '$cc: ${missing.length} of ${decoded.length} '
-            'entries have no BIC (e.g. ${missing.take(5).join(', ')})',
-          );
-        }
+        expect(decoded['banks'], isNotEmpty, reason: cc);
       }
-      expect(problems, isEmpty);
     });
 
     test('unknown country has no dataset', () {
