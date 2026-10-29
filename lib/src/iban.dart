@@ -4,13 +4,34 @@
 /// package has zero runtime dependencies beyond Flutter itself.
 library;
 
+import 'iban_registry.dart';
+
 // Matches ASCII whitespace plus U+00A0 (non-breaking space), which bank
 // PDFs and some payment-form paste flows insert between IBAN groups.
 final RegExp _whitespace = RegExp(r'[\s ]+');
 final RegExp _ibanShape = RegExp(r'^[A-Z]{2}\d{2}[A-Z0-9]+$');
 
 /// Why an IBAN failed validation.
-enum InvalidIbanReason { empty, tooShort, tooLong, badShape, badChecksum }
+enum InvalidIbanReason {
+  /// The input was empty after normalization.
+  empty,
+
+  /// Shorter than the length the SWIFT IBAN Registry sets for the IBAN's
+  /// country, or shorter than 15 characters for countries it doesn't list.
+  tooShort,
+
+  /// Longer than the length the SWIFT IBAN Registry sets for the IBAN's
+  /// country, or longer than 34 characters for countries it doesn't list.
+  tooLong,
+
+  /// Not two letters, two check digits and alphanumerics, or the BBAN does
+  /// not follow the country's registered format (e.g. a letter where the
+  /// registry requires digits).
+  badShape,
+
+  /// The ISO 7064 mod-97 check digits don't match.
+  badChecksum,
+}
 
 /// Outcome of validating an IBAN — either ok or a specific reason it failed.
 sealed class IbanValidation {
@@ -31,12 +52,27 @@ String normalizeIban(String raw) =>
     raw.replaceAll(_whitespace, '').toUpperCase();
 
 /// Validates an already-[normalizeIban]-normalized IBAN per ISO 13616.
+///
+/// For countries listed in the SWIFT IBAN Registry, the exact length and
+/// the BBAN format are checked too.
 IbanValidation validateIban(String iban) {
   if (iban.isEmpty) return const IbanInvalid(InvalidIbanReason.empty);
   if (iban.length < 15) return const IbanInvalid(InvalidIbanReason.tooShort);
   if (iban.length > 34) return const IbanInvalid(InvalidIbanReason.tooLong);
   if (!_ibanShape.hasMatch(iban)) {
     return const IbanInvalid(InvalidIbanReason.badShape);
+  }
+  final IbanRegistryEntry? entry = ibanRegistry[iban.substring(0, 2)];
+  if (entry != null) {
+    if (iban.length < entry.ibanLength) {
+      return const IbanInvalid(InvalidIbanReason.tooShort);
+    }
+    if (iban.length > entry.ibanLength) {
+      return const IbanInvalid(InvalidIbanReason.tooLong);
+    }
+    if (!entry.matchesBban(iban.substring(4))) {
+      return const IbanInvalid(InvalidIbanReason.badShape);
+    }
   }
 
   // Move first four chars to the end, then replace letters with digits
