@@ -85,13 +85,40 @@ await lookup.lookup('DE64 5001 0517 9423 8144 35');
 
 ## Supported countries
 
-| Code | Country     | Bank-code offset |
-|------|-------------|------------------|
-| AT   | Austria     | 4–9              |
-| BE   | Belgium     | 4–7              |
-| DE   | Germany     | 4–12             |
-| ES   | Spain       | 4–8              |
-| FR   | France      | 4–9              |
-| LT   | Lithuania   | 4–9              |
-| LU   | Luxembourg  | 4–7              |
-| NL   | Netherlands | 4–8              |
+| Code | Country     | Bank-code offset | Data source | BIC accuracy | Automated refresh |
+|------|-------------|------------------|-------------|--------------|-------------------|
+| AT   | Austria     | 4–9              | [OeNB](https://www.oenb.at/) SEPA directory | exact | no (manual) |
+| BE   | Belgium     | 4–7              | [NBB](https://www.nbb.be/en/payments-and-securities/payment-standards/bank-identification-codes) bank identification codes | exact | no (manual) |
+| DE   | Germany     | 4–12             | [Deutsche Bundesbank](https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes) BLZ file | exact | yes (weekly) |
+| ES   | Spain       | 4–8              | inherited from [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic), no official source yet | institution | no |
+| FR   | France      | 4–9              | inherited from [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic), no official source yet | institution | no |
+| LT   | Lithuania   | 4–9              | inherited from [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic), no official source yet | exact | no |
+| LU   | Luxembourg  | 4–7              | [ABBL](https://www.abbl.lu/) IBAN/BIC register | exact | no (manual) |
+| NL   | Netherlands | 4–8              | [Betaalvereniging](https://www.betaalvereniging.nl/) BIC list | exact | no (manual) |
+
+**BIC accuracy** is reported on every `BicFound` as `accuracy`
+(`BicAccuracy.exact` or `BicAccuracy.institution`, with an `isExact`
+shortcut):
+
+* **exact** — the IBAN has no branch code, and the national directory assigns
+  one BIC per bank code, so the result is the account's BIC (as of the
+  dataset's date). The Bundesbank, for example, requires each BLZ's main
+  record to carry a BIC that reaches the institution in every SEPA scheme.
+* **institution** — the IBAN carries a branch code after the bank code
+  (Spain: *oficina*, France: *code guichet*) that the lookup does not use.
+  The result is the institution's main BIC, which SEPA payments to that
+  institution generally accept, but the account may be held under a branch
+  BIC. Every La Banque Postale IBAN starts with bank code `20041`, for
+  instance, yet accounts are held at regional centres with BICs such as
+  `PSSTFRPPPAR` (Paris) or `PSSTFRPPLIL` (Lille); the lookup returns
+  `PSSTFRPPXXX`. Don't present such a BIC to users as verified for their
+  account.
+
+```dart
+if (result case BicFound(:final bic, isExact: false)) {
+  print('${bic.value} identifies the bank; the branch BIC may differ.');
+}
+```
+
+If you register your own `CountrySpec`, pass `accuracy:` to match your data
+(it defaults to `BicAccuracy.exact`).
