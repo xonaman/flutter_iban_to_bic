@@ -19,9 +19,12 @@ permissions:
   # Open, update and close the tracking issue for skipped/failed refreshes.
   issues: write
 
-# Serialize runs (without cancelling queued ones) so overlapping scheduled
-# and manual runs can't open duplicate tracking issues or race on the
-# refresh PR branch.
+# Serialize runs so overlapping scheduled and manual runs can't open
+# duplicate tracking issues or race on the refresh PR branch. The running
+# job is never cancelled, but GitHub keeps only one pending run per group:
+# a newer queued run replaces an older pending one. Weekly runs take a few
+# minutes, so in practice only a manual run started during another run can
+# be dropped; start it again once the current run finishes.
 concurrency:
   group: refresh-data
   cancel-in-progress: false
@@ -52,6 +55,12 @@ jobs:
           COUNTRIES: ${{ inputs.countries }}
         run: |
           read -r -a countries <<< "$COUNTRIES"
+          for cc in "${countries[@]}"; do
+            if [[ ! "$cc" =~ ^[A-Za-z]{2}$ ]]; then
+              echo "::error::Invalid country code: $cc"
+              exit 64
+            fi
+          done
           dart run tool/refresh_data.dart \
             --summary-json="$RUNNER_TEMP/refresh-summary.json" \
             --summary-markdown="$RUNNER_TEMP/refresh-summary.md" \

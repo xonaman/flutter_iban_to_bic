@@ -74,6 +74,10 @@ single tracking issue titled **Scheduled data refresh needs attention**
 - Countries without an adapter never trigger it.
 - Only scheduled runs and manual runs over all countries touch the issue;
   a manual run for a subset of countries leaves it alone.
+- Runs are serialized (`concurrency: refresh-data`) so two runs can't race
+  on the issue or the refresh branch. GitHub keeps only one pending run per
+  group, so a manual run queued behind another pending run is cancelled;
+  start it again once the current run finishes.
 
 To fix a broken refresh, check the run linked from the issue. For Germany,
 the usual cause is a changed Bundesbank download page: update
