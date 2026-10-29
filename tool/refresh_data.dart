@@ -21,6 +21,10 @@
 // Run with:
 //   dart run tool/refresh_data.dart           # refresh everything
 //   dart run tool/refresh_data.dart DE NL     # refresh only these countries
+//
+// Options:
+//   --summary-json=<path>      write a per-country status summary as JSON
+//   --summary-markdown=<path>  write the same summary as a Markdown table
 
 // ignore_for_file: avoid_print
 
@@ -58,42 +62,168 @@ final Map<String, CountryAdapter?> adapters = <String, CountryAdapter?>{
 };
 
 Future<void> main(List<String> args) async {
-  final Iterable<String> targets = args.isEmpty
-      ? adapters.keys
-      : args.map((String a) => a.toUpperCase());
-
-  int refreshed = 0;
-  int skipped = 0;
-  int failed = 0;
-
-  for (final String cc in targets) {
-    final CountryAdapter? adapter = adapters[cc];
-    if (adapter == null) {
-      print('[$cc] no adapter yet — skipping');
-      skipped++;
-      continue;
+  String? summaryJsonPath;
+  String? summaryMarkdownPath;
+  final List<String> countries = <String>[];
+  for (final String arg in args) {
+    if (arg.startsWith('--summary-json=')) {
+      summaryJsonPath = arg.substring('--summary-json='.length);
+    } else if (arg.startsWith('--summary-markdown=')) {
+      summaryMarkdownPath = arg.substring('--summary-markdown='.length);
+    } else if (arg.startsWith('--')) {
+      stderr.writeln('Unknown option: $arg');
+      exit(64);
+    } else {
+      countries.add(arg.toUpperCase());
     }
-    try {
-      print('[$cc] fetching…');
-      final Map<String, BankEntry> entries = await adapter();
+  }
+
+  final RefreshSummary summary = await refreshCountries(
+    countries.isEmpty ? adapters.keys : countries,
+    adapters,
+    write: (String cc, Map<String, BankEntry> entries) {
       writeCountry(cc, entries);
       print(
         '[$cc] wrote ${sourcePath(cc)} and ${libraryPath(cc)} '
         '(${entries.length} entries)',
       );
-      refreshed++;
-    } on AdapterSkipped catch (e) {
-      print('[$cc] skipped: $e');
-      skipped++;
-    } catch (e, st) {
-      stderr.writeln('[$cc] failed: $e\n$st');
-      failed++;
-    }
+    },
+  );
+
+  if (summaryJsonPath != null) {
+    File(summaryJsonPath).writeAsStringSync(
+      '${const JsonEncoder.withIndent('  ').convert(summary.toJson())}\n',
+    );
+  }
+  if (summaryMarkdownPath != null) {
+    File(summaryMarkdownPath).writeAsStringSync(summary.toMarkdown());
   }
 
   print('---');
-  print('refreshed: $refreshed  skipped: $skipped  failed: $failed');
-  if (failed > 0) exit(1);
+  print(
+    'refreshed: ${summary.count(RefreshStatus.refreshed)}  '
+    'skipped: ${summary.count(RefreshStatus.skipped)}  '
+    'failed: ${summary.count(RefreshStatus.failed)}  '
+    'no adapter: ${summary.count(RefreshStatus.notImplemented)}',
+  );
+  if (summary.count(RefreshStatus.failed) > 0) exit(1);
+}
+
+/// Outcome of refreshing a single country.
+enum RefreshStatus {
+  /// The adapter ran and the dataset was written.
+  refreshed,
+
+  /// The adapter threw [AdapterSkipped].
+  skipped,
+
+  /// The adapter threw anything else.
+  failed,
+
+  /// No adapter is registered for the country; its data is left untouched.
+  notImplemented,
+}
+
+class CountryResult {
+  CountryResult(this.country, this.status, {this.entries, this.reason});
+
+  final String country;
+  final RefreshStatus status;
+
+  /// Number of entries written, for [RefreshStatus.refreshed].
+  final int? entries;
+
+  /// Why the country wasn't refreshed, for every other status.
+  final String? reason;
+
+  Map<String, Object?> toJson() => <String, Object?>{
+    'country': country,
+    'status': status.name,
+    if (entries != null) 'entries': entries,
+    if (reason != null) 'reason': reason,
+  };
+}
+
+/// Machine-readable result of a refresh run, consumed by the
+/// `refresh-data` workflow to open or close its tracking issue.
+class RefreshSummary {
+  RefreshSummary(this.results);
+
+  final List<CountryResult> results;
+
+  int count(RefreshStatus status) =>
+      results.where((CountryResult r) => r.status == status).length;
+
+  /// Whether an implemented adapter skipped or failed. Countries without an
+  /// adapter don't count: there is nothing to fix until one is written.
+  bool get needsAttention => results.any(
+    (CountryResult r) =>
+        r.status == RefreshStatus.skipped || r.status == RefreshStatus.failed,
+  );
+
+  Map<String, Object?> toJson() => <String, Object?>{
+    'needsAttention': needsAttention,
+    'counts': <String, int>{
+      for (final RefreshStatus s in RefreshStatus.values) s.name: count(s),
+    },
+    'countries': <Map<String, Object?>>[
+      for (final CountryResult r in results) r.toJson(),
+    ],
+  };
+
+  String toMarkdown() {
+    final StringBuffer sb = StringBuffer()
+      ..writeln('| Country | Status | Details |')
+      ..writeln('| --- | --- | --- |');
+    for (final CountryResult r in results) {
+      final String details = r.status == RefreshStatus.refreshed
+          ? '${r.entries} ${r.entries == 1 ? 'entry' : 'entries'}'
+          : _escapeMarkdownCell(r.reason ?? '');
+      sb.writeln('| ${r.country} | ${r.status.name} | $details |');
+    }
+    return sb.toString();
+  }
+
+  static String _escapeMarkdownCell(String s) =>
+      s.replaceAll(RegExp(r'\s*\n\s*'), ' ').replaceAll('|', r'\|').trim();
+}
+
+/// Runs the adapters in [registry] for each of [targets], passing every
+/// successful result to [write], and records each country's outcome.
+Future<RefreshSummary> refreshCountries(
+  Iterable<String> targets,
+  Map<String, CountryAdapter?> registry, {
+  required void Function(String cc, Map<String, BankEntry> entries) write,
+}) async {
+  final List<CountryResult> results = <CountryResult>[];
+  for (final String cc in targets) {
+    final CountryAdapter? adapter = registry[cc];
+    if (adapter == null) {
+      final String reason = registry.containsKey(cc)
+          ? 'no adapter yet'
+          : 'unknown country';
+      print('[$cc] $reason — skipping');
+      results.add(
+        CountryResult(cc, RefreshStatus.notImplemented, reason: reason),
+      );
+      continue;
+    }
+    try {
+      print('[$cc] fetching…');
+      final Map<String, BankEntry> entries = await adapter();
+      write(cc, entries);
+      results.add(
+        CountryResult(cc, RefreshStatus.refreshed, entries: entries.length),
+      );
+    } on AdapterSkipped catch (e) {
+      print('[$cc] skipped: $e');
+      results.add(CountryResult(cc, RefreshStatus.skipped, reason: e.reason));
+    } catch (e, st) {
+      stderr.writeln('[$cc] failed: $e\n$st');
+      results.add(CountryResult(cc, RefreshStatus.failed, reason: '$e'));
+    }
+  }
+  return RefreshSummary(results);
 }
 
 // ---------------------------------------------------------------------------
