@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter_test/flutter_test.dart';
 
 import '../tool/refresh_data.dart';
@@ -141,6 +143,95 @@ void main() {
       expect(
         findBundesbankBlzTxtUrl('<a href="/blz-neu-txt-data.txt">'),
         isNull,
+      );
+    });
+  });
+
+  group('refreshCountries', () {
+    final Map<String, CountryAdapter?> registry = <String, CountryAdapter?>{
+      'AT': null,
+      'BE': () async => <String, BankEntry>{
+        '001': BankEntry(
+          bic: 'GEBABEBBXXX',
+          bankName: 'BNP',
+          bankShortName: 'BNP',
+        ),
+      },
+      'DE': () async => throw AdapterSkipped('upstream URL needs rotating'),
+      'NL': () async => throw StateError('GET failed: HTTP 404\nmore | detail'),
+    };
+
+    test('records each country and writes only refreshed ones', () async {
+      final Map<String, int> written = <String, int>{};
+      final RefreshSummary summary = await refreshCountries(
+        <String>['AT', 'BE', 'DE', 'NL', 'XX'],
+        registry,
+        write: (String cc, Map<String, BankEntry> e) => written[cc] = e.length,
+      );
+
+      expect(written, <String, int>{'BE': 1});
+      expect(summary.needsAttention, isTrue);
+      expect(jsonDecode(jsonEncode(summary.toJson())), <String, Object?>{
+        'needsAttention': true,
+        'counts': <String, int>{
+          'refreshed': 1,
+          'skipped': 1,
+          'failed': 1,
+          'notImplemented': 2,
+        },
+        'countries': <Map<String, Object?>>[
+          <String, Object?>{
+            'country': 'AT',
+            'status': 'notImplemented',
+            'reason': 'no adapter yet',
+          },
+          <String, Object?>{
+            'country': 'BE',
+            'status': 'refreshed',
+            'entries': 1,
+          },
+          <String, Object?>{
+            'country': 'DE',
+            'status': 'skipped',
+            'reason': 'upstream URL needs rotating',
+          },
+          <String, Object?>{
+            'country': 'NL',
+            'status': 'failed',
+            'reason': 'Bad state: GET failed: HTTP 404\nmore | detail',
+          },
+          <String, Object?>{
+            'country': 'XX',
+            'status': 'notImplemented',
+            'reason': 'unknown country',
+          },
+        ],
+      });
+    });
+
+    test('countries without an adapter do not need attention', () async {
+      final RefreshSummary summary = await refreshCountries(
+        <String>['AT', 'BE'],
+        registry,
+        write: (_, _) {},
+      );
+      expect(summary.needsAttention, isFalse);
+      expect(summary.toJson()['needsAttention'], isFalse);
+    });
+
+    test('renders a Markdown table with escaped reasons', () async {
+      final RefreshSummary summary = await refreshCountries(
+        <String>['BE', 'DE', 'NL'],
+        registry,
+        write: (_, _) {},
+      );
+      expect(
+        summary.toMarkdown(),
+        '| Country | Status | Details |\n'
+        '| --- | --- | --- |\n'
+        '| BE | refreshed | 1 entry |\n'
+        '| DE | skipped | upstream URL needs rotating |\n'
+        '| NL | failed | Bad state: GET failed: HTTP 404 more \\| detail |\n',
       );
     });
   });
