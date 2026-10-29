@@ -10,9 +10,11 @@ jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
-    # Required for pub.dev trusted-publisher OIDC.
     permissions:
+      # Required for pub.dev trusted-publisher OIDC.
       id-token: write
+      # Required to create the GitHub release.
+      contents: write
 
     steps:
       - name: Check out code
@@ -56,5 +58,34 @@ jobs:
       - name: Dry run
         run: dart pub publish --dry-run
 
+      # Runs before publishing so a missing CHANGELOG entry stops the
+      # release instead of leaving pub.dev ahead of GitHub.
+      - name: Extract release notes from CHANGELOG
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          awk -v heading="## $VERSION" '
+            $0 == heading { found = 1; next }
+            found && /^## / { exit }
+            found && /^<!--.*-->$/ { next }
+            found { print }
+          ' CHANGELOG.md > "$RUNNER_TEMP/release_notes.md"
+          if ! grep -q '[^[:space:]]' "$RUNNER_TEMP/release_notes.md"; then
+            echo "::error::No CHANGELOG.md entry found for $VERSION"
+            exit 1
+          fi
+
       - name: Publish
         run: dart pub publish --force
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Tags like v1.2.3-beta.1 become GitHub pre-releases.
+          PRERELEASE=""
+          case "$GITHUB_REF_NAME" in *-*) PRERELEASE="--prerelease" ;; esac
+          gh release create "$GITHUB_REF_NAME" \
+            --title "$GITHUB_REF_NAME" \
+            --notes-file "$RUNNER_TEMP/release_notes.md" \
+            --verify-tag \
+            $PRERELEASE
