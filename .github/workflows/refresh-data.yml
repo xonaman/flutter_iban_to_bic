@@ -40,11 +40,15 @@ jobs:
           # Optional override. When unset, the script reads the current file's
           # URL off the Bundesbank download page.
           BUNDESBANK_BLZ_URL: ${{ vars.BUNDESBANK_BLZ_URL }}
+          # Passed through env (not interpolated into the script) so the
+          # input can't inject shell commands.
+          COUNTRIES: ${{ inputs.countries }}
         run: |
+          read -r -a countries <<< "$COUNTRIES"
           dart run tool/refresh_data.dart \
             --summary-json="$RUNNER_TEMP/refresh-summary.json" \
             --summary-markdown="$RUNNER_TEMP/refresh-summary.md" \
-            ${{ inputs.countries }}
+            "${countries[@]}"
 
       - name: Publish refresh summary
         if: always()
@@ -99,13 +103,14 @@ jobs:
           summary_md="$RUNNER_TEMP/refresh-summary.md"
           title='Scheduled data refresh needs attention'
 
-          if [ -f "$summary_json" ]; then
-            needs_attention=$(jq -r '.needsAttention' "$summary_json")
-          else
-            needs_attention=true
+          adapters_ok=false
+          if [ -f "$summary_json" ] &&
+            [ "$(jq -r '.needsAttention' "$summary_json")" = 'false' ]; then
+            adapters_ok=true
           fi
-          if [ "$JOB_STATUS" != 'success' ]; then
-            needs_attention=true
+          needs_attention=true
+          if [ "$adapters_ok" = 'true' ] && [ "$JOB_STATUS" = 'success' ]; then
+            needs_attention=false
           fi
 
           issue=$(gh issue list --repo "$GITHUB_REPOSITORY" \
@@ -114,8 +119,14 @@ jobs:
 
           if [ "$needs_attention" = 'true' ]; then
             {
-              echo "The [data refresh run]($RUN_URL) did not refresh every"
-              echo 'country with an adapter (job status: `'"$JOB_STATUS"'`).'
+              if [ "$adapters_ok" = 'true' ]; then
+                echo "Every country with an adapter refreshed, but a later step"
+                echo "of the [data refresh run]($RUN_URL) failed (job status:"
+                echo '`'"$JOB_STATUS"'`). Check the tests and PR creation steps.'
+              else
+                echo "The [data refresh run]($RUN_URL) did not refresh every"
+                echo 'country with an adapter (job status: `'"$JOB_STATUS"'`).'
+              fi
               echo
               if [ -f "$summary_md" ]; then
                 cat "$summary_md"
