@@ -46,6 +46,10 @@ jobs:
         if: ${{ !matrix.version }}
         run: dart format --output=none --set-exit-if-changed .
 
+      - name: Check generated bank-code assets are up to date
+        if: ${{ !matrix.version }}
+        run: dart run tool/build_assets.dart --check
+
       - name: Analyze
         run: dart analyze --fatal-infos
 
