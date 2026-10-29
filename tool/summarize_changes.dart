@@ -40,9 +40,9 @@ void main(List<String> args) {
       ? 'No bank codes changed.'
       : out.toString().trimRight();
   if (summary.length > maxSummaryLength) {
-    summary =
-        '${summary.substring(0, maxSummaryLength)}\n\n'
-        '_Summary truncated; see the diff of `$sourceDir/`._';
+    final String notice =
+        '\n\n_Summary truncated; see the diff of `$sourceDir/`._';
+    summary = summary.substring(0, maxSummaryLength - notice.length) + notice;
   }
   print(summary);
 }
