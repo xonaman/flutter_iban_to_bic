@@ -233,6 +233,29 @@ void main() {
       expect(changed?['validUntil'], '2026-12-06');
     });
 
+    test('keeps hand-written notes while the source is unchanged', () {
+      final Map<String, dynamic> noted = entry()..['notes'] = 'by hand';
+      final Map<String, dynamic>? changed = mergeMetaEntry(
+        noted,
+        entry(sha: 'def'),
+      );
+      expect(changed?['notes'], 'by hand');
+      expect(
+        mergeMetaEntry(
+          noted,
+          entry(sha: 'def')..['notes'] = 'from adapter',
+        )?['notes'],
+        'from adapter',
+      );
+      expect(
+        mergeMetaEntry(
+          noted,
+          entry(url: 'https://example.com/other.txt'),
+        )?['notes'],
+        isNull,
+      );
+    });
+
     test('drops dates when the source file changed', () {
       final Map<String, dynamic>? changed = mergeMetaEntry(
         entry(),

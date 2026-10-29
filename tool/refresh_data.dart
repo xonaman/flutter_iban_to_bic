@@ -69,6 +69,7 @@ class DatasetSource {
     required this.url,
     this.effectiveFrom,
     this.validUntil,
+    this.notes,
   });
 
   final String publisher;
@@ -79,6 +80,9 @@ class DatasetSource {
 
   /// Last day the upstream file is valid, if stated.
   final DateTime? validUntil;
+
+  /// Remarks for `meta.json`, e.g. why a date is unknown.
+  final String? notes;
 }
 
 /// Sources recorded by adapters during this run, keyed by country code.
@@ -183,17 +187,18 @@ Map<String, dynamic> buildMetaEntry(
   'effectiveFrom': _day(source?.effectiveFrom),
   'validUntil': _day(source?.validUntil),
   'sha256': sha256.convert(utf8.encode(body)).toString(),
-  'notes': null,
+  'notes': source?.notes,
 };
 
 /// Combines a country's existing `meta.json` entry ([old]) with a freshly
 /// built one ([fresh]). Returns `null` when nothing worth recording
 /// changed, so an unchanged refresh doesn't bump `retrievedOn`.
 ///
-/// When the source URL is the same file as before but the adapter couldn't
-/// tell its dates (e.g. `BUNDESBANK_BLZ_URL` pins a file, so the download
-/// page isn't read), the previously known dates are kept rather than
-/// replaced with unknowns.
+/// When the source URL is the same as before, fields the adapter left
+/// unknown keep their recorded values: the dates (e.g. `BUNDESBANK_BLZ_URL`
+/// pins a file, so the download page isn't read) and hand-written `notes`.
+/// A different source URL means a different file, so stale dates and notes
+/// are dropped unless the adapter supplies new ones.
 Map<String, dynamic>? mergeMetaEntry(
   Map<String, dynamic>? old,
   Map<String, dynamic> fresh,
@@ -201,7 +206,7 @@ Map<String, dynamic>? mergeMetaEntry(
   if (old == null) return fresh;
   final Map<String, dynamic> next = Map<String, dynamic>.of(fresh);
   if (next['sourceUrl'] != null && next['sourceUrl'] == old['sourceUrl']) {
-    for (final String k in <String>['effectiveFrom', 'validUntil']) {
+    for (final String k in <String>['effectiveFrom', 'validUntil', 'notes']) {
       next[k] ??= old[k];
     }
   }
@@ -211,6 +216,7 @@ Map<String, dynamic>? mergeMetaEntry(
     'sourceUrl',
     'effectiveFrom',
     'validUntil',
+    'notes',
   ];
   if (tracked.every((String k) => old[k] == next[k])) return null;
   return next;
