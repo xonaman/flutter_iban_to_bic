@@ -95,3 +95,8 @@ await lookup.lookup('DE64 5001 0517 9423 8144 35');
 | LT   | Lithuania   | 4–9              |
 | LU   | Luxembourg  | 4–7              |
 | NL   | Netherlands | 4–8              |
+
+AT, BE, DE, LU and NL data is refreshed weekly from the central bank or
+banking association that assigns the codes. ES, FR and LT data is
+unmaintained: there is no downloadable official source, so it may miss
+new banks or list codes that are no longer in use.
