@@ -1,8 +1,83 @@
-import 'package:flutter_test/flutter_test.dart';
+@TestOn('vm')
+library;
+
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:test/test.dart';
 
 import '../tool/refresh_data.dart';
 
 void main() {
+  group('renderBankCodesLibrary', () {
+    test('embeds rows as JSON, one bank per line', () {
+      final String source = renderBankCodesLibrary(
+        'nl',
+        <String, Map<String, String?>>{
+          'ABNA': <String, String?>{
+            'bic': 'ABNANL2A',
+            'bankName': r"ABN AMRO's \$ bank",
+            'bankShortName': 'ABN AMRO',
+          },
+          'INGB': <String, String?>{
+            'bic': 'INGBNL2A',
+            'bankName': 'ING',
+            'bankShortName': 'ING',
+          },
+        },
+      );
+      expect(source, contains('dart run tool/refresh_data.dart NL'));
+      expect(
+        source,
+        contains(
+          "r'''\n{\n"
+          '"ABNA":{"bic":"ABNANL2A","bankName":"ABN AMRO\'s \\\\\$ bank",'
+          '"bankShortName":"ABN AMRO"},\n'
+          '"INGB":{"bic":"INGBNL2A","bankName":"ING","bankShortName":"ING"}\n'
+          "}\n''';\n",
+        ),
+      );
+    });
+
+    test("rejects data containing '''", () {
+      expect(
+        () => renderBankCodesLibrary('NL', <String, Map<String, String?>>{
+          'ABNA': <String, String?>{'bankName': "a'''b"},
+        }),
+        throwsStateError,
+      );
+    });
+
+    test('checked-in datasets match the generator output', () {
+      final List<File> files = Directory('lib/src/data')
+          .listSync()
+          .whereType<File>()
+          .where((File f) => f.path.endsWith('.g.dart'))
+          .toList();
+      expect(files, isNotEmpty);
+      for (final File file in files) {
+        final String cc = file.uri.pathSegments.last.split('.').first;
+        final String source = file.readAsStringSync();
+        final int start = source.indexOf("r'''") + 4;
+        final int end = source.lastIndexOf("'''");
+        final Map<String, dynamic> decoded =
+            json.decode(source.substring(start, end)) as Map<String, dynamic>;
+        final Map<String, Map<String, String?>> rows =
+            <String, Map<String, String?>>{
+              for (final MapEntry<String, dynamic> e in decoded.entries)
+                e.key: (e.value as Map<String, dynamic>)
+                    .cast<String, String?>(),
+            };
+        expect(
+          renderBankCodesLibrary(cc, rows),
+          source,
+          reason: '${file.path} differs from what the generator writes',
+        );
+        expect(file.path, bankCodesLibraryPath(cc));
+      }
+    });
+  });
+
   group('parseBundesbankBlz', () {
     test('extracts active rows and skips inactive or BIC-less', () {
       final String text = <String>[

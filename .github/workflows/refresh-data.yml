@@ -24,14 +24,11 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v6
 
-      - name: Set up Flutter (stable)
-        uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          cache: true
+      - name: Set up Dart (stable)
+        uses: dart-lang/setup-dart@v1
 
       - name: Install dependencies
-        run: flutter pub get
+        run: dart pub get
 
       - name: Run refresh script
         env:
@@ -42,12 +39,12 @@ jobs:
           dart run tool/refresh_data.dart ${{ inputs.countries }}
 
       - name: Run tests against refreshed data
-        run: flutter test
+        run: dart test
 
       - name: Detect changes
         id: diff
         run: |
-          if git diff --quiet -- assets/bank_codes; then
+          if git diff --quiet -- lib/src/data; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"

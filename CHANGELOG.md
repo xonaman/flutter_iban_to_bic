@@ -1,3 +1,23 @@
+## Unreleased
+
+* The package is now pure Dart and no longer depends on Flutter, so it
+  works on Dart servers and CLIs too, and `dart test` runs the test suite.
+  The lookup API (`ibanToBic`, `ibanToBicAsync`, `preloadIbanToBic`,
+  `evictIbanToBic`, `IbanToBic`) is unchanged, and Flutter apps no longer
+  need `WidgetsFlutterBinding.ensureInitialized()` before a lookup.
+* Bank data now ships as generated Dart libraries
+  (`lib/src/data/<cc>.g.dart`) loaded through deferred imports instead of
+  Flutter assets. On the web each country is split into its own file that
+  is only downloaded on first use. `tool/refresh_data.dart` writes these
+  libraries; `assets/bank_codes/` is gone.
+* New `LazyJsonResolver`, which loads a JSON dataset from any
+  `Future<String> Function()` on first use and supports `preload`/`evict`.
+* `AssetJsonResolver` is deprecated in favour of
+  `LazyJsonResolver(() => rootBundle.loadString(path))` and will be removed
+  in the next major release. Without Flutter it can no longer default to
+  `rootBundle`: pass `bundle: rootBundle` explicitly, otherwise loading
+  fails with a `StateError`.
+
 ## 2.3.0
 
 * Requires Dart 3.8 / Flutter 3.32 or newer (was Dart 3.0). The dev

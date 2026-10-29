@@ -1,8 +1,10 @@
-include: package:flutter_lints/flutter.yaml
+include: package:lints/recommended.yaml
 
 # Kept in sync with the flutter tool's AnalysisOptionsMigration, which
-# rewrites this file during `flutter pub get` unless every entry is already
-# present -- and a rewritten file fails `dart pub publish --dry-run`.
+# rewrites a Flutter package's analysis_options.yaml during `flutter pub get`
+# unless every entry is already present -- and a rewritten file fails
+# `dart pub publish --dry-run`. The package itself is pure Dart now, but
+# example/ is still a Flutter app.
 analyzer:
   exclude:
     - build/**

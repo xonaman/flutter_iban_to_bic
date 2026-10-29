@@ -11,49 +11,55 @@ on:
 
 jobs:
   test:
-    name: Flutter ${{ matrix.channel }}${{ matrix.version && format(' {0}', matrix.version) || '' }}
+    name: Dart ${{ matrix.sdk }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        # Listed explicitly: an `include` entry that only adds `version`
-        # would be merged into the plain stable job instead of adding one.
-        include:
-          - channel: stable
-          - channel: beta
-          # Oldest Flutter allowed by pubspec.yaml's environment constraint.
-          - channel: stable
-            version: 3.32.0
+        # 3.8.0 is the oldest SDK allowed by pubspec.yaml's environment
+        # constraint.
+        sdk: [stable, beta, 3.8.0]
 
     steps:
       - name: Check out code
         uses: actions/checkout@v6
 
-      - name: Set up Flutter (${{ matrix.channel }})
-        uses: subosito/flutter-action@v2
+      - name: Set up Dart (${{ matrix.sdk }})
+        uses: dart-lang/setup-dart@v1
         with:
-          channel: ${{ matrix.channel }}
-          flutter-version: ${{ matrix.version }}
-          cache: true
+          sdk: ${{ matrix.sdk }}
 
-      - name: Print Flutter version
-        run: flutter --version
+      - name: Print Dart version
+        run: dart --version
 
       - name: Install dependencies
-        run: flutter pub get
+        run: dart pub get
 
       - name: Verify formatting
-        if: ${{ !matrix.version }}
+        if: matrix.sdk != '3.8.0'
         run: dart format --output=none --set-exit-if-changed .
 
+      # The example is a Flutter app and is analyzed in the example job.
       - name: Analyze
-        run: dart analyze --fatal-infos
+        run: dart analyze --fatal-infos lib test tool
 
-      - name: Run tests with coverage
-        run: flutter test --coverage
+      - name: Run tests (VM)
+        run: dart test
+
+      # Exercises the deferred per-country dataset loading under dart2js
+      # and dart2wasm.
+      - name: Run tests (Chrome, dart2js and dart2wasm)
+        if: matrix.sdk == 'stable'
+        run: dart test --platform chrome --compiler dart2js,dart2wasm
+
+      - name: Collect coverage
+        if: matrix.sdk == 'stable'
+        run: |
+          dart pub global activate coverage
+          dart pub global run coverage:test_with_coverage
 
       - name: Upload coverage artifact
-        if: matrix.channel == 'stable' && !matrix.version
+        if: matrix.sdk == 'stable'
         uses: actions/upload-artifact@v7
         with:
           name: coverage-lcov
@@ -61,12 +67,30 @@ jobs:
           if-no-files-found: warn
 
       - name: pub publish --dry-run
-        if: matrix.channel == 'stable' && !matrix.version
+        if: matrix.sdk == 'stable'
         run: dart pub publish --dry-run
 
-      - name: Build example (web)
-        if: matrix.channel == 'stable' && !matrix.version
+  example:
+    name: Flutter example
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+
+      - name: Set up Flutter (stable)
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
         working-directory: example
-        run: |
-          flutter pub get
-          flutter build web --no-tree-shake-icons
+        run: flutter pub get
+
+      - name: Analyze
+        working-directory: example
+        run: dart analyze --fatal-infos
+
+      - name: Build example (web)
+        working-directory: example
+        run: flutter build web --no-tree-shake-icons

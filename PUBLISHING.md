@@ -70,16 +70,22 @@ against the new data, and opens a PR with the diff if anything changed.
 
 1. Add an adapter function in `tool/refresh_data.dart`.
 2. Register it in the `adapters` map.
-3. Make sure `assets/bank_codes/<cc>.json` is listed in `pubspec.yaml`.
-4. Add a minimal test to `test/iban_to_bic_test.dart`.
+3. Run `dart run tool/refresh_data.dart <CC>` to generate
+   `lib/src/data/<cc>.g.dart`.
+4. Add a deferred import for it to `lib/src/data/bank_codes.dart` and its
+   bank-code offsets to `_buildDefaultCountries` in
+   `lib/src/iban_to_bic.dart`.
+5. Add a minimal test to `test/iban_to_bic_test.dart`.
 
 ## CI
 
 Every push and PR to `main` runs `.github/workflows/ci.yml`:
 
-- Flutter **stable** and **beta** channels in parallel
+- Dart **stable**, **beta** and **3.8.0** (the SDK floor) in parallel
 - `dart format --set-exit-if-changed`
 - `dart analyze --fatal-infos`
-- `flutter test --coverage`
+- `dart test` on the VM, plus Chrome (dart2js and dart2wasm) and coverage
+  on stable
 - `dart pub publish --dry-run` on stable — catches score/lint issues before
   a release is cut
+- a Flutter stable job that analyzes and builds the example app for the web

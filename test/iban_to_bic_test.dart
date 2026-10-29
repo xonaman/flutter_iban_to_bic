@@ -1,15 +1,13 @@
 import 'dart:convert';
-import 'dart:io';
 
-import 'package:flutter/services.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:iban_to_bic/iban_to_bic.dart';
+import 'package:iban_to_bic/src/data/bank_codes.dart';
+import 'package:test/test.dart';
 
 void main() {
   // Sync entry points require datasets to be preloaded. Do it once for the
   // whole suite so individual tests don't each pay the I/O.
   setUpAll(() async {
-    TestWidgetsFlutterBinding.ensureInitialized();
     await preloadIbanToBic(sharedIbanToBic.supportedCountries);
   });
 
@@ -344,28 +342,25 @@ void main() {
     );
   });
 
-  group('AssetJsonResolver error handling', () {
+  group('LazyJsonResolver error handling', () {
     test('transient load error does not latch a rejected future', () async {
-      final _FlakyBundle bundle = _FlakyBundle();
-      final AssetJsonResolver resolver = AssetJsonResolver(
-        'fake/path.json',
-        bundle: bundle,
-      );
+      final _FlakyLoader loader = _FlakyLoader();
+      final LazyJsonResolver resolver = LazyJsonResolver(loader.load);
 
-      bundle.mode = _FlakyMode.fail;
+      loader.mode = _FlakyMode.fail;
       await expectLater(resolver.resolve('anything'), throwsStateError);
 
       // Without the whenComplete-style reset, this second call would
       // re-await the same rejected future and throw the original error.
-      bundle.mode = _FlakyMode.succeed;
+      loader.mode = _FlakyMode.succeed;
       final Bic? bic = await resolver.resolve('10010010');
       expect(bic, isNotNull);
       expect(bic!.value, 'PBNKDEFFXXX');
-      expect(bundle.calls, 2, reason: 'should have retried the asset load');
+      expect(loader.calls, 2, reason: 'should have retried the load');
     });
   });
 
-  group('AssetJsonResolver rows without a BIC', () {
+  group('LazyJsonResolver rows without a BIC', () {
     // Mirrors the shape of real dataset rows that carry a bank name but
     // no BIC, plus a whitespace-only BIC and one valid row as a control.
     const String rows =
@@ -381,10 +376,7 @@ void main() {
         'DE': CountrySpec(
           bankCodeStart: 4,
           bankCodeEnd: 12,
-          resolver: AssetJsonResolver(
-            'fake/de.json',
-            bundle: _StringBundle(rows),
-          ),
+          resolver: LazyJsonResolver(() async => rows),
         ),
       },
     );
@@ -415,20 +407,13 @@ void main() {
   });
 
   group('bundled datasets', () {
-    test('every entry carries a BIC', () {
-      final List<File> assets =
-          Directory('assets/bank_codes')
-              .listSync()
-              .whereType<File>()
-              .where((File f) => f.path.endsWith('.json'))
-              .toList()
-            ..sort((File a, File b) => a.path.compareTo(b.path));
-      expect(assets, isNotEmpty);
-      // One line per offending file, so a failure names every dataset.
+    test('every entry carries a BIC', () async {
+      // One line per offending dataset, so a failure names every one.
       final List<String> problems = <String>[];
-      for (final File asset in assets) {
+      for (final String cc in sharedIbanToBic.supportedCountries) {
         final Map<String, dynamic> decoded =
-            json.decode(asset.readAsStringSync()) as Map<String, dynamic>;
+            json.decode(await loadBankCodesJson(cc)) as Map<String, dynamic>;
+        expect(decoded, isNotEmpty, reason: cc);
         final List<String> missing = <String>[
           for (final MapEntry<String, dynamic> e in decoded.entries)
             if (((e.value as Map<String, dynamic>)['bic'] as String? ?? '')
@@ -438,12 +423,40 @@ void main() {
         ];
         if (missing.isNotEmpty) {
           problems.add(
-            '${asset.path}: ${missing.length} of ${decoded.length} '
+            '$cc: ${missing.length} of ${decoded.length} '
             'entries have no BIC (e.g. ${missing.take(5).join(', ')})',
           );
         }
       }
       expect(problems, isEmpty);
+    });
+
+    test('unknown country has no dataset', () {
+      expect(loadBankCodesJson('GB'), throwsArgumentError);
+    });
+  });
+
+  group('AssetJsonResolver (deprecated)', () {
+    const String json =
+        '{"10010010":{"bic":"PBNKDEFFXXX","bankName":"Postbank",'
+        '"bankShortName":"Postbank"}}';
+
+    test('loads through any bundle with loadString', () async {
+      final _FakeBundle bundle = _FakeBundle(json);
+      // ignore: deprecated_member_use_from_same_package
+      final AssetJsonResolver resolver = AssetJsonResolver(
+        'assets/de.json',
+        bundle: bundle,
+      );
+      expect(resolver, isA<LazyJsonResolver>());
+      expect((await resolver.resolve('10010010'))!.value, 'PBNKDEFFXXX');
+      expect(bundle.keys, <String>['assets/de.json']);
+    });
+
+    test('without a bundle, loading fails with a StateError', () async {
+      // ignore: deprecated_member_use_from_same_package
+      final AssetJsonResolver resolver = AssetJsonResolver('assets/de.json');
+      await expectLater(resolver.resolve('10010010'), throwsStateError);
     });
   });
 
@@ -508,10 +521,9 @@ void main() {
 
 enum _FlakyMode { fail, succeed }
 
-// Non-caching bundle — CachingAssetBundle would latch the first rejected
-// future, which defeats the test. We want AssetJsonResolver's own retry
-// logic to be the only thing under test.
-class _FlakyBundle extends AssetBundle {
+// Fails or succeeds on demand and counts calls, so the test can check
+// that LazyJsonResolver retries after a failed load.
+class _FlakyLoader {
   _FlakyMode mode = _FlakyMode.succeed;
   int calls = 0;
 
@@ -519,35 +531,26 @@ class _FlakyBundle extends AssetBundle {
       '{"10010010":{"bic":"PBNKDEFFXXX","bankName":"Postbank",'
       '"bankShortName":"Postbank"}}';
 
-  @override
-  Future<ByteData> load(String key) async {
+  Future<String> load() async {
     calls++;
     if (mode == _FlakyMode.fail) {
-      throw StateError('simulated asset load failure');
+      throw StateError('simulated load failure');
     }
-    final Uint8List bytes = Uint8List.fromList(utf8.encode(_successJson));
-    return ByteData.view(bytes.buffer);
-  }
-
-  @override
-  Future<String> loadString(String key, {bool cache = true}) async {
-    final ByteData data = await load(key);
-    return utf8.decode(data.buffer.asUint8List());
+    return _successJson;
   }
 }
 
-class _StringBundle extends AssetBundle {
-  _StringBundle(this.contents);
+// Stands in for a Flutter AssetBundle: AssetJsonResolver only needs
+// loadString.
+class _FakeBundle {
+  _FakeBundle(this.contents);
   final String contents;
+  final List<String> keys = <String>[];
 
-  @override
-  Future<ByteData> load(String key) async {
-    final Uint8List bytes = Uint8List.fromList(utf8.encode(contents));
-    return ByteData.view(bytes.buffer);
+  Future<String> loadString(String key, {bool cache = true}) async {
+    keys.add(key);
+    return contents;
   }
-
-  @override
-  Future<String> loadString(String key, {bool cache = true}) async => contents;
 }
 
 class _AsyncResolver implements BicResolver {

@@ -1,9 +1,10 @@
 import 'dart:async';
 
-import 'asset_resolver.dart';
 import 'bic.dart';
 import 'country_spec.dart';
+import 'data/bank_codes.dart';
 import 'iban.dart';
+import 'json_resolver.dart';
 import 'resolver.dart';
 import 'result.dart';
 
@@ -15,17 +16,17 @@ import 'result.dart';
 /// [BicResolver] or override the built-in country data.
 class IbanToBic {
   final Map<String, CountrySpec> _countries;
-  // Preserves the original asset-backed spec per country so [evict] can
+  // Preserves the original lazily loaded spec per country so [evict] can
   // restore it after [preload] swapped in a sync-cached variant.
-  final Map<String, CountrySpec> _assetSpecs = <String, CountrySpec>{};
+  final Map<String, CountrySpec> _lazySpecs = <String, CountrySpec>{};
 
   IbanToBic({Map<String, CountrySpec>? countries})
     : _countries = countries == null
           ? _buildDefaultCountries()
           : Map<String, CountrySpec>.of(countries) {
     for (final MapEntry<String, CountrySpec> e in _countries.entries) {
-      if (e.value.resolver is AssetJsonResolver) {
-        _assetSpecs[e.key] = e.value;
+      if (e.value.resolver is LazyJsonResolver) {
+        _lazySpecs[e.key] = e.value;
       }
     }
   }
@@ -43,13 +44,12 @@ class IbanToBic {
     final List<Future<void>> work = <Future<void>>[];
     for (final String raw in countryCodes) {
       final String code = raw.toUpperCase();
-      final CountrySpec? assetSpec = _assetSpecs[code];
-      if (assetSpec == null) continue;
+      final CountrySpec? lazySpec = _lazySpecs[code];
+      if (lazySpec == null) continue;
       // Already preloaded + swapped — skip the redundant allocations.
       // Matters for call patterns like preload-per-keystroke.
       if (_countries[code]?.resolver is SyncBicResolver) continue;
-      final AssetJsonResolver resolver =
-          assetSpec.resolver as AssetJsonResolver;
+      final LazyJsonResolver resolver = lazySpec.resolver as LazyJsonResolver;
       work.add(
         resolver.preload().then((void _) {
           // Re-check after the await: a concurrent preload may have
@@ -59,8 +59,8 @@ class IbanToBic {
           final SyncBicResolver? synced = resolver.asSync();
           if (synced != null) {
             _countries[code] = CountrySpec(
-              bankCodeStart: assetSpec.bankCodeStart,
-              bankCodeEnd: assetSpec.bankCodeEnd,
+              bankCodeStart: lazySpec.bankCodeStart,
+              bankCodeEnd: lazySpec.bankCodeEnd,
               resolver: synced,
             );
           }
@@ -73,17 +73,18 @@ class IbanToBic {
   /// Drops the cached dataset for [countryCode] so its memory can be
   /// reclaimed. After eviction, [lookupSync] will return [NotPreloaded]
   /// for that country until [preload] is awaited again; [lookup] keeps
-  /// working and re-reads the asset on the next call.
+  /// working and re-parses the dataset on the next call.
   ///
-  /// No-op for countries that were never preloaded, not asset-backed, or
+  /// No-op for countries that were never preloaded, not backed by a
+  /// [LazyJsonResolver], or
   /// not registered. Country codes are case-insensitive.
   void evict(String countryCode) {
     final String code = countryCode.toUpperCase();
-    final CountrySpec? assetSpec = _assetSpecs[code];
-    if (assetSpec == null) return;
-    (assetSpec.resolver as AssetJsonResolver).evict();
+    final CountrySpec? lazySpec = _lazySpecs[code];
+    if (lazySpec == null) return;
+    (lazySpec.resolver as LazyJsonResolver).evict();
     // Restore the async spec so lookupSync reports NotPreloaded again.
-    _countries[code] = assetSpec;
+    _countries[code] = lazySpec;
   }
 
   /// Resolves the [rawIban] to a [Bic].
@@ -107,7 +108,7 @@ class IbanToBic {
   /// Synchronous variant of [lookup].
   ///
   /// Returns [NotPreloaded] if the country's resolver is async (for the
-  /// built-in asset-backed resolvers, that means [preload] has not yet been
+  /// built-in datasets, that means [preload] has not yet been
   /// awaited). Callers that prefer to fail fast can pattern-match on the
   /// result and throw at the call site.
   IbanLookupResult lookupSync(String rawIban) {
@@ -196,14 +197,12 @@ IbanToBic get sharedIbanToBic => _shared;
 
 final IbanToBic _shared = IbanToBic();
 
-const String _assetDir = 'packages/iban_to_bic/assets/bank_codes';
-
 Map<String, CountrySpec> _buildDefaultCountries() {
   Map<String, CountrySpec>? mapOrNull;
   CountrySpec spec(int start, int end, String cc) => CountrySpec(
     bankCodeStart: start,
     bankCodeEnd: end,
-    resolver: AssetJsonResolver('$_assetDir/${cc.toLowerCase()}.json'),
+    resolver: LazyJsonResolver(() => loadBankCodesJson(cc)),
   );
   return mapOrNull ??= <String, CountrySpec>{
     'AT': spec(4, 9, 'AT'),

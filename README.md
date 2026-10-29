@@ -2,13 +2,18 @@ Determines the SWIFT BIC of an IBAN. Currently supports IBANs from the following
 Austria, Belgium, Germany, Spain, France, Lithuania, Luxembourg, Netherlands. Inspired by
 [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic).
 
+Pure Dart with no dependencies: works in Flutter apps, on Dart servers and
+CLIs, and on the web.
+
 ## Getting started
 
 ### Depend on it
 
 ```
-flutter pub add iban_to_bic
+dart pub add iban_to_bic
 ```
+
+or, in a Flutter app, `flutter pub add iban_to_bic`.
 
 ### Import it
 
@@ -44,8 +49,10 @@ void main() {
 
 ## Sync vs. async
 
-Bank-code datasets ship as JSON assets and are loaded lazily, so the default
-path is async. Two APIs:
+Bank-code datasets ship inside the package as one deferred library per
+country and are parsed on first use, so the default path is async. On the
+web, each country's data is a separate JavaScript (or Wasm) file that is only
+downloaded when that country is first looked up. Two APIs:
 
 ```dart
 // Async — no setup required:
@@ -65,6 +72,18 @@ preload; otherwise just use the async variant.
 Implement `SyncBicResolver` for in-memory data, or `BicResolver` (returns
 `FutureOr<Bic?>`) for async sources — an overlay on top of the built-in maps,
 a corporate registry, the ECB directory, etc.
+
+For a JSON file in the built-in format (`{"<bank code>": {"bic": …,
+"bankName": …, "bankShortName": …}}`), `LazyJsonResolver` takes any loader,
+loads it on first use and supports `preload`/`evict` like the built-in data:
+
+```dart
+// Flutter asset (replaces the deprecated AssetJsonResolver):
+LazyJsonResolver(() => rootBundle.loadString('assets/my_banks.json'));
+
+// File on a server:
+LazyJsonResolver(() => File('my_banks.json').readAsString());
+```
 
 ```dart
 class EcbResolver implements BicResolver {

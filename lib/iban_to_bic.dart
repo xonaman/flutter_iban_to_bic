@@ -8,6 +8,7 @@ export 'src/bic.dart';
 export 'src/country_spec.dart';
 export 'src/iban.dart' show InvalidIbanReason;
 export 'src/asset_resolver.dart' show AssetJsonResolver;
+export 'src/json_resolver.dart' show LazyJsonResolver;
 export 'src/iban_to_bic.dart'
     show
         IbanToBic,
