@@ -76,8 +76,11 @@ single tracking issue titled **Scheduled data refresh needs attention**
   a manual run for a subset of countries leaves it alone.
 - Runs are serialized (`concurrency: refresh-data`) so two runs can't race
   on the issue or the refresh branch. GitHub keeps only one pending run per
-  group, so a manual run queued behind another pending run is cancelled;
-  start it again once the current run finishes.
+  group: a newer queued run cancels an older pending one, whether scheduled
+  or manual. A cancelled run doesn't update the tracking issue, so a manual
+  run started while another run is in progress can displace a pending
+  scheduled run and its alert. Wait for the current run to finish before
+  starting a manual one.
 
 To fix a broken refresh, check the run linked from the issue. For Germany,
 the usual cause is a changed Bundesbank download page: update

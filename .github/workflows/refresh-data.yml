@@ -22,9 +22,10 @@ permissions:
 # Serialize runs so overlapping scheduled and manual runs can't open
 # duplicate tracking issues or race on the refresh PR branch. The running
 # job is never cancelled, but GitHub keeps only one pending run per group:
-# a newer queued run replaces an older pending one. Weekly runs take a few
-# minutes, so in practice only a manual run started during another run can
-# be dropped; start it again once the current run finishes.
+# a newer queued run cancels an older pending one, scheduled or manual.
+# A cancelled run never reaches the tracking-issue step, so if a manual
+# subset run displaces a pending scheduled run, that week's alert is lost.
+# Avoid starting manual runs while another run is in progress.
 concurrency:
   group: refresh-data
   cancel-in-progress: false
