@@ -225,6 +225,43 @@ void main() {
     });
   });
 
+  group('splitCsvLine', () {
+    test('splits plain fields', () {
+      expect(splitCsvLine('a;;b', ';'), <String>['a', '', 'b']);
+    });
+
+    test('unquotes fields, keeping delimiters and escaped quotes', () {
+      expect(splitCsvLine('"52300";"Bank; ""Nord""";X', ';'), <String>[
+        '52300',
+        'Bank; "Nord"',
+        'X',
+      ]);
+    });
+
+    test('lets parseOenbSepa read quoted rows', () {
+      const String text =
+          'Kennzeichen;Identnummer;Bankleitzahl;Bankenname;Straße;PLZ;Ort;'
+          'SWIFT-Code\n'
+          '"Hauptanstalt";"1";"52300";"Bank; Nord";"Weg 1";"1010";"Wien";'
+          '"ABCDATWWXXX"';
+      final BankEntry entry = parseOenbSepa(text)['52300']!;
+      expect(entry.bic, 'ABCDATWWXXX');
+      expect(entry.bankName, 'Bank; Nord');
+    });
+  });
+
+  group('checkPlausibleSize', () {
+    test('accepts normal churn and new countries', () {
+      checkPlausibleSize(860, 866);
+      checkPlausibleSize(10, 0);
+    });
+
+    test('rejects empty or truncated results', () {
+      expect(() => checkPlausibleSize(0, 0), throwsStateError);
+      expect(() => checkPlausibleSize(400, 866), throwsStateError);
+    });
+  });
+
   group('parseNbbBic', () {
     final Map<String, BankEntry> parsed = parseNbbBic(
       readXlsxRows(File('test/fixtures/nbb_full_list.xlsx').readAsBytesSync()),

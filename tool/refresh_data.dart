@@ -92,6 +92,11 @@ Future<void> main(List<String> args) async {
   int failed = 0;
 
   for (final String cc in targets) {
+    if (!adapters.containsKey(cc)) {
+      stderr.writeln('[$cc] unknown country code');
+      failed++;
+      continue;
+    }
     final CountryAdapter? adapter = adapters[cc];
     if (adapter == null) {
       print('[$cc] no adapter (dataset unmaintained) — skipping');
@@ -102,6 +107,14 @@ Future<void> main(List<String> args) async {
       print('[$cc] fetching…');
       final Map<String, BankEntry> entries = await adapter();
       final String path = 'assets/bank_codes/${cc.toLowerCase()}.json';
+      final File existing = File(path);
+      checkPlausibleSize(
+        entries.length,
+        existing.existsSync()
+            ? (jsonDecode(existing.readAsStringSync()) as Map<String, dynamic>)
+                  .length
+            : 0,
+      );
       final Map<String, Map<String, String?>> asJson =
           <String, Map<String, String?>>{
             for (final MapEntry<String, BankEntry> e in entries.entries)
@@ -176,6 +189,22 @@ Future<Map<String, BankEntry>> fetchDe() async {
     );
   } finally {
     client.close(force: true);
+  }
+}
+
+/// Throws a [StateError] if a refresh returned no entries, or fewer than
+/// half the [previous] dataset's, so a truncated or placeholder download
+/// can't wipe a country's data. A genuine drop that large needs a
+/// maintainer to look at the source and update the JSON by hand.
+void checkPlausibleSize(int fresh, int previous) {
+  if (fresh == 0) {
+    throw StateError('refresh returned no entries; keeping existing data');
+  }
+  if (fresh * 2 < previous) {
+    throw StateError(
+      'refresh returned $fresh entries, less than half of the existing '
+      '$previous; keeping existing data',
+    );
   }
 }
 
@@ -303,6 +332,36 @@ String? _normaliseBic(String raw) {
     }
   }
   throw FormatException('$source: header row ${required.join(', ')} not found');
+}
+
+/// Splits one CSV line on [delimiter], honouring double-quoted fields
+/// (which may contain the delimiter) and `""` escapes inside them.
+List<String> splitCsvLine(String line, String delimiter) {
+  final List<String> fields = <String>[];
+  final StringBuffer field = StringBuffer();
+  bool quoted = false;
+  for (int i = 0; i < line.length; i++) {
+    final String ch = line[i];
+    if (quoted) {
+      if (ch == '"' && i + 1 < line.length && line[i + 1] == '"') {
+        field.write('"');
+        i++;
+      } else if (ch == '"') {
+        quoted = false;
+      } else {
+        field.write(ch);
+      }
+    } else if (ch == '"') {
+      quoted = true;
+    } else if (ch == delimiter) {
+      fields.add(field.toString());
+      field.clear();
+    } else {
+      field.write(ch);
+    }
+  }
+  fields.add(field.toString());
+  return fields;
 }
 
 String _cell(List<String> row, int column) =>
@@ -499,7 +558,7 @@ Future<Map<String, BankEntry>> fetchAt() async {
 Map<String, BankEntry> parseOenbSepa(String text) {
   final List<List<String>> rows = <List<String>>[
     for (final String line in const LineSplitter().convert(text))
-      line.split(';'),
+      splitCsvLine(line, ';'),
   ];
   final (int header, Map<String, int> col) = _findHeader(rows, const <String>[
     'Bankleitzahl',
