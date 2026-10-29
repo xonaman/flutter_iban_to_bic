@@ -3,8 +3,8 @@ Copyright (c) Robert Mainzer. The source code is licensed under the MIT
 License (see LICENSE).
 
 The bank-code datasets (the generated *.g.dart files in lib/src/data/)
-are NOT covered by the MIT License. They are derived from the publications listed below, and their
-publishers' terms apply. The values kept (bank codes, BICs, names,
+are NOT covered by the MIT License. They are derived from the publications
+listed below, and their publishers' terms apply. The values kept (bank codes, BICs, names,
 addresses) are reproduced as published, but the datasets are not complete
 copies of the sources. They have been:
   - converted to JSON, one entry per bank code, and embedded in a
