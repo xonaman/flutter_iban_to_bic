@@ -178,9 +178,10 @@ jobs:
             else
               # Create the label only if it's missing, so real errors
               # (e.g. permissions) still fail the step visibly.
-              if ! gh label list --repo "$GITHUB_REPOSITORY" \
+              has_label=$(gh label list --repo "$GITHUB_REPOSITORY" \
                 --search data-refresh --json name \
-                --jq '.[].name' | grep -qx data-refresh; then
+                --jq 'any(.[]; .name == "data-refresh")')
+              if [ "$has_label" != 'true' ]; then
                 gh label create data-refresh --repo "$GITHUB_REPOSITORY" \
                   --color 0E8A16 \
                   --description 'Automated bank-code data refresh'
