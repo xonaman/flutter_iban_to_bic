@@ -95,3 +95,18 @@ await lookup.lookup('DE64 5001 0517 9423 8144 35');
 | LT   | Lithuania   | 4–9              |
 | LU   | Luxembourg  | 4–7              |
 | NL   | Netherlands | 4–8              |
+
+## Bundled data
+
+The datasets are kept in `data/bank_codes/<cc>.jsonl`: one bank code per
+line, sorted, so every change to the data shows up as a readable diff.
+`tool/refresh_data.dart` refreshes them from each country's central bank
+or competent authority; a weekly workflow opens a pull request that lists
+the added, removed and changed codes.
+
+The library loads compact assets generated from those files. After editing
+a `.jsonl` file by hand, regenerate them with:
+
+```bash
+dart run tool/build_assets.dart
+```

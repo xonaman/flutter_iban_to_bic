@@ -1,3 +1,16 @@
+## Unreleased
+
+* Bundled bank-code assets use a compact, normalized format: banks that
+  share every field are stored once with all their codes, and field names
+  are replaced by positions. The assets shrink from 982 KB to 488 KB
+  (gzip: 137 KB to 119 KB). Lookups return exactly the same results.
+  `AssetJsonResolver` still reads the previous one-object-per-code JSON,
+  so custom assets keep working.
+* The data is maintained in `data/bank_codes/<cc>.jsonl`, one sorted code
+  per line, and the assets are generated from it with
+  `dart run tool/build_assets.dart`; CI fails if they are out of date.
+  Refresh pull requests now list added, removed and changed codes.
+
 ## 2.3.0
 
 * Requires Dart 3.8 / Flutter 3.32 or newer (was Dart 3.0). The dev

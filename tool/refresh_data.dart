@@ -1,5 +1,7 @@
-// Refreshes `assets/bank_codes/<cc>.json` from each country's authoritative
-// source. Run manually or via the `refresh-data` GitHub Action.
+// Refreshes `data/bank_codes/<cc>.jsonl` (the reviewed source) and the
+// generated `assets/bank_codes/<cc>.json` (the runtime asset) from each
+// country's authoritative source. Run manually or via the `refresh-data`
+// GitHub Action. See `tool/bank_codes.dart` for both formats.
 //
 // Adding a new country:
 //   1. Register it under `adapters` below.
@@ -7,7 +9,12 @@
 //      returns `{ bankCode: BankEntry(bic, bankName, bankShortName, ...) }`.
 //      Fetch from the central bank / competent authority — no scraping of
 //      third-party aggregators.
-//   3. Add the country to `pubspec.yaml`'s flutter.assets list if new.
+//   3. Run the refresh for it, which creates `data/bank_codes/<cc>.jsonl`
+//      and `assets/bank_codes/<cc>.json`, and add the asset to
+//      `pubspec.yaml`'s flutter.assets list.
+//
+// To fix an entry by hand, edit `data/bank_codes/<cc>.jsonl` and run
+// `dart run tool/build_assets.dart` to regenerate the asset.
 //
 // Run with:
 //   dart run tool/refresh_data.dart           # refresh everything
@@ -18,32 +25,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-class BankEntry {
-  final String bic;
-  final String bankName;
-  final String bankShortName;
-  final String? bankAddress;
-  final String? bankPostcode;
-  final String? bankLocation;
+import 'bank_codes.dart';
 
-  BankEntry({
-    required this.bic,
-    required this.bankName,
-    required this.bankShortName,
-    this.bankAddress,
-    this.bankPostcode,
-    this.bankLocation,
-  });
-
-  Map<String, String?> toJson() => <String, String?>{
-    'bic': bic,
-    'bankName': bankName,
-    'bankShortName': bankShortName,
-    if (bankAddress != null) 'bankAddress': bankAddress,
-    if (bankPostcode != null) 'bankPostcode': bankPostcode,
-    if (bankLocation != null) 'bankLocation': bankLocation,
-  };
-}
+export 'bank_codes.dart' show BankEntry;
 
 typedef CountryAdapter = Future<Map<String, BankEntry>> Function();
 
@@ -59,7 +43,7 @@ class AdapterSkipped implements Exception {
 }
 
 /// Registry of per-country adapters. `null` means "not yet implemented" and
-/// the refresh script leaves the existing JSON untouched.
+/// the refresh script leaves the existing data untouched.
 final Map<String, CountryAdapter?> adapters = <String, CountryAdapter?>{
   'AT': null,
   'BE': null,
@@ -90,14 +74,11 @@ Future<void> main(List<String> args) async {
     try {
       print('[$cc] fetching…');
       final Map<String, BankEntry> entries = await adapter();
-      final String path = 'assets/bank_codes/${cc.toLowerCase()}.json';
-      final Map<String, Map<String, String?>> asJson =
-          <String, Map<String, String?>>{
-            for (final MapEntry<String, BankEntry> e in entries.entries)
-              e.key: e.value.toJson(),
-          };
-      File(path).writeAsStringSync('${jsonEncode(asJson)}\n');
-      print('[$cc] wrote $path (${entries.length} entries)');
+      writeCountry(cc, entries);
+      print(
+        '[$cc] wrote ${sourcePath(cc)} and ${assetPath(cc)} '
+        '(${entries.length} entries)',
+      );
       refreshed++;
     } on AdapterSkipped catch (e) {
       print('[$cc] skipped: $e');
