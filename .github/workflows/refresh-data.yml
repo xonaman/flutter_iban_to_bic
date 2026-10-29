@@ -33,6 +33,20 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
+      # Runs first so the tracking-issue step knows whether this is a full
+      # run even if checkout or setup fails. Whitespace-only input also
+      # refreshes everything, so decide this from the parsed list rather
+      # than the raw input.
+      - name: Classify run scope
+        id: scope
+        env:
+          COUNTRIES: ${{ inputs.countries }}
+        run: |
+          read -r -a countries <<< "$COUNTRIES"
+          if [ "${#countries[@]}" -eq 0 ]; then
+            echo 'all_countries=true' >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Check out code
         uses: actions/checkout@v6
 
@@ -46,7 +60,6 @@ jobs:
         run: flutter pub get
 
       - name: Run refresh script
-        id: refresh
         env:
           # Optional override. When unset, the script reads the current file's
           # URL off the Bundesbank download page.
@@ -56,11 +69,6 @@ jobs:
           COUNTRIES: ${{ inputs.countries }}
         run: |
           read -r -a countries <<< "$COUNTRIES"
-          # Whitespace-only input also refreshes everything, so decide this
-          # from the parsed list rather than the raw input.
-          if [ "${#countries[@]}" -eq 0 ]; then
-            echo 'all_countries=true' >> "$GITHUB_OUTPUT"
-          fi
           for cc in "${countries[@]}"; do
             if [[ ! "$cc" =~ ^[A-Za-z]{2}$ ]]; then
               echo "::error::Invalid country code: $cc"
@@ -118,7 +126,7 @@ jobs:
       - name: Update tracking issue
         if: >-
           always() && (github.event_name == 'schedule' ||
-          steps.refresh.outputs.all_countries == 'true')
+          steps.scope.outputs.all_countries == 'true')
         env:
           GH_TOKEN: ${{ github.token }}
           JOB_STATUS: ${{ job.status }}
