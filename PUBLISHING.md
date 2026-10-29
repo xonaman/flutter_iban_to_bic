@@ -60,6 +60,39 @@ validity and content hash). After a hand edit to
 the asset and updates its hash; `test/data_info_test.dart` fails when a
 hash doesn't match.
 
+### Status summary and tracking issue
+
+The script records each country's outcome (`refreshed`, `skipped`,
+`failed`, or `notImplemented` for countries without an adapter) and, with
+`--summary-json=<path>` / `--summary-markdown=<path>`, writes it as JSON
+and as a Markdown table. The workflow shows the table on the run's summary
+page.
+
+An adapter that throws `AdapterSkipped` keeps the job green, so a broken
+upstream would otherwise go unnoticed. To surface it, the workflow keeps a
+single tracking issue titled **Scheduled data refresh needs attention**
+(label `data-refresh`, created if missing):
+
+- If any country **with an adapter** is skipped or fails, or any step of
+  the job fails, the workflow opens that issue with the per-country table,
+  or comments on it if it is already open.
+- The next run where every adapter refreshed and the job succeeded closes
+  the issue.
+- Countries without an adapter never trigger it.
+- Only scheduled runs and manual runs over all countries (blank input) touch the issue;
+  a manual run for a subset of countries leaves it alone.
+- Runs are serialized (`concurrency: refresh-data`) so two runs can't race
+  on the issue or the refresh branch. GitHub keeps only one pending run per
+  group: a newer queued run cancels an older pending one, whether scheduled
+  or manual. A cancelled run doesn't update the tracking issue, so a manual
+  run started while another run is in progress can displace a pending
+  scheduled run and its alert. Wait for the current run to finish before
+  starting a manual one.
+
+To fix a broken refresh, check the run linked from the issue. For Germany,
+the usual cause is a changed Bundesbank download page: update
+`findBundesbankBlzTxtUrl`, or set `BUNDESBANK_BLZ_URL` (below) as a stopgap.
+
 ### One-time setup
 
 - Nothing for Germany: the script finds the current BLZ file on the
