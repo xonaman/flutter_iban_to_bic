@@ -1,0 +1,101 @@
+iban_to_bic
+Copyright (c) Robert Mainzer. The source code is licensed under the MIT
+License (see LICENSE).
+
+The bank-code datasets in assets/bank_codes/ are NOT covered by the MIT
+License. They are derived from the publications listed below, and their
+publishers' terms apply. The values kept (bank codes, BICs, names,
+addresses) are reproduced as published, but the datasets are not complete
+copies of the sources. They have been:
+  - converted to JSON, one entry per bank code;
+  - reduced to the fields this package uses (other columns are dropped);
+  - filtered to the rows a bank-code-to-BIC lookup needs. For example,
+    only the Bundesbank's main records (Merkmal 1) are kept, and rows
+    without a BIC are left out.
+
+-------------------------------------------------------------------------------
+AT  assets/bank_codes/at.json
+-------------------------------------------------------------------------------
+Source:  Oesterreichische Nationalbank (OeNB), SEPA-Zahlungsverkehrs-Verzeichnis
+         https://www.oenb.at/docroot/downloads_observ/sepa-zv-vz_gesamt.csv
+Terms:   OeNB "Impressum und Haftung", section 2.2: OeNB content may be reused
+         free of charge, commercially or not, under CC BY 4.0.
+         https://www.oenb.at/serviceportal/impressum-und-haftung.html
+         https://creativecommons.org/licenses/by/4.0/
+Notice:  Source: Oesterreichische Nationalbank (OeNB). Data converted to
+         JSON and reduced to the fields this package uses.
+
+-------------------------------------------------------------------------------
+BE  assets/bank_codes/be.json
+-------------------------------------------------------------------------------
+Source:  National Bank of Belgium (NBB), list of bank identification codes
+         https://www.nbb.be/en/payments-and-securities/bank-identification-codes
+Terms:   NBB "Copyright and use of information": information on the site may
+         be used and redistributed freely, if reproduced accurately and the
+         NBB is acknowledged as the source.
+         https://www.nbb.be/en/disclaimer-and-legal-information/copyright-and-use-information
+         The NBB notes that the BICs in the list come from SWIFT and are
+         published for information only.
+Notice:  Source: National Bank of Belgium.
+
+-------------------------------------------------------------------------------
+DE  assets/bank_codes/de.json
+-------------------------------------------------------------------------------
+Source:  Deutsche Bundesbank, Bankleitzahlendatei (bank sort code file)
+         https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes
+Terms:   Bundesbank "Conditions for the general use of the website",
+         section 4.1: information may be stored, passed on and reproduced for
+         personal or business use, must not be altered or falsified, and must
+         carry the source "Quelle: Deutsche Bundesbank". The Bundesbank
+         publishes the file without guarantee ("unverbindlich").
+         https://www.bundesbank.de/en/homepage/user-information/conditions-for-the-general-use-of-the-website-764706
+Notice:  Quelle: Deutsche Bundesbank.
+
+-------------------------------------------------------------------------------
+ES, FR  assets/bank_codes/es.json, assets/bank_codes/fr.json
+-------------------------------------------------------------------------------
+Source:  European Central Bank (ECB), list of monetary financial
+         institutions, as processed by the iban-to-bic generator
+         (https://github.com/sigalor/iban-to-bic, MIT License) in April 2024.
+         https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/index.en.html
+Terms:   ECB "Disclaimer and copyright": information from the ECB website may
+         be used freely if the ECB is cited as the source.
+         https://www.ecb.europa.eu/services/disclaimer/html/index.en.html
+Notice:  Source: European Central Bank.
+
+-------------------------------------------------------------------------------
+LT  assets/bank_codes/lt.json
+-------------------------------------------------------------------------------
+Source:  Not recorded. Added in October 2022 (version 0.0.5); the field
+         layout matches the Bank of Lithuania's list of financial institution
+         codes.
+         https://www.lb.lt/en/iban-and-financial-institution-codes
+Terms:   Not yet established.
+Notice:  Source: Lietuvos bankas (Bank of Lithuania), assumed.
+
+-------------------------------------------------------------------------------
+LU  assets/bank_codes/lu.json
+-------------------------------------------------------------------------------
+Source:  Association des Banques et Banquiers, Luxembourg (ABBL),
+         Luxembourg Register of IBAN-BIC Codes
+         https://www.abbl.lu/luxembourg-register-of-iban-bic-codes/
+Terms:   ABBL legal notice: content belongs to the ABBL and may be used for
+         information or reference purposes, unmodified, with the source
+         clearly indicated. Redistribution is not addressed.
+         https://www.abbl.lu/legal-notice/
+Notice:  Source: ABBL, Luxembourg Register of IBAN-BIC Codes.
+
+-------------------------------------------------------------------------------
+NL  assets/bank_codes/nl.json
+-------------------------------------------------------------------------------
+Source:  Betaalvereniging Nederland (Dutch Payments Association), BIC list
+         https://www.betaalvereniging.nl/en/knowledge-base/iban-and-bic/bic-code/
+Terms:   Betaalvereniging disclaimer: personal, non-commercial use only;
+         reproducing, publishing or distributing the content requires the
+         association's prior written consent.
+         https://www.betaalvereniging.nl/en/disclaimer/
+Notice:  Source: Betaalvereniging Nederland.
+
+All sources were checked on 29 October 2026. Publishers may change their
+terms; check the links above before relying on this summary. This file is
+not legal advice.
