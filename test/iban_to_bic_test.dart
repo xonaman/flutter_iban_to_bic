@@ -53,16 +53,21 @@ void main() {
 
     test('classifies junk input with specific reasons', () {
       expect((ibanToBic('') as InvalidIban).reason, InvalidIbanReason.empty);
-      expect((ibanToBic('DE12') as InvalidIban).reason,
-          InvalidIbanReason.tooShort);
       expect(
-          (ibanToBic('DE12345678901234567890123456789012345') as InvalidIban)
-              .reason,
-          InvalidIbanReason.tooLong);
+        (ibanToBic('DE12') as InvalidIban).reason,
+        InvalidIbanReason.tooShort,
+      );
+      expect(
+        (ibanToBic('DE12345678901234567890123456789012345') as InvalidIban)
+            .reason,
+        InvalidIbanReason.tooLong,
+      );
       // Long enough to pass the length gate, but leading digits violate shape
       // (IBANs must start with two letters).
-      expect((ibanToBic('1234567890ABCDEF') as InvalidIban).reason,
-          InvalidIbanReason.badShape);
+      expect(
+        (ibanToBic('1234567890ABCDEF') as InvalidIban).reason,
+        InvalidIbanReason.badShape,
+      );
     });
 
     test('flags unsupported country', () {
@@ -91,30 +96,33 @@ void main() {
     test('tolerates non-breaking spaces (pasted from bank PDFs)', () {
       const String nbsp = ' ';
       final IbanLookupResult result = ibanToBic(
-          'DE64${nbsp}5001${nbsp}0517${nbsp}9423${nbsp}8144${nbsp}35');
+        'DE64${nbsp}5001${nbsp}0517${nbsp}9423${nbsp}8144${nbsp}35',
+      );
       expect(result, isA<BicFound>());
       expect((result as BicFound).bic.value, 'INGDDEFFXXX');
     });
 
-    test(
-        'custom spec with an out-of-range bankCodeEnd reports badShape '
+    test('custom spec with an out-of-range bankCodeEnd reports badShape '
         'instead of crashing', () async {
       // A malicious/wrong custom spec says the bank code lives at [4,30)
       // but the IBAN is only 20 chars long (still passes validateIban's
       // 15..34 range + shape regex). extractBankCode must NOT throw.
-      final IbanToBic custom = IbanToBic(countries: <String, CountrySpec>{
-        'AT': const CountrySpec(
-          bankCodeStart: 4,
-          bankCodeEnd: 30, // wider than any real AT IBAN (20 chars).
-          resolver: _FixedResolver(Bic(
-            value: 'TESTAT00',
-            bankName: 'Test',
-            bankShortName: 'Test',
-          )),
-        ),
-      });
+      final IbanToBic custom = IbanToBic(
+        countries: <String, CountrySpec>{
+          'AT': const CountrySpec(
+            bankCodeStart: 4,
+            bankCodeEnd: 30, // wider than any real AT IBAN (20 chars).
+            resolver: _FixedResolver(
+              Bic(value: 'TESTAT00', bankName: 'Test', bankShortName: 'Test'),
+            ),
+          ),
+        },
+      );
       // AT IBAN, 20 chars, checksum valid — but length 20 < bankCodeEnd 30.
-      final String iban = _withValidChecksum('AT0011000' '00000000000');
+      final String iban = _withValidChecksum(
+        'AT0011000'
+        '00000000000',
+      );
       final IbanLookupResult result = await custom.lookup(iban);
       expect(result, isA<InvalidIban>());
       expect((result as InvalidIban).reason, InvalidIbanReason.badShape);
@@ -162,28 +170,36 @@ void main() {
 
   group('IbanToBic (custom)', () {
     test('custom sync resolver overrides the built-in data', () {
-      final IbanToBic custom = IbanToBic(countries: <String, CountrySpec>{
-        'DE': const CountrySpec(
-          bankCodeStart: 4,
-          bankCodeEnd: 12,
-          resolver: _FixedResolver(Bic(
-            value: 'TESTDE00',
-            bankName: 'Test Bank',
-            bankShortName: 'Test',
-          )),
-        ),
-      });
-      final IbanLookupResult result =
-          custom.lookupSync('DE64 5001 0517 9423 8144 35');
+      final IbanToBic custom = IbanToBic(
+        countries: <String, CountrySpec>{
+          'DE': const CountrySpec(
+            bankCodeStart: 4,
+            bankCodeEnd: 12,
+            resolver: _FixedResolver(
+              Bic(
+                value: 'TESTDE00',
+                bankName: 'Test Bank',
+                bankShortName: 'Test',
+              ),
+            ),
+          ),
+        },
+      );
+      final IbanLookupResult result = custom.lookupSync(
+        'DE64 5001 0517 9423 8144 35',
+      );
       expect(result, isA<BicFound>());
       expect((result as BicFound).bic.value, 'TESTDE00');
     });
 
     test('reports unsupported country when not registered', () async {
-      final IbanToBic custom =
-          IbanToBic(countries: const <String, CountrySpec>{});
-      expect(await custom.lookup('DE64 5001 0517 9423 8144 35'),
-          isA<UnsupportedCountry>());
+      final IbanToBic custom = IbanToBic(
+        countries: const <String, CountrySpec>{},
+      );
+      expect(
+        await custom.lookup('DE64 5001 0517 9423 8144 35'),
+        isA<UnsupportedCountry>(),
+      );
     });
   });
 
@@ -191,15 +207,17 @@ void main() {
     test('async lookup works without explicit preload', () async {
       // A fresh instance — no preload() called — still resolves via async.
       final IbanToBic fresh = IbanToBic();
-      final IbanLookupResult result =
-          await fresh.lookup('DE64 5001 0517 9423 8144 35');
+      final IbanLookupResult result = await fresh.lookup(
+        'DE64 5001 0517 9423 8144 35',
+      );
       expect((result as BicFound).bic.value, 'INGDDEFFXXX');
     });
 
     test('lookupSync without preload returns NotPreloaded', () {
       final IbanToBic fresh = IbanToBic();
-      final IbanLookupResult result =
-          fresh.lookupSync('DE64 5001 0517 9423 8144 35');
+      final IbanLookupResult result = fresh.lookupSync(
+        'DE64 5001 0517 9423 8144 35',
+      );
       expect(result, isA<NotPreloaded>());
       expect((result as NotPreloaded).countryCode, 'DE');
     });
@@ -207,18 +225,16 @@ void main() {
     test('lookupSync works after preload', () async {
       final IbanToBic fresh = IbanToBic();
       await fresh.preload(<String>['DE']);
-      final IbanLookupResult result =
-          fresh.lookupSync('DE64 5001 0517 9423 8144 35');
+      final IbanLookupResult result = fresh.lookupSync(
+        'DE64 5001 0517 9423 8144 35',
+      );
       expect((result as BicFound).bic.value, 'INGDDEFFXXX');
     });
 
     test('preload tolerates unknown country codes', () async {
       final IbanToBic fresh = IbanToBic();
       await fresh.preload(<String>['ZZ', 'de']); // case-insensitive + junk
-      expect(
-        fresh.lookupSync('DE64 5001 0517 9423 8144 35'),
-        isA<BicFound>(),
-      );
+      expect(fresh.lookupSync('DE64 5001 0517 9423 8144 35'), isA<BicFound>());
     });
 
     test('repeated preload on the same country is a cheap no-op', () async {
@@ -234,44 +250,46 @@ void main() {
       expect(identical(first, second), isTrue);
     });
 
-    test('evict drops the preloaded dataset and flips lookupSync back',
-        () async {
-      final IbanToBic fresh = IbanToBic();
-      await fresh.preload(<String>['DE']);
-      expect(
-        fresh.lookupSync('DE64 5001 0517 9423 8144 35'),
-        isA<BicFound>(),
-      );
+    test(
+      'evict drops the preloaded dataset and flips lookupSync back',
+      () async {
+        final IbanToBic fresh = IbanToBic();
+        await fresh.preload(<String>['DE']);
+        expect(
+          fresh.lookupSync('DE64 5001 0517 9423 8144 35'),
+          isA<BicFound>(),
+        );
 
-      fresh.evict('DE');
-      final IbanLookupResult afterEvict =
-          fresh.lookupSync('DE64 5001 0517 9423 8144 35');
-      expect(afterEvict, isA<NotPreloaded>());
-      expect((afterEvict as NotPreloaded).countryCode, 'DE');
+        fresh.evict('DE');
+        final IbanLookupResult afterEvict = fresh.lookupSync(
+          'DE64 5001 0517 9423 8144 35',
+        );
+        expect(afterEvict, isA<NotPreloaded>());
+        expect((afterEvict as NotPreloaded).countryCode, 'DE');
 
-      // Async path still serves it; it just re-reads the asset.
-      final IbanLookupResult asyncResult =
-          await fresh.lookup('DE64 5001 0517 9423 8144 35');
-      expect((asyncResult as BicFound).bic.value, 'INGDDEFFXXX');
+        // Async path still serves it; it just re-reads the asset.
+        final IbanLookupResult asyncResult = await fresh.lookup(
+          'DE64 5001 0517 9423 8144 35',
+        );
+        expect((asyncResult as BicFound).bic.value, 'INGDDEFFXXX');
 
-      // Preloading again restores the sync fast path.
-      await fresh.preload(<String>['DE']);
-      expect(
-        fresh.lookupSync('DE64 5001 0517 9423 8144 35'),
-        isA<BicFound>(),
-      );
-    });
+        // Preloading again restores the sync fast path.
+        await fresh.preload(<String>['DE']);
+        expect(
+          fresh.lookupSync('DE64 5001 0517 9423 8144 35'),
+          isA<BicFound>(),
+        );
+      },
+    );
 
     test('constructor copies the injected countries map defensively', () {
       final Map<String, CountrySpec> external = <String, CountrySpec>{
         'DE': const CountrySpec(
           bankCodeStart: 4,
           bankCodeEnd: 12,
-          resolver: _FixedResolver(Bic(
-            value: 'BEFOREXX',
-            bankName: 'Before',
-            bankShortName: 'Before',
-          )),
+          resolver: _FixedResolver(
+            Bic(value: 'BEFOREXX', bankName: 'Before', bankShortName: 'Before'),
+          ),
         ),
       };
       final IbanToBic custom = IbanToBic(countries: external);
@@ -280,44 +298,50 @@ void main() {
       external['DE'] = const CountrySpec(
         bankCodeStart: 4,
         bankCodeEnd: 12,
-        resolver: _FixedResolver(Bic(
-          value: 'AFTERXXX',
-          bankName: 'After',
-          bankShortName: 'After',
-        )),
+        resolver: _FixedResolver(
+          Bic(value: 'AFTERXXX', bankName: 'After', bankShortName: 'After'),
+        ),
       );
       external.remove('DE');
 
-      final IbanLookupResult result =
-          custom.lookupSync('DE64 5001 0517 9423 8144 35');
+      final IbanLookupResult result = custom.lookupSync(
+        'DE64 5001 0517 9423 8144 35',
+      );
       expect((result as BicFound).bic.value, 'BEFOREXX');
     });
 
-    test('evict is a no-op for unknown, non-asset, and never-loaded countries',
-        () {
-      final IbanToBic fresh = IbanToBic();
-      // Unknown country.
-      fresh.evict('ZZ');
-      // Case-insensitive + never preloaded — still a no-op, no throw.
-      fresh.evict('de');
+    test(
+      'evict is a no-op for unknown, non-asset, and never-loaded countries',
+      () {
+        final IbanToBic fresh = IbanToBic();
+        // Unknown country.
+        fresh.evict('ZZ');
+        // Case-insensitive + never preloaded — still a no-op, no throw.
+        fresh.evict('de');
 
-      final IbanToBic custom = IbanToBic(countries: <String, CountrySpec>{
-        'DE': const CountrySpec(
-          bankCodeStart: 4,
-          bankCodeEnd: 12,
-          resolver: _FixedResolver(Bic(
-            value: 'TESTDE00',
-            bankName: 'Test Bank',
-            bankShortName: 'Test',
-          )),
-        ),
-      });
-      // Custom sync resolver is not asset-backed — evict must leave it alone.
-      custom.evict('DE');
-      final IbanLookupResult result =
-          custom.lookupSync('DE64 5001 0517 9423 8144 35');
-      expect((result as BicFound).bic.value, 'TESTDE00');
-    });
+        final IbanToBic custom = IbanToBic(
+          countries: <String, CountrySpec>{
+            'DE': const CountrySpec(
+              bankCodeStart: 4,
+              bankCodeEnd: 12,
+              resolver: _FixedResolver(
+                Bic(
+                  value: 'TESTDE00',
+                  bankName: 'Test Bank',
+                  bankShortName: 'Test',
+                ),
+              ),
+            ),
+          },
+        );
+        // Custom sync resolver is not asset-backed — evict must leave it alone.
+        custom.evict('DE');
+        final IbanLookupResult result = custom.lookupSync(
+          'DE64 5001 0517 9423 8144 35',
+        );
+        expect((result as BicFound).bic.value, 'TESTDE00');
+      },
+    );
   });
 
   group('AssetJsonResolver error handling', () {
@@ -344,23 +368,26 @@ void main() {
   group('AssetJsonResolver rows without a BIC', () {
     // Mirrors the shape of real dataset rows that carry a bank name but
     // no BIC, plus a whitespace-only BIC and one valid row as a control.
-    const String rows = '{'
+    const String rows =
+        '{'
         '"50010517":{"bic":"","bankName":"ING-DiBa","bankShortName":"ING"},'
         '"12030000":{"bic":"   ","bankName":"DKB","bankShortName":"DKB"},'
         '"10010010":{"bic":"PBNKDEFFXXX","bankName":"Postbank",'
         '"bankShortName":"Postbank"}'
         '}';
 
-    IbanToBic withRows() => IbanToBic(countries: <String, CountrySpec>{
-          'DE': CountrySpec(
-            bankCodeStart: 4,
-            bankCodeEnd: 12,
-            resolver: AssetJsonResolver(
-              'fake/de.json',
-              bundle: _StringBundle(rows),
-            ),
+    IbanToBic withRows() => IbanToBic(
+      countries: <String, CountrySpec>{
+        'DE': CountrySpec(
+          bankCodeStart: 4,
+          bankCodeEnd: 12,
+          resolver: AssetJsonResolver(
+            'fake/de.json',
+            bundle: _StringBundle(rows),
           ),
-        });
+        ),
+      },
+    );
 
     final String emptyBic = _buildValidIban('DE', '50010517', 22);
     final String blankBic = _buildValidIban('DE', '12030000', 22);
@@ -389,12 +416,13 @@ void main() {
 
   group('bundled datasets', () {
     test('every entry carries a BIC', () {
-      final List<File> assets = Directory('assets/bank_codes')
-          .listSync()
-          .whereType<File>()
-          .where((File f) => f.path.endsWith('.json'))
-          .toList()
-        ..sort((File a, File b) => a.path.compareTo(b.path));
+      final List<File> assets =
+          Directory('assets/bank_codes')
+              .listSync()
+              .whereType<File>()
+              .where((File f) => f.path.endsWith('.json'))
+              .toList()
+            ..sort((File a, File b) => a.path.compareTo(b.path));
       expect(assets, isNotEmpty);
       // One line per offending file, so a failure names every dataset.
       final List<String> problems = <String>[];
@@ -409,8 +437,10 @@ void main() {
               e.key,
         ];
         if (missing.isNotEmpty) {
-          problems.add('${asset.path}: ${missing.length} of ${decoded.length} '
-              'entries have no BIC (e.g. ${missing.take(5).join(', ')})');
+          problems.add(
+            '${asset.path}: ${missing.length} of ${decoded.length} '
+            'entries have no BIC (e.g. ${missing.take(5).join(', ')})',
+          );
         }
       }
       expect(problems, isEmpty);
@@ -419,32 +449,38 @@ void main() {
 
   group('async resolver', () {
     test('ibanToBicAsync works for built-in data', () async {
-      final IbanLookupResult result =
-          await ibanToBicAsync('DE64 5001 0517 9423 8144 35');
+      final IbanLookupResult result = await ibanToBicAsync(
+        'DE64 5001 0517 9423 8144 35',
+      );
       expect((result as BicFound).bic.value, 'INGDDEFFXXX');
     });
 
     test('async resolver is awaited by lookup()', () async {
-      final IbanToBic custom = IbanToBic(countries: <String, CountrySpec>{
-        'DE': const CountrySpec(
-          bankCodeStart: 4,
-          bankCodeEnd: 12,
-          resolver: _AsyncResolver(),
-        ),
-      });
-      final IbanLookupResult result =
-          await custom.lookup('DE64 5001 0517 9423 8144 35');
+      final IbanToBic custom = IbanToBic(
+        countries: <String, CountrySpec>{
+          'DE': const CountrySpec(
+            bankCodeStart: 4,
+            bankCodeEnd: 12,
+            resolver: _AsyncResolver(),
+          ),
+        },
+      );
+      final IbanLookupResult result = await custom.lookup(
+        'DE64 5001 0517 9423 8144 35',
+      );
       expect((result as BicFound).bic.value, 'ASYNCDE00');
     });
 
     test('lookupSync returns NotPreloaded when resolver is async', () {
-      final IbanToBic custom = IbanToBic(countries: <String, CountrySpec>{
-        'DE': const CountrySpec(
-          bankCodeStart: 4,
-          bankCodeEnd: 12,
-          resolver: _AsyncResolver(),
-        ),
-      });
+      final IbanToBic custom = IbanToBic(
+        countries: <String, CountrySpec>{
+          'DE': const CountrySpec(
+            bankCodeStart: 4,
+            bankCodeEnd: 12,
+            resolver: _AsyncResolver(),
+          ),
+        },
+      );
       expect(
         custom.lookupSync('DE64 5001 0517 9423 8144 35'),
         isA<NotPreloaded>(),
@@ -452,16 +488,20 @@ void main() {
     });
 
     test('lookupSync still short-circuits invalid input synchronously', () {
-      final IbanToBic custom = IbanToBic(countries: <String, CountrySpec>{
-        'DE': const CountrySpec(
-          bankCodeStart: 4,
-          bankCodeEnd: 12,
-          resolver: _AsyncResolver(),
-        ),
-      });
+      final IbanToBic custom = IbanToBic(
+        countries: <String, CountrySpec>{
+          'DE': const CountrySpec(
+            bankCodeStart: 4,
+            bankCodeEnd: 12,
+            resolver: _AsyncResolver(),
+          ),
+        },
+      );
       // Bad checksum — never reaches the resolver, so no throw.
       expect(
-          custom.lookupSync('DE00 5001 0517 9423 8144 35'), isA<InvalidIban>());
+        custom.lookupSync('DE00 5001 0517 9423 8144 35'),
+        isA<InvalidIban>(),
+      );
     });
   });
 }

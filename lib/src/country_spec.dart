@@ -19,6 +19,6 @@ class CountrySpec {
   /// own (it only validates character classes, not country-specific lengths).
   String? extractBankCode(String normalizedIban) =>
       normalizedIban.length >= bankCodeEnd
-          ? normalizedIban.substring(bankCodeStart, bankCodeEnd)
-          : null;
+      ? normalizedIban.substring(bankCodeStart, bankCodeEnd)
+      : null;
 }

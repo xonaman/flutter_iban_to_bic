@@ -24,7 +24,7 @@ class AssetJsonResolver implements BicResolver {
   int _generation = 0;
 
   AssetJsonResolver(this.assetPath, {AssetBundle? bundle})
-      : _bundle = bundle ?? rootBundle;
+    : _bundle = bundle ?? rootBundle;
 
   /// Loads the asset into the cache. Idempotent + deduplicated.
   Future<void> preload() async {

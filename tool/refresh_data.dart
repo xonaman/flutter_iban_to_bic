@@ -36,13 +36,13 @@ class BankEntry {
   });
 
   Map<String, String?> toJson() => <String, String?>{
-        'bic': bic,
-        'bankName': bankName,
-        'bankShortName': bankShortName,
-        if (bankAddress != null) 'bankAddress': bankAddress,
-        if (bankPostcode != null) 'bankPostcode': bankPostcode,
-        if (bankLocation != null) 'bankLocation': bankLocation,
-      };
+    'bic': bic,
+    'bankName': bankName,
+    'bankShortName': bankShortName,
+    if (bankAddress != null) 'bankAddress': bankAddress,
+    if (bankPostcode != null) 'bankPostcode': bankPostcode,
+    if (bankLocation != null) 'bankLocation': bankLocation,
+  };
 }
 
 typedef CountryAdapter = Future<Map<String, BankEntry>> Function();
@@ -72,8 +72,9 @@ final Map<String, CountryAdapter?> adapters = <String, CountryAdapter?>{
 };
 
 Future<void> main(List<String> args) async {
-  final Iterable<String> targets =
-      args.isEmpty ? adapters.keys : args.map((String a) => a.toUpperCase());
+  final Iterable<String> targets = args.isEmpty
+      ? adapters.keys
+      : args.map((String a) => a.toUpperCase());
 
   int refreshed = 0;
   int skipped = 0;
@@ -92,9 +93,9 @@ Future<void> main(List<String> args) async {
       final String path = 'assets/bank_codes/${cc.toLowerCase()}.json';
       final Map<String, Map<String, String?>> asJson =
           <String, Map<String, String?>>{
-        for (final MapEntry<String, BankEntry> e in entries.entries)
-          e.key: e.value.toJson(),
-      };
+            for (final MapEntry<String, BankEntry> e in entries.entries)
+              e.key: e.value.toJson(),
+          };
       File(path).writeAsStringSync('${jsonEncode(asJson)}\n');
       print('[$cc] wrote $path (${entries.length} entries)');
       refreshed++;
@@ -132,33 +133,62 @@ Future<void> main(List<String> args) async {
 //
 // Docs: https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes
 //
-// We expect the environment variable `BUNDESBANK_BLZ_URL` to point at the
-// current quarter's download. The URL changes each quarter, which is why
-// it's configured at the workflow level rather than hardcoded.
+// The download URL changes with every release, so we look up the current
+// TXT link on the download page instead of hardcoding it. Setting
+// `BUNDESBANK_BLZ_URL` overrides the lookup (e.g. to pin a specific file).
+
+const String bundesbankDownloadPage =
+    'https://www.bundesbank.de/en/tasks/payment-systems/services/'
+    'bank-sort-codes/download-bank-sort-codes-626218';
 
 Future<Map<String, BankEntry>> fetchDe() async {
-  final String? url = Platform.environment['BUNDESBANK_BLZ_URL'];
-  if (url == null || url.isEmpty) {
-    throw AdapterSkipped(
-      'BUNDESBANK_BLZ_URL is not set — rotate it to the current quarter\'s '
-      'download (see https://www.bundesbank.de/en/tasks/payment-systems/'
-      'services/bank-sort-codes/download-bank-sort-codes-626218).',
-    );
-  }
-
   final HttpClient client = HttpClient();
   try {
-    final HttpClientRequest req = await client.getUrl(Uri.parse(url));
-    final HttpClientResponse res = await req.close();
-    if (res.statusCode != 200) {
-      throw StateError('BLZ download failed: HTTP ${res.statusCode}');
+    String? url = Platform.environment['BUNDESBANK_BLZ_URL'];
+    if (url == null || url.isEmpty) {
+      final String page = latin1.decode(
+        await _get(client, Uri.parse(bundesbankDownloadPage)),
+        allowInvalid: true,
+      );
+      url = findBundesbankBlzTxtUrl(page);
+      if (url == null) {
+        throw StateError(
+          'No blz-aktuell TXT link found on $bundesbankDownloadPage — '
+          'the page layout may have changed. Set BUNDESBANK_BLZ_URL to '
+          'refresh manually.',
+        );
+      }
     }
-    final List<int> bytes = <int>[];
-    await res.forEach(bytes.addAll);
-    return parseBundesbankBlz(latin1.decode(bytes));
+    print('[DE] downloading $url');
+    return parseBundesbankBlz(
+      latin1.decode(await _get(client, Uri.parse(url))),
+    );
   } finally {
     client.close(force: true);
   }
+}
+
+Future<List<int>> _get(HttpClient client, Uri uri) async {
+  final HttpClientRequest req = await client.getUrl(uri);
+  final HttpClientResponse res = await req.close();
+  if (res.statusCode != 200) {
+    throw StateError('GET $uri failed: HTTP ${res.statusCode}');
+  }
+  final List<int> bytes = <int>[];
+  await res.forEach(bytes.addAll);
+  return bytes;
+}
+
+/// Returns the absolute URL of the currently valid, unpacked fixed-width
+/// BLZ file linked from the Bundesbank download page, or `null` if the
+/// page doesn't link one. The upcoming file (`blz-neu-…`) is ignored so
+/// the dataset only changes once the new file is actually in force.
+String? findBundesbankBlzTxtUrl(String html) {
+  final RegExpMatch? match = RegExp(
+    r'href="([^"]*/blz-aktuell-txt-data\.txt)"',
+  ).firstMatch(html);
+  if (match == null) return null;
+  return Uri.parse(bundesbankDownloadPage).resolve(match.group(1)!).toString();
 }
 
 /// Pure parser: turns a Bundesbank BLZ fixed-width dump (already decoded

@@ -8,12 +8,16 @@ on:
 
 jobs:
   test:
-    name: Flutter ${{ matrix.channel }}
+    name: Flutter ${{ matrix.channel }}${{ matrix.version && format(' {0}', matrix.version) || '' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         channel: [stable, beta]
+        include:
+          # Oldest Flutter allowed by pubspec.yaml's environment constraint.
+          - channel: stable
+            version: 3.32.0
 
     steps:
       - name: Check out code
@@ -23,6 +27,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: ${{ matrix.channel }}
+          flutter-version: ${{ matrix.version }}
           cache: true
 
       - name: Print Flutter version
@@ -32,6 +37,7 @@ jobs:
         run: flutter pub get
 
       - name: Verify formatting
+        if: ${{ !matrix.version }}
         run: dart format --output=none --set-exit-if-changed .
 
       - name: Analyze
@@ -41,7 +47,7 @@ jobs:
         run: flutter test --coverage
 
       - name: Upload coverage artifact
-        if: matrix.channel == 'stable'
+        if: matrix.channel == 'stable' && !matrix.version
         uses: actions/upload-artifact@v7
         with:
           name: coverage-lcov
@@ -49,11 +55,11 @@ jobs:
           if-no-files-found: warn
 
       - name: pub publish --dry-run
-        if: matrix.channel == 'stable'
+        if: matrix.channel == 'stable' && !matrix.version
         run: dart pub publish --dry-run
 
       - name: Build example (web)
-        if: matrix.channel == 'stable'
+        if: matrix.channel == 'stable' && !matrix.version
         working-directory: example
         run: |
           flutter pub get

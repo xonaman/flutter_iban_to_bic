@@ -10,13 +10,7 @@ final RegExp _whitespace = RegExp(r'[\s ]+');
 final RegExp _ibanShape = RegExp(r'^[A-Z]{2}\d{2}[A-Z0-9]+$');
 
 /// Why an IBAN failed validation.
-enum InvalidIbanReason {
-  empty,
-  tooShort,
-  tooLong,
-  badShape,
-  badChecksum,
-}
+enum InvalidIbanReason { empty, tooShort, tooLong, badShape, badChecksum }
 
 /// Outcome of validating an IBAN — either ok or a specific reason it failed.
 sealed class IbanValidation {

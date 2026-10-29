@@ -37,7 +37,11 @@ Once saved, pushes of a tag matching the pattern will be trusted to publish.
 5. The `Publish to pub.dev` workflow runs and:
    - Verifies the tag matches `pubspec.yaml`
    - Runs format, analyze, tests, and `pub publish --dry-run`
+   - Checks that `CHANGELOG.md` has a `## <version>` entry
    - Publishes via OIDC
+   - Creates a GitHub release for the tag, using that `CHANGELOG.md`
+     entry as the release notes (tags with a `-` suffix, like
+     `v1.2.3-beta.1`, become pre-releases)
 
 If the workflow fails the version-match check, delete the tag locally and
 remotely, fix `pubspec.yaml`, and retag.
@@ -51,9 +55,13 @@ against the new data, and opens a PR with the diff if anything changed.
 
 ### One-time setup
 
-- Add a repo-level variable `BUNDESBANK_BLZ_URL` pointing at the current
-  quarter's BLZ fixed-width download (the URL changes quarterly):
-  `Settings → Secrets and variables → Actions → Variables → New`.
+- Nothing for Germany: the script finds the current BLZ file on the
+  Bundesbank download page, so new quarterly files (December, March, June,
+  September) are picked up by the next weekly run once they're in force.
+  Set a repo-level variable `BUNDESBANK_BLZ_URL`
+  (`Settings → Secrets and variables → Actions → Variables`) only to pin a
+  specific file; delete it again afterwards or it keeps overriding the
+  lookup.
 - When adding a new country adapter in `tool/refresh_data.dart`, register
   any additional repo variables it needs (e.g. `OENB_BIC_URL`) the same
   way and reference them under `env:` in the workflow.

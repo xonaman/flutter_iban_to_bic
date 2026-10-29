@@ -5,8 +5,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Async variant needs no preload:
-  final IbanLookupResult result =
-      await ibanToBicAsync('DE64 5001 0517 9423 8144 35');
+  final IbanLookupResult result = await ibanToBicAsync(
+    'DE64 5001 0517 9423 8144 35',
+  );
 
   switch (result) {
     case BicFound(:final Bic bic):
@@ -21,7 +22,9 @@ Future<void> main() async {
     case UnknownBank(:final String countryCode, :final String bankCode):
       debugPrint('Unknown bank $bankCode in $countryCode');
     case NotPreloaded(:final String countryCode):
-      debugPrint('Country $countryCode not preloaded (only reachable via '
-          'lookupSync).');
+      debugPrint(
+        'Country $countryCode not preloaded (only reachable via '
+        'lookupSync).',
+      );
   }
 }

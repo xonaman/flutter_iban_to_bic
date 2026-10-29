@@ -1,3 +1,32 @@
+## 2.3.0
+
+* Requires Dart 3.8 / Flutter 3.32 or newer (was Dart 3.0). The dev
+  toolchain (`flutter_lints` 6) already needed Dart 3.8, so the old floor
+  was never actually tested. CI now also runs against Flutter 3.32.0 to
+  keep the floor accurate. Sources are reformatted with the Dart 3.7+
+  formatter; no API changes.
+* `tool/refresh_data.dart`: the German adapter now reads the current BLZ
+  file's URL off the Bundesbank download page, so the weekly refresh
+  workflow picks up the December 2026 and March 2027 files (and later
+  ones) without anyone rotating `BUNDESBANK_BLZ_URL` by hand. The
+  variable still works as an override.
+* Regenerated bank codes from the official sources (as of October 2026):
+  * Austria (OeNB SEPA directory, 29 Oct 2026): 866 entries (was 843).
+    Adds Trade Republic, Scalable Capital and A1 Bank, follows the
+    Raiffeisen NÖ-Wien mergers, and drops two entries whose BIC was the
+    literal string `"None"`.
+  * Belgium (NBB, 1 Sep 2026): 771 entries (was 781). Former AXA Bank and
+    bpost ranges resolve to their new banks or are gone; adds bunq, Swan
+    and Atlantic Money. Codes without a Dutch name now carry the French
+    name instead of an empty `bankName`.
+  * Luxembourg (ABBL IBAN/BIC register, Aug 2026): 134 entries (was 135),
+    with Credit Suisse, Keytrade and Fideuram removed and newly assigned
+    codes added.
+  * Netherlands (Betaalvereniging, 27 Oct 2026): 96 entries (was 80),
+    including Buckaroo, ClearBank and Goldman Sachs.
+  * Germany is unchanged; it already matches the Bundesbank file valid
+    until 6 Dec 2026.
+
 ## 2.2.1
 
 * Dataset rows with an empty or whitespace-only `bic` now resolve as
