@@ -102,7 +102,12 @@ Map<String, dynamic>? mergeMetaEntry(
     'validUntil',
     'notes',
   ];
-  if (tracked.every((String k) => old[k] == next[k])) return null;
+  // A changed retrieval date alone isn't worth a diff, but a first one is.
+  final bool firstRetrieval =
+      old['retrievedOn'] == null && next['retrievedOn'] != null;
+  if (!firstRetrieval && tracked.every((String k) => old[k] == next[k])) {
+    return null;
+  }
   return next;
 }
 

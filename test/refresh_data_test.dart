@@ -207,6 +207,11 @@ void main() {
       expect(mergeMetaEntry(entry(), entry(retrievedOn: '2026-11-02')), isNull);
     });
 
+    test('records a first retrieval date on an entry without one', () {
+      final Map<String, dynamic> legacy = entry()..['retrievedOn'] = null;
+      expect(mergeMetaEntry(legacy, entry())?['retrievedOn'], '2026-10-29');
+    });
+
     test('records a changed publisher', () {
       expect(
         mergeMetaEntry(entry(), entry(publisher: 'Bundesbank'))?['publisher'],
