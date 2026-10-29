@@ -27,8 +27,9 @@ jobs:
       - name: Set up Dart (trusted publishing)
         uses: dart-lang/setup-dart@v1
 
+      # --no-example: example/ is a Flutter app and needs the Flutter SDK.
       - name: Install dependencies
-        run: dart pub get
+        run: dart pub get --no-example
 
       - name: Verify tag matches pubspec version
         run: |

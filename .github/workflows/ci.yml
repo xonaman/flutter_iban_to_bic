@@ -32,8 +32,9 @@ jobs:
       - name: Print Dart version
         run: dart --version
 
+      # --no-example: example/ is a Flutter app and needs the Flutter SDK.
       - name: Install dependencies
-        run: dart pub get
+        run: dart pub get --no-example
 
       - name: Verify formatting
         if: matrix.sdk != '3.8.0'
