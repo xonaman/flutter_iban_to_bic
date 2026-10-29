@@ -90,9 +90,9 @@ await lookup.lookup('DE64 5001 0517 9423 8144 35');
 | AT   | Austria     | 4–9              | [OeNB](https://www.oenb.at/) SEPA directory | exact | no (manual) |
 | BE   | Belgium     | 4–7              | [NBB](https://www.nbb.be/en/payments-and-securities/payment-standards/bank-identification-codes) bank identification codes | exact | no (manual) |
 | DE   | Germany     | 4–12             | [Deutsche Bundesbank](https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes) BLZ file | exact | yes (weekly) |
-| ES   | Spain       | 4–8              | inherited from [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic), no official source yet | institution | no |
-| FR   | France      | 4–9              | inherited from [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic), no official source yet | institution | no |
-| LT   | Lithuania   | 4–9              | inherited from [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic), no official source yet | exact | no |
+| ES   | Spain       | 4–8              | ECB MFI list via [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) (2024), no national source yet | institution | no |
+| FR   | France      | 4–9              | ECB MFI list via [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) (2024), no national source yet | institution | no |
+| LT   | Lithuania   | 4–9              | not recorded (added in 0.0.5), no official source yet | exact | no |
 | LU   | Luxembourg  | 4–7              | [ABBL](https://www.abbl.lu/) IBAN/BIC register | exact | no (manual) |
 | NL   | Netherlands | 4–8              | [Betaalvereniging](https://www.betaalvereniging.nl/) BIC list | exact | no (manual) |
 
@@ -122,3 +122,23 @@ if (result case BicFound(:final bic, isExact: false)) {
 
 If you register your own `CountrySpec`, pass `accuracy:` to match your data
 (it defaults to `BicAccuracy.exact`).
+
+## Data sources & licences
+
+The code is MIT-licensed. The bank-code datasets in `assets/bank_codes/` are
+not: they come from the publishers below, whose terms apply to them. See
+[`NOTICE`](NOTICE) for the full attribution text and links.
+
+| Code   | Source | Terms (summary) |
+|--------|--------|-----------------|
+| AT     | [OeNB SEPA directory](https://www.oenb.at/docroot/downloads_observ/sepa-zv-vz_gesamt.csv) | [CC BY 4.0](https://www.oenb.at/serviceportal/impressum-und-haftung.html), credit the OeNB |
+| BE     | [NBB bank identification codes](https://www.nbb.be/en/payments-and-securities/bank-identification-codes) | [Free use](https://www.nbb.be/en/disclaimer-and-legal-information/copyright-and-use-information), credit the NBB |
+| DE     | [Bundesbank BLZ file](https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes) | [Free use, unaltered](https://www.bundesbank.de/en/homepage/user-information/conditions-for-the-general-use-of-the-website-764706), "Quelle: Deutsche Bundesbank" |
+| ES, FR | [ECB list of MFIs](https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/index.en.html), via [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) (2024) | [Free use](https://www.ecb.europa.eu/services/disclaimer/html/index.en.html), credit the ECB |
+| LT     | Not recorded; most likely the [Bank of Lithuania code list](https://www.lb.lt/en/iban-and-financial-institution-codes) | Not yet established |
+| LU     | [ABBL IBAN-BIC register](https://www.abbl.lu/luxembourg-register-of-iban-bic-codes/) | [Reference use, unmodified](https://www.abbl.lu/legal-notice/), credit the ABBL; redistribution not addressed |
+| NL     | [Betaalvereniging BIC list](https://www.betaalvereniging.nl/en/knowledge-base/iban-and-bic/bic-code/) | [Personal, non-commercial use](https://www.betaalvereniging.nl/en/disclaimer/); redistribution needs written consent |
+
+The data is provided as published, without warranty. If you need guaranteed
+coverage or redistribution rights, plug in your own data with a custom
+`BicResolver` (see [Extending with custom data](#extending-with-custom-data)).
