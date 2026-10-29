@@ -46,6 +46,7 @@ jobs:
         run: flutter pub get
 
       - name: Run refresh script
+        id: refresh
         env:
           # Optional override. When unset, the script reads the current file's
           # URL off the Bundesbank download page.
@@ -55,6 +56,11 @@ jobs:
           COUNTRIES: ${{ inputs.countries }}
         run: |
           read -r -a countries <<< "$COUNTRIES"
+          # Whitespace-only input also refreshes everything, so decide this
+          # from the parsed list rather than the raw input.
+          if [ "${#countries[@]}" -eq 0 ]; then
+            echo 'all_countries=true' >> "$GITHUB_OUTPUT"
+          fi
           for cc in "${countries[@]}"; do
             if [[ ! "$cc" =~ ^[A-Za-z]{2}$ ]]; then
               echo "::error::Invalid country code: $cc"
@@ -105,11 +111,14 @@ jobs:
           labels: data-refresh
           delete-branch: true
 
-      # Runs for scheduled runs and manual runs over all countries, so a
-      # partial manual run can't close the issue. Any failed step (including
-      # the tests above or the PR creation) also counts as needing attention.
+      # Runs for scheduled runs (even if an early step failed) and manual
+      # runs over all countries, so a partial manual run can't close the
+      # issue. Any failed step (including the tests above or the PR
+      # creation) also counts as needing attention.
       - name: Update tracking issue
-        if: always() && inputs.countries == ''
+        if: >-
+          always() && (github.event_name == 'schedule' ||
+          steps.refresh.outputs.all_countries == 'true')
         env:
           GH_TOKEN: ${{ github.token }}
           JOB_STATUS: ${{ job.status }}

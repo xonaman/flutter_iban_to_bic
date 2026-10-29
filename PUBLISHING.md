@@ -72,7 +72,7 @@ single tracking issue titled **Scheduled data refresh needs attention**
 - The next run where every adapter refreshed and the job succeeded closes
   the issue.
 - Countries without an adapter never trigger it.
-- Only scheduled runs and manual runs over all countries touch the issue;
+- Only scheduled runs and manual runs over all countries (blank input) touch the issue;
   a manual run for a subset of countries leaves it alone.
 - Runs are serialized (`concurrency: refresh-data`) so two runs can't race
   on the issue or the refresh branch. GitHub keeps only one pending run per
