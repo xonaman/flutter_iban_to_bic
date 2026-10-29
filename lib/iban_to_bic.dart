@@ -5,6 +5,7 @@
 library;
 
 export 'src/bic.dart';
+export 'src/bic_accuracy.dart';
 export 'src/country_spec.dart';
 export 'src/iban.dart' show InvalidIbanReason;
 export 'src/asset_resolver.dart' show AssetJsonResolver;

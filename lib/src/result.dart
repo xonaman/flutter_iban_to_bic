@@ -1,4 +1,5 @@
 import 'bic.dart';
+import 'bic_accuracy.dart';
 import 'iban.dart';
 
 /// Outcome of an IBAN-to-BIC lookup.
@@ -16,9 +17,18 @@ sealed class IbanLookupResult {
   const IbanLookupResult();
 }
 
+/// The bank code was found and resolved to [bic].
 final class BicFound extends IbanLookupResult {
   final Bic bic;
-  const BicFound(this.bic);
+
+  /// Whether [bic] is the account's exact BIC or only its institution's
+  /// main BIC. See [BicAccuracy] for which countries are which.
+  final BicAccuracy accuracy;
+
+  const BicFound(this.bic, {this.accuracy = BicAccuracy.exact});
+
+  /// `true` when [accuracy] is [BicAccuracy.exact].
+  bool get isExact => accuracy == BicAccuracy.exact;
 }
 
 final class InvalidIban extends IbanLookupResult {
