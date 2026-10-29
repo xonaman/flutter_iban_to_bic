@@ -16,11 +16,38 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  # Open, update and close the tracking issue for skipped/failed refreshes.
+  issues: write
+
+# Serialize runs so overlapping scheduled and manual runs can't open
+# duplicate tracking issues or race on the refresh PR branch. The running
+# job is never cancelled, but GitHub keeps only one pending run per group:
+# a newer queued run cancels an older pending one, scheduled or manual.
+# A cancelled run never reaches the tracking-issue step, so if a manual
+# subset run displaces a pending scheduled run, that week's alert is lost.
+# Avoid starting manual runs while another run is in progress.
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
+      # Runs first so the tracking-issue step knows whether this is a full
+      # run even if checkout or setup fails. Whitespace-only input also
+      # refreshes everything, so decide this from the parsed list rather
+      # than the raw input.
+      - name: Classify run scope
+        id: scope
+        env:
+          COUNTRIES: ${{ inputs.countries }}
+        run: |
+          read -r -a countries <<< "$COUNTRIES"
+          if [ "${#countries[@]}" -eq 0 ]; then
+            echo 'all_countries=true' >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Check out code
         uses: actions/checkout@v6
 
@@ -43,8 +70,32 @@ jobs:
           NBB_BIC_URL: ${{ vars.NBB_BIC_URL }}
           ABBL_IBAN_BIC_URL: ${{ vars.ABBL_IBAN_BIC_URL }}
           BETAALVERENIGING_BIC_URL: ${{ vars.BETAALVERENIGING_BIC_URL }}
+          # Passed through env (not interpolated into the script) so the
+          # input can't inject shell commands.
+          COUNTRIES: ${{ inputs.countries }}
         run: |
-          dart run tool/refresh_data.dart ${{ inputs.countries }}
+          read -r -a countries <<< "$COUNTRIES"
+          for cc in "${countries[@]}"; do
+            if [[ ! "$cc" =~ ^[A-Za-z]{2}$ ]]; then
+              echo "::error::Invalid country code: $cc"
+              exit 64
+            fi
+          done
+          dart run tool/refresh_data.dart \
+            --summary-json="$RUNNER_TEMP/refresh-summary.json" \
+            --summary-markdown="$RUNNER_TEMP/refresh-summary.md" \
+            "${countries[@]}"
+
+      - name: Publish refresh summary
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/refresh-summary.md" ]; then
+            {
+              echo '## Data refresh'
+              echo
+              cat "$RUNNER_TEMP/refresh-summary.md"
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Run tests against refreshed data
         run: flutter test
@@ -85,3 +136,78 @@ jobs:
           body-path: ${{ runner.temp }}/pr-body.md
           labels: data-refresh
           delete-branch: true
+
+      # Runs for scheduled runs (even if an early step failed) and manual
+      # runs over all countries, so a partial manual run can't close the
+      # issue. Any failed step (including the tests above or the PR
+      # creation) also counts as needing attention.
+      - name: Update tracking issue
+        if: >-
+          always() && (github.event_name == 'schedule' ||
+          steps.scope.outputs.all_countries == 'true')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          summary_json="$RUNNER_TEMP/refresh-summary.json"
+          summary_md="$RUNNER_TEMP/refresh-summary.md"
+          title='Scheduled data refresh needs attention'
+
+          adapters_ok=false
+          if [ -f "$summary_json" ] &&
+            [ "$(jq -r '.needsAttention' "$summary_json")" = 'false' ]; then
+            adapters_ok=true
+          fi
+          needs_attention=true
+          if [ "$adapters_ok" = 'true' ] && [ "$JOB_STATUS" = 'success' ]; then
+            needs_attention=false
+          fi
+
+          issue=$(gh issue list --repo "$GITHUB_REPOSITORY" \
+            --label data-refresh --state open --json number,title \
+            --jq "map(select(.title == \"$title\")) | first | .number // empty")
+
+          if [ "$needs_attention" = 'true' ]; then
+            {
+              if [ "$adapters_ok" = 'true' ]; then
+                echo "Every country with an adapter refreshed, but a later step"
+                echo "of the [data refresh run]($RUN_URL) failed (job status:"
+                echo '`'"$JOB_STATUS"'`). Check the tests and PR creation steps.'
+              else
+                echo "The [data refresh run]($RUN_URL) did not refresh every"
+                echo 'country with an adapter (job status: `'"$JOB_STATUS"'`).'
+              fi
+              echo
+              if [ -f "$summary_md" ]; then
+                cat "$summary_md"
+              else
+                echo 'The refresh script wrote no summary; see the run log.'
+              fi
+              echo
+              echo 'This issue closes automatically after the next fully'
+              echo 'successful refresh.'
+            } > "$RUNNER_TEMP/issue-body.md"
+
+            if [ -n "$issue" ]; then
+              gh issue comment "$issue" --repo "$GITHUB_REPOSITORY" \
+                --body-file "$RUNNER_TEMP/issue-body.md"
+            else
+              # Create the label only if it's missing, so real errors
+              # (e.g. permissions) still fail the step visibly.
+              has_label=$(gh label list --repo "$GITHUB_REPOSITORY" \
+                --search data-refresh --json name \
+                --jq 'any(.[]; .name == "data-refresh")')
+              if [ "$has_label" != 'true' ]; then
+                gh label create data-refresh --repo "$GITHUB_REPOSITORY" \
+                  --color 0E8A16 \
+                  --description 'Automated bank-code data refresh'
+              fi
+              gh issue create --repo "$GITHUB_REPOSITORY" \
+                --title "$title" --label data-refresh \
+                --body-file "$RUNNER_TEMP/issue-body.md"
+            fi
+          elif [ -n "$issue" ]; then
+            gh issue close "$issue" --repo "$GITHUB_REPOSITORY" \
+              --comment "Resolved: [this refresh run]($RUN_URL) succeeded for every country with an adapter."
+          fi
