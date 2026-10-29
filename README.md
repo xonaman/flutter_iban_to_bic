@@ -90,8 +90,8 @@ await lookup.lookup('DE64 5001 0517 9423 8144 35');
 | AT   | Austria     | 4–9              | [OeNB](https://www.oenb.at/) SEPA directory | exact | no (manual) |
 | BE   | Belgium     | 4–7              | [NBB](https://www.nbb.be/en/payments-and-securities/payment-standards/bank-identification-codes) bank identification codes | exact | no (manual) |
 | DE   | Germany     | 4–12             | [Deutsche Bundesbank](https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes) BLZ file | exact | yes (weekly) |
-| ES   | Spain       | 4–8              | inherited from [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic), no official source yet | institution | no |
-| FR   | France      | 4–9              | inherited from [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic), no official source yet | institution | no |
+| ES   | Spain       | 4–8              | ECB MFI list via [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) (2024), no national source yet | institution | no |
+| FR   | France      | 4–9              | ECB MFI list via [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) (2024), no national source yet | institution | no |
 | LT   | Lithuania   | 4–9              | not recorded (added in 0.0.5), no official source yet | exact | no |
 | LU   | Luxembourg  | 4–7              | [ABBL](https://www.abbl.lu/) IBAN/BIC register | exact | no (manual) |
 | NL   | Netherlands | 4–8              | [Betaalvereniging](https://www.betaalvereniging.nl/) BIC list | exact | no (manual) |

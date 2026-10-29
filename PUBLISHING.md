@@ -99,8 +99,9 @@ testing the version the package claims to support:
    constraint". Use the Flutter release that ships the new Dart floor (see
    the [SDK archive](https://docs.flutter.dev/install/archive)).
 
-Then run `flutter pub get` in the root and in `example/` so both lockfiles
-pick up the new constraint, and add a `CHANGELOG.md` line. Users on older
+Then run `flutter pub get` in the root to check that the constraints still
+resolve (the root `pubspec.lock` is not committed), and in `example/` to
+update the committed `example/pubspec.lock`. Add a `CHANGELOG.md` line. Users on older
 SDKs aren't broken: pub keeps resolving them to the last release that
 allowed their SDK. Still, bump at least the minor version.
 
