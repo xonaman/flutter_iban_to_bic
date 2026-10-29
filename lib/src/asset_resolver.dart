@@ -8,6 +8,18 @@ import 'resolver.dart';
 
 /// Resolves bank codes by lazily loading a per-country JSON asset.
 ///
+/// Two asset shapes are accepted:
+///
+/// * a map from bank code to an object with `bic`, `bankName`,
+///   `bankShortName` and optionally `bankAddress`, `bankPostcode` and
+///   `bankLocation`, e.g.
+///   `{"10010010":{"bic":"PBNKDEFFXXX","bankName":"Postbank",...}}`;
+/// * the compact form the bundled datasets use,
+///   `{"v":1,"banks":[[codes, bic, bankName, bankShortName, bankAddress,
+///   bankPostcode, bankLocation], ...]}`, where `codes` lists every bank
+///   code sharing that row, a `null` `bankShortName` means "same as
+///   `bankName`", and trailing `null`s may be omitted.
+///
 /// The first `resolve` call awaits asset loading and parsing. After that,
 /// results are served from an in-memory cache — subsequent calls complete
 /// synchronously from the caller's perspective, but the return type stays
@@ -62,13 +74,7 @@ class AssetJsonResolver implements BicResolver {
   Future<Map<String, Bic>> _doLoad(int gen) async {
     try {
       final String raw = await _bundle.loadString(assetPath);
-      final Map<String, dynamic> decoded =
-          json.decode(raw) as Map<String, dynamic>;
-      final Map<String, Bic> parsed = <String, Bic>{
-        for (final MapEntry<String, dynamic> e in decoded.entries)
-          if (_bicFromJson(e.value as Map<String, dynamic>) case final Bic bic)
-            e.key: bic,
-      };
+      final Map<String, Bic> parsed = _parse(json.decode(raw));
       if (_generation == gen) _cache = parsed;
       return parsed;
     } finally {
@@ -88,17 +94,67 @@ class _CachedSyncResolver implements SyncBicResolver {
   Bic? resolve(String bankCode) => _entries[bankCode];
 }
 
+Map<String, Bic> _parse(Object? decoded) {
+  final Map<String, dynamic> map = decoded as Map<String, dynamic>;
+  // A bank code maps to an object, never a list, so `banks` being a list
+  // unambiguously marks the compact form.
+  if (map['banks'] case final List<dynamic> banks) {
+    if (map['v'] != 1) {
+      throw FormatException('Unsupported bank-code asset version: ${map['v']}');
+    }
+    return <String, Bic>{
+      for (final List<dynamic> row in banks.cast<List<dynamic>>())
+        if (_bicFromRow(row) case final Bic bic)
+          for (final String code in (row[0] as List<dynamic>).cast<String>())
+            code: bic,
+    };
+  }
+  return <String, Bic>{
+    for (final MapEntry<String, dynamic> e in map.entries)
+      if (_bicFromJson(e.value as Map<String, dynamic>) case final Bic bic)
+        e.key: bic,
+  };
+}
+
+Bic? _bicFromRow(List<dynamic> row) {
+  String? at(int i) => i < row.length ? row[i] as String? : null;
+  final String bankName = at(2)!;
+  return _bic(
+    value: at(1),
+    bankName: bankName,
+    bankShortName: at(3) ?? bankName,
+    bankAddress: at(4),
+    bankPostcode: at(5),
+    bankLocation: at(6),
+  );
+}
+
 /// Returns `null` for rows without a BIC so lookups report `UnknownBank`
 /// instead of a `BicFound` carrying an empty value.
-Bic? _bicFromJson(Map<String, dynamic> m) {
-  final String? value = m['bic'] as String?;
+Bic? _bicFromJson(Map<String, dynamic> m) => _bic(
+  value: m['bic'] as String?,
+  bankName: m['bankName'] as String,
+  bankShortName: m['bankShortName'] as String,
+  bankAddress: m['bankAddress'] as String?,
+  bankPostcode: m['bankPostcode'] as String?,
+  bankLocation: m['bankLocation'] as String?,
+);
+
+Bic? _bic({
+  required String? value,
+  required String bankName,
+  required String bankShortName,
+  String? bankAddress,
+  String? bankPostcode,
+  String? bankLocation,
+}) {
   if (value == null || value.trim().isEmpty) return null;
   return Bic(
     value: value,
-    bankName: m['bankName'] as String,
-    bankShortName: m['bankShortName'] as String,
-    bankAddress: m['bankAddress'] as String?,
-    bankPostcode: m['bankPostcode'] as String?,
-    bankLocation: m['bankLocation'] as String?,
+    bankName: bankName,
+    bankShortName: bankShortName,
+    bankAddress: bankAddress,
+    bankPostcode: bankPostcode,
+    bankLocation: bankLocation,
   );
 }

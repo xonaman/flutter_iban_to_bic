@@ -2,12 +2,15 @@ iban_to_bic
 Copyright (c) Robert Mainzer. The source code is licensed under the MIT
 License (see LICENSE).
 
-The bank-code datasets in assets/bank_codes/ are NOT covered by the MIT
+The bank-code datasets in assets/bank_codes/ (and their sources in
+data/bank_codes/ in the repository) are NOT covered by the MIT
 License. They are derived from the publications listed below, and their
 publishers' terms apply. The values kept (bank codes, BICs, names,
 addresses) are reproduced as published, but the datasets are not complete
 copies of the sources. They have been:
-  - converted to JSON, one entry per bank code;
+  - converted to JSON: one entry per bank code in data/bank_codes/, and
+    a compact form in assets/bank_codes/ that lists bank codes sharing
+    the same details once;
   - reduced to the fields this package uses (other columns are dropped);
   - filtered to the rows a bank-code-to-BIC lookup needs. For example,
     only the Bundesbank's main records (Merkmal 1) are kept, and rows
