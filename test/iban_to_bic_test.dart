@@ -421,6 +421,8 @@ void main() {
               .listSync()
               .whereType<File>()
               .where((File f) => f.path.endsWith('.json'))
+              // Provenance, not bank codes; see data_info_test.dart.
+              .where((File f) => !f.path.endsWith('/meta.json'))
               .toList()
             ..sort((File a, File b) => a.path.compareTo(b.path));
       expect(assets, isNotEmpty);

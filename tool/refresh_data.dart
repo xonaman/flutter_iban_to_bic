@@ -7,7 +7,9 @@
 //      returns `{ bankCode: BankEntry(bic, bankName, bankShortName, ...) }`.
 //      Fetch from the central bank / competent authority — no scraping of
 //      third-party aggregators.
-//   3. Add the country to `pubspec.yaml`'s flutter.assets list if new.
+//   3. Record where the data came from with `recordSource(...)` so the
+//      provenance in `assets/bank_codes/meta.json` stays current.
+//   4. Add the country to `pubspec.yaml`'s flutter.assets list if new.
 //
 // Run with:
 //   dart run tool/refresh_data.dart           # refresh everything
@@ -17,6 +19,8 @@
 
 import 'dart:convert';
 import 'dart:io';
+
+import 'package:crypto/crypto.dart' show sha256;
 
 class BankEntry {
   final String bic;
@@ -58,6 +62,35 @@ class AdapterSkipped implements Exception {
   String toString() => reason;
 }
 
+/// Provenance of a freshly fetched dataset, as reported by its adapter.
+class DatasetSource {
+  DatasetSource({
+    required this.publisher,
+    required this.url,
+    this.effectiveFrom,
+    this.validUntil,
+  });
+
+  final String publisher;
+  final String url;
+
+  /// Day the upstream file took effect (or was published), if stated.
+  final DateTime? effectiveFrom;
+
+  /// Last day the upstream file is valid, if stated.
+  final DateTime? validUntil;
+}
+
+/// Sources recorded by adapters during this run, keyed by country code.
+final Map<String, DatasetSource> _sources = <String, DatasetSource>{};
+
+/// Called by an adapter once it knows which upstream file it is reading.
+void recordSource(String countryCode, DatasetSource source) {
+  _sources[countryCode] = source;
+}
+
+const String metaPath = 'assets/bank_codes/meta.json';
+
 /// Registry of per-country adapters. `null` means "not yet implemented" and
 /// the refresh script leaves the existing JSON untouched.
 final Map<String, CountryAdapter?> adapters = <String, CountryAdapter?>{
@@ -96,8 +129,10 @@ Future<void> main(List<String> args) async {
             for (final MapEntry<String, BankEntry> e in entries.entries)
               e.key: e.value.toJson(),
           };
-      File(path).writeAsStringSync('${jsonEncode(asJson)}\n');
+      final String body = '${jsonEncode(asJson)}\n';
+      File(path).writeAsStringSync(body);
       print('[$cc] wrote $path (${entries.length} entries)');
+      writeMeta(cc, body, _sources[cc]);
       refreshed++;
     } on AdapterSkipped catch (e) {
       print('[$cc] skipped: $e');
@@ -112,6 +147,53 @@ Future<void> main(List<String> args) async {
   print('refreshed: $refreshed  skipped: $skipped  failed: $failed');
   if (failed > 0) exit(1);
 }
+
+/// Updates [cc]'s entry in `meta.json` for a freshly written dataset.
+///
+/// The entry is left alone when neither the content hash nor the source
+/// changed, so a refresh that finds nothing new doesn't produce a diff.
+void writeMeta(String cc, String body, DatasetSource? source, {DateTime? now}) {
+  final File file = File(metaPath);
+  final Map<String, dynamic> meta = file.existsSync()
+      ? json.decode(file.readAsStringSync()) as Map<String, dynamic>
+      : <String, dynamic>{};
+  final Map<String, dynamic>? old = meta[cc] as Map<String, dynamic>?;
+  final Map<String, dynamic> next = buildMetaEntry(
+    body,
+    source,
+    now ?? DateTime.now(),
+  );
+  if (old != null && _sameProvenance(old, next)) return;
+  meta[cc] = next;
+  final List<String> keys = meta.keys.toList()..sort();
+  file.writeAsStringSync(
+    '${const JsonEncoder.withIndent('  ').convert(<String, dynamic>{for (final String k in keys) k: meta[k]})}\n',
+  );
+  print('[$cc] updated $metaPath');
+}
+
+/// The `meta.json` entry for a dataset whose file content is [body].
+Map<String, dynamic> buildMetaEntry(
+  String body,
+  DatasetSource? source,
+  DateTime now,
+) => <String, dynamic>{
+  'publisher': source?.publisher,
+  'sourceUrl': source?.url,
+  'retrievedOn': _day(now.toUtc()),
+  'effectiveFrom': _day(source?.effectiveFrom),
+  'validUntil': _day(source?.validUntil),
+  'sha256': sha256.convert(utf8.encode(body)).toString(),
+  'notes': null,
+};
+
+bool _sameProvenance(Map<String, dynamic> a, Map<String, dynamic> b) =>
+    a['sha256'] == b['sha256'] &&
+    a['sourceUrl'] == b['sourceUrl'] &&
+    a['effectiveFrom'] == b['effectiveFrom'] &&
+    a['validUntil'] == b['validUntil'];
+
+String? _day(DateTime? d) => d?.toIso8601String().substring(0, 10);
 
 // ---------------------------------------------------------------------------
 // DE — Deutsche Bundesbank
@@ -145,12 +227,14 @@ Future<Map<String, BankEntry>> fetchDe() async {
   final HttpClient client = HttpClient();
   try {
     String? url = Platform.environment['BUNDESBANK_BLZ_URL'];
+    ({DateTime from, DateTime until})? validity;
     if (url == null || url.isEmpty) {
       final String page = latin1.decode(
         await _get(client, Uri.parse(bundesbankDownloadPage)),
         allowInvalid: true,
       );
       url = findBundesbankBlzTxtUrl(page);
+      validity = findBundesbankBlzValidity(page);
       if (url == null) {
         throw StateError(
           'No blz-aktuell TXT link found on $bundesbankDownloadPage — '
@@ -160,6 +244,15 @@ Future<Map<String, BankEntry>> fetchDe() async {
       }
     }
     print('[DE] downloading $url');
+    recordSource(
+      'DE',
+      DatasetSource(
+        publisher: 'Deutsche Bundesbank',
+        url: url,
+        effectiveFrom: validity?.from,
+        validUntil: validity?.until,
+      ),
+    );
     return parseBundesbankBlz(
       latin1.decode(await _get(client, Uri.parse(url))),
     );
@@ -189,6 +282,23 @@ String? findBundesbankBlzTxtUrl(String html) {
   ).firstMatch(html);
   if (match == null) return null;
   return Uri.parse(bundesbankDownloadPage).resolve(match.group(1)!).toString();
+}
+
+/// Reads the validity period ("gültig vom 07.09.2026 bis 06.12.2026")
+/// printed next to the current TXT link on the Bundesbank download page,
+/// or `null` if it isn't there.
+({DateTime from, DateTime until})? findBundesbankBlzValidity(String html) {
+  final RegExpMatch? match = RegExp(
+    r'/blz-aktuell-txt-data\.txt"[\s\S]{0,800}?'
+    r'vom\s+(\d{2})\.(\d{2})\.(\d{4})\s+bis\s+(\d{2})\.(\d{2})\.(\d{4})',
+  ).firstMatch(html);
+  if (match == null) return null;
+  DateTime at(int i) => DateTime.utc(
+    int.parse(match.group(i + 2)!),
+    int.parse(match.group(i + 1)!),
+    int.parse(match.group(i)!),
+  );
+  return (from: at(1), until: at(4));
 }
 
 /// Pure parser: turns a Bundesbank BLZ fixed-width dump (already decoded

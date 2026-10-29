@@ -60,6 +60,24 @@ Calling the sync `ibanToBic` for a country that hasn't been preloaded throws
 `StateError`. If startup latency matters more than first-call latency,
 preload; otherwise just use the async variant.
 
+## Data provenance and age
+
+Every built-in dataset records where it came from and how old it is:
+
+```dart
+final info = await dataInfo('DE');
+print(info?.publisher);     // Deutsche Bundesbank
+print(info?.sourceUrl);     // https://www.bundesbank.de/…/blz-aktuell-txt-data.txt
+print(info?.retrievedOn);   // 2026-10-29 00:00:00.000Z
+print(info?.effectiveFrom); // 2026-09-07 00:00:00.000Z
+print(info?.validUntil);    // 2026-12-06 00:00:00.000Z
+print(info?.ageInDays());   // days since retrieval
+```
+
+Fields the package doesn't know are `null`; `notes` explains why. Spain,
+France and Lithuania were carried over from older releases without a
+recorded source, so only their content hash (`sha256`) is set.
+
 ## Extending with custom data
 
 Implement `SyncBicResolver` for in-memory data, or `BicResolver` (returns

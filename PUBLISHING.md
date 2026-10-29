@@ -53,6 +53,12 @@ manually via `workflow_dispatch`). It invokes `tool/refresh_data.dart`
 against each country's authoritative upstream, runs the test suite
 against the new data, and opens a PR with the diff if anything changed.
 
+Each refreshed country also gets its entry in
+`assets/bank_codes/meta.json` updated (source URL, retrieval date,
+validity and content hash). If you edit a dataset by hand, update its
+`meta.json` entry too; `test/data_info_test.dart` fails when a hash
+doesn't match.
+
 ### One-time setup
 
 - Nothing for Germany: the script finds the current BLZ file on the

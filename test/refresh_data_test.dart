@@ -116,6 +116,69 @@ void main() {
     });
   });
 
+  group('findBundesbankBlzValidity', () {
+    test('reads the period printed next to the current TXT link', () {
+      // Trimmed from the live download page; the upcoming file is listed
+      // first and must not win.
+      const String html =
+          '<a href="/x/blz-neu-txt-data.txt"><small>gültig vom 07.12.2026 '
+          'bis 07.03.2027</small></a>'
+          '<a href="https://www.bundesbank.de/x/blz-aktuell-txt-data.txt" '
+          'target="_blank"><div class="h3">Bankleitzahlendateien\n'
+          '<small class="d-block teasable__subtitle">gültig vom 07.09.2026 '
+          'bis 06.12.2026</small></div></a>';
+      final ({DateTime from, DateTime until})? v = findBundesbankBlzValidity(
+        html,
+      );
+      expect(v?.from, DateTime.utc(2026, 9, 7));
+      expect(v?.until, DateTime.utc(2026, 12, 6));
+    });
+
+    test('returns null when the page shows no period', () {
+      expect(
+        findBundesbankBlzValidity('<a href="/blz-aktuell-txt-data.txt">'),
+        isNull,
+      );
+    });
+  });
+
+  group('buildMetaEntry', () {
+    test('records source, dates and the content hash', () {
+      final Map<String, dynamic> entry = buildMetaEntry(
+        '{}\n',
+        DatasetSource(
+          publisher: 'Deutsche Bundesbank',
+          url: 'https://example.com/blz.txt',
+          effectiveFrom: DateTime.utc(2026, 9, 7),
+          validUntil: DateTime.utc(2026, 12, 6),
+        ),
+        DateTime.utc(2026, 10, 29, 4),
+      );
+      expect(entry, <String, dynamic>{
+        'publisher': 'Deutsche Bundesbank',
+        'sourceUrl': 'https://example.com/blz.txt',
+        'retrievedOn': '2026-10-29',
+        'effectiveFrom': '2026-09-07',
+        'validUntil': '2026-12-06',
+        // sha256 of "{}\n"
+        'sha256':
+            'ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356',
+        'notes': null,
+      });
+    });
+
+    test('leaves fields null when the adapter recorded no source', () {
+      final Map<String, dynamic> entry = buildMetaEntry(
+        '{}\n',
+        null,
+        DateTime.utc(2026, 10, 29),
+      );
+      expect(entry['sourceUrl'], isNull);
+      expect(entry['effectiveFrom'], isNull);
+      expect(entry['retrievedOn'], '2026-10-29');
+    });
+  });
+
   group('findBundesbankBlzTxtUrl', () {
     test('picks the current unpacked TXT file', () {
       const String html =

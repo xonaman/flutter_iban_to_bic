@@ -6,6 +6,7 @@ library;
 
 export 'src/bic.dart';
 export 'src/country_spec.dart';
+export 'src/data_info.dart' show DatasetInfo, dataInfo;
 export 'src/iban.dart' show InvalidIbanReason;
 export 'src/asset_resolver.dart' show AssetJsonResolver;
 export 'src/iban_to_bic.dart'
