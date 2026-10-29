@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 
@@ -144,6 +145,205 @@ void main() {
         findBundesbankBlzTxtUrl('<a href="/blz-neu-txt-data.txt">'),
         isNull,
       );
+    });
+  });
+
+  // The fixtures under test/fixtures/ hold a handful of real rows from each
+  // publisher's file (October 2026). The xlsx fixtures are minimal
+  // hand-built workbooks with the same header layout as the originals.
+
+  group('readXlsxRows', () {
+    test('reads shared, rich-text, inline and numeric cells', () {
+      final List<List<String>> rows = readXlsxRows(
+        File('test/fixtures/nbb_full_list.xlsx').readAsBytesSync(),
+      );
+      expect(rows, hasLength(8));
+      expect(rows[0], <String>['Version 01/09/2026']);
+      // Rich text split over two runs.
+      expect(rows[4][2], 'Nationale Bank van België');
+      // Number cell.
+      expect(rows[3][0], '50');
+      // An omitted cell (C8) leaves a gap rather than shifting columns.
+      expect(rows[7].sublist(0, 4), <String>[
+        '171',
+        'CPHB BE 75',
+        '',
+        'Banque CPH',
+      ]);
+      // Inline strings and XML entities.
+      expect(
+        readXlsxRows(
+          File('test/fixtures/betaalvereniging_bic.xlsx').readAsBytesSync(),
+        )[4],
+        <String>['INGBNL2A', 'INGB', 'ING BANK N.V.'],
+      );
+      expect(
+        readXlsxRows(
+          File('test/fixtures/abbl_iban_bic.xlsx').readAsBytesSync(),
+        )[2][0],
+        "Banque et Caisse d'Epargne de l'Etat, Luxembourg",
+      );
+    });
+
+    test('rejects non-zip input', () {
+      expect(
+        () => readXlsxRows(utf8.encode('not a zip')),
+        throwsFormatException,
+      );
+    });
+  });
+
+  group('parseOenbSepa', () {
+    final Map<String, BankEntry> parsed = parseOenbSepa(
+      latin1.decode(File('test/fixtures/oenb_sepa.csv').readAsBytesSync()),
+    );
+
+    test('pads bank codes and skips rows without a BIC', () {
+      expect(
+        parsed.keys,
+        unorderedEquals(<String>['00100', '01000', '10000', '14000']),
+      );
+      expect(parsed['01000']!.bic, 'BUNDATWWXXX');
+    });
+
+    test('maps name and address, decoding ISO-8859-1', () {
+      final BankEntry bawag = parsed['14000']!;
+      expect(bawag.bic, 'BAWAATWWXXX');
+      expect(
+        bawag.bankName,
+        'BAWAG P.S.K. Bank für Arbeit und Wirtschaft und '
+        'Österreichische Postsparkasse Aktiengesellschaft',
+      );
+      expect(bawag.bankShortName, bawag.bankName);
+      expect(bawag.bankAddress, 'Wiedner Gürtel 11');
+      expect(bawag.bankPostcode, '1100');
+      expect(bawag.bankLocation, 'Wien');
+    });
+
+    test('fails when the header row is missing', () {
+      expect(() => parseOenbSepa('a;b;c\n1;2;3'), throwsFormatException);
+    });
+  });
+
+  group('splitCsvLine', () {
+    test('splits plain fields', () {
+      expect(splitCsvLine('a;;b', ';'), <String>['a', '', 'b']);
+    });
+
+    test('unquotes fields, keeping delimiters and escaped quotes', () {
+      expect(splitCsvLine('"52300";"Bank; ""Nord""";X', ';'), <String>[
+        '52300',
+        'Bank; "Nord"',
+        'X',
+      ]);
+    });
+
+    test('lets parseOenbSepa read quoted rows', () {
+      const String text =
+          'Kennzeichen;Identnummer;Bankleitzahl;Bankenname;Straße;PLZ;Ort;'
+          'SWIFT-Code\n'
+          '"Hauptanstalt";"1";"52300";"Bank; Nord";"Weg 1";"1010";"Wien";'
+          '"ABCDATWWXXX"';
+      final BankEntry entry = parseOenbSepa(text)['52300']!;
+      expect(entry.bic, 'ABCDATWWXXX');
+      expect(entry.bankName, 'Bank; Nord');
+    });
+  });
+
+  group('checkPlausibleSize', () {
+    test('accepts normal churn and new countries', () {
+      checkPlausibleSize(860, 866);
+      checkPlausibleSize(10, 0);
+    });
+
+    test('rejects empty or truncated results', () {
+      expect(() => checkPlausibleSize(0, 0), throwsStateError);
+      expect(() => checkPlausibleSize(400, 866), throwsStateError);
+    });
+  });
+
+  group('parseNbbBic', () {
+    final Map<String, BankEntry> parsed = parseNbbBic(
+      readXlsxRows(File('test/fixtures/nbb_full_list.xlsx').readAsBytesSync()),
+    );
+
+    test('skips placeholder BICs and pads numeric codes', () {
+      expect(
+        parsed.keys,
+        unorderedEquals(<String>['000', '050', '100', '171']),
+      );
+    });
+
+    test('strips spaces from BICs and prefers the Dutch name', () {
+      expect(parsed['000']!.bic, 'GEBABEBB');
+      expect(parsed['100']!.bic, 'NBBEBEBB203');
+      expect(parsed['100']!.bankName, 'Nationale Bank van België');
+      expect(parsed['100']!.bankAddress, isNull);
+    });
+
+    test('falls back to the French name', () {
+      expect(parsed['171']!.bankName, 'Banque CPH');
+      expect(parsed['171']!.bankShortName, 'Banque CPH');
+    });
+  });
+
+  group('parseAbblRegister', () {
+    final Map<String, BankEntry> parsed = parseAbblRegister(
+      readXlsxRows(File('test/fixtures/abbl_iban_bic.xlsx').readAsBytesSync()),
+    );
+
+    test('reads codes and BICs, skipping rows without a BIC', () {
+      expect(
+        parsed.keys,
+        unorderedEquals(<String>['001', '002', '810', '999']),
+      );
+      expect(parsed['002']!.bic, 'BILLLULL');
+      expect(parsed['002']!.bankName, 'Banque Internationale à Luxembourg');
+      expect(parsed['810']!.bic, 'SATYLUL1XXX');
+    });
+  });
+
+  group('parseBetaalverenigingBic', () {
+    final Map<String, BankEntry> parsed = parseBetaalverenigingBic(
+      readXlsxRows(
+        File('test/fixtures/betaalvereniging_bic.xlsx').readAsBytesSync(),
+      ),
+    );
+
+    test('keys by identifier and trims names', () {
+      expect(
+        parsed.keys,
+        unorderedEquals(<String>['ABNA', 'AEGO', 'INGB', 'ZWLB']),
+      );
+      expect(parsed['AEGO']!.bic, 'AEGONL2U');
+      expect(parsed['AEGO']!.bankName, 'AEGON BANK');
+    });
+  });
+
+  group('download link lookup', () {
+    test('finds the ABBL register xlsx', () {
+      expect(
+        findAbblRegisterUrl(
+          '<a href="https://www.abbl.lu/app/uploads/logo.png">x</a>'
+          '<a href="https://office-membernet.abbl.lu/newDocRequest/ABC123/'
+          'ABBL_LuxembourgRegisterofIBANBICCodes392.xlsx">Download</a>',
+        ),
+        'https://office-membernet.abbl.lu/newDocRequest/ABC123/'
+        'ABBL_LuxembourgRegisterofIBANBICCodes392.xlsx',
+      );
+      expect(findAbblRegisterUrl('<a href="/other.xlsx">'), isNull);
+    });
+
+    test('finds the Betaalvereniging BIC list, resolving relative links', () {
+      expect(
+        findBetaalverenigingBicUrl(
+          '<a href="https://www.europeanpaymentscouncil.eu/rules.pdf">x</a>'
+          '<a href="/wp-content/uploads/2026/10/BIC-lijst-NL.xlsx">BIC</a>',
+        ),
+        'https://www.betaalvereniging.nl/wp-content/uploads/2026/10/'
+        'BIC-lijst-NL.xlsx',
+      );
+      expect(findBetaalverenigingBicUrl('<p>no link</p>'), isNull);
     });
   });
 

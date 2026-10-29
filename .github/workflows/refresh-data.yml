@@ -62,9 +62,14 @@ jobs:
 
       - name: Run refresh script
         env:
-          # Optional override. When unset, the script reads the current file's
-          # URL off the Bundesbank download page.
+          # Optional overrides, unset by default. The BE and AT files live at
+          # fixed URLs; for DE, LU and NL the script reads the current file's
+          # URL off the publisher's page.
           BUNDESBANK_BLZ_URL: ${{ vars.BUNDESBANK_BLZ_URL }}
+          OENB_SEPA_URL: ${{ vars.OENB_SEPA_URL }}
+          NBB_BIC_URL: ${{ vars.NBB_BIC_URL }}
+          ABBL_IBAN_BIC_URL: ${{ vars.ABBL_IBAN_BIC_URL }}
+          BETAALVERENIGING_BIC_URL: ${{ vars.BETAALVERENIGING_BIC_URL }}
           # Passed through env (not interpolated into the script) so the
           # input can't inject shell commands.
           COUNTRIES: ${{ inputs.countries }}
