@@ -141,10 +141,27 @@ if (result case BicFound(:final bic, isExact: false)) {
 If you register your own `CountrySpec`, pass `accuracy:` to match your data
 (it defaults to `BicAccuracy.exact`).
 
+## Bundled data
+
+The datasets are kept in `data/bank_codes/<cc>.jsonl`: one bank code per
+line, sorted, so every change to the data shows up as a readable diff.
+`tool/refresh_data.dart` refreshes them from each country's central bank
+or competent authority, for the countries that have an adapter (currently
+DE); a weekly workflow opens a pull request that lists the added, removed
+and changed codes.
+
+The library loads compact assets generated from those files. After editing
+a `.jsonl` file by hand, regenerate them with:
+
+```bash
+dart run tool/build_assets.dart
+```
+
 ## Data sources & licences
 
-The code is MIT-licensed. The bank-code datasets in `assets/bank_codes/` are
-not: they come from the publishers below, whose terms apply to them. See
+The code is MIT-licensed. The bank-code datasets in `data/bank_codes/`
+(and the assets generated from them in `assets/bank_codes/`) are not: they
+come from the publishers below, whose terms apply to them. See
 [`NOTICE`](NOTICE) for the full attribution text and links.
 
 | Code   | Source | Terms (summary) |

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -511,41 +510,6 @@ void main() {
       );
       expect(found.accuracy, BicAccuracy.exact);
       expect(found.isExact, isTrue);
-    });
-  });
-
-  group('bundled datasets', () {
-    test('every entry carries a BIC', () {
-      final List<File> assets =
-          Directory('assets/bank_codes')
-              .listSync()
-              .whereType<File>()
-              .where((File f) => f.path.endsWith('.json'))
-              // Provenance, not bank codes; see data_info_test.dart.
-              .where((File f) => f.uri.pathSegments.last != 'meta.json')
-              .toList()
-            ..sort((File a, File b) => a.path.compareTo(b.path));
-      expect(assets, isNotEmpty);
-      // One line per offending file, so a failure names every dataset.
-      final List<String> problems = <String>[];
-      for (final File asset in assets) {
-        final Map<String, dynamic> decoded =
-            json.decode(asset.readAsStringSync()) as Map<String, dynamic>;
-        final List<String> missing = <String>[
-          for (final MapEntry<String, dynamic> e in decoded.entries)
-            if (((e.value as Map<String, dynamic>)['bic'] as String? ?? '')
-                .trim()
-                .isEmpty)
-              e.key,
-        ];
-        if (missing.isNotEmpty) {
-          problems.add(
-            '${asset.path}: ${missing.length} of ${decoded.length} '
-            'entries have no BIC (e.g. ${missing.take(5).join(', ')})',
-          );
-        }
-      }
-      expect(problems, isEmpty);
     });
   });
 

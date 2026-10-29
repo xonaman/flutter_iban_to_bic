@@ -1,5 +1,7 @@
-// Refreshes `assets/bank_codes/<cc>.json` from each country's authoritative
-// source. Run manually or via the `refresh-data` GitHub Action.
+// Refreshes `data/bank_codes/<cc>.jsonl` (the reviewed source) and the
+// generated `assets/bank_codes/<cc>.json` (the runtime asset) from each
+// country's authoritative source. Run manually or via the `refresh-data`
+// GitHub Action. See `tool/bank_codes.dart` for both formats.
 //
 // Adding a new country:
 //   1. Register it under `adapters` below.
@@ -9,7 +11,15 @@
 //      third-party aggregators.
 //   3. Record where the data came from with `recordSource(...)` so the
 //      provenance in `assets/bank_codes/meta.json` stays current.
-//   4. Add the country to `pubspec.yaml`'s flutter.assets list if new.
+//   4. Run the refresh for it, which creates `data/bank_codes/<cc>.jsonl`
+//      and `assets/bank_codes/<cc>.json`, and add the asset to
+//      `pubspec.yaml`'s flutter.assets list.
+//   5. Register the country and its bank-code range (the IBAN character
+//      offsets) in `_buildDefaultCountries` in `lib/src/iban_to_bic.dart`.
+//
+// To fix an entry by hand, edit `data/bank_codes/<cc>.jsonl` and run
+// `dart run tool/build_assets.dart` to regenerate the asset (it also
+// updates the asset's hash in `meta.json`).
 //
 // Run with:
 //   dart run tool/refresh_data.dart           # refresh everything
@@ -20,34 +30,11 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:crypto/crypto.dart' show sha256;
+import 'bank_codes.dart';
+import 'dataset_meta.dart';
 
-class BankEntry {
-  final String bic;
-  final String bankName;
-  final String bankShortName;
-  final String? bankAddress;
-  final String? bankPostcode;
-  final String? bankLocation;
-
-  BankEntry({
-    required this.bic,
-    required this.bankName,
-    required this.bankShortName,
-    this.bankAddress,
-    this.bankPostcode,
-    this.bankLocation,
-  });
-
-  Map<String, String?> toJson() => <String, String?>{
-    'bic': bic,
-    'bankName': bankName,
-    'bankShortName': bankShortName,
-    if (bankAddress != null) 'bankAddress': bankAddress,
-    if (bankPostcode != null) 'bankPostcode': bankPostcode,
-    if (bankLocation != null) 'bankLocation': bankLocation,
-  };
-}
+export 'bank_codes.dart' show BankEntry;
+export 'dataset_meta.dart';
 
 typedef CountryAdapter = Future<Map<String, BankEntry>> Function();
 
@@ -62,29 +49,6 @@ class AdapterSkipped implements Exception {
   String toString() => reason;
 }
 
-/// Provenance of a freshly fetched dataset, as reported by its adapter.
-class DatasetSource {
-  DatasetSource({
-    required this.publisher,
-    required this.url,
-    this.effectiveFrom,
-    this.validUntil,
-    this.notes,
-  });
-
-  final String publisher;
-  final String url;
-
-  /// Day the upstream file took effect (or was published), if stated.
-  final DateTime? effectiveFrom;
-
-  /// Last day the upstream file is valid, if stated.
-  final DateTime? validUntil;
-
-  /// Remarks for `meta.json`, e.g. why a date is unknown.
-  final String? notes;
-}
-
 /// Sources recorded by adapters during this run, keyed by country code.
 final Map<String, DatasetSource> _sources = <String, DatasetSource>{};
 
@@ -93,10 +57,8 @@ void recordSource(String countryCode, DatasetSource source) {
   _sources[countryCode] = source;
 }
 
-const String metaPath = 'assets/bank_codes/meta.json';
-
 /// Registry of per-country adapters. `null` means "not yet implemented" and
-/// the refresh script leaves the existing JSON untouched.
+/// the refresh script leaves the existing data untouched.
 final Map<String, CountryAdapter?> adapters = <String, CountryAdapter?>{
   'AT': null,
   'BE': null,
@@ -127,16 +89,12 @@ Future<void> main(List<String> args) async {
     try {
       print('[$cc] fetching…');
       final Map<String, BankEntry> entries = await adapter();
-      final String path = 'assets/bank_codes/${cc.toLowerCase()}.json';
-      final Map<String, Map<String, String?>> asJson =
-          <String, Map<String, String?>>{
-            for (final MapEntry<String, BankEntry> e in entries.entries)
-              e.key: e.value.toJson(),
-          };
-      final String body = '${jsonEncode(asJson)}\n';
-      File(path).writeAsStringSync(body);
-      print('[$cc] wrote $path (${entries.length} entries)');
-      writeMeta(cc, body, _sources[cc]);
+      writeCountry(cc, entries);
+      print(
+        '[$cc] wrote ${sourcePath(cc)} and ${assetPath(cc)} '
+        '(${entries.length} entries)',
+      );
+      writeMeta(cc, File(assetPath(cc)).readAsStringSync(), _sources[cc]);
       refreshed++;
     } on AdapterSkipped catch (e) {
       print('[$cc] skipped: $e');
@@ -151,78 +109,6 @@ Future<void> main(List<String> args) async {
   print('refreshed: $refreshed  skipped: $skipped  failed: $failed');
   if (failed > 0) exit(1);
 }
-
-/// Updates [cc]'s entry in `meta.json` for a freshly written dataset.
-///
-/// The entry is left alone when neither the content hash nor the source
-/// changed, so a refresh that finds nothing new doesn't produce a diff.
-void writeMeta(String cc, String body, DatasetSource? source, {DateTime? now}) {
-  final File file = File(metaPath);
-  final Map<String, dynamic> meta = file.existsSync()
-      ? json.decode(file.readAsStringSync()) as Map<String, dynamic>
-      : <String, dynamic>{};
-  final Map<String, dynamic>? old = meta[cc] as Map<String, dynamic>?;
-  final Map<String, dynamic>? next = mergeMetaEntry(
-    old,
-    buildMetaEntry(body, source, now ?? DateTime.now()),
-  );
-  if (next == null) return;
-  meta[cc] = next;
-  final List<String> keys = meta.keys.toList()..sort();
-  file.writeAsStringSync(
-    '${const JsonEncoder.withIndent('  ').convert(<String, dynamic>{for (final String k in keys) k: meta[k]})}\n',
-  );
-  print('[$cc] updated $metaPath');
-}
-
-/// The `meta.json` entry for a dataset whose file content is [body].
-Map<String, dynamic> buildMetaEntry(
-  String body,
-  DatasetSource? source,
-  DateTime now,
-) => <String, dynamic>{
-  'publisher': source?.publisher,
-  'sourceUrl': source?.url,
-  'retrievedOn': _day(now.toUtc()),
-  'effectiveFrom': _day(source?.effectiveFrom),
-  'validUntil': _day(source?.validUntil),
-  'sha256': sha256.convert(utf8.encode(body)).toString(),
-  'notes': source?.notes,
-};
-
-/// Combines a country's existing `meta.json` entry ([old]) with a freshly
-/// built one ([fresh]). Returns `null` when nothing worth recording
-/// changed, so an unchanged refresh doesn't bump `retrievedOn`.
-///
-/// When the source URL is the same as before, fields the adapter left
-/// unknown keep their recorded values: the dates (e.g. `BUNDESBANK_BLZ_URL`
-/// pins a file, so the download page isn't read) and hand-written `notes`.
-/// A different source URL means a different file, so stale dates and notes
-/// are dropped unless the adapter supplies new ones.
-Map<String, dynamic>? mergeMetaEntry(
-  Map<String, dynamic>? old,
-  Map<String, dynamic> fresh,
-) {
-  if (old == null) return fresh;
-  final Map<String, dynamic> next = Map<String, dynamic>.of(fresh);
-  if (next['sourceUrl'] != null && next['sourceUrl'] == old['sourceUrl']) {
-    for (final String k in <String>['effectiveFrom', 'validUntil', 'notes']) {
-      next[k] ??= old[k];
-    }
-  }
-  const List<String> tracked = <String>[
-    'sha256',
-    'publisher',
-    'sourceUrl',
-    'effectiveFrom',
-    'validUntil',
-    'notes',
-  ];
-  if (tracked.every((String k) => old[k] == next[k])) return null;
-  return next;
-}
-
-String? _day(DateTime? d) => d?.toIso8601String().substring(0, 10);
 
 // ---------------------------------------------------------------------------
 // DE — Deutsche Bundesbank
