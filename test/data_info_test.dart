@@ -41,7 +41,7 @@ void main() {
         ).listSync())
           if (f is File &&
               f.path.endsWith('.json') &&
-              !f.path.endsWith('/meta.json'))
+              f.uri.pathSegments.last != 'meta.json')
             f.uri.pathSegments.last.split('.').first.toUpperCase(),
       };
       final Map<String, dynamic> meta =

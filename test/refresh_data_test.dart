@@ -179,6 +179,69 @@ void main() {
     });
   });
 
+  group('mergeMetaEntry', () {
+    Map<String, dynamic> entry({
+      String publisher = 'Deutsche Bundesbank',
+      String url = 'https://example.com/blz.txt',
+      String retrievedOn = '2026-10-29',
+      String? effectiveFrom = '2026-09-07',
+      String? validUntil = '2026-12-06',
+      String sha = 'abc',
+    }) => <String, dynamic>{
+      'publisher': publisher,
+      'sourceUrl': url,
+      'retrievedOn': retrievedOn,
+      'effectiveFrom': effectiveFrom,
+      'validUntil': validUntil,
+      'sha256': sha,
+      'notes': null,
+    };
+
+    test('takes the fresh entry when there is none yet', () {
+      expect(mergeMetaEntry(null, entry()), entry());
+    });
+
+    test('returns null when nothing but the retrieval date changed', () {
+      expect(mergeMetaEntry(entry(), entry(retrievedOn: '2026-11-02')), isNull);
+    });
+
+    test('records a changed publisher', () {
+      expect(
+        mergeMetaEntry(entry(), entry(publisher: 'Bundesbank'))?['publisher'],
+        'Bundesbank',
+      );
+    });
+
+    test('keeps known dates for the same file when they are unknown now', () {
+      // E.g. BUNDESBANK_BLZ_URL pins the file, so the page isn't read.
+      expect(
+        mergeMetaEntry(
+          entry(),
+          entry(
+            retrievedOn: '2026-11-02',
+            effectiveFrom: null,
+            validUntil: null,
+          ),
+        ),
+        isNull,
+      );
+      final Map<String, dynamic>? changed = mergeMetaEntry(
+        entry(),
+        entry(effectiveFrom: null, validUntil: null, sha: 'def'),
+      );
+      expect(changed?['effectiveFrom'], '2026-09-07');
+      expect(changed?['validUntil'], '2026-12-06');
+    });
+
+    test('drops dates when the source file changed', () {
+      final Map<String, dynamic>? changed = mergeMetaEntry(
+        entry(),
+        entry(url: 'https://example.com/other.txt', effectiveFrom: null),
+      );
+      expect(changed?['effectiveFrom'], isNull);
+    });
+  });
+
   group('findBundesbankBlzTxtUrl', () {
     test('picks the current unpacked TXT file', () {
       const String html =

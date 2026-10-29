@@ -158,12 +158,11 @@ void writeMeta(String cc, String body, DatasetSource? source, {DateTime? now}) {
       ? json.decode(file.readAsStringSync()) as Map<String, dynamic>
       : <String, dynamic>{};
   final Map<String, dynamic>? old = meta[cc] as Map<String, dynamic>?;
-  final Map<String, dynamic> next = buildMetaEntry(
-    body,
-    source,
-    now ?? DateTime.now(),
+  final Map<String, dynamic>? next = mergeMetaEntry(
+    old,
+    buildMetaEntry(body, source, now ?? DateTime.now()),
   );
-  if (old != null && _sameProvenance(old, next)) return;
+  if (next == null) return;
   meta[cc] = next;
   final List<String> keys = meta.keys.toList()..sort();
   file.writeAsStringSync(
@@ -187,11 +186,35 @@ Map<String, dynamic> buildMetaEntry(
   'notes': null,
 };
 
-bool _sameProvenance(Map<String, dynamic> a, Map<String, dynamic> b) =>
-    a['sha256'] == b['sha256'] &&
-    a['sourceUrl'] == b['sourceUrl'] &&
-    a['effectiveFrom'] == b['effectiveFrom'] &&
-    a['validUntil'] == b['validUntil'];
+/// Combines a country's existing `meta.json` entry ([old]) with a freshly
+/// built one ([fresh]). Returns `null` when nothing worth recording
+/// changed, so an unchanged refresh doesn't bump `retrievedOn`.
+///
+/// When the source URL is the same file as before but the adapter couldn't
+/// tell its dates (e.g. `BUNDESBANK_BLZ_URL` pins a file, so the download
+/// page isn't read), the previously known dates are kept rather than
+/// replaced with unknowns.
+Map<String, dynamic>? mergeMetaEntry(
+  Map<String, dynamic>? old,
+  Map<String, dynamic> fresh,
+) {
+  if (old == null) return fresh;
+  final Map<String, dynamic> next = Map<String, dynamic>.of(fresh);
+  if (next['sourceUrl'] != null && next['sourceUrl'] == old['sourceUrl']) {
+    for (final String k in <String>['effectiveFrom', 'validUntil']) {
+      next[k] ??= old[k];
+    }
+  }
+  const List<String> tracked = <String>[
+    'sha256',
+    'publisher',
+    'sourceUrl',
+    'effectiveFrom',
+    'validUntil',
+  ];
+  if (tracked.every((String k) => old[k] == next[k])) return null;
+  return next;
+}
 
 String? _day(DateTime? d) => d?.toIso8601String().substring(0, 10);
 

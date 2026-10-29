@@ -422,7 +422,7 @@ void main() {
               .whereType<File>()
               .where((File f) => f.path.endsWith('.json'))
               // Provenance, not bank codes; see data_info_test.dart.
-              .where((File f) => !f.path.endsWith('/meta.json'))
+              .where((File f) => f.uri.pathSegments.last != 'meta.json')
               .toList()
             ..sort((File a, File b) => a.path.compareTo(b.path));
       expect(assets, isNotEmpty);
