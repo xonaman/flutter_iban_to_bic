@@ -16,8 +16,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        channel: [stable, beta]
+        # Listed explicitly: an `include` entry that only adds `version`
+        # would be merged into the plain stable job instead of adding one.
         include:
+          - channel: stable
+          - channel: beta
           # Oldest Flutter allowed by pubspec.yaml's environment constraint.
           - channel: stable
             version: 3.32.0
