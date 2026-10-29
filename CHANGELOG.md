@@ -12,6 +12,18 @@
 * Backfilled from the 2.2.1 and 2.3.0 refreshes: AT, BE, DE, LU and NL
   have source and retrieval date. ES, FR and LT were carried over from 1.x
   without a recorded source, so their source and dates are `null`.
+* Results now say how precise the BIC is. `BicFound` gains an `accuracy`
+  field (`BicAccuracy.exact` or `BicAccuracy.institution`) and an `isExact`
+  getter. Spain and France report `institution`: their IBANs carry a branch
+  code the lookup ignores, so the returned BIC is the institution's main
+  BIC and the account may be held under a branch BIC (La Banque Postale,
+  for example). All other built-in countries report `exact`.
+* `CountrySpec` takes an optional `accuracy` (default `exact`) so custom
+  resolvers can declare theirs.
+* README: the supported-countries table now lists each country's data
+  source, BIC accuracy and whether it is refreshed automatically.
+* Non-breaking: `BicFound(bic)` still compiles and defaults to `exact`, and
+  the sealed `IbanLookupResult` hierarchy is unchanged.
 
 ## 2.3.0
 
