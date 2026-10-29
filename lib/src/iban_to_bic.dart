@@ -5,6 +5,7 @@ import 'bic.dart';
 import 'bic_accuracy.dart';
 import 'country_spec.dart';
 import 'iban.dart';
+import 'iban_registry.dart';
 import 'resolver.dart';
 import 'result.dart';
 
@@ -22,7 +23,7 @@ class IbanToBic {
 
   IbanToBic({Map<String, CountrySpec>? countries})
     : _countries = countries == null
-          ? _buildDefaultCountries()
+          ? buildDefaultCountries()
           : Map<String, CountrySpec>.of(countries) {
     for (final MapEntry<String, CountrySpec> e in _countries.entries) {
       if (e.value.resolver is AssetJsonResolver) {
@@ -200,30 +201,33 @@ final IbanToBic _shared = IbanToBic();
 
 const String _assetDir = 'packages/iban_to_bic/assets/bank_codes';
 
-Map<String, CountrySpec> _buildDefaultCountries() {
-  Map<String, CountrySpec>? mapOrNull;
-  CountrySpec spec(
-    int start,
-    int end,
-    String cc, {
-    BicAccuracy accuracy = BicAccuracy.exact,
-  }) => CountrySpec(
-    bankCodeStart: start,
-    bankCodeEnd: end,
-    resolver: AssetJsonResolver('$_assetDir/${cc.toLowerCase()}.json'),
-    accuracy: accuracy,
-  );
-  // Accuracy per country is documented on [BicAccuracy] and in the
-  // README's coverage table. ES and FR IBANs carry a branch code after the
-  // bank code that this lookup ignores.
-  return mapOrNull ??= <String, CountrySpec>{
-    'AT': spec(4, 9, 'AT'),
-    'BE': spec(4, 7, 'BE'),
-    'DE': spec(4, 12, 'DE'),
-    'ES': spec(4, 8, 'ES', accuracy: BicAccuracy.institution),
-    'FR': spec(4, 9, 'FR', accuracy: BicAccuracy.institution),
-    'LT': spec(4, 9, 'LT'),
-    'LU': spec(4, 7, 'LU'),
-    'NL': spec(4, 8, 'NL'),
-  };
-}
+/// Countries with bundled bank-code data, and how precisely each one's
+/// bank code determines the BIC.
+///
+/// Where the bank code sits comes from the SWIFT IBAN Registry
+/// ([ibanRegistry]); only the dataset and accuracy per country are chosen
+/// here. Accuracy per country is documented on [BicAccuracy] and in the
+/// README's coverage table. ES and FR IBANs carry a branch code after the
+/// bank code that this lookup ignores.
+const Map<String, BicAccuracy> _bundledCountries = <String, BicAccuracy>{
+  'AT': BicAccuracy.exact,
+  'BE': BicAccuracy.exact,
+  'DE': BicAccuracy.exact,
+  'ES': BicAccuracy.institution,
+  'FR': BicAccuracy.institution,
+  'LT': BicAccuracy.exact,
+  'LU': BicAccuracy.exact,
+  'NL': BicAccuracy.exact,
+};
+
+/// The built-in country specs. Not exported from the package; public so
+/// tests can cross-check them against the registry.
+Map<String, CountrySpec> buildDefaultCountries() => <String, CountrySpec>{
+  for (final MapEntry<String, BicAccuracy> e in _bundledCountries.entries)
+    e.key: CountrySpec(
+      bankCodeStart: ibanRegistry[e.key]!.bankCodeStart,
+      bankCodeEnd: ibanRegistry[e.key]!.bankCodeEnd,
+      resolver: AssetJsonResolver('$_assetDir/${e.key.toLowerCase()}.json'),
+      accuracy: e.value,
+    ),
+};

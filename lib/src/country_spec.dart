@@ -24,10 +24,11 @@ class CountrySpec {
   });
 
   /// Returns the bank-code slice, or `null` when [normalizedIban] is too
-  /// short to contain one. Callers treat `null` as `InvalidIban(badShape)`
-  /// — this is only reachable when a country's IBAN is shorter than its
-  /// advertised bank-code range, which the shape regex can't catch on its
-  /// own (it only validates character classes, not country-specific lengths).
+  /// short to contain one. Callers treat `null` as `InvalidIban(badShape)`.
+  /// Validation already enforces the SWIFT IBAN Registry length for
+  /// registered countries, so this is only reachable with a custom spec
+  /// whose range doesn't fit the country's IBANs, or for a country the
+  /// registry doesn't list.
   String? extractBankCode(String normalizedIban) =>
       normalizedIban.length >= bankCodeEnd
       ? normalizedIban.substring(bankCodeStart, bankCodeEnd)

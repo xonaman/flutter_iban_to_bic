@@ -12,6 +12,19 @@
 * Backfilled from the 2.2.1 and 2.3.0 refreshes: AT, BE, DE, LU and NL
   have source and retrieval date. ES, FR and LT were carried over from 1.x
   without a recorded source, so their source and dates are `null`.
+* IBANs are now validated against the SWIFT IBAN Registry: an IBAN from a
+  registered country must have exactly that country's length (e.g. 22 for
+  DE) and a BBAN in its registered format (e.g. four letters, then ten
+  digits for NL). Wrong lengths report `InvalidIbanReason.tooShort` or
+  `tooLong`, and a BBAN in the wrong format reports `badShape`. Before,
+  any 15-34 character IBAN with a valid checksum passed, so a German IBAN
+  with a digit missing could still reach the bank-code lookup. Countries
+  missing from the registry keep the old 15-34 rule. No new enum values,
+  so exhaustive `switch`es over `InvalidIbanReason` keep compiling.
+* The built-in countries' bank-code positions now come from a table
+  generated from the registry (`lib/src/iban_registry.g.dart`) instead of
+  hand-coded offsets. The values are unchanged. Regenerate it with
+  `dart run tool/generate_iban_registry.dart <iban-registry.txt>`.
 * Results now say how precise the BIC is. `BicFound` gains an `accuracy`
   field (`BicAccuracy.exact` or `BicAccuracy.institution`) and an `isExact`
   getter. Spain and France report `institution`: their IBANs carry a branch
