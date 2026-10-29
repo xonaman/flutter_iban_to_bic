@@ -48,7 +48,11 @@ void main() {
       );
     });
 
-    test('checked-in datasets match the generator output', () {
+    // Re-renders each file from its own data, so this checks layout (one
+    // bank per line, header, path), not the values: a hand-edited BIC in
+    // the generated format still passes. Values are checked against the
+    // upstream sources by the refresh workflow.
+    test('checked-in datasets are in the generator format', () {
       final List<File> files = Directory('lib/src/data')
           .listSync()
           .whereType<File>()
@@ -71,7 +75,7 @@ void main() {
         expect(
           renderBankCodesLibrary(cc, rows),
           source,
-          reason: '${file.path} differs from what the generator writes',
+          reason: '${file.path} is not in the format the generator writes',
         );
         expect(file.path, bankCodesLibraryPath(cc));
       }
