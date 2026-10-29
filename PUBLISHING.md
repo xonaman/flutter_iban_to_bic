@@ -37,7 +37,11 @@ Once saved, pushes of a tag matching the pattern will be trusted to publish.
 5. The `Publish to pub.dev` workflow runs and:
    - Verifies the tag matches `pubspec.yaml`
    - Runs format, analyze, tests, and `pub publish --dry-run`
+   - Checks that `CHANGELOG.md` has a `## <version>` entry
    - Publishes via OIDC
+   - Creates a GitHub release for the tag, using that `CHANGELOG.md`
+     entry as the release notes (tags with a `-` suffix, like
+     `v1.2.3-beta.1`, become pre-releases)
 
 If the workflow fails the version-match check, delete the tag locally and
 remotely, fix `pubspec.yaml`, and retag.
