@@ -37,13 +37,15 @@ jobs:
       # Runs first so the tracking-issue step knows whether this is a full
       # run even if checkout or setup fails. Whitespace-only input also
       # refreshes everything, so decide this from the parsed list rather
-      # than the raw input.
+      # than the raw input. Newlines, CRs and tabs become spaces first:
+      # `read` stops at the first newline, so a multi-line value would
+      # otherwise lose every line but the first.
       - name: Classify run scope
         id: scope
         env:
           COUNTRIES: ${{ inputs.countries }}
         run: |
-          read -r -a countries <<< "$COUNTRIES"
+          read -r -a countries <<< "${COUNTRIES//[$'\n\r\t']/ }"
           if [ "${#countries[@]}" -eq 0 ]; then
             echo 'all_countries=true' >> "$GITHUB_OUTPUT"
           fi
@@ -72,7 +74,7 @@ jobs:
           # input can't inject shell commands.
           COUNTRIES: ${{ inputs.countries }}
         run: |
-          read -r -a countries <<< "$COUNTRIES"
+          read -r -a countries <<< "${COUNTRIES//[$'\n\r\t']/ }"
           for cc in "${countries[@]}"; do
             if [[ ! "$cc" =~ ^[A-Za-z]{2}$ ]]; then
               echo "::error::Invalid country code: $cc"
