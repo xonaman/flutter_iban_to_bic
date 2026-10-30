@@ -28,7 +28,7 @@ migrate_working_dir/
 .dart_tool/
 build/
 
-# Canonical bank-code sources: only the generated assets/bank_codes/
+# Canonical bank-code sources: only the generated lib/src/data/
 # ship. pub ignores .gitignore once a .pubignore exists, so the rules
 # above are copied from it.
 /data/

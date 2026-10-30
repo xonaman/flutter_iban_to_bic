@@ -1,5 +1,5 @@
 // Refreshes `data/bank_codes/<cc>.jsonl` (the reviewed source) and the
-// generated `assets/bank_codes/<cc>.json` (the runtime asset) from each
+// generated `lib/src/data/<cc>.g.dart` (the runtime dataset) from each
 // country's authoritative source. Run manually or via the `refresh-data`
 // GitHub Action. See `tool/bank_codes.dart` for both formats.
 //
@@ -10,13 +10,13 @@
 //      Fetch from the central bank / competent authority — no scraping of
 //      third-party aggregators.
 //   3. Run the refresh for it, which creates `data/bank_codes/<cc>.jsonl`
-//      and `assets/bank_codes/<cc>.json`, and add the asset to
-//      `pubspec.yaml`'s flutter.assets list.
+//      and `lib/src/data/<cc>.g.dart`, and add a deferred import for the
+//      latter to `lib/src/data/bank_codes.dart`.
 //   4. Register the country and its bank-code range (the IBAN character
 //      offsets) in `_buildDefaultCountries` in `lib/src/iban_to_bic.dart`.
 //
 // To fix an entry by hand, edit `data/bank_codes/<cc>.jsonl` and run
-// `dart run tool/build_assets.dart` to regenerate the asset.
+// `dart run tool/build_assets.dart` to regenerate the dataset.
 //
 // Run with:
 //   dart run tool/refresh_data.dart           # refresh everything
@@ -99,7 +99,7 @@ Future<void> main(List<String> args) async {
       );
       writeCountry(cc, entries);
       print(
-        '[$cc] wrote ${sourcePath(cc)} and ${assetPath(cc)} '
+        '[$cc] wrote ${sourcePath(cc)} and ${libraryPath(cc)} '
         '(${entries.length} entries)',
       );
     },

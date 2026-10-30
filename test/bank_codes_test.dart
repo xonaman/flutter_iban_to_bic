@@ -1,9 +1,12 @@
+@TestOn('vm')
+library;
+
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/services.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:iban_to_bic/iban_to_bic.dart';
+import 'package:iban_to_bic/src/data/bank_codes.dart';
+import 'package:test/test.dart';
 
 import '../tool/bank_codes.dart';
 import '../tool/summarize_changes.dart';
@@ -60,34 +63,63 @@ void main() {
       );
     });
 
-    test('AssetJsonResolver decodes it', () async {
-      final AssetJsonResolver resolver = AssetJsonResolver(
-        'fake.json',
-        bundle: _StringBundle(
-          encodeAsset(<String, BankEntry>{'3': postbank, '1': postbank}),
-        ),
+    test('LazyJsonResolver decodes it', () async {
+      final LazyJsonResolver resolver = LazyJsonResolver(
+        () async =>
+            encodeAsset(<String, BankEntry>{'3': postbank, '1': postbank}),
       );
       expect(await resolver.resolve('1'), _bicOf(postbank));
       expect(await resolver.resolve('3'), _bicOf(postbank));
       expect(await resolver.resolve('2'), isNull);
     });
 
-    test('AssetJsonResolver rejects an unknown version', () async {
-      final AssetJsonResolver resolver = AssetJsonResolver(
-        'fake.json',
-        bundle: _StringBundle('{"v":2,"banks":[]}'),
+    test('LazyJsonResolver rejects an unknown version', () async {
+      final LazyJsonResolver resolver = LazyJsonResolver(
+        () async => '{"v":2,"banks":[]}',
       );
       expect(resolver.resolve('1'), throwsFormatException);
+    });
+  });
+
+  group('library format', () {
+    test('embeds the compact asset in a raw string constant', () {
+      final Map<String, BankEntry> entries = <String, BankEntry>{
+        '1': BankEntry(
+          bic: 'TESTDEFFXXX',
+          bankName: r"Bank's \$ name",
+          bankShortName: 'Bank',
+        ),
+      };
+      final String source = encodeLibrary('de', entries);
+      expect(source, contains('from data/bank_codes/de.jsonl.'));
+      expect(source, contains('/// DE bank codes'));
+      expect(
+        source,
+        endsWith(
+          "const String bankCodesJson = r'''\n"
+          '${encodeAsset(entries)}'
+          "''';\n",
+        ),
+      );
+    });
+
+    test("rejects data containing '''", () {
+      expect(
+        () => encodeLibrary('DE', <String, BankEntry>{
+          '1': BankEntry(bic: 'X', bankName: "a'''b", bankShortName: 'a'),
+        }),
+        throwsStateError,
+      );
     });
   });
 
   group('bundled datasets', () {
     final List<String> countries = sourceCountries();
 
-    test('has a source and an asset for every supported country', () {
+    test('has a source and a dataset for every supported country', () {
       expect(countries, sharedIbanToBic.supportedCountries.toList()..sort());
       for (final String cc in countries) {
-        expect(File(assetPath(cc)).existsSync(), isTrue, reason: cc);
+        expect(File(libraryPath(cc)).existsSync(), isTrue, reason: cc);
       }
     });
 
@@ -98,12 +130,12 @@ void main() {
       }
     });
 
-    test('assets are up to date (run `dart run tool/build_assets.dart`)', () {
+    test('datasets are up to date (run `dart run tool/build_assets.dart`)', () {
       for (final String cc in countries) {
         expect(
-          File(assetPath(cc)).readAsStringSync(),
-          encodeAsset(readSource(cc)),
-          reason: assetPath(cc),
+          File(libraryPath(cc)).readAsStringSync(),
+          encodeLibrary(cc, readSource(cc)),
+          reason: libraryPath(cc),
         );
       }
     });
@@ -127,19 +159,18 @@ void main() {
       expect(problems, isEmpty);
     });
 
-    // The compact asset must resolve every code exactly like the same data
-    // in the original one-object-per-code JSON shape.
+    // The shipped dataset (the constant the package actually loads) must
+    // resolve every code exactly like the same data in the original
+    // one-object-per-code JSON shape.
     for (final String cc in countries) {
-      test('$cc compact asset resolves like the per-code JSON', () async {
+      test('$cc bundled dataset resolves like the per-code JSON', () async {
         final Map<String, BankEntry> source = readSource(cc);
         final String legacy = jsonEncode(<String, Object>{
           for (final MapEntry<String, BankEntry> e in source.entries)
             e.key: e.value.toJson(),
         });
         final SyncBicResolver expected = await _load(legacy);
-        final SyncBicResolver actual = await _load(
-          File(assetPath(cc)).readAsStringSync(),
-        );
+        final SyncBicResolver actual = await _load(await loadBankCodesJson(cc));
         for (final String code in source.keys) {
           final Bic? want = expected.resolve(code);
           expect(want, isNotNull, reason: '$cc $code');
@@ -193,24 +224,7 @@ Bic _bicOf(BankEntry e) => Bic(
 );
 
 Future<SyncBicResolver> _load(String contents) async {
-  final AssetJsonResolver resolver = AssetJsonResolver(
-    'fake.json',
-    bundle: _StringBundle(contents),
-  );
+  final LazyJsonResolver resolver = LazyJsonResolver(() async => contents);
   await resolver.preload();
   return resolver.asSync()!;
-}
-
-class _StringBundle extends AssetBundle {
-  _StringBundle(this.contents);
-  final String contents;
-
-  @override
-  Future<ByteData> load(String key) async {
-    final Uint8List bytes = Uint8List.fromList(utf8.encode(contents));
-    return ByteData.view(bytes.buffer);
-  }
-
-  @override
-  Future<String> loadString(String key, {bool cache = true}) async => contents;
 }

@@ -20,12 +20,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v6
 
-      - name: Set up Flutter (stable)
-        uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          cache: true
-
       # setup-dart wires the GitHub OIDC token into the pub credential
       # file so `dart pub publish` can exchange it with pub.dev without
       # any interactive auth. Without this step, publish falls through
@@ -33,8 +27,9 @@ jobs:
       - name: Set up Dart (trusted publishing)
         uses: dart-lang/setup-dart@v1
 
+      # --no-example: example/ is a Flutter app and needs the Flutter SDK.
       - name: Install dependencies
-        run: flutter pub get
+        run: dart pub get --no-example
 
       - name: Verify tag matches pubspec version
         run: |
@@ -49,11 +44,12 @@ jobs:
       - name: Verify formatting
         run: dart format --output=none --set-exit-if-changed .
 
+      # The example is a Flutter app; CI's example job covers it.
       - name: Analyze
-        run: dart analyze --fatal-infos
+        run: dart analyze --fatal-infos lib test tool
 
       - name: Run tests
-        run: flutter test
+        run: dart test
 
       - name: Dry run
         run: dart pub publish --dry-run

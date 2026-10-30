@@ -2,22 +2,22 @@ iban_to_bic
 Copyright (c) Robert Mainzer. The source code is licensed under the MIT
 License (see LICENSE).
 
-The bank-code datasets in assets/bank_codes/ (and their sources in
-data/bank_codes/ in the repository) are NOT covered by the MIT
-License. They are derived from the publications listed below, and their
-publishers' terms apply. The values kept (bank codes, BICs, names,
-addresses) are reproduced as published, but the datasets are not complete
-copies of the sources. They have been:
+The bank-code datasets (the generated *.g.dart files in lib/src/data/,
+and their sources in data/bank_codes/ in the repository) are NOT covered
+by the MIT License. They are derived from the publications listed below,
+and their publishers' terms apply. The values kept (bank codes, BICs,
+names, addresses) are reproduced as published, but the datasets are not
+complete copies of the sources. They have been:
   - converted to JSON: one entry per bank code in data/bank_codes/, and
-    a compact form in assets/bank_codes/ that lists bank codes sharing
-    the same details once;
+    a compact form, embedded in the generated Dart files, that lists bank
+    codes sharing the same details once;
   - reduced to the fields this package uses (other columns are dropped);
   - filtered to the rows a bank-code-to-BIC lookup needs. For example,
     only the Bundesbank's main records (Merkmal 1) are kept, and rows
     without a BIC are left out.
 
 -------------------------------------------------------------------------------
-AT  assets/bank_codes/at.json
+AT  lib/src/data/at.g.dart
 -------------------------------------------------------------------------------
 Source:  Oesterreichische Nationalbank (OeNB), SEPA-Zahlungsverkehrs-Verzeichnis
          https://www.oenb.at/docroot/downloads_observ/sepa-zv-vz_gesamt.csv
@@ -29,7 +29,7 @@ Notice:  Source: Oesterreichische Nationalbank (OeNB). Data converted to
          JSON and reduced to the fields this package uses.
 
 -------------------------------------------------------------------------------
-BE  assets/bank_codes/be.json
+BE  lib/src/data/be.g.dart
 -------------------------------------------------------------------------------
 Source:  National Bank of Belgium (NBB), list of bank identification codes
          https://www.nbb.be/en/payments-and-securities/bank-identification-codes
@@ -42,7 +42,7 @@ Terms:   NBB "Copyright and use of information": information on the site may
 Notice:  Source: National Bank of Belgium.
 
 -------------------------------------------------------------------------------
-DE  assets/bank_codes/de.json
+DE  lib/src/data/de.g.dart
 -------------------------------------------------------------------------------
 Source:  Deutsche Bundesbank, Bankleitzahlendatei (bank sort code file)
          https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes
@@ -55,7 +55,7 @@ Terms:   Bundesbank "Conditions for the general use of the website",
 Notice:  Quelle: Deutsche Bundesbank.
 
 -------------------------------------------------------------------------------
-ES, FR  assets/bank_codes/es.json, assets/bank_codes/fr.json
+ES, FR  lib/src/data/es.g.dart, lib/src/data/fr.g.dart
 -------------------------------------------------------------------------------
 Source:  European Central Bank (ECB), list of monetary financial
          institutions, as processed by the iban-to-bic generator
@@ -67,7 +67,7 @@ Terms:   ECB "Disclaimer and copyright": information from the ECB website may
 Notice:  Source: European Central Bank.
 
 -------------------------------------------------------------------------------
-LT  assets/bank_codes/lt.json
+LT  lib/src/data/lt.g.dart
 -------------------------------------------------------------------------------
 Source:  Not recorded. Added in October 2022 (version 0.0.5); the field
          layout matches the Bank of Lithuania's list of financial institution
@@ -77,7 +77,7 @@ Terms:   Not yet established.
 Notice:  Source: Lietuvos bankas (Bank of Lithuania), assumed.
 
 -------------------------------------------------------------------------------
-LU  assets/bank_codes/lu.json
+LU  lib/src/data/lu.g.dart
 -------------------------------------------------------------------------------
 Source:  Association des Banques et Banquiers, Luxembourg (ABBL),
          Luxembourg Register of IBAN-BIC Codes
@@ -89,7 +89,7 @@ Terms:   ABBL legal notice: content belongs to the ABBL and may be used for
 Notice:  Source: ABBL, Luxembourg Register of IBAN-BIC Codes.
 
 -------------------------------------------------------------------------------
-NL  assets/bank_codes/nl.json
+NL  lib/src/data/nl.g.dart
 -------------------------------------------------------------------------------
 Source:  Betaalvereniging Nederland (Dutch Payments Association), BIC list
          https://www.betaalvereniging.nl/en/knowledge-base/iban-and-bic/bic-code/
