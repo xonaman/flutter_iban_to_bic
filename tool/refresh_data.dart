@@ -774,14 +774,41 @@ Future<Map<String, BankEntry>> fetchBe() async {
         ? nbbBicUrl
         : override;
     print('[BE] downloading $url');
+    final List<List<String>> rows = readXlsxRows(
+      await _get(client, Uri.parse(url)),
+    );
     recordSource(
       'BE',
-      DatasetSource(publisher: 'National Bank of Belgium (NBB)', url: url),
+      DatasetSource(
+        publisher: 'National Bank of Belgium (NBB)',
+        url: url,
+        // Title row: "Version 01/09/2026".
+        effectiveFrom: findTitleRowDate(rows),
+      ),
     );
-    return parseNbbBic(readXlsxRows(await _get(client, Uri.parse(url))));
+    return parseNbbBic(rows);
   } finally {
     client.close(force: true);
   }
+}
+
+/// Returns the first `dd/mm/yyyy` or `dd-mm-yyyy` date in the title rows
+/// above a spreadsheet's header (the first three rows), or `null`. NBB and
+/// the Betaalvereniging print their file's version date there.
+DateTime? findTitleRowDate(List<List<String>> rows) {
+  final RegExp date = RegExp(r'\b(\d{2})[/-](\d{2})[/-](\d{4})\b');
+  for (final List<String> row in rows.take(3)) {
+    for (final String cell in row) {
+      final RegExpMatch? m = date.firstMatch(cell);
+      if (m == null) continue;
+      return DateTime.utc(
+        int.parse(m.group(3)!),
+        int.parse(m.group(2)!),
+        int.parse(m.group(1)!),
+      );
+    }
+  }
+  return null;
 }
 
 /// Pure parser for the NBB bank identification code list. The name is
@@ -913,13 +940,20 @@ Future<Map<String, BankEntry>> fetchNl() async {
       envName: 'BETAALVERENIGING_BIC_URL',
     );
     print('[NL] downloading $url');
+    final List<List<String>> rows = readXlsxRows(
+      await _get(client, Uri.parse(url)),
+    );
     recordSource(
       'NL',
-      DatasetSource(publisher: 'Betaalvereniging Nederland', url: url),
+      DatasetSource(
+        publisher: 'Betaalvereniging Nederland',
+        url: url,
+        // Title row: "BIC-lijst-NL | BIC-list-NL (Laatste update | last
+        // update 27-10-2026)".
+        effectiveFrom: findTitleRowDate(rows),
+      ),
     );
-    return parseBetaalverenigingBic(
-      readXlsxRows(await _get(client, Uri.parse(url))),
-    );
+    return parseBetaalverenigingBic(rows);
   } finally {
     client.close(force: true);
   }

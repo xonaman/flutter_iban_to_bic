@@ -420,6 +420,39 @@ void main() {
     });
   });
 
+  group('findTitleRowDate', () {
+    test('reads the NBB version date', () {
+      expect(
+        findTitleRowDate(
+          readXlsxRows(
+            File('test/fixtures/nbb_full_list.xlsx').readAsBytesSync(),
+          ),
+        ),
+        DateTime.utc(2026, 9, 1),
+      );
+    });
+
+    test('reads the Betaalvereniging last-update date', () {
+      expect(
+        findTitleRowDate(
+          readXlsxRows(
+            File('test/fixtures/betaalvereniging_bic.xlsx').readAsBytesSync(),
+          ),
+        ),
+        DateTime.utc(2026, 10, 27),
+      );
+    });
+
+    test('returns null without a dated title row', () {
+      expect(
+        findTitleRowDate(<List<String>>[
+          <String>['BIC', 'Identifier'],
+        ]),
+        isNull,
+      );
+    });
+  });
+
   group('parseNbbBic', () {
     final Map<String, BankEntry> parsed = parseNbbBic(
       readXlsxRows(File('test/fixtures/nbb_full_list.xlsx').readAsBytesSync()),
