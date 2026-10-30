@@ -1,4 +1,7 @@
-import 'package:flutter_test/flutter_test.dart';
+@TestOn('vm')
+library;
+
+import 'package:test/test.dart';
 
 import '../tool/generate_iban_registry.dart';
 

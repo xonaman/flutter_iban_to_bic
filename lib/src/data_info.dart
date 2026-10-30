@@ -1,7 +1,6 @@
-import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/services.dart' show AssetBundle, rootBundle;
+import 'data/meta.g.dart';
 
 /// Where a built-in country dataset came from and how old it is.
 ///
@@ -29,7 +28,7 @@ class DatasetInfo {
   /// (the Bundesbank publishes a new file each quarter).
   final DateTime? validUntil;
 
-  /// Lowercase hex SHA-256 of the bundled `assets/bank_codes/<cc>.json`.
+  /// Lowercase hex SHA-256 of the bundled dataset's JSON (UTF-8).
   final String sha256;
 
   /// Free-text remarks, e.g. why a date is unknown.
@@ -55,7 +54,7 @@ class DatasetInfo {
     return DateTime.utc(n.year, n.month, n.day).difference(retrieved).inDays;
   }
 
-  /// Parses one country's entry from `assets/bank_codes/meta.json`.
+  /// Parses one country's entry from the bundled provenance metadata.
   factory DatasetInfo.fromJson(String countryCode, Map<String, dynamic> m) {
     final String? url = m['sourceUrl'] as String?;
     return DatasetInfo(
@@ -86,39 +85,26 @@ DateTime? _date(Object? v) {
 
 String? _fmt(DateTime? d) => d?.toIso8601String().substring(0, 10);
 
-const String _metaAsset = 'packages/iban_to_bic/assets/bank_codes/meta.json';
-
-Future<Map<String, DatasetInfo>>? _cache;
+Map<String, DatasetInfo>? _all;
 
 /// Returns provenance and age of the built-in dataset for [countryCode]
 /// (case-insensitive), or `null` if the package ships no data for it.
 ///
 /// ```dart
-/// final info = await dataInfo('DE');
+/// final info = dataInfo('DE');
 /// print(info?.effectiveFrom); // 2026-09-07 00:00:00.000Z
 /// print(info?.ageInDays());
 /// ```
 ///
-/// The metadata is read once from `assets/bank_codes/meta.json` and then
-/// cached. Pass [bundle] to read from a different [AssetBundle] (mainly for
-/// tests); it bypasses the cache.
-Future<DatasetInfo?> dataInfo(String countryCode, {AssetBundle? bundle}) async {
-  if (bundle != null) {
-    return (await _loadAll(bundle))[countryCode.toUpperCase()];
-  }
-  final Future<Map<String, DatasetInfo>> load = _cache ??= _loadAll(rootBundle);
-  try {
-    return (await load)[countryCode.toUpperCase()];
-  } catch (_) {
-    // Don't latch a failed read; the next call retries.
-    if (identical(_cache, load)) _cache = null;
-    rethrow;
-  }
-}
+/// The metadata is compiled into the package (it's small), so this is
+/// synchronous and needs no preloading. It's parsed on the first call.
+DatasetInfo? dataInfo(String countryCode) =>
+    (_all ??= parseDatasetMeta(datasetMetaJson))[countryCode.toUpperCase()];
 
-Future<Map<String, DatasetInfo>> _loadAll(AssetBundle bundle) async {
+/// Parses provenance metadata in the format of `data/bank_codes/meta.json`.
+Map<String, DatasetInfo> parseDatasetMeta(String metaJson) {
   final Map<String, dynamic> decoded =
-      json.decode(await bundle.loadString(_metaAsset)) as Map<String, dynamic>;
+      json.decode(metaJson) as Map<String, dynamic>;
   return <String, DatasetInfo>{
     for (final MapEntry<String, dynamic> e in decoded.entries)
       e.key: DatasetInfo.fromJson(e.key, e.value as Map<String, dynamic>),

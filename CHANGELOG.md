@@ -3,15 +3,34 @@
 * New `dataInfo(countryCode)` returns a `DatasetInfo` with the provenance
   and age of a built-in dataset: publisher, source URL, retrieval date,
   the date the upstream file took effect, the end of its validity (where
-  the source publishes one), a SHA-256 of the bundled asset, and
-  `ageInDays()`. Unknown values are `null`, and `notes` says why.
-* The metadata lives in `assets/bank_codes/meta.json`.
-  `tool/refresh_data.dart` updates a country's entry whenever its data or
-  source changes. Every adapter records its source; the German one also
-  records the validity period from the Bundesbank download page.
+  the source publishes one), a SHA-256 of the dataset, and `ageInDays()`.
+  It's synchronous. Unknown values are `null`, and `notes` says why.
+* The metadata is kept in `data/bank_codes/meta.json` and generated into
+  `lib/src/data/meta.g.dart`. `tool/refresh_data.dart` updates a
+  country's entry whenever its data or source changes. Every adapter
+  records its source; the German one also records the validity period
+  from the Bundesbank download page, and the Belgian and Dutch ones the
+  version date printed in their spreadsheets.
 * Backfilled from the 2.2.1 and 2.3.0 refreshes: AT, BE, DE, LU and NL
   have source and retrieval date. ES, FR and LT were carried over from 1.x
   without a recorded source, so their source and dates are `null`.
+* The package is now pure Dart and no longer depends on Flutter, so it
+  works on Dart servers and CLIs too, and `dart test` runs the test suite.
+  The lookup API (`ibanToBic`, `ibanToBicAsync`, `preloadIbanToBic`,
+  `evictIbanToBic`, `IbanToBic`) is unchanged, and Flutter apps no longer
+  need `WidgetsFlutterBinding.ensureInitialized()` before a lookup.
+* Bank data now ships as generated Dart libraries
+  (`lib/src/data/<cc>.g.dart`) loaded through deferred imports instead of
+  Flutter assets. On the web each country is split into its own file that
+  is only downloaded on first use. `tool/build_assets.dart` generates them
+  from `data/bank_codes/` (see below); `assets/bank_codes/` is gone.
+* New `LazyJsonResolver`, which loads a JSON dataset from any
+  `Future<String> Function()` on first use and supports `preload`/`evict`.
+* `AssetJsonResolver` is deprecated in favour of
+  `LazyJsonResolver(() => rootBundle.loadString(path))` and will be removed
+  in the next major release. Without Flutter it can no longer default to
+  `rootBundle`: pass `bundle: rootBundle` explicitly, otherwise loading
+  fails with a `StateError`.
 * IBANs are now validated against the SWIFT IBAN Registry: an IBAN from a
   registered country must have exactly that country's length (e.g. 22 for
   DE) and a BBAN in its registered format (e.g. four letters, then ten
@@ -37,14 +56,15 @@
   source, BIC accuracy and whether it is refreshed automatically.
 * Non-breaking: `BicFound(bic)` still compiles and defaults to `exact`, and
   the sealed `IbanLookupResult` hierarchy is unchanged.
-* Bundled bank-code assets use a compact, normalized format: banks that
-  share every field are stored once with all their codes, and field names
-  are replaced by positions. The assets shrink from 982 KB to 488 KB
-  (gzip: 137 KB to 119 KB). Lookups return exactly the same results.
-  `AssetJsonResolver` still reads the previous one-object-per-code JSON,
-  so custom assets keep working.
+* The bundled datasets use a compact, normalized format: banks that share
+  every field are stored once with all their codes, and field names are
+  replaced by positions. The data shrinks from 982 KB to 488 KB (gzip:
+  137 KB to 119 KB). Lookups return exactly the same results.
+  `LazyJsonResolver` (and the deprecated `AssetJsonResolver`) read both
+  this form and the previous one-object-per-code JSON, so custom datasets
+  keep working.
 * The data is maintained in `data/bank_codes/<cc>.jsonl`, one sorted code
-  per line, and the assets are generated from it with
+  per line, and the generated datasets are built from it with
   `dart run tool/build_assets.dart`; CI fails if they are out of date.
   Refresh pull requests now list added, removed and changed codes.
 

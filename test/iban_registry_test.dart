@@ -1,8 +1,8 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:iban_to_bic/iban_to_bic.dart';
 import 'package:iban_to_bic/src/iban.dart';
 import 'package:iban_to_bic/src/iban_registry.dart';
 import 'package:iban_to_bic/src/iban_to_bic.dart' show buildDefaultCountries;
+import 'package:test/test.dart';
 
 void main() {
   group('ibanRegistry', () {

@@ -2,9 +2,8 @@ import 'package:flutter/widgets.dart';
 import 'package:iban_to_bic/iban_to_bic.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  // Async variant needs no preload:
+  // iban_to_bic is pure Dart: no WidgetsFlutterBinding needed before the
+  // first lookup. Async variant needs no preload:
   final IbanLookupResult result = await ibanToBicAsync(
     'DE64 5001 0517 9423 8144 35',
   );

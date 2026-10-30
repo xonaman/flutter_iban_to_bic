@@ -2,76 +2,68 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:crypto/crypto.dart' show sha256;
-import 'package:flutter/services.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:iban_to_bic/iban_to_bic.dart';
+import 'package:iban_to_bic/src/data/bank_codes.dart';
+import 'package:iban_to_bic/src/data_info.dart' show parseDatasetMeta;
+import 'package:test/test.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
   group('dataInfo', () {
-    test('every supported country has metadata', () async {
+    test('every supported country has metadata', () {
       final List<String> missing = <String>[
         for (final String cc in IbanToBic().supportedCountries)
-          if (await dataInfo(cc) == null) cc,
+          if (dataInfo(cc) == null) cc,
       ];
       expect(missing, isEmpty);
     });
 
     test('hashes match the bundled datasets', () async {
       for (final String cc in IbanToBic().supportedCountries) {
-        final DatasetInfo info = (await dataInfo(cc))!;
-        final List<int> bytes = File(
-          'assets/bank_codes/${cc.toLowerCase()}.json',
-        ).readAsBytesSync();
+        final String dataset = await loadBankCodesJson(cc);
         expect(
-          info.sha256,
-          sha256.convert(bytes).toString(),
+          dataInfo(cc)!.sha256,
+          sha256.convert(utf8.encode(dataset)).toString(),
           reason:
-              '$cc: assets/bank_codes/meta.json is stale. Regenerate the '
-              'dataset with tool/refresh_data.dart, or update its entry.',
+              '$cc: data/bank_codes/meta.json is stale. Regenerate the '
+              'dataset with tool/refresh_data.dart or '
+              'tool/build_assets.dart.',
         );
       }
     });
 
     test('meta.json covers exactly the bundled datasets', () {
-      final Set<String> datasets = <String>{
+      final Set<String> sources = <String>{
         for (final FileSystemEntity f in Directory(
-          'assets/bank_codes',
+          'data/bank_codes',
         ).listSync())
-          if (f is File &&
-              f.path.endsWith('.json') &&
-              f.uri.pathSegments.last != 'meta.json')
+          if (f is File && f.path.endsWith('.jsonl'))
             f.uri.pathSegments.last.split('.').first.toUpperCase(),
       };
       final Map<String, dynamic> meta =
-          json.decode(File('assets/bank_codes/meta.json').readAsStringSync())
+          json.decode(File('data/bank_codes/meta.json').readAsStringSync())
               as Map<String, dynamic>;
-      expect(meta.keys.toSet(), datasets);
+      expect(meta.keys.toSet(), sources);
     });
 
-    test('is case-insensitive and null for unknown countries', () async {
-      expect((await dataInfo('de'))!.countryCode, 'DE');
-      expect(await dataInfo('ZZ'), isNull);
+    test('is case-insensitive and null for unknown countries', () {
+      expect(dataInfo('de')!.countryCode, 'DE');
+      expect(dataInfo('ZZ'), isNull);
     });
 
-    test('exposes the German source and validity', () async {
-      final DatasetInfo de = (await dataInfo('DE'))!;
+    test('exposes the German source and validity', () {
+      final DatasetInfo de = dataInfo('DE')!;
       expect(de.publisher, 'Deutsche Bundesbank');
       expect(de.sourceUrl!.host, 'www.bundesbank.de');
       expect(de.effectiveFrom, isNotNull);
       expect(de.validUntil!.isAfter(de.effectiveFrom!), isTrue);
     });
 
-    test('parses dates and leaves unknowns null', () async {
-      final DatasetInfo info = (await dataInfo(
-        'XX',
-        bundle: _StringBundle(
-          '{"XX":{"publisher":"Example","sourceUrl":"https://example.com/f",'
-          '"retrievedOn":"2026-10-29","effectiveFrom":null,'
-          '"validUntil":null,"sha256":"abc","notes":"n"}}',
-        ),
-      ))!;
+    test('parses dates and leaves unknowns null', () {
+      final DatasetInfo info = parseDatasetMeta(
+        '{"XX":{"publisher":"Example","sourceUrl":"https://example.com/f",'
+        '"retrievedOn":"2026-10-29","effectiveFrom":null,'
+        '"validUntil":null,"sha256":"abc","notes":"n"}}',
+      )['XX']!;
       expect(info.retrievedOn, DateTime.utc(2026, 10, 29));
       expect(info.effectiveFrom, isNull);
       expect(info.validUntil, isNull);
@@ -86,18 +78,4 @@ void main() {
       );
     });
   });
-}
-
-class _StringBundle extends AssetBundle {
-  _StringBundle(this.contents);
-  final String contents;
-
-  @override
-  Future<ByteData> load(String key) async {
-    final Uint8List bytes = Uint8List.fromList(utf8.encode(contents));
-    return ByteData.view(bytes.buffer);
-  }
-
-  @override
-  Future<String> loadString(String key, {bool cache = true}) async => contents;
 }
