@@ -30,6 +30,7 @@
 
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'bank_codes.dart';
 
@@ -48,17 +49,27 @@ class AdapterSkipped implements Exception {
   String toString() => reason;
 }
 
-/// Registry of per-country adapters. `null` means "not yet implemented" and
+/// Registry of per-country adapters. `null` means there is no adapter and
 /// the refresh script leaves the existing data untouched.
+///
+/// ES, FR and LT have no scriptable authoritative source, so their datasets
+/// are unmaintained:
+///   - ES: the Banco de España entity register (app.bde.es/rbe_spa) lists
+///     the 4-digit entity codes but no BICs.
+///   - FR: the ACPR register REGAFI (regafi.fr, OpenDataSoft API) has the
+///     5-digit CIB codes but no BICs. The Banque de France FIB file has
+///     both but is only available to paying subscribers.
+///   - LT: every page on lb.lt sits behind a Cloudflare bot challenge, so
+///     the Bank of Lithuania's code list can't be downloaded from CI.
 final Map<String, CountryAdapter?> adapters = <String, CountryAdapter?>{
-  'AT': null,
-  'BE': null,
+  'AT': fetchAt,
+  'BE': fetchBe,
   'DE': fetchDe,
   'ES': null,
   'FR': null,
   'LT': null,
-  'LU': null,
-  'NL': null,
+  'LU': fetchLu,
+  'NL': fetchNl,
 };
 
 Future<void> main(List<String> args) async {
@@ -82,6 +93,10 @@ Future<void> main(List<String> args) async {
     countries.isEmpty ? adapters.keys : countries,
     adapters,
     write: (String cc, Map<String, BankEntry> entries) {
+      checkPlausibleSize(
+        entries.length,
+        File(sourcePath(cc)).existsSync() ? readSource(cc).length : 0,
+      );
       writeCountry(cc, entries);
       print(
         '[$cc] wrote ${sourcePath(cc)} and ${libraryPath(cc)} '
@@ -281,6 +296,22 @@ Future<Map<String, BankEntry>> fetchDe() async {
   }
 }
 
+/// Throws a [StateError] if a refresh returned no entries, or fewer than
+/// half the [previous] dataset's, so a truncated or placeholder download
+/// can't wipe a country's data. A genuine drop that large needs a
+/// maintainer to look at the source and update the JSON by hand.
+void checkPlausibleSize(int fresh, int previous) {
+  if (fresh == 0) {
+    throw StateError('refresh returned no entries; keeping existing data');
+  }
+  if (fresh * 2 < previous) {
+    throw StateError(
+      'refresh returned $fresh entries, less than half of the existing '
+      '$previous; keeping existing data',
+    );
+  }
+}
+
 Future<List<int>> _get(HttpClient client, Uri uri) async {
   final HttpClientRequest req = await client.getUrl(uri);
   final HttpClientResponse res = await req.close();
@@ -329,6 +360,531 @@ Map<String, BankEntry> parseBundesbankBlz(String text) {
       bankShortName: shortName.isEmpty ? name : shortName,
       bankPostcode: postcode.isEmpty ? null : postcode,
       bankLocation: city.isEmpty ? null : city,
+    );
+  }
+  return result;
+}
+
+// ---------------------------------------------------------------------------
+// Shared helpers
+// ---------------------------------------------------------------------------
+
+/// Returns [override] if it's set, otherwise the first link on [pageUrl]
+/// that [find] picks out. Throws if the page doesn't link the file, so a
+/// changed page layout fails the refresh loudly instead of silently.
+Future<String> _resolveUrl(
+  HttpClient client, {
+  required String? override,
+  required String pageUrl,
+  required String? Function(String html) find,
+  required String envName,
+}) async {
+  if (override != null && override.isNotEmpty) return override;
+  final String page = utf8.decode(
+    await _get(client, Uri.parse(pageUrl)),
+    allowMalformed: true,
+  );
+  final String? url = find(page);
+  if (url == null) {
+    throw StateError(
+      'No download link found on $pageUrl — the page layout may have '
+      'changed. Set $envName to refresh manually.',
+    );
+  }
+  return url;
+}
+
+/// Returns the first `href` on [html] matching [pattern] (which must
+/// capture the link in group 1), resolved against [pageUrl].
+String? _findLink(String html, RegExp pattern, String pageUrl) {
+  final RegExpMatch? match = pattern.firstMatch(html);
+  if (match == null) return null;
+  final String href = match.group(1)!.replaceAll('&amp;', '&');
+  return Uri.parse(pageUrl).resolve(href).toString();
+}
+
+final RegExp _bicPattern = RegExp(r'^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$');
+
+/// Normalises a BIC as published (e.g. `GEBA BE BB`) and returns `null`
+/// for placeholders such as `VRIJ`, `N/A` or `None`.
+String? _normaliseBic(String raw) {
+  final String bic = raw.replaceAll(RegExp(r'\s'), '').toUpperCase();
+  return _bicPattern.hasMatch(bic) ? bic : null;
+}
+
+/// Finds the first row of [rows] whose cells contain every header in
+/// [required] (compared trimmed and case-insensitively) and returns its
+/// index together with a header → column map. Throws a [FormatException]
+/// if there is no such row, i.e. the upstream layout changed.
+(int, Map<String, int>) _findHeader(
+  List<List<String>> rows,
+  List<String> required,
+  String source,
+) {
+  for (int i = 0; i < rows.length; i++) {
+    final Map<String, int> columns = <String, int>{};
+    for (int c = 0; c < rows[i].length; c++) {
+      columns.putIfAbsent(rows[i][c].trim().toLowerCase(), () => c);
+    }
+    if (required.every((String h) => columns.containsKey(h.toLowerCase()))) {
+      return (
+        i,
+        <String, int>{
+          for (final String h in required) h: columns[h.toLowerCase()]!,
+        },
+      );
+    }
+  }
+  throw FormatException('$source: header row ${required.join(', ')} not found');
+}
+
+/// Splits one CSV line on [delimiter], honouring double-quoted fields
+/// (which may contain the delimiter) and `""` escapes inside them.
+List<String> splitCsvLine(String line, String delimiter) {
+  final List<String> fields = <String>[];
+  final StringBuffer field = StringBuffer();
+  bool quoted = false;
+  for (int i = 0; i < line.length; i++) {
+    final String ch = line[i];
+    if (quoted) {
+      if (ch == '"' && i + 1 < line.length && line[i + 1] == '"') {
+        field.write('"');
+        i++;
+      } else if (ch == '"') {
+        quoted = false;
+      } else {
+        field.write(ch);
+      }
+    } else if (ch == '"') {
+      quoted = true;
+    } else if (ch == delimiter) {
+      fields.add(field.toString());
+      field.clear();
+    } else {
+      field.write(ch);
+    }
+  }
+  fields.add(field.toString());
+  return fields;
+}
+
+String _cell(List<String> row, int column) =>
+    column < row.length ? row[column].trim() : '';
+
+/// Left-pads purely numeric bank codes to [width] digits (spreadsheets may
+/// store `001` as the number 1). Returns `null` for anything else.
+String? _bankCode(String raw, int width) {
+  final String code = raw.trim();
+  if (code.isEmpty || code.length > width || !RegExp(r'^\d+$').hasMatch(code)) {
+    return null;
+  }
+  return code.padLeft(width, '0');
+}
+
+/// Minimal reader for the first worksheet of an `.xlsx` file: returns its
+/// rows as lists of cell strings, with gaps filled by empty strings.
+///
+/// Handles what the NBB, ABBL and Betaalvereniging files use (shared and
+/// inline strings, numbers, stored or deflated zip entries) without pulling
+/// in an archive/XML dependency. Formatting, formulas and dates aren't
+/// interpreted.
+List<List<String>> readXlsxRows(List<int> bytes) {
+  final Map<String, List<int>> files = _unzip(bytes);
+  final List<int>? sheet = files['xl/worksheets/sheet1.xml'];
+  if (sheet == null) {
+    throw const FormatException('xlsx: xl/worksheets/sheet1.xml not found');
+  }
+
+  final List<String> shared = <String>[];
+  final List<int>? sst = files['xl/sharedStrings.xml'];
+  if (sst != null) {
+    for (final RegExpMatch si in RegExp(
+      r'<si>(.*?)</si>',
+      dotAll: true,
+    ).allMatches(utf8.decode(sst))) {
+      shared.add(_xmlText(si.group(1)!));
+    }
+  }
+
+  final List<List<String>> rows = <List<String>>[];
+  final RegExp cellPattern = RegExp(
+    r'<c\s([^>]*?)(?:/>|>(.*?)</c>)',
+    dotAll: true,
+  );
+  for (final RegExpMatch row in RegExp(
+    r'<row\b[^>]*?(?:/>|>(.*?)</row>)',
+    dotAll: true,
+  ).allMatches(utf8.decode(sheet))) {
+    final List<String> cells = <String>[];
+    for (final RegExpMatch cell in cellPattern.allMatches(row.group(1) ?? '')) {
+      final String attrs = cell.group(1)!;
+      final String body = cell.group(2) ?? '';
+      final String? ref = RegExp(
+        r'\br="([A-Z]+)\d*"',
+      ).firstMatch(attrs)?.group(1);
+      final String? type = RegExp(r'\bt="(\w+)"').firstMatch(attrs)?.group(1);
+      final String? raw = RegExp(
+        r'<v>(.*?)</v>',
+        dotAll: true,
+      ).firstMatch(body)?.group(1);
+
+      final String value = switch (type) {
+        's' when raw != null => shared[int.parse(raw)],
+        'inlineStr' => _xmlText(body),
+        _ => raw == null ? '' : _xmlUnescape(raw),
+      };
+      final int column = ref == null ? cells.length : _columnIndex(ref);
+      while (cells.length < column) {
+        cells.add('');
+      }
+      if (column < cells.length) {
+        cells[column] = value;
+      } else {
+        cells.add(value);
+      }
+    }
+    rows.add(cells);
+  }
+  return rows;
+}
+
+int _columnIndex(String letters) {
+  int index = 0;
+  for (final int unit in letters.codeUnits) {
+    index = index * 26 + (unit - 0x40);
+  }
+  return index - 1;
+}
+
+/// Concatenates the `<t>` runs of a shared/inline string, skipping
+/// phonetic hints (`<rPh>`).
+String _xmlText(String xml) => RegExp(r'<t(?:\s[^>]*)?>(.*?)</t>', dotAll: true)
+    .allMatches(xml.replaceAll(RegExp(r'<rPh\b.*?</rPh>', dotAll: true), ''))
+    .map((RegExpMatch m) => _xmlUnescape(m.group(1)!))
+    .join();
+
+String _xmlUnescape(String s) => s.replaceAllMapped(
+  RegExp(r'&(#x[0-9a-fA-F]+|#\d+|lt|gt|quot|apos|amp);'),
+  (Match m) => switch (m.group(1)!) {
+    'lt' => '<',
+    'gt' => '>',
+    'quot' => '"',
+    'apos' => "'",
+    'amp' => '&',
+    final String n when n.startsWith('#x') => String.fromCharCode(
+      int.parse(n.substring(2), radix: 16),
+    ),
+    final String n => String.fromCharCode(int.parse(n.substring(1))),
+  },
+);
+
+/// Extracts every entry of a (non-zip64) zip archive via its central
+/// directory.
+Map<String, List<int>> _unzip(List<int> bytes) {
+  final ByteData data = ByteData.sublistView(Uint8List.fromList(bytes));
+  int eocd = -1;
+  for (int i = data.lengthInBytes - 22; i >= 0; i--) {
+    if (data.getUint32(i, Endian.little) == 0x06054b50) {
+      eocd = i;
+      break;
+    }
+  }
+  if (eocd < 0) throw const FormatException('xlsx: not a zip archive');
+
+  final int count = data.getUint16(eocd + 10, Endian.little);
+  int offset = data.getUint32(eocd + 16, Endian.little);
+  final Map<String, List<int>> files = <String, List<int>>{};
+  for (int i = 0; i < count; i++) {
+    if (data.getUint32(offset, Endian.little) != 0x02014b50) {
+      throw const FormatException('xlsx: corrupt central directory');
+    }
+    final int method = data.getUint16(offset + 10, Endian.little);
+    final int size = data.getUint32(offset + 20, Endian.little);
+    final int nameLength = data.getUint16(offset + 28, Endian.little);
+    final int extraLength = data.getUint16(offset + 30, Endian.little);
+    final int commentLength = data.getUint16(offset + 32, Endian.little);
+    final int local = data.getUint32(offset + 42, Endian.little);
+    final String name = utf8.decode(
+      bytes.sublist(offset + 46, offset + 46 + nameLength),
+    );
+
+    final int start =
+        local +
+        30 +
+        data.getUint16(local + 26, Endian.little) +
+        data.getUint16(local + 28, Endian.little);
+    final List<int> raw = bytes.sublist(start, start + size);
+    files[name] = switch (method) {
+      0 => raw,
+      8 => ZLibDecoder(raw: true).convert(raw),
+      _ => throw FormatException('xlsx: unsupported compression $method'),
+    };
+    offset += 46 + nameLength + extraLength + commentLength;
+  }
+  return files;
+}
+
+// ---------------------------------------------------------------------------
+// AT — Oesterreichische Nationalbank (OeNB)
+// ---------------------------------------------------------------------------
+//
+// OeNB publishes its SEPA directory of Austrian payment service providers
+// daily as a semicolon-separated CSV in ISO-8859-1, at a fixed URL:
+// a few disclaimer lines, then a header row (`Kennzeichen;Identnummer;
+// Bankleitzahl;…;Bankenname;Straße;PLZ;Ort;…;SWIFT-Code;…`) and one row per
+// bank code.
+//
+// Docs: https://www.oenb.at/Statistik/Klassifikationen/SEPA-Zahlungsverkehrs-Verzeichnis.html
+//
+// `OENB_SEPA_URL` overrides the download URL.
+
+const String oenbSepaUrl =
+    'https://www.oenb.at/docroot/downloads_observ/sepa-zv-vz_gesamt.csv';
+
+Future<Map<String, BankEntry>> fetchAt() async {
+  final HttpClient client = HttpClient();
+  try {
+    final String? override = Platform.environment['OENB_SEPA_URL'];
+    final String url = override == null || override.isEmpty
+        ? oenbSepaUrl
+        : override;
+    print('[AT] downloading $url');
+    return parseOenbSepa(latin1.decode(await _get(client, Uri.parse(url))));
+  } finally {
+    client.close(force: true);
+  }
+}
+
+/// Pure parser for the OeNB SEPA directory CSV (already decoded from
+/// ISO-8859-1). Bank codes are padded to the 5 digits used in IBANs (the
+/// file lists e.g. the OeNB itself as `100`); rows without a valid BIC are
+/// skipped.
+Map<String, BankEntry> parseOenbSepa(String text) {
+  final List<List<String>> rows = <List<String>>[
+    for (final String line in const LineSplitter().convert(text))
+      splitCsvLine(line, ';'),
+  ];
+  final (int header, Map<String, int> col) = _findHeader(rows, const <String>[
+    'Bankleitzahl',
+    'Bankenname',
+    'Straße',
+    'PLZ',
+    'Ort',
+    'SWIFT-Code',
+  ], 'OeNB SEPA directory');
+
+  final Map<String, BankEntry> result = <String, BankEntry>{};
+  for (final List<String> row in rows.skip(header + 1)) {
+    final String? code = _bankCode(_cell(row, col['Bankleitzahl']!), 5);
+    final String? bic = _normaliseBic(_cell(row, col['SWIFT-Code']!));
+    final String name = _cell(row, col['Bankenname']!);
+    if (code == null || bic == null || name.isEmpty) continue;
+    final String address = _cell(row, col['Straße']!);
+    final String postcode = _cell(row, col['PLZ']!);
+    final String city = _cell(row, col['Ort']!);
+    result.putIfAbsent(
+      code,
+      () => BankEntry(
+        bic: bic,
+        bankName: name,
+        bankShortName: name,
+        bankAddress: address.isEmpty ? null : address,
+        bankPostcode: postcode.isEmpty ? null : postcode,
+        bankLocation: city.isEmpty ? null : city,
+      ),
+    );
+  }
+  return result;
+}
+
+// ---------------------------------------------------------------------------
+// BE — National Bank of Belgium (NBB)
+// ---------------------------------------------------------------------------
+//
+// NBB publishes the full list of Belgian bank identification codes as an
+// xlsx at a fixed "current" URL. After a version line, the header is
+// `T_Identification_Number | Biccode | T_Institutions_Dutch | …_French |
+// …_German | …_English`, one row per 3-digit code. Unassigned codes carry
+// placeholders such as `VRIJ` or `N/A` instead of a BIC.
+//
+// Docs: https://www.nbb.be/en/payments-and-securities/payment-standards/bank-identification-codes
+//
+// `NBB_BIC_URL` overrides the download URL.
+
+const String nbbBicUrl =
+    'https://www.nbb.be/doc/be/be/protocol/full_list_current.xlsx';
+
+Future<Map<String, BankEntry>> fetchBe() async {
+  final HttpClient client = HttpClient();
+  try {
+    final String? override = Platform.environment['NBB_BIC_URL'];
+    final String url = override == null || override.isEmpty
+        ? nbbBicUrl
+        : override;
+    print('[BE] downloading $url');
+    return parseNbbBic(readXlsxRows(await _get(client, Uri.parse(url))));
+  } finally {
+    client.close(force: true);
+  }
+}
+
+/// Pure parser for the NBB bank identification code list. The name is
+/// taken in Dutch, falling back to French, German, then English.
+Map<String, BankEntry> parseNbbBic(List<List<String>> rows) {
+  const List<String> names = <String>[
+    'T_Institutions_Dutch',
+    'T_Institutions_French',
+    'T_Institutions_German',
+    'T_Institutions_English',
+  ];
+  final (int header, Map<String, int> col) = _findHeader(rows, const <String>[
+    'T_Identification_Number',
+    'Biccode',
+    ...names,
+  ], 'NBB bank identification codes');
+
+  final Map<String, BankEntry> result = <String, BankEntry>{};
+  for (final List<String> row in rows.skip(header + 1)) {
+    final String? code = _bankCode(
+      _cell(row, col['T_Identification_Number']!),
+      3,
+    );
+    final String? bic = _normaliseBic(_cell(row, col['Biccode']!));
+    final String name = names
+        .map((String h) => _cell(row, col[h]!))
+        .firstWhere((String n) => n.isNotEmpty, orElse: () => '');
+    if (code == null || bic == null || name.isEmpty) continue;
+    result.putIfAbsent(
+      code,
+      () => BankEntry(bic: bic, bankName: name, bankShortName: name),
+    );
+  }
+  return result;
+}
+
+// ---------------------------------------------------------------------------
+// LU — Luxembourg Bankers' Association (ABBL)
+// ---------------------------------------------------------------------------
+//
+// ABBL publishes the Luxembourg register of IBAN/BIC codes as an xlsx
+// whose URL changes with every revision, so we look it up on the
+// publication page. After a title row, the header is `Credit institution |
+// IBAN Code | BICCode`, one row per 3-digit code.
+//
+// `ABBL_IBAN_BIC_URL` overrides the lookup.
+
+const String abblRegisterPage =
+    'https://www.abbl.lu/publications/abbl-luxembourg-register-of-iban-bic-codes/';
+
+Future<Map<String, BankEntry>> fetchLu() async {
+  final HttpClient client = HttpClient();
+  try {
+    final String url = await _resolveUrl(
+      client,
+      override: Platform.environment['ABBL_IBAN_BIC_URL'],
+      pageUrl: abblRegisterPage,
+      find: findAbblRegisterUrl,
+      envName: 'ABBL_IBAN_BIC_URL',
+    );
+    print('[LU] downloading $url');
+    return parseAbblRegister(readXlsxRows(await _get(client, Uri.parse(url))));
+  } finally {
+    client.close(force: true);
+  }
+}
+
+/// Returns the absolute URL of the register xlsx linked from the ABBL
+/// publication page, or `null` if the page doesn't link one.
+String? findAbblRegisterUrl(String html) => _findLink(
+  html,
+  RegExp(r'href="([^"]*IBAN[^"]*\.xlsx)"', caseSensitive: false),
+  abblRegisterPage,
+);
+
+/// Pure parser for the ABBL IBAN/BIC register.
+Map<String, BankEntry> parseAbblRegister(List<List<String>> rows) {
+  final (int header, Map<String, int> col) = _findHeader(rows, const <String>[
+    'Credit institution',
+    'IBAN Code',
+    'BICCode',
+  ], 'ABBL IBAN/BIC register');
+
+  final Map<String, BankEntry> result = <String, BankEntry>{};
+  for (final List<String> row in rows.skip(header + 1)) {
+    final String? code = _bankCode(_cell(row, col['IBAN Code']!), 3);
+    final String? bic = _normaliseBic(_cell(row, col['BICCode']!));
+    final String name = _cell(row, col['Credit institution']!);
+    if (code == null || bic == null || name.isEmpty) continue;
+    result.putIfAbsent(
+      code,
+      () => BankEntry(bic: bic, bankName: name, bankShortName: name),
+    );
+  }
+  return result;
+}
+
+// ---------------------------------------------------------------------------
+// NL — Betaalvereniging Nederland
+// ---------------------------------------------------------------------------
+//
+// The Dutch Payments Association publishes the BIC list for Dutch IBANs as
+// an xlsx uploaded under a dated WordPress path (`/uploads/YYYY/MM/`), so
+// we look it up on the knowledge-base page. After a title row, the header
+// is `BIC | Identifier | Betaaldienstverlener / Payment Service Provider`,
+// one row per 4-letter bank identifier.
+//
+// `BETAALVERENIGING_BIC_URL` overrides the lookup.
+
+const String betaalverenigingPage =
+    'https://www.betaalvereniging.nl/kennisbank/iban-en-bic/';
+
+Future<Map<String, BankEntry>> fetchNl() async {
+  final HttpClient client = HttpClient();
+  try {
+    final String url = await _resolveUrl(
+      client,
+      override: Platform.environment['BETAALVERENIGING_BIC_URL'],
+      pageUrl: betaalverenigingPage,
+      find: findBetaalverenigingBicUrl,
+      envName: 'BETAALVERENIGING_BIC_URL',
+    );
+    print('[NL] downloading $url');
+    return parseBetaalverenigingBic(
+      readXlsxRows(await _get(client, Uri.parse(url))),
+    );
+  } finally {
+    client.close(force: true);
+  }
+}
+
+/// Returns the absolute URL of the BIC list xlsx linked from the
+/// Betaalvereniging knowledge-base page, or `null` if it isn't linked.
+String? findBetaalverenigingBicUrl(String html) => _findLink(
+  html,
+  RegExp(r'href="([^"]*BIC-lijst-NL[^"]*\.xlsx)"', caseSensitive: false),
+  betaalverenigingPage,
+);
+
+/// Pure parser for the Betaalvereniging BIC list.
+Map<String, BankEntry> parseBetaalverenigingBic(List<List<String>> rows) {
+  const String nameHeader = 'Betaaldienstverlener / Payment Service Provider';
+  final (int header, Map<String, int> col) = _findHeader(rows, const <String>[
+    'BIC',
+    'Identifier',
+    nameHeader,
+  ], 'Betaalvereniging BIC list');
+
+  final Map<String, BankEntry> result = <String, BankEntry>{};
+  for (final List<String> row in rows.skip(header + 1)) {
+    final String code = _cell(row, col['Identifier']!).toUpperCase();
+    final String? bic = _normaliseBic(_cell(row, col['BIC']!));
+    final String name = _cell(row, col[nameHeader]!);
+    if (!RegExp(r'^[A-Z]{4}$').hasMatch(code) || bic == null || name.isEmpty) {
+      continue;
+    }
+    result.putIfAbsent(
+      code,
+      () => BankEntry(bic: bic, bankName: name, bankShortName: name),
     );
   }
   return result;

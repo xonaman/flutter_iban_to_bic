@@ -95,20 +95,38 @@ the usual cause is a changed Bundesbank download page: update
   (`Settings → Secrets and variables → Actions → Variables`) only to pin a
   specific file; delete it again afterwards or it keeps overriding the
   lookup.
+- Nothing for the other adapters either. Each reads a fixed URL or finds
+  the current file on the publisher's page, and each has an optional
+  override variable, set the same way and only to pin a file:
+
+  | Country | Source | Override variable |
+  |---------|--------|-------------------|
+  | AT | [OeNB SEPA directory](https://www.oenb.at/Statistik/Klassifikationen/SEPA-Zahlungsverkehrs-Verzeichnis.html) (fixed URL) | `OENB_SEPA_URL` |
+  | BE | [NBB bank identification codes](https://www.nbb.be/en/payments-and-securities/payment-standards/bank-identification-codes) (fixed URL) | `NBB_BIC_URL` |
+  | DE | [Bundesbank BLZ file](https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes) (looked up) | `BUNDESBANK_BLZ_URL` |
+  | LU | [ABBL IBAN/BIC register](https://www.abbl.lu/publications/abbl-luxembourg-register-of-iban-bic-codes/) (looked up) | `ABBL_IBAN_BIC_URL` |
+  | NL | [Betaalvereniging BIC list](https://www.betaalvereniging.nl/kennisbank/iban-en-bic/) (looked up) | `BETAALVERENIGING_BIC_URL` |
+
+- ES, FR and LT have no adapter and their datasets are **unmaintained**:
+  no authoritative source publishes their bank codes with BICs in a form a
+  script can download (see the comment above `adapters` in
+  `tool/refresh_data.dart`). Changes to them have to be made by hand.
 - When adding a new country adapter in `tool/refresh_data.dart`, register
-  any additional repo variables it needs (e.g. `OENB_BIC_URL`) the same
-  way and reference them under `env:` in the workflow.
+  any additional repo variables it needs the same way and reference them
+  under `env:` in the workflow.
 
 ### Adding a country
 
 1. Add an adapter function in `tool/refresh_data.dart`.
 2. Register it in the `adapters` map.
-3. Run `dart run tool/refresh_data.dart <CC>` to create the source
+3. Give it a pure parser with a test against a small fixture in
+   `test/fixtures/` (see `test/refresh_data_test.dart`).
+4. Run `dart run tool/refresh_data.dart <CC>` to create the source
    `data/bank_codes/<cc>.jsonl` and the generated `lib/src/data/<cc>.g.dart`.
-4. Add a deferred import for it to `lib/src/data/bank_codes.dart` and its
-   bank-code offsets to `_buildDefaultCountries` in
-   `lib/src/iban_to_bic.dart`.
-5. Add a minimal test to `test/iban_to_bic_test.dart`.
+5. Add a deferred import for it to `lib/src/data/bank_codes.dart` and the
+   country to `_bundledCountries` in `lib/src/iban_to_bic.dart` (its
+   bank-code position comes from the IBAN registry).
+6. Add a minimal test to `test/iban_to_bic_test.dart`.
 
 ## CI
 
