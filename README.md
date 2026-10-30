@@ -105,14 +105,14 @@ await lookup.lookup('DE64 5001 0517 9423 8144 35');
 
 | Code | Country     | Bank-code offset | Data source | BIC accuracy | Automated refresh |
 |------|-------------|------------------|-------------|--------------|-------------------|
-| AT   | Austria     | 4–9              | [OeNB](https://www.oenb.at/) SEPA directory | exact | no (manual) |
-| BE   | Belgium     | 4–7              | [NBB](https://www.nbb.be/en/payments-and-securities/payment-standards/bank-identification-codes) bank identification codes | exact | no (manual) |
+| AT   | Austria     | 4–9              | [OeNB](https://www.oenb.at/) SEPA directory | exact | yes (weekly) |
+| BE   | Belgium     | 4–7              | [NBB](https://www.nbb.be/en/payments-and-securities/payment-standards/bank-identification-codes) bank identification codes | exact | yes (weekly) |
 | DE   | Germany     | 4–12             | [Deutsche Bundesbank](https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes) BLZ file | exact | yes (weekly) |
-| ES   | Spain       | 4–8              | ECB MFI list via [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) (2024), no national source yet | institution | no |
-| FR   | France      | 4–9              | ECB MFI list via [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) (2024), no national source yet | institution | no |
-| LT   | Lithuania   | 4–9              | not recorded (added in 0.0.5), no official source yet | exact | no |
-| LU   | Luxembourg  | 4–7              | [ABBL](https://www.abbl.lu/) IBAN/BIC register | exact | no (manual) |
-| NL   | Netherlands | 4–8              | [Betaalvereniging](https://www.betaalvereniging.nl/) BIC list | exact | no (manual) |
+| ES   | Spain       | 4–8              | ECB MFI list via [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) (2024), no national source yet | institution | no (unmaintained) |
+| FR   | France      | 4–9              | ECB MFI list via [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) (2024), no national source yet | institution | no (unmaintained) |
+| LT   | Lithuania   | 4–9              | not recorded (added in 0.0.5), no official source yet | exact | no (unmaintained) |
+| LU   | Luxembourg  | 4–7              | [ABBL](https://www.abbl.lu/) IBAN/BIC register | exact | yes (weekly) |
+| NL   | Netherlands | 4–8              | [Betaalvereniging](https://www.betaalvereniging.nl/) BIC list | exact | yes (weekly) |
 
 **BIC accuracy** is reported on every `BicFound` as `accuracy`
 (`BicAccuracy.exact` or `BicAccuracy.institution`, with an `isExact`
@@ -146,8 +146,8 @@ If you register your own `CountrySpec`, pass `accuracy:` to match your data
 The datasets are kept in `data/bank_codes/<cc>.jsonl`: one bank code per
 line, sorted, so every change to the data shows up as a readable diff.
 `tool/refresh_data.dart` refreshes them from each country's central bank
-or competent authority, for the countries that have an adapter (currently
-DE); a weekly workflow opens a pull request that lists the added, removed
+or competent authority, for the countries that have an adapter (AT, BE,
+DE, LU and NL); a weekly workflow opens a pull request that lists the added, removed
 and changed codes.
 
 The library loads compact assets generated from those files. After editing

@@ -78,20 +78,27 @@ Map<String, dynamic> buildMetaEntry(
 /// built one ([fresh]). Returns `null` when nothing worth recording
 /// changed, so an unchanged refresh doesn't bump `retrievedOn`.
 ///
-/// When the source URL is the same as before, fields the adapter left
-/// unknown keep their recorded values: the dates (e.g. `BUNDESBANK_BLZ_URL`
-/// pins a file, so the download page isn't read) and hand-written `notes`.
-/// A different source URL means a different file, so stale dates and notes
-/// are dropped unless the adapter supplies new ones.
+/// Fields the adapter left unknown keep their recorded values where those
+/// still describe the data:
+///   - `notes` while the source URL is unchanged (they describe the
+///     source, e.g. that it states no validity date);
+///   - `effectiveFrom`/`validUntil` while the URL and the content hash
+///     are both unchanged, i.e. it is the same file (e.g.
+///     `BUNDESBANK_BLZ_URL` pins it, so the download page isn't read).
+///     New content at a fixed URL is a new file whose dates are unknown.
 Map<String, dynamic>? mergeMetaEntry(
   Map<String, dynamic>? old,
   Map<String, dynamic> fresh,
 ) {
   if (old == null) return fresh;
   final Map<String, dynamic> next = Map<String, dynamic>.of(fresh);
-  if (next['sourceUrl'] != null && next['sourceUrl'] == old['sourceUrl']) {
-    for (final String k in <String>['effectiveFrom', 'validUntil', 'notes']) {
-      next[k] ??= old[k];
+  final bool sameSource =
+      next['sourceUrl'] != null && next['sourceUrl'] == old['sourceUrl'];
+  if (sameSource) {
+    next['notes'] ??= old['notes'];
+    if (next['sha256'] == old['sha256']) {
+      next['effectiveFrom'] ??= old['effectiveFrom'];
+      next['validUntil'] ??= old['validUntil'];
     }
   }
   const List<String> tracked = <String>[
