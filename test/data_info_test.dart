@@ -31,7 +31,10 @@ void main() {
       }
     });
 
-    test('meta.json covers exactly the bundled datasets', () {
+    // Reads the sources from disk, so VM only. The rest of this file runs
+    // on the web too, which checks the hashes against the deferred-loaded
+    // datasets there as well.
+    test('meta.json covers exactly the bundled datasets', testOn: 'vm', () {
       final Set<String> sources = <String>{
         for (final FileSystemEntity f in Directory(
           'data/bank_codes',
