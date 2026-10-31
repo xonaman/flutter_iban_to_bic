@@ -122,6 +122,164 @@ void main() {
     });
   });
 
+  group('findBundesbankBlzValidity', () {
+    test('reads the period printed next to the current TXT link', () {
+      // Trimmed from the live download page; the upcoming file is listed
+      // first and must not win.
+      const String html =
+          '<a href="/x/blz-neu-txt-data.txt"><small>gültig vom 07.12.2026 '
+          'bis 07.03.2027</small></a>'
+          '<a href="https://www.bundesbank.de/x/blz-aktuell-txt-data.txt" '
+          'target="_blank"><div class="h3">Bankleitzahlendateien\n'
+          '<small class="d-block teasable__subtitle">gültig vom 07.09.2026 '
+          'bis 06.12.2026</small></div></a>';
+      final ({DateTime from, DateTime until})? v = findBundesbankBlzValidity(
+        html,
+      );
+      expect(v?.from, DateTime.utc(2026, 9, 7));
+      expect(v?.until, DateTime.utc(2026, 12, 6));
+    });
+
+    test('returns null when the page shows no period', () {
+      expect(
+        findBundesbankBlzValidity('<a href="/blz-aktuell-txt-data.txt">'),
+        isNull,
+      );
+    });
+  });
+
+  group('buildMetaEntry', () {
+    test('records source, dates and the content hash', () {
+      final Map<String, dynamic> entry = buildMetaEntry(
+        '{}\n',
+        DatasetSource(
+          publisher: 'Deutsche Bundesbank',
+          url: 'https://example.com/blz.txt',
+          effectiveFrom: DateTime.utc(2026, 9, 7),
+          validUntil: DateTime.utc(2026, 12, 6),
+        ),
+        DateTime.utc(2026, 10, 29, 4),
+      );
+      expect(entry, <String, dynamic>{
+        'publisher': 'Deutsche Bundesbank',
+        'sourceUrl': 'https://example.com/blz.txt',
+        'retrievedOn': '2026-10-29',
+        'effectiveFrom': '2026-09-07',
+        'validUntil': '2026-12-06',
+        // sha256 of "{}\n"
+        'sha256':
+            'ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356',
+        'notes': null,
+      });
+    });
+
+    test('leaves fields null when the adapter recorded no source', () {
+      final Map<String, dynamic> entry = buildMetaEntry(
+        '{}\n',
+        null,
+        DateTime.utc(2026, 10, 29),
+      );
+      expect(entry['sourceUrl'], isNull);
+      expect(entry['effectiveFrom'], isNull);
+      expect(entry['retrievedOn'], '2026-10-29');
+    });
+  });
+
+  group('mergeMetaEntry', () {
+    Map<String, dynamic> entry({
+      String publisher = 'Deutsche Bundesbank',
+      String url = 'https://example.com/blz.txt',
+      String retrievedOn = '2026-10-29',
+      String? effectiveFrom = '2026-09-07',
+      String? validUntil = '2026-12-06',
+      String sha = 'abc',
+    }) => <String, dynamic>{
+      'publisher': publisher,
+      'sourceUrl': url,
+      'retrievedOn': retrievedOn,
+      'effectiveFrom': effectiveFrom,
+      'validUntil': validUntil,
+      'sha256': sha,
+      'notes': null,
+    };
+
+    test('takes the fresh entry when there is none yet', () {
+      expect(mergeMetaEntry(null, entry()), entry());
+    });
+
+    test('returns null when nothing but the retrieval date changed', () {
+      expect(mergeMetaEntry(entry(), entry(retrievedOn: '2026-11-02')), isNull);
+    });
+
+    test('records a first retrieval date on an entry without one', () {
+      final Map<String, dynamic> legacy = entry()..['retrievedOn'] = null;
+      expect(mergeMetaEntry(legacy, entry())?['retrievedOn'], '2026-10-29');
+    });
+
+    test('records a changed publisher', () {
+      expect(
+        mergeMetaEntry(entry(), entry(publisher: 'Bundesbank'))?['publisher'],
+        'Bundesbank',
+      );
+    });
+
+    test('keeps known dates for the same file when they are unknown now', () {
+      // E.g. BUNDESBANK_BLZ_URL pins the file, so the page isn't read.
+      expect(
+        mergeMetaEntry(
+          entry(),
+          entry(
+            retrievedOn: '2026-11-02',
+            effectiveFrom: null,
+            validUntil: null,
+          ),
+        ),
+        isNull,
+      );
+    });
+
+    test('drops dates for new content at the same URL', () {
+      // A fixed-URL source (e.g. NBB) published a new file.
+      final Map<String, dynamic>? changed = mergeMetaEntry(
+        entry(),
+        entry(effectiveFrom: null, validUntil: null, sha: 'def'),
+      );
+      expect(changed?['effectiveFrom'], isNull);
+      expect(changed?['validUntil'], isNull);
+    });
+
+    test('keeps hand-written notes while the source is unchanged', () {
+      final Map<String, dynamic> noted = entry()..['notes'] = 'by hand';
+      final Map<String, dynamic>? changed = mergeMetaEntry(
+        noted,
+        entry(sha: 'def'),
+      );
+      expect(changed?['notes'], 'by hand');
+      expect(
+        mergeMetaEntry(
+          noted,
+          entry(sha: 'def')..['notes'] = 'from adapter',
+        )?['notes'],
+        'from adapter',
+      );
+      expect(
+        mergeMetaEntry(
+          noted,
+          entry(url: 'https://example.com/other.txt'),
+        )?['notes'],
+        isNull,
+      );
+    });
+
+    test('drops dates when the source file changed', () {
+      final Map<String, dynamic>? changed = mergeMetaEntry(
+        entry(),
+        entry(url: 'https://example.com/other.txt', effectiveFrom: null),
+      );
+      expect(changed?['effectiveFrom'], isNull);
+    });
+  });
+
   group('findBundesbankBlzTxtUrl', () {
     test('picks the current unpacked TXT file', () {
       const String html =
@@ -262,6 +420,39 @@ void main() {
     test('rejects empty or truncated results', () {
       expect(() => checkPlausibleSize(0, 0), throwsStateError);
       expect(() => checkPlausibleSize(400, 866), throwsStateError);
+    });
+  });
+
+  group('findTitleRowDate', () {
+    test('reads the NBB version date', () {
+      expect(
+        findTitleRowDate(
+          readXlsxRows(
+            File('test/fixtures/nbb_full_list.xlsx').readAsBytesSync(),
+          ),
+        ),
+        DateTime.utc(2026, 9, 1),
+      );
+    });
+
+    test('reads the Betaalvereniging last-update date', () {
+      expect(
+        findTitleRowDate(
+          readXlsxRows(
+            File('test/fixtures/betaalvereniging_bic.xlsx').readAsBytesSync(),
+          ),
+        ),
+        DateTime.utc(2026, 10, 27),
+      );
+    });
+
+    test('returns null without a dated title row', () {
+      expect(
+        findTitleRowDate(<List<String>>[
+          <String>['BIC', 'Identifier'],
+        ]),
+        isNull,
+      );
     });
   });
 

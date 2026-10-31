@@ -53,6 +53,13 @@ manually via `workflow_dispatch`). It invokes `tool/refresh_data.dart`
 against each country's authoritative upstream, runs the test suite
 against the new data, and opens a PR with the diff if anything changed.
 
+Each refreshed country also gets its entry in `data/bank_codes/meta.json`
+updated (source URL, retrieval date, validity and content hash), and
+`lib/src/data/meta.g.dart` is regenerated from it. After a hand edit to
+`data/bank_codes/<cc>.jsonl`, `dart run tool/build_assets.dart`
+regenerates the dataset and updates its hash; `test/data_info_test.dart`
+fails when a hash doesn't match.
+
 ### Status summary and tracking issue
 
 The script records each country's outcome (`refreshed`, `skipped`,

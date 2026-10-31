@@ -9,14 +9,17 @@
 //      returns `{ bankCode: BankEntry(bic, bankName, bankShortName, ...) }`.
 //      Fetch from the central bank / competent authority — no scraping of
 //      third-party aggregators.
-//   3. Run the refresh for it, which creates `data/bank_codes/<cc>.jsonl`
+//   3. Record where the data came from with `recordSource(...)` so the
+//      provenance in `data/bank_codes/meta.json` stays current.
+//   4. Run the refresh for it, which creates `data/bank_codes/<cc>.jsonl`
 //      and `lib/src/data/<cc>.g.dart`, and add a deferred import for the
 //      latter to `lib/src/data/bank_codes.dart`.
-//   4. Register the country and its bank-code range (the IBAN character
+//   5. Register the country and its bank-code range (the IBAN character
 //      offsets) in `_buildDefaultCountries` in `lib/src/iban_to_bic.dart`.
 //
 // To fix an entry by hand, edit `data/bank_codes/<cc>.jsonl` and run
-// `dart run tool/build_assets.dart` to regenerate the dataset.
+// `dart run tool/build_assets.dart` to regenerate the dataset (it also
+// updates the dataset's hash in `meta.json`).
 //
 // Run with:
 //   dart run tool/refresh_data.dart           # refresh everything
@@ -33,8 +36,10 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'bank_codes.dart';
+import 'dataset_meta.dart';
 
 export 'bank_codes.dart' show BankEntry;
+export 'dataset_meta.dart';
 
 typedef CountryAdapter = Future<Map<String, BankEntry>> Function();
 
@@ -47,6 +52,14 @@ class AdapterSkipped implements Exception {
   final String reason;
   @override
   String toString() => reason;
+}
+
+/// Sources recorded by adapters during this run, keyed by country code.
+final Map<String, DatasetSource> _sources = <String, DatasetSource>{};
+
+/// Called by an adapter once it knows which upstream file it is reading.
+void recordSource(String countryCode, DatasetSource source) {
+  _sources[countryCode] = source;
 }
 
 /// Registry of per-country adapters. `null` means there is no adapter and
@@ -102,6 +115,7 @@ Future<void> main(List<String> args) async {
         '[$cc] wrote ${sourcePath(cc)} and ${libraryPath(cc)} '
         '(${entries.length} entries)',
       );
+      writeMeta(cc, datasetJson(entries), _sources[cc]);
     },
   );
 
@@ -273,12 +287,14 @@ Future<Map<String, BankEntry>> fetchDe() async {
   final HttpClient client = HttpClient();
   try {
     String? url = Platform.environment['BUNDESBANK_BLZ_URL'];
+    ({DateTime from, DateTime until})? validity;
     if (url == null || url.isEmpty) {
       final String page = latin1.decode(
         await _get(client, Uri.parse(bundesbankDownloadPage)),
         allowInvalid: true,
       );
       url = findBundesbankBlzTxtUrl(page);
+      validity = findBundesbankBlzValidity(page);
       if (url == null) {
         throw StateError(
           'No blz-aktuell TXT link found on $bundesbankDownloadPage — '
@@ -288,6 +304,15 @@ Future<Map<String, BankEntry>> fetchDe() async {
       }
     }
     print('[DE] downloading $url');
+    recordSource(
+      'DE',
+      DatasetSource(
+        publisher: 'Deutsche Bundesbank',
+        url: url,
+        effectiveFrom: validity?.from,
+        validUntil: validity?.until,
+      ),
+    );
     return parseBundesbankBlz(
       latin1.decode(await _get(client, Uri.parse(url))),
     );
@@ -333,6 +358,23 @@ String? findBundesbankBlzTxtUrl(String html) {
   ).firstMatch(html);
   if (match == null) return null;
   return Uri.parse(bundesbankDownloadPage).resolve(match.group(1)!).toString();
+}
+
+/// Reads the validity period ("gültig vom 07.09.2026 bis 06.12.2026")
+/// printed next to the current TXT link on the Bundesbank download page,
+/// or `null` if it isn't there.
+({DateTime from, DateTime until})? findBundesbankBlzValidity(String html) {
+  final RegExpMatch? match = RegExp(
+    r'/blz-aktuell-txt-data\.txt"[\s\S]{0,800}?'
+    r'vom\s+(\d{2})\.(\d{2})\.(\d{4})\s+bis\s+(\d{2})\.(\d{2})\.(\d{4})',
+  ).firstMatch(html);
+  if (match == null) return null;
+  DateTime at(int i) => DateTime.utc(
+    int.parse(match.group(i + 2)!),
+    int.parse(match.group(i + 1)!),
+    int.parse(match.group(i)!),
+  );
+  return (from: at(1), until: at(4));
 }
 
 /// Pure parser: turns a Bundesbank BLZ fixed-width dump (already decoded
@@ -649,6 +691,16 @@ Future<Map<String, BankEntry>> fetchAt() async {
         ? oenbSepaUrl
         : override;
     print('[AT] downloading $url');
+    recordSource(
+      'AT',
+      DatasetSource(
+        publisher: 'Oesterreichische Nationalbank (OeNB), SEPA directory',
+        url: url,
+        notes:
+            'The file is a live query ("SEPA-Verzeichnis-Abfrage vom '
+            '<date>") and states no validity date.',
+      ),
+    );
     return parseOenbSepa(latin1.decode(await _get(client, Uri.parse(url))));
   } finally {
     client.close(force: true);
@@ -722,10 +774,41 @@ Future<Map<String, BankEntry>> fetchBe() async {
         ? nbbBicUrl
         : override;
     print('[BE] downloading $url');
-    return parseNbbBic(readXlsxRows(await _get(client, Uri.parse(url))));
+    final List<List<String>> rows = readXlsxRows(
+      await _get(client, Uri.parse(url)),
+    );
+    recordSource(
+      'BE',
+      DatasetSource(
+        publisher: 'National Bank of Belgium (NBB)',
+        url: url,
+        // Title row: "Version 01/09/2026".
+        effectiveFrom: findTitleRowDate(rows),
+      ),
+    );
+    return parseNbbBic(rows);
   } finally {
     client.close(force: true);
   }
+}
+
+/// Returns the first `dd/mm/yyyy` or `dd-mm-yyyy` date in the title rows
+/// above a spreadsheet's header (the first three rows), or `null`. NBB and
+/// the Betaalvereniging print their file's version date there.
+DateTime? findTitleRowDate(List<List<String>> rows) {
+  final RegExp date = RegExp(r'\b(\d{2})[/-](\d{2})[/-](\d{4})\b');
+  for (final List<String> row in rows.take(3)) {
+    for (final String cell in row) {
+      final RegExpMatch? m = date.firstMatch(cell);
+      if (m == null) continue;
+      return DateTime.utc(
+        int.parse(m.group(3)!),
+        int.parse(m.group(2)!),
+        int.parse(m.group(1)!),
+      );
+    }
+  }
+  return null;
 }
 
 /// Pure parser for the NBB bank identification code list. The name is
@@ -787,6 +870,14 @@ Future<Map<String, BankEntry>> fetchLu() async {
       envName: 'ABBL_IBAN_BIC_URL',
     );
     print('[LU] downloading $url');
+    recordSource(
+      'LU',
+      DatasetSource(
+        publisher: 'ABBL, Luxembourg register of IBAN/BIC codes',
+        url: url,
+        notes: 'The spreadsheet states no date.',
+      ),
+    );
     return parseAbblRegister(readXlsxRows(await _get(client, Uri.parse(url))));
   } finally {
     client.close(force: true);
@@ -849,9 +940,20 @@ Future<Map<String, BankEntry>> fetchNl() async {
       envName: 'BETAALVERENIGING_BIC_URL',
     );
     print('[NL] downloading $url');
-    return parseBetaalverenigingBic(
-      readXlsxRows(await _get(client, Uri.parse(url))),
+    final List<List<String>> rows = readXlsxRows(
+      await _get(client, Uri.parse(url)),
     );
+    recordSource(
+      'NL',
+      DatasetSource(
+        publisher: 'Betaalvereniging Nederland',
+        url: url,
+        // Title row: "BIC-lijst-NL | BIC-list-NL (Laatste update | last
+        // update 27-10-2026)".
+        effectiveFrom: findTitleRowDate(rows),
+      ),
+    );
+    return parseBetaalverenigingBic(rows);
   } finally {
     client.close(force: true);
   }

@@ -1,0 +1,74 @@
+{
+  "AT": {
+    "publisher": "Oesterreichische Nationalbank (OeNB), SEPA directory",
+    "sourceUrl": "https://www.oenb.at/docroot/downloads_observ/sepa-zv-vz_gesamt.csv",
+    "retrievedOn": "2026-10-30",
+    "effectiveFrom": null,
+    "validUntil": null,
+    "sha256": "ab5efa818c6a4ee7ddb998eb7a06ec31059377eecd0d9da892d13189d341715f",
+    "notes": "The file is a live query (\"SEPA-Verzeichnis-Abfrage vom <date>\") and states no validity date."
+  },
+  "BE": {
+    "publisher": "National Bank of Belgium (NBB)",
+    "sourceUrl": "https://www.nbb.be/doc/be/be/protocol/full_list_current.xlsx",
+    "retrievedOn": "2026-10-29",
+    "effectiveFrom": "2026-09-01",
+    "validUntil": null,
+    "sha256": "15a66e0b29ca86db0ffc7b8ceb00aae809889bb13fd491221093d289d6246f77",
+    "notes": null
+  },
+  "DE": {
+    "publisher": "Deutsche Bundesbank",
+    "sourceUrl": "https://www.bundesbank.de/resource/blob/602632/3a97fff9893732591adbbfcb70c1c4e8/472B63F073F071307366337C94F8C870/blz-aktuell-txt-data.txt",
+    "retrievedOn": "2026-10-29",
+    "effectiveFrom": "2026-09-07",
+    "validUntil": "2026-12-06",
+    "sha256": "9def2c271856cbe1a540d3482e2c949544cf31a1be006f29961cc6917148709c",
+    "notes": null
+  },
+  "ES": {
+    "publisher": null,
+    "sourceUrl": null,
+    "retrievedOn": null,
+    "effectiveFrom": null,
+    "validUntil": null,
+    "sha256": "44dfdcdd49fcc9ee766ac159f0ef16875e3609618212d559b6b9645c3eb22347",
+    "notes": "Carried over from the Dart maps of 1.x; source and age are not recorded. Banco de España publishes no list mapping bank codes to BICs."
+  },
+  "FR": {
+    "publisher": null,
+    "sourceUrl": null,
+    "retrievedOn": null,
+    "effectiveFrom": null,
+    "validUntil": null,
+    "sha256": "7f9d5cd8c9d336534e0a67a516618501ce1513683cf8f73f919a81bd344728f4",
+    "notes": "Carried over from the Dart maps of 1.x; source and age are not recorded. Banque de France publishes no list mapping bank codes to BICs."
+  },
+  "LT": {
+    "publisher": null,
+    "sourceUrl": null,
+    "retrievedOn": null,
+    "effectiveFrom": null,
+    "validUntil": null,
+    "sha256": "8614fe540da9fa7bb4780443dcb2875b3d76a6734a4d7a51ba26c8a4e74ac599",
+    "notes": "Carried over from the Dart maps of 1.x; source and age are not recorded."
+  },
+  "LU": {
+    "publisher": "ABBL, Luxembourg register of IBAN/BIC codes",
+    "sourceUrl": "https://office-membernet.abbl.lu/newDocRequest/JG777467DE356F72764N57H635867MFP/ABBL_LuxembourgRegisterofIBANBICCodes392.xlsx",
+    "retrievedOn": "2026-10-30",
+    "effectiveFrom": null,
+    "validUntil": null,
+    "sha256": "4149bd46dfa2c85257e92933c19f7cc0ace2dc9734ce26b36ca161c7622f9bf1",
+    "notes": "The spreadsheet states no date."
+  },
+  "NL": {
+    "publisher": "Betaalvereniging Nederland",
+    "sourceUrl": "https://www.betaalvereniging.nl/wp-content/uploads/2026/10/BIC-lijst-NL.xlsx",
+    "retrievedOn": "2026-10-29",
+    "effectiveFrom": "2026-10-27",
+    "validUntil": null,
+    "sha256": "aaead85152c8a942c078f903c243371cacedacce094afde2785b8ca0ea926fbc",
+    "notes": null
+  }
+}

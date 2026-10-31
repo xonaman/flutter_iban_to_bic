@@ -7,6 +7,7 @@ library;
 export 'src/bic.dart';
 export 'src/bic_accuracy.dart';
 export 'src/country_spec.dart';
+export 'src/data_info.dart' show DatasetInfo, dataInfo;
 export 'src/iban.dart' show InvalidIbanReason;
 // Deprecated, kept for source compatibility until the next major release.
 // ignore: deprecated_member_use_from_same_package

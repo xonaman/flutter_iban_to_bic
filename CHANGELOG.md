@@ -1,5 +1,19 @@
 ## Unreleased
 
+* New `dataInfo(countryCode)` returns a `DatasetInfo` with the provenance
+  and age of a built-in dataset: publisher, source URL, retrieval date,
+  the date the upstream file took effect, the end of its validity (where
+  the source publishes one), a SHA-256 of the dataset, and `ageInDays()`.
+  It's synchronous. Unknown values are `null`, and `notes` says why.
+* The metadata is kept in `data/bank_codes/meta.json` and generated into
+  `lib/src/data/meta.g.dart`. `tool/refresh_data.dart` updates a
+  country's entry whenever its data or source changes. Every adapter
+  records its source; the German one also records the validity period
+  from the Bundesbank download page, and the Belgian and Dutch ones the
+  version date printed in their spreadsheets.
+* Backfilled from the 2.2.1 and 2.3.0 refreshes: AT, BE, DE, LU and NL
+  have source and retrieval date. ES, FR and LT were carried over from 1.x
+  without a recorded source, so their source and dates are `null`.
 * The package is now pure Dart and no longer depends on Flutter, so it
   works on Dart servers and CLIs too, and `dart test` runs the test suite.
   The lookup API (`ibanToBic`, `ibanToBicAsync`, `preloadIbanToBic`,
