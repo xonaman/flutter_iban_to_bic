@@ -56,19 +56,19 @@
   "LU": {
     "publisher": "ABBL, Luxembourg register of IBAN/BIC codes",
     "sourceUrl": "https://office-membernet.abbl.lu/newDocRequest/JG777467DE356F72764N57H635867MFP/ABBL_LuxembourgRegisterofIBANBICCodes392.xlsx",
-    "retrievedOn": "2026-10-30",
+    "retrievedOn": "2026-11-09",
     "effectiveFrom": null,
     "validUntil": null,
-    "sha256": "4149bd46dfa2c85257e92933c19f7cc0ace2dc9734ce26b36ca161c7622f9bf1",
+    "sha256": "40976e231f53f10eba86b5b97edcf695b76bce53a77788a4d6817618f33a3cbb",
     "notes": "The spreadsheet states no date."
   },
   "NL": {
     "publisher": "Betaalvereniging Nederland",
     "sourceUrl": "https://www.betaalvereniging.nl/wp-content/uploads/2026/10/BIC-lijst-NL.xlsx",
-    "retrievedOn": "2026-10-29",
-    "effectiveFrom": "2026-10-27",
+    "retrievedOn": "2026-11-09",
+    "effectiveFrom": "2026-11-03",
     "validUntil": null,
-    "sha256": "aaead85152c8a942c078f903c243371cacedacce094afde2785b8ca0ea926fbc",
+    "sha256": "9351e7f0f273fa8294e2bfd7101928829893b96506a3a6b4beb53f822b63f044",
     "notes": null
   }
 }

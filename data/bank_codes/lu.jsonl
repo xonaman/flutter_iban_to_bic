@@ -50,6 +50,7 @@
 {"code":"193","bic":"CMCILUL1","bankName":"Banque Transatlantique Luxembourg S.A.","bankShortName":"Banque Transatlantique Luxembourg S.A."}
 {"code":"197","bic":"NATXLULL","bankName":"Natixis Corporate and Investment Banking Luxembourg","bankShortName":"Natixis Corporate and Investment Banking Luxembourg"}
 {"code":"198","bic":"PICTLULX","bankName":"Pictet & Cie (Europe) S.A.","bankShortName":"Pictet & Cie (Europe) S.A."}
+{"code":"199","bic":"SWILLULLXXX","bankName":"SwissLife Banque Privée Luxembourg","bankShortName":"SwissLife Banque Privée Luxembourg"}
 {"code":"222","bic":"BKCHLULA","bankName":"Bank of China (Europe) S.A.","bankShortName":"Bank of China (Europe) S.A."}
 {"code":"229","bic":"HANDLULB","bankName":"Svenska Handelsbanken AB (Publ), Luxembourg Branch","bankShortName":"Svenska Handelsbanken AB (Publ), Luxembourg Branch"}
 {"code":"250","bic":"CHASLULW","bankName":"J.P. Morgan Bank Luxembourg S.A.","bankShortName":"J.P. Morgan Bank Luxembourg S.A."}
@@ -112,6 +113,7 @@
 {"code":"627","bic":"EBPBLUL2","bankName":"Ebury Partners Belgium - succursale luxembourgeoise","bankShortName":"Ebury Partners Belgium - succursale luxembourgeoise"}
 {"code":"629","bic":"CPYXLULL","bankName":"Associated Foreign Exchange Ireland Limited Luxembourg (Corpay)","bankShortName":"Associated Foreign Exchange Ireland Limited Luxembourg (Corpay)"}
 {"code":"630","bic":"FXBBLUL2XXX","bankName":"IBANFIRST SA, LUX BRANCH","bankShortName":"IBANFIRST SA, LUX BRANCH"}
+{"code":"632","bic":"EMEULULLXXX","bankName":"Equals Money Europe S.A. - Luxembourg Branch","bankShortName":"Equals Money Europe S.A. - Luxembourg Branch"}
 {"code":"699","bic":"RBOSLULL","bankName":"Royal Bank of Scotland International Limited, Luxembourg Branch (The)","bankShortName":"Royal Bank of Scotland International Limited, Luxembourg Branch (The)"}
 {"code":"701","bic":"RAPSLUL1","bankName":"Rakuten Europe Bank S.A.","bankShortName":"Rakuten Europe Bank S.A."}
 {"code":"705","bic":"KBLXLULL","bankName":"Quintet Private Bank (Europe) S.A.","bankShortName":"Quintet Private Bank (Europe) S.A."}
