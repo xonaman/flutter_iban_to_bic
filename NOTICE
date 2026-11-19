@@ -82,23 +82,31 @@ LU  lib/src/data/lu.g.dart
 Source:  Association des Banques et Banquiers, Luxembourg (ABBL),
          Luxembourg Register of IBAN-BIC Codes
          https://www.abbl.lu/luxembourg-register-of-iban-bic-codes/
-Terms:   ABBL legal notice: content belongs to the ABBL and may be used for
-         information or reference purposes, unmodified, with the source
-         clearly indicated. Redistribution is not addressed.
-         https://www.abbl.lu/legal-notice/
-Notice:  Source: ABBL, Luxembourg Register of IBAN-BIC Codes.
+Terms:   Reproduction and redistribution authorised by the ABBL in writing
+         (email of 5 November 2026), provided that the data remains
+         unmodified, is kept up to date through this package's weekly
+         refresh, and carries the attribution below together with a link
+         to the register.
+         General terms: https://www.abbl.lu/legal-notice/
+Notice:  Source: ABBL, Luxembourg Register of IBAN-BIC Codes
+         https://www.abbl.lu/luxembourg-register-of-iban-bic-codes/
 
 -------------------------------------------------------------------------------
 NL  lib/src/data/nl.g.dart
 -------------------------------------------------------------------------------
 Source:  Betaalvereniging Nederland (Dutch Payments Association), BIC list
          https://www.betaalvereniging.nl/en/knowledge-base/iban-and-bic/bic-code/
-Terms:   Betaalvereniging disclaimer: personal, non-commercial use only;
-         reproducing, publishing or distributing the content requires the
-         association's prior written consent.
-         https://www.betaalvereniging.nl/en/disclaimer/
+Terms:   Use free of charge, without a formal licence agreement, permitted
+         by the Betaalvereniging in writing (email of 5 November 2026),
+         provided that Betaalvereniging Nederland is named as the source
+         and the disclaimer below is included.
+         General terms: https://www.betaalvereniging.nl/en/disclaimer/
 Notice:  Source: Betaalvereniging Nederland.
+         Disclaimer: a Dutch BIC or bank code may change, be revoked or be
+         added at any time. The Betaalvereniging maintains the list
+         carefully but does not guarantee that it is always accurate.
 
-All sources were checked on 29 October 2026. Publishers may change their
+All sources were checked on 29 October 2026; the LU and NL terms were
+updated on 19 November 2026. Publishers may change their
 terms; check the links above before relying on this summary. This file is
 not legal advice.

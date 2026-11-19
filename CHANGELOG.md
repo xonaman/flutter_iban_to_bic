@@ -1,5 +1,10 @@
 ## Unreleased
 
+* The ABBL (LU) and the Betaalvereniging (NL) have given written
+  permission to redistribute their data. `NOTICE` and the README's
+  "Data sources & licences" table now state their conditions, including
+  the Betaalvereniging's disclaimer that Dutch BICs and bank codes may
+  change at any time.
 * New `dataInfo(countryCode)` returns a `DatasetInfo` with the provenance
   and age of a built-in dataset: publisher, source URL, retrieval date,
   the date the upstream file took effect, the end of its validity (where
