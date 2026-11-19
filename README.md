@@ -191,7 +191,7 @@ come from the publishers below, whose terms apply to them. See
 | DE     | [Bundesbank BLZ file](https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes) | [Free use, unaltered](https://www.bundesbank.de/en/homepage/user-information/conditions-for-the-general-use-of-the-website-764706), "Quelle: Deutsche Bundesbank" |
 | ES, FR | [ECB list of MFIs](https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/index.en.html), via [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) (2024) | [Free use](https://www.ecb.europa.eu/services/disclaimer/html/index.en.html), credit the ECB |
 | LT     | Not recorded; most likely the [Bank of Lithuania code list](https://www.lb.lt/en/iban-and-financial-institution-codes) | Not yet established |
-| LU     | [ABBL IBAN-BIC register](https://www.abbl.lu/luxembourg-register-of-iban-bic-codes/) | Redistribution authorised by the ABBL (2026), unmodified and kept up to date; "Source: ABBL, Luxembourg Register of IBAN-BIC Codes" with a link to the register |
+| LU     | [ABBL IBAN-BIC register](https://www.abbl.lu/luxembourg-register-of-iban-bic-codes/) | Redistribution of the bank code, BIC and name authorised by the ABBL (2026), values unmodified and kept up to date; "Source: ABBL, Luxembourg Register of IBAN-BIC Codes" with a link to the register |
 | NL     | [Betaalvereniging BIC list](https://www.betaalvereniging.nl/en/knowledge-base/iban-and-bic/bic-code/) | Free use permitted by the Betaalvereniging (2026); credit Betaalvereniging Nederland, with the disclaimer below |
 
 Dutch BICs and bank codes may change, be revoked or be added at any time;

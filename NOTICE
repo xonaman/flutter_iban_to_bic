@@ -86,7 +86,11 @@ Terms:   Reproduction and redistribution authorised by the ABBL in writing
          (email of 5 November 2026), provided that the data remains
          unmodified, is kept up to date through this package's weekly
          refresh, and carries the attribution below together with a link
-         to the register.
+         to the register. The request the ABBL answered described this
+         dataset as it is shipped: only the bank code, BIC and institution
+         name of each entry, with values unchanged apart from formatting
+         (whitespace and letter case, zero-padded bank codes); rows
+         without a usable code, BIC or name are left out.
          General terms: https://www.abbl.lu/legal-notice/
 Notice:  Source: ABBL, Luxembourg Register of IBAN-BIC Codes
          https://www.abbl.lu/luxembourg-register-of-iban-bic-codes/
