@@ -1,5 +1,22 @@
-## Unreleased
+## 3.0.0
 
+Version 2.3.0 was never published; its changes are included below.
+
+Breaking changes:
+
+* Requires Dart 3.8 / Flutter 3.32 or newer (was Dart 3.0).
+* IBANs are validated against the SWIFT IBAN Registry, so IBANs with the
+  wrong length or BBAN format for their country are now rejected.
+* The package no longer depends on Flutter, and `assets/bank_codes/` is
+  gone. `AssetJsonResolver` (deprecated) no longer defaults to
+  `rootBundle`: without `bundle: rootBundle` every load throws a
+  `StateError`.
+
+All changes:
+
+* Regenerated bank codes (19 Nov 2026): Austria adds Holvi and updates
+  Raiffeisenlandesbank NÖ-Wien's BIC, Luxembourg adds SwissLife Banque
+  Privée and Equals Money Europe, and the Netherlands adds flatexDEGIRO.
 * The Bundesbank (DE) has confirmed in writing that redistributing the
   bank sort code extract is fine, provided each file's validity date is
   observed. `NOTICE` and the README record this.
@@ -75,8 +92,6 @@
   per line, and the generated datasets are built from it with
   `dart run tool/build_assets.dart`; CI fails if they are out of date.
   Refresh pull requests now list added, removed and changed codes.
-
-## 2.3.0
 
 * Requires Dart 3.8 / Flutter 3.32 or newer (was Dart 3.0). The dev
   toolchain (`flutter_lints` 6) already needed Dart 3.8, so the old floor
