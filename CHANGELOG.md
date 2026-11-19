@@ -1,5 +1,8 @@
 ## Unreleased
 
+* The Bundesbank (DE) has confirmed in writing that redistributing the
+  bank sort code extract is fine, provided each file's validity date is
+  observed. `NOTICE` and the README record this.
 * The ABBL (LU) and the Betaalvereniging (NL) have given written
   permission to redistribute their data. `NOTICE` and the README's
   "Data sources & licences" table now state their conditions, including

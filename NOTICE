@@ -51,6 +51,14 @@ Terms:   Bundesbank "Conditions for the general use of the website",
          personal or business use, must not be altered or falsified, and must
          carry the source "Quelle: Deutsche Bundesbank". The Bundesbank
          publishes the file without guarantee ("unverbindlich").
+         The Bundesbank confirmed in writing (email of 19 November 2026)
+         that redistributing this extract in the package is fine, asking
+         that each file's validity date be observed: by default the weekly
+         refresh switches to a new file only once it is in force, and
+         records its validity period (see dataInfo('DE')). A file pinned
+         with BUNDESBANK_BLZ_URL skips reading the download page and its
+         dates, so its validity has to be checked by hand (see
+         PUBLISHING.md).
          https://www.bundesbank.de/en/homepage/user-information/conditions-for-the-general-use-of-the-website-764706
 Notice:  Quelle: Deutsche Bundesbank.
 
@@ -110,7 +118,7 @@ Notice:  Source: Betaalvereniging Nederland.
          added at any time. The Betaalvereniging maintains the list
          carefully but does not guarantee that it is always accurate.
 
-All sources were checked on 29 October 2026; the LU and NL terms were
-updated on 19 November 2026. Publishers may change their
+All sources were checked on 29 October 2026; the DE, LU and NL terms
+were updated on 19 November 2026. Publishers may change their
 terms; check the links above before relying on this summary. This file is
 not legal advice.
