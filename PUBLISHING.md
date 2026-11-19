@@ -101,10 +101,12 @@ the usual cause is a changed Bundesbank download page: update
   Set a repo-level variable `BUNDESBANK_BLZ_URL`
   (`Settings → Secrets and variables → Actions → Variables`) only to pin a
   specific file; delete it again afterwards or it keeps overriding the
-  lookup. A pinned file skips the validity check and records no validity
-  dates, so make sure it is in force: the Bundesbank's confirmation to
-  redistribute the data asks that each file's validity date be observed
-  (see `NOTICE`).
+  lookup. With a pinned file the download page isn't read, so its
+  validity dates are neither checked nor recorded: `meta.json` keeps the
+  dates recorded earlier for the same file (same URL and content), and
+  has none for a different one. Check on the download page that the
+  pinned file is in force: the Bundesbank's confirmation to redistribute
+  the data asks that each file's validity date be observed (see `NOTICE`).
 - Nothing for the other adapters either. Each reads a fixed URL or finds
   the current file on the publisher's page, and each has an optional
   override variable, set the same way and only to pin a file:

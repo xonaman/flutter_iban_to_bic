@@ -56,8 +56,9 @@ Terms:   Bundesbank "Conditions for the general use of the website",
          that each file's validity date be observed: by default the weekly
          refresh switches to a new file only once it is in force, and
          records its validity period (see dataInfo('DE')). A file pinned
-         with BUNDESBANK_BLZ_URL skips that check, so its validity has to
-         be checked by hand (see PUBLISHING.md).
+         with BUNDESBANK_BLZ_URL skips reading the download page and its
+         dates, so its validity has to be checked by hand (see
+         PUBLISHING.md).
          https://www.bundesbank.de/en/homepage/user-information/conditions-for-the-general-use-of-the-website-764706
 Notice:  Quelle: Deutsche Bundesbank.
 
